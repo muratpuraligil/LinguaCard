@@ -1,4 +1,8 @@
-import { GoogleGenerativeAI } from "npm:@google/generative-ai";
+// ============================================
+// AI ANALYZER (NATIVE FETCH - NO SDK)
+// ============================================
+
+declare const Deno: any;
 
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -7,6 +11,7 @@ const corsHeaders = {
 };
 
 Deno.serve(async (req: Request) => {
+    // Handle CORS preflight requests
     if (req.method === 'OPTIONS') {
         return new Response('ok', { headers: corsHeaders });
     }
@@ -22,104 +27,117 @@ Deno.serve(async (req: Request) => {
             ? imageBase64.split(",")[1]
             : imageBase64;
 
-        // Initialize Gemini
-        const genAI = new GoogleGenerativeAI(apiKey);
-
-        // Prompts
+        // --- PROMPTS ---
         const PROMPT_GENERAL = `
-Analyze this image and identify distinct English words or objects.
+Analyze this image and identify distinctive English words or objects.
 Return JSON array: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
         `;
 
         const PROMPT_DOCUMENT = `
 Extract ALL visible text lines from this image EXACTLY as written.
-
 RULES:
-- Read EVERY line, do not skip
-- Do NOT create new sentences
-- If 30 lines exist, return 30 items
-- Multi-column: Read left then right
+1. Verbatim transcription (OCR).
+2. Do NOT summarize.
+3. Keep original line count.
+4. If 30 lines, return 30 items.
 
-For each line:
-- English text → "example_sentence", translate to "turkish_sentence"
-- Turkish text → "turkish_sentence", translate to "example_sentence"
-- Extract keyword for "english" and "turkish"
-
-Return raw JSON: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
+Return JSON: [{"english":"Keyword","turkish":"Anahtar Kelime","example_sentence":"Full text line","turkish_sentence":"Tam cümle çevirisi"}]
         `;
 
         const selectedPrompt = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_GENERAL;
 
-        // Try models in order of preference
-        const modelsToTry = [
-            "gemini-1.5-flash-latest",
-            "gemini-1.5-pro-latest",
-            "gemini-1.5-flash"
+        // --- ROBUST MODEL STRATEGY ---
+        // We will try multiple models and API versions until one works.
+        const strategies = [
+            { model: "gemini-1.5-flash", version: "v1beta" },
+            { model: "gemini-1.5-flash-latest", version: "v1beta" },
+            { model: "gemini-1.5-flash-001", version: "v1beta" },
+            { model: "gemini-1.5-pro", version: "v1beta" },
+            { model: "gemini-1.5-pro-latest", version: "v1beta" },
+            { model: "gemini-pro-vision", version: "v1" } // Old faithful fallback
         ];
 
-        let finalResult = null;
-        let usedModel = "";
+        let resultText = "";
+        let successModel = "";
 
-        for (const modelName of modelsToTry) {
+        // Iterate through strategies
+        for (const strat of strategies) {
             try {
-                console.log(`Trying model: ${modelName}`);
+                console.log(`Trying: ${strat.model} (${strat.version})...`);
 
-                const model = genAI.getGenerativeModel({
-                    model: modelName
+                const url = `https://generativelanguage.googleapis.com/${strat.version}/models/${strat.model}:generateContent?key=${apiKey}`;
+
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [
+                                { text: selectedPrompt },
+                                { inline_data: { mime_type: mimeType || 'image/jpeg', data: pureBase64 } }
+                            ]
+                        }],
+                        generationConfig: {
+                            temperature: 0.1,
+                            maxOutputTokens: 8192
+                        }
+                    })
                 });
 
-                const imagePart = {
-                    inlineData: {
-                        data: pureBase64,
-                        mimeType: mimeType || 'image/jpeg'
-                    }
-                };
-
-                const result = await model.generateContent([selectedPrompt, imagePart]);
-                const response = await result.response;
-                const text = response.text();
-
-                if (text && text.length > 10) {
-                    finalResult = text;
-                    usedModel = modelName;
-                    console.log(`✓ Success with ${modelName}`);
-                    break;
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.warn(`Failed ${strat.model}: ${response.status} - ${errorText.substring(0, 100)}...`);
+                    continue; // Try next model
                 }
-            } catch (error: any) {
-                console.warn(`Model ${modelName} failed:`, error?.message);
-                continue;
+
+                const data = await response.json();
+                const candidate = data.candidates?.[0];
+
+                if (candidate?.content?.parts?.[0]?.text) {
+                    resultText = candidate.content.parts[0].text;
+                    successModel = strat.model;
+                    console.log(`✓ Success with ${strat.model}`);
+                    break; // STOP LOOP, WE HAVE DATA
+                } else {
+                    console.warn(`Empty response from ${strat.model}`);
+                }
+
+            } catch (err) {
+                console.error(`Error with ${strat.model}:`, err);
             }
         }
 
-        if (!finalResult) {
-            throw new Error("All models failed to process the image");
+        if (!resultText) {
+            throw new Error("All AI models and versions failed. Please try again later.");
         }
 
-        console.log("AI Response length:", finalResult.length);
-
-        // Parse JSON
-        const cleanJson = finalResult.replace(/```json|```/g, '').trim();
+        // --- PARSE JSON ---
+        const cleanJson = resultText.replace(/```json|```/g, '').trim();
         let parsedData;
 
         try {
             parsedData = JSON.parse(cleanJson);
-        } catch (parseError) {
-            console.error("JSON Parse Error. Raw:", finalResult.substring(0, 300));
-            throw new Error("Invalid JSON from AI");
+        } catch (e) {
+            // Try to find array bracket if text is messy
+            const start = cleanJson.indexOf('[');
+            const end = cleanJson.lastIndexOf(']');
+            if (start !== -1 && end !== -1) {
+                parsedData = JSON.parse(cleanJson.substring(start, end + 1));
+            } else {
+                throw new Error("Invalid JSON from AI");
+            }
         }
 
         const finalArray = Array.isArray(parsedData) ? parsedData : [parsedData];
 
-        console.log(`✓ Success: ${finalArray.length} items extracted with ${usedModel}`);
-
-        return new Response(JSON.stringify({ word: finalArray }), {
+        return new Response(JSON.stringify({ word: finalArray, model: successModel }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 200,
         });
 
     } catch (error: any) {
-        console.error("Error:", error?.message || error);
-        return new Response(JSON.stringify({ error: error?.message || 'Processing failed' }), {
+        console.error("Critical Error:", error.message);
+        return new Response(JSON.stringify({ error: error.message || 'Processing failed' }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 500,
         });
