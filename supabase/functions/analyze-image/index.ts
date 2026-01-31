@@ -86,15 +86,27 @@ Deno.serve(async (req: Request) => {
 
         // 2. DOCUMENT MODE
         const PROMPT_DOCUMENT = `
-        You are a strict OCR engine. Extract ALL visible text lines EXACTLY as written.
+        You are a strict OCR engine with translation capabilities.
         
+        TASK:
+        1. Extract ALL visible text lines from the image EXACTLY as written.
+        2. Detect the language of each extracted line (English or Turkish).
+        3. Map them correctly to the JSON fields.
+
         RULES:
-        1. Read EVERY line verbatim. Do not skip.
-        2. Do NOT summarize.
-        3. If 30 lines exist, return 30 items.
-        
+        - If text is ENGLISH: Put it in "example_sentence". Translate it to Turkish and put in "turkish_sentence".
+        - If text is TURKISH: Put it in "turkish_sentence". Translate it to English and put in "example_sentence".
+        - Extract a key noun/verb from the English sentence as "english" keyword, and its Turkish Meaninig as "turkish".
+
         Return JSON array:
-        [{"english": "Keyword", "turkish": "Anahtar", "example_sentence": "Original Text Line", "turkish_sentence": "Translated Line"}]
+        [
+          {
+            "english": "Car", 
+            "turkish": "Araba", 
+            "example_sentence": "The cars are in the garage.", 
+            "turkish_sentence": "Arabalar garajda."
+          }
+        ]
         `;
 
         const PROMPT = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_VOCABULARY;
