@@ -71,10 +71,9 @@ Before responding, count the lines in the image and verify your JSON array has t
 
         // --- MODEL PRIORITY (OCR-optimized) ---
         const modelsToTry = [
-            'gemini-1.5-pro-002',      // Latest Pro with best vision
-            'gemini-1.5-pro',
-            'gemini-1.5-flash-002',
-            'gemini-1.5-flash'
+            'gemini-1.5-pro',          // Most stable Pro version
+            'gemini-1.5-flash',        // Fast fallback
+            'gemini-2.0-flash-exp'     // Experimental backup
         ];
 
         let resultText = "";
