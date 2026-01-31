@@ -96,7 +96,6 @@ Before responding, count the lines in the image and verify your JSON array has t
                         generationConfig: {
                             temperature: 0.0,        // Zero creativity
                             topP: 0.05,              // Extreme determinism
-                            topK: 1,                 // Only most likely token
                             maxOutputTokens: 32768   // Allow large lists
                         }
                     })
