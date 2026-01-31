@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "deno.window"
+        ],
+        "strict": true
+    },
+    "imports": {
+        "@google/generative-ai": "npm:@google/generative-ai"
+    }
+}
