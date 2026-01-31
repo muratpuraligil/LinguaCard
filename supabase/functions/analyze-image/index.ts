@@ -50,43 +50,67 @@ Return raw JSON: [{"english":"...","turkish":"...","example_sentence":"...","tur
 
         const selectedPrompt = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_GENERAL;
 
-        // Use gemini-pro-vision which is stable and well-supported
-        const model = genAI.getGenerativeModel({
-            model: "gemini-pro-vision"
-        });
+        // Try models in order of preference
+        const modelsToTry = [
+            "gemini-1.5-flash-latest",
+            "gemini-1.5-pro-latest",
+            "gemini-1.5-flash"
+        ];
 
-        // Generate content
-        const imagePart = {
-            inlineData: {
-                data: pureBase64,
-                mimeType: mimeType || 'image/jpeg'
+        let finalResult = null;
+        let usedModel = "";
+
+        for (const modelName of modelsToTry) {
+            try {
+                console.log(`Trying model: ${modelName}`);
+
+                const model = genAI.getGenerativeModel({
+                    model: modelName
+                });
+
+                const imagePart = {
+                    inlineData: {
+                        data: pureBase64,
+                        mimeType: mimeType || 'image/jpeg'
+                    }
+                };
+
+                const result = await model.generateContent([selectedPrompt, imagePart]);
+                const response = await result.response;
+                const text = response.text();
+
+                if (text && text.length > 10) {
+                    finalResult = text;
+                    usedModel = modelName;
+                    console.log(`✓ Success with ${modelName}`);
+                    break;
+                }
+            } catch (error: any) {
+                console.warn(`Model ${modelName} failed:`, error?.message);
+                continue;
             }
-        };
-
-        const result = await model.generateContent([selectedPrompt, imagePart]);
-        const response = await result.response;
-        const text = response.text();
-
-        if (!text || text.length < 10) {
-            throw new Error("AI returned empty response");
         }
 
-        console.log("AI Response length:", text.length);
+        if (!finalResult) {
+            throw new Error("All models failed to process the image");
+        }
+
+        console.log("AI Response length:", finalResult.length);
 
         // Parse JSON
-        const cleanJson = text.replace(/```json|```/g, '').trim();
+        const cleanJson = finalResult.replace(/```json|```/g, '').trim();
         let parsedData;
 
         try {
             parsedData = JSON.parse(cleanJson);
         } catch (parseError) {
-            console.error("JSON Parse Error. Raw:", text.substring(0, 300));
+            console.error("JSON Parse Error. Raw:", finalResult.substring(0, 300));
             throw new Error("Invalid JSON from AI");
         }
 
         const finalArray = Array.isArray(parsedData) ? parsedData : [parsedData];
 
-        console.log(`✓ Success: ${finalArray.length} items extracted`);
+        console.log(`✓ Success: ${finalArray.length} items extracted with ${usedModel}`);
 
         return new Response(JSON.stringify({ word: finalArray }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
