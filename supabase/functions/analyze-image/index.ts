@@ -78,10 +78,10 @@ Deno.serve(async (req: Request) => {
         2. IGNORE full sentences, paragraphs, or long text blocks.
         3. IGNORE URLs, web links, email addresses.
         4. IGNORE nonsense text.
-        5. For each word, provide proper Turkish translation and a SIMPLE example sentence.
+        5. For each word, provide proper Turkish translations (include 2-3 common meanings separated by commas/slashes if applicable) and a SIMPLE example sentence.
         
         Return JSON array (min 1 item):
-        [{"english": "apple", "turkish": "elma", "example_sentence": "I ate a red apple.", "turkish_sentence": "Kırmızı bir elma yedim."}]
+        [{"english": "know", "turkish": "bilmek, tanımak", "example_sentence": "I know the answer.", "turkish_sentence": "Cevabı biliyorum."}]
         `;
 
         // 2. DOCUMENT MODE
