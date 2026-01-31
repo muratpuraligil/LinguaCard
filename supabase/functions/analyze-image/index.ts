@@ -76,7 +76,7 @@ Return ONLY a raw JSON array:
 
         for (const modelName of modelsToTry) {
             try {
-                const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+                const API_URL = `https://generativelanguage.googleapis.com/v1/models/${modelName}:generateContent?key=${apiKey}`;
 
                 const response = await fetch(API_URL, {
                     method: 'POST',
