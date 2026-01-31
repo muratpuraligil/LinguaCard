@@ -1,5 +1,5 @@
 // ============================================
-// AI ANALYZER (NATIVE FETCH - NO SDK)
+// AI ANALYZER (DIAGNOSTIC MODE)
 // ============================================
 
 declare const Deno: any;
@@ -11,70 +11,45 @@ const corsHeaders = {
 };
 
 Deno.serve(async (req: Request) => {
-    // Handle CORS preflight requests
-    if (req.method === 'OPTIONS') {
-        return new Response('ok', { headers: corsHeaders });
-    }
+    if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
+
+    const errors: string[] = []; // Collect all errors log
 
     try {
         const { imageBase64, mimeType, analysisType = 'general' } = await req.json();
         const apiKey = Deno.env.get('GEMINI_API_KEY');
 
         if (!imageBase64) throw new Error('Image data missing');
-        if (!apiKey) throw new Error('API Key missing');
+        if (!apiKey) throw new Error('API Key configuration missing');
 
-        const pureBase64 = imageBase64.includes(",")
-            ? imageBase64.split(",")[1]
-            : imageBase64;
+        const pureBase64 = imageBase64.includes(",") ? imageBase64.split(",")[1] : imageBase64;
+        const finalMimeType = mimeType || 'image/jpeg';
 
-        // --- PROMPTS ---
-        const PROMPT_GENERAL = `
-Analyze this image and identify distinctive English words or objects.
-Return JSON array: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
-        `;
+        const PROMPT = analysisType === 'document'
+            ? `Extract ALL visible text lines from this image EXACTLY as written. Return JSON array: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]`
+            : `Identify objects/words. Return JSON array: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]`;
 
-        const PROMPT_DOCUMENT = `
-Extract ALL visible text lines from this image EXACTLY as written.
-RULES:
-1. Verbatim transcription (OCR).
-2. Do NOT summarize.
-3. Keep original line count.
-4. If 30 lines, return 30 items.
-
-Return JSON: [{"english":"Keyword","turkish":"Anahtar Kelime","example_sentence":"Full text line","turkish_sentence":"Tam cümle çevirisi"}]
-        `;
-
-        const selectedPrompt = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_GENERAL;
-
-        // --- ROBUST MODEL STRATEGY ---
-        // We will try multiple models and API versions until one works.
-        const strategies = [
-            { model: "gemini-1.5-flash", version: "v1beta" },
-            { model: "gemini-1.5-flash-latest", version: "v1beta" },
-            { model: "gemini-1.5-flash-001", version: "v1beta" },
-            { model: "gemini-1.5-pro", version: "v1beta" },
-            { model: "gemini-1.5-pro-latest", version: "v1beta" },
-            { model: "gemini-pro-vision", version: "v1" } // Old faithful fallback
+        // Strategy: List of endpoints to try
+        const attempts = [
+            { url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`, name: 'flash-v1beta' },
+            { url: `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent`, name: 'flash-v1' },
+            { url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent`, name: 'pro-v1beta' },
         ];
 
         let resultText = "";
-        let successModel = "";
+        let successInfo = "";
 
-        // Iterate through strategies
-        for (const strat of strategies) {
+        for (const attempt of attempts) {
             try {
-                console.log(`Trying: ${strat.model} (${strat.version})...`);
-
-                const url = `https://generativelanguage.googleapis.com/${strat.version}/models/${strat.model}:generateContent?key=${apiKey}`;
-
-                const response = await fetch(url, {
+                console.log(`Trying ${attempt.name}...`);
+                const response = await fetch(`${attempt.url}?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{
                             parts: [
-                                { text: selectedPrompt },
-                                { inline_data: { mime_type: mimeType || 'image/jpeg', data: pureBase64 } }
+                                { text: PROMPT },
+                                { inline_data: { mime_type: finalMimeType, data: pureBase64 } }
                             ]
                         }],
                         generationConfig: {
@@ -85,59 +60,60 @@ Return JSON: [{"english":"Keyword","turkish":"Anahtar Kelime","example_sentence"
                 });
 
                 if (!response.ok) {
-                    const errorText = await response.text();
-                    console.warn(`Failed ${strat.model}: ${response.status} - ${errorText.substring(0, 100)}...`);
-                    continue; // Try next model
+                    const errText = await response.text();
+                    errors.push(`${attempt.name} failed (${response.status}): ${errText.substring(0, 200)}`);
+                    console.warn(errors[errors.length - 1]);
+                    continue;
                 }
 
                 const data = await response.json();
-                const candidate = data.candidates?.[0];
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
 
-                if (candidate?.content?.parts?.[0]?.text) {
-                    resultText = candidate.content.parts[0].text;
-                    successModel = strat.model;
-                    console.log(`✓ Success with ${strat.model}`);
-                    break; // STOP LOOP, WE HAVE DATA
+                if (text) {
+                    resultText = text;
+                    successInfo = attempt.name;
+                    break;
                 } else {
-                    console.warn(`Empty response from ${strat.model}`);
+                    errors.push(`${attempt.name} returned empty candidate`);
                 }
 
-            } catch (err) {
-                console.error(`Error with ${strat.model}:`, err);
+            } catch (e: any) {
+                errors.push(`${attempt.name} exception: ${e.message}`);
             }
         }
 
         if (!resultText) {
-            throw new Error("All AI models and versions failed. Please try again later.");
+            // Throw ALL collected errors to see what happened
+            throw new Error(`All attempts failed. Logs: ${JSON.stringify(errors)}`);
         }
 
-        // --- PARSE JSON ---
+        // Parse JSON
         const cleanJson = resultText.replace(/```json|```/g, '').trim();
         let parsedData;
-
         try {
             parsedData = JSON.parse(cleanJson);
-        } catch (e) {
-            // Try to find array bracket if text is messy
+        } catch {
+            // Simple array extraction fallback
             const start = cleanJson.indexOf('[');
             const end = cleanJson.lastIndexOf(']');
-            if (start !== -1 && end !== -1) {
+            if (start > -1 && end > -1) {
                 parsedData = JSON.parse(cleanJson.substring(start, end + 1));
             } else {
-                throw new Error("Invalid JSON from AI");
+                throw new Error("Invalid JSON format from AI");
             }
         }
 
-        const finalArray = Array.isArray(parsedData) ? parsedData : [parsedData];
-
-        return new Response(JSON.stringify({ word: finalArray, model: successModel }), {
+        return new Response(JSON.stringify({ word: Array.isArray(parsedData) ? parsedData : [parsedData], model: successInfo }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 200,
         });
 
     } catch (error: any) {
-        console.error("Critical Error:", error.message);
-        return new Response(JSON.stringify({ error: error.message || 'Processing failed' }), {
+        console.error("FATAL:", error.message);
+        return new Response(JSON.stringify({
+            error: error.message,
+            details: errors
+        }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 500,
         });
