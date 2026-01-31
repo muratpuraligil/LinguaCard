@@ -1,8 +1,4 @@
-// ============================================
-// AI IMAGE ANALYZER (STABLE VERSION)
-// ============================================
-
-declare const Deno: any;
+import { GoogleGenerativeAI } from "npm:@google/generative-ai@0.21.0";
 
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -26,107 +22,74 @@ Deno.serve(async (req: Request) => {
             ? imageBase64.split(",")[1]
             : imageBase64;
 
-        // PROMPTS
+        // Initialize Gemini
+        const genAI = new GoogleGenerativeAI(apiKey);
+
+        // Prompts
         const PROMPT_GENERAL = `
 Analyze this image and identify distinct English words or objects visible in it.
-For each item, provide:
-- "english": The word in English
-- "turkish": Turkish translation
-- "example_sentence": A simple English sentence
-- "turkish_sentence": Turkish translation of the sentence
+For each item, provide JSON: {"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}
 
-Return ONLY a valid JSON array (no markdown):
-[{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
+Return ONLY a valid JSON array.
         `;
 
         const PROMPT_DOCUMENT = `
-You are analyzing an image that contains a list of sentences for language learning.
+You are analyzing an image containing sentences for language learning.
 
-TASK: Extract ALL visible text lines from the image EXACTLY as written.
+CRITICAL TASK: Extract ALL visible text lines EXACTLY as written.
 
 RULES:
-1. Read EVERY line in the image
-2. Do NOT skip any lines
-3. Do NOT create new sentences
-4. Copy text VERBATIM (word-for-word)
-5. If you see 30 lines, return 30 items
-6. Multi-column layout: Read left column first, then right column
+1. Read EVERY line - do not skip any
+2. Do NOT create new sentences
+3. Copy text VERBATIM
+4. If 30 lines exist, return 30 items
+5. Multi-column: Read left column first, then right
 
 For each line:
-- Detect if it's English or Turkish
-- If English: Put in "example_sentence" and translate to "turkish_sentence"
-- If Turkish: Put in "turkish_sentence" and translate to "example_sentence"
-- Extract a keyword for "english" and "turkish" fields
+- Detect language (English/Turkish)
+- English text → "example_sentence", translate to "turkish_sentence"
+- Turkish text → "turkish_sentence", translate to "example_sentence"
+- Extract keyword for "english" and "turkish"
 
-Return ONLY a raw JSON array:
-[{"english":"keyword","turkish":"anahtar kelime","example_sentence":"Full English sentence","turkish_sentence":"Tam Türkçe cümle"}]
+Return ONLY raw JSON array:
+[{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
         `;
 
         const selectedPrompt = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_GENERAL;
 
-        // Try these models in order
-        const modelsToTry = [
-            'gemini-1.5-pro',
-            'gemini-1.5-flash',
-            'gemini-2.0-flash-exp'
-        ];
-
-        let resultText = "";
-        let usedModel = "";
-
-        for (const modelName of modelsToTry) {
-            try {
-                const API_URL = `https://generativelanguage.googleapis.com/v1/models/${modelName}:generateContent?key=${apiKey}`;
-
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [
-                                { text: selectedPrompt },
-                                { inline_data: { mime_type: mimeType || 'image/jpeg', data: pureBase64 } }
-                            ]
-                        }],
-                        generationConfig: {
-                            temperature: 0.1,
-                            maxOutputTokens: 8192
-                        }
-                    })
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    console.warn(`Model ${modelName} failed:`, data.error?.message || 'Unknown error');
-                    continue;
-                }
-
-                const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (text && text.length > 10) {
-                    resultText = text;
-                    usedModel = modelName;
-                    console.log(`✓ Success with ${modelName}`);
-                    break;
-                }
-            } catch (e) {
-                console.error(`Error with ${modelName}:`, e);
-                continue;
+        // Model selection
+        const model = genAI.getGenerativeModel({
+            model: "gemini-1.5-flash",
+            generationConfig: {
+                temperature: 0.1,
+                maxOutputTokens: 8192,
             }
+        });
+
+        // Generate content
+        const imagePart = {
+            inlineData: {
+                data: pureBase64,
+                mimeType: mimeType || 'image/jpeg'
+            }
+        };
+
+        const result = await model.generateContent([selectedPrompt, imagePart]);
+        const response = result.response;
+        const text = response.text();
+
+        if (!text || text.length < 10) {
+            throw new Error("AI returned empty response");
         }
 
-        if (!resultText) {
-            throw new Error("All AI models failed to process the image.");
-        }
-
-        // Parse response
-        const cleanJson = resultText.replace(/```json|```/g, '').trim();
+        // Parse JSON
+        const cleanJson = text.replace(/```json|```/g, '').trim();
         let parsedData;
 
         try {
             parsedData = JSON.parse(cleanJson);
         } catch (parseError) {
-            console.error("JSON Parse Error. Raw output:", resultText.substring(0, 500));
+            console.error("JSON Parse Error. Raw output:", text.substring(0, 500));
             throw new Error("AI returned invalid JSON format.");
         }
 
@@ -140,8 +103,8 @@ Return ONLY a raw JSON array:
         });
 
     } catch (error: any) {
-        console.error("Edge Function Error:", error);
-        return new Response(JSON.stringify({ error: error.message || 'Processing failed' }), {
+        console.error("Edge Function Error:", error?.message || error);
+        return new Response(JSON.stringify({ error: error?.message || 'Processing failed' }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 500,
         });
