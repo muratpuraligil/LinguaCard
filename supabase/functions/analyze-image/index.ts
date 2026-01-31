@@ -1,5 +1,5 @@
 // ============================================
-// STRICT OCR ENGINE - NO HALLUCINATION
+// AI IMAGE ANALYZER (STABLE VERSION)
 // ============================================
 
 declare const Deno: any;
@@ -26,54 +26,49 @@ Deno.serve(async (req: Request) => {
             ? imageBase64.split(",")[1]
             : imageBase64;
 
-        // --- PROMPT CONFIGURATION ---
-
+        // PROMPTS
         const PROMPT_GENERAL = `
-          Analyze this image and extract visible English words or objects.
-          Return JSON: [{"english":"word","turkish":"kelime","example_sentence":"...","turkish_sentence":"..."}]
+Analyze this image and identify distinct English words or objects visible in it.
+For each item, provide:
+- "english": The word in English
+- "turkish": Turkish translation
+- "example_sentence": A simple English sentence
+- "turkish_sentence": Turkish translation of the sentence
+
+Return ONLY a valid JSON array (no markdown):
+[{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
         `;
 
         const PROMPT_DOCUMENT = `
-YOU ARE AN OPTICAL CHARACTER RECOGNITION (OCR) SYSTEM.
+You are analyzing an image that contains a list of sentences for language learning.
 
-YOUR ONLY TASK:
-Read the image and transcribe EVERY visible text line EXACTLY as written.
+TASK: Extract ALL visible text lines from the image EXACTLY as written.
 
-CRITICAL RULES:
-1. DO NOT generate new sentences
-2. DO NOT create examples
-3. DO NOT summarize or shorten
-4. COPY the text VERBATIM (word-for-word)
+RULES:
+1. Read EVERY line in the image
+2. Do NOT skip any lines
+3. Do NOT create new sentences
+4. Copy text VERBATIM (word-for-word)
 5. If you see 30 lines, return 30 items
-6. If you see 10 lines, return 10 items
-7. Multi-column layouts: Read LEFT column completely, then RIGHT column
+6. Multi-column layout: Read left column first, then right column
 
-LANGUAGE DETECTION:
-- If text is ENGLISH → put in "example_sentence", translate to Turkish in "turkish_sentence"
-- If text is TURKISH → put in "turkish_sentence", translate to English in "example_sentence"
-- Extract main keyword for "english" and "turkish" fields
+For each line:
+- Detect if it's English or Turkish
+- If English: Put in "example_sentence" and translate to "turkish_sentence"
+- If Turkish: Put in "turkish_sentence" and translate to "example_sentence"
+- Extract a keyword for "english" and "turkish" fields
 
-OUTPUT FORMAT (Raw JSON only):
-[
-  {
-    "english": "keyword",
-    "turkish": "anahtar kelime",
-    "example_sentence": "EXACT text from image",
-    "turkish_sentence": "Translation"
-  }
-]
-
-VERIFICATION STEP:
-Before responding, count the lines in the image and verify your JSON array has the SAME number of items.
-`;
+Return ONLY a raw JSON array:
+[{"english":"keyword","turkish":"anahtar kelime","example_sentence":"Full English sentence","turkish_sentence":"Tam Türkçe cümle"}]
+        `;
 
         const selectedPrompt = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_GENERAL;
 
-        // --- MODEL PRIORITY (OCR-optimized) ---
+        // Try these models in order
         const modelsToTry = [
-            'gemini-1.5-pro',          // Most stable Pro version
-            'gemini-1.5-flash',        // Fast fallback
-            'gemini-2.0-flash-exp'     // Experimental backup
+            'gemini-1.5-pro',
+            'gemini-1.5-flash',
+            'gemini-2.0-flash-exp'
         ];
 
         let resultText = "";
@@ -94,9 +89,8 @@ Before responding, count the lines in the image and verify your JSON array has t
                             ]
                         }],
                         generationConfig: {
-                            temperature: 0.0,        // Zero creativity
-                            topP: 0.05,              // Extreme determinism
-                            maxOutputTokens: 32768   // Allow large lists
+                            temperature: 0.1,
+                            maxOutputTokens: 8192
                         }
                     })
                 });
@@ -104,7 +98,7 @@ Before responding, count the lines in the image and verify your JSON array has t
                 const data = await response.json();
 
                 if (!response.ok) {
-                    console.warn(`Model ${modelName} failed:`, data.error?.message);
+                    console.warn(`Model ${modelName} failed:`, data.error?.message || 'Unknown error');
                     continue;
                 }
 
@@ -112,11 +106,12 @@ Before responding, count the lines in the image and verify your JSON array has t
                 if (text && text.length > 10) {
                     resultText = text;
                     usedModel = modelName;
-                    console.log(`✓ Success with ${modelName}, output length: ${text.length}`);
+                    console.log(`✓ Success with ${modelName}`);
                     break;
                 }
             } catch (e) {
                 console.error(`Error with ${modelName}:`, e);
+                continue;
             }
         }
 
@@ -124,7 +119,7 @@ Before responding, count the lines in the image and verify your JSON array has t
             throw new Error("All AI models failed to process the image.");
         }
 
-        // --- PARSING ---
+        // Parse response
         const cleanJson = resultText.replace(/```json|```/g, '').trim();
         let parsedData;
 
@@ -137,9 +132,9 @@ Before responding, count the lines in the image and verify your JSON array has t
 
         const finalArray = Array.isArray(parsedData) ? parsedData : [parsedData];
 
-        console.log(`✓ Extracted ${finalArray.length} items using ${usedModel}`);
+        console.log(`✓ Extracted ${finalArray.length} items`);
 
-        return new Response(JSON.stringify({ word: finalArray, model: usedModel, count: finalArray.length }), {
+        return new Response(JSON.stringify({ word: finalArray }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 200,
         });
