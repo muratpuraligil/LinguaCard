@@ -50,9 +50,54 @@ Deno.serve(async (req: Request) => {
         const genUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
         const pureBase64 = imageBase64.includes(",") ? imageBase64.split(",")[1] : imageBase64;
 
-        const PROMPT = analysisType === 'document'
-            ? `Extract ALL text lines EXACTLY. Return JSON: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]`
-            : `Identify objects. Return JSON: [{"english":"...","turkish":"..."}]`;
+        // --- PROMPTS ---
+
+        // 1. VOCABULARY MODE (For Main Dashboard):
+        // Strict rule: Extract ONLY distinct single words. Ignore full sentences, URLs, and noise.
+        const PROMPT_VOCABULARY = `
+        Analyze this image and extract a list of useful English vocabulary words.
+        
+        STRICT RULES:
+        1. Extract ONLY single words or short phrases (max 3 words).
+        2. IGNORE full sentences, paragraphs, or long text blocks.
+        3. IGNORE URLs, web links, email addresses (e.g. https://..., .com).
+        4. IGNORE nonsense text or system logs.
+        5. For each word, provide proper Turkish translation and a SIMPLE example sentence.
+        
+        Return JSON array:
+        [
+          {
+            "english": "apple",
+            "turkish": "elma",
+            "example_sentence": "I ate a red apple.",
+            "turkish_sentence": "Kırmızı bir elma yedim."
+          }
+        ]
+        `;
+
+        // 2. DOCUMENT/SENTENCE MODE (For Custom Sets):
+        // Strict rule: OCR transcription. Read everything line by line.
+        const PROMPT_DOCUMENT = `
+        You are a strict OCR engine. Extract ALL visible text lines EXACTLY as written.
+        
+        RULES:
+        1. Read EVERY line verbatim. Do not skip.
+        2. Do NOT summarize.
+        3. If 30 lines exist, return 30 items.
+        4. Multi-column: Read left column first, then right.
+        
+        Return JSON array:
+        [
+          {
+            "english": "Main Keyword",
+            "turkish": "Anahtar Kelime",
+            "example_sentence": "Full text line from image",
+            "turkish_sentence": "Translated text line"
+          }
+        ]
+        `;
+
+        const PROMPT = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_VOCABULARY;
 
         const genResp = await fetch(genUrl, {
             method: 'POST',
