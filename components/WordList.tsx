@@ -65,6 +65,14 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
+
+    // Mükerrer Kontrolü (Case-Insensitive)
+    const exists = words.some(w => w.english.trim().toLowerCase() === newEng.trim().toLowerCase());
+    if (exists) {
+      setFormError('Bu kelime zaten listenizde mevcut!');
+      return;
+    }
+
     setIsSubmitting(true);
     const success = await onAdd(newEng, newTr, newEx, newTrEx);
     setIsSubmitting(false);
@@ -72,7 +80,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
       setNewEng(''); setNewTr(''); setNewEx(''); setNewTrEx('');
       setIsAdding(false);
     } else {
-      setFormError('Bu kelime zaten listenizde mevcut!');
+      setFormError('Bir hata oluştu, tekrar deneyin.');
     }
   };
 
