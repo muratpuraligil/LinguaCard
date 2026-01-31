@@ -1,5 +1,5 @@
 // ============================================
-// AI ANALYZER (Deterministic OCR Version)
+// STRICT OCR ENGINE - NO HALLUCINATION
 // ============================================
 
 declare const Deno: any;
@@ -26,41 +26,55 @@ Deno.serve(async (req: Request) => {
             ? imageBase64.split(",")[1]
             : imageBase64;
 
-        // --- PROMPT SETTINGS ---
+        // --- PROMPT CONFIGURATION ---
 
         const PROMPT_GENERAL = `
-          Extract words/phrases from this image for English learning.
-          Return a JSON array: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
+          Analyze this image and extract visible English words or objects.
+          Return JSON: [{"english":"word","turkish":"kelime","example_sentence":"...","turkish_sentence":"..."}]
         `;
 
         const PROMPT_DOCUMENT = `
-          ACT AS A HIGH-PRECISION OCR ENGINE.
-          IMAGE CONTENT: A list of sentences or words for language learning.
-          
-          TASK:
-          1. TRANSCRIBE EVERY SINGLE VISIBLE LINE. Do not skip or summarize.
-          2. Maintain the original order.
-          3. If multi-column, read all columns (Left then Right).
-          4. For each line:
-             - Detect language (English or Turkish).
-             - "example_sentence": The English version.
-             - "turkish_sentence": The Turkish version.
-             - "english": A main keyword/topic in English.
-             - "turkish": A main keyword/topic in Turkish.
-          
-          STRICT LIMIT: Return ALL items found in the image. If 30 lines exist, return 30 objects.
-          
-          OUTPUT: Return ONLY a raw JSON array.
-          Example: [{"english":"...","turkish":"...","example_sentence":"...","turkish_sentence":"..."}]
-        `;
+YOU ARE AN OPTICAL CHARACTER RECOGNITION (OCR) SYSTEM.
+
+YOUR ONLY TASK:
+Read the image and transcribe EVERY visible text line EXACTLY as written.
+
+CRITICAL RULES:
+1. DO NOT generate new sentences
+2. DO NOT create examples
+3. DO NOT summarize or shorten
+4. COPY the text VERBATIM (word-for-word)
+5. If you see 30 lines, return 30 items
+6. If you see 10 lines, return 10 items
+7. Multi-column layouts: Read LEFT column completely, then RIGHT column
+
+LANGUAGE DETECTION:
+- If text is ENGLISH → put in "example_sentence", translate to Turkish in "turkish_sentence"
+- If text is TURKISH → put in "turkish_sentence", translate to English in "example_sentence"
+- Extract main keyword for "english" and "turkish" fields
+
+OUTPUT FORMAT (Raw JSON only):
+[
+  {
+    "english": "keyword",
+    "turkish": "anahtar kelime",
+    "example_sentence": "EXACT text from image",
+    "turkish_sentence": "Translation"
+  }
+]
+
+VERIFICATION STEP:
+Before responding, count the lines in the image and verify your JSON array has the SAME number of items.
+`;
 
         const selectedPrompt = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_GENERAL;
 
-        // --- MODEL FAILOVER ---
+        // --- MODEL PRIORITY (OCR-optimized) ---
         const modelsToTry = [
+            'gemini-1.5-pro-002',      // Latest Pro with best vision
             'gemini-1.5-pro',
-            'gemini-1.5-flash',
-            'gemini-2.0-flash-exp'
+            'gemini-1.5-flash-002',
+            'gemini-1.5-flash'
         ];
 
         let resultText = "";
@@ -81,20 +95,26 @@ Deno.serve(async (req: Request) => {
                             ]
                         }],
                         generationConfig: {
-                            temperature: 0.0,
-                            topP: 0.1,
-                            maxOutputTokens: 20480
+                            temperature: 0.0,        // Zero creativity
+                            topP: 0.05,              // Extreme determinism
+                            topK: 1,                 // Only most likely token
+                            maxOutputTokens: 32768   // Allow large lists
                         }
                     })
                 });
 
                 const data = await response.json();
-                if (!response.ok) continue;
+
+                if (!response.ok) {
+                    console.warn(`Model ${modelName} failed:`, data.error?.message);
+                    continue;
+                }
 
                 const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (text) {
+                if (text && text.length > 10) {
                     resultText = text;
                     usedModel = modelName;
+                    console.log(`✓ Success with ${modelName}, output length: ${text.length}`);
                     break;
                 }
             } catch (e) {
@@ -102,20 +122,33 @@ Deno.serve(async (req: Request) => {
             }
         }
 
-        if (!resultText) throw new Error("AI failed to process image.");
+        if (!resultText) {
+            throw new Error("All AI models failed to process the image.");
+        }
 
         // --- PARSING ---
         const cleanJson = resultText.replace(/```json|```/g, '').trim();
-        const parsedData = JSON.parse(cleanJson);
+        let parsedData;
+
+        try {
+            parsedData = JSON.parse(cleanJson);
+        } catch (parseError) {
+            console.error("JSON Parse Error. Raw output:", resultText.substring(0, 500));
+            throw new Error("AI returned invalid JSON format.");
+        }
+
         const finalArray = Array.isArray(parsedData) ? parsedData : [parsedData];
 
-        return new Response(JSON.stringify({ word: finalArray, model: usedModel }), {
+        console.log(`✓ Extracted ${finalArray.length} items using ${usedModel}`);
+
+        return new Response(JSON.stringify({ word: finalArray, model: usedModel, count: finalArray.length }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 200,
         });
 
     } catch (error: any) {
-        return new Response(JSON.stringify({ error: error.message }), {
+        console.error("Edge Function Error:", error);
+        return new Response(JSON.stringify({ error: error.message || 'Processing failed' }), {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
             status: 500,
         });
