@@ -254,7 +254,7 @@ const CustomSetManager: React.FC<CustomSetManagerProps> = ({ words, onExit, onPl
                     </button>
                     <div>
                         <h1 className="text-2xl font-black mb-1 tracking-tight">Özel Cümle Setleri</h1>
-                        <p className="text-slate-500 font-bold text-sm">Çeviri çalışmaları için örnek cümleler ile alıştırma yap...</p>
+                        <p className="text-slate-500 font-bold text-sm">Çeviri çalışmaları için örnek cümleleri resim ya da pdf dosyalarını yükleyerek çalışma seti oluşturun.</p>
                     </div>
                 </div>
 
@@ -277,7 +277,7 @@ const CustomSetManager: React.FC<CustomSetManagerProps> = ({ words, onExit, onPl
                                 </div>
                                 <button onClick={() => setShowInput(true)} className="px-6 py-3 bg-white text-blue-950 rounded-xl font-black hover:bg-blue-50 transition-all shadow-xl active:scale-95 whitespace-nowrap flex items-center gap-2 text-xs">
                                     <Image size={16} />
-                                    Resim ile Başla
+                                    Set Oluştur
                                 </button>
                             </div>
                         ) : (
