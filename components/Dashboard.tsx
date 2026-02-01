@@ -3,7 +3,7 @@ import React from 'react';
 import { Word, AppMode } from '../types';
 import WordList from './WordList';
 import GradientText from './GradientText';
-import Antigravity from './Antigravity';
+import Aurora from './Aurora';
 import AnimatedCard from './AnimatedCard';
 import { BookOpen, Puzzle, Sparkles, Plus, LogOut, Download, Image, Book, Archive } from 'lucide-react';
 
@@ -62,24 +62,14 @@ const Dashboard: React.FC<DashboardProps> = ({
         <div className="px-8 my-6">
           <div className="bg-gradient-to-r from-indigo-900 via-blue-900 to-slate-900 p-6 md:p-8 rounded-[32px] border border-blue-500/30 relative overflow-hidden group shadow-2xl">
 
+
             {/* Background Effect */}
-            <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
-              <Antigravity
-                count={300}
-                magnetRadius={6}
-                ringRadius={7}
-                waveSpeed={0.4}
-                waveAmplitude={1}
-                particleSize={1.5}
-                lerpSpeed={0.25}
-                color="#cbd813"
-                autoAnimate
-                particleVariance={1}
-                rotationSpeed={0}
-                depthFactor={1}
-                pulseSpeed={3}
-                particleShape="capsule"
-                fieldStrength={10}
+            <div className="absolute inset-0 z-0 opacity-60 mix-blend-screen pointer-events-none">
+              <Aurora
+                colorStops={['#3B82F6', '#4F46E5', '#8B5CF6']}
+                amplitude={1.2}
+                speed={0.5}
+                blend={0.6}
               />
             </div>
 
