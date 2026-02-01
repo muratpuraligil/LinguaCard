@@ -143,8 +143,8 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                             >
                                 <Check size={12} strokeWidth={3} /> Öğrendim
                             </button>
-                            <p className={`absolute bottom-5 text-[8px] font-bold opacity-40 px-12 text-center leading-tight ${isFrontTR ? 'text-white' : 'text-black'}`}>
-                                Öğrendim, ilgili kelimeyi kelime listesinden kaldırır ve arşive taşır.
+                            <p className={`absolute bottom-5 text-[10px] font-bold opacity-40 px-12 text-center leading-tight ${isFrontTR ? 'text-white' : 'text-black'}`}>
+                                Kelimeyi arşive taşır.
                             </p>
                         </div>
 
@@ -176,8 +176,8 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                             >
                                 <Check size={12} strokeWidth={3} /> Öğrendim
                             </button>
-                            <p className={`absolute bottom-5 text-[8px] font-bold opacity-40 px-12 text-center leading-tight ${isFrontTR ? 'text-black' : 'text-white'}`}>
-                                Öğrendim, ilgili kelimeyi kelime listesinden kaldırır ve arşive taşır.
+                            <p className={`absolute bottom-5 text-[10px] font-bold opacity-40 px-12 text-center leading-tight ${isFrontTR ? 'text-black' : 'text-white'}`}>
+                                Kelimeyi arşive taşır.
                             </p>
                         </div>
                     </div>
