@@ -60,16 +60,16 @@ const Dashboard: React.FC<DashboardProps> = ({
         </div>
 
         <div className="px-8 my-6">
-          <div className="bg-gradient-to-r from-indigo-900 via-blue-900 to-slate-900 p-6 md:p-8 rounded-[32px] border border-blue-500/30 relative overflow-hidden group shadow-2xl">
+          <div className="bg-zinc-900 p-6 md:p-8 rounded-[32px] border border-white/10 relative overflow-hidden group shadow-2xl">
 
 
             {/* Background Effect */}
-            <div className="absolute inset-0 z-0 opacity-60 mix-blend-screen pointer-events-none">
+            <div className="absolute inset-0 z-0 pointer-events-none">
               <Aurora
-                colorStops={['#3B82F6', '#4F46E5', '#8B5CF6']}
-                amplitude={1.2}
+                colorStops={['#4ade80', '#60a5fa', '#a855f7']}
+                amplitude={1.0}
                 speed={0.5}
-                blend={0.6}
+                blend={0.5}
               />
             </div>
 
