@@ -4,7 +4,7 @@ import { Word, AppMode } from '../types';
 import WordList from './WordList';
 import GradientText from './GradientText';
 import Antigravity from './Antigravity';
-import SpotlightCard from './SpotlightCard';
+import AnimatedCard from './AnimatedCard';
 import { BookOpen, Puzzle, Sparkles, Plus, LogOut, Download, Image, Book, Archive } from 'lucide-react';
 
 interface DashboardProps {
@@ -112,36 +112,45 @@ const Dashboard: React.FC<DashboardProps> = ({
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-8 mb-10">
-          <SpotlightCard
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-8 mb-10 perspective-1000">
+          <AnimatedCard
             onClick={() => onModeSelect(AppMode.FLASHCARDS)}
-            className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-yellow-500 hover:border-yellow-400 transition-all text-left group shadow-lg"
-            spotlightColor="rgba(234, 179, 8, 0.15)"
+            className="rounded-[32px] border-b-4 border-yellow-500 bg-zinc-900/80"
+            glowColor="#eab308"
+            delay={0.1}
           >
-            <div className="bg-yellow-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-yellow-500 group-hover:scale-110 transition-all"><BookOpen size={24} /></div>
-            <h3 className="text-xl font-black mb-2 text-white">Kartlar</h3>
-            <p className="text-xs text-slate-400 font-bold leading-relaxed">20 kelimelik setler halinde çalış.</p>
-          </SpotlightCard>
+            <div className="p-6 h-full flex flex-col items-start relative z-20">
+              <div className="bg-yellow-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-yellow-500 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"><BookOpen size={24} /></div>
+              <h3 className="text-xl font-black mb-2 text-white group-hover:text-yellow-400 transition-colors">Kartlar</h3>
+              <p className="text-xs text-slate-400 font-bold leading-relaxed">20 kelimelik setler halinde çalış.</p>
+            </div>
+          </AnimatedCard>
 
-          <SpotlightCard
+          <AnimatedCard
             onClick={() => onModeSelect(AppMode.QUIZ)}
-            className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-emerald-500 hover:border-emerald-400 transition-all text-left group shadow-lg"
-            spotlightColor="rgba(16, 185, 129, 0.15)"
+            className="rounded-[32px] border-b-4 border-emerald-500 bg-zinc-900/80"
+            glowColor="#10b981"
+            delay={0.2}
           >
-            <div className="bg-emerald-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-emerald-500 group-hover:scale-110 transition-all"><Puzzle size={24} /></div>
-            <h3 className="text-xl font-black mb-2 text-white">Test Çöz</h3>
-            <p className="text-xs text-slate-400 font-bold leading-relaxed">Öğrendiklerini test ederek puan topla.</p>
-          </SpotlightCard>
+            <div className="p-6 h-full flex flex-col items-start relative z-20">
+              <div className="bg-emerald-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-emerald-500 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"><Puzzle size={24} /></div>
+              <h3 className="text-xl font-black mb-2 text-white group-hover:text-emerald-400 transition-colors">Test Çöz</h3>
+              <p className="text-xs text-slate-400 font-bold leading-relaxed">Öğrendiklerini test ederek puan topla.</p>
+            </div>
+          </AnimatedCard>
 
-          <SpotlightCard
+          <AnimatedCard
             onClick={() => onModeSelect(AppMode.SENTENCES)}
-            className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-purple-500 hover:border-purple-400 transition-all text-left group shadow-lg"
-            spotlightColor="rgba(168, 85, 247, 0.15)"
+            className="rounded-[32px] border-b-4 border-purple-500 bg-zinc-900/80"
+            glowColor="#a855f7"
+            delay={0.3}
           >
-            <div className="bg-purple-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-purple-500 group-hover:scale-110 transition-all"><Sparkles size={24} /></div>
-            <h3 className="text-xl font-black mb-2 text-white">Cümleler</h3>
-            <p className="text-xs text-slate-400 font-bold leading-relaxed">Cümle kurma pratiği yap.</p>
-          </SpotlightCard>
+            <div className="p-6 h-full flex flex-col items-start relative z-20">
+              <div className="bg-purple-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-purple-500 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"><Sparkles size={24} /></div>
+              <h3 className="text-xl font-black mb-2 text-white group-hover:text-purple-400 transition-colors">Cümleler</h3>
+              <p className="text-xs text-slate-400 font-bold leading-relaxed">Cümle kurma pratiği yap.</p>
+            </div>
+          </AnimatedCard>
         </div>
 
         <div className="px-8 pb-20">
