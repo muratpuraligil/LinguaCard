@@ -4,6 +4,7 @@ import { Word, AppMode } from '../types';
 import WordList from './WordList';
 import GradientText from './GradientText';
 import Antigravity from './Antigravity';
+import SpotlightCard from './SpotlightCard';
 import { BookOpen, Puzzle, Sparkles, Plus, LogOut, Download, Image, Book, Archive } from 'lucide-react';
 
 interface DashboardProps {
@@ -110,22 +111,37 @@ const Dashboard: React.FC<DashboardProps> = ({
           </div>
         </div>
 
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-8 mb-10">
-          <button onClick={() => onModeSelect(AppMode.FLASHCARDS)} className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-yellow-500 hover:border-yellow-400 transition-all text-left group shadow-lg">
+          <SpotlightCard
+            onClick={() => onModeSelect(AppMode.FLASHCARDS)}
+            className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-yellow-500 hover:border-yellow-400 transition-all text-left group shadow-lg"
+            spotlightColor="rgba(234, 179, 8, 0.15)"
+          >
             <div className="bg-yellow-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-yellow-500 group-hover:scale-110 transition-all"><BookOpen size={24} /></div>
             <h3 className="text-xl font-black mb-2 text-white">Kartlar</h3>
             <p className="text-xs text-slate-400 font-bold leading-relaxed">20 kelimelik setler halinde çalış.</p>
-          </button>
-          <button onClick={() => onModeSelect(AppMode.QUIZ)} className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-emerald-500 hover:border-emerald-400 transition-all text-left group shadow-lg">
+          </SpotlightCard>
+
+          <SpotlightCard
+            onClick={() => onModeSelect(AppMode.QUIZ)}
+            className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-emerald-500 hover:border-emerald-400 transition-all text-left group shadow-lg"
+            spotlightColor="rgba(16, 185, 129, 0.15)"
+          >
             <div className="bg-emerald-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-emerald-500 group-hover:scale-110 transition-all"><Puzzle size={24} /></div>
             <h3 className="text-xl font-black mb-2 text-white">Test Çöz</h3>
             <p className="text-xs text-slate-400 font-bold leading-relaxed">Öğrendiklerini test ederek puan topla.</p>
-          </button>
-          <button onClick={() => onModeSelect(AppMode.SENTENCES)} className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-purple-500 hover:border-purple-400 transition-all text-left group shadow-lg">
+          </SpotlightCard>
+
+          <SpotlightCard
+            onClick={() => onModeSelect(AppMode.SENTENCES)}
+            className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-purple-500 hover:border-purple-400 transition-all text-left group shadow-lg"
+            spotlightColor="rgba(168, 85, 247, 0.15)"
+          >
             <div className="bg-purple-500/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-purple-500 group-hover:scale-110 transition-all"><Sparkles size={24} /></div>
             <h3 className="text-xl font-black mb-2 text-white">Cümleler</h3>
             <p className="text-xs text-slate-400 font-bold leading-relaxed">Cümle kurma pratiği yap.</p>
-          </button>
+          </SpotlightCard>
         </div>
 
         <div className="px-8 pb-20">
