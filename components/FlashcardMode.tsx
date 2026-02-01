@@ -139,10 +139,13 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
 
                             <button
                                 onClick={handleArchive}
-                                className={`absolute bottom-8 px-5 py-2.5 rounded-full font-black text-[9px] uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 ${isFrontTR ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white shadow-lg' : 'bg-black/10 text-black/50 border border-black/10 hover:bg-black hover:text-white shadow-sm'}`}
+                                className={`absolute bottom-12 px-5 py-2.5 rounded-full font-black text-[9px] uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 ${isFrontTR ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white shadow-lg' : 'bg-black/10 text-black/50 border border-black/10 hover:bg-black hover:text-white shadow-sm'}`}
                             >
                                 <Check size={12} strokeWidth={3} /> Öğrendim
                             </button>
+                            <p className={`absolute bottom-5 text-[8px] font-bold opacity-40 px-12 text-center leading-tight ${isFrontTR ? 'text-white' : 'text-black'}`}>
+                                Öğrendim, ilgili kelimeyi kelime listesinden kaldırır ve arşive taşır.
+                            </p>
                         </div>
 
                         {/* ARKA YÜZ */}
@@ -169,10 +172,13 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
 
                             <button
                                 onClick={handleArchive}
-                                className={`absolute bottom-8 px-5 py-2.5 rounded-full font-black text-[9px] uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 ${isFrontTR ? 'bg-black/10 text-black/50 border border-black/10 hover:bg-black hover:text-white shadow-sm' : 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white shadow-lg'}`}
+                                className={`absolute bottom-12 px-5 py-2.5 rounded-full font-black text-[9px] uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 ${isFrontTR ? 'bg-black/10 text-black/50 border border-black/10 hover:bg-black hover:text-white shadow-sm' : 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white shadow-lg'}`}
                             >
                                 <Check size={12} strokeWidth={3} /> Öğrendim
                             </button>
+                            <p className={`absolute bottom-5 text-[8px] font-bold opacity-40 px-12 text-center leading-tight ${isFrontTR ? 'text-black' : 'text-white'}`}>
+                                Öğrendim, ilgili kelimeyi kelime listesinden kaldırır ve arşive taşır.
+                            </p>
                         </div>
                     </div>
                 </div>

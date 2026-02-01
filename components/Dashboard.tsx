@@ -75,14 +75,9 @@ const Dashboard: React.FC<DashboardProps> = ({
 
             <div className="relative z-10">
               <div className="mb-2">
-                <GradientText
-                  colors={["#f2eee8", "#ffdb9e", "#eed65d", "#ffef42", "#ccaa00"]}
-                  animationSpeed={8}
-                  showBorder={false}
-                  className="text-2xl font-black tracking-tight !m-0 !justify-start"
-                >
+                <h2 className="text-2xl font-black tracking-tight text-white mb-1 z-10 relative drop-shadow-md">
                   Hadi Pratik Yapalım!
-                </GradientText>
+                </h2>
               </div>
               <p className="text-blue-200/70 font-medium text-sm mb-6">Kütüphanende aktif <span className="text-yellow-400 font-black text-lg">{words.length}</span> kelime var.</p>
               <div className="flex items-center gap-3">
