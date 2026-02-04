@@ -117,7 +117,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
 
                         {/* ÖN YÜZ */}
                         <div className={`absolute inset-0 backface-hidden rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-zinc-950 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
-                            <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-white' : 'text-black'}`}>{isFrontTR ? 'Turkish' : 'English'}</div>
+                            <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-white' : 'text-black'}`}>{isFrontTR ? 'TURKISH' : 'ENGLISH'}</div>
 
                             {!isFrontTR && (
                                 <button
@@ -136,7 +136,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                             )}
 
                             <div className="flex flex-col items-center mt-4">
-                                <span className={`text-xs font-black uppercase tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/40'}`}>Çeviri için tıkla!!!</span>
+                                <span className={`text-xs font-black tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/40'}`}>ÇEVIRI IÇIN TIKLA!!!</span>
                             </div>
 
                             <button
@@ -152,7 +152,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
 
                         {/* ARKA YÜZ */}
                         <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-950 text-white border-2 border-zinc-800'}`}>
-                            <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-black' : 'text-white'}`}>{isFrontTR ? 'English' : 'Turkish'}</div>
+                            <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-black' : 'text-white'}`}>{isFrontTR ? 'ENGLISH' : 'TURKISH'}</div>
 
                             {isFrontTR && (
                                 <button
@@ -171,7 +171,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                             )}
 
                             <div className="flex flex-col items-center mt-4">
-                                <span className={`text-xs font-black uppercase tracking-widest animate-blink ${isFrontTR ? 'text-black/40' : 'text-blue-400'}`}>Kelimeye Dön!!!</span>
+                                <span className={`text-xs font-black tracking-widest animate-blink ${isFrontTR ? 'text-black/40' : 'text-blue-400'}`}>KELIMEYE DÖN!!!</span>
                             </div>
 
                             <button
