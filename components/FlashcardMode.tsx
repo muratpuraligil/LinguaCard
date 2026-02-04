@@ -136,7 +136,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                             )}
 
                             <div className="flex flex-col items-center mt-4">
-                                <span className={`text-xs font-black tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/40'}`}>ÇEVIRI IÇIN TIKLA!!!</span>
+                                <span className={`text-xs font-black tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/40'}`}>ÇEVİRİ İÇİN TIKLA!!!</span>
                             </div>
 
                             <button
@@ -171,7 +171,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                             )}
 
                             <div className="flex flex-col items-center mt-4">
-                                <span className={`text-xs font-black tracking-widest animate-blink ${isFrontTR ? 'text-black/40' : 'text-blue-400'}`}>KELIMEYE DÖN!!!</span>
+                                <span className={`text-xs font-black tracking-widest animate-blink ${isFrontTR ? 'text-black/40' : 'text-blue-400'}`}>KELİMEYE DÖN!!!</span>
                             </div>
 
                             <button
