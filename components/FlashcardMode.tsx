@@ -119,6 +119,14 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                         <div className={`absolute inset-0 backface-hidden rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-zinc-950 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
                             <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-white' : 'text-black'}`}>{isFrontTR ? 'Turkish' : 'English'}</div>
 
+                            {!isFrontTR && (
+                                <button
+                                    onClick={(e) => speak(e, frontWord, 'en-US')}
+                                    className="mb-2 p-3 rounded-2xl bg-black/5 text-black/40 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
+                                >
+                                    <Volume2 size={28} />
+                                </button>
+                            )}
                             <h2 className="text-3xl md:text-4xl font-black text-center mb-6 tracking-tighter leading-tight">{frontWord}</h2>
 
                             {frontSentence && (
@@ -127,14 +135,8 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                                 </p>
                             )}
 
-                            <div className="flex flex-col items-center gap-2">
-                                <button
-                                    onClick={(e) => speak(e, frontWord, isFrontTR ? 'tr-TR' : 'en-US')}
-                                    className={`p-4 rounded-2xl transition-all active:scale-90 ${isFrontTR ? 'bg-white/5 text-slate-400 hover:text-white' : 'bg-black/5 text-black/40 hover:bg-black/10'}`}
-                                >
-                                    <Volume2 size={24} />
-                                </button>
-                                <span className={`text-[9px] font-black uppercase tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/40'}`}>Çeviri için tıkla!!!</span>
+                            <div className="flex flex-col items-center mt-4">
+                                <span className={`text-xs font-black uppercase tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/40'}`}>Çeviri için tıkla!!!</span>
                             </div>
 
                             <button
@@ -152,6 +154,14 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                         <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-950 text-white border-2 border-zinc-800'}`}>
                             <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-black' : 'text-white'}`}>{isFrontTR ? 'English' : 'Turkish'}</div>
 
+                            {isFrontTR && (
+                                <button
+                                    onClick={(e) => speak(e, backWord, 'en-US')}
+                                    className="mb-2 p-3 rounded-2xl bg-white/5 text-slate-400 hover:text-white transition-all active:scale-90"
+                                >
+                                    <Volume2 size={28} />
+                                </button>
+                            )}
                             <h2 className="text-3xl md:text-4xl font-black text-center mb-6 tracking-tighter leading-tight">{backWord}</h2>
 
                             {backSentence && (
@@ -160,14 +170,8 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                                 </p>
                             )}
 
-                            <div className="flex flex-col items-center gap-2">
-                                <button
-                                    onClick={(e) => speak(e, backWord, isFrontTR ? 'en-US' : 'tr-TR')}
-                                    className={`p-4 rounded-2xl transition-all active:scale-90 ${isFrontTR ? 'bg-black/5 text-black/40 hover:bg-black/10' : 'bg-white/5 text-slate-400 hover:text-white'}`}
-                                >
-                                    <Volume2 size={24} />
-                                </button>
-                                <span className={`text-[9px] font-black uppercase tracking-widest animate-blink ${isFrontTR ? 'text-black/40' : 'text-blue-400'}`}>Kelimeye Dön!!!</span>
+                            <div className="flex flex-col items-center mt-4">
+                                <span className={`text-xs font-black uppercase tracking-widest animate-blink ${isFrontTR ? 'text-black/40' : 'text-blue-400'}`}>Kelimeye Dön!!!</span>
                             </div>
 
                             <button
