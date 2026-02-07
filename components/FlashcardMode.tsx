@@ -80,7 +80,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                 <p className="text-slate-500 mb-10 font-bold">Bu gruptaki tüm kelimeleri inceledin.</p>
                 <div className="space-y-4 w-full max-w-xs">
                     <button onClick={() => { setIsFinished(false); setCurrentIndex(0); onNextSet(); }} className="w-full py-4 bg-blue-600 text-white rounded-2xl font-black text-lg shadow-xl active:scale-95 transition-all">Sıradaki Set</button>
-                    <button onClick={onExit} className="w-full py-4 bg-zinc-900 text-white rounded-2xl font-black text-lg border border-white/5 active:scale-95 transition-all">Ana Sayfa</button>
+                    <button onClick={() => { onNextSet(); onExit(); }} className="w-full py-4 bg-zinc-900 text-white rounded-2xl font-black text-lg border border-white/5 active:scale-95 transition-all">Ana Sayfa</button>
                 </div>
             </div>
         );
