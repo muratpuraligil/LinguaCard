@@ -104,8 +104,9 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit }) => {
 
     const speak = () => {
         window.speechSynthesis.cancel();
-        const textToSpeak = direction === LanguageDirection.TR_EN ? currentWord.turkish_sentence : currentWord.example_sentence;
-        const lang = direction === LanguageDirection.TR_EN ? 'tr-TR' : 'en-US';
+        // Always speak English sentence as requested
+        const textToSpeak = currentWord.example_sentence;
+        const lang = 'en-US';
 
         const u = new SpeechSynthesisUtterance(textToSpeak);
         u.lang = lang;

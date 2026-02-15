@@ -70,3 +70,44 @@ export async function analyzeImage(
     throw err;
   }
 }
+
+/**
+ * Metin analizi için Supabase Edge Function'ı çağırır.
+ */
+export async function analyzeText(
+  text: string,
+  session: any,
+  signal?: AbortSignal
+) {
+  try {
+    const { data, error } = await supabase.functions.invoke('analyze-image', {
+      body: {
+        textInput: text,
+        analysisType: 'text'
+      }
+    });
+
+    if (error) {
+      console.error("Text Analysis Error:", error);
+      throw new Error(error.message || "Analiz servisi hatası");
+    }
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    if (data.word && data.word.length > 0) {
+      // Tek obje dönerse array içinde döner, biz ilkini alırız
+      return data.word[0];
+    }
+
+    // Eğer direkt obje döndüyse
+    if (data.word && !Array.isArray(data.word)) return data.word;
+
+    throw new Error("Anlamlı bir sonuç üretilemedi.");
+
+  } catch (err: any) {
+    console.error("analyzeText hatası:", err.message);
+    throw err;
+  }
+}

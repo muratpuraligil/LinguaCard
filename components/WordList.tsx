@@ -1,7 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Word } from '../types';
-import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote } from 'lucide-react';
+import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive } from 'lucide-react';
+import { analyzeText } from '../services/analyzeImage';
+import { supabase } from '../services/supabaseClient';
+import ArchiveModal from './ArchiveModal';
 
 interface WordListProps {
   words: Word[];
@@ -9,9 +12,10 @@ interface WordListProps {
   onDeleteByDate: (date: string) => void;
   onAdd: (english: string, turkish: string, example: string, turkish_sentence: string) => Promise<boolean>;
   onOpenUpload: () => void;
+  onArchive: (id: string) => void;
 }
 
-const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, onAdd, onOpenUpload }) => {
+const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, onAdd, onOpenUpload, onArchive }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isAdding, setIsAdding] = useState(false);
   const [visibleCount, setVisibleCount] = useState(20);
@@ -23,6 +27,8 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
 
   const [formError, setFormError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAiFilling, setIsAiFilling] = useState(false);
+  const [archiveId, setArchiveId] = useState<string | null>(null);
 
   // Çevirisi açık olan cümlenin ID'si
   const [flippedSentenceId, setFlippedSentenceId] = useState<string | null>(null);
@@ -84,6 +90,34 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     }
   };
 
+  const handleAiFill = async () => {
+    const input = newEng || newTr;
+    if (!input || input.trim().length < 2) {
+      setFormError('Lütfen en az bir kelime girin.');
+      return;
+    }
+
+    setIsAiFilling(true);
+    setFormError(null);
+
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const result = await analyzeText(input, session);
+
+      if (result) {
+        setNewEng(result.english || newEng);
+        setNewTr(result.turkish || newTr);
+        setNewEx(result.example_sentence || '');
+        setNewTrEx(result.turkish_sentence || '');
+      }
+    } catch (err: any) {
+      console.error(err);
+      setFormError(err.message || 'AI ile doldurma başarısız.');
+    } finally {
+      setIsAiFilling(false);
+    }
+  };
+
   const formatDate = (dateStr?: string) => {
     if (!dateStr) return 'Tarih Yok';
     return new Date(dateStr).toLocaleDateString('tr-TR', { day: 'numeric', month: 'numeric', year: 'numeric' });
@@ -126,12 +160,42 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
               <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Manuel Giriş</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm" />
-              <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Karşılığı" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm" />
+              <div className="relative">
+                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
+              </div>
+              <div className="relative">
+                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Karşılığı" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
+              </div>
             </div>
+
+            {/* AI Action Button & Clear */}
+            <div className="flex justify-between items-center mb-6">
+              <button
+                type="button"
+                onClick={() => {
+                  setNewEng(''); setNewTr(''); setNewEx(''); setNewTrEx('');
+                  setFormError(null);
+                }}
+                className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors px-4 py-2 hover:bg-white/5 rounded-lg"
+              >
+                <Eraser size={14} />
+                Temizle
+              </button>
+
+              <button
+                type="button"
+                onClick={handleAiFill}
+                disabled={isAiFilling || (!newEng && !newTr)}
+                className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-purple-400 hover:text-purple-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed bg-purple-500/10 px-4 py-2 rounded-lg border border-purple-500/20 hover:bg-purple-500/20"
+              >
+                <Wand2 size={14} className={isAiFilling ? "animate-spin" : ""} />
+                {isAiFilling ? 'AI Analiz Ediyor...' : 'AI ile Tamamla'}
+              </button>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Örnek Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm" />
-              <input value={newTrEx} onChange={e => setNewTrEx(e.target.value)} placeholder="Türkçe Cümle Çevirisi" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm" />
+              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Örnek Cümle (AI ile Eklenebilir)" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
+              <input value={newTrEx} onChange={e => setNewTrEx(e.target.value)} placeholder="Türkçe Cümle Çevirisi (AI ile Eklenebilir)" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
             </div>
             {formError && <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-400 animate-shake"><AlertCircle size={20} /> <span className="font-bold text-sm">{formError}</span></div>}
             <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-black text-base shadow-xl shadow-blue-900/20 transition-all active:scale-95 disabled:opacity-50">
@@ -152,7 +216,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             word.example_sentence.trim().toLowerCase() !== word.english.trim().toLowerCase();
 
           return (
-            <div key={word.id} className="bg-zinc-900 p-6 rounded-[32px] border-b-4 border-slate-700 hover:border-slate-500 transition-all group relative overflow-hidden flex flex-col h-full items-start text-left">
+            <div key={word.id} className="bg-zinc-800 p-6 rounded-[32px] border-b-4 border-slate-700 hover:border-slate-500 transition-all group relative flex flex-col h-full items-start text-left shadow-lg">
               {word.set_name && (
                 <div className="absolute top-0 right-0 bg-blue-500/20 text-blue-400 text-[9px] font-black uppercase px-3 py-1.5 rounded-bl-xl border-l border-b border-blue-500/20 flex items-center gap-1.5 backdrop-blur-sm z-10">
                   <Layers size={10} /> {word.set_name}
@@ -201,9 +265,35 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                 <button onClick={() => onDeleteByDate(dateStr)} className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-orange-500/10 text-orange-500 border border-orange-500/20 hover:bg-orange-500 hover:text-white transition-all group/date">
                   <Calendar size={14} /> <span className="text-[10px] font-black tracking-widest">{dateStr}</span>
                 </button>
-                <button onClick={() => onDelete(word.id)} className="p-2.5 bg-red-500/10 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition-all active:scale-90">
-                  <Trash2 size={16} />
-                </button>
+                <div className="flex items-center gap-2">
+                  {/* Archive Button with Tooltip */}
+                  <div className="relative group/btn">
+                    <button
+                      onClick={() => setArchiveId(word.id)}
+                      className="p-2.5 bg-blue-500/10 text-blue-400 rounded-xl hover:bg-blue-500 hover:text-white transition-all active:scale-90"
+                    >
+                      <Archive size={16} />
+                    </button>
+                    <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-zinc-800 text-white text-[9px] font-black uppercase tracking-widest rounded-lg opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
+                      Arşivle
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
+                    </div>
+                  </div>
+
+                  {/* Delete Button with Tooltip */}
+                  <div className="relative group/btn">
+                    <button
+                      onClick={() => onDelete(word.id)}
+                      className="p-2.5 bg-red-500/10 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition-all active:scale-90"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                    <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-zinc-800 text-white text-[9px] font-black uppercase tracking-widest rounded-lg opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
+                      Sil
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           );
@@ -219,6 +309,18 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             Daha Fazla Göster ({filteredWords.length - visibleCount} kaldı)
           </button>
         </div>
+      )}
+
+      {archiveId && (
+        <ArchiveModal
+          onConfirm={() => {
+            if (archiveId) {
+              onArchive(archiveId);
+              setArchiveId(null);
+            }
+          }}
+          onCancel={() => setArchiveId(null)}
+        />
       )}
     </div>
   );

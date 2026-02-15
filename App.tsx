@@ -254,6 +254,20 @@ export default function App() {
     await wordService.toggleArchive(id, true);
   };
 
+  const handleRestoreWord = async (id: string) => {
+    setWords(prev => prev.map(w => w.id === id ? { ...w, is_archived: false } : w));
+    await wordService.toggleArchive(id, false);
+  };
+
+  const handleClearArchive = async () => {
+    const archivedIds = words.filter(w => w.is_archived).map(w => w.id);
+    if (archivedIds.length === 0) return;
+
+    await wordService.deleteWords(archivedIds);
+    setWords(prev => prev.filter(w => !w.is_archived));
+    showToast("Arşiv temizlendi.", "success");
+  };
+
   return (
     <div className="bg-black min-h-screen text-white font['Plus_Jakarta_Sans']">
       {toast && (
@@ -271,7 +285,7 @@ export default function App() {
       {mode === AppMode.FLASHCARDS && <FlashcardMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onNextSet={handleNextSet} onRemoveWord={handleArchiveWord} />}
       {mode === AppMode.QUIZ && <QuizMode words={getSequentialSet()} allWords={words} onExit={() => setMode(AppMode.HOME)} />}
       {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} />}
-      {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={() => { }} />}
+      {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={handleRestoreWord} onClearArchive={handleClearArchive} />}
 
       {mode === AppMode.CUSTOM_SETS && (
         <CustomSetManager
@@ -337,6 +351,7 @@ export default function App() {
             if (btn) btn.click();
           }}
           onResetAccount={() => { }}
+          onArchiveWord={handleArchiveWord}
         />
       )}
 

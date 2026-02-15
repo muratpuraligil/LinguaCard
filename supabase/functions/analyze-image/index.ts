@@ -14,58 +14,60 @@ Deno.serve(async (req: Request) => {
     if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
 
     try {
-        const { imageBase64, mimeType, analysisType = 'general' } = await req.json();
-        const apiKey = Deno.env.get('GEMINI_API_KEY');
+        const { imageBase64, mimeType, textInput, analysisType = 'general' } = await req.json();
+        const apiKey = Deno.env.get('GEMINI_API_KEY')?.trim();
 
-        if (!imageBase64) throw new Error('Image data missing');
+        if (!imageBase64 && !textInput) throw new Error('Input data (image or text) missing');
         if (!apiKey) throw new Error('API Key configuration missing');
 
         // 1. STEP: AVAILABLE MODELS DISCOVERY
         // We ask Gemini: "Which models do I have access to?"
-        const listUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`;
-        const listResp = await fetch(listUrl);
+        let sortedModels = [];
+        try {
+            const listUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`;
+            const listResp = await fetch(listUrl);
 
-        if (!listResp.ok) {
-            throw new Error(`Failed to list models: ${listResp.status} ${listResp.statusText}`);
+            if (!listResp.ok) {
+                console.warn(`Model list failed (${listResp.status}), falling back to default.`);
+            } else {
+                const listData = await listResp.json();
+                const models = listData.models || [];
+
+                // 2. STEP: SMART MODEL SELECTION
+                const allCandidates = models.filter((m: any) =>
+                    m.supportedGenerationMethods?.includes('generateContent') &&
+                    m.name.includes('models/gemini') &&
+                    !m.name.includes('embedding')
+                );
+
+                sortedModels = allCandidates.sort((a: any, b: any) => {
+                    const nameA = a.name;
+                    const nameB = b.name;
+
+                    const score = (name: string) => {
+                        if (name.includes('gemini-1.5-flash') && !name.includes('exp')) return 3;
+                        if (name.includes('gemini-1.5-flash')) return 2;
+                        if (name.includes('gemini-1.5-pro')) return 1;
+                        return 0;
+                    };
+
+                    return score(nameB) - score(nameA);
+                });
+            }
+        } catch (e) {
+            console.warn("Model discovery error:", e);
         }
 
-        const listData = await listResp.json();
-        const models = listData.models || [];
-
-        // 2. STEP: SMART MODEL SELECTION
-        // Filter for valid generative models (gemini + generateContent)
-        const allCandidates = models.filter((m: any) =>
-            m.supportedGenerationMethods?.includes('generateContent') &&
-            m.name.includes('models/gemini') &&
-            !m.name.includes('embedding')
-        );
-
-        // Sorting Priority:
-        // 1. "gemini-1.5-flash" (Best balance of speed/quota)
-        // 2. "gemini-1.5-pro" (Higher quality)
-        // 3. Others (experimental, 1.0, etc.)
-        const sortedModels = allCandidates.sort((a: any, b: any) => {
-            const nameA = a.name;
-            const nameB = b.name;
-
-            const score = (name: string) => {
-                if (name.includes('gemini-1.5-flash') && !name.includes('exp')) return 3; // Top priority
-                if (name.includes('gemini-1.5-flash')) return 2;
-                if (name.includes('gemini-1.5-pro')) return 1;
-                return 0;
-            };
-
-            return score(nameB) - score(nameA);
-        });
-
+        // Fallback if discovery failed or returned empty
         if (sortedModels.length === 0) {
-            throw new Error(`No Gemini models found accessing API with provided key.`);
+            console.log("Using fallback model: gemini-1.5-flash");
+            sortedModels = [{ name: 'models/gemini-1.5-flash' }];
         }
 
         console.log(`Available models (sorted): ${sortedModels.map((m: any) => m.name.split('/').pop()).join(', ')}`);
 
-        // 3. STEP: GENERATION LOOP (Failover Strategy)
-        const pureBase64 = imageBase64.includes(",") ? imageBase64.split(",")[1] : imageBase64;
+        // 3. STEP: GENERATION LOOP
+        const pureBase64 = imageBase64?.includes(",") ? imageBase64.split(",")[1] : imageBase64;
 
         // --- PROMPTS ---
 
@@ -109,7 +111,36 @@ Deno.serve(async (req: Request) => {
         ]
         `;
 
-        const PROMPT = analysisType === 'document' ? PROMPT_DOCUMENT : PROMPT_VOCABULARY;
+        // 3. TEXT ANALYSIS MODE (NEW)
+        const PROMPT_TEXT_ANALYSIS = `
+        You are a helpful language assistant.
+        Analyze the following text input: "${textInput}".
+
+        TASK:
+        1. Identify if the input is English or Turkish.
+        2. If English:
+           - Use it as the 'english' word.
+           - Provide its Turkish translation ('turkish').
+           - Create a simple English example sentence using this word ('example_sentence').
+           - Translate that sentence to Turkish ('turkish_sentence').
+        3. If Turkish:
+           - Use it as the 'turkish' word.
+           - Provide its English translation ('english').
+           - Create a simple English example sentence using the translated English word ('example_sentence').
+           - Translate that sentence to Turkish ('turkish_sentence').
+        
+        Return ONLY a single JSON object (not array):
+        {
+          "english": "...",
+          "turkish": "...",
+          "example_sentence": "...",
+          "turkish_sentence": "..."
+        }
+        `;
+
+        let PROMPT = PROMPT_VOCABULARY;
+        if (textInput) PROMPT = PROMPT_TEXT_ANALYSIS;
+        else if (analysisType === 'document') PROMPT = PROMPT_DOCUMENT;
 
         let lastError = null;
         let successModel = '';
@@ -123,16 +154,17 @@ Deno.serve(async (req: Request) => {
 
                 const genUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
+                // Construct parts based on input type
+                const parts: any[] = [{ text: PROMPT }];
+                if (!textInput && pureBase64) {
+                    parts.push({ inline_data: { mime_type: mimeType || 'image/jpeg', data: pureBase64 } });
+                }
+
                 const genResp = await fetch(genUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [
-                                { text: PROMPT },
-                                { inline_data: { mime_type: mimeType || 'image/jpeg', data: pureBase64 } }
-                            ]
-                        }],
+                        contents: [{ parts }],
                         generationConfig: {
                             temperature: 0.1,
                             maxOutputTokens: 8192
