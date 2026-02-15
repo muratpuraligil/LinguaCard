@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Word } from '../types';
-import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive } from 'lucide-react';
+import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive, Info } from 'lucide-react';
 import { analyzeText } from '../services/analyzeImage';
 import { supabase } from '../services/supabaseClient';
 import ArchiveModal from './ArchiveModal';
@@ -155,33 +155,27 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
       {isAdding && (
         <div id="add-word-form-container">
           <form onSubmit={handleSubmit} className="mb-8 bg-zinc-900 p-8 rounded-[32px] border border-blue-500/20 animate-fadeIn shadow-2xl relative overflow-hidden">
-            <div className="flex justify-between items-center mb-6">
-              <h4 className="text-xl font-black text-white">Yeni Kelime</h4>
-              <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Manuel Giriş</p>
+            <div className="mb-6">
+              <div className="flex justify-between items-center mb-2">
+                <h4 className="text-xl font-black text-white">Yeni Kelime</h4>
+                <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Manuel Giriş</p>
+              </div>
+              <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
+                <Info size={14} className="flex-shrink-0" />
+                <p>TR yada EN kelimeni gir, diğer alanları AI tamamlasın.</p>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="relative">
-                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
+                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
               </div>
               <div className="relative">
-                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Karşılığı" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
+                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Karşılığı" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
               </div>
             </div>
 
-            {/* AI Action Button & Clear */}
-            <div className="flex justify-between items-center mb-6">
-              <button
-                type="button"
-                onClick={() => {
-                  setNewEng(''); setNewTr(''); setNewEx(''); setNewTrEx('');
-                  setFormError(null);
-                }}
-                className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors px-4 py-2 hover:bg-white/5 rounded-lg"
-              >
-                <Eraser size={14} />
-                Temizle
-              </button>
-
+            {/* AI Action Button */}
+            <div className="flex justify-start items-center mb-6">
               <button
                 type="button"
                 onClick={handleAiFill}
@@ -194,13 +188,28 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Örnek Cümle (AI ile Eklenebilir)" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
-              <input value={newTrEx} onChange={e => setNewTrEx(e.target.value)} placeholder="Türkçe Cümle Çevirisi (AI ile Eklenebilir)" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50" disabled={isAiFilling} />
+              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+              <input value={newTrEx} onChange={e => setNewTrEx(e.target.value)} placeholder="Türkçe Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
             </div>
             {formError && <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-400 animate-shake"><AlertCircle size={20} /> <span className="font-bold text-sm">{formError}</span></div>}
-            <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-black text-base shadow-xl shadow-blue-900/20 transition-all active:scale-95 disabled:opacity-50">
-              {isSubmitting ? 'Kontrol Ediliyor...' : 'Listeye Kaydet'}
-            </button>
+
+            <div className="flex items-center gap-3">
+              <button type="submit" disabled={isSubmitting} className="flex-1 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl font-black text-sm shadow-xl shadow-blue-900/20 transition-all active:scale-95 disabled:opacity-50">
+                {isSubmitting ? 'Kontrol Ediliyor...' : 'Listeye Kaydet'}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setNewEng(''); setNewTr(''); setNewEx(''); setNewTrEx('');
+                  setFormError(null);
+                }}
+                className="p-3 bg-zinc-800 hover:bg-zinc-700 text-slate-400 hover:text-white rounded-xl transition-all border border-white/5 disabled:opacity-50"
+                title="Temizle"
+              >
+                <Eraser size={20} />
+              </button>
+            </div>
           </form>
         </div>
       )}
