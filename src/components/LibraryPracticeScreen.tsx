@@ -216,9 +216,15 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     setInputs({});
     setWrongInputs({});
     setCompleted({});
-    localStorage.removeItem(`library_inputs_${set.id}_${direction}`);
-    localStorage.removeItem(`library_wrong_${set.id}_${direction}`);
-    localStorage.removeItem(`library_completed_${set.id}_${direction}`);
+    
+    // Temizlik: Her iki yön için de yeni ve eski anahtarları temizle
+    ['TR_EN', 'EN_TR'].forEach(dir => {
+        localStorage.removeItem(`library_inputs_${set.id}_${dir}`);
+        localStorage.removeItem(`library_wrong_${set.id}_${dir}`);
+        localStorage.removeItem(`library_completed_${set.id}_${dir}`);
+        localStorage.removeItem(`library_progress_${set.id}_${dir}`); // Eski format
+    });
+    
     setShowOnlyWrong(false);
     setShowFinishedModal(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -365,84 +371,84 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                 >
                   {/* Left: Prompt */}
                   <div 
-                    className="flex-1 p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/5 bg-white/2 md:bg-transparent cursor-pointer hover:bg-white/5 transition-colors flex flex-col justify-center"
+                    className="flex-1 p-4 md:p-5 border-b md:border-b-0 md:border-r border-white/5 bg-white/5 md:bg-transparent cursor-pointer hover:bg-white/5 transition-colors flex flex-col justify-center"
                     onDoubleClick={() => {
                         const selection = window.getSelection()?.toString().trim();
                         handleDoubleClick(selection || '');
                     }}
                   >
-                    <div className="flex items-center gap-3 mb-3">
-                        <span className="text-[10px] font-black text-slate-600 tracking-tighter uppercase">Cümle #{idx + 1}</span>
-                        {!isDone && (
-                             <div className="flex gap-1">
-                                <button 
-                                    onClick={(e) => { e.stopPropagation(); speak(promptText, direction === LanguageDirection.TR_EN ? 'tr-TR' : 'en-US'); }}
-                                    className="p-1.5 hover:bg-white/10 rounded-lg text-slate-500 hover:text-white transition-colors"
-                                >
-                                    <Volume2 size={14} />
-                                </button>
-                                <button 
-                                    onClick={(e) => { e.stopPropagation(); handleHelp(sentence.id, targetText); }}
-                                    className="p-1.5 hover:bg-white/10 rounded-lg text-slate-500 hover:text-blue-400 transition-colors"
-                                    disabled={isDone}
-                                >
-                                    <HelpCircle size={14} />
-                                </button>
-                             </div>
-                        )}
-                    </div>
                     <p className="text-lg md:text-xl font-bold text-slate-200 leading-snug break-words">
-                      "{promptText}"
+                      <span className="text-slate-500 mr-3 select-none">{idx + 1}.</span>
+                      {promptText}
                     </p>
                   </div>
 
                   {/* Right: Input */}
-                  <div className="flex-1 p-4 md:p-6 flex items-center bg-black/20">
-                    <div className="w-full relative">
-                        <textarea
-                            ref={el => inputRefs.current[sentence.id] = el as any}
-                            rows={2}
-                            value={inputs[sentence.id] || ''}
-                            onChange={(e) => checkAnswer(sentence.id, e.target.value)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' && !e.shiftKey) {
-                                    e.preventDefault();
-                                    handleKeyDown(e as any, sentence.id);
-                                }
-                            }}
-                            onDoubleClick={(e) => {
-                                const input = e.currentTarget;
-                                const start = input.selectionStart || 0;
-                                const end = input.selectionEnd || 0;
-                                handleDoubleClick(input.value.substring(start, end).trim());
-                            }}
-                            placeholder={direction === LanguageDirection.TR_EN ? "İngilizce çevirisi..." : "Türkçe çevirisi..."}
-                            className={`w-full bg-zinc-800/50 border border-white/10 rounded-2xl px-6 py-4 text-base md:text-lg font-bold outline-none transition-all resize-none leading-relaxed
-                                ${isDone ? 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5' : 
-                                  isWrong ? 'text-red-400 border-red-500/30' : 
-                                  'text-white focus:border-blue-500/50 focus:bg-zinc-800'}
-                            `}
-                            disabled={isDone}
-                        />
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                             {!isDone && (
-                                <button 
-                                    onClick={() => {
-                                        if (confirmRevealId === sentence.id) {
-                                            handleReveal(sentence.id, targetText);
-                                            setConfirmRevealId(null);
-                                        } else {
-                                            setConfirmRevealId(sentence.id);
-                                            setTimeout(() => setConfirmRevealId(null), 3000);
-                                        }
-                                    }}
-                                    className={`p-2 rounded-xl transition-all ${confirmRevealId === sentence.id ? 'bg-yellow-500/20 text-yellow-400' : 'text-slate-600 hover:text-yellow-500'}`}
-                                >
-                                    <Eye size={18} />
-                                </button>
-                             )}
-                             {isDone && <CheckCircle2 className="text-emerald-500" size={24} />}
-                             {isWrong && <XCircle className="text-red-500 animate-pulse" size={24} />}
+                  <div className="flex-1 p-3 md:p-4 flex items-center justify-center bg-black/20">
+                    <div className="w-full flex items-center gap-3">
+                        <div className="relative flex-1">
+                            <textarea
+                                ref={el => inputRefs.current[sentence.id] = el as any}
+                                rows={2}
+                                value={inputs[sentence.id] || ''}
+                                onChange={(e) => checkAnswer(sentence.id, e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' && !e.shiftKey) {
+                                        e.preventDefault();
+                                        handleKeyDown(e as any, sentence.id);
+                                    }
+                                }}
+                                onDoubleClick={(e) => {
+                                    const input = e.currentTarget;
+                                    const start = input.selectionStart || 0;
+                                    const end = input.selectionEnd || 0;
+                                    handleDoubleClick(input.value.substring(start, end).trim());
+                                }}
+                                placeholder={direction === LanguageDirection.TR_EN ? "İngilizce çevirisi..." : "Türkçe çevirisi..."}
+                                className={`w-full bg-zinc-800/50 border border-white/10 rounded-xl pl-4 pr-32 py-3 text-base md:text-lg font-bold outline-none transition-all resize-none leading-relaxed
+                                    ${isDone ? 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5' : 
+                                      isWrong ? 'text-red-400 border-red-500/30' : 
+                                      'text-white focus:border-blue-500/50 focus:bg-zinc-800'}
+                                `}
+                                disabled={isDone}
+                            />
+                            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+                                 {!isDone && (
+                                     <>
+                                        <button 
+                                            onClick={(e) => { e.stopPropagation(); speak(promptText, direction === LanguageDirection.TR_EN ? 'tr-TR' : 'en-US'); }}
+                                            className="p-1.5 text-slate-500 hover:bg-white/10 hover:text-white rounded-lg transition-colors"
+                                            title="Telaffuzu Dinle"
+                                        >
+                                            <Volume2 size={16} />
+                                        </button>
+                                        <button 
+                                            onClick={(e) => { e.stopPropagation(); handleHelp(sentence.id, targetText); }}
+                                            className="p-1.5 text-slate-500 hover:bg-white/10 hover:text-blue-400 rounded-lg transition-colors"
+                                            title="İpucu Al"
+                                        >
+                                            <HelpCircle size={16} />
+                                        </button>
+                                        <button 
+                                            onClick={() => {
+                                                if (confirmRevealId === sentence.id) {
+                                                    handleReveal(sentence.id, targetText);
+                                                    setConfirmRevealId(null);
+                                                } else {
+                                                    setConfirmRevealId(sentence.id);
+                                                    setTimeout(() => setConfirmRevealId(null), 3000);
+                                                }
+                                            }}
+                                            className={`p-1.5 rounded-lg transition-all ${confirmRevealId === sentence.id ? 'bg-yellow-500/20 text-yellow-400' : 'text-slate-500 hover:bg-white/10 hover:text-yellow-500'}`}
+                                            title={confirmRevealId === sentence.id ? "Onaylamak için tekrar tıkla" : "Cevabı Göster"}
+                                        >
+                                            <Eye size={16} />
+                                        </button>
+                                     </>
+                                 )}
+                                 {isDone && <CheckCircle2 className="text-emerald-500" size={20} />}
+                                 {isWrong && <XCircle className="text-red-500 animate-pulse" size={20} />}
+                            </div>
                         </div>
                     </div>
                   </div>
