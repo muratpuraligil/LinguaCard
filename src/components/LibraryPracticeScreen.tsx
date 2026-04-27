@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LibrarySet, LanguageDirection } from '../types';
 import { isMatch } from '../utils/stringUtils';
-import { ArrowLeft, Home, Languages, CheckCircle2, Volume2, Info, XCircle, Eye, HelpCircle, Trophy, RefreshCw, BookOpen, Zap } from 'lucide-react';
+import { ArrowLeft, Home, Languages, CheckCircle2, Volume2, HelpCircle, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle } from 'lucide-react';
 import { wordService } from '../services/supabaseClient';
 import confetti from 'canvas-confetti';
 
@@ -16,7 +16,6 @@ interface LibraryPracticeScreenProps {
 const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onExit, onGoHome, onGoToFlashcards, onGoToQuiz }) => {
   const [direction, setDirection] = useState<LanguageDirection>(LanguageDirection.TR_EN);
   
-  // Track state using objects keyed by sentence.id
   const [completed, setCompleted] = useState<{ [key: string]: boolean }>({});
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
   const [wrongInputs, setWrongInputs] = useState<{ [key: string]: boolean }>({});
@@ -24,33 +23,18 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [isAddingWord, setIsAddingWord] = useState(false);
   const [showOnlyWrong, setShowOnlyWrong] = useState(false);
-  const [confirmRevealId, setConfirmRevealId] = useState<string | null>(null);
   const [showFinishedModal, setShowFinishedModal] = useState(false);
   
-  // Create refs for each input to handle auto-focus and scroll
   const inputRefs = useRef<{ [key: string]: HTMLInputElement | null }>({});
 
   useEffect(() => {
-    // Load progress and state from localStorage
     const savedCompletedStr = localStorage.getItem(`library_completed_${set.id}_${direction}`);
     const savedInputsStr = localStorage.getItem(`library_inputs_${set.id}_${direction}`);
     const savedWrongStr = localStorage.getItem(`library_wrong_${set.id}_${direction}`);
     
     let initialCompleted: { [key: string]: boolean } = {};
     
-    // Migration from old completedCount (number) to new object format
-    const oldSavedProgress = localStorage.getItem(`library_progress_${set.id}_${direction}`);
-    const hasInputs = savedInputsStr && savedInputsStr !== '{}';
-    
-    if (oldSavedProgress && !savedCompletedStr && hasInputs) {
-      const count = parseInt(oldSavedProgress, 10);
-      if (!isNaN(count)) {
-        for (let i = 0; i < count; i++) {
-          if (set.sentences[i]) initialCompleted[set.sentences[i].id] = true;
-        }
-      }
-      setCompleted(initialCompleted);
-    } else if (savedCompletedStr) {
+    if (savedCompletedStr) {
       try { initialCompleted = JSON.parse(savedCompletedStr); } catch {}
       setCompleted(initialCompleted);
     } else {
@@ -69,7 +53,6 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       setWrongInputs({});
     }
 
-    // Scroll to the first uncompleted input on load
     setTimeout(() => {
       const firstUncompleted = set.sentences.find(s => !initialCompleted[s.id]);
       if (firstUncompleted) {
@@ -88,7 +71,6 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
   useEffect(() => {
     if (isAllCompleted && !showFinishedModal) {
       setShowFinishedModal(true);
-      // Trigger confetti
       const duration = 3000;
       const end = Date.now() + duration;
 
@@ -116,13 +98,11 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     }
   }, [isAllCompleted, showFinishedModal]);
 
-
   const checkAnswer = (sentenceId: string, input: string) => {
     const newInputs = { ...inputs, [sentenceId]: input };
     setInputs(newInputs);
     localStorage.setItem(`library_inputs_${set.id}_${direction}`, JSON.stringify(newInputs));
 
-    // clear wrong state when user types
     if (wrongInputs[sentenceId]) {
       const newWrong = { ...wrongInputs };
       delete newWrong[sentenceId];
@@ -139,7 +119,6 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         setCompleted(newCompleted);
         localStorage.setItem(`library_completed_${set.id}_${direction}`, JSON.stringify(newCompleted));
         
-        // Auto-focus the next uncompleted input sequentially
         const currentIndex = set.sentences.findIndex(s => s.id === sentenceId);
         for (let i = currentIndex + 1; i < set.sentences.length; i++) {
           const nextId = set.sentences[i].id;
@@ -200,7 +179,6 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     const selection = window.getSelection();
     if (selection) {
       const text = selection.toString().trim();
-      // Basic word validation: length > 1, no spaces
       if (text.length > 1 && !text.includes(' ')) {
         setSelectedWord(text);
       }
@@ -216,7 +194,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         turkish: '',
         example_sentence: '',
         turkish_sentence: ''
-      });
+      }, 'demo_user'); // Simplified for library practice
       setSelectedWord(null);
     } catch (e) {
       console.error(e);
@@ -239,7 +217,6 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     localStorage.removeItem(`library_inputs_${set.id}_${direction}`);
     localStorage.removeItem(`library_wrong_${set.id}_${direction}`);
     localStorage.removeItem(`library_completed_${set.id}_${direction}`);
-    localStorage.removeItem(`library_progress_${set.id}_${direction}`);
     setShowOnlyWrong(false);
     setShowFinishedModal(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -302,11 +279,114 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
             </div>
         </div>
     );
-  }in. Harika iş çıkardın!</p>
-          </div>
-        )}
+  }
 
-        {/* Footer actions */}
+  return (
+    <div className="min-h-screen bg-black flex flex-col font-['Plus_Jakarta_Sans'] relative text-white">
+      <div className="sticky top-0 left-0 w-full h-1.5 bg-zinc-900 z-50">
+        <div 
+          className="h-full bg-gradient-to-r from-blue-600 to-indigo-500 transition-all duration-500 ease-out"
+          style={{ width: `${(completedCount / set.sentences.length) * 100}%` }}
+        ></div>
+      </div>
+
+      <div className="max-w-4xl mx-auto w-full px-6 py-10">
+        <div className="flex items-center justify-between mb-12">
+          <button onClick={onExit} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
+            <ArrowLeft size={20} />
+          </button>
+          
+          <div className="flex flex-col items-center gap-2">
+            <button 
+              onClick={() => setDirection(d => d === LanguageDirection.TR_EN ? LanguageDirection.EN_TR : LanguageDirection.TR_EN)}
+              className="bg-blue-500/10 border border-blue-500/20 px-5 py-2.5 rounded-full text-blue-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-2 hover:bg-blue-500/20 transition-all"
+            >
+              <Languages size={14} /> {direction.replace('_', ' → ')}
+            </button>
+            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
+              {completedCount} / {set.sentences.length} TAMAMLANDI
+            </span>
+          </div>
+
+          <button onClick={onGoHome} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
+            <Home size={20} />
+          </button>
+        </div>
+
+        <div className="mb-10 text-center">
+          <h1 className="text-3xl font-black mb-2">{set.title}</h1>
+          <p className="text-slate-500 font-bold text-sm">Cümleleri doğru şekilde çevirerek ilerle.</p>
+        </div>
+
+        <div className="space-y-6" onDoubleClick={handleDoubleClick}>
+          {set.sentences
+            .filter(s => !showOnlyWrong || wrongInputs[s.id])
+            .map((sentence, idx) => {
+              const isDone = completed[sentence.id];
+              const isWrong = wrongInputs[sentence.id];
+              const promptText = direction === LanguageDirection.TR_EN ? sentence.turkish : sentence.english;
+              const targetText = direction === LanguageDirection.TR_EN ? sentence.english : sentence.turkish;
+
+              return (
+                <div 
+                  key={sentence.id} 
+                  className={`p-8 rounded-[40px] border transition-all duration-300 ${
+                    isDone ? 'bg-emerald-500/5 border-emerald-500/20 opacity-60' : 
+                    isWrong ? 'bg-red-500/5 border-red-500/20 animate-shake' : 
+                    'bg-zinc-900/50 border-white/5 hover:border-white/10'
+                  }`}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-[10px] font-black text-slate-600 tracking-tighter">#{idx + 1}</span>
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={() => speak(promptText, direction === LanguageDirection.TR_EN ? 'tr-TR' : 'en-US')}
+                        className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-white transition-colors"
+                      >
+                        <Volume2 size={16} />
+                      </button>
+                      <button 
+                        onClick={() => handleHelp(sentence.id, targetText)}
+                        className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-blue-400 transition-colors"
+                        disabled={isDone}
+                      >
+                        <HelpCircle size={16} />
+                      </button>
+                      <button 
+                        onClick={() => handleReveal(sentence.id, targetText)}
+                        className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-yellow-400 transition-colors"
+                        disabled={isDone}
+                      >
+                        <Eye size={16} />
+                      </button>
+                    </div>
+                  </div>
+
+                  <p className="text-xl font-bold mb-6 text-slate-200">"{promptText}"</p>
+
+                  <div className="relative">
+                    <input
+                      ref={el => inputRefs.current[sentence.id] = el}
+                      type="text"
+                      value={inputs[sentence.id] || ''}
+                      onChange={(e) => checkAnswer(sentence.id, e.target.value)}
+                      onKeyDown={(e) => handleKeyDown(e, sentence.id)}
+                      placeholder="Cümleyi buraya yaz..."
+                      className={`w-full bg-black/40 border-2 rounded-2xl px-6 py-4 font-bold outline-none transition-all ${
+                        isDone ? 'border-emerald-500/30 text-emerald-400' : 
+                        isWrong ? 'border-red-500/30 text-white' : 
+                        'border-white/10 focus:border-blue-500/50'
+                      }`}
+                      disabled={isDone}
+                    />
+                    {isDone && <CheckCircle2 className="absolute right-4 top-1/2 -translate-y-1/2 text-emerald-500" size={20} />}
+                    {isWrong && <XCircle className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500" size={20} />}
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+
         {set.sentences.length > 0 && (
           <div className="flex items-center justify-center gap-8 mt-12 mb-8">
             <button 
@@ -325,7 +405,6 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         )}
       </div>
 
-      {/* Word Add Modal */}
       {selectedWord && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm">
           <div className="bg-zinc-900 border border-white/10 rounded-3xl p-8 max-w-sm w-full shadow-2xl animate-in fade-in zoom-in-95 duration-200">
