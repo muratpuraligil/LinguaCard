@@ -18,7 +18,7 @@ def pdf_to_images(pdf_path, output_dir):
         page_rect = page.boundsForBox_(0) # 0 is kPDFDisplayBoxMediaBox
         
         # Create image from page
-        image = page.thumbnailOfSize_forBox_(NSSize(page_rect.size.width * 2, page_rect.size.height * 2), 0)
+        image = page.thumbnailOfSize_forBox_(NSSize(page_rect.size.width * 4, page_rect.size.height * 4), 0)
         
         # Save image
         tiff_data = image.TIFFRepresentation()

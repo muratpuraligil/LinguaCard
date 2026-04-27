@@ -122,7 +122,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                       className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-left group"
                     >
                       <Archive size={18} className="text-indigo-500 group-hover:scale-110 transition-transform" />
-                      <span className="text-xs font-bold text-slate-200">Arşivle</span>
+                      <span className="text-xs font-bold text-slate-200">Arşiv'e git</span>
                     </button>
 
                     <div className="h-px bg-white/5 my-1" />
@@ -196,7 +196,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                   {/* AI Tooltip 1 - Step 1 */}
                   {tourStep === 1 && (
                     <div
-                      className="absolute top-full right-0 mt-4 w-80 bg-white border border-blue-200 p-5 rounded-2xl shadow-xl shadow-blue-900/10 z-50 animate-pulse cursor-pointer origin-top-right transition-all hover:scale-[1.02] active:scale-95"
+                      className="absolute top-full right-0 mt-4 w-80 bg-blue-600 border border-blue-400/30 p-5 rounded-2xl shadow-2xl shadow-blue-900/40 z-50 animate-pulse cursor-pointer origin-top-right transition-all hover:scale-[1.02] active:scale-95"
                       onClick={(e) => {
                         e.stopPropagation();
                         setTourStep(2);
@@ -205,24 +205,24 @@ const Dashboard: React.FC<DashboardProps> = ({
                       {/* Skip/Close Button */}
                       <button
                         onClick={(e) => { e.stopPropagation(); setTourStep(0); }}
-                        className="absolute -top-2 -right-2 w-6 h-6 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center hover:bg-slate-200 hover:text-slate-600 transition-colors shadow-md z-[60]"
+                        className="absolute -top-2 -right-2 w-6 h-6 bg-blue-700 text-blue-200 rounded-full flex items-center justify-center hover:bg-blue-800 hover:text-white transition-colors shadow-md z-[60]"
                       >
                         <X size={12} />
                       </button>
                       <div className="flex items-start gap-4">
-                        <div className="p-2.5 bg-blue-100 text-blue-600 rounded-xl flex-shrink-0">
+                        <div className="p-2.5 bg-white/10 text-white rounded-xl flex-shrink-0">
                           <Bot size={22} />
                         </div>
                         <div className="flex-1">
-                          <p className="text-blue-900 text-[12px] font-bold leading-snug">
+                          <p className="text-white text-[12px] font-bold leading-snug">
                             Kelime listeni yapıştır yada resim olarak yükle, AI örnek cümleler ile listene eklesin...
                           </p>
                           <div className="mt-3 flex justify-end">
-                            <span className="text-[9px] font-black bg-blue-600 text-white px-2 py-1 rounded-md uppercase tracking-tighter">İleri (1/3)</span>
+                            <span className="text-[9px] font-black bg-white text-blue-600 px-2 py-1 rounded-md uppercase tracking-tighter shadow-lg shadow-black/20">İleri (1/2)</span>
                           </div>
                         </div>
                       </div>
-                      <div className="absolute -top-2 right-12 w-4 h-4 bg-white border-t border-l border-blue-200 rotate-45"></div>
+                      <div className="absolute -top-2 right-12 w-4 h-4 bg-blue-600 border-t border-l border-blue-400/30 rotate-45"></div>
                     </div>
                   )}
                 </div>
@@ -241,39 +241,35 @@ const Dashboard: React.FC<DashboardProps> = ({
                   {/* AI Tooltip 2 - Step 2 */}
                   {tourStep === 2 && (
                     <div
-                      className="absolute top-full left-0 mt-4 w-80 bg-white border border-purple-200 p-5 rounded-2xl shadow-xl shadow-purple-900/10 z-50 animate-pulse cursor-pointer origin-top-left transition-all hover:scale-[1.02] active:scale-95"
+                      className="absolute top-full left-0 mt-4 w-80 bg-blue-600 border border-blue-400/30 p-5 rounded-2xl shadow-2xl shadow-blue-900/40 z-50 animate-pulse cursor-pointer origin-top-left transition-all hover:scale-[1.02] active:scale-95"
                       onClick={(e) => {
                         e.stopPropagation();
-                        if (words.length === 0) {
-                          setTourStep(3);
-                        } else {
-                          setTourStep(0);
-                        }
+                        setTourStep(0);
                       }}
                     >
                       {/* Skip/Close Button */}
                       <button
                         onClick={(e) => { e.stopPropagation(); setTourStep(0); }}
-                        className="absolute -top-2 -right-2 w-6 h-6 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center hover:bg-slate-200 hover:text-slate-600 transition-colors shadow-md z-[60]"
+                        className="absolute -top-2 -right-2 w-6 h-6 bg-blue-700 text-blue-200 rounded-full flex items-center justify-center hover:bg-blue-800 hover:text-white transition-colors shadow-md z-[60]"
                       >
                         <X size={12} />
                       </button>
                       <div className="flex items-start gap-4">
-                        <div className="p-2.5 bg-purple-100 text-purple-600 rounded-xl flex-shrink-0">
+                        <div className="p-2.5 bg-white/10 text-white rounded-xl flex-shrink-0">
                           <Bot size={22} />
                         </div>
                         <div className="flex-1">
-                          <p className="text-purple-900 text-[12px] font-bold leading-snug">
+                          <p className="text-white text-[12px] font-bold leading-snug">
                             Sadece kelimeni yaz, AI kelime karşılığını ve örnek cümleleri tamamlasın.
                           </p>
                           <div className="mt-3 flex justify-end">
-                            <span className="text-[9px] font-black bg-purple-600 text-white px-2 py-1 rounded-md uppercase tracking-tighter">
-                              {words.length === 0 ? "Sıradaki (2/3)" : "Bitir"}
+                            <span className="text-[9px] font-black bg-white text-blue-600 px-2 py-1 rounded-md uppercase tracking-tighter shadow-lg shadow-black/20">
+                              {words.length === 0 ? "Sıradaki (2/2)" : "Bitir (2/2)"}
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div className="absolute -top-2 left-10 w-4 h-4 bg-white border-t border-l border-purple-200 rotate-45"></div>
+                      <div className="absolute -top-2 left-10 w-4 h-4 bg-blue-600 border-t border-l border-blue-400/30 rotate-45"></div>
                     </div>
                   )}
                 </div>
@@ -287,38 +283,6 @@ const Dashboard: React.FC<DashboardProps> = ({
                       <Sparkles size={16} className="group-hover:animate-spin" /> Demo Veri Yükle
                     </button>
 
-                    {/* AI Tooltip 3 - Step 3 (Demo) */}
-                    {tourStep === 3 && (
-                      <div
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 bg-white border border-indigo-200 p-5 rounded-2xl shadow-xl shadow-indigo-900/10 z-50 animate-pulse cursor-pointer transition-all hover:scale-[1.02] active:scale-95"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setTourStep(0);
-                        }}
-                      >
-                        {/* Skip/Close Button */}
-                        <button
-                          onClick={(e) => { e.stopPropagation(); setTourStep(0); }}
-                          className="absolute -top-2 -right-2 w-6 h-6 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center hover:bg-slate-200 hover:text-slate-600 transition-colors shadow-md z-[60]"
-                        >
-                          <X size={12} />
-                        </button>
-                        <div className="flex items-start gap-4">
-                          <div className="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl flex-shrink-0">
-                            <Bot size={22} />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-indigo-900 text-[12px] font-bold leading-snug">
-                              Demo veriler ile platformu deneyebilirsin.
-                            </p>
-                            <div className="mt-3 flex justify-end">
-                              <span className="text-[9px] font-black bg-indigo-600 text-white px-2 py-1 rounded-md uppercase tracking-tighter">Anladım (3/3)</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-indigo-200 rotate-45"></div>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
@@ -380,6 +344,10 @@ const Dashboard: React.FC<DashboardProps> = ({
             glowColor="#a855f7"
             delay={0.3}
           >
+            {/* NEW Badge */}
+            <div className="absolute top-4 right-4 z-30">
+              <span className="text-[10px] font-black bg-blue-600 text-white px-2 py-0.5 rounded-md uppercase tracking-tighter shadow-lg shadow-blue-600/20 animate-pulse">NEW</span>
+            </div>
             <div className="p-6 h-full flex flex-col items-start relative z-20">
               <div className="flex items-center justify-between w-full mb-6">
                 <div className="bg-purple-500/10 w-12 h-12 rounded-2xl flex items-center justify-center text-purple-500 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">

@@ -12,7 +12,7 @@ interface ArchiveModalProps {
 const ArchiveModal: React.FC<ArchiveModalProps> = ({
     onConfirm,
     onCancel,
-    title = "Arşivle",
+    title = "Arşiv'e git",
     description = "Bu kelimeyi arşive göndermek istediğine emin misin? Daha sonra tekrar aktif edebilirsin."
 }) => {
     return (
@@ -46,7 +46,7 @@ const ArchiveModal: React.FC<ArchiveModalProps> = ({
                         onClick={onConfirm}
                         className="flex-1 p-5 bg-blue-600 hover:bg-blue-500 text-white rounded-3xl font-black transition-all active:scale-95 shadow-lg shadow-blue-900/20"
                     >
-                        Evet, Arşivle
+                        Evet, Arşiv'e git
                     </button>
                 </div>
             </div>

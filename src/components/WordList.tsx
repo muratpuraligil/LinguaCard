@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Word } from '../types';
-import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive, Info } from 'lucide-react';
+import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive, Info, ArrowUp } from 'lucide-react';
 import { analyzeText } from '../services/analyzeImage';
 import { supabase } from '../services/supabaseClient';
 import ArchiveModal from './ArchiveModal';
@@ -19,6 +19,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
   const [searchTerm, setSearchTerm] = useState('');
   const [isAdding, setIsAdding] = useState(false);
   const [visibleCount, setVisibleCount] = useState(20);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const [newEng, setNewEng] = useState('');
   const [newTr, setNewTr] = useState('');
@@ -46,6 +47,14 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     u.lang = 'en-US';
     window.speechSynthesis.speak(u);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSentenceClick = (id: string) => {
     if (flippedSentenceId === id) {
@@ -135,7 +144,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             placeholder="Listende hızlıca ara..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-14 pr-12 py-4 bg-zinc-900 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:bg-zinc-800 transition-all text-base font-bold text-white placeholder:text-slate-500 h-full shadow-lg shadow-black/20"
+            className="w-full pl-14 pr-12 py-4 bg-zinc-900 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:bg-zinc-800 transition-all text-base font-bold text-white placeholder:text-slate-600 h-full shadow-lg shadow-black/20"
           />
           {searchTerm && (
             <button onClick={() => setSearchTerm('')} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors">
@@ -271,7 +280,11 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
               )}
 
               <div className="w-full flex justify-between items-center mt-auto pt-1">
-                <button onClick={() => onDeleteByDate(dateStr)} className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-orange-500/10 text-orange-500 border border-orange-500/20 hover:bg-orange-500 hover:text-white transition-all group/date">
+                <button 
+                  onClick={() => onDeleteByDate(dateStr)} 
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-orange-500/10 text-orange-500 border border-orange-500/20 hover:bg-orange-500 hover:text-white transition-all group/date"
+                  title="bu tarihte yüklenenleri sil."
+                >
                   <Calendar size={14} /> <span className="text-[10px] font-black tracking-widest">{dateStr}</span>
                 </button>
                 <div className="flex items-center gap-2">
@@ -284,7 +297,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                       <Archive size={16} />
                     </button>
                     <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-zinc-800 text-white text-[9px] font-black uppercase tracking-widest rounded-lg opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
-                      Arşivle
+                      Arşiv'e git
                       <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
                     </div>
                   </div>
@@ -330,6 +343,20 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
           }}
           onCancel={() => setArchiveId(null)}
         />
+      )}
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-10 left-6 md:left-[calc(50%-660px)] z-50 group flex flex-col items-center gap-2 p-3 bg-zinc-900/80 backdrop-blur-xl hover:bg-blue-600/10 border border-white/10 hover:border-blue-500/30 rounded-3xl transition-all duration-500 hover:scale-110 active:scale-95 shadow-2xl shadow-black/40"
+          title="yukarıya dön"
+        >
+          <div className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center animate-bounce group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+            <ArrowUp size={20} />
+          </div>
+          <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest group-hover:text-blue-400 transition-colors opacity-0 group-hover:opacity-100 transition-opacity duration-300">yukarıya dön</span>
+        </button>
       )}
     </div>
   );

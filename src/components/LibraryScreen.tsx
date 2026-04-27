@@ -6,9 +6,10 @@ import { LibrarySet } from '../types';
 interface LibraryScreenProps {
   onExit: () => void;
   onSelectSet: (set: LibrarySet) => void;
+  onRandomCreate: () => void;
 }
 
-const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet }) => {
+const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRandomCreate }) => {
   const [progressMap, setProgressMap] = useState<Record<string, number>>({});
 
   useEffect(() => {
@@ -46,6 +47,10 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet }) =>
     setProgressMap(newProgress);
   }, []);
 
+  const handleRandomCreate = () => {
+    onRandomCreate();
+  };
+
   return (
     <div className="min-h-screen bg-black text-white selection:bg-blue-500/30">
       {/* Header */}
@@ -65,7 +70,26 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet }) =>
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-6 pt-10 pb-20">
+        {/* Random Creator Button Area */}
+        <div className="flex justify-center mb-16">
+          <button
+            onClick={handleRandomCreate}
+            className="group relative px-8 py-4 bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] active:scale-95"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="flex items-center gap-3 relative z-10">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <ChevronRight size={20} className="rotate-[-45deg] group-hover:rotate-0 transition-transform" />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-sm font-black text-white tracking-wide uppercase">Rastgele Oluştur</span>
+                <span className="text-[10px] text-slate-500 font-bold group-hover:text-blue-400/70 transition-colors uppercase tracking-widest">34 Ana Gruptan Seçmeler</span>
+              </div>
+            </div>
+          </button>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {libraryData.map((category, idx) => {
             const isFirst = idx === 0;

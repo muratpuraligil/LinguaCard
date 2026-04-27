@@ -2,7 +2,7 @@ import json
 import re
 
 def main():
-    with open('data/json/all_sentences.json', 'r', encoding='utf-8') as f:
+    with open('src/data/json/all_sentences.json', 'r', encoding='utf-8') as f:
         all_data = json.load(f)
 
     with open('src/data/libraryData.ts', 'r', encoding='utf-8') as f:

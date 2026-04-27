@@ -1,4 +1,3 @@
-
 export interface Word {
   id: string;
   english: string;
@@ -40,6 +39,7 @@ export interface LibrarySentence {
   id: string;
   turkish: string;
   english: string;
+  sourceSetTitle?: string;
 }
 
 export interface LibrarySet {

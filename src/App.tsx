@@ -18,6 +18,7 @@ import DeleteModal from './components/DeleteModal';
 import { PulseLoader } from './components/Loader';
 import LibraryScreen from './components/LibraryScreen';
 import LibraryPracticeScreen from './components/LibraryPracticeScreen';
+import { libraryData } from './data/libraryData';
 import { LibrarySet } from './types';
 import { CheckCircle2, X } from 'lucide-react';
 import { APP_VERSION } from './version';
@@ -82,6 +83,17 @@ export default function App() {
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
   const [activeLibrarySet, setActiveLibrarySet] = useState<LibrarySet | null>(null);
 
+  useEffect(() => {
+    const savedSet = localStorage.getItem('lingua_active_random_mix');
+    if (savedSet && !activeLibrarySet) {
+      try {
+        setActiveLibrarySet(JSON.parse(savedSet));
+      } catch (e) {
+        console.error("Failed to recover active library set", e);
+      }
+    }
+  }, []);
+
   // Track offset for sequential study (Flashcards/Quiz/Sentences)
   const [studyOffset, setStudyOffset] = useState(() => parseInt(localStorage.getItem('lingua_global_offset') || '0'));
 
@@ -97,6 +109,68 @@ export default function App() {
   const showToast = (message: string, type: 'success' | 'error' | 'warning' = 'success') => {
     setToast({ message, type });
     setTimeout(() => setToast(null), 4500);
+  };
+
+  const handleRandomLibrarySet = (forceNew: boolean = false) => {
+    // 1. Check if we already have a saved set and we're not forcing a new one
+    if (!forceNew) {
+      const savedSet = localStorage.getItem('lingua_active_random_mix');
+      if (savedSet) {
+        try {
+          const parsed = JSON.parse(savedSet);
+          setActiveLibrarySet(parsed);
+          setMode(AppMode.LIBRARY_PRACTICE);
+          return;
+        } catch (e) {
+          console.error("Failed to parse saved random mix", e);
+        }
+      }
+    }
+
+    // 2. Generate new set
+    const allSentences: any[] = [];
+    libraryData.forEach(cat => {
+      cat.sets.forEach(set => {
+        set.sentences.forEach(s => {
+          allSentences.push({
+            ...s,
+            sourceSetTitle: set.title,
+            sourceSetId: set.id
+          });
+        });
+      });
+    });
+
+    // Shuffle allSentences
+    const shuffled = [...allSentences].sort(() => Math.random() - 0.5);
+    
+    // Take exactly 34 sentences as requested
+    const selectedSentences = shuffled.slice(0, 34).map((s, idx) => ({
+      ...s,
+      id: `rand-${s.sourceSetId}-${s.id}-${idx}` // Ensure unique ID for this instance
+    }));
+
+    const randomSet: LibrarySet = {
+      id: 'random-mix',
+      title: `Karma Çalışma (${selectedSentences.length} Cümle)`,
+      sentences: selectedSentences
+    };
+
+    // 3. Save to localStorage
+    localStorage.setItem('lingua_active_random_mix', JSON.stringify(randomSet));
+    
+    // 4. Clear progress for this specific set if it's a new one
+    if (forceNew) {
+      localStorage.removeItem('library_completed_random-mix_TR_EN');
+      localStorage.removeItem('library_completed_random-mix_EN_TR');
+      localStorage.removeItem('library_inputs_random-mix_TR_EN');
+      localStorage.removeItem('library_inputs_random-mix_EN_TR');
+      localStorage.removeItem('library_wrong_random-mix_TR_EN');
+      localStorage.removeItem('library_wrong_random-mix_EN_TR');
+    }
+
+    setActiveLibrarySet(randomSet);
+    setMode(AppMode.LIBRARY_PRACTICE);
   };
 
   const loadWordsWithDemoFallback = async (userId: string) => {
@@ -324,7 +398,7 @@ export default function App() {
         localStorage.setItem('lingua_global_offset', '0');
       }, 0);
     }
-    return sortedActive.slice(safeOffset, safeOffset + 20);
+    return sortedActive.slice(safeOffset, safeOffset + 34);
   };
 
   const handleNextSet = () => {
@@ -332,7 +406,7 @@ export default function App() {
       .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
       .sort((a, b) => new Date(a.created_at || 0).getTime() - new Date(b.created_at || 0).getTime());
 
-    let newOffset = studyOffset + 20;
+    let newOffset = studyOffset + 34;
     if (newOffset >= sortedActive.length) {
       newOffset = 0; // Loop back to start
       showToast("Tüm kelimeler bitti, başa dönüldü!", "success");
@@ -425,7 +499,7 @@ export default function App() {
 
         {mode === AppMode.FLASHCARDS && <FlashcardMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} onExit={() => setMode(AppMode.HOME)} onNextSet={handleNextSet} onRemoveWord={handleArchiveWord} onGoToQuiz={() => { setMode(AppMode.QUIZ); }} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
         {mode === AppMode.QUIZ && <QuizMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} allWords={words} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
-        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} />}
+        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
         {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={handleRestoreWord} onClearArchive={handleClearArchive} />}
 
         {mode === AppMode.LIBRARY && (
@@ -435,6 +509,7 @@ export default function App() {
               setActiveLibrarySet(set);
               setMode(AppMode.LIBRARY_PRACTICE);
             }} 
+            onRandomCreate={handleRandomLibrarySet}
           />
         )}
 
@@ -445,6 +520,7 @@ export default function App() {
             onGoHome={() => setMode(AppMode.HOME)}
             onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)}
             onGoToQuiz={() => setMode(AppMode.QUIZ)}
+            onRegenerate={activeLibrarySet.id === 'random-mix' ? () => handleRandomLibrarySet(true) : undefined}
           />
         )}
 

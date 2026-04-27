@@ -1,7 +1,21 @@
 export const isMatch = (input: string, target: string): boolean => {
   const getVariants = (text: string): string[] => {
-    // Basic normalization: lower case, remove punctuation (except apostrophes for now)
-    let s = text.toLowerCase().trim();
+    // Turkish character normalization for robust matching
+    let s = text.replace(/İ/g, 'i')
+                .replace(/I/g, 'i')
+                .replace(/ı/g, 'i')
+                .replace(/Ç/g, 'c')
+                .replace(/ç/g, 'c')
+                .replace(/Ş/g, 's')
+                .replace(/ş/g, 's')
+                .replace(/Ğ/g, 'g')
+                .replace(/ğ/g, 'g')
+                .replace(/Ü/g, 'u')
+                .replace(/ü/g, 'u')
+                .replace(/Ö/g, 'o')
+                .replace(/ö/g, 'o')
+                .toLowerCase()
+                .trim();
     s = s.replace(/["“”‘’]/g, "'").replace(/[.,!?;:]/g, '').replace(/\s+/g, ' ');
 
     let currentVariants = new Set<string>([s]);

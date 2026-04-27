@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Word, LanguageDirection } from '../types';
 import { isMatch } from '../utils/stringUtils';
-import { Check, X, RefreshCw, Type, Languages, ArrowLeft, Volume2, Sparkles, ChevronLeft, ChevronRight, Trophy, BookOpen, Zap } from 'lucide-react';
+import { Check, X, RefreshCw, Type, Languages, ArrowLeft, Volume2, Sparkles, ChevronLeft, ChevronRight, Trophy, BookOpen, Zap, Info, Plus } from 'lucide-react';
+import { wordService, supabase } from '../services/supabaseClient';
 
 interface SentenceModeProps {
     words: Word[];
@@ -10,9 +11,10 @@ interface SentenceModeProps {
     onGoToFlashcards?: () => void;
     onGoToQuiz?: () => void;
     onRestartSentences?: () => void;
+    onRegenerate?: () => void;
 }
 
-const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashcards, onGoToQuiz, onRestartSentences }) => {
+const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashcards, onGoToQuiz, onRestartSentences, onRegenerate }) => {
     const [finished, setFinished] = useState(false);
     const [showResetConfirm, setShowResetConfirm] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(() => {
@@ -32,6 +34,37 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
         const saved = localStorage.getItem('lingua_sentence_direction');
         return (saved as LanguageDirection) || LanguageDirection.TR_EN;
     });
+
+    const [selectedWord, setSelectedWord] = useState<string | null>(null);
+    const [isAddingWord, setIsAddingWord] = useState(false);
+
+    const handleDoubleClick = (text: string) => {
+      if (!text) return;
+      // Punctuation characters to strip
+      const cleanText = text.replace(/[.,!?;:()"]/g, "").trim();
+      if (cleanText && cleanText.length >= 1 && !cleanText.includes(' ')) {
+        setSelectedWord(cleanText);
+      }
+    };
+
+    const confirmAddWord = async () => {
+      if (!selectedWord) return;
+      setIsAddingWord(true);
+      try {
+        const { data: { session } } = await supabase!.auth.getSession();
+        await wordService.addWord({
+          english: selectedWord,
+          turkish: '',
+          example_sentence: '',
+          turkish_sentence: ''
+        }, session?.user?.id);
+        setSelectedWord(null);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setIsAddingWord(false);
+      }
+    };
 
     useEffect(() => {
         localStorage.setItem('lingua_sentence_direction', direction);
@@ -137,6 +170,18 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
                             <RefreshCw size={18} /> Cümleler ile Tekrar Çalış
                         </button>
 
+                        {onRegenerate && (
+                            <button
+                                onClick={() => {
+                                    onRegenerate();
+                                    setFinished(false);
+                                }}
+                                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 border border-white/10"
+                            >
+                                <RefreshCw size={18} /> Yeni Set Üret
+                            </button>
+                        )}
+
                         {onGoToFlashcards && (
                             <button
                                 onClick={onGoToFlashcards}
@@ -229,7 +274,15 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
 
 
 
-                    <p className="text-3xl font-black text-white mb-10 leading-snug tracking-tight">"{promptText}"</p>
+                    <p 
+                        className="text-3xl font-black text-white mb-10 leading-snug tracking-tight cursor-pointer hover:text-white/80 transition-colors"
+                        onDoubleClick={() => {
+                            const selection = window.getSelection()?.toString().trim();
+                            handleDoubleClick(selection || '');
+                        }}
+                    >
+                        "{promptText}"
+                    </p>
 
                     <button onClick={speak} className="flex items-center gap-3 text-white/40 font-black text-[10px] uppercase tracking-widest hover:text-purple-400 transition-all mb-8">
                         <Volume2 size={20} /> Telaffuzu Dinle
@@ -238,15 +291,29 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
                     <textarea
                         value={userInput}
                         onChange={(e) => setUserInput(e.target.value)}
+                        onDoubleClick={(e) => {
+                            const input = e.currentTarget;
+                            const start = input.selectionStart || 0;
+                            const end = input.selectionEnd || 0;
+                            handleDoubleClick(input.value.substring(start, end).trim());
+                        }}
                         placeholder="Çevirini buraya yaz..."
-                        className="w-full p-8 rounded-[40px] bg-zinc-800 border-2 border-white/20 focus:border-purple-500/50 focus:bg-zinc-700/50 outline-none h-44 resize-none text-xl font-bold transition-all text-white placeholder:text-zinc-500 shadow-inner"
-                        disabled={status === 'CORRECT'}
+                        className={`w-full p-8 rounded-[40px] bg-zinc-800 border-2 border-white/20 focus:border-purple-500/50 focus:bg-zinc-700/50 outline-none h-44 resize-none text-xl font-bold transition-all text-white placeholder:text-zinc-500 shadow-inner ${status === 'CORRECT' ? 'cursor-default' : ''}`}
+                        readOnly={status === 'CORRECT'}
                     />
 
                     {status === 'WRONG' && (
                         <div className="mt-6 p-6 bg-red-500/10 text-red-400 rounded-[32px] border border-red-500/20 animate-shake">
                             <p className="font-black flex items-center gap-3 mb-2 uppercase text-[10px] tracking-widest"><X size={20} /> Hatalı Deneme</p>
-                            <p className="text-lg font-bold leading-relaxed">Doğrusu: <span className="text-white">"{targetText}"</span></p>
+                            <p 
+                                className="text-lg font-bold leading-relaxed cursor-pointer"
+                                onDoubleClick={() => {
+                                    const selection = window.getSelection()?.toString().trim();
+                                    handleDoubleClick(selection || '');
+                                }}
+                            >
+                                Doğrusu: <span className="text-white">"{targetText}"</span>
+                            </p>
                         </div>
                     )}
                     {status === 'CORRECT' && (
@@ -320,6 +387,45 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
                             >
                                 Evet, Sıfırla
                             </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {/* Word Addition Confirmation Modal */}
+            {selectedWord && (
+                <div className="fixed inset-0 z-[20000] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+                    <div className="bg-zinc-900 border-2 border-white/10 rounded-[40px] p-8 max-w-md w-full shadow-2xl animate-in zoom-in-95 duration-200">
+                        <div className="w-16 h-16 bg-blue-500/20 rounded-3xl flex items-center justify-center text-blue-400 mb-6 mx-auto">
+                            <Plus size={32} />
+                        </div>
+                        <h3 className="text-2xl font-black text-white text-center mb-2">Kelime Ekle</h3>
+                        <p className="text-zinc-400 text-center mb-8">
+                            <span className="text-white font-bold text-lg">"{selectedWord}"</span> kelimesini kelime listenize eklemek istiyor musunuz?
+                        </p>
+                        <div className="flex gap-4">
+                            <button
+                                onClick={() => setSelectedWord(null)}
+                                className="flex-1 py-4 px-6 rounded-2xl bg-zinc-800 text-white font-bold hover:bg-zinc-700 transition-colors"
+                            >
+                                Vazgeç
+                            </button>
+                            <button
+                                onClick={confirmAddWord}
+                                disabled={isAddingWord}
+                                className="flex-1 py-4 px-6 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 disabled:opacity-50"
+                            >
+                                {isAddingWord ? (
+                                    <RefreshCw size={20} className="animate-spin" />
+                                ) : (
+                                    <>Ekle</>
+                                )}
+                            </button>
+                        </div>
+                        <div className="mt-6 flex items-start gap-3 p-4 bg-blue-500/5 rounded-2xl border border-blue-500/10">
+                            <Info size={18} className="text-blue-400 mt-0.5" />
+                            <p className="text-[11px] text-blue-400/80 leading-relaxed font-medium uppercase tracking-wider">
+                                Bu işlem kelimeyi arşivinize ekleyerek daha sonra çalışmanıza olanak sağlar.
+                            </p>
                         </div>
                     </div>
                 </div>

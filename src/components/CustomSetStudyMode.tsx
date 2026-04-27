@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Word, LanguageDirection } from '../types';
-import { ArrowLeft, Volume2, CheckCircle2, XCircle, Eraser, Languages, Eye, Trophy, RotateCcw, HelpCircle, Info, Plus, Home } from 'lucide-react';
+import { ArrowLeft, Volume2, CheckCircle2, XCircle, Eraser, Languages, Eye, Trophy, RotateCcw, HelpCircle, Info, Plus, Home, ArrowUp } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
 import { isMatch as checkAnswerMatch } from '../utils/stringUtils';
 import confetti from 'canvas-confetti';
@@ -74,6 +74,15 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
     const [selectionToAdd, setSelectionToAdd] = useState<{ text: string, word: Word } | null>(null);
     const [showResetConfirm, setShowResetConfirm] = useState(false);
     const [confirmRevealId, setConfirmRevealId] = useState<string | null>(null);
+    const [showScrollTop, setShowScrollTop] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowScrollTop(window.scrollY > 400);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     // Yükleme
     useEffect(() => {
@@ -289,7 +298,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
 
     const handlePromptDoubleClick = (word: Word) => {
         const selection = window.getSelection()?.toString().trim();
-        if (!selection || selection.length < 2) return;
+        if (!selection || selection.length < 1) return;
         setSelectionToAdd({ text: selection, word });
     };
 
@@ -298,7 +307,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
         const start = input.selectionStart || 0;
         const end = input.selectionEnd || 0;
         const selectedText = input.value.substring(start, end).trim();
-        if (selectedText && selectedText.length > 1) {
+        if (selectedText && selectedText.length >= 1) {
             setSelectionToAdd({ text: selectedText, word: word });
         }
     };
@@ -619,7 +628,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
 
                 {/* Custom Add Word Modal */}
                 {selectionToAdd && (
-                    <div className="fixed inset-0 z-[10005] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+                    <div className="fixed inset-0 z-[20000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
                         <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-[32px] w-full max-w-md shadow-2xl relative overflow-hidden animate-scaleIn">
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500"></div>
                             <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-500">
@@ -651,6 +660,20 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
                     </div>
                 )}
             </div>
+
+            {/* Scroll to Top Button */}
+            {showScrollTop && (
+                <button
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="fixed bottom-10 left-6 md:left-[calc(50%-610px)] z-50 group flex flex-col items-center gap-2 p-3 bg-zinc-900/80 backdrop-blur-xl hover:bg-blue-600/10 border border-white/10 hover:border-blue-500/30 rounded-3xl transition-all duration-500 hover:scale-110 active:scale-95 shadow-2xl shadow-black/40"
+                    title="yukarıya dön"
+                >
+                    <div className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center animate-bounce group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+                        <ArrowUp size={20} />
+                    </div>
+                    <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest group-hover:text-blue-400 transition-colors opacity-0 group-hover:opacity-100 transition-opacity duration-300">yukarıya dön</span>
+                </button>
+            )}
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LibrarySet, LanguageDirection } from '../types';
 import { isMatch } from '../utils/stringUtils';
-import { ArrowLeft, Home, Languages, CheckCircle2, Volume2, HelpCircle, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle, Info, Plus } from 'lucide-react';
+import { ArrowLeft, ArrowUp, Home, Languages, CheckCircle2, Volume2, HelpCircle, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle, Info, Plus } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
 import confetti from 'canvas-confetti';
 
@@ -11,9 +11,10 @@ interface LibraryPracticeScreenProps {
   onGoHome: () => void;
   onGoToFlashcards?: () => void;
   onGoToQuiz?: () => void;
+  onRegenerate?: () => void;
 }
 
-const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onExit, onGoHome, onGoToFlashcards, onGoToQuiz }) => {
+const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onExit, onGoHome, onGoToFlashcards, onGoToQuiz, onRegenerate }) => {
   const [direction, setDirection] = useState<LanguageDirection>(LanguageDirection.TR_EN);
   
   const [completed, setCompleted] = useState<{ [key: string]: boolean }>({});
@@ -23,10 +24,13 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [isAddingWord, setIsAddingWord] = useState(false);
   const [showOnlyWrong, setShowOnlyWrong] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [showFinishedModal, setShowFinishedModal] = useState(false);
   const [confirmRevealId, setConfirmRevealId] = useState<string | null>(null);
+  const [everWrongIds, setEverWrongIds] = useState<Set<string>>(new Set());
+  const [showRegenerateConfirm, setShowRegenerateConfirm] = useState(false);
   
-  const inputRefs = useRef<{ [key: string]: HTMLInputElement | null }>({});
+  const inputRefs = useRef<{ [key: string]: HTMLTextAreaElement | null }>({});
 
   useEffect(() => {
     const savedCompletedStr = localStorage.getItem(`library_completed_${set.id}_${direction}`);
@@ -55,6 +59,14 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     }
 
     setTimeout(() => {
+      // Resize all textareas on mount/direction change
+      Object.values(inputRefs.current).forEach(el => {
+        if (el) {
+          el.style.height = 'auto';
+          el.style.height = `${Math.min(el.scrollHeight, 120)}px`;
+        }
+      });
+
       const firstUncompleted = set.sentences.find(s => !initialCompleted[s.id]);
       if (firstUncompleted) {
         const el = inputRefs.current[firstUncompleted.id];
@@ -65,6 +77,14 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       }
     }, 300);
   }, [set, direction]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const completedCount = Object.keys(completed).length;
   const isAllCompleted = set.sentences.length > 0 && completedCount === set.sentences.length;
@@ -138,7 +158,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, sentenceId: string) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>, sentenceId: string) => {
     if (e.key === 'Enter') {
       const input = inputs[sentenceId] || '';
       const sentence = set.sentences.find(s => s.id === sentenceId)!;
@@ -149,6 +169,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       if (!isMatch(input, targetText)) {
         const newWrong = { ...wrongInputs, [sentenceId]: true };
         setWrongInputs(newWrong);
+        setEverWrongIds(prev => new Set(prev).add(sentenceId));
         localStorage.setItem(`library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
       }
     }
@@ -158,12 +179,14 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     const currentInput = inputs[sentenceId] || '';
     if (currentInput.length < targetText.length) {
       const nextInput = targetText.slice(0, currentInput.length + 1);
+      setEverWrongIds(prev => new Set(prev).add(sentenceId));
       checkAnswer(sentenceId, nextInput);
       inputRefs.current[sentenceId]?.focus();
     }
   };
 
   const handleReveal = (sentenceId: string, targetText: string) => {
+    setEverWrongIds(prev => new Set(prev).add(sentenceId));
     checkAnswer(sentenceId, targetText);
   };
 
@@ -181,8 +204,11 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
   };
 
   const handleDoubleClick = (text: string) => {
-    if (text && text.length > 1 && !text.includes(' ')) {
-      setSelectedWord(text);
+    if (!text) return;
+    // Punctuation characters to strip
+    const cleanText = text.replace(/[.,!?;:()"]/g, "").trim();
+    if (cleanText && cleanText.length >= 1 && !cleanText.includes(' ')) {
+      setSelectedWord(cleanText);
     }
   };
 
@@ -252,9 +278,34 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                 </div>
 
                 <h2 className="text-4xl font-black text-white mb-4 tracking-tight">Harika Bir Set!</h2>
-                <p className="text-slate-400 font-medium text-lg mb-10 leading-relaxed">
+                <p className="text-slate-400 font-medium text-lg mb-8 leading-relaxed">
                     <span className="text-purple-400 font-bold">{set.title}</span> kütüphane setindeki tüm cümleleri başarıyla çalıştın.
                 </p>
+
+                {set.id === 'random-mix' && (
+                    <div className="mb-10 text-left bg-black/40 border border-white/5 rounded-3xl p-6">
+                        <div className="flex items-center gap-2 mb-4">
+                            <Info size={16} className="text-blue-400" />
+                            <h3 className="text-xs font-black text-blue-400 uppercase tracking-widest">Hata Yapılan Gruplar</h3>
+                        </div>
+                        {everWrongIds.size > 0 ? (
+                            <div className="flex flex-wrap gap-2">
+                                {Array.from(new Set(
+                                    set.sentences
+                                        .filter(s => everWrongIds.has(s.id))
+                                        .map(s => s.sourceSetTitle)
+                                        .filter(Boolean)
+                                )).map((title, i) => (
+                                    <span key={i} className="text-[10px] font-bold px-2.5 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-lg">
+                                        {title}
+                                    </span>
+                                ))}
+                            </div>
+                        ) : (
+                            <p className="text-emerald-400 text-xs font-bold">Tebrikler! Hiç hata yapmadan tamamladın. 🔥</p>
+                        )}
+                    </div>
+                )}
 
                 <div className="space-y-3">
                     <button
@@ -263,6 +314,18 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                     >
                         <RefreshCw size={18} /> Cümleler ile Tekrar Çalış
                     </button>
+
+                    {onRegenerate && (
+                        <button
+                            onClick={() => {
+                                onRegenerate();
+                                setShowFinishedModal(false);
+                            }}
+                            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 border border-white/10"
+                        >
+                            <RefreshCw size={18} /> Yeni Set Üret
+                        </button>
+                    )}
 
                     {onGoToFlashcards && (
                         <button
@@ -303,55 +366,63 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         ></div>
       </div>
 
-      <div className="max-w-6xl mx-auto w-full px-6 py-10">
-        <div className="flex items-center justify-between mb-12">
-          <button onClick={onExit} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
-            <ArrowLeft size={20} />
-          </button>
+      <div className="max-w-6xl mx-auto w-full px-6 py-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
+          <div className="flex items-center gap-4">
+            <button onClick={onExit} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all shrink-0">
+              <ArrowLeft size={20} />
+            </button>
+            <div>
+              <h1 className="text-2xl md:text-3xl font-black tracking-tight leading-tight">{set.title}</h1>
+              <p className="text-slate-500 font-bold text-xs md:text-sm">Cümleleri doğru şekilde çevirerek ilerle.</p>
+            </div>
+          </div>
           
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex items-center gap-3 self-end md:self-auto w-full md:w-auto justify-end">
+            <div className="flex flex-col items-end mr-2">
+                <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                  İLERLEME
+                </span>
+                <span className="text-xs font-black text-emerald-500 uppercase tracking-widest">
+                  {completedCount} / {set.sentences.length}
+                </span>
+            </div>
+            
             <button 
               onClick={() => setDirection(d => d === LanguageDirection.TR_EN ? LanguageDirection.EN_TR : LanguageDirection.TR_EN)}
-              className="bg-blue-500/10 border border-blue-500/20 px-5 py-2.5 rounded-full text-blue-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-2 hover:bg-blue-500/20 transition-all"
+              className="bg-blue-500/10 border border-blue-500/20 px-4 py-2 md:px-4 md:py-2.5 rounded-2xl text-blue-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-2 hover:bg-blue-500/20 transition-all shrink-0"
             >
-              <Languages size={14} /> {direction.replace('_', ' → ')}
+              <Languages size={14} /> <span className="hidden sm:inline">{direction.replace('_', ' → ')}</span>
             </button>
-            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
-              {completedCount} / {set.sentences.length} TAMAMLANDI
-            </span>
+
+            <button onClick={onGoHome} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all shrink-0">
+              <Home size={20} />
+            </button>
           </div>
-
-          <button onClick={onGoHome} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
-            <Home size={20} />
-          </button>
-        </div>
-
-        <div className="mb-10 text-center">
-          <h1 className="text-4xl font-black mb-2 tracking-tight">{set.title}</h1>
-          <p className="text-slate-500 font-bold text-sm">Cümleleri doğru şekilde çevirerek ilerle.</p>
         </div>
 
         {/* Info Box */}
-        <div className="w-full bg-blue-900/10 border border-blue-500/20 p-5 rounded-3xl mb-10 flex flex-col gap-4">
-            <div className="flex items-start gap-4">
-                <div className="p-2 bg-blue-500/10 text-blue-400 rounded-xl">
-                    <Info size={18} />
+        <div className="w-full bg-blue-900/10 border border-blue-500/20 p-4 rounded-2xl mb-8 flex flex-col gap-3">
+            <div className="flex items-start gap-3">
+                <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg">
+                    <Info size={16} />
                 </div>
-                <p className="text-sm font-semibold text-blue-200/80 leading-relaxed">
+                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-relaxed pt-0.5">
                     Çeviri girişi doğru sağlandığı anda bir sonraki cümleye geçiş otomatik gerçekleşir.
                 </p>
             </div>
-            <div className="flex items-start gap-4 border-t border-blue-500/10 pt-4">
-                <div className="p-2 bg-blue-500/10 text-blue-400 rounded-xl">
-                    <Plus size={18} />
+            <div className="flex items-start gap-3 border-t border-blue-500/10 pt-3">
+                <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg">
+                    <Plus size={16} />
                 </div>
-                <p className="text-sm font-semibold text-blue-200/80 leading-relaxed">
+                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-relaxed pt-0.5">
                     Öğrenmek istediğiniz kelimelere çift tıklayarak çalışma listenize ekleyebilirsiniz.
                 </p>
             </div>
         </div>
 
-        <div className="space-y-4">
+
+        <div className="space-y-3">
           {set.sentences
             .filter(s => !showOnlyWrong || wrongInputs[s.id])
             .map((sentence, idx) => {
@@ -363,35 +434,40 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
               return (
                 <div 
                   key={sentence.id} 
-                  className={`group relative flex flex-col md:flex-row items-stretch bg-zinc-900 rounded-[24px] border-2 transition-all w-full
+                  className={`group relative flex flex-col md:flex-row items-stretch bg-zinc-900 rounded-[20px] border-2 transition-all w-full
                     ${isDone ? 'border-emerald-500/30 bg-emerald-900/10 opacity-70' : 
                       isWrong ? 'border-red-500/30 animate-shake' : 
                       'border-zinc-800 focus-within:border-blue-500/50 hover:border-zinc-700'}
                   `}
                 >
+
                   {/* Left: Prompt */}
                   <div 
-                    className="flex-1 p-4 md:p-5 border-b md:border-b-0 md:border-r border-white/5 bg-white/5 md:bg-transparent cursor-pointer hover:bg-white/5 transition-colors flex flex-col justify-center"
+                    className="flex-1 p-3 md:p-4 border-b md:border-b-0 md:border-r border-white/5 bg-white/5 md:bg-transparent cursor-pointer hover:bg-white/5 transition-colors flex items-center"
                     onDoubleClick={() => {
                         const selection = window.getSelection()?.toString().trim();
                         handleDoubleClick(selection || '');
                     }}
                   >
-                    <p className="text-lg md:text-xl font-bold text-slate-200 leading-snug break-words">
-                      <span className="text-slate-500 mr-3 select-none">{idx + 1}.</span>
+                    <p className="text-base md:text-lg font-bold text-slate-200 leading-snug break-words">
+                      <span className="text-slate-500 mr-2 select-none">{idx + 1}.</span>
                       {promptText}
                     </p>
                   </div>
 
                   {/* Right: Input */}
-                  <div className="flex-1 p-3 md:p-4 flex items-center justify-center bg-black/20">
-                    <div className="w-full flex items-center gap-3">
-                        <div className="relative flex-1">
+                  <div className="flex-1 p-2 md:p-3 flex items-center justify-center bg-black/20">
+                    <div className="w-full flex items-center gap-2">
+                        <div className="relative flex-1 flex flex-col justify-center">
                             <textarea
                                 ref={el => inputRefs.current[sentence.id] = el as any}
-                                rows={2}
+                                rows={1}
                                 value={inputs[sentence.id] || ''}
-                                onChange={(e) => checkAnswer(sentence.id, e.target.value)}
+                                onChange={(e) => {
+                                    checkAnswer(sentence.id, e.target.value);
+                                    e.target.style.height = 'auto';
+                                    e.target.style.height = `${Math.min(e.target.scrollHeight, 120)}px`;
+                                }}
                                 onKeyDown={(e) => {
                                     if (e.key === 'Enter' && !e.shiftKey) {
                                         e.preventDefault();
@@ -405,14 +481,15 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                                     handleDoubleClick(input.value.substring(start, end).trim());
                                 }}
                                 placeholder={direction === LanguageDirection.TR_EN ? "İngilizce çevirisi..." : "Türkçe çevirisi..."}
-                                className={`w-full bg-zinc-800/50 border border-white/10 rounded-xl pl-4 pr-32 py-3 text-base md:text-lg font-bold outline-none transition-all resize-none leading-relaxed
-                                    ${isDone ? 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5' : 
+                                className={`w-full bg-zinc-800/50 border border-white/10 rounded-xl pl-4 pr-32 py-3 text-base font-bold outline-none transition-all resize-none leading-relaxed placeholder:text-zinc-700
+                                    ${isDone ? 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5 cursor-default' : 
                                       isWrong ? 'text-red-400 border-red-500/30' : 
                                       'text-white focus:border-blue-500/50 focus:bg-zinc-800'}
                                 `}
-                                disabled={isDone}
+                                style={{ minHeight: '52px' }}
+                                readOnly={isDone}
                             />
-                            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+                            <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
                                  {!isDone && (
                                      <>
                                         <button 
@@ -439,15 +516,23 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                                                     setTimeout(() => setConfirmRevealId(null), 3000);
                                                 }
                                             }}
-                                            className={`p-1.5 rounded-lg transition-all ${confirmRevealId === sentence.id ? 'bg-yellow-500/20 text-yellow-400' : 'text-slate-500 hover:bg-white/10 hover:text-yellow-500'}`}
+                                            className={`p-1.5 rounded-lg transition-all ${confirmRevealId === sentence.id ? 'bg-emerald-500/20 text-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.3)]' : 'text-slate-500 hover:bg-white/10 hover:text-yellow-500'}`}
                                             title={confirmRevealId === sentence.id ? "Onaylamak için tekrar tıkla" : "Cevabı Göster"}
                                         >
-                                            <Eye size={16} />
+                                            {confirmRevealId === sentence.id ? <CheckCircle2 size={16} /> : <Eye size={16} />}
                                         </button>
                                      </>
                                  )}
-                                 {isDone && <CheckCircle2 className="text-emerald-500" size={20} />}
-                                 {isWrong && <XCircle className="text-red-500 animate-pulse" size={20} />}
+                                 {isDone && (
+                                     <button 
+                                         onClick={(e) => { e.stopPropagation(); speak(targetText, direction === LanguageDirection.TR_EN ? 'en-US' : 'tr-TR'); }}
+                                         className="p-1.5 text-emerald-500 hover:bg-emerald-500/10 rounded-lg transition-colors mr-1"
+                                         title="Cevabı Dinle"
+                                     >
+                                         <Volume2 size={20} />
+                                     </button>
+                                 )}
+                                 {isWrong && <XCircle className="text-red-500 animate-pulse pointer-events-none mr-2" size={20} />}
                             </div>
                         </div>
                     </div>
@@ -458,25 +543,33 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         </div>
 
         {set.sentences.length > 0 && (
-          <div className="flex items-center justify-center gap-8 mt-16 mb-8">
+          <div className="flex items-center justify-center flex-wrap gap-x-8 gap-y-4 mt-16 mb-8">
             <button 
               onClick={handleResetProgress} 
-              className="text-slate-500 hover:text-slate-300 font-black text-xs uppercase tracking-widest transition-colors underline underline-offset-8"
+              className="text-slate-500 hover:text-slate-300 font-black text-[10px] uppercase tracking-widest transition-colors underline underline-offset-8"
             >
               Çalışmayı Sıfırla
             </button>
             <button 
               onClick={() => setShowOnlyWrong(!showOnlyWrong)} 
-              className="text-blue-500/70 hover:text-blue-400 font-black text-xs uppercase tracking-widest transition-colors underline underline-offset-8"
+              className="text-blue-500/70 hover:text-blue-400 font-black text-[10px] uppercase tracking-widest transition-colors underline underline-offset-8"
             >
               {showOnlyWrong ? "Tüm Cümleleri Göster" : "Sadece Hatalıları Göster"}
             </button>
+            {onRegenerate && (
+              <button 
+                onClick={() => setShowRegenerateConfirm(true)} 
+                className="text-purple-500/70 hover:text-purple-400 font-black text-[10px] uppercase tracking-widest transition-colors underline underline-offset-8"
+              >
+                Yeni Set Üret
+              </button>
+            )}
           </div>
         )}
       </div>
 
       {selectedWord && (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[20000] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
           <div className="bg-zinc-900 border border-white/10 rounded-[32px] p-8 max-w-sm w-full shadow-2xl animate-in fade-in zoom-in-95 duration-200 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
             <h3 className="text-xl font-black text-white mb-4">Listeye Ekle</h3>
@@ -534,6 +627,55 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
             </div>
           </div>
         </div>
+      )}
+
+      {/* Regenerate Confirmation Modal */}
+      {showRegenerateConfirm && (
+        <div className="fixed inset-0 z-[10005] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-[32px] w-full max-w-md shadow-2xl relative overflow-hidden animate-scaleIn">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-emerald-500"></div>
+            <div className="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 text-purple-500">
+              <RefreshCw size={32} />
+            </div>
+
+            <h3 className="text-xl font-black text-white mb-2">Yeni Set Üret?</h3>
+            <p className="text-slate-400 font-medium mb-8 leading-relaxed">
+              Yeni bir set üretilecek, onaylıyor musunuz?
+            </p>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowRegenerateConfirm(false)}
+                className="flex-1 py-4 rounded-xl bg-zinc-900 text-slate-400 font-bold hover:bg-zinc-800 hover:text-white transition-all"
+              >
+                Vazgeç
+              </button>
+              <button
+                onClick={() => {
+                  onRegenerate?.();
+                  setShowRegenerateConfirm(false);
+                }}
+                className="flex-1 py-4 rounded-xl bg-purple-600 text-white font-bold hover:bg-purple-500 transition-all shadow-lg shadow-purple-600/20"
+              >
+                Evet, Üret
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Scroll to Top Button - Moved back to fixed bottom-left as requested */}
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-10 left-6 md:left-[calc(50%-590px)] z-[1000] group flex flex-col items-center gap-2 p-3 bg-zinc-900/80 backdrop-blur-xl hover:bg-blue-600/10 border border-white/10 hover:border-blue-500/30 rounded-3xl transition-all duration-500 hover:scale-110 active:scale-95 shadow-2xl shadow-black/40"
+          title="yukarıya dön"
+        >
+          <div className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center animate-bounce group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
+            <ArrowUp size={20} />
+          </div>
+          <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest group-hover:text-blue-400 transition-colors opacity-0 group-hover:opacity-100 transition-opacity duration-300">yukarıya dön</span>
+        </button>
       )}
     </div>
   );
