@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LibrarySet, LanguageDirection } from '../types';
 import { isMatch } from '../utils/stringUtils';
-import { ArrowLeft, Home, Languages, CheckCircle2, Volume2, HelpCircle, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle } from 'lucide-react';
-import { wordService } from '../services/supabaseClient';
+import { ArrowLeft, Home, Languages, CheckCircle2, Volume2, HelpCircle, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle, Info, Plus } from 'lucide-react';
+import { wordService, supabase } from '../services/supabaseClient';
 import confetti from 'canvas-confetti';
 
 interface LibraryPracticeScreenProps {
@@ -24,6 +24,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
   const [isAddingWord, setIsAddingWord] = useState(false);
   const [showOnlyWrong, setShowOnlyWrong] = useState(false);
   const [showFinishedModal, setShowFinishedModal] = useState(false);
+  const [confirmRevealId, setConfirmRevealId] = useState<string | null>(null);
   
   const inputRefs = useRef<{ [key: string]: HTMLInputElement | null }>({});
 
@@ -119,6 +120,10 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         setCompleted(newCompleted);
         localStorage.setItem(`library_completed_${set.id}_${direction}`, JSON.stringify(newCompleted));
         
+        // Speak the correct answer
+        speak(targetText, direction === LanguageDirection.TR_EN ? 'en-US' : 'tr-TR');
+
+        // Auto-focus the next uncompleted input sequentially
         const currentIndex = set.sentences.findIndex(s => s.id === sentenceId);
         for (let i = currentIndex + 1; i < set.sentences.length; i++) {
           const nextId = set.sentences[i].id;
@@ -175,13 +180,9 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     inputRefs.current[sentenceId]?.focus();
   };
 
-  const handleDoubleClick = () => {
-    const selection = window.getSelection();
-    if (selection) {
-      const text = selection.toString().trim();
-      if (text.length > 1 && !text.includes(' ')) {
-        setSelectedWord(text);
-      }
+  const handleDoubleClick = (text: string) => {
+    if (text && text.length > 1 && !text.includes(' ')) {
+      setSelectedWord(text);
     }
   };
 
@@ -189,12 +190,13 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     if (!selectedWord) return;
     setIsAddingWord(true);
     try {
+      const { data: { session } } = await supabase!.auth.getSession();
       await wordService.addWord({
         english: selectedWord,
         turkish: '',
         example_sentence: '',
         turkish_sentence: ''
-      }, 'demo_user'); // Simplified for library practice
+      }, session?.user?.id);
       setSelectedWord(null);
     } catch (e) {
       console.error(e);
@@ -290,7 +292,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         ></div>
       </div>
 
-      <div className="max-w-4xl mx-auto w-full px-6 py-10">
+      <div className="max-w-6xl mx-auto w-full px-6 py-10">
         <div className="flex items-center justify-between mb-12">
           <button onClick={onExit} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
             <ArrowLeft size={20} />
@@ -314,11 +316,31 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         </div>
 
         <div className="mb-10 text-center">
-          <h1 className="text-3xl font-black mb-2">{set.title}</h1>
+          <h1 className="text-4xl font-black mb-2 tracking-tight">{set.title}</h1>
           <p className="text-slate-500 font-bold text-sm">Cümleleri doğru şekilde çevirerek ilerle.</p>
         </div>
 
-        <div className="space-y-6" onDoubleClick={handleDoubleClick}>
+        {/* Info Box */}
+        <div className="w-full bg-blue-900/10 border border-blue-500/20 p-5 rounded-3xl mb-10 flex flex-col gap-4">
+            <div className="flex items-start gap-4">
+                <div className="p-2 bg-blue-500/10 text-blue-400 rounded-xl">
+                    <Info size={18} />
+                </div>
+                <p className="text-sm font-semibold text-blue-200/80 leading-relaxed">
+                    Çeviri girişi doğru sağlandığı anda bir sonraki cümleye geçiş otomatik gerçekleşir.
+                </p>
+            </div>
+            <div className="flex items-start gap-4 border-t border-blue-500/10 pt-4">
+                <div className="p-2 bg-blue-500/10 text-blue-400 rounded-xl">
+                    <Plus size={18} />
+                </div>
+                <p className="text-sm font-semibold text-blue-200/80 leading-relaxed">
+                    Öğrenmek istediğiniz kelimelere çift tıklayarak çalışma listenize ekleyebilirsiniz.
+                </p>
+            </div>
+        </div>
+
+        <div className="space-y-4">
           {set.sentences
             .filter(s => !showOnlyWrong || wrongInputs[s.id])
             .map((sentence, idx) => {
@@ -330,57 +352,94 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
               return (
                 <div 
                   key={sentence.id} 
-                  className={`p-8 rounded-[40px] border transition-all duration-300 ${
-                    isDone ? 'bg-emerald-500/5 border-emerald-500/20 opacity-60' : 
-                    isWrong ? 'bg-red-500/5 border-red-500/20 animate-shake' : 
-                    'bg-zinc-900/50 border-white/5 hover:border-white/10'
-                  }`}
+                  className={`group relative flex flex-col md:flex-row items-stretch bg-zinc-900 rounded-[24px] border-2 transition-all w-full
+                    ${isDone ? 'border-emerald-500/30 bg-emerald-900/10 opacity-70' : 
+                      isWrong ? 'border-red-500/30 animate-shake' : 
+                      'border-zinc-800 focus-within:border-blue-500/50 hover:border-zinc-700'}
+                  `}
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-[10px] font-black text-slate-600 tracking-tighter">#{idx + 1}</span>
-                    <div className="flex gap-2">
-                      <button 
-                        onClick={() => speak(promptText, direction === LanguageDirection.TR_EN ? 'tr-TR' : 'en-US')}
-                        className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-white transition-colors"
-                      >
-                        <Volume2 size={16} />
-                      </button>
-                      <button 
-                        onClick={() => handleHelp(sentence.id, targetText)}
-                        className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-blue-400 transition-colors"
-                        disabled={isDone}
-                      >
-                        <HelpCircle size={16} />
-                      </button>
-                      <button 
-                        onClick={() => handleReveal(sentence.id, targetText)}
-                        className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-yellow-400 transition-colors"
-                        disabled={isDone}
-                      >
-                        <Eye size={16} />
-                      </button>
+                  {/* Left: Prompt */}
+                  <div 
+                    className="flex-1 p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/5 bg-white/2 md:bg-transparent cursor-pointer hover:bg-white/5 transition-colors flex flex-col justify-center"
+                    onDoubleClick={() => {
+                        const selection = window.getSelection()?.toString().trim();
+                        handleDoubleClick(selection || '');
+                    }}
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                        <span className="text-[10px] font-black text-slate-600 tracking-tighter uppercase">Cümle #{idx + 1}</span>
+                        {!isDone && (
+                             <div className="flex gap-1">
+                                <button 
+                                    onClick={(e) => { e.stopPropagation(); speak(promptText, direction === LanguageDirection.TR_EN ? 'tr-TR' : 'en-US'); }}
+                                    className="p-1.5 hover:bg-white/10 rounded-lg text-slate-500 hover:text-white transition-colors"
+                                >
+                                    <Volume2 size={14} />
+                                </button>
+                                <button 
+                                    onClick={(e) => { e.stopPropagation(); handleHelp(sentence.id, targetText); }}
+                                    className="p-1.5 hover:bg-white/10 rounded-lg text-slate-500 hover:text-blue-400 transition-colors"
+                                    disabled={isDone}
+                                >
+                                    <HelpCircle size={14} />
+                                </button>
+                             </div>
+                        )}
                     </div>
+                    <p className="text-lg md:text-xl font-bold text-slate-200 leading-snug break-words">
+                      "{promptText}"
+                    </p>
                   </div>
 
-                  <p className="text-xl font-bold mb-6 text-slate-200">"{promptText}"</p>
-
-                  <div className="relative">
-                    <input
-                      ref={el => inputRefs.current[sentence.id] = el}
-                      type="text"
-                      value={inputs[sentence.id] || ''}
-                      onChange={(e) => checkAnswer(sentence.id, e.target.value)}
-                      onKeyDown={(e) => handleKeyDown(e, sentence.id)}
-                      placeholder="Cümleyi buraya yaz..."
-                      className={`w-full bg-black/40 border-2 rounded-2xl px-6 py-4 font-bold outline-none transition-all ${
-                        isDone ? 'border-emerald-500/30 text-emerald-400' : 
-                        isWrong ? 'border-red-500/30 text-white' : 
-                        'border-white/10 focus:border-blue-500/50'
-                      }`}
-                      disabled={isDone}
-                    />
-                    {isDone && <CheckCircle2 className="absolute right-4 top-1/2 -translate-y-1/2 text-emerald-500" size={20} />}
-                    {isWrong && <XCircle className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500" size={20} />}
+                  {/* Right: Input */}
+                  <div className="flex-1 p-4 md:p-6 flex items-center bg-black/20">
+                    <div className="w-full relative">
+                        <textarea
+                            ref={el => inputRefs.current[sentence.id] = el as any}
+                            rows={2}
+                            value={inputs[sentence.id] || ''}
+                            onChange={(e) => checkAnswer(sentence.id, e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' && !e.shiftKey) {
+                                    e.preventDefault();
+                                    handleKeyDown(e as any, sentence.id);
+                                }
+                            }}
+                            onDoubleClick={(e) => {
+                                const input = e.currentTarget;
+                                const start = input.selectionStart || 0;
+                                const end = input.selectionEnd || 0;
+                                handleDoubleClick(input.value.substring(start, end).trim());
+                            }}
+                            placeholder={direction === LanguageDirection.TR_EN ? "İngilizce çevirisi..." : "Türkçe çevirisi..."}
+                            className={`w-full bg-zinc-800/50 border border-white/10 rounded-2xl px-6 py-4 text-base md:text-lg font-bold outline-none transition-all resize-none leading-relaxed
+                                ${isDone ? 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5' : 
+                                  isWrong ? 'text-red-400 border-red-500/30' : 
+                                  'text-white focus:border-blue-500/50 focus:bg-zinc-800'}
+                            `}
+                            disabled={isDone}
+                        />
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                             {!isDone && (
+                                <button 
+                                    onClick={() => {
+                                        if (confirmRevealId === sentence.id) {
+                                            handleReveal(sentence.id, targetText);
+                                            setConfirmRevealId(null);
+                                        } else {
+                                            setConfirmRevealId(sentence.id);
+                                            setTimeout(() => setConfirmRevealId(null), 3000);
+                                        }
+                                    }}
+                                    className={`p-2 rounded-xl transition-all ${confirmRevealId === sentence.id ? 'bg-yellow-500/20 text-yellow-400' : 'text-slate-600 hover:text-yellow-500'}`}
+                                >
+                                    <Eye size={18} />
+                                </button>
+                             )}
+                             {isDone && <CheckCircle2 className="text-emerald-500" size={24} />}
+                             {isWrong && <XCircle className="text-red-500 animate-pulse" size={24} />}
+                        </div>
+                    </div>
                   </div>
                 </div>
               );
@@ -388,16 +447,16 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         </div>
 
         {set.sentences.length > 0 && (
-          <div className="flex items-center justify-center gap-8 mt-12 mb-8">
+          <div className="flex items-center justify-center gap-8 mt-16 mb-8">
             <button 
               onClick={handleResetProgress} 
-              className="text-slate-500 hover:text-slate-300 font-bold transition-colors underline underline-offset-4"
+              className="text-slate-500 hover:text-slate-300 font-black text-xs uppercase tracking-widest transition-colors underline underline-offset-8"
             >
               Çalışmayı Sıfırla
             </button>
             <button 
               onClick={() => setShowOnlyWrong(!showOnlyWrong)} 
-              className="text-blue-500/70 hover:text-blue-400 font-bold transition-colors underline underline-offset-4"
+              className="text-blue-500/70 hover:text-blue-400 font-black text-xs uppercase tracking-widest transition-colors underline underline-offset-8"
             >
               {showOnlyWrong ? "Tüm Cümleleri Göster" : "Sadece Hatalıları Göster"}
             </button>
@@ -406,23 +465,25 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       </div>
 
       {selectedWord && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm">
-          <div className="bg-zinc-900 border border-white/10 rounded-3xl p-8 max-w-sm w-full shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
+          <div className="bg-zinc-900 border border-white/10 rounded-[32px] p-8 max-w-sm w-full shadow-2xl animate-in fade-in zoom-in-95 duration-200 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
             <h3 className="text-xl font-black text-white mb-4">Listeye Ekle</h3>
-            <p className="text-slate-300 font-medium mb-8">
-              <span className="text-white font-bold bg-white/10 px-2 py-0.5 rounded">"{selectedWord}"</span> kelimesini ana çalışma listene eklemek istiyor musun?
+            <p className="text-slate-300 font-medium mb-8 leading-relaxed">
+              <span className="text-white font-bold bg-white/10 px-2 py-0.5 rounded-md mx-1">"{selectedWord}"</span> 
+              kelimesini ana çalışma listene eklemek istiyor musun?
             </p>
             <div className="flex items-center gap-3">
               <button 
                 onClick={() => setSelectedWord(null)}
-                className="flex-1 py-3.5 rounded-xl font-bold bg-zinc-800 text-white hover:bg-zinc-700 transition-colors"
+                className="flex-1 py-4 rounded-2xl font-bold bg-zinc-800 text-slate-400 hover:bg-zinc-700 transition-colors"
                 disabled={isAddingWord}
               >
                 Vazgeç
               </button>
               <button 
                 onClick={confirmAddWord}
-                className="flex-1 py-3.5 rounded-xl font-bold bg-blue-600 text-white hover:bg-blue-500 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                className="flex-1 py-4 rounded-2xl font-bold bg-blue-600 text-white hover:bg-blue-500 transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20"
                 disabled={isAddingWord}
               >
                 {isAddingWord ? 'Ekleniyor...' : 'Ekle'}
