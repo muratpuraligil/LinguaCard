@@ -224,10 +224,15 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+
   const handleResetProgress = () => {
-    if (window.confirm("Bu set için çalışmanı sıfırlamak istediğine emin misin?")) {
-      handleRestart();
-    }
+    setShowResetConfirm(true);
+  };
+
+  const confirmReset = () => {
+    handleRestart();
+    setShowResetConfirm(false);
   };
 
   if (showFinishedModal) {
@@ -487,6 +492,38 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                 disabled={isAddingWord}
               >
                 {isAddingWord ? 'Ekleniyor...' : 'Ekle'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Reset Confirmation Modal */}
+      {showResetConfirm && (
+        <div className="fixed inset-0 z-[10005] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-[32px] w-full max-w-md shadow-2xl relative overflow-hidden animate-scaleIn">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500"></div>
+            <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 text-red-500">
+              <RefreshCw size={32} />
+            </div>
+
+            <h3 className="text-xl font-black text-white mb-2">Sıfırla?</h3>
+            <p className="text-slate-400 font-medium mb-8 leading-relaxed">
+              Bu set için tüm ilerlemen silinecek. Baştan başlamak istediğine emin misin?
+            </p>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowResetConfirm(false)}
+                className="flex-1 py-4 rounded-xl bg-zinc-900 text-slate-400 font-bold hover:bg-zinc-800 hover:text-white transition-all"
+              >
+                Vazgeç
+              </button>
+              <button
+                onClick={confirmReset}
+                className="flex-1 py-4 rounded-xl bg-red-600 text-white font-bold hover:bg-red-500 transition-all shadow-lg shadow-red-600/20"
+              >
+                Evet, Sıfırla
               </button>
             </div>
           </div>

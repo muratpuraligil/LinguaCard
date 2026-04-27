@@ -14,6 +14,7 @@ interface SentenceModeProps {
 
 const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashcards, onGoToQuiz, onRestartSentences }) => {
     const [finished, setFinished] = useState(false);
+    const [showResetConfirm, setShowResetConfirm] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(() => {
         const saved = localStorage.getItem('lingua_sentence_index');
         return saved ? Math.min(parseInt(saved), words.length - 1) : 0;
@@ -114,6 +115,11 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
         if (onRestartSentences) onRestartSentences();
     };
 
+    const confirmReset = () => {
+        handleRestart();
+        setShowResetConfirm(false);
+    };
+
     if (finished) {
         return (
             <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 text-center font-['Plus_Jakarta_Sans']">
@@ -206,7 +212,13 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
                     </span>
                 </div>
 
-                <div className="w-14"></div> {/* Balance for centering */}
+                <button 
+                    onClick={() => setShowResetConfirm(true)}
+                    className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center gap-2"
+                    title="İlerlemeyi Sıfırla"
+                >
+                    <RefreshCw size={20} />
+                </button>
             </div>
 
             <div className="flex-1 px-8 flex flex-col justify-center max-w-2xl mx-auto w-full relative z-10">
@@ -280,6 +292,38 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
             </div>
 
             <div className="pb-10"></div>
+
+            {/* Reset Confirmation Modal */}
+            {showResetConfirm && (
+                <div className="fixed inset-0 z-[10005] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn font-['Plus_Jakarta_Sans']">
+                    <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-[32px] w-full max-w-md shadow-2xl relative overflow-hidden animate-scaleIn">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500"></div>
+                        <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 text-red-500">
+                            <RefreshCw size={32} />
+                        </div>
+
+                        <h3 className="text-xl font-black text-white mb-2">Sıfırla?</h3>
+                        <p className="text-slate-400 font-medium mb-8 leading-relaxed">
+                            Bu set için tüm ilerlemen silinecek. Baştan başlamak istediğine emin misin?
+                        </p>
+
+                        <div className="flex gap-3">
+                            <button
+                                onClick={() => setShowResetConfirm(false)}
+                                className="flex-1 py-4 rounded-xl bg-zinc-900 text-slate-400 font-bold hover:bg-zinc-800 hover:text-white transition-all"
+                            >
+                                Vazgeç
+                            </button>
+                            <button
+                                onClick={confirmReset}
+                                className="flex-1 py-4 rounded-xl bg-red-600 text-white font-bold hover:bg-red-500 transition-all shadow-lg shadow-red-600/20"
+                            >
+                                Evet, Sıfırla
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
