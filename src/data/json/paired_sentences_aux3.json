@@ -1,0 +1,502 @@
+[
+  {
+    "id": "s1",
+    "turkish": "Johan iki haftadan fazla bir sUredir ingiltere'de.",
+    "english": "Johan has been in England for more than two weeks now."
+  },
+  {
+    "id": "s2",
+    "turkish": "Peter, dokuz yasindan beri en iyi arkadasim.",
+    "english": "Peter has been my best friend since we were nine years old."
+  },
+  {
+    "id": "s3",
+    "turkish": "iki saattir sinemada degilim.",
+    "english": "| haven't been at the cinema for two hours."
+  },
+  {
+    "id": "s4",
+    "turkish": "George ve Sally 50 yildir evliler.",
+    "english": "George and Sally have been married for 50 years."
+  },
+  {
+    "id": "s5",
+    "turkish": "Geng cocuk diinden beri cok mutlu.",
+    "english": "The young boy has been very happy since yesterday."
+  },
+  {
+    "id": "s6",
+    "turkish": "Frank uzun yillardir bu sirkette.",
+    "english": "Frank has been at that company for many years."
+  },
+  {
+    "id": "s7",
+    "turkish": "Judy ve ben gegen yildan beri ayni simftayiz.",
+    "english": "Judy and | have been in the same class since last year."
+  },
+  {
+    "id": "s8",
+    "turkish": "Arkadaslarimiz Haziran’dan beri yaz tatilindeler.",
+    "english": "Our friends have been on their summer holidays since June."
+  },
+  {
+    "id": "s9",
+    "turkish": "George, alti yasindan beri iyi bir futbolcu.",
+    "english": "George has been a good football player since he was six years old."
+  },
+  {
+    "id": "s10",
+    "turkish": "Képek tig saattir masanin altinda.",
+    "english": "The dog has been under the table for three hours."
+  },
+  {
+    "id": "s11",
+    "turkish": "Arkadaslari arasinda yillardir ¢ok komik.",
+    "english": "He has been very funny among his friends for years."
+  },
+  {
+    "id": "s12",
+    "turkish": "Kiz kardesim cocuklugundan beri iyi bir yiiziicii.",
+    "english": "My sister has been a good swimmer since she was a child."
+  },
+  {
+    "id": "s13",
+    "turkish": "Susan, son on aydir teniste iyi.",
+    "english": "Susan has been good at tennis for last ten months."
+  },
+  {
+    "id": "s14",
+    "turkish": "",
+    "english": "She hasn’t been at home since morning."
+  },
+  {
+    "id": "s15",
+    "turkish": "Ug yildir Londra'dayim.",
+    "english": "I’ve been in London for three years."
+  },
+  {
+    "id": "s16",
+    "turkish": "Ne kadar siiredir yoneticisiniz?",
+    "english": "How long have you been a manager?"
+  },
+  {
+    "id": "s17",
+    "turkish": "Parasi dort yildir bankada.",
+    "english": "His money has been in the bank for four years."
+  },
+  {
+    "id": "s18",
+    "turkish": "Bu heykel 1995'ten beri meydanda.",
+    "english": "This statue has been in the square since 1995."
+  },
+  {
+    "id": "s19",
+    "turkish": "Teklif haftalardir cekmecede.",
+    "english": "The proposal has been in the drawer for weeks."
+  },
+  {
+    "id": "s20",
+    "turkish": "Yilik plan, bes giindiir yoneticinin masasinda.",
+    "english": "The annual plan has been on manager’s table for five days."
+  },
+  {
+    "id": "s21",
+    "turkish": "Uvey kiz kardesi diin geceden beri sinav sonucundan endiseli.",
+    "english": "Her step sister has been worried about the exam result since last night."
+  },
+  {
+    "id": "s22",
+    "turkish": "Babamin arkadasi yedi yildir emekli.",
+    "english": "My father’s friend has been retired for seven years."
+  },
+  {
+    "id": "s23",
+    "turkish": "Yakin arkadasi gecen haftadan beri anne.",
+    "english": "Her close friend has been a mother since last week."
+  },
+  {
+    "id": "s24",
+    "turkish": "Kitaplar yillardir rafta.",
+    "english": "The books have been on the shelf for years."
+  },
+  {
+    "id": "s25",
+    "turkish": "Amaclari bes yildir sabit.",
+    "english": "Their ambition has been stable for five years."
+  },
+  {
+    "id": "s26",
+    "turkish": "Ne kadar zamandir tatilde?",
+    "english": "How long has he been on a holiday?"
+  },
+  {
+    "id": "s27",
+    "turkish": "Son mactan beri iizgiinler.",
+    "english": "They have been sad since last match."
+  },
+  {
+    "id": "s28",
+    "turkish": "Mektuplar giinlerdir gonderilmeye hazir.",
+    "english": "The letters have been ready to post for days."
+  },
+  {
+    "id": "s29",
+    "turkish": "Komsusunun kizi 2015'ten beri doktor.",
+    "english": "Her neighbor’s daughter has been a doctor since 2015."
+  },
+  {
+    "id": "s30",
+    "turkish": "Kink telefon iki haftadir cekmecede.",
+    "english": "The broken phone has been in the drawer for two weeks."
+  },
+  {
+    "id": "s31",
+    "turkish": "Gazete sabahtan beri kapinin Gniinde mi?",
+    "english": "Has the newspaper been in front of the door since morning?"
+  },
+  {
+    "id": "s32",
+    "turkish": "Ne kadar zamandir kuaférde?",
+    "english": "How long has she been in the hairdressser’s?"
+  },
+  {
+    "id": "s33",
+    "turkish": "Annesi bes saattir misafirleri ile mi?",
+    "english": "Has his mother been with her guests for five hours?"
+  },
+  {
+    "id": "s34",
+    "turkish": "Arkadaslari diinden beri okulda degiller.",
+    "english": "Her friends haven’t been at school since yesterday."
+  },
+  {
+    "id": "s35",
+    "turkish": "Kevin o zamandan beri yénetici deil.",
+    "english": "Kevin hasn’t been a manager since then."
+  },
+  {
+    "id": "s36",
+    "turkish": "Julia iki yildir evli degil.",
+    "english": "Julia hasn’t been married for two years."
+  },
+  {
+    "id": "s37",
+    "turkish": "Delegeler sabahtan beri ¢ok Gnemli bir toplantidalar.",
+    "english": "The delegates have been at a very important meeting since morning."
+  },
+  {
+    "id": "s38",
+    "turkish": "Bu fabrikadaki isciler iki haftadir grevdeler.",
+    "english": "The workers in this factory have been on strike for two weeks."
+  },
+  {
+    "id": "s39",
+    "turkish": "Bilgisayar gecen haftadan beri bozuk.",
+    "english": "The computer has been broken since last week."
+  },
+  {
+    "id": "s40",
+    "turkish": "Fiyat listesi ti¢ giindiir dosyada.",
+    "english": "The list of price has been in the file for three days."
+  },
+  {
+    "id": "s41",
+    "turkish": "Dort saattir hastanede misin?",
+    "english": "Have you been in hospital for four hours?"
+  },
+  {
+    "id": "s42",
+    "turkish": "Ogleden beri seninle mi?",
+    "english": "Has she been with you since noon?"
+  },
+  {
+    "id": "s43",
+    "turkish": "Neden saatlerdir burada?",
+    "english": "Why has he been in here for hours?"
+  },
+  {
+    "id": "s44",
+    "turkish": "Bir saattir tahtada zor sorular var.",
+    "english": "There have been difficult questions on board for an hour."
+  },
+  {
+    "id": "s45",
+    "turkish": "Bu restoranin yemekleri yillardir lezzetli.",
+    "english": "The meals of this restaurant have been delicious for years."
+  },
+  {
+    "id": "s46",
+    "turkish": "Duvardaki fotograflarin cerceveleri haftalardir tozlu.",
+    "english": "The frames of the photos on the wall have been dusty for weeks."
+  },
+  {
+    "id": "s47",
+    "turkish": "ilaclar iki giindiir cantanin icinde.",
+    "english": "The medications have been in the bag for two days."
+  },
+  {
+    "id": "s48",
+    "turkish": "Onlarla giinlerdir mutlu musun?",
+    "english": "Have you been happy with them for days?"
+  },
+  {
+    "id": "s49",
+    "turkish": "Gecen haftadan beri kétii durumdalar.",
+    "english": "They have been in a bad situation since last week."
+  },
+  {
+    "id": "s50",
+    "turkish": "Ofis igin kirtasiye malzemeleri diinden beri masanin iizerinde.",
+    "english": "The stationery tools for the office have been on the desk since yesterday."
+  },
+  {
+    "id": "s51",
+    "turkish": "En iyi ¢6ziim giinlerdir aklinda.",
+    "english": "The best solution has been in his mind for days."
+  },
+  {
+    "id": "s52",
+    "turkish": "Ugak bileti saat ikiden beri yaninda dedil.",
+    "english": "The flight ticket hasn’t been with him since two o’clock."
+  },
+  {
+    "id": "s53",
+    "turkish": "Hastanin raporu diinden beri doktorun masasinda.",
+    "english": "The report of the patient has been on the table of doctor since yesterday."
+  },
+  {
+    "id": "s54",
+    "turkish": "Son iki yildir daha zengin.",
+    "english": "He has been richer for last two years."
+  },
+  {
+    "id": "s55",
+    "turkish": "Gegen Sali’dan beri nerelerdesin?",
+    "english": "Where have you been since last Tuesday?"
+  },
+  {
+    "id": "s56",
+    "turkish": "Bir aydir salgin nedeniyle evdeler.",
+    "english": "They have been at home due to epidemic for one month."
+  },
+  {
+    "id": "s57",
+    "turkish": "Ogretmen ii¢ saattir sinifta Ggrencileriyle birlikte.",
+    "english": "The teacher has been with her students in the class for three hours."
+  },
+  {
+    "id": "s58",
+    "turkish": "Esyalarimiz aylardir depoda.",
+    "english": "Our goods have been in the storage for months."
+  },
+  {
+    "id": "s59",
+    "turkish": "Kiz kardesimin arkadasi on dakikadir arabada deil.",
+    "english": "My sister’s friend hasn’t been in the car for ten minutes."
+  },
+  {
+    "id": "s60",
+    "turkish": "Sézliik dakikadir masanin tizerinde deil.",
+    "english": "The dictionary hasn’t been on the desk for minutes."
+  },
+  {
+    "id": "s61",
+    "turkish": "Bebekleri saatlerdir besikte.",
+    "english": "Their baby has been in the cradle for hours."
+  },
+  {
+    "id": "s62",
+    "turkish": "iki saattir konserdeler mi?",
+    "english": "Have they been at the concert for two hours?"
+  },
+  {
+    "id": "s63",
+    "turkish": "Kahvalti on dakikadir hazir.",
+    "english": "Breakfast has been ready for ten minutes."
+  },
+  {
+    "id": "s64",
+    "turkish": "Alisveris merkezi sabahtan beri cok kalabalik.",
+    "english": "The mall has been very crowded since morning."
+  },
+  {
+    "id": "s65",
+    "turkish": "Elleri bir saattir kirli.",
+    "english": "His hands have been dirty for an hour."
+  },
+  {
+    "id": "s66",
+    "turkish": "Bir grup insan saatlerdir kamp atesinin etrafinda.",
+    "english": "A group of people have been around the camp fire for hours."
+  },
+  {
+    "id": "s67",
+    "turkish": "Siit yarim saattir buzdolabinda.",
+    "english": "Milk has been in the fridge for half an hour."
+  },
+  {
+    "id": "s68",
+    "turkish": "Siparisler giinlerdir sekreterin bilgisayarinda.",
+    "english": "The orders have been on the secretary’s computer for days."
+  },
+  {
+    "id": "s69",
+    "turkish": "Ogleden beri balkonda mi?",
+    "english": "Has she been in the balcony since noon?"
+  },
+  {
+    "id": "s70",
+    "turkish": "Arabanin anahtar1 iki bucuk saattir cebinde.",
+    "english": "The key of the car has been in his pocket for two and half hours."
+  },
+  {
+    "id": "s71",
+    "turkish": "Biberon on bes dakikadir bulasik makinesinde.",
+    "english": "The feeding bottle has been in the dish washer for fifteen minutes."
+  },
+  {
+    "id": "s72",
+    "turkish": "Unlii oyuncu ii¢ aydir kanser.",
+    "english": "The famous actor has been cancer for three months."
+  },
+  {
+    "id": "s73",
+    "turkish": "O toplantidaki kararlar yillardir adil degil.",
+    "english": "Decisions at that meeting haven’t been fair for years."
+  },
+  {
+    "id": "s74",
+    "turkish": "2017'den beri iiriinlerden sorumluyum.",
+    "english": "| have been responsible for products since 2017."
+  },
+  {
+    "id": "s75",
+    "turkish": "Annesi saat 4'ten beri siipermarkette.",
+    "english": "His mother has been at the supermarket since four o’clock."
+  },
+  {
+    "id": "s76",
+    "turkish": "iki saattir discide mi?",
+    "english": "Has she been at the dentist’s for two hours?"
+  },
+  {
+    "id": "s77",
+    "turkish": "Dondurma diinden beri derin dondurucuda.",
+    "english": "Ice-cream has been in deep freeze since yesterday."
+  },
+  {
+    "id": "s78",
+    "turkish": "Kinlan bardaklar gegen haftadan beri ¢ép kutusunda.",
+    "english": "The broken glasses have been in the rubbish box since last week."
+  },
+  {
+    "id": "s79",
+    "turkish": "Ne zamandir sinemadalar?",
+    "english": "How long have they been at the cinema?"
+  },
+  {
+    "id": "s80",
+    "turkish": "Bilgisayar yirmi dakikadir acik.",
+    "english": "The computer has been on for twenty minutes."
+  },
+  {
+    "id": "s81",
+    "turkish": "Gencligimden beri ekonomik olarak ailemden bagimsizim.",
+    "english": "| have been economically independent of my parents since my youth."
+  },
+  {
+    "id": "s82",
+    "turkish": "Orkestra dort saattir sahnede.",
+    "english": "The orchestra has been on the stage for four hours."
+  },
+  {
+    "id": "s83",
+    "turkish": "Askerler sabahtan beri mevziideler.",
+    "english": "Soldiers have been in the pit since morning."
+  },
+  {
+    "id": "s84",
+    "turkish": "Kiz kardesi cocuklugundan beri utangac¢.",
+    "english": "His sister has been shy since her childhood."
+  },
+  {
+    "id": "s85",
+    "turkish": "Cocuklar bes saattir bah¢edeler.",
+    "english": "The kids have been in the garden for five hours."
+  },
+  {
+    "id": "s86",
+    "turkish": "iki yildir baba degil misin?",
+    "english": "Haven’t you been a father for two years?"
+  },
+  {
+    "id": "s87",
+    "turkish": "Paralari gecen yildan beri bu bankada degil mi?",
+    "english": "Hasn’t their money been in this bank since last year?"
+  },
+  {
+    "id": "s88",
+    "turkish": "Neden son iki giindiir fuarda degiller?",
+    "english": "Why haven’t they been at the fair for last two days?"
+  },
+  {
+    "id": "s89",
+    "turkish": "O sirkette ne kadar siiredir miihendis?",
+    "english": "How long has she been an engineer in that company?"
+  },
+  {
+    "id": "s90",
+    "turkish": "Doktorlar ii¢ saattir ameliyathanedeler.",
+    "english": "Doctors have been in the operating room for three hours."
+  },
+  {
+    "id": "s91",
+    "turkish": "Takipgileri giinlerdir 6fkeliler.",
+    "english": "His followers have been angry for days."
+  },
+  {
+    "id": "s92",
+    "turkish": "Coraplar gegen haftadan beri sepette.",
+    "english": "The socks have been in the basket since last week."
+  },
+  {
+    "id": "s93",
+    "turkish": "Giizel sarkilar iki saattir en sevdigim radyo kanalinda.",
+    "english": "Good songs have been on my favorite radio channel for two hours."
+  },
+  {
+    "id": "s94",
+    "turkish": "Bazi oyuncular yarim saattir yedek kuliibesinde.",
+    "english": "Some players have been on the bench for half an hour."
+  },
+  {
+    "id": "s95",
+    "turkish": "Son bes yildir bu sirkette yénetici.",
+    "english": "He has been an executive in this company for last five years."
+  },
+  {
+    "id": "s96",
+    "turkish": "Anahtar sabahtan beri yanimda.",
+    "english": "The key has been with me since morning."
+  },
+  {
+    "id": "s97",
+    "turkish": "Bilgisayardaki klasdrler diinden beri sunum icin hazir.",
+    "english": "The folders on the computer have been ready for the presentation since yesterday."
+  },
+  {
+    "id": "s98",
+    "turkish": "Bahcedeki cocuk dakikalardir ¢amur i¢inde.",
+    "english": "The child in the garden has been in mud for minutes."
+  },
+  {
+    "id": "s99",
+    "turkish": "Bu binadaki komsular gegen haftadan beri cok giiriiltiilii.",
+    "english": "Neighbors in this building have been ver noisy since last week."
+  },
+  {
+    "id": "s100",
+    "turkish": "Kirmizi kalemim giinlerdir kalem kutusunun i¢inde deil.",
+    "english": "My red pencil hasn’t been in the pencil case for days."
+  }
+]

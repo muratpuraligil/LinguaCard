@@ -1,0 +1,502 @@
+[
+  {
+    "id": "s1",
+    "turkish": "Jane ve Michael doktorlar (dir).",
+    "english": "Jane and Michael are doctors."
+  },
+  {
+    "id": "s2",
+    "turkish": "O miizede.",
+    "english": "She’s in the museum."
+  },
+  {
+    "id": "s3",
+    "turkish": "Bu biiyiik bir képektir.",
+    "english": "It’s a big dog."
+  },
+  {
+    "id": "s4",
+    "turkish": "Sen benim arkadasimsin.",
+    "english": "You’re my friend."
+  },
+  {
+    "id": "s5",
+    "turkish": "Miihendis dediller.",
+    "english": "They aren’t engineers."
+  },
+  {
+    "id": "s6",
+    "turkish": "Mutlu degiliz.",
+    "english": "We aren’t happy."
+  },
+  {
+    "id": "s7",
+    "turkish": "Cok yorgunum.",
+    "english": "I'm very tired."
+  },
+  {
+    "id": "s8",
+    "turkish": "Yeterince uzun dedilsin.",
+    "english": "You aren’t tall enough."
+  },
+  {
+    "id": "s9",
+    "turkish": "Mutfaktayiz.",
+    "english": "We’re in the kitchen."
+  },
+  {
+    "id": "s10",
+    "turkish": "Paula kitaplarla ilgili degil.",
+    "english": "Paula isn’t interested in books."
+  },
+  {
+    "id": "s11",
+    "turkish": "Herkes hazir.",
+    "english": "Everyone is ready."
+  },
+  {
+    "id": "s12",
+    "turkish": "Mesgul degilim.",
+    "english": "I’m not busy."
+  },
+  {
+    "id": "s13",
+    "turkish": "Ann ve ben iyi arkadaslariz.",
+    "english": "Ann and | are good friends."
+  },
+  {
+    "id": "s14",
+    "turkish": "Anahtarlariniz masanin iizerinde.",
+    "english": "Your keys are on the table."
+  },
+  {
+    "id": "s15",
+    "turkish": "Yorgunum ama ac deégilim.",
+    "english": "I’m tired, but I’m not hungry."
+  },
+  {
+    "id": "s16",
+    "turkish": "James 6%retmen deBil. O bir Sgrenci.",
+    "english": "James isn’t a teacher. He’s a student."
+  },
+  {
+    "id": "s17",
+    "turkish": "Bu insanlar ingiliz degil. Avustralyalilar.",
+    "english": "Those people aren’t English. They’re Australian."
+  },
+  {
+    "id": "s18",
+    "turkish": "Bugiin hava giinesli, ancak sicak de@il.",
+    "english": "It’s sunny today, but it isn’t warm."
+  },
+  {
+    "id": "s19",
+    "turkish": "Bugiin hava giizel.",
+    "english": "The weather is nice today."
+  },
+  {
+    "id": "s20",
+    "turkish": "Zengin degilim.",
+    "english": "1 am not rich."
+  },
+  {
+    "id": "s21",
+    "turkish": "Bu canta agir degil.",
+    "english": "This bag isn’t heavy."
+  },
+  {
+    "id": "s22",
+    "turkish": "Bu cantalar hafif degil.",
+    "english": "These bags aren’t light."
+  },
+  {
+    "id": "s23",
+    "turkish": "Kardesim ve ben iyi tenisci degiliz.",
+    "english": "My brother and | aren’t good tennis players."
+  },
+  {
+    "id": "s24",
+    "turkish": "Emily evde de@il.",
+    "english": "Emily isn’t at home."
+  },
+  {
+    "id": "s25",
+    "turkish": "Cocuklari okulda de@il.",
+    "english": "Her children aren’t at school."
+  },
+  {
+    "id": "s26",
+    "turkish": "Kiz kardesim hemsire deil.",
+    "english": "My sister isn’t a nurse."
+  },
+  {
+    "id": "s27",
+    "turkish": "Ben taksi soférii degilim.",
+    "english": "1 am not a taxi driver."
+  },
+  {
+    "id": "s28",
+    "turkish": "Kamera nerede?",
+    "english": "Where’s the camera?"
+  },
+  {
+    "id": "s29",
+    "turkish": "Arabaniz mavi mi?",
+    "english": "Is your car blue?"
+  },
+  {
+    "id": "s30",
+    "turkish": "Kate Londrah mi?",
+    "english": "Is Kate from London?"
+  },
+  {
+    "id": "s31",
+    "turkish": "Evde mi?",
+    "english": "Is she at home?"
+  },
+  {
+    "id": "s32",
+    "turkish": "Ge¢ miyim? (Ge¢ mi kaldim?)",
+    "english": "Am | late?"
+  },
+  {
+    "id": "s33",
+    "turkish": "Amy nereli?",
+    "english": "Where’s Amy from?"
+  },
+  {
+    "id": "s34",
+    "turkish": "",
+    "english": "What colour is your bag?"
+  },
+  {
+    "id": "s35",
+    "turkish": "Ag misiniz?",
+    "english": "Are you hungry?"
+  },
+  {
+    "id": "s36",
+    "turkish": "George nasil?",
+    "english": "How is George?"
+  },
+  {
+    "id": "s37",
+    "turkish": "O kadin kim?",
+    "english": "Who’s that woman?"
+  },
+  {
+    "id": "s38",
+    "turkish": "Yorgun musunuz?",
+    "english": "Are you tired?"
+  },
+  {
+    "id": "s39",
+    "turkish": "Hala restoranin Gniindeler mi?",
+    "english": "Are they still in front of the restaurant?"
+  },
+  {
+    "id": "s40",
+    "turkish": "Arkadasiniz ingiliz mi?",
+    "english": "Is your friend English?"
+  },
+  {
+    "id": "s41",
+    "turkish": "Bunlar sizin anahtarlarimz mi?",
+    "english": "Are these your keys?"
+  },
+  {
+    "id": "s42",
+    "turkish": "Bu benim koltugum.",
+    "english": "That’s my seat."
+  },
+  {
+    "id": "s43",
+    "turkish": "Annen nerede?",
+    "english": "Where is your mother?"
+  },
+  {
+    "id": "s44",
+    "turkish": "Nerelisiniz?",
+    "english": "Where are you from?"
+  },
+  {
+    "id": "s45",
+    "turkish": "Arabaniz ne renk?",
+    "english": "What colour is your car?"
+  },
+  {
+    "id": "s46",
+    "turkish": "Joe ka¢ yasinda?",
+    "english": "How old is Joe?"
+  },
+  {
+    "id": "s47",
+    "turkish": "Ailen nasil?",
+    "english": "How are your parents?"
+  },
+  {
+    "id": "s48",
+    "turkish": "Bu ayakkabilar ne kadar?",
+    "english": "How much are these shoes?"
+  },
+  {
+    "id": "s49",
+    "turkish": "Bu otel neden bu kadar pahali?",
+    "english": "Why is this hotel so expensive?"
+  },
+  {
+    "id": "s50",
+    "turkish": "Annen evde mi?",
+    "english": "Is your mother at home?"
+  },
+  {
+    "id": "s51",
+    "turkish": "Ailen evde mi?",
+    "english": "Are your parents at home?"
+  },
+  {
+    "id": "s52",
+    "turkish": "Odan soguk mu?",
+    "english": "Is it cold in your room?"
+  },
+  {
+    "id": "s53",
+    "turkish": "Ayakkabilarin giizel.",
+    "english": "Your shoes are nice."
+  },
+  {
+    "id": "s54",
+    "turkish": "Ucaklar yavas degil. Hizhilar.",
+    "english": "Airplanes aren’t slow. They are fast."
+  },
+  {
+    "id": "s55",
+    "turkish": "Bakir ucuzdur. Elmaslar pahalidir.",
+    "english": "Copper are cheap. Diamonds are expensive."
+  },
+  {
+    "id": "s56",
+    "turkish": "inekler bocek degildir.",
+    "english": "Cows aren’t insects."
+  },
+  {
+    "id": "s57",
+    "turkish": "Dave ve Adrian kardes deiller.",
+    "english": "Dave and Adrian aren’t sisters."
+  },
+  {
+    "id": "s58",
+    "turkish": "Almanya, ingiltere ve ispanya sehir degildir.",
+    "english": "Germany, England, and Spain aren’t cities."
+  },
+  {
+    "id": "s59",
+    "turkish": "O bir postact.",
+    "english": "He is a postman."
+  },
+  {
+    "id": "s60",
+    "turkish": "Ben profesyonel bir futbolcuyum.",
+    "english": "| am a professional football player."
+  },
+  {
+    "id": "s61",
+    "turkish": "Cok a¢ degilim.",
+    "english": "1 am not very hungry."
+  },
+  {
+    "id": "s62",
+    "turkish": "San Francisco'luyum. Kanada'li degilim.",
+    "english": "| am from San Francisco. | am not from Canada."
+  },
+  {
+    "id": "s63",
+    "turkish": "Seni tantyorum. Benim sinifimdasin.",
+    "english": "1 know you. You are in my class."
+  },
+  {
+    "id": "s64",
+    "turkish": "Dondurma ve sekerleme tatlidir.",
+    "english": "Ice-cream and candy are sweet."
+  },
+  {
+    "id": "s65",
+    "turkish": "O bir sogan.",
+    "english": "It is an onion."
+  },
+  {
+    "id": "s66",
+    "turkish": "Jasmine o okulda dgrenci.",
+    "english": "Jasmine is a student in that school."
+  },
+  {
+    "id": "s67",
+    "turkish": "Londra biiyiik bir sehirdir.",
+    "english": "London is a big city."
+  },
+  {
+    "id": "s68",
+    "turkish": "Manhattan bir ada degil.",
+    "english": "Manhattan isn’t an island."
+  },
+  {
+    "id": "s69",
+    "turkish": "Mariah giizel bir kizdir. O cirkin degil.",
+    "english": "Mariah is a beautiful girl. She isn’t ugly."
+  },
+  {
+    "id": "s70",
+    "turkish": "Mark 20 yasinda.",
+    "english": "Mark is 20 years old."
+  },
+  {
+    "id": "s71",
+    "turkish": "Matematik zordur. Kolay de@il.",
+    "english": "Maths is hard. It isn’t easy."
+  },
+  {
+    "id": "s72",
+    "turkish": "Bay Richards bir avukattir.",
+    "english": "Mr. Richards is a lawyer."
+  },
+  {
+    "id": "s73",
+    "turkish": "Kardesim evli. Bekar degil.",
+    "english": "My brother is married. He isn’t single."
+  },
+  {
+    "id": "s74",
+    "turkish": "New York, New Jersey'e yakin.",
+    "english": "New York is near to New Jersey."
+  },
+  {
+    "id": "s75",
+    "turkish": "Newsweek bir dergidir.",
+    "english": "Newsweek is a magazine."
+  },
+  {
+    "id": "s76",
+    "turkish": "Susan ve ben égretmeniz.",
+    "english": "Susan and | are teachers."
+  },
+  {
+    "id": "s77",
+    "turkish": "Kardesler.",
+    "english": "They are brothers."
+  },
+  {
+    "id": "s78",
+    "turkish": "Bugiin hava bulutlu. A¢ik degil.",
+    "english": "Today is cloudy. It isn’t bright."
+  },
+  {
+    "id": "s79",
+    "turkish": "Képekler disarida.",
+    "english": "The dogs are outside."
+  },
+  {
+    "id": "s80",
+    "turkish": "Sunlar radyo.",
+    "english": "Those are radios."
+  },
+  {
+    "id": "s81",
+    "turkish": "Bu gomlekler yesil.",
+    "english": "Those shirts are green."
+  },
+  {
+    "id": "s82",
+    "turkish": "Ugaklar hizlidir.",
+    "english": "Planes are fast."
+  },
+  {
+    "id": "s83",
+    "turkish": "Bu oteller biiyiik.",
+    "english": "These hotels are large."
+  },
+  {
+    "id": "s84",
+    "turkish": "Bunlar asker.",
+    "english": "Those are soldiers."
+  },
+  {
+    "id": "s85",
+    "turkish": "Bunlar resim.",
+    "english": "These are pictures."
+  },
+  {
+    "id": "s86",
+    "turkish": "Bunlar zarf.",
+    "english": "Those are envelopes."
+  },
+  {
+    "id": "s87",
+    "turkish": "Arabalar garajda.",
+    "english": "The cars are in the garage."
+  },
+  {
+    "id": "s88",
+    "turkish": "Resimler duvarda.",
+    "english": "The pictures are on the wall."
+  },
+  {
+    "id": "s89",
+    "turkish": "Siralar sinifta.",
+    "english": "The desks are in the classroom."
+  },
+  {
+    "id": "s90",
+    "turkish": "Ogretmenter okuldalar.",
+    "english": "The teachers are in the school."
+  },
+  {
+    "id": "s91",
+    "turkish": "Ugaklar havaalaninda.",
+    "english": "The planes are at the airport."
+  },
+  {
+    "id": "s92",
+    "turkish": "Fotograflar albiimde.",
+    "english": "The photographs are in the album."
+  },
+  {
+    "id": "s93",
+    "turkish": "Bunlar tehlikeli hayvantar.",
+    "english": "Those are dangerous animals."
+  },
+  {
+    "id": "s94",
+    "turkish": "Bunlar iyi kitaplar.",
+    "english": "These are good books."
+  },
+  {
+    "id": "s95",
+    "turkish": "Agaclar yesil mi yoksa gri mi?",
+    "english": "Are trees green or gray?"
+  },
+  {
+    "id": "s96",
+    "turkish": "Bulutlar kahverengi mi yoksa beyaz mi?",
+    "english": "Are clouds brown or white?"
+  },
+  {
+    "id": "s97",
+    "turkish": "Bu, ingilizce mi yoksa Fransizca szliik mii?",
+    "english": "Is it an English or French dictionary?"
+  },
+  {
+    "id": "s98",
+    "turkish": "Bir spor araba mt yoksa klasik bir araba mi?",
+    "english": "Is it a sports car or a classic car?"
+  },
+  {
+    "id": "s99",
+    "turkish": "Misir Avrupa'da mi yoksa Afrika'da mi?",
+    "english": "Is Egypt in Europe or in Africa?"
+  },
+  {
+    "id": "s100",
+    "turkish": "Bu, kelebek mi ari mi?",
+    "english": "Is it a butterfly or a bee?"
+  }
+]

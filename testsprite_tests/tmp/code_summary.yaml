@@ -1,0 +1,54 @@
+version: "2"
+type: frontend
+tech_stack:
+  - language: TypeScript
+  - framework: React
+  - ui_library: TailwindCSS, Lucide React
+  - other: Supabase, Vite, Google GenAI
+routes:
+  - path: /
+    file: src/components/Dashboard.tsx
+    auth_required: true
+    description: User dashboard showing study progress and available modes
+  - path: /auth
+    file: src/components/Auth.tsx
+    auth_required: false
+    description: Authentication page for login and signup
+  - path: /library
+    file: src/components/LibraryScreen.tsx
+    auth_required: true
+    description: Library of built-in sentence sets
+  - path: /flashcards
+    file: src/components/FlashcardMode.tsx
+    auth_required: true
+    description: Study words using flashcards
+features:
+  - name: User Authentication
+    description: Sign in or sign up using email and password via Supabase
+    files:
+      - src/components/Auth.tsx
+    entry_route: /auth
+    user_interactions:
+      - Enter email and password
+      - Click Sign In or Sign Up
+    auth_required: false
+  - name: AI OCR / Text Analysis
+    description: Extract vocabulary from images, PDFs, or pasted text using Google GenAI
+    files:
+      - src/components/UploadModal.tsx
+      - src/services/analyzeImage.ts
+    user_interactions:
+      - Open Upload Modal
+      - Upload a file or paste text
+      - View extracted results
+    auth_required: true
+  - name: Library Practice
+    description: Practice translating sentences from built-in sets
+    files:
+      - src/components/LibraryPracticeScreen.tsx
+    user_interactions:
+      - Select a set from Library
+      - Type translation in the input field
+      - Verify translation with Enter
+    auth_required: true
+known_limitations: []

@@ -1,0 +1,510 @@
+[
+  {
+    "id": "TC001",
+    "title": "Access control redirects signed-out users to authentication",
+    "description": "Verifies that a signed-out visitor attempting to open protected pages is redirected to the authentication page.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the authentication page"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /library"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the authentication page"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /flashcards"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the authentication page"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Sign in lands on the dashboard",
+    "description": "Verifies an authenticated learner can sign in with email and password and lands on the dashboard.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign in form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the dashboard"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Dashboard navigation to Library mode",
+    "description": "Verifies an authenticated learner can navigate from the dashboard to the Library screen.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign in form"
+      },
+      {
+        "type": "action",
+        "description": "Click the entry point to Library mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Library screen is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Complete a flashcard session and reach session summary",
+    "description": "An authenticated learner can choose a study direction, progress through cards by revealing and marking them, and reach a session summary at the end.",
+    "category": "Flashcards",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the authentication form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to navigate to the Flashcards mode"
+      },
+      {
+        "type": "action",
+        "description": "Select a valid study direction option"
+      },
+      {
+        "type": "action",
+        "description": "Start the flashcard session"
+      },
+      {
+        "type": "action",
+        "description": "Reveal the answer for the current card"
+      },
+      {
+        "type": "action",
+        "description": "Mark the current card as known or for review"
+      },
+      {
+        "type": "action",
+        "description": "Continue through the flashcard session until it ends"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a session summary view is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Library practice advances on Enter submission and updates progress",
+    "description": "Verifies a learner can select a sentence set, submit a translation using Enter, and advance to the next sentence with progress updating.",
+    "category": "Library Practice",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign in form"
+      },
+      {
+        "type": "action",
+        "description": "Click the entry point to Library mode"
+      },
+      {
+        "type": "action",
+        "description": "Select a sentence set from the Library"
+      },
+      {
+        "type": "action",
+        "description": "Fill a non-empty translation into the translation input field"
+      },
+      {
+        "type": "action",
+        "description": "Press Enter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the next sentence prompt is displayed and progress indicates an increment"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Dashboard navigation to Flashcards mode",
+    "description": "Verifies an authenticated learner can navigate from the dashboard to the Flashcards screen.",
+    "category": "Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign in form"
+      },
+      {
+        "type": "action",
+        "description": "Click the entry point to Flashcards mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Flashcards screen is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Return to Dashboard after finishing flashcards",
+    "description": "After completing a flashcard session, an authenticated learner can return to the Dashboard and see the main modes/progress available.",
+    "category": "Flashcards",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the authentication form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to navigate to the Flashcards mode"
+      },
+      {
+        "type": "action",
+        "description": "Select a valid study direction option"
+      },
+      {
+        "type": "action",
+        "description": "Start the flashcard session"
+      },
+      {
+        "type": "action",
+        "description": "Reveal the answer for the current card"
+      },
+      {
+        "type": "action",
+        "description": "Mark the current card as known or for review"
+      },
+      {
+        "type": "action",
+        "description": "Continue through the flashcard session until it ends"
+      },
+      {
+        "type": "action",
+        "description": "Use the provided navigation control to return to the dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the dashboard shows study progress and available modes"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Library practice blocks empty submission",
+    "description": "Verifies submitting an empty translation in Library practice is blocked with a validation prompt.",
+    "category": "Library Practice",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign in form"
+      },
+      {
+        "type": "action",
+        "description": "Click the entry point to Library mode"
+      },
+      {
+        "type": "action",
+        "description": "Select a sentence set from the Library"
+      },
+      {
+        "type": "action",
+        "description": "Press Enter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation prompt is visible asking for a translation"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Create a new study set from uploaded content",
+    "description": "An authenticated learner can upload a supported file in the Upload Modal, review extracted items, add selected items to a new study set, and see the new set available for selection in the Library.",
+    "category": "AI OCR / Text Analysis",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the authentication form"
+      },
+      {
+        "type": "action",
+        "description": "Click the control to open the upload modal"
+      },
+      {
+        "type": "action",
+        "description": "Upload a supported image file in the upload modal"
+      },
+      {
+        "type": "action",
+        "description": "Wait for extracted results to be displayed"
+      },
+      {
+        "type": "action",
+        "description": "Select one or more extracted items"
+      },
+      {
+        "type": "action",
+        "description": "Choose the option to add selected items to a new study set and complete the creation"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to navigate to the Library mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the newly created study set is displayed and selectable in the library list"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC010",
+    "title": "Add extracted items to an existing study set",
+    "description": "An authenticated learner can paste text for extraction, select results, add them to an existing study set, and see the set updated as selectable practice material.",
+    "category": "AI OCR / Text Analysis",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the authentication form"
+      },
+      {
+        "type": "action",
+        "description": "Click the control to open the upload modal"
+      },
+      {
+        "type": "action",
+        "description": "Paste a non-empty text snippet into the text input area"
+      },
+      {
+        "type": "action",
+        "description": "Submit the extraction request"
+      },
+      {
+        "type": "action",
+        "description": "Wait for extracted results to be displayed"
+      },
+      {
+        "type": "action",
+        "description": "Select one or more extracted items"
+      },
+      {
+        "type": "action",
+        "description": "Choose an existing study set destination and confirm adding the selected items"
+      },
+      {
+        "type": "action",
+        "description": "Close the upload modal"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to navigate to the Library mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the destination study set is present and selectable for practice"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC011",
+    "title": "Require file or text before submitting extraction",
+    "description": "An authenticated learner cannot submit the Upload Modal extraction request when neither a file is uploaded nor text is provided and sees a validation message.",
+    "category": "AI OCR / Text Analysis",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the authentication form"
+      },
+      {
+        "type": "action",
+        "description": "Click the control to open the upload modal"
+      },
+      {
+        "type": "action",
+        "description": "Ensure the text input area is empty"
+      },
+      {
+        "type": "action",
+        "description": "Submit the extraction request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is visible indicating that a file or text input is required"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC012",
+    "title": "Sign up rejects invalid email format",
+    "description": "Verifies signing up with an invalid email format shows an email validation error and does not proceed to the dashboard.",
+    "category": "User Authentication",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Fill an invalid email format into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill a valid password into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign up form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an email validation error is visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]

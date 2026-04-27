@@ -1,0 +1,19 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:4173",
+  "loginUser": "muratpuraligil@gmail.com",
+  "loginPassword": "Mr123123",
+  "executionArgs": {
+    "projectName": "LinguaCard",
+    "projectPath": "/Users/puraligilm/Documents/LinguaCardApp/LinguaCard",
+    "testIds": [],
+    "additionalInstruction": "Lütfen LibraryScreen, LibraryPracticeScreen ve CustomSetStudyMode modüllerindeki ilerleme (Devam Ediyor / Tamamlandı) statülerinin doğru görünüp görünmediğini test et. Ayrıca boş çeviri girişlerine karşı validasyonları kontrol et.",
+    "serverMode": "production",
+    "envs": {
+      "API_KEY": "sk-user-KPQ0FLIS4gZcBXYD7ru2loY9VOdoM1ClIOKCztiX1eJX_nIZk_3KP515OjW-phkBDl4ww03tydN9qCFJglAf88Iv6s61k5Br_E_NYz-Ca4c0doeSQPCItkC7ZeGQ14dTgu4"
+    }
+  },
+  "serverPort": 64776
+}
