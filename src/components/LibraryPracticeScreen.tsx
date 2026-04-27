@@ -63,7 +63,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       Object.values(inputRefs.current).forEach(el => {
         if (el) {
           el.style.height = 'auto';
-          el.style.height = `${Math.min(el.scrollHeight, 120)}px`;
+          el.style.height = `${el.scrollHeight}px`;
         }
       });
 
@@ -130,6 +130,15 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       setWrongInputs(newWrong);
       localStorage.setItem(`library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
     }
+
+    // Auto-resize the textarea
+    setTimeout(() => {
+      const el = inputRefs.current[sentenceId];
+      if (el) {
+        el.style.height = 'auto';
+        el.style.height = `${el.scrollHeight}px`;
+      }
+    }, 0);
 
     const sentence = set.sentences.find(s => s.id === sentenceId)!;
     const targetText = direction === LanguageDirection.TR_EN ? sentence.english : sentence.turkish;
@@ -466,7 +475,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                                 onChange={(e) => {
                                     checkAnswer(sentence.id, e.target.value);
                                     e.target.style.height = 'auto';
-                                    e.target.style.height = `${Math.min(e.target.scrollHeight, 120)}px`;
+                                    e.target.style.height = `${e.target.scrollHeight}px`;
                                 }}
                                 onKeyDown={(e) => {
                                     if (e.key === 'Enter' && !e.shiftKey) {
@@ -481,7 +490,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                                     handleDoubleClick(input.value.substring(start, end).trim());
                                 }}
                                 placeholder={direction === LanguageDirection.TR_EN ? "İngilizce çevirisi..." : "Türkçe çevirisi..."}
-                                className={`w-full bg-zinc-800/50 border border-white/10 rounded-xl pl-4 pr-32 py-3 text-base font-bold outline-none transition-all resize-none leading-relaxed placeholder:text-zinc-700
+                                className={`w-full bg-zinc-800/50 border border-white/10 rounded-xl pl-4 pr-32 py-3 text-base font-bold outline-none transition-all resize-none leading-relaxed placeholder:text-zinc-700 overflow-hidden
                                     ${isDone ? 'text-emerald-400 border-emerald-500/20 bg-emerald-500/5 cursor-default' : 
                                       isWrong ? 'text-red-400 border-red-500/30' : 
                                       'text-white focus:border-blue-500/50 focus:bg-zinc-800'}
