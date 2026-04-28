@@ -83,16 +83,27 @@ export default function App() {
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
   const [activeLibrarySet, setActiveLibrarySet] = useState<LibrarySet | null>(null);
 
+  const LIBRARY_DATA_VERSION = 'v2';
+
   useEffect(() => {
     const savedSet = localStorage.getItem('lingua_active_random_mix');
-    if (savedSet && !activeLibrarySet) {
+    if (savedSet) {
       try {
-        setActiveLibrarySet(JSON.parse(savedSet));
+        const parsed = JSON.parse(savedSet);
+        // Force regeneration if version is missing or old
+        if (parsed.version !== LIBRARY_DATA_VERSION) {
+          localStorage.removeItem('lingua_active_random_mix');
+          return;
+        }
+        if (!activeLibrarySet) {
+          setActiveLibrarySet(parsed);
+        }
       } catch (e) {
         console.error("Failed to recover active library set", e);
       }
     }
   }, []);
+
 
   // Track offset for sequential study (Flashcards/Quiz/Sentences)
   const [studyOffset, setStudyOffset] = useState(() => parseInt(localStorage.getItem('lingua_global_offset') || '0'));
@@ -150,11 +161,13 @@ export default function App() {
       id: `rand-${s.sourceSetId}-${s.id}-${idx}` // Ensure unique ID for this instance
     }));
 
-    const randomSet: LibrarySet = {
+    const randomSet: LibrarySet & { version?: string } = {
       id: 'random-mix',
       title: `Karma Çalışma (${selectedSentences.length} Cümle)`,
-      sentences: selectedSentences
+      sentences: selectedSentences,
+      version: LIBRARY_DATA_VERSION
     };
+
 
     // 3. Save to localStorage
     localStorage.setItem('lingua_active_random_mix', JSON.stringify(randomSet));
