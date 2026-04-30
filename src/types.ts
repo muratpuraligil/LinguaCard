@@ -27,6 +27,15 @@ export enum LanguageDirection {
   TR_EN = 'TR_EN'
 }
 
+export enum LanguageLocale {
+  EN = 'en-US',
+  TR = 'tr-TR'
+}
+
+export enum AuthProvider {
+  GOOGLE = 'google'
+}
+
 export interface QuizQuestion {
   questionWord: Word;
   options: string[];

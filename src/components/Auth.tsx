@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
 import { BookOpen, ArrowRight, Lock, Mail, Sparkles } from 'lucide-react';
+import { AuthProvider } from '../types';
 
 export default function Auth() {
   const [loading, setLoading] = useState(false);
@@ -59,7 +60,7 @@ export default function Auth() {
       const redirectUrl = window.location.origin + window.location.pathname;
       
       const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
+        provider: AuthProvider.GOOGLE,
         options: {
            redirectTo: redirectUrl,
            queryParams: {

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Word, LanguageDirection } from '../types';
-import { ArrowLeft, Volume2, CheckCircle2, XCircle, Eraser, Languages, Eye, Trophy, RotateCcw, HelpCircle, Info, Plus, Home, ArrowUp } from 'lucide-react';
+import { Word, LanguageDirection, LanguageLocale } from '../types';
+import { ArrowLeft, Volume2, CheckCircle2, XCircle, Eraser, Languages, Eye, Trophy, RotateCcw, HelpCircle, Info, Plus, Home, ArrowUp, RefreshCw, BookOpen, Zap } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
 import { isMatch as checkAnswerMatch } from '../utils/stringUtils';
 import confetti from 'canvas-confetti';
@@ -151,7 +151,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
     }, [completedCount, words.length, showFinishedModal]);
 
     // Normalizasyon Fonksiyonu    // speak fonksiyonu
-    const speak = (text: string, lang: 'en-US' | 'tr-TR') => {
+    const speak = (text: string, lang: LanguageLocale) => {
         if (!text) return;
         window.speechSynthesis.cancel();
         const u = new SpeechSynthesisUtterance(text);
@@ -173,15 +173,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
         }));
 
         if (isMatch) {
-            let targetLang: 'en-US' | 'tr-TR' = 'en-US';
-            if (isSetDataSwapped) {
-                if (direction === LanguageDirection.TR_EN) targetLang = 'en-US';
-                else targetLang = 'tr-TR';
-            } else {
-                if (direction === LanguageDirection.TR_EN) targetLang = 'en-US';
-                else targetLang = 'tr-TR';
-            }
-
+            const targetLang = direction === LanguageDirection.TR_EN ? LanguageLocale.EN : LanguageLocale.TR;
             speak(targetText, targetLang);
 
             setTimeout(() => {
@@ -216,14 +208,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
         }));
 
         if (isCorrect) {
-            let targetLang: 'en-US' | 'tr-TR' = 'en-US';
-            if (isSetDataSwapped) {
-                if (direction === LanguageDirection.TR_EN) targetLang = 'en-US';
-                else targetLang = 'tr-TR';
-            } else {
-                if (direction === LanguageDirection.TR_EN) targetLang = 'en-US';
-                else targetLang = 'tr-TR';
-            }
+            let targetLang = direction === LanguageDirection.TR_EN ? LanguageLocale.EN : LanguageLocale.TR;
             speak(targetText, targetLang);
         }
     };
@@ -488,7 +473,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
                             // Prompt EN ise -> Hedef TR -> Konuşmacı TR, Placeholder TR.
 
                             const targetIsEn = promptLang === 'tr';
-                            const speechLang = targetIsEn ? 'en-US' : 'tr-TR';
+                            const speechLang = targetIsEn ? LanguageLocale.EN : LanguageLocale.TR;
                             const inputPlaceholder = targetIsEn ? "İngilizce çevirisi..." : "Türkçe çevirisi...";
 
                             return (
