@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Word, LanguageDirection, LanguageLocale } from '../types';
-import { ArrowLeft, Volume2, CheckCircle2, XCircle, Eraser, Languages, Eye, Trophy, RotateCcw, HelpCircle, Info, Plus, Home, ArrowUp, RefreshCw, BookOpen, Zap } from 'lucide-react';
+import { ArrowLeft, Volume2, CheckCircle2, XCircle, Eraser, Languages, Eye, Trophy, RotateCcw, Info, Plus, Home, ArrowUp, RefreshCw, BookOpen, Zap } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
+import { analyzeText } from '../services/analyzeImage';
 import { isMatch as checkAnswerMatch } from '../utils/stringUtils';
 import confetti from 'canvas-confetti';
 
@@ -69,9 +70,18 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
     }, [direction, languagePrefKey]);
 
     const [showFinishedModal, setShowFinishedModal] = useState(false);
+    const [activeInfoIndex, setActiveInfoIndex] = useState(0);
 
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setActiveInfoIndex(prev => (prev === 0 ? 1 : 0));
+        }, 4500);
+        return () => clearInterval(timer);
+    }, []);
+    
     // Custom Modal States
     const [selectionToAdd, setSelectionToAdd] = useState<{ text: string, word: Word } | null>(null);
+    const [isAddingWord, setIsAddingWord] = useState(false);
     const [showResetConfirm, setShowResetConfirm] = useState(false);
     const [confirmRevealId, setConfirmRevealId] = useState<string | null>(null);
     const [showScrollTop, setShowScrollTop] = useState(false);
@@ -258,26 +268,48 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
 
     const confirmAddToLibrary = async () => {
         if (!selectionToAdd) return;
+        setIsAddingWord(true);
 
         try {
             const { data: { session } } = await supabase!.auth.getSession();
             const userId = session?.user?.id;
 
             const isExactMatch = selectionToAdd.text.toLowerCase() === selectionToAdd.word.english.toLowerCase();
-            const inferredTurkish = isExactMatch ? selectionToAdd.word.turkish : '?';
+            
+            let english = selectionToAdd.text;
+            let turkish = isExactMatch ? selectionToAdd.word.turkish : '';
+            let example_sentence = selectionToAdd.word.example_sentence || '';
+            let turkish_sentence = selectionToAdd.word.turkish_sentence || '';
+
+            if (!isExactMatch) {
+                try {
+                    const aiResult = await analyzeText(selectionToAdd.text, session);
+                    if (aiResult) {
+                        english = aiResult.english || selectionToAdd.text;
+                        turkish = aiResult.turkish || '';
+                        example_sentence = aiResult.example_sentence || '';
+                        turkish_sentence = aiResult.turkish_sentence || '';
+                    }
+                } catch (aiErr) {
+                    console.error("AI completion in custom set study failed, falling back", aiErr);
+                    turkish = '?';
+                }
+            }
 
             await wordService.addWord({
-                english: selectionToAdd.text,
-                turkish: inferredTurkish,
-                example_sentence: selectionToAdd.word.example_sentence || selectionToAdd.word.english,
-                turkish_sentence: selectionToAdd.word.turkish_sentence || selectionToAdd.word.turkish
+                english,
+                turkish,
+                example_sentence,
+                turkish_sentence
             }, userId);
 
-            showToast(`"${selectionToAdd.text}" kelimesi listeye eklendi!`, 'success');
+            showToast(`"${english}" kelimesi listeye eklendi!`, 'success');
             setSelectionToAdd(null);
         } catch (e) {
             console.error(e);
             showToast('Bir hata oluştu.', 'error');
+        } finally {
+            setIsAddingWord(false);
         }
     };
 
@@ -406,19 +438,27 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
             <div className="flex-1 p-4 md:p-8">
                 <div className={containerClass}>
 
-                    {/* Info Box */}
-                    <div className="w-full bg-blue-900/20 border border-blue-500/30 p-4 rounded-2xl mb-8 flex flex-col gap-3">
-                        <div className="flex items-start gap-3">
-                            <Info className="text-blue-400 flex-shrink-0 mt-0.5" size={20} />
-                            <p className="text-sm font-medium text-blue-200">
-                                Çeviri girişi doğru sağlanırsa bir sonraki cümleye geçiş otomatik gerçekleşir.
-                            </p>
-                        </div>
-                        <div className="flex items-start gap-3 border-t border-blue-500/20 pt-3">
-                            <Info className="text-blue-400 flex-shrink-0 mt-0.5" size={20} />
-                            <p className="text-sm font-medium text-blue-200">
-                                Öğrenmek istenen kelimeler için çift tıklama ile kelime listesine gönderilebilir.
-                            </p>
+                    {/* Moving Info Banner */}
+                    <div className="w-full bg-blue-900/20 border border-blue-500/30 px-5 py-4 rounded-2xl mb-8 overflow-hidden h-[56px] flex items-center relative">
+                        <div 
+                            key={activeInfoIndex} 
+                            className="flex items-center gap-3 w-full animate-slideInVertical"
+                        >
+                            {activeInfoIndex === 0 ? (
+                                <>
+                                    <Info className="text-blue-400 flex-shrink-0" size={20} />
+                                    <p className="text-xs md:text-sm font-semibold text-blue-200 leading-normal truncate">
+                                        Çeviri girişi doğru sağlanırsa bir sonraki cümleye geçiş otomatik gerçekleşir.
+                                    </p>
+                                </>
+                            ) : (
+                                <>
+                                    <Plus className="text-blue-400 flex-shrink-0" size={20} />
+                                    <p className="text-xs md:text-sm font-semibold text-blue-200 leading-normal truncate">
+                                        Öğrenmek istenen kelimeler için çift tıklama ile kelime listesine gönderilebilir.
+                                    </p>
+                                </>
+                            )}
                         </div>
                     </div>
 
@@ -512,7 +552,13 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
                                                             handleKeyDown(e as unknown as React.KeyboardEvent<HTMLInputElement>, word.id, targetText);
                                                         }
                                                     }}
-                                                    onDoubleClick={(e) => handleInputDoubleClick(e as unknown as React.MouseEvent<HTMLInputElement>, word)}
+                                                    onDoubleClick={(e) => {
+                                                        if (!isCorrect) {
+                                                            e.stopPropagation();
+                                                            return;
+                                                        }
+                                                        handleInputDoubleClick(e as unknown as React.MouseEvent<HTMLInputElement>, word);
+                                                    }}
                                                     placeholder={inputPlaceholder}
                                                     readOnly={isCorrect}
                                                     rows={2}
@@ -629,16 +675,22 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
                             <div className="flex gap-3">
                                 <button
                                     onClick={() => setSelectionToAdd(null)}
-                                    className="flex-1 py-4 rounded-xl bg-zinc-900 text-slate-400 font-bold hover:bg-zinc-800 hover:text-white transition-all"
+                                    className="flex-1 py-4 rounded-xl bg-zinc-900 text-slate-400 font-bold hover:bg-zinc-800 hover:text-white transition-all disabled:opacity-50"
+                                    disabled={isAddingWord}
                                 >
                                     Vazgeç
                                 </button>
                                 <button
                                     onClick={confirmAddToLibrary}
-                                    className="flex-1 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2"
+                                    className="flex-1 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 disabled:opacity-50"
+                                    disabled={isAddingWord}
                                 >
-                                    <CheckCircle2 size={18} />
-                                    Ekle
+                                    {isAddingWord ? (
+                                        <RefreshCw size={18} className="animate-spin" />
+                                    ) : (
+                                        <CheckCircle2 size={18} />
+                                    )}
+                                    {isAddingWord ? 'Ekleniyor...' : 'Ekle'}
                                 </button>
                             </div>
                         </div>

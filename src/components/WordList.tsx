@@ -4,6 +4,7 @@ import { Word } from '../types';
 import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive, Info, ArrowUp } from 'lucide-react';
 import { analyzeText } from '../services/analyzeImage';
 import { supabase } from '../services/supabaseClient';
+import { getLocalDateString } from '../utils/stringUtils';
 import ArchiveModal from './ArchiveModal';
 
 interface WordListProps {
@@ -128,8 +129,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
   };
 
   const formatDate = (dateStr?: string) => {
-    if (!dateStr) return 'Tarih Yok';
-    return new Date(dateStr).toLocaleDateString('tr-TR', { day: 'numeric', month: 'numeric', year: 'numeric' });
+    return getLocalDateString(dateStr);
   };
 
   return (

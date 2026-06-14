@@ -14,10 +14,19 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **PDF Desteği:** PDF dökümanlarını doğrudan yükleyerek içerik analizi yapabilme.
 - **Metin Yapıştırma (CTRL+V):** Panodaki metinleri doğrudan yapıştırarak AI analizini başlatma.
 - **Akıllı Hızlı Ekleme:** Tek kelime girildiğinde AI'nın otomatik anlam, örnek cümle ve çeviri üretmesi.
+- **Akıllı Bağlamsal Ekleme:** Cümleler, Kütüphane ve Özel Set çalışmalarında kelimelere çift tıklandığında AI'nın arka planda otomatik olarak kelime anlamını, örnek cümleyi ve çevirisini üretip kaydetmesi.
 
 ### 2.2. Öğrenme ve Pratik Modülleri
-- **Flaşkartlar (Flashcards):** Çift yönlü (EN-TR / TR-EN) çalışma, sesli telaffuz ve 20'şerli kart setleri.
-- **Quiz (Test Çöz):** Çoktan seçmeli, puan tabanlı dinamik testler.
+- **Flaşkartlar (Flashcards):** 
+    - **Seçim Mantığı:** Aktif (arşivlenmemiş, özel set ismi olmayan veya "Demo Kelimeler" setine ait) kelimeler içinden rastgele karıştırılarak (shuffled) seçilen 20'şerli kart setleri.
+    - **Kaldığın Yerden Devam:** Aktif kart setinin (20 kelime) ve çalışılan kart sırasının (indeks) yerel belleğe (`localStorage`) otomatik kaydedilmesi. Sayfadan çıkılsa veya tarayıcı yenilense dahi aynı setten ve kalınan sıradan devam edebilme özelliği.
+    - **Otomatik Telaffuz:** Kartın İngilizce olan yüzü ekranda görüntülendiği anda (kart çevrildiğinde veya yeni karta geçildiğinde) otomatik telaffuz yapılır.
+    - **Görsel Geliştirmeler (TR Kartı):** Türkçe kelimeleri içeren kart yüzlerinin arka planı `bg-zinc-900` olarak ayarlanarak, koyu sayfa arka planından ayırt edilmesi kolaylaştırılmıştır.
+    - **Bilgi Metni:** Navigasyon kontrollerinin altında *"Bu çalışma, kelime listene eklemiş olduğun kelimelerden oluşmaktadır."* bilgi metni yer alır.
+- **Quiz (Test Çöz):** 
+    - Çoktan seçmeli, puan tabanlı dinamik testler.
+    - **Otomatik Telaffuz & Ses Kontrolü:** Cevap seçildiği anda doğru İngilizce kelimenin telaffuzu otomatik olarak seslendirilir. TR-EN yön butonunun yanındaki hoparlör ikonu ile bu özellik açılıp kapatılabilir (durumu `localStorage`'da saklanır). Kapatıldığında hoparlör ikonu üstü çizili görünüm alır.
+    - **Yapılan Yanlışları İzleme:** Test bitiş ekranında "Yanlışları görmek için tıkla" bağlantısı bulunur. Tıklandığında yanlış cevaplanan kelimeler, anlamları, örnek cümleleri ve seslendirme butonlarıyla birlikte modal olarak açılır.
 - **Cümleler (Sentence Builder):** 
     - İnteraktif yazım pratiği.
     - **Esnek Kontrol:** Kısaltmaları (I'm / I am, She's / She is) kabul eden akıllı eşleşme algoritması.
@@ -33,8 +42,10 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 
 ## 3. Kullanıcı Deneyimi (UX)
 - **Dinamik Dashboard:** "Devam Eden Çalışmalar" ve "Tamamlanan Çalışmalar" ayrımı ile görsel ilerleme takibi.
+- **Bölüm Başlıkları:** Kart modülleri ile kelime listesi arasına eklenen belirgin "Kelime Listem" başlığı sayesinde sayfa alt kısımları görsel olarak net bir şekilde ayrılmıştır.
 - **Rehberli Tur (Onboarding):** İlk girişlerde veya yeni özelliklerde tetiklenen interaktif tanıtım turu.
 - **Premium Arayüz:** Karanlık mod odaklı, neon efektli, glassmorphism ve akıcı animasyonlar içeren modern tasarım.
+- **Kütüphane Tasarımı:** Yardımcı Fiiller ve Kip(Modal) Fiiller ekranında solid koyu paneller, neon çerçeveler, arka plan renk geçişleri ve özel kavisli 'Rastgele Oluştur' butonu ile zengin görsel kontrast.
 - **Klavye Desteği:** Formlarda 'Enter' ile kontrol, 'Double Click' ile kelimeyi listeye ekleme gibi kısayollar.
 
 ---

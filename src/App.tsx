@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AppMode, Word, OcrStatus } from './types';
 import { wordService, supabase } from './services/supabaseClient';
 import { analyzeImage, analyzeText } from './services/analyzeImage';
+import { getLocalDateString } from './utils/stringUtils';
 import { demoWords } from './services/demoData';
 import FlashcardMode from './components/FlashcardMode';
 import QuizMode from './components/QuizMode';
@@ -240,9 +241,13 @@ export default function App() {
         setSession(newSession);
         loadWordsWithDemoFallback(newSession.user.id).then(w => setWords(w));
       } else if (event === 'SIGNED_OUT') {
-        setSession(null);
+        setSession((prev: any) => {
+          if (prev !== null) {
+            wordService.clearCache();
+          }
+          return null;
+        });
         setWords([]);
-        wordService.clearCache();
         setHasTourBeenShown(false);
       }
     });
@@ -510,14 +515,14 @@ export default function App() {
           </div>
         )}
 
-        {mode === AppMode.FLASHCARDS && <FlashcardMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} onExit={() => setMode(AppMode.HOME)} onNextSet={handleNextSet} onRemoveWord={handleArchiveWord} onGoToQuiz={() => { setMode(AppMode.QUIZ); }} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
+        {mode === AppMode.FLASHCARDS && <FlashcardMode words={words} onExit={() => setMode(AppMode.HOME)} onNextSet={handleNextSet} onRemoveWord={handleArchiveWord} onGoToQuiz={() => { setMode(AppMode.QUIZ); }} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
         {mode === AppMode.QUIZ && <QuizMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} allWords={words} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
-        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
+        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => { window.location.href = '/'; }} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
         {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={handleRestoreWord} onClearArchive={handleClearArchive} />}
 
         {mode === AppMode.LIBRARY && (
           <LibraryScreen 
-            onExit={() => setMode(AppMode.HOME)} 
+            onExit={() => { window.location.href = '/'; }} 
             onSelectSet={(set) => {
               setActiveLibrarySet(set);
               setMode(AppMode.LIBRARY_PRACTICE);
@@ -530,7 +535,7 @@ export default function App() {
           <LibraryPracticeScreen 
             set={activeLibrarySet} 
             onExit={() => setMode(AppMode.LIBRARY)} 
-            onGoHome={() => setMode(AppMode.HOME)}
+            onGoHome={() => { window.location.href = '/'; }}
             onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)}
             onGoToQuiz={() => setMode(AppMode.QUIZ)}
             onRegenerate={activeLibrarySet.id === 'random-mix' ? () => handleRandomLibrarySet(true) : undefined}
@@ -565,7 +570,7 @@ export default function App() {
         <CustomSetStudyMode
           words={activeCustomSet}
           onExit={() => setMode(AppMode.CUSTOM_SETS)}
-          onGoHome={() => setMode(AppMode.HOME)}
+          onGoHome={() => { window.location.href = '/'; }}
           showToast={(msg, type) => setToast({ message: msg, type: type || 'success' })}
           onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)}
           onGoToQuiz={() => setMode(AppMode.QUIZ)}
@@ -651,7 +656,7 @@ export default function App() {
       }} onCancel={() => setWordToDelete(null)} />}
 
         {dateToDelete && <DeleteModal title="Grubu Sil" description={`${dateToDelete} tarihindeki kelimeleri silmek istediğine emin misin?`} onConfirm={async () => {
-          const toDelete = words.filter(w => new Date(w.created_at!).toLocaleDateString('tr-TR') === dateToDelete).map(w => w.id);
+          const toDelete = words.filter(w => getLocalDateString(w.created_at) === dateToDelete).map(w => w.id);
           await wordService.deleteWords(toDelete);
           setWords(prev => prev.filter(w => !toDelete.includes(w.id)));
           setDateToDelete(null);
@@ -660,7 +665,7 @@ export default function App() {
       </div>
       
       {/* App Version Badge */}
-      <div className="fixed bottom-3 right-4 z-[9999] opacity-40 text-[9px] font-black tracking-widest uppercase bg-black/60 px-3 py-1.5 rounded-full border border-white/10 pointer-events-none backdrop-blur-md">
+      <div className="fixed bottom-3 right-4 z-[9999] opacity-60 text-xs font-black tracking-wider uppercase bg-black/80 px-4 py-2.5 rounded-full border border-white/10 pointer-events-none backdrop-blur-md">
          {APP_VERSION}
       </div>
     </div>

@@ -1,9 +1,13 @@
-
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { Word, LanguageDirection } from '../types';
-import { CheckCircle, ArrowLeft, Languages, Zap, BookOpen, Sparkles, RefreshCw } from 'lucide-react';
+import { CheckCircle, ArrowLeft, Languages, Zap, BookOpen, Sparkles, RefreshCw, X, Volume2, VolumeX } from 'lucide-react';
 
 const QUIZ_SET_SIZE = 20;
+
+const LOCAL_STORAGE_KEYS = {
+  DIRECTION: 'lingua_quiz_direction',
+  TTS_ENABLED: 'lingua_quiz_tts_enabled',
+};
 
 interface QuizModeProps {
   words: Word[];
@@ -32,9 +36,32 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
   const [finished, setFinished] = useState(false);
 
   const [direction, setDirection] = useState<LanguageDirection>(() => {
-    const saved = localStorage.getItem('lingua_quiz_direction');
+    const saved = localStorage.getItem(LOCAL_STORAGE_KEYS.DIRECTION);
     return (saved as LanguageDirection) || LanguageDirection.TR_EN;
   });
+
+  const [incorrectWords, setIncorrectWords] = useState<Word[]>([]);
+  const [showWrongAnswersModal, setShowWrongAnswersModal] = useState(false);
+  const [isTtsEnabled, setIsTtsEnabled] = useState<boolean>(() => {
+    const saved = localStorage.getItem(LOCAL_STORAGE_KEYS.TTS_ENABLED);
+    return saved === null ? true : saved === 'true';
+  });
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEYS.DIRECTION, direction);
+  }, [direction]);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEYS.TTS_ENABLED, isTtsEnabled.toString());
+  }, [isTtsEnabled]);
+
+  const speak = useCallback((text: string) => {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = 0.9;
+    window.speechSynthesis.speak(u);
+  }, []);
 
   const currentWord = randomSet[currentIndex];
 
@@ -61,8 +88,16 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     setShowResult(true);
 
     const correct = direction === LanguageDirection.EN_TR ? currentWord.turkish : currentWord.english;
+    
+    // Auto-read English word on answer if TTS is enabled
+    if (isTtsEnabled && currentWord?.english) {
+      speak(currentWord.english);
+    }
+
     if (option === correct) {
       setScore(prev => prev + 10);
+    } else {
+      setIncorrectWords(prev => [...prev, currentWord]);
     }
 
     setTimeout(() => {
@@ -83,13 +118,15 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     setSelectedOption(null);
     setShowResult(false);
     setFinished(false);
+    setIncorrectWords([]);
+    setShowWrongAnswersModal(false);
   }, []);
 
   const progressPercent = randomSet.length > 0 ? ((currentIndex + 1) / randomSet.length) * 100 : 0;
 
   if (finished) {
     return (
-      <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 text-center font-['Plus_Jakarta_Sans']">
+      <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 text-center font-['Plus_Jakarta_Sans'] relative">
         <div className="bg-zinc-900 border border-emerald-500/20 p-10 rounded-[56px] shadow-2xl w-full max-w-sm relative overflow-hidden">
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
           <CheckCircle className="text-emerald-500 w-20 h-20 mx-auto mb-6 animate-bounce" />
@@ -101,15 +138,26 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
               <span className="text-7xl font-black text-emerald-500 tracking-tighter">{score}</span>
               <span className="text-emerald-900 text-sm font-black uppercase tracking-widest">Puan</span>
             </div>
-            <div className="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/5">
-              <div className="text-left">
-                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Doğru Sayısı</p>
-                <p className="text-xl font-black text-white">{score / 10} / {randomSet.length}</p>
+            <div className="flex flex-col gap-2">
+              <div className="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/5">
+                <div className="text-left">
+                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Doğru Sayısı</p>
+                  <p className="text-xl font-black text-white">{score / 10} / {randomSet.length}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Başarı Oranı</p>
+                  <p className="text-xl font-black text-emerald-500">%{Math.round(((score / 10) / randomSet.length) * 100)}</p>
+                </div>
               </div>
-              <div className="text-right">
-                <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Başarı Oranı</p>
-                <p className="text-xl font-black text-emerald-500">%{Math.round(((score / 10) / randomSet.length) * 100)}</p>
-              </div>
+              
+              {incorrectWords.length > 0 && (
+                <button
+                  onClick={() => setShowWrongAnswersModal(true)}
+                  className="text-xs font-bold text-red-400 hover:text-red-350 transition-all underline decoration-red-500/50 underline-offset-4 mt-2 block mx-auto hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                  Yanlışları görmek için tıkla
+                </button>
+              )}
             </div>
           </div>
 
@@ -147,6 +195,64 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
             </button>
           </div>
         </div>
+
+        {/* Yanlışlar Modalı */}
+        {showWrongAnswersModal && (
+          <div className="fixed inset-0 bg-black/85 backdrop-blur-md z-[9999] flex items-center justify-center p-4 font-['Plus_Jakarta_Sans'] animate-fadeIn">
+            <div className="bg-[#0c0c0c] w-full max-w-md rounded-[40px] p-6 border border-red-500/20 shadow-2xl relative max-h-[80vh] flex flex-col">
+              <button
+                onClick={() => setShowWrongAnswersModal(false)}
+                className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center bg-white/5 hover:bg-zinc-800 text-slate-400 hover:text-white rounded-full transition-all z-50 active:scale-90"
+              >
+                <X size={20} strokeWidth={2.5} />
+              </button>
+
+              <div className="text-center mb-6 mt-2">
+                <h3 className="text-2xl font-black text-white">Yapılan Yanlışlar</h3>
+                <p className="text-slate-500 text-xs font-bold mt-1">
+                  Bu testte yanlış cevapladığın kelimeler
+                </p>
+              </div>
+
+              <div className="flex-1 overflow-y-auto pr-1 space-y-3 custom-scrollbar">
+                {incorrectWords.map((word) => (
+                  <div 
+                    key={word.id} 
+                    className="bg-zinc-900/50 border border-white/5 p-4 rounded-3xl flex items-center justify-between gap-4 hover:border-red-500/20 transition-all group text-left"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <p className="text-lg font-black text-white truncate group-hover:text-red-400 transition-colors">
+                        {word.english}
+                      </p>
+                      <p className="text-xs font-bold text-slate-500 truncate">
+                        {word.turkish}
+                      </p>
+                      {word.example_sentence && (
+                        <p className="text-[10px] text-slate-600 italic mt-1 font-medium line-clamp-2">
+                          "{word.example_sentence}"
+                        </p>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => speak(word.english)}
+                      className="p-3 bg-white/5 text-slate-400 hover:text-white hover:bg-zinc-800 rounded-2xl transition-all active:scale-90 shrink-0"
+                      title="Telaffuz Dinle"
+                    >
+                      <Volume2 size={18} />
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={() => setShowWrongAnswersModal(false)}
+                className="mt-6 w-full py-4 bg-zinc-900 text-white border border-white/5 rounded-3xl font-black text-sm active:scale-95 transition-all hover:bg-zinc-800"
+              >
+                Kapat
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -158,38 +264,59 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-blue-500 opacity-20"></div>
 
       {/* Header */}
-      <div className="p-8 flex justify-between items-center relative z-10">
-        <button onClick={onExit} className="p-4 bg-white/5 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
-          <ArrowLeft size={24} />
-        </button>
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-6 md:py-8 relative z-10">
+        <div className="flex justify-between items-center w-full">
+          <button onClick={onExit} className="p-4 bg-white/5 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
+            <ArrowLeft size={24} />
+          </button>
 
-        {/* Büyük Sayaç */}
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-4xl font-black text-white tracking-tighter">
-            {currentIndex + 1} <span className="text-slate-600 text-2xl">/ {randomSet.length}</span>
-          </span>
-          <div className="w-32 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-emerald-500 transition-all duration-500"
-              style={{ width: `${progressPercent}%` }}
-            ></div>
+          {/* Büyük Sayaç */}
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-4xl font-black text-white tracking-tighter">
+              {currentIndex + 1} <span className="text-slate-600 text-2xl">/ {randomSet.length}</span>
+            </span>
+            <div className="w-32 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-emerald-500 transition-all duration-500"
+                style={{ width: `${progressPercent}%` }}
+              ></div>
+            </div>
           </div>
-        </div>
 
-        <div className="flex items-center gap-3 bg-white/5 border border-white/5 px-6 py-3 rounded-full font-black text-emerald-400">
-          <Zap size={16} fill="currentColor" />
-          {score}
+          <div className="flex items-center gap-3 bg-white/5 border border-white/5 px-6 py-3 rounded-full font-black text-emerald-400">
+            <Zap size={16} fill="currentColor" />
+            {score}
+          </div>
         </div>
       </div>
 
       <div className="flex-1 px-8 flex flex-col justify-center max-w-lg mx-auto w-full relative z-10">
 
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center items-center gap-3 mb-8">
           <button
             onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
             className="bg-emerald-500/10 border border-emerald-500/20 px-6 py-2 rounded-full text-emerald-500 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:bg-emerald-500/20 transition-all"
           >
             <Languages size={16} /> {direction.replace('_', ' → ')}
+          </button>
+
+          <button
+            onClick={() => setIsTtsEnabled(prev => !prev)}
+            className={`p-2.5 rounded-full border transition-all ${
+              isTtsEnabled 
+                ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-500 hover:bg-emerald-500/20" 
+                : "bg-zinc-900 border-white/5 text-slate-500 hover:bg-zinc-800"
+            }`}
+            title={isTtsEnabled ? "Sesli Okuma Açık" : "Sesli Okuma Kapalı"}
+          >
+            {isTtsEnabled ? (
+              <Volume2 size={16} />
+            ) : (
+              <div className="relative flex items-center justify-center">
+                <VolumeX size={16} className="opacity-60" />
+                <div className="absolute w-[18px] h-[1.5px] bg-slate-500 rotate-45" />
+              </div>
+            )}
           </button>
         </div>
 

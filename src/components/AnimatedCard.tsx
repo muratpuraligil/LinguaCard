@@ -7,6 +7,7 @@ interface AnimatedCardProps {
     glowColor?: string;
     onClick?: () => void;
     delay?: number;
+    showNewBadge?: boolean;
 }
 
 const ROTATION_RANGE = 20; // Max rotation in degrees
@@ -17,7 +18,8 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({
     className = "",
     glowColor = "#60a5fa", // Default blue-400
     onClick,
-    delay = 0
+    delay = 0,
+    showNewBadge = false
 }) => {
     const ref = useRef<HTMLDivElement>(null);
 
@@ -107,6 +109,17 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({
                         `
                     }}
                 />
+
+                {showNewBadge && (
+                    <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-tr-[31px] pointer-events-none z-30">
+                      <span 
+                        className="absolute bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[9px] font-black text-center rotate-45 uppercase tracking-widest shadow-lg shadow-blue-600/30 py-1"
+                        style={{ top: '12px', right: '-22px', width: '92px' }}
+                      >
+                        NEW
+                      </span>
+                    </div>
+                )}
             </div>
 
             {/* Content Container (Lifted slightly in Z-space) */}

@@ -109,3 +109,12 @@ export const isMatch = (input: string, target: string): boolean => {
 
   return inputVariants.some(v1 => targetVariants.some(v2 => v1 === v2));
 };
+
+export const getLocalDateString = (isoString?: string): string => {
+  if (!isoString) return 'Tarih Yok';
+  const date = new Date(isoString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+};

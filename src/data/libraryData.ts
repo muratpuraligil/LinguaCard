@@ -1101,11 +1101,11 @@ export const libraryData: LibraryCategory[] = [
           { id: "s62", turkish: "Dikkatli olun! O bulaşıklan düşüreceksin!", english: "Be careful! You're going to drop those dishes!" },
           { id: "s63", turkish: "indiğimizde arkadaşlarımla yemek yiyeceğim.", english: "1 am going to dine with friends when we land." },
           { id: "s64", turkish: "Daha sonra yiyecek bir şeyler alacağım.", english: "I’m going to get something to eat later." },
-          { id: "s65", turkish: "Bu harika takımı ne zaman giyeceksin?", english: "I am going to fail this exam if I do not study harder." },
-          { id: "s66", turkish: "Partiye bisikletle gidecek misiniz?", english: "" },
-          { id: "s67", turkish: "Doğum gününü kutlayacak mı?", english: "" },
-          { id: "s68", turkish: "Sabah saat 8'de ofise gidiyoruz.", english: "" },
-          { id: "s69", turkish: "Daha çok çalışmazsam bu sınavda başarısız olacadım.", english: "" },
+          { id: "s65", turkish: "Bu harika takımı ne zaman giyeceksin?", english: "When are you going to wear this wonderful suit?" },
+          { id: "s66", turkish: "Partiye bisikletle gidecek misiniz?", english: "Are you going to go to the party by bicycle?" },
+          { id: "s67", turkish: "Doğum gününü kutlayacak mı?", english: "Is he going to celebrate his birthday?" },
+          { id: "s68", turkish: "Sabah saat 8'de ofise gidiyoruz.", english: "We are going to go to the office at 8 o'clock in the morning." },
+          { id: "s69", turkish: "Daha çok çalışmazsam bu sınavda başarısız olacadım.", english: "I am going to fail this exam if I do not study harder." },
           { id: "s70", turkish: "Mevcut belediye başkanı seçimleri kazanacak, oyların çoğuna sahip.", english: "The current mayor is going to win the elections, he has most of the votes." },
           { id: "s71", turkish: "Gergekten üşüyorum. Isıtmayı ağacağım.", english: "1am really cold. I am going to turn the heating on." },
           { id: "s72", turkish: "Bu gece için yiyeceğimiz kalmadı. Alışverişe gidiyorum.", english: "We have no food left for tonight. I am going to go for shopping." },
@@ -2062,7 +2062,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s100", turkish: "Masanın üzerindeki sözlüğe ihtiyacım var. Onu benim iccin alabilir misiniz?", english: "I need the dictionary on the desk. May you get it for me?" }
         ] },
       { id: "modal-3", title: "3. MIGHT", sentences: [
-          { id: "s1", turkish: "Miusteri fiyatı kabul ederse, firmannz sipariş alabilir.", english: "" },
+          { id: "s1", turkish: "Miusteri fiyatı kabul ederse, firmannz sipariş alabilir.", english: "If the customer accepts the price, your company might get the order." },
           { id: "s2", turkish: "Projeyi zamanında bitirmeyebilirler. Baş mühendis hasta.", english: "They might not finish the project on time. The head engineer is ill." },
           { id: "s3", turkish: "Çıkarken müze hediyelik eşya dükkanına uğramak isteyebilirsin.", english: "You might want to stop by the museum gift shop on your way out." },
           { id: "s4", turkish: "lyi bir değerlendirme aldım, bu yüzden zam alabilirim.", english: "I received a good evaluation, so I might get a raise." },
@@ -2265,7 +2265,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s100", turkish: "Konuşmacı, hastalık nedeniyle, konferansa katılamadı.", english: "The speaker wasn't able to attend the conference due to illness." }
         ] },
       { id: "modal-5", title: "5. COULD", sentences: [
-          { id: "s1", turkish: "Kaleminizi kullanabilir miyim lütfen?", english: "" },
+          { id: "s1", turkish: "Kaleminizi kullanabilir miyim lütfen?", english: "Could I use your pen, please?" },
           { id: "s2", turkish: "Lütfen bana doktorun telefon numarasını verir misiniz?", english: "Could you please give me the doctor’s telephone number?" },
           { id: "s3", turkish: "Çocukken ağaçlara tırmanabildim / tırmanabiliyordum.", english: "When I was a child, I could climb trees." },
           { id: "s4", turkish: "Fotokopi makinesini tamir edebilir misiniz lütfen?", english: "Could you please repair the copy machine?" },
@@ -3183,7 +3183,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s100", turkish: "Nasıl bilebilirim?", english: "How shall I know it?" }
         ] },
       { id: "modal-14", title: "14. WOULD RATHER / WOULD PREFER TO", sentences: [
-          { id: "s1", turkish: "Dışart çıkıp bir restoranda akşam yemeği yemektense evde kalmayı tercih ederim.", english: "" },
+          { id: "s1", turkish: "Dışart çıkıp bir restoranda akşam yemeği yemektense evde kalmayı tercih ederim.", english: "I would rather stay at home than go out and have dinner in a restaurant." },
           { id: "s2", turkish: "Günaydın! Yata’imda kalmayı tercih ederim.", english: "Good morning! I'd prefer to stay in my bed." },
           { id: "s3", turkish: "Buğtın kahvaltıda ekmek, tereyağı ve bal yemeyi tercih ederim.", english: "Today, at breakfast, I'd rather eat bread, butter and honey." },
           { id: "s4", turkish: "Çok şişmanım, iki galeta ve bir elma yemeyi tercih ederim.", english: "I am too fat, I’d prefer eat two rusks and an apple." },
@@ -3387,8 +3387,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s100", turkish: "Ne sipariş etmek istersiniz?", english: "What would you like to order?" }
         ] },
       { id: "modal-16", title: "16. USED TO", sentences: [
-          { id: "s0", turkish: "", english: "O000—=—0®0_0—0—0—0°0°0@$@0@—@smsmsSsSsSsssSsSsSS om" },
-          { id: "s1", turkish: "Eskiden güzel şekilli bir vücuda sahipti. (Artık değil)", english: "" },
+          { id: "s1", turkish: "Eskiden güzel şekilli bir vücuda sahipti. (Artık değil)", english: "She used to have a beautiful body shape." },
           { id: "s2", turkish: "Kız kardeşler daha küçükken mini etek giyerlerdi.", english: "When the sisters were younger, they used to wear the miniskirt." },
           { id: "s3", turkish: "Bir dışı aslan tarafından kötü bir şekilde yaralanıncaya kadar aslanları eğitirdi.", english: "He used to train lions until he was badly mauled by a lioness." },
           { id: "s4", turkish: "Çocukken, yabanı mantarlan toplamak için ormana giderdik.", english: "When we were children, we used to go into the woods to pick wild mushrooms." },

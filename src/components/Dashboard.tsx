@@ -343,11 +343,8 @@ const Dashboard: React.FC<DashboardProps> = ({
             className="rounded-[32px] border-b-4 border-purple-500 bg-zinc-900/80"
             glowColor="#a855f7"
             delay={0.3}
+            showNewBadge={true}
           >
-            {/* NEW Badge */}
-            <div className="absolute top-4 right-4 z-30">
-              <span className="text-[10px] font-black bg-blue-600 text-white px-2 py-0.5 rounded-md uppercase tracking-tighter shadow-lg shadow-blue-600/20 animate-pulse">NEW</span>
-            </div>
             <div className="p-6 h-full flex flex-col items-start relative z-20">
               <div className="flex items-center justify-between w-full mb-6">
                 <div className="bg-purple-500/10 w-12 h-12 rounded-2xl flex items-center justify-center text-purple-500 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
@@ -369,6 +366,13 @@ const Dashboard: React.FC<DashboardProps> = ({
             </div>
           </AnimatedCard>
 
+        </div>
+
+        <div className="px-8 pt-4 pb-2">
+          <h2 className="text-2xl font-black text-white tracking-tight flex items-center gap-3">
+            <span className="w-1.5 h-6 bg-blue-500 rounded-full" />
+            Kelime Listem
+          </h2>
         </div>
 
         <div className="px-8 pb-20">

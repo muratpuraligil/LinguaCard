@@ -16,25 +16,72 @@ interface FlashcardModeProps {
 }
 
 const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet, onRemoveWord, onGoToQuiz, onGoToSentences }) => {
-    // Random 20 kart — her "Yeni Set" tıklamasında yeniden seçilir
-    const [setKey, setSetKey] = useState(0);
+    // 1. Store the active word IDs currently being studied
+    const [activeIds, setActiveIds] = useState<string[]>(() => {
+        const savedIdsJson = localStorage.getItem('lingua_flashcard_active_ids');
+        if (savedIdsJson) {
+            try {
+                const savedIds = JSON.parse(savedIdsJson);
+                if (Array.isArray(savedIds) && savedIds.length > 0) {
+                    return savedIds;
+                }
+            } catch (e) {
+                console.error("Failed to parse saved flashcard set IDs", e);
+            }
+        }
+        return [];
+    });
 
-    const randomSet = useMemo(() => {
-        if (!words || words.length === 0) return [];
-        const shuffled = [...words].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, FLASHCARD_SET_SIZE);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [setKey]);
+    // 2. Store the current index
+    const [currentIndex, setCurrentIndex] = useState<number>(() => {
+        const savedIndex = localStorage.getItem('lingua_flashcard_current_index');
+        if (savedIndex) {
+            const parsed = parseInt(savedIndex, 10);
+            if (!isNaN(parsed) && parsed >= 0) {
+                return parsed;
+            }
+        }
+        return 0;
+    });
 
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false);
-    const [isFinished, setIsFinished] = useState(false);
+    const [isFinished, setIsFinished] = useState<boolean>(() => {
+        return localStorage.getItem('lingua_flashcard_is_finished') === 'true';
+    });
+
     const [direction, setDirection] = useState<LanguageDirection>(() => {
         const saved = localStorage.getItem('lingua_flashcard_direction');
         return (saved as LanguageDirection) || LanguageDirection.TR_EN;
     });
 
-    const currentWord = randomSet.length > 0 ? randomSet[currentIndex] : null;
+    // 3. Map activeIds to actual word objects from words prop (regardless of archived status during the active session)
+    const currentSet = useMemo(() => {
+        return activeIds
+            .map(id => words.find(w => w.id === id))
+            .filter((w): w is Word => !!w);
+    }, [activeIds, words]);
+
+    // 4. Auto-generate set if we have words but no activeIds
+    useEffect(() => {
+        const hasSaved = localStorage.getItem('lingua_flashcard_active_ids');
+        if (!hasSaved && words.length > 0 && !isFinished) {
+            // Filter eligible words: not archived, and no custom set name (or is "Demo Kelimeler")
+            const eligibleWords = words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"));
+            if (eligibleWords.length > 0) {
+                const shuffled = [...eligibleWords].sort(() => Math.random() - 0.5);
+                const newSet = shuffled.slice(0, FLASHCARD_SET_SIZE);
+                const newIds = newSet.map(w => w.id);
+                localStorage.setItem('lingua_flashcard_active_ids', JSON.stringify(newIds));
+                localStorage.setItem('lingua_flashcard_current_index', '0');
+                localStorage.setItem('lingua_flashcard_is_finished', 'false');
+                setActiveIds(newIds);
+                setCurrentIndex(0);
+            }
+        }
+    }, [words, isFinished]);
+
+    const safeIndex = currentIndex >= currentSet.length ? Math.max(0, currentSet.length - 1) : currentIndex;
+    const currentWord = currentSet.length > 0 ? currentSet[safeIndex] : null;
 
     useEffect(() => {
         setIsFlipped(false);
@@ -44,6 +91,33 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
         localStorage.setItem('lingua_flashcard_direction', direction);
     }, [direction]);
 
+    useEffect(() => {
+        localStorage.setItem('lingua_flashcard_current_index', currentIndex.toString());
+    }, [currentIndex]);
+
+    useEffect(() => {
+        localStorage.setItem('lingua_flashcard_is_finished', isFinished ? 'true' : 'false');
+    }, [isFinished]);
+
+    useEffect(() => {
+        if (currentIndex >= currentSet.length && currentSet.length > 0) {
+            setCurrentIndex(currentSet.length - 1);
+        }
+    }, [currentSet.length, currentIndex]);
+
+    useEffect(() => {
+        if (!currentWord) return;
+        const isEnglishVisible = (direction === LanguageDirection.EN_TR && !isFlipped) ||
+                                 (direction === LanguageDirection.TR_EN && isFlipped);
+        if (isEnglishVisible) {
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(currentWord.english);
+            u.lang = 'en-US';
+            u.rate = 0.9;
+            window.speechSynthesis.speak(u);
+        }
+    }, [currentIndex, isFlipped, direction, currentWord]);
+
     const triggerSuccessConfetti = () => {
         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
     };
@@ -51,7 +125,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
     const handleNext = (e?: React.MouseEvent) => {
         e?.stopPropagation();
         const doNext = () => {
-            if (currentIndex < randomSet.length - 1) {
+            if (currentIndex < currentSet.length - 1) {
                 setCurrentIndex(prev => prev + 1);
             } else {
                 setIsFinished(true);
@@ -80,7 +154,16 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
     };
 
     const handleNewSet = () => {
-        setSetKey(k => k + 1);
+        // Filter eligible words: not archived, and no custom set name (or is "Demo Kelimeler")
+        const eligibleWords = words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"));
+        if (eligibleWords.length === 0) return;
+        const shuffled = [...eligibleWords].sort(() => Math.random() - 0.5);
+        const newSet = shuffled.slice(0, FLASHCARD_SET_SIZE);
+        const newIds = newSet.map(w => w.id);
+        localStorage.setItem('lingua_flashcard_active_ids', JSON.stringify(newIds));
+        localStorage.setItem('lingua_flashcard_current_index', '0');
+        localStorage.setItem('lingua_flashcard_is_finished', 'false');
+        setActiveIds(newIds);
         setCurrentIndex(0);
         setIsFlipped(false);
         setIsFinished(false);
@@ -108,7 +191,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                     <div className="space-y-3 w-full">
                         <button
                             onClick={handleNewSet}
-                            className="w-full py-4 bg-white text-black rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full py-4 bg-yellow-500 hover:bg-yellow-400 text-black rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl shadow-yellow-500/20 active:scale-95 flex items-center justify-center gap-2"
                         >
                             <BookOpen size={18} /> Yeni Set ile Devam Et
                         </button>
@@ -116,9 +199,9 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                         {onGoToQuiz && (
                             <button
                                 onClick={onGoToQuiz}
-                                className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
+                                className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
-                                <Puzzle size={18} /> Test Çöz Modülüne Geç
+                                <Puzzle size={18} /> Test Çöz
                             </button>
                         )}
 
@@ -154,18 +237,24 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
     return (
         <div className="min-h-screen bg-black flex flex-col text-white font-['Plus_Jakarta_Sans']">
             {/* Top Header */}
-            <div className="flex justify-between items-center p-6 md:px-10 md:py-8 relative z-50">
-                <button onClick={onExit} className="p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg"><ArrowLeft size={20} /></button>
-                <div className="flex flex-col items-center">
-                    <button
-                        onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
-                        className="bg-zinc-900 border border-white/10 px-5 py-2 rounded-full text-slate-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:text-white transition-all mb-2 shadow-xl"
-                    >
-                        <Languages size={14} /> {direction === LanguageDirection.TR_EN ? 'TR → EN' : 'EN → TR'}
+            <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-6 md:py-8 relative z-50">
+                <div className="flex justify-between items-center w-full">
+                    <button onClick={onExit} className="p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg">
+                        <ArrowLeft size={20} />
                     </button>
-                    <div className="bg-zinc-900/50 px-3 py-1 rounded-full font-black text-[10px] text-slate-600 uppercase tracking-widest border border-white/5">{currentIndex + 1} / {randomSet.length}</div>
+                    <div className="flex flex-col items-center">
+                        <button
+                            onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
+                            className="bg-zinc-900 border border-white/10 px-5 py-2 rounded-full text-slate-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:text-white transition-all mb-2 shadow-xl"
+                        >
+                            <Languages size={14} /> {direction === LanguageDirection.TR_EN ? 'TR → EN' : 'EN → TR'}
+                        </button>
+                        <div className="bg-zinc-900/50 px-3 py-1 rounded-full font-black text-[10px] text-slate-600 uppercase tracking-widest border border-white/5">
+                            {currentIndex + 1} / {currentSet.length}
+                        </div>
+                    </div>
+                    <div className="w-12"></div>
                 </div>
-                <div className="w-12"></div>
             </div>
 
             <div className="flex-1 flex flex-col items-center justify-center p-6 w-full max-w-sm mx-auto relative">
@@ -173,7 +262,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                     <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
 
                         {/* ÖN YÜZ */}
-                        <div className={`absolute inset-0 backface-hidden rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-zinc-950 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
+                        <div className={`absolute inset-0 backface-hidden rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-zinc-900 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
                             <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-white' : 'text-black'}`}>{isFrontTR ? 'TURKISH' : 'ENGLISH'}</div>
 
                             {!isFrontTR && (
@@ -208,7 +297,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                         </div>
 
                         {/* ARKA YÜZ */}
-                        <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-950 text-white border-2 border-zinc-800'}`}>
+                        <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[40px] flex flex-col items-center justify-center p-8 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-900 text-white border-2 border-zinc-800'}`}>
                             <div className={`absolute top-8 left-10 opacity-20 font-black uppercase tracking-[0.3em] text-[10px] ${isFrontTR ? 'text-black' : 'text-white'}`}>{isFrontTR ? 'ENGLISH' : 'TURKISH'}</div>
 
                             {isFrontTR && (
@@ -270,6 +359,11 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                         </button>
                     )}
                 </div>
+
+                {/* Info Text */}
+                <p className="mt-6 text-center text-xs text-slate-500 font-bold max-w-[280px] leading-relaxed opacity-85">
+                    Bu çalışma, kelime listene eklemiş olduğun kelimelerden oluşmaktadır.
+                </p>
             </div>
         </div>
     );

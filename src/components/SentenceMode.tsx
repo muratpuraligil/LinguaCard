@@ -4,6 +4,7 @@ import { Word, LanguageDirection } from '../types';
 import { isMatch } from '../utils/stringUtils';
 import { Check, X, RefreshCw, Type, Languages, ArrowLeft, Volume2, Sparkles, ChevronLeft, ChevronRight, Trophy, BookOpen, Zap, Info, Plus } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
+import { analyzeText } from '../services/analyzeImage';
 
 interface SentenceModeProps {
     words: Word[];
@@ -52,11 +53,29 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
       setIsAddingWord(true);
       try {
         const { data: { session } } = await supabase!.auth.getSession();
+        
+        let english = selectedWord;
+        let turkish = '';
+        let example_sentence = '';
+        let turkish_sentence = '';
+
+        try {
+          const aiResult = await analyzeText(selectedWord, session);
+          if (aiResult) {
+            english = aiResult.english || selectedWord;
+            turkish = aiResult.turkish || '';
+            example_sentence = aiResult.example_sentence || '';
+            turkish_sentence = aiResult.turkish_sentence || '';
+          }
+        } catch (aiErr) {
+          console.error("AI completion failed, falling back to raw addition", aiErr);
+        }
+
         await wordService.addWord({
-          english: selectedWord,
-          turkish: '',
-          example_sentence: '',
-          turkish_sentence: ''
+          english,
+          turkish,
+          example_sentence,
+          turkish_sentence
         }, session?.user?.id);
         setSelectedWord(null);
       } catch (e) {
@@ -240,25 +259,25 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
             <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-purple-500/5 blur-[120px] rounded-full"></div>
 
             {/* Header */}
-            <div className="p-8 pt-10 flex justify-between items-center relative z-10">
+            <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-6 md:py-8 flex justify-between items-center relative z-10">
                 <button onClick={onExit} className="p-4 bg-white/5 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
-                    <ArrowLeft size={24} />
-                </button>
-
-                <div className="flex flex-col items-center gap-1">
-                    <button
-                        onClick={() => setDirection(d => d === LanguageDirection.TR_EN ? LanguageDirection.EN_TR : LanguageDirection.TR_EN)}
-                        className="bg-purple-500/10 border border-purple-500/20 px-6 py-3 rounded-full text-purple-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:bg-purple-500/20 transition-all mb-2"
-                    >
-                        <Languages size={16} /> {direction.replace('_', ' → ')}
+                        <ArrowLeft size={24} />
                     </button>
-                    <span className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em]">
-                        {currentIndex + 1} / {validWords.length}
-                    </span>
-                </div>
 
-                <button 
-                    onClick={() => setShowResetConfirm(true)}
+                    <div className="flex flex-col items-center gap-1">
+                        <button
+                            onClick={() => setDirection(d => d === LanguageDirection.TR_EN ? LanguageDirection.EN_TR : LanguageDirection.TR_EN)}
+                            className="bg-purple-500/10 border border-purple-500/20 px-6 py-3 rounded-full text-purple-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:bg-purple-500/20 transition-all mb-2"
+                        >
+                            <Languages size={16} /> {direction.replace('_', ' → ')}
+                        </button>
+                        <span className="text-[11px] font-black text-slate-500 uppercase tracking-[0.2em]">
+                            {currentIndex + 1} / {validWords.length}
+                        </span>
+                    </div>
+
+                    <button 
+                        onClick={() => setShowResetConfirm(true)}
                     className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 hover:bg-red-500 hover:text-white transition-all flex items-center gap-2"
                     title="İlerlemeyi Sıfırla"
                 >
@@ -292,6 +311,10 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
                         value={userInput}
                         onChange={(e) => setUserInput(e.target.value)}
                         onDoubleClick={(e) => {
+                            if (status !== 'CORRECT') {
+                                e.stopPropagation();
+                                return;
+                            }
                             const input = e.currentTarget;
                             const start = input.selectionStart || 0;
                             const end = input.selectionEnd || 0;

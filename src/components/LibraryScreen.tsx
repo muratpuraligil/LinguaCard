@@ -52,9 +52,13 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
   };
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <div className="min-h-screen bg-[#050508] text-white selection:bg-blue-500/30 relative overflow-hidden">
+      {/* Background Decorative Glows */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+
       {/* Header */}
-      <div className="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5">
+      <div className="sticky top-0 z-50 bg-[#050508]/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center gap-4">
           <button
             onClick={onExit}
@@ -70,21 +74,21 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-6 pt-10 pb-20">
+      <div className="max-w-6xl mx-auto px-6 pt-10 pb-20 relative z-10">
         {/* Random Creator Button Area */}
         <div className="flex justify-center mb-16">
           <button
             onClick={handleRandomCreate}
-            className="group relative px-8 py-4 bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] active:scale-95"
+            className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:scale-105 active:scale-95 text-white rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl shadow-indigo-900/30 border border-white/10"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="flex items-center gap-3 relative z-10">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                <ChevronRight size={20} className="rotate-[-45deg] group-hover:rotate-0 transition-transform" />
+              <div className="w-10 h-10 rounded-2xl bg-white/20 text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                <ChevronRight size={20} className="rotate-[-45deg] group-hover:rotate-0 transition-transform text-white" />
               </div>
               <div className="flex flex-col items-start">
                 <span className="text-sm font-black text-white tracking-wide uppercase">Rastgele Oluştur</span>
-                <span className="text-[10px] text-slate-500 font-bold group-hover:text-blue-400/70 transition-colors uppercase tracking-widest">34 Ana Gruptan Seçmeler</span>
+                <span className="text-[10px] text-blue-100/80 font-bold uppercase tracking-widest">34 Ana Gruptan Seçmeler</span>
               </div>
             </div>
           </button>
@@ -93,8 +97,10 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {libraryData.map((category, idx) => {
             const isFirst = idx === 0;
-            const bgClass = isFirst ? 'bg-blue-950/10 border-blue-900/30' : 'bg-purple-950/10 border-purple-900/30';
-            const iconBgClass = isFirst ? 'bg-blue-500/10 text-blue-500' : 'bg-purple-500/10 text-purple-500';
+            const bgClass = isFirst 
+              ? 'bg-zinc-900/95 border-blue-500/20 shadow-2xl shadow-blue-900/5' 
+              : 'bg-zinc-900/95 border-purple-500/20 shadow-2xl shadow-purple-900/5';
+            const iconBgClass = isFirst ? 'bg-blue-500/10 text-blue-400' : 'bg-purple-500/10 text-purple-400';
             const hoverBorderClass = isFirst ? 'hover:border-blue-500/30' : 'hover:border-purple-500/30';
             const hoverTextClass = isFirst ? 'group-hover:text-blue-400' : 'group-hover:text-purple-400';
             const hoverIconBgClass = isFirst ? 'group-hover:bg-blue-500/20 group-hover:text-blue-400' : 'group-hover:bg-purple-500/20 group-hover:text-purple-400';
@@ -118,7 +124,7 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
                     <button
                       key={set.id}
                       onClick={() => onSelectSet(set)}
-                      className={`group bg-black/40 border border-white/5 ${hoverBorderClass} p-5 rounded-2xl flex items-center justify-between transition-all duration-300 hover:bg-black/60 active:scale-[0.98]`}
+                      className={`group bg-zinc-950/60 border border-white/5 ${hoverBorderClass} p-5 rounded-2xl flex items-center justify-between transition-all duration-300 hover:bg-zinc-900/80 active:scale-[0.98]`}
                     >
                       <div className="flex flex-col items-start">
                         <div className="flex items-center gap-3">

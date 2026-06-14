@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LibrarySet, LanguageDirection } from '../types';
 import { isMatch } from '../utils/stringUtils';
-import { ArrowLeft, ArrowUp, Home, Languages, CheckCircle2, Volume2, HelpCircle, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle, Info, Plus } from 'lucide-react';
+import { ArrowLeft, ArrowUp, Home, Languages, CheckCircle2, Volume2, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle, Info, Plus, Sparkles } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
+import { analyzeText } from '../services/analyzeImage';
 import confetti from 'canvas-confetti';
 
 interface LibraryPracticeScreenProps {
@@ -29,8 +30,28 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
   const [confirmRevealId, setConfirmRevealId] = useState<string | null>(null);
   const [everWrongIds, setEverWrongIds] = useState<Set<string>>(new Set());
   const [showRegenerateConfirm, setShowRegenerateConfirm] = useState(false);
+  const [activeInfoIndex, setActiveInfoIndex] = useState(0);
   
   const inputRefs = useRef<{ [key: string]: HTMLTextAreaElement | null }>({});
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveInfoIndex(prev => (prev === 0 ? 1 : 0));
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    // Recalculate heights for all textareas when wrong filters toggle
+    setTimeout(() => {
+      Object.values(inputRefs.current).forEach(el => {
+        if (el) {
+          el.style.height = 'auto';
+          el.style.height = `${el.scrollHeight}px`;
+        }
+      });
+    }, 120);
+  }, [showOnlyWrong]);
 
   useEffect(() => {
     const savedCompletedStr = localStorage.getItem(`library_completed_${set.id}_${direction}`);
@@ -88,6 +109,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
 
   const completedCount = Object.keys(completed).length;
   const isAllCompleted = set.sentences.length > 0 && completedCount === set.sentences.length;
+  const filteredSentences = set.sentences.filter(s => !showOnlyWrong || wrongInputs[s.id]);
 
   useEffect(() => {
     if (isAllCompleted && !showFinishedModal) {
@@ -226,11 +248,29 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     setIsAddingWord(true);
     try {
       const { data: { session } } = await supabase!.auth.getSession();
+      
+      let english = selectedWord;
+      let turkish = '';
+      let example_sentence = '';
+      let turkish_sentence = '';
+
+      try {
+        const aiResult = await analyzeText(selectedWord, session);
+        if (aiResult) {
+          english = aiResult.english || selectedWord;
+          turkish = aiResult.turkish || '';
+          example_sentence = aiResult.example_sentence || '';
+          turkish_sentence = aiResult.turkish_sentence || '';
+        }
+      } catch (aiErr) {
+        console.error("AI completion failed, falling back to raw addition", aiErr);
+      }
+
       await wordService.addWord({
-        english: selectedWord,
-        turkish: '',
-        example_sentence: '',
-        turkish_sentence: ''
+        english,
+        turkish,
+        example_sentence,
+        turkish_sentence
       }, session?.user?.id);
       setSelectedWord(null);
     } catch (e) {
@@ -410,31 +450,45 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
           </div>
         </div>
 
-        {/* Info Box */}
-        <div className="w-full bg-blue-900/10 border border-blue-500/20 p-4 rounded-2xl mb-8 flex flex-col gap-3">
-            <div className="flex items-start gap-3">
-                <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg">
-                    <Info size={16} />
+        {/* Moving Info Banner */}
+        <div className="w-full bg-blue-900/10 border border-blue-500/20 px-5 py-4 rounded-2xl mb-8 overflow-hidden h-[56px] flex items-center relative">
+          <div 
+            key={activeInfoIndex} 
+            className="flex items-center gap-3 w-full animate-slideInVertical"
+          >
+            {activeInfoIndex === 0 ? (
+              <>
+                <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg shrink-0">
+                  <Info size={16} />
                 </div>
-                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-relaxed pt-0.5">
-                    Çeviri girişi doğru sağlandığı anda bir sonraki cümleye geçiş otomatik gerçekleşir.
+                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-normal truncate">
+                  Çeviri girişi doğru sağlandığı anda bir sonraki cümleye geçiş otomatik gerçekleşir.
                 </p>
-            </div>
-            <div className="flex items-start gap-3 border-t border-blue-500/10 pt-3">
-                <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg">
-                    <Plus size={16} />
+              </>
+            ) : (
+              <>
+                <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg shrink-0">
+                  <Plus size={16} />
                 </div>
-                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-relaxed pt-0.5">
-                    Öğrenmek istediğiniz kelimelere çift tıklayarak çalışma listenize ekleyebilirsiniz.
+                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-normal truncate">
+                  Öğrenmek istediğiniz kelimelere çift tıklayarak çalışma listenize ekleyebilirsiniz.
                 </p>
-            </div>
+              </>
+            )}
+          </div>
         </div>
 
-
         <div className="space-y-3">
-          {set.sentences
-            .filter(s => !showOnlyWrong || wrongInputs[s.id])
-            .map((sentence, idx) => {
+          {filteredSentences.length === 0 && (
+            <div className="flex flex-col items-center justify-center p-12 bg-zinc-900/50 border border-dashed border-zinc-800 rounded-[24px] text-center animate-fadeIn w-full">
+              <div className="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 mb-4">
+                <CheckCircle2 size={32} />
+              </div>
+              <h3 className="text-lg font-black text-white mb-1">Hata Bulunmuyor</h3>
+              <p className="text-slate-400 text-sm font-medium">Bu sette henüz hata yaptığın bir cümle yok!</p>
+            </div>
+          )}
+          {filteredSentences.map((sentence, idx) => {
               const isDone = completed[sentence.id];
               const isWrong = wrongInputs[sentence.id];
               const promptText = direction === LanguageDirection.TR_EN ? sentence.turkish : sentence.english;
@@ -484,6 +538,10 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                                     }
                                 }}
                                 onDoubleClick={(e) => {
+                                    if (!isDone) {
+                                        e.stopPropagation();
+                                        return;
+                                    }
                                     const input = e.currentTarget;
                                     const start = input.selectionStart || 0;
                                     const end = input.selectionEnd || 0;
@@ -508,13 +566,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                                         >
                                             <Volume2 size={16} />
                                         </button>
-                                        <button 
-                                            onClick={(e) => { e.stopPropagation(); handleHelp(sentence.id, targetText); }}
-                                            className="p-1.5 text-slate-500 hover:bg-white/10 hover:text-blue-400 rounded-lg transition-colors"
-                                            title="İpucu Al"
-                                        >
-                                            <HelpCircle size={16} />
-                                        </button>
+
                                         <button 
                                             onClick={() => {
                                                 if (confirmRevealId === sentence.id) {
@@ -551,27 +603,43 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
             })}
         </div>
 
+
+        {/* Floating Control Toolbar */}
         {set.sentences.length > 0 && (
-          <div className="flex items-center justify-center flex-wrap gap-x-8 gap-y-4 mt-16 mb-8">
-            <button 
-              onClick={handleResetProgress} 
-              className="text-slate-500 hover:text-slate-300 font-black text-[10px] uppercase tracking-widest transition-colors underline underline-offset-8"
+          <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[1001] flex items-center gap-3 bg-zinc-900/95 backdrop-blur-xl border border-zinc-700/80 px-6 py-3.5 rounded-3xl shadow-[0_0_30px_rgba(59,130,246,0.15)] shadow-black/80 animate-fadeIn">
+            <button
+              onClick={() => setShowOnlyWrong(!showOnlyWrong)}
+              className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 flex items-center gap-2 border
+                ${showOnlyWrong 
+                  ? 'bg-red-500 text-white border-red-400 hover:bg-red-400' 
+                  : 'bg-zinc-800 text-slate-200 border-zinc-700 hover:bg-zinc-700'}
+              `}
             >
-              Çalışmayı Sıfırla
+              <XCircle size={14} />
+              {showOnlyWrong ? "Tümünü Göster" : "Hatalılar"}
             </button>
-            <button 
-              onClick={() => setShowOnlyWrong(!showOnlyWrong)} 
-              className="text-blue-500/70 hover:text-blue-400 font-black text-[10px] uppercase tracking-widest transition-colors underline underline-offset-8"
+  
+            <div className="w-px h-6 bg-zinc-800 mx-1"></div>
+  
+            <button
+              onClick={handleResetProgress}
+              className="px-4 py-2 bg-amber-500/10 text-amber-400 border border-amber-500/30 hover:bg-amber-500/20 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2"
             >
-              {showOnlyWrong ? "Tüm Cümleleri Göster" : "Sadece Hatalıları Göster"}
+              <RefreshCw size={14} />
+              Sıfırla
             </button>
+  
             {onRegenerate && (
-              <button 
-                onClick={() => setShowRegenerateConfirm(true)} 
-                className="text-purple-500/70 hover:text-purple-400 font-black text-[10px] uppercase tracking-widest transition-colors underline underline-offset-8"
-              >
-                Yeni Set Üret
-              </button>
+              <>
+                <div className="w-px h-6 bg-zinc-800 mx-1"></div>
+                <button
+                  onClick={() => setShowRegenerateConfirm(true)}
+                  className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-purple-900/30 active:scale-95"
+                >
+                  <Sparkles size={14} />
+                  Yeni Set
+                </button>
+              </>
             )}
           </div>
         )}
