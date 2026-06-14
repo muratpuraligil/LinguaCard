@@ -451,7 +451,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         </div>
 
         {/* Moving Info Banner */}
-        <div className="w-full bg-blue-900/10 border border-blue-500/20 px-5 py-4 rounded-2xl mb-8 overflow-hidden h-[56px] flex items-center relative">
+        <div className="w-full bg-blue-900/10 border border-blue-500/20 px-5 py-3 rounded-2xl mb-8 overflow-hidden min-h-[56px] flex items-center relative">
           <div 
             key={activeInfoIndex} 
             className="flex items-center gap-3 w-full animate-slideInVertical"
@@ -461,7 +461,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                 <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg shrink-0">
                   <Info size={16} />
                 </div>
-                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-normal truncate">
+                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-normal">
                   Çeviri girişi doğru sağlandığı anda bir sonraki cümleye geçiş otomatik gerçekleşir.
                 </p>
               </>
@@ -470,7 +470,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                 <div className="p-1.5 bg-blue-500/10 text-blue-400 rounded-lg shrink-0">
                   <Plus size={16} />
                 </div>
-                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-normal truncate">
+                <p className="text-xs md:text-sm font-semibold text-blue-200/80 leading-normal">
                   Öğrenmek istediğiniz kelimelere çift tıklayarak çalışma listenize ekleyebilirsiniz.
                 </p>
               </>
@@ -741,11 +741,11 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         </div>
       )}
 
-      {/* Scroll to Top Button - Moved back to fixed bottom-left as requested */}
+      {/* Scroll to Top Button - Positioned centered above the bottom controls toolbar */}
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-10 left-6 md:left-[calc(50%-590px)] z-[1000] group flex flex-col items-center gap-2 p-3 bg-zinc-900/80 backdrop-blur-xl hover:bg-blue-600/10 border border-white/10 hover:border-blue-500/30 rounded-3xl transition-all duration-500 hover:scale-110 active:scale-95 shadow-2xl shadow-black/40"
+          className="fixed bottom-28 left-1/2 -translate-x-1/2 z-[1002] group flex flex-col items-center gap-2 p-3 bg-zinc-900/80 backdrop-blur-xl hover:bg-blue-600/10 border border-white/10 hover:border-blue-500/30 rounded-3xl transition-all duration-500 hover:scale-110 active:scale-95 shadow-2xl shadow-black/40"
           title="yukarıya dön"
         >
           <div className="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center animate-bounce group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">

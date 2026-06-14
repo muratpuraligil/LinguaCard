@@ -161,7 +161,7 @@ const Dashboard: React.FC<DashboardProps> = ({
               </div>
 
               {/* Animated Book and Words Text inside the clipped area */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center group-hover:scale-110 transition-transform duration-700 select-none pointer-events-none">
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden sm:flex flex-col items-center group-hover:scale-110 transition-transform duration-700 select-none pointer-events-none">
                 <div className="relative flex items-center justify-center">
                   <span className="absolute text-[9px] font-black uppercase tracking-[0.4em] text-white z-10 drop-shadow-2xl">words</span>
                   <Book size={80} strokeWidth={1} className="text-white/20 animate-pulse -rotate-12" />
@@ -176,7 +176,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                 </h2>
               </div>
               <p className="text-blue-200/70 font-medium text-sm mb-6 flex flex-col md:block leading-relaxed">
-                <span>Kütüphanende aktif <span className="text-yellow-400 font-black text-lg mx-1">{words.length}</span> kelime var.</span>
+                <span>Kelime listende aktif <span className="text-yellow-400 font-black text-lg mx-1">{words.length}</span> kelime var.</span>
                 <span className="mt-2 md:mt-0 md:ml-1 block md:inline">
                   Yeni kelime yüklemek için <span className="font-bold text-white">Resim ile Yükle</span> yada <span className="font-bold text-white">Hızlı Ekle</span>'yi kullan.
                 </span>
@@ -196,7 +196,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                   {/* AI Tooltip 1 - Step 1 */}
                   {tourStep === 1 && (
                     <div
-                      className="absolute top-full right-0 mt-4 w-80 bg-blue-600 border border-blue-400/30 p-5 rounded-2xl shadow-2xl shadow-blue-900/40 z-50 animate-pulse cursor-pointer origin-top-right transition-all hover:scale-[1.02] active:scale-95"
+                      className="absolute top-full left-0 mt-4 w-[85vw] max-w-[320px] md:w-80 bg-blue-600 border border-blue-400/30 p-5 rounded-2xl shadow-2xl shadow-blue-900/40 z-50 animate-pulse cursor-pointer origin-top-right transition-all hover:scale-[1.02] active:scale-95"
                       onClick={(e) => {
                         e.stopPropagation();
                         setTourStep(2);
@@ -222,7 +222,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                           </div>
                         </div>
                       </div>
-                      <div className="absolute -top-2 right-12 w-4 h-4 bg-blue-600 border-t border-l border-blue-400/30 rotate-45"></div>
+                      <div className="absolute -top-2 left-[60px] w-4 h-4 bg-blue-600 border-t border-l border-blue-400/30 rotate-45"></div>
                     </div>
                   )}
                 </div>
@@ -241,7 +241,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                   {/* AI Tooltip 2 - Step 2 */}
                   {tourStep === 2 && (
                     <div
-                      className="absolute top-full left-0 mt-4 w-80 bg-blue-600 border border-blue-400/30 p-5 rounded-2xl shadow-2xl shadow-blue-900/40 z-50 animate-pulse cursor-pointer origin-top-left transition-all hover:scale-[1.02] active:scale-95"
+                      className="absolute top-full right-0 mt-4 w-[85vw] max-w-[320px] md:w-80 bg-blue-600 border border-blue-400/30 p-5 rounded-2xl shadow-2xl shadow-blue-900/40 z-50 animate-pulse cursor-pointer origin-top-left transition-all hover:scale-[1.02] active:scale-95"
                       onClick={(e) => {
                         e.stopPropagation();
                         setTourStep(0);
@@ -260,7 +260,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                         </div>
                         <div className="flex-1">
                           <p className="text-white text-[12px] font-bold leading-snug">
-                            Sadece kelimeni yaz, AI kelime karşılığını ve örnek cümleleri tamamlasın.
+                            Kelimeleri manuel olarak ekle, AI kelime karşılığını ve örnek cümleleri tamamlasın.
                           </p>
                           <div className="mt-3 flex justify-end">
                             <span className="text-[9px] font-black bg-white text-blue-600 px-2 py-1 rounded-md uppercase tracking-tighter shadow-lg shadow-black/20">
@@ -269,7 +269,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                           </div>
                         </div>
                       </div>
-                      <div className="absolute -top-2 left-10 w-4 h-4 bg-blue-600 border-t border-l border-blue-400/30 rotate-45"></div>
+                      <div className="absolute -top-2 right-[55px] w-4 h-4 bg-blue-600 border-t border-l border-blue-400/30 rotate-45"></div>
                     </div>
                   )}
                 </div>

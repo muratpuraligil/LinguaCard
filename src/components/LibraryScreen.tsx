@@ -13,6 +13,7 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
   const [progressMap, setProgressMap] = useState<Record<string, number>>({});
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const newProgress: Record<string, number> = {};
     libraryData.forEach(cat => {
       cat.sets.forEach(set => {
@@ -124,7 +125,7 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
                     <button
                       key={set.id}
                       onClick={() => onSelectSet(set)}
-                      className={`group bg-zinc-950/60 border border-white/5 ${hoverBorderClass} p-5 rounded-2xl flex items-center justify-between transition-all duration-300 hover:bg-zinc-900/80 active:scale-[0.98]`}
+                      className={`group bg-zinc-950/60 border border-white/5 ${hoverBorderClass} p-5 rounded-2xl flex items-center justify-between transition-all duration-300 hover:bg-zinc-900/80 active:scale-[0.98] text-left`}
                     >
                       <div className="flex flex-col items-start">
                         <div className="flex items-center gap-3">

@@ -439,7 +439,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
                 <div className={containerClass}>
 
                     {/* Moving Info Banner */}
-                    <div className="w-full bg-blue-900/20 border border-blue-500/30 px-5 py-4 rounded-2xl mb-8 overflow-hidden h-[56px] flex items-center relative">
+                    <div className="w-full bg-blue-900/20 border border-blue-500/30 px-5 py-3 rounded-2xl mb-8 overflow-hidden min-h-[56px] flex items-center relative">
                         <div 
                             key={activeInfoIndex} 
                             className="flex items-center gap-3 w-full animate-slideInVertical"
@@ -447,14 +447,14 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
                             {activeInfoIndex === 0 ? (
                                 <>
                                     <Info className="text-blue-400 flex-shrink-0" size={20} />
-                                    <p className="text-xs md:text-sm font-semibold text-blue-200 leading-normal truncate">
+                                    <p className="text-xs md:text-sm font-semibold text-blue-200 leading-normal">
                                         Çeviri girişi doğru sağlanırsa bir sonraki cümleye geçiş otomatik gerçekleşir.
                                     </p>
                                 </>
                             ) : (
                                 <>
                                     <Plus className="text-blue-400 flex-shrink-0" size={20} />
-                                    <p className="text-xs md:text-sm font-semibold text-blue-200 leading-normal truncate">
+                                    <p className="text-xs md:text-sm font-semibold text-blue-200 leading-normal">
                                         Öğrenmek istenen kelimeler için çift tıklama ile kelime listesine gönderilebilir.
                                     </p>
                                 </>

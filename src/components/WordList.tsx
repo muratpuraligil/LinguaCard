@@ -171,15 +171,15 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
               </div>
               <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
                 <Info size={14} className="flex-shrink-0" />
-                <p>TR yada EN kelimeni gir, diğer alanları AI tamamlasın.</p>
+                <p>Türkçe yada İngilizce kelimeni gir, diğer alanları AI tamamlasın.</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="relative">
-                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
               </div>
               <div className="relative">
-                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Karşılığı" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
               </div>
             </div>
 
@@ -197,13 +197,17 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
               <input value={newTrEx} onChange={e => setNewTrEx(e.target.value)} placeholder="Türkçe Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
             </div>
             {formError && <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-400 animate-shake"><AlertCircle size={20} /> <span className="font-bold text-sm">{formError}</span></div>}
 
             <div className="flex items-center gap-3">
-              <button type="submit" disabled={isSubmitting} className="flex-1 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl font-black text-sm shadow-xl shadow-blue-900/20 transition-all active:scale-95 disabled:opacity-50">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-fit bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-black text-sm shadow-xl shadow-blue-900/20 transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center text-center"
+              >
                 {isSubmitting ? 'Kontrol Ediliyor...' : 'Listeye Kaydet'}
               </button>
 
