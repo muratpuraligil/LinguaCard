@@ -44,6 +44,16 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
         return 0;
     });
 
+    // 3. Store current set number (chronological sequential sets)
+    const [currentSetNum, setCurrentSetNum] = useState<number>(() => {
+        const saved = localStorage.getItem('lingua_flashcard_set_num');
+        if (saved) {
+            const parsed = parseInt(saved, 10);
+            if (!isNaN(parsed) && parsed > 0) return parsed;
+        }
+        return 1;
+    });
+
     const [isFlipped, setIsFlipped] = useState(false);
     const [isFinished, setIsFinished] = useState<boolean>(() => {
         return localStorage.getItem('lingua_flashcard_is_finished') === 'true';
@@ -54,31 +64,55 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
         return (saved as LanguageDirection) || LanguageDirection.TR_EN;
     });
 
-    // 3. Map activeIds to actual word objects from words prop (regardless of archived status during the active session)
+    // Sort words chronologically (oldest to newest)
+    const sortedWords = useMemo(() => {
+        return words
+            .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
+            .sort((a, b) => new Date(a.created_at || 0).getTime() - new Date(b.created_at || 0).getTime());
+    }, [words]);
+
+    const totalSets = Math.max(1, Math.ceil(sortedWords.length / FLASHCARD_SET_SIZE));
+
+    // Map activeIds to actual word objects
     const currentSet = useMemo(() => {
         return activeIds
             .map(id => words.find(w => w.id === id))
             .filter((w): w is Word => !!w);
     }, [activeIds, words]);
 
-    // 4. Auto-generate set if we have words but no activeIds
+    // Save set number changes
     useEffect(() => {
+        localStorage.setItem('lingua_flashcard_set_num', currentSetNum.toString());
+    }, [currentSetNum]);
+
+    // Chronological set generator
+    useEffect(() => {
+        if (sortedWords.length === 0) return;
+
         const hasSaved = localStorage.getItem('lingua_flashcard_active_ids');
-        if (!hasSaved && words.length > 0 && !isFinished) {
-            // Filter eligible words: not archived, and no custom set name (or is "Demo Kelimeler")
-            const eligibleWords = words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"));
-            if (eligibleWords.length > 0) {
-                const shuffled = [...eligibleWords].sort(() => Math.random() - 0.5);
-                const newSet = shuffled.slice(0, FLASHCARD_SET_SIZE);
-                const newIds = newSet.map(w => w.id);
-                localStorage.setItem('lingua_flashcard_active_ids', JSON.stringify(newIds));
-                localStorage.setItem('lingua_flashcard_current_index', '0');
-                localStorage.setItem('lingua_flashcard_is_finished', 'false');
-                setActiveIds(newIds);
-                setCurrentIndex(0);
-            }
+        const savedSetNum = localStorage.getItem('lingua_flashcard_set_num');
+
+        // If activeIds already matches the currentSetNum's words, skip generating
+        if (hasSaved && savedSetNum && parseInt(savedSetNum, 10) === currentSetNum && activeIds.length > 0) {
+            return;
         }
-    }, [words, isFinished]);
+
+        const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
+        const setEnd = Math.min(setStart + FLASHCARD_SET_SIZE, sortedWords.length);
+        const setWords = sortedWords.slice(setStart, setEnd);
+
+        if (setWords.length > 0) {
+            // Shuffle the set items internally to avoid order bias within the 20 words
+            const shuffled = [...setWords].sort(() => Math.random() - 0.5);
+            const newIds = shuffled.map(w => w.id);
+            localStorage.setItem('lingua_flashcard_active_ids', JSON.stringify(newIds));
+            localStorage.setItem('lingua_flashcard_current_index', '0');
+            localStorage.setItem('lingua_flashcard_is_finished', 'false');
+            setActiveIds(newIds);
+            setCurrentIndex(0);
+            setIsFinished(false);
+        }
+    }, [sortedWords, currentSetNum, activeIds.length]);
 
     const safeIndex = currentIndex >= currentSet.length ? Math.max(0, currentSet.length - 1) : currentIndex;
     const currentWord = currentSet.length > 0 ? currentSet[safeIndex] : null;
@@ -154,17 +188,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
     };
 
     const handleNewSet = () => {
-        // Filter eligible words: not archived, and no custom set name (or is "Demo Kelimeler")
-        const eligibleWords = words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"));
-        if (eligibleWords.length === 0) return;
-        const shuffled = [...eligibleWords].sort(() => Math.random() - 0.5);
-        const newSet = shuffled.slice(0, FLASHCARD_SET_SIZE);
-        const newIds = newSet.map(w => w.id);
-        localStorage.setItem('lingua_flashcard_active_ids', JSON.stringify(newIds));
-        localStorage.setItem('lingua_flashcard_current_index', '0');
-        localStorage.setItem('lingua_flashcard_is_finished', 'false');
-        setActiveIds(newIds);
-        setCurrentIndex(0);
+        const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
+        localStorage.removeItem('lingua_flashcard_active_ids');
+        setActiveIds([]);
+        setCurrentSetNum(nextSetNum);
         setIsFlipped(false);
         setIsFinished(false);
         onNextSet();
@@ -245,15 +272,28 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({ words, onExit, onNextSet,
                     <div className="flex flex-col items-center">
                         <button
                             onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
-                            className="bg-zinc-900 border border-white/10 px-5 py-2 rounded-full text-slate-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:text-white transition-all mb-2 shadow-xl"
+                            className="bg-zinc-900 border border-white/10 px-5 py-2 rounded-full text-slate-400 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:text-white transition-all shadow-xl"
                         >
                             <Languages size={14} /> {direction === LanguageDirection.TR_EN ? 'TR → EN' : 'EN → TR'}
                         </button>
-                        <div className="bg-zinc-900/50 px-3 py-1 rounded-full font-black text-[10px] text-slate-600 uppercase tracking-widest border border-white/5">
-                            {currentIndex + 1} / {currentSet.length}
-                        </div>
                     </div>
                     <div className="w-12"></div>
+                </div>
+            </div>
+
+            {/* Set Progress Bar */}
+            <div className="w-full max-w-sm mx-auto px-6 mb-4 mt-2">
+                <div className="flex justify-start items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1.5">
+                    <span>İlerleyen: {currentIndex + 1} / {currentSet.length}</span>
+                </div>
+                <div className="w-full h-1.5 bg-zinc-950 rounded-full overflow-hidden border border-white/5 mb-1.5">
+                    <div 
+                        className="h-full bg-blue-500 transition-all duration-300 rounded-full shadow-[0_0_8px_#3b82f6]"
+                        style={{ width: `${((currentIndex + 1) / (currentSet.length || 1)) * 100}%` }}
+                    ></div>
+                </div>
+                <div className="flex justify-end items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
+                    <span>SET {currentSetNum} / {totalSets}</span>
                 </div>
             </div>
 

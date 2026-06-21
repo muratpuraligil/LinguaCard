@@ -66,7 +66,7 @@ const SentenceModeSelectionModal: React.FC<SentenceModeSelectionModalProps> = ({
             </div>
             <div className="text-center">
               <span className="block font-black text-xl mb-1">Kütüphaneden Çalış</span>
-              <span className="text-sm font-bold opacity-70">Sistemdeki cümleleri kullan</span>
+              <span className="text-sm font-bold opacity-70">Yardımcı fiil ve modallar özelinde çalış</span>
             </div>
           </button>
         </div>

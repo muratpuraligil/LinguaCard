@@ -244,14 +244,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
     };
 
     const handleRestart = () => {
-        localStorage.removeItem(storageKey);
-        const resetState: Record<string, ProgressState> = {};
-        words.forEach(w => {
-            resetState[w.id] = { input: '', status: 'IDLE' };
-        });
-        setProgress(resetState);
-        setShowFinishedModal(false);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        onExit();
     };
 
     const performReset = () => {

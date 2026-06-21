@@ -80,7 +80,8 @@ Deno.serve(async (req: Request) => {
         2. IGNORE full sentences, paragraphs, or long text blocks.
         3. IGNORE URLs, web links, email addresses.
         4. IGNORE nonsense text.
-        5. For each word, provide proper Turkish translations (include 2-3 common meanings separated by commas/slashes if applicable) and a SIMPLE example sentence.
+        5. For each word, provide proper Turkish translations (include 2-3 common meanings separated by commas/slashes if applicable).
+        6. You MUST provide a grammatically complete, meaningful English example sentence (min 4 words) using that word in "example_sentence". It MUST NOT be just the word itself (even in different casing). "turkish_sentence" must be the Turkish translation of that example sentence.
         
         Return JSON array (min 1 item):
         [{"english": "know", "turkish": "bilmek, tanımak", "example_sentence": "I know the answer.", "turkish_sentence": "Cevabı biliyorum."}]
@@ -99,6 +100,7 @@ Deno.serve(async (req: Request) => {
         - If text is ENGLISH: Put it in "example_sentence". Translate it to Turkish and put in "turkish_sentence".
         - If text is TURKISH: Put it in "turkish_sentence". Translate it to English and put in "example_sentence".
         - Extract a key noun/verb from the English sentence as "english" keyword, and its Turkish Meaninig as "turkish".
+        - Ensure "example_sentence" is always a full sentence, never just a single word.
 
         Return JSON array:
         [
@@ -121,12 +123,12 @@ Deno.serve(async (req: Request) => {
         2. If English:
            - Use it as the 'english' word.
            - Provide its Turkish translation ('turkish').
-           - Create a simple English example sentence using this word ('example_sentence').
+           - Create a simple English example sentence (min 4 words) using this word ('example_sentence'). It MUST NOT be just the word itself.
            - Translate that sentence to Turkish ('turkish_sentence').
         3. If Turkish:
            - Use it as the 'turkish' word.
            - Provide its English translation ('english').
-           - Create a simple English example sentence using the translated English word ('example_sentence').
+           - Create a simple English example sentence (min 4 words) using the translated English word ('example_sentence'). It MUST NOT be just the word itself.
            - Translate that sentence to Turkish ('turkish_sentence').
         
         Return ONLY a single JSON object (not array):

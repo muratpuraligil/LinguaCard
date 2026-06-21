@@ -123,6 +123,64 @@ export default function App() {
     setTimeout(() => setToast(null), 4500);
   };
 
+  const fixInvalidSentences = async (wordsList: Word[], currentSession: any) => {
+    if (!currentSession) return;
+    
+    const isInvalidSentence = (w: Word) => {
+      const en = (w.english || '').trim().toLowerCase();
+      const ex = (w.example_sentence || '').trim().toLowerCase();
+      return !ex || ex === en || ex.length <= 3;
+    };
+
+    const invalidWords = wordsList.filter(isInvalidSentence);
+    if (invalidWords.length === 0) return;
+
+    console.log(`[Auto-Fix] Düzeltilecek ${invalidWords.length} kelime tespit edildi. Arka planda tamamlama başlatılıyor...`);
+
+    // Kota aşımını engellemek için her oturumda maksimum 5 kelimeyi arka planda düzeltelim
+    const batch = invalidWords.slice(0, 5);
+
+    for (const w of batch) {
+      const wordText = w.english || w.turkish;
+      try {
+        const result = await analyzeText(wordText, currentSession);
+        if (result && result.example_sentence) {
+          const updatedWord = {
+            ...w,
+            example_sentence: result.example_sentence,
+            turkish_sentence: result.turkish_sentence || ''
+          };
+          
+          const payload = {
+            word_en: updatedWord.english,
+            word_tr: updatedWord.turkish,
+            example_sentence_en: updatedWord.example_sentence,
+            example_sentence_tr: updatedWord.turkish_sentence,
+            set_name: updatedWord.set_name || null
+          };
+
+          const { error } = await supabase
+            .from('words')
+            .update(payload)
+            .eq('id', w.id);
+
+          if (!error) {
+            setWords(prev => prev.map(item => item.id === w.id ? updatedWord : item));
+            
+            // Yerel cache'i güncelle
+            const updatedLocal = wordsList.map(item => item.id === w.id ? updatedWord : item);
+            localStorage.setItem('lingua_words_local', JSON.stringify(updatedLocal));
+            
+            console.log(`[Auto-Fix] Kelime düzeltildi: ${wordText} -> ${result.example_sentence}`);
+          }
+        }
+      } catch (err) {
+        console.error(`[Auto-Fix] Kelime düzeltilirken hata oluştu (${wordText}):`, err);
+      }
+      await new Promise(r => setTimeout(r, 1200));
+    }
+  };
+
   const handleRandomLibrarySet = (forceNew: boolean = false) => {
     // 1. Check if we already have a saved set and we're not forcing a new one
     if (!forceNew) {
@@ -223,6 +281,7 @@ export default function App() {
             setSession(currentSession);
             const wordsLoaded = await loadWordsWithDemoFallback(currentSession.user.id);
             setWords(wordsLoaded);
+            fixInvalidSentences(wordsLoaded, currentSession);
           }
         }
       } catch (err) {
@@ -239,7 +298,10 @@ export default function App() {
 
       if (event === 'SIGNED_IN' && newSession) {
         setSession(newSession);
-        loadWordsWithDemoFallback(newSession.user.id).then(w => setWords(w));
+        loadWordsWithDemoFallback(newSession.user.id).then(w => {
+          setWords(w);
+          fixInvalidSentences(w, newSession);
+        });
       } else if (event === 'SIGNED_OUT') {
         setSession((prev: any) => {
           if (prev !== null) {
@@ -369,12 +431,41 @@ export default function App() {
     worker.postMessage({ file });
   };
 
-  // Helper to handle the results of AI extraction
   const handleExtractedWords = async (extracted: any[]) => {
     if (extracted && extracted.length > 0) {
+      const processedWords = [];
+      const isInvalid = (sentence: string, word: string) => {
+        const cleanWord = word.trim().toLowerCase();
+        const cleanSentence = (sentence || '').trim().toLowerCase();
+        return !cleanSentence || cleanSentence === cleanWord || cleanSentence.length <= 3;
+      };
+
+      for (const w of extracted) {
+        let finalEx = w.example_sentence || '';
+        let finalTrex = w.turkish_sentence || '';
+        
+        if (isInvalid(finalEx, w.english) || isInvalid(finalTrex, w.turkish)) {
+          try {
+            const result = await analyzeText(w.english || w.turkish, session);
+            if (result) {
+              finalEx = result.example_sentence || finalEx;
+              finalTrex = result.turkish_sentence || finalTrex;
+            }
+          } catch (err) {
+            console.error("Toplu ekleme sırasında kelime cümlesi otomatik tamamlanamadı:", err);
+          }
+        }
+        
+        processedWords.push({
+          ...w,
+          example_sentence: finalEx,
+          turkish_sentence: finalTrex
+        });
+      }
+
       const wordsToAdd = pendingSetName
-        ? extracted.map((w: any) => ({ ...w, set_name: pendingSetName }))
-        : extracted;
+        ? processedWords.map((w: any) => ({ ...w, set_name: pendingSetName }))
+        : processedWords;
 
       const addedWords = await wordService.addWordsBulk(wordsToAdd, session?.user?.id);
 
@@ -517,12 +608,12 @@ export default function App() {
 
         {mode === AppMode.FLASHCARDS && <FlashcardMode words={words} onExit={() => setMode(AppMode.HOME)} onNextSet={handleNextSet} onRemoveWord={handleArchiveWord} onGoToQuiz={() => { setMode(AppMode.QUIZ); }} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
         {mode === AppMode.QUIZ && <QuizMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} allWords={words} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
-        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => { window.location.href = '/'; }} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
+        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
         {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={handleRestoreWord} onClearArchive={handleClearArchive} />}
 
         {mode === AppMode.LIBRARY && (
           <LibraryScreen 
-            onExit={() => { window.location.href = '/'; }} 
+            onExit={() => setMode(AppMode.HOME)} 
             onSelectSet={(set) => {
               setActiveLibrarySet(set);
               setMode(AppMode.LIBRARY_PRACTICE);
@@ -535,7 +626,10 @@ export default function App() {
           <LibraryPracticeScreen 
             set={activeLibrarySet} 
             onExit={() => setMode(AppMode.LIBRARY)} 
-            onGoHome={() => { window.location.href = '/'; }}
+            onGoHome={() => { 
+              window.location.href = window.location.origin + window.location.pathname; 
+              window.location.reload(); 
+            }}
             onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)}
             onGoToQuiz={() => setMode(AppMode.QUIZ)}
             onRegenerate={activeLibrarySet.id === 'random-mix' ? () => handleRandomLibrarySet(true) : undefined}
@@ -570,7 +664,10 @@ export default function App() {
         <CustomSetStudyMode
           words={activeCustomSet}
           onExit={() => setMode(AppMode.CUSTOM_SETS)}
-          onGoHome={() => { window.location.href = '/'; }}
+          onGoHome={() => { 
+            window.location.href = window.location.origin + window.location.pathname; 
+            window.location.reload(); 
+          }}
           showToast={(msg, type) => setToast({ message: msg, type: type || 'success' })}
           onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)}
           onGoToQuiz={() => setMode(AppMode.QUIZ)}
@@ -589,7 +686,28 @@ export default function App() {
             }
           }}
           onAddWord={async (en, tr, ex, trex) => {
-            const newWord = await wordService.addWord({ english: en, turkish: tr, example_sentence: ex, turkish_sentence: trex }, session.user.id);
+            let finalEx = ex;
+            let finalTrex = trex;
+            
+            const isInvalid = (sentence: string, word: string) => {
+              const cleanWord = word.trim().toLowerCase();
+              const cleanSentence = (sentence || '').trim().toLowerCase();
+              return !cleanSentence || cleanSentence === cleanWord || cleanSentence.length <= 3;
+            };
+
+            if (isInvalid(finalEx, en) || isInvalid(finalTrex, tr)) {
+              try {
+                const result = await analyzeText(en || tr, session);
+                if (result) {
+                  finalEx = result.example_sentence || finalEx;
+                  finalTrex = result.turkish_sentence || finalTrex;
+                }
+              } catch (err) {
+                console.error("Ekleme sırasında AI otomatik cümle üretimi başarısız oldu:", err);
+              }
+            }
+
+            const newWord = await wordService.addWord({ english: en, turkish: tr, example_sentence: finalEx, turkish_sentence: finalTrex }, session.user.id);
             if (newWord) {
               setWords(prev => [newWord, ...prev]);
               return true;

@@ -238,9 +238,6 @@ const CustomSetManager: React.FC<CustomSetManagerProps> = ({ words, onExit, onPl
                         <Calendar size={12} />
                         <span>{formatDate(set.createdAt)}</span>
                     </div>
-                    <p className="text-slate-500 text-xs font-medium mt-2 leading-relaxed line-clamp-2 italic">
-                        {set.words[0]?.example_sentence || "Cümle seti içeriği..."}
-                    </p>
                 </div>
                 <div className="mt-auto">
                     <div className="flex justify-between items-end mb-2">
@@ -251,7 +248,14 @@ const CustomSetManager: React.FC<CustomSetManagerProps> = ({ words, onExit, onPl
                         <div className={`h-full ${statusConfig.progressColor} transition-all duration-700`} style={{ width: `${set.percent}%` }}></div>
                     </div>
                     <button
-                        onClick={() => onPlaySet(set.words)}
+                        onClick={() => {
+                            if (set.status === 'COMPLETED') {
+                                const nameKey = set.name.replace(/\s+/g, '_');
+                                localStorage.removeItem(`lingua_set_progress_${nameKey}_TR_EN`);
+                                localStorage.removeItem(`lingua_set_progress_${nameKey}_EN_TR`);
+                            }
+                            onPlaySet(set.words);
+                        }}
                         className={`w-full py-2.5 rounded-xl font-black flex items-center justify-center gap-2 transition-all active:scale-95 text-xs shadow-lg
                       ${set.status === 'COMPLETED'
                                 ? 'bg-zinc-950 text-white border border-white/5'
@@ -292,8 +296,7 @@ const CustomSetManager: React.FC<CustomSetManagerProps> = ({ words, onExit, onPl
                                         <Plus size={24} strokeWidth={3} className="text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-black text-white mb-1">Yeni Set Oluştur</h3>
-                                        <p className="text-blue-200/70 font-bold text-xs max-w-md">Çalışmalarınızın, kitaplarınızın veya ödevlerinizin resmini çekerek saniyeler içinde yeni bir çalışma seti oluşturun.</p>
+                                        <h3 className="text-lg font-black text-white">Yeni Set Oluştur</h3>
                                     </div>
                                 </div>
                                 <button onClick={() => setShowInput(true)} className="px-6 py-3 bg-white text-blue-950 rounded-xl font-black hover:bg-blue-50 transition-all shadow-xl active:scale-95 whitespace-nowrap flex items-center gap-2 text-xs">

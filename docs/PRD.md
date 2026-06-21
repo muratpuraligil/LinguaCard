@@ -18,13 +18,17 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 
 ### 2.2. Öğrenme ve Pratik Modülleri
 - **Flaşkartlar (Flashcards):** 
-    - **Seçim Mantığı:** Aktif (arşivlenmemiş, özel set ismi olmayan veya "Demo Kelimeler" setine ait) kelimeler içinden rastgele karıştırılarak (shuffled) seçilen 20'şerli kart setleri.
-    - **Kaldığın Yerden Devam:** Aktif kart setinin (20 kelime) ve çalışılan kart sırasının (indeks) yerel belleğe (`localStorage`) otomatik kaydedilmesi. Sayfadan çıkılsa veya tarayıcı yenilense dahi aynı setten ve kalınan sıradan devam edebilme özelliği.
+    - **Seçim Mantığı:** Aktif (arşivlenmemiş, özel set ismi olmayan veya "Demo Kelimeler" setine ait) kelimeler oluşturulma tarihine göre eskiden yeniye doğru kronolojik sıralanarak 20'şerli setlere bölünür. Set içindeki 20 kelime beynin sıra ezberlemesini önlemek için kendi içinde karıştırılır (shuffled).
+    - **Kaldığın Yerden Devam:** Çalışılan aktif set numarası (`lingua_flashcard_set_num`) ve set içindeki aktif kart sırası (indeks) yerel belleğe (`localStorage`) otomatik kaydedilir. Sayfadan çıkılsa dahi aynı setten ve kalınan karttan devam edilir.
+    - **İlerleme Takibi:** Ekranın en üstünde yer alan şık bir progress bar ile kullanıcının kaçıncı sette olduğu (`Set X / Y` formatında) ve set içi yüzde ilerlemesi görsel olarak sunulur.
     - **Otomatik Telaffuz:** Kartın İngilizce olan yüzü ekranda görüntülendiği anda (kart çevrildiğinde veya yeni karta geçildiğinde) otomatik telaffuz yapılır.
     - **Görsel Geliştirmeler (TR Kartı):** Türkçe kelimeleri içeren kart yüzlerinin arka planı `bg-zinc-900` olarak ayarlanarak, koyu sayfa arka planından ayırt edilmesi kolaylaştırılmıştır.
     - **Bilgi Metni:** Navigasyon kontrollerinin altında *"Bu çalışma, kelime listene eklemiş olduğun kelimelerden oluşmaktadır."* bilgi metni yer alır.
 - **Quiz (Test Çöz):** 
     - Çoktan seçmeli, puan tabanlı dinamik testler.
+    - **Seçim Mantığı:** Flaşkartlardaki gibi aktif kelimeler kronolojik olarak 20'şerli setlere bölünür ve set içi karıştırılarak test oluşturulur.
+    - **Kaldığın Yerden Devam:** Çalışılan aktif set numarası (`lingua_quiz_set_num`) ve set içindeki aktif soru sırası (`lingua_quiz_current_index`) otomatik kaydedilir. Test yarım kalırsa kalınan set ve sorudan devam edilir.
+    - **İlerleme Takibi:** Ekranın en üstünde yer alan progress bar ile kaçıncı sette olunduğu (`Set X / Y`) ve o testin içindeki ilerleme gösterilir.
     - **Otomatik Telaffuz & Ses Kontrolü:** Cevap seçildiği anda doğru İngilizce kelimenin telaffuzu otomatik olarak seslendirilir. TR-EN yön butonunun yanındaki hoparlör ikonu ile bu özellik açılıp kapatılabilir (durumu `localStorage`'da saklanır). Kapatıldığında hoparlör ikonu üstü çizili görünüm alır.
     - **Yapılan Yanlışları İzleme:** Test bitiş ekranında "Yanlışları görmek için tıkla" bağlantısı bulunur. Tıklandığında yanlış cevaplanan kelimeler, anlamları, örnek cümleleri ve seslendirme butonlarıyla birlikte modal olarak açılır.
 - **Cümleler (Sentence Builder):** 

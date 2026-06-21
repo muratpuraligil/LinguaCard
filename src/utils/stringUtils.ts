@@ -16,7 +16,7 @@ export const isMatch = (input: string, target: string): boolean => {
                 .replace(/ö/g, 'o')
                 .toLowerCase()
                 .trim();
-    s = s.replace(/["“”‘’]/g, "'").replace(/[.,!?;:]/g, '').replace(/\s+/g, ' ');
+    s = s.replace(/["“”‘’«»]/g, "'").replace(/[.,!?;:()]/g, ' ').replace(/\s+/g, ' ').trim();
 
     let currentVariants = new Set<string>([s]);
 
@@ -98,7 +98,7 @@ export const isMatch = (input: string, target: string): boolean => {
 
     const finalVariants = new Set<string>();
     for (const v of currentVariants) {
-      finalVariants.add(v.replace(/'/g, ''));
+      finalVariants.add(v.replace(/'/g, ' ').replace(/\s+/g, ' ').trim());
     }
 
     return Array.from(finalVariants);

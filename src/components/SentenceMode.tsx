@@ -381,6 +381,14 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
                 </div>
             </div>
 
+            {/* Alt Bilgi Metni */}
+            <div className="mt-8 flex justify-center px-6">
+                <div className="flex items-center gap-2 px-5 py-2.5 bg-zinc-900/50 border border-white/5 rounded-full text-slate-500 text-[10px] font-black uppercase tracking-widest text-center">
+                    <Info size={12} className="text-purple-400 shrink-0" />
+                    <span>Kelime listesinde yer alan kelimelere ait cümleler içermektedir.</span>
+                </div>
+            </div>
+
             <div className="pb-10"></div>
 
             {/* Reset Confirmation Modal */}

@@ -178,7 +178,7 @@ const Dashboard: React.FC<DashboardProps> = ({
               <p className="text-blue-200/70 font-medium text-sm mb-6 flex flex-col md:block leading-relaxed">
                 <span>Kelime listende aktif <span className="text-yellow-400 font-black text-lg mx-1">{words.length}</span> kelime var.</span>
                 <span className="mt-2 md:mt-0 md:ml-1 block md:inline">
-                  Yeni kelime yüklemek için <span className="font-bold text-white">Resim ile Yükle</span> yada <span className="font-bold text-white">Hızlı Ekle</span>'yi kullan.
+                  Yeni kelime yüklemek için <span className="font-bold text-white">AI ile Yükle</span> yada <span className="font-bold text-white">Manuel Ekle</span>'yi kullan.
                 </span>
               </p>
               <div className="flex items-center gap-4">
@@ -190,7 +190,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                     <div className="w-6 h-6 bg-black/5 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors">
                       <Image size={14} />
                     </div>
-                    Resim ile Yükle
+                    AI ile Yükle
                   </button>
 
                   {/* AI Tooltip 1 - Step 1 */}
@@ -235,7 +235,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                     <div className="w-6 h-6 bg-white/5 rounded-full flex items-center justify-center group-hover:bg-black/10 transition-colors">
                       <Plus size={14} />
                     </div>
-                    Hızlı Ekle
+                    Manuel Ekle
                   </button>
 
                   {/* AI Tooltip 2 - Step 2 */}

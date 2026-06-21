@@ -18,18 +18,44 @@ interface QuizModeProps {
 }
 
 const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlashcards, onGoToSentences }) => {
-  // Random set key — her yeni set başlatıldığında değişir
-  const [setKey, setSetKey] = useState(0);
+  // Sort words chronologically (oldest to newest)
+  const sortedWords = useMemo(() => {
+    return words
+      .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
+      .sort((a, b) => new Date(a.created_at || 0).getTime() - new Date(b.created_at || 0).getTime());
+  }, [words]);
 
-  // Tüm kelimelerden random 20 seç
-  const randomSet = useMemo(() => {
-    if (!words || words.length === 0) return [];
-    const shuffled = [...words].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, QUIZ_SET_SIZE);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setKey]);
+  const totalSets = Math.max(1, Math.ceil(sortedWords.length / QUIZ_SET_SIZE));
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSetNum, setCurrentSetNum] = useState<number>(() => {
+    const saved = localStorage.getItem('lingua_quiz_set_num');
+    if (saved) {
+      const parsed = parseInt(saved, 10);
+      if (!isNaN(parsed) && parsed > 0) return parsed;
+    }
+    return 1;
+  });
+
+  const [currentIndex, setCurrentIndex] = useState<number>(() => {
+    const saved = localStorage.getItem('lingua_quiz_current_index');
+    if (saved) {
+      const parsed = parseInt(saved, 10);
+      if (!isNaN(parsed) && parsed >= 0) return parsed;
+    }
+    return 0;
+  });
+
+  const [activeIds, setActiveIds] = useState<string[]>(() => {
+    const saved = localStorage.getItem('lingua_quiz_active_ids');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch (e) {}
+    }
+    return [];
+  });
+
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -48,12 +74,56 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
   });
 
   useEffect(() => {
+    localStorage.setItem('lingua_quiz_set_num', currentSetNum.toString());
+  }, [currentSetNum]);
+
+  useEffect(() => {
+    localStorage.setItem('lingua_quiz_current_index', currentIndex.toString());
+  }, [currentIndex]);
+
+  useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.DIRECTION, direction);
   }, [direction]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.TTS_ENABLED, isTtsEnabled.toString());
   }, [isTtsEnabled]);
+
+  // Chronological set generator
+  useEffect(() => {
+    if (sortedWords.length === 0) return;
+
+    const hasSaved = localStorage.getItem('lingua_quiz_active_ids');
+    const savedSetNum = localStorage.getItem('lingua_quiz_set_num');
+
+    // If activeIds already matches the currentSetNum's words, skip generating
+    if (hasSaved && savedSetNum && parseInt(savedSetNum, 10) === currentSetNum && activeIds.length > 0) {
+      return;
+    }
+
+    const setStart = (currentSetNum - 1) * QUIZ_SET_SIZE;
+    const setEnd = Math.min(setStart + QUIZ_SET_SIZE, sortedWords.length);
+    const setWords = sortedWords.slice(setStart, setEnd);
+
+    if (setWords.length > 0) {
+      // Shuffle the set items internally to avoid order bias within the 20 words
+      const shuffled = [...setWords].sort(() => Math.random() - 0.5);
+      const newIds = shuffled.map(w => w.id);
+      localStorage.setItem('lingua_quiz_active_ids', JSON.stringify(newIds));
+      localStorage.setItem('lingua_quiz_current_index', '0');
+      setActiveIds(newIds);
+      setCurrentIndex(0);
+      setScore(0);
+      setFinished(false);
+      setIncorrectWords([]);
+    }
+  }, [sortedWords, currentSetNum, activeIds.length]);
+
+  const quizSet = useMemo(() => {
+    return activeIds
+      .map(id => words.find(w => w.id === id))
+      .filter((w): w is Word => !!w);
+  }, [activeIds, words]);
 
   const speak = useCallback((text: string) => {
     window.speechSynthesis.cancel();
@@ -63,7 +133,7 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     window.speechSynthesis.speak(u);
   }, []);
 
-  const currentWord = randomSet[currentIndex];
+  const currentWord = quizSet[currentIndex];
 
   const options = useMemo(() => {
     if (!currentWord) return [];
@@ -101,7 +171,7 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     }
 
     setTimeout(() => {
-      if (currentIndex < randomSet.length - 1) {
+      if (currentIndex < quizSet.length - 1) {
         setCurrentIndex(prev => prev + 1);
         setSelectedOption(null);
         setShowResult(false);
@@ -112,17 +182,18 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
   };
 
   const handleNewSet = useCallback(() => {
-    setSetKey(k => k + 1);
-    setCurrentIndex(0);
-    setScore(0);
+    const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
+    localStorage.removeItem('lingua_quiz_active_ids');
+    setActiveIds([]);
+    setCurrentSetNum(nextSetNum);
     setSelectedOption(null);
     setShowResult(false);
     setFinished(false);
     setIncorrectWords([]);
     setShowWrongAnswersModal(false);
-  }, []);
+  }, [currentSetNum, totalSets]);
 
-  const progressPercent = randomSet.length > 0 ? ((currentIndex + 1) / randomSet.length) * 100 : 0;
+  const progressPercent = quizSet.length > 0 ? ((currentIndex + 1) / quizSet.length) * 100 : 0;
 
   if (finished) {
     return (
@@ -142,11 +213,11 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
               <div className="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/5">
                 <div className="text-left">
                   <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Doğru Sayısı</p>
-                  <p className="text-xl font-black text-white">{score / 10} / {randomSet.length}</p>
+                  <p className="text-xl font-black text-white">{score / 10} / {quizSet.length}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Başarı Oranı</p>
-                  <p className="text-xl font-black text-emerald-500">%{Math.round(((score / 10) / randomSet.length) * 100)}</p>
+                  <p className="text-xl font-black text-emerald-500">%{Math.round(((score / 10) / (quizSet.length || 1)) * 100)}</p>
                 </div>
               </div>
               
@@ -270,23 +341,26 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
             <ArrowLeft size={24} />
           </button>
 
-          {/* Büyük Sayaç */}
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-4xl font-black text-white tracking-tighter">
-              {currentIndex + 1} <span className="text-slate-600 text-2xl">/ {randomSet.length}</span>
-            </span>
-            <div className="w-32 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-emerald-500 transition-all duration-500"
-                style={{ width: `${progressPercent}%` }}
-              ></div>
-            </div>
-          </div>
-
           <div className="flex items-center gap-3 bg-white/5 border border-white/5 px-6 py-3 rounded-full font-black text-emerald-400">
             <Zap size={16} fill="currentColor" />
             {score}
           </div>
+        </div>
+      </div>
+
+      {/* Set Progress Bar */}
+      <div className="w-full max-w-sm mx-auto px-6 mb-4 mt-2 relative z-10">
+        <div className="flex justify-start items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1.5">
+          <span>İlerleyen: {currentIndex + 1} / {quizSet.length}</span>
+        </div>
+        <div className="w-full h-1.5 bg-zinc-950 rounded-full overflow-hidden border border-white/5 mb-1.5">
+          <div 
+            className="h-full bg-emerald-500 transition-all duration-300 rounded-full shadow-[0_0_8px_#10b981]"
+            style={{ width: `${progressPercent}%` }}
+          ></div>
+        </div>
+        <div className="flex justify-end items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
+          <span>SET {currentSetNum} / {totalSets}</span>
         </div>
       </div>
 
