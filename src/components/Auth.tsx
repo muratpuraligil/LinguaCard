@@ -20,11 +20,27 @@ export default function Auth({ mode = 'signIn', onRecoveryComplete }: AuthProps)
     setAuthMode(mode);
   }, [mode]);
 
-  // Sayfa yüklendiğinde kayıtlı e-postayı getir
+  // Sayfa yüklendiğinde kayıtlı e-postayı ve hataları getir
   useEffect(() => {
     const savedEmail = localStorage.getItem('lingua_saved_email');
     if (savedEmail) {
       setEmail(savedEmail);
+    }
+
+    const err = sessionStorage.getItem('lingua_auth_error');
+    if (err) {
+      let friendlyMessage = err;
+      if (err.toLowerCase().includes('expired') || err.toLowerCase().includes('invalid')) {
+        friendlyMessage = 'Şifre sıfırlama bağlantısının süresi dolmuş veya bağlantı daha önce kullanılmış. Lütfen yeni bir sıfırlama bağlantısı isteyin.';
+      }
+      setMessage(friendlyMessage);
+      sessionStorage.removeItem('lingua_auth_error');
+      
+      // URL'deki hata parametrelerini temizle
+      const url = new URL(window.location.href);
+      url.search = '';
+      url.hash = '';
+      window.history.replaceState({}, document.title, url.pathname);
     }
   }, []);
 

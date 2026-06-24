@@ -35,6 +35,12 @@ if (hasRecovery) {
   sessionStorage.setItem('lingua_recovery_pending', 'true');
 }
 
+const urlParams = new URLSearchParams(initialSearch || initialHash.replace('#', '?'));
+const authError = urlParams.get('error_description') || urlParams.get('error');
+if (authError) {
+  sessionStorage.setItem('lingua_auth_error', authError);
+}
+
 interface Toast {
   message: string;
   type: 'success' | 'error' | 'warning';
