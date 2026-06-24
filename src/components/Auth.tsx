@@ -3,6 +3,40 @@ import { supabase } from '../services/supabaseClient';
 import { BookOpen, ArrowRight, Lock, Mail, Sparkles, ArrowLeft } from 'lucide-react';
 import { AuthProvider } from '../types';
 
+const getFriendlyErrorMessage = (errText: string): string => {
+  const cleanErr = errText.toLowerCase();
+  
+  if (cleanErr.includes('different from the old password')) {
+    return 'Yeni şifre, eski şifrenizden farklı olmalıdır.';
+  }
+  if (cleanErr.includes('should be at least 6 characters')) {
+    return 'Şifre en az 6 karakter olmalıdır.';
+  }
+  if (cleanErr.includes('invalid or has expired') || cleanErr.includes('otp_expired')) {
+    return 'Şifre sıfırlama bağlantısının süresi dolmuş veya bağlantı daha önce kullanılmış. Lütfen yeni bir sıfırlama bağlantısı isteyin.';
+  }
+  if (cleanErr.includes('invalid login credentials') || cleanErr.includes('invalid credentials')) {
+    return 'E-posta adresi veya şifre hatalı.';
+  }
+  if (cleanErr.includes('already registered') || cleanErr.includes('already exists')) {
+    return 'Bu e-posta adresi ile zaten kayıtlı bir hesap var.';
+  }
+  if (cleanErr.includes('user not found')) {
+    return 'Kullanıcı bulunamadı.';
+  }
+  if (cleanErr.includes('email not confirmed')) {
+    return 'E-posta adresi henüz doğrulanmamış. Lütfen gelen kutunuzu kontrol edin.';
+  }
+  if (cleanErr.includes('access_denied')) {
+    return 'Giriş izni reddedildi.';
+  }
+  if (cleanErr.includes('rate limit exceeded')) {
+    return 'Çok fazla deneme yaptınız. Lütfen bir süre sonra tekrar deneyin.';
+  }
+  
+  return errText || 'Bir hata oluştu.';
+};
+
 interface AuthProps {
   mode?: 'signIn' | 'signUp' | 'forgot' | 'reset';
   onRecoveryComplete?: () => void;
@@ -29,11 +63,7 @@ export default function Auth({ mode = 'signIn', onRecoveryComplete }: AuthProps)
 
     const err = sessionStorage.getItem('lingua_auth_error');
     if (err) {
-      let friendlyMessage = err;
-      if (err.toLowerCase().includes('expired') || err.toLowerCase().includes('invalid')) {
-        friendlyMessage = 'Şifre sıfırlama bağlantısının süresi dolmuş veya bağlantı daha önce kullanılmış. Lütfen yeni bir sıfırlama bağlantısı isteyin.';
-      }
-      setMessage(friendlyMessage);
+      setMessage(getFriendlyErrorMessage(err));
       sessionStorage.removeItem('lingua_auth_error');
       
       // URL'deki hata parametrelerini temizle
@@ -98,7 +128,7 @@ export default function Auth({ mode = 'signIn', onRecoveryComplete }: AuthProps)
         }
       }
     } catch (error: any) {
-      setMessage(error.message || 'Bir hata oluştu.');
+      setMessage(getFriendlyErrorMessage(error.message || ''));
     } finally {
       setLoading(false);
     }
