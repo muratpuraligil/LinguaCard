@@ -83,6 +83,17 @@ export default function App() {
   const [pendingSetName, setPendingSetName] = useState<string | null>(null);
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
   const [activeLibrarySet, setActiveLibrarySet] = useState<LibrarySet | null>(null);
+  const [isRecoveryMode, setIsRecoveryMode] = useState(false);
+
+  useEffect(() => {
+    if (window.location.hash.includes('type=recovery') || window.location.hash.includes('access_token')) {
+      setIsRecoveryMode(true);
+    }
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('type') === 'recovery') {
+      setIsRecoveryMode(true);
+    }
+  }, []);
 
   const LIBRARY_DATA_VERSION = 'v2';
 
@@ -296,6 +307,12 @@ export default function App() {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, newSession) => {
       if (!isMounted) return;
 
+      if (event === 'PASSWORD_RECOVERY') {
+        setIsRecoveryMode(true);
+        if (newSession) setSession(newSession);
+        return;
+      }
+
       if (event === 'SIGNED_IN' && newSession) {
         setSession(newSession);
         loadWordsWithDemoFallback(newSession.user.id).then(w => {
@@ -489,7 +506,7 @@ export default function App() {
     </div>
   );
 
-  if (!session) return <Auth />;
+  if (!session || isRecoveryMode) return <Auth mode={isRecoveryMode ? 'reset' : undefined} onRecoveryComplete={() => setIsRecoveryMode(false)} />;
 
   const displayWords = words
     .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
