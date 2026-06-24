@@ -19,7 +19,7 @@ interface WordListProps {
 const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, onAdd, onOpenUpload, onArchive }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isAdding, setIsAdding] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(20);
+  const [visibleCount, setVisibleCount] = useState(21);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   const [newEng, setNewEng] = useState('');
@@ -310,7 +310,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                       <Archive size={16} />
                     </button>
                     <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-zinc-800 text-white text-[9px] font-black uppercase tracking-widest rounded-lg opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
-                      Arşiv'e git
+                      Arşivle
                       <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
                     </div>
                   </div>
@@ -338,7 +338,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
       {!searchTerm && visibleCount < filteredWords.length && (
         <div className="w-full flex justify-center mt-8">
           <button
-            onClick={() => setVisibleCount(prev => prev + 20)}
+            onClick={() => setVisibleCount(prev => prev + 21)}
             className="px-8 py-4 bg-zinc-900 border border-white/10 rounded-full text-slate-400 font-bold hover:bg-white/10 hover:text-white transition-all active:scale-95 shadow-lg"
           >
             Daha Fazla Göster ({filteredWords.length - visibleCount} kaldı)

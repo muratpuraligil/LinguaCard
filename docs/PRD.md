@@ -12,7 +12,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ### 2.1. Akıllı Veri Girişi (AI Entegrasyonu)
 - **Görüntü İşleme (OCR):** Kitap sayfaları veya notların fotoğraflarından kelime ve cümle ayıklama.
 - **PDF Desteği:** PDF dökümanlarını doğrudan yükleyerek içerik analizi yapabilme.
-- **Metin Yapıştırma (CTRL+V):** Panodaki metinleri doğrudan yapıştırarak AI analizini başlatma.
+- **Metin Yapıştırma (CTRL+V):** Panodaki çok satırlı metinleri doğrudan yapıştırarak AI'nın bunları tek tek cümle/kelime olarak ayrıştırıp sisteme topluca eklemesi (Çoklu Cümle Analizi).
 - **Akıllı Hızlı Ekleme:** Tek kelime girildiğinde AI'nın otomatik anlam, örnek cümle ve çeviri üretmesi.
 - **Akıllı Bağlamsal Ekleme:** Cümleler, Kütüphane ve Özel Set çalışmalarında kelimelere çift tıklandığında AI'nın arka planda otomatik olarak kelime anlamını, örnek cümleyi ve çevirisini üretip kaydetmesi.
 
@@ -39,14 +39,21 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 
 ### 2.3. İçerik Yönetimi
 - **LinguaCard Kütüphanesi:** Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri.
-- **Özel Cümle Setleri:** Kullanıcının kendi oluşturduğu isimlendirilmiş çalışma paketleri (örn: "Unit 1 - Reading").
-- **Arşivleme:** Öğrenilen kelimelerin ana listeden temizlenip başarı kütüphanesine aktarılması.
+- **Özel Cümle Setleri:** Kullanıcının kendi oluşturduğu isimlendirilmiş çalışma paketleri (örn: "Unit 1 - Reading"). En üstte yer alan ortalanmış şık "Yeni Set Oluştur" butonu/kartı tıklandığında isim verilerek yeni set oluşturulabilir.
+- **Arşivleme:** Öğrenilen kelimelerin ana listeden temizlenip başarı kütüphanesine aktarılması. Kelime kartlarının altındaki mavi renkli arşivleme butonu hover durumunda "Arşivle" şeklinde bir tooltip gösterir.
+
+### 2.4. Kullanıcı Hesabı & Auth
+- **Güvenli Kimlik Doğrulama:** Supabase Auth entegrasyonu ile E-posta/Şifre ve Google OAuth giriş yöntemleri.
+- **Google OAuth Yönlendirmesi:** Google ile giriş yapıldığında ve şifre sıfırlandığında yerel ve canlı adreslerin dinamik olarak doğrulanıp yönlendirilmesi.
+- **Şifremi Unuttum & Şifre Sıfırlama:** Kullanıcıların e-posta adresi girerek şifre sıfırlama talebinde bulunabilmesi. Gelen maile tıklandığında `sessionStorage` ve dinamik kurtarma modu (`isRecoveryMode`) aracılığıyla "Yeni Şifre Belirle" formuna yönlendirilmesi.
+- **Türkçe Hata Mesajları:** API'den dönen tüm auth hatalarının (şifrenin eskisiyle aynı olması, yetersiz karakter vb.) kullanıcıya Türkçe açıklayıcı mesajlar ile gösterilmesi.
 
 ---
 
 ## 3. Kullanıcı Deneyimi (UX)
 - **Dinamik Dashboard:** "Devam Eden Çalışmalar" ve "Tamamlanan Çalışmalar" ayrımı ile görsel ilerleme takibi.
 - **Bölüm Başlıkları:** Kart modülleri ile kelime listesi arasına eklenen belirgin "Kelime Listem" başlığı sayesinde sayfa alt kısımları görsel olarak net bir şekilde ayrılmıştır.
+- **Kelime Listesi Sayfalama:** 3 sütunlu kelime listesi grid yapısının boşluksuz ve tam dolu görünmesi amacıyla, başlangıçta ve her 'Daha Fazla Göster' tıklandığında sayfa başına 21 kelime listelenir.
 - **Rehberli Tur (Onboarding):** İlk girişlerde veya yeni özelliklerde tetiklenen interaktif tanıtım turu.
 - **Premium Arayüz:** Karanlık mod odaklı, neon efektli, glassmorphism ve akıcı animasyonlar içeren modern tasarım.
 - **Kütüphane Tasarımı:** Yardımcı Fiiller ve Kip(Modal) Fiiller ekranında solid koyu paneller, neon çerçeveler, arka plan renk geçişleri ve özel kavisli 'Rastgele Oluştur' butonu ile zengin görsel kontrast.
@@ -72,7 +79,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ## 6. Sürüm Takibi ve Release Yönetimi
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY` (Örn: `v1.0.1 - 270426`)
 - **Görsel Takip:** Uygulamanın sağ alt köşesinde sabitlenmiş, düşük opaklıklı ve modern bir sürüm badge'i bulunur.
-- **Otomatik Artış:** Her majör güncelleme veya hata düzeltmesi sonrasında versiyon numarası manuel olarak artırılır ve tarih damgası güncellenir.
+- **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya hata düzeltildiğinde (fix) versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra, bir sonraki sürümde ikinci hane 1 artırılarak `1.2.0` olarak devam eder.
 
 ---
 

@@ -12,8 +12,18 @@ const versionTsPath = path.join(rootDir, 'src', 'version.ts');
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 const oldVersion = packageJson.version;
 const versionParts = oldVersion.split('.');
-versionParts[2] = parseInt(versionParts[2]) + 1;
-const newVersion = versionParts.join('.');
+let major = parseInt(versionParts[0]);
+let minor = parseInt(versionParts[1]);
+let patch = parseInt(versionParts[2]);
+
+patch += 1;
+
+if (major === 1 && minor === 0 && patch === 100) {
+  minor = 2;
+  patch = 0;
+}
+
+const newVersion = `${major}.${minor}.${patch}`;
 
 packageJson.version = newVersion;
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + '\n');
