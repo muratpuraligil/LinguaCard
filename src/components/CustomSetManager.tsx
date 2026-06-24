@@ -284,39 +284,53 @@ const CustomSetManager: React.FC<CustomSetManagerProps> = ({ words, onExit, onPl
                 </div>
 
                 {/* YENİ SET OLUŞTURMA ALANI */}
-                <div className="mb-10">
-                    <div className="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-500/20 rounded-[24px] p-5 relative overflow-hidden group">
+                <div className="mb-10 flex justify-center w-full">
+                    <div 
+                        onClick={() => !showInput && setShowInput(true)}
+                        className={`w-full max-w-md bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-500/20 rounded-[24px] p-5 relative overflow-hidden group cursor-pointer transition-all hover:scale-[1.02] hover:border-blue-500/40 shadow-xl ${showInput ? 'cursor-default' : ''}`}
+                    >
                         {/* Arka plan efekti */}
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
                         {!showInput ? (
-                            <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:scale-105 transition-transform">
-                                        <Plus size={24} strokeWidth={3} className="text-white" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-black text-white">Yeni Set Oluştur</h3>
-                                    </div>
+                            <div className="flex items-center justify-center gap-4 relative z-10 py-2">
+                                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform">
+                                    <Plus size={20} strokeWidth={3} className="text-white" />
                                 </div>
-                                <button onClick={() => setShowInput(true)} className="px-6 py-3 bg-white text-blue-950 rounded-xl font-black hover:bg-blue-50 transition-all shadow-xl active:scale-95 whitespace-nowrap flex items-center gap-2 text-xs">
-                                    <Image size={16} />
-                                    Set Oluştur
-                                </button>
+                                <span className="text-base font-black text-white tracking-tight">Yeni Set Oluştur</span>
                             </div>
                         ) : (
-                            <div className="animate-fadeIn max-w-2xl mx-auto text-center relative z-10">
-                                <h3 className="text-2xl font-black text-white mb-6">Setine İsim Ver</h3>
-                                <div className="flex gap-4">
+                            <div className="animate-fadeIn w-full text-center relative z-10">
+                                <h3 className="text-lg font-black text-white mb-4">Setine İsim Ver</h3>
+                                <div className="flex flex-col gap-3">
                                     <input
                                         autoFocus
                                         value={newSetName}
                                         onChange={(e) => setNewSetName(e.target.value)}
-                                        placeholder="Örn: My Favorite Book - Chapter 1"
-                                        className="flex-1 bg-black/40 border border-white/20 rounded-2xl p-5 text-lg font-bold text-white placeholder:text-white/30 outline-none focus:border-blue-500 transition-all"
+                                        placeholder="Örn: Favori Kitabım - Bölüm 1"
+                                        className="w-full bg-black/40 border border-white/20 rounded-xl p-3 text-sm font-bold text-white placeholder:text-white/30 outline-none focus:border-blue-500 transition-all text-center"
+                                        onClick={(e) => e.stopPropagation()}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                                e.stopPropagation();
+                                                handleCreateClick();
+                                            }
+                                        }}
                                     />
-                                    <button onClick={handleCreateClick} className="px-8 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-black transition-all">Oluştur</button>
-                                    <button onClick={() => setShowInput(false)} className="px-6 bg-white/10 hover:bg-white/20 rounded-2xl font-bold transition-all">İptal</button>
+                                    <div className="flex gap-2 justify-center">
+                                        <button 
+                                            onClick={(e) => { e.stopPropagation(); handleCreateClick(); }} 
+                                            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-black transition-all text-xs"
+                                        >
+                                            Oluştur
+                                        </button>
+                                        <button 
+                                            onClick={(e) => { e.stopPropagation(); setShowInput(false); setNewSetName(''); }} 
+                                            className="px-4 py-2.5 bg-white/10 hover:bg-white/20 rounded-xl font-bold transition-all text-xs text-slate-300"
+                                        >
+                                            İptal
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         )}

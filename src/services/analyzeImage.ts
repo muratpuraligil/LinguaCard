@@ -96,13 +96,12 @@ export async function analyzeText(
       throw new Error(data.error);
     }
 
-    if (data.word && data.word.length > 0) {
-      // Tek obje dönerse array içinde döner, biz ilkini alırız
-      return data.word[0];
+    if (data.word) {
+      if (Array.isArray(data.word)) {
+        return data.word.length === 1 ? data.word[0] : data.word;
+      }
+      return data.word;
     }
-
-    // Eğer direkt obje döndüyse
-    if (data.word && !Array.isArray(data.word)) return data.word;
 
     throw new Error("Anlamlı bir sonuç üretilemedi.");
 

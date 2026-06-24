@@ -119,25 +119,25 @@ Deno.serve(async (req: Request) => {
         Analyze the following text input: "${textInput}".
 
         TASK:
-        1. Identify if the input is English or Turkish.
-        2. If English:
-           - Use it as the 'english' word.
-           - Provide its Turkish translation ('turkish').
-           - Create a simple English example sentence (min 4 words) using this word ('example_sentence'). It MUST NOT be just the word itself.
-           - Translate that sentence to Turkish ('turkish_sentence').
-        3. If Turkish:
-           - Use it as the 'turkish' word.
-           - Provide its English translation ('english').
-           - Create a simple English example sentence (min 4 words) using the translated English word ('example_sentence'). It MUST NOT be just the word itself.
-           - Translate that sentence to Turkish ('turkish_sentence').
+        1. Split the text input into individual sentences or phrases/words if it contains multiple lines, bullet points, numbers, or list items. If there is only one item, process it.
+        2. For each identified item (word, phrase, or sentence):
+           - Identify if the item is English or Turkish.
+           - If it is a full sentence:
+             - If English: Use it as 'example_sentence'. Translate it to Turkish and put in 'turkish_sentence'. Extract a key noun/verb from it as 'english' keyword, and its Turkish translation as 'turkish'.
+             - If Turkish: Use it as 'turkish_sentence'. Translate it to English and put in 'example_sentence'. Extract a key noun/verb from it as 'english' keyword, and its Turkish translation as 'turkish'.
+           - If it is a single word or short phrase:
+             - If English: Use it as 'english'. Provide its Turkish translation ('turkish'). Create a simple English example sentence using this word ('example_sentence') and translate that sentence to Turkish ('turkish_sentence').
+             - If Turkish: Use it as 'turkish'. Provide its English translation ('english'). Create a simple English example sentence using the translated English word ('example_sentence') and translate that sentence to Turkish ('turkish_sentence').
         
-        Return ONLY a single JSON object (not array):
-        {
-          "english": "...",
-          "turkish": "...",
-          "example_sentence": "...",
-          "turkish_sentence": "..."
-        }
+        Return JSON array:
+        [
+          {
+            "english": "...",
+            "turkish": "...",
+            "example_sentence": "...",
+            "turkish_sentence": "..."
+          }
+        ]
         `;
 
         let PROMPT = PROMPT_VOCABULARY;
