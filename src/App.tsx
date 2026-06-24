@@ -24,6 +24,17 @@ import { LibrarySet } from './types';
 import { CheckCircle2, X } from 'lucide-react';
 import { APP_VERSION } from './version';
 
+// Supabase hash'i temizlemeden önce kurtarma modunu hemen yakala
+const initialHash = window.location.hash;
+const initialSearch = window.location.search;
+const hasRecovery = initialHash.includes('type=recovery') || 
+                      initialHash.includes('access_token') || 
+                      new URLSearchParams(initialSearch).get('type') === 'recovery';
+
+if (hasRecovery) {
+  sessionStorage.setItem('lingua_recovery_pending', 'true');
+}
+
 interface Toast {
   message: string;
   type: 'success' | 'error' | 'warning';
@@ -83,17 +94,9 @@ export default function App() {
   const [pendingSetName, setPendingSetName] = useState<string | null>(null);
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
   const [activeLibrarySet, setActiveLibrarySet] = useState<LibrarySet | null>(null);
-  const [isRecoveryMode, setIsRecoveryMode] = useState(false);
-
-  useEffect(() => {
-    if (window.location.hash.includes('type=recovery') || window.location.hash.includes('access_token')) {
-      setIsRecoveryMode(true);
-    }
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('type') === 'recovery') {
-      setIsRecoveryMode(true);
-    }
-  }, []);
+  const [isRecoveryMode, setIsRecoveryMode] = useState(() => {
+    return sessionStorage.getItem('lingua_recovery_pending') === 'true';
+  });
 
   const LIBRARY_DATA_VERSION = 'v2';
 
@@ -506,7 +509,7 @@ export default function App() {
     </div>
   );
 
-  if (!session || isRecoveryMode) return <Auth mode={isRecoveryMode ? 'reset' : undefined} onRecoveryComplete={() => setIsRecoveryMode(false)} />;
+  if (!session || isRecoveryMode) return <Auth mode={isRecoveryMode ? 'reset' : undefined} onRecoveryComplete={() => { sessionStorage.removeItem('lingua_recovery_pending'); setIsRecoveryMode(false); }} />;
 
   const displayWords = words
     .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
