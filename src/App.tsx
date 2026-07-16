@@ -292,6 +292,20 @@ export default function App() {
           return;
         }
 
+        // URL hash alanındaki access_token'ı PKCE uyumluluğu için manuel olarak oturuma aktar
+        const hash = window.location.hash;
+        if (hash.includes('access_token=')) {
+          const hashParams = new URLSearchParams(hash.replace('#', '?'));
+          const access_token = hashParams.get('access_token');
+          const refresh_token = hashParams.get('refresh_token');
+          if (access_token && refresh_token) {
+            await supabase.auth.setSession({
+              access_token,
+              refresh_token
+            });
+          }
+        }
+
         const { data: { session: currentSession }, error } = await supabase.auth.getSession();
 
         if (error) throw error;
