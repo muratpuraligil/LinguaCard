@@ -293,16 +293,21 @@ export default function App() {
         }
 
         // URL hash alanındaki access_token'ı PKCE uyumluluğu için manuel olarak oturuma aktar
-        const hash = window.location.hash;
-        if (hash.includes('access_token=')) {
-          const hashParams = new URLSearchParams(hash.replace('#', '?'));
+        if (initialHash && initialHash.includes('access_token=')) {
+          const hashParams = new URLSearchParams(initialHash.replace('#', '?'));
           const access_token = hashParams.get('access_token');
-          const refresh_token = hashParams.get('refresh_token');
-          if (access_token && refresh_token) {
-            await supabase.auth.setSession({
+          const refresh_token = hashParams.get('refresh_token') || '';
+          if (access_token) {
+            console.log("Manuel oturum kuruluyor (initialHash)...");
+            const { data: sessionData, error: sessionErr } = await supabase.auth.setSession({
               access_token,
               refresh_token
             });
+            if (sessionErr) {
+              console.error("Manuel setSession hatası:", sessionErr.message);
+            } else {
+              console.log("Manuel setSession başarılı, kullanıcı:", sessionData.user?.email);
+            }
           }
         }
 
