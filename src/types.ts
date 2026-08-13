@@ -5,9 +5,11 @@ export interface Word {
   example_sentence: string;
   turkish_sentence: string;
   created_at?: string;
-  user_id?: string;
+  user_id?: string | null;
   set_name?: string; 
-  is_archived?: boolean; // Yeni alan
+  is_archived?: boolean;
+  category?: string;
+  word_type?: string;
 }
 
 export enum AppMode {
@@ -17,9 +19,22 @@ export enum AppMode {
   SENTENCES = 'SENTENCES',
   CUSTOM_SETS = 'CUSTOM_SETS',
   CUSTOM_SET_STUDY = 'CUSTOM_SET_STUDY',
-  ARCHIVE = 'ARCHIVE', // Yeni mod
+  ARCHIVE = 'ARCHIVE',
   LIBRARY = 'LIBRARY',
   LIBRARY_PRACTICE = 'LIBRARY_PRACTICE'
+}
+
+export type FlashcardStudyMode = 'USER_WORDS' | 'AI_ADD' | 'LIBRARY';
+
+export type LibraryLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
+
+export type WordProgressStatus = 'known' | 'learning' | 'unlearned';
+
+export interface UserWordProgress {
+  word_id: string;
+  user_id: string;
+  status: WordProgressStatus;
+  module: string;
 }
 
 export enum LanguageDirection {

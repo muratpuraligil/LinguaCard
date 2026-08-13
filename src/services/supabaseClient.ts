@@ -1,6 +1,6 @@
-
 import { createClient } from '@supabase/supabase-js';
-import { Word } from '../types';
+import { Word, WordProgressStatus, UserWordProgress } from '../types';
+import a1WordsData from '../data/json/a1_words.json';
 
 const supabaseUrl = 'https://xxjfrsbcygpcksndjrzm.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4amZyc2JjeWdwY2tzbmRqcnptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYyNTc1NDQsImV4cCI6MjA4MTgzMzU0NH0.j8sFVCH1A_hbrDOMEAUHPn5-0seRK6ZtxS2KQXxRaho';
@@ -15,6 +15,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 });
 
 const LOCAL_STORAGE_KEY = 'lingua_words_local';
+const LOCAL_PROGRESS_KEY = 'lingua_user_progress';
 
 const getLocalWords = (): Word[] => {
   try {
@@ -38,7 +39,9 @@ const mapDbToApp = (dbRecord: any): Word => ({
   created_at: dbRecord.created_at,
   user_id: dbRecord.user_id,
   set_name: dbRecord.set_name || undefined,
-  is_archived: !!dbRecord.is_archived
+  is_archived: !!dbRecord.is_archived,
+  category: dbRecord.category || undefined,
+  word_type: dbRecord.word_type || dbRecord.type || undefined
 });
 
 const mapAppToDb = (word: Omit<Word, 'id' | 'created_at'>, userId?: string, includeArchiveField: boolean = true) => {
@@ -48,7 +51,9 @@ const mapAppToDb = (word: Omit<Word, 'id' | 'created_at'>, userId?: string, incl
     example_sentence_en: (word.example_sentence || '').trim(),
     example_sentence_tr: (word.turkish_sentence || '').trim(),
     user_id: userId,
-    set_name: word.set_name || null
+    set_name: word.set_name || null,
+    category: word.category || null,
+    word_type: word.word_type || null
   };
 
   if (includeArchiveField) {
@@ -73,14 +78,11 @@ export const wordService = {
 
   async getAllWords(userId?: string): Promise<Word[]> {
     try {
-      // is_archived sütunu yoksa hata almamak için select(*) yerine explicit alanlar da denenebilir
-      // Ancak PostgREST genellikle eksik sütunlarda 400 hatası verir.
       let query = supabase.from('words').select('*');
       if (userId) query = query.eq('user_id', userId);
       const { data, error } = await query;
 
       if (error) {
-        // is_archived hatası alırsak, lokal veriye güvenelim ve hatayı loglayalım
         console.warn("Supabase Fetch Warning (Şema hatası olabilir):", error.message);
       }
 
@@ -95,6 +97,45 @@ export const wordService = {
     return getLocalWords();
   },
 
+  async getLibraryWords(level: string = 'A1'): Promise<Word[]> {
+    const targetLevel = (level || 'A1').toUpperCase().trim();
+
+    // If level is A1, check local bundle first for instant loading
+    if (targetLevel === 'A1' && Array.isArray(a1WordsData) && a1WordsData.length > 0) {
+      // Background sync check with Supabase DB
+      try {
+        const { data, error } = await supabase
+          .from('words')
+          .select('*')
+          .is('user_id', null)
+          .eq('set_name', 'A1');
+
+        if (!error && data && data.length > 0) {
+          return data.map(mapDbToApp);
+        }
+      } catch (e) {
+        console.warn("Supabase library fetch error, returning local A1 bundle:", e);
+      }
+      return a1WordsData as Word[];
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from('words')
+        .select('*')
+        .is('user_id', null)
+        .eq('set_name', targetLevel);
+
+      if (!error && data && data.length > 0) {
+        return data.map(mapDbToApp);
+      }
+    } catch (e) {
+      console.warn("Library words fetch warning:", e);
+    }
+
+    return [];
+  },
+
   async toggleArchive(id: string, isArchived: boolean): Promise<void> {
     const current = getLocalWords();
     setLocalWords(current.map(w => w.id === id ? { ...w, is_archived: isArchived } : w));
@@ -102,7 +143,7 @@ export const wordService = {
     try {
       const { error } = await supabase.from('words').update({ is_archived: isArchived }).eq('id', id);
       if (error && error.message.includes('is_archived')) {
-        console.error("Arşivleme özelliği veritabanında henüz aktif değil. Lütfen SQL komutunu çalıştırın.");
+        console.error("Arşivleme özelliği veritabanında henüz aktif değil.");
       }
     } catch (e) { }
   },
@@ -111,7 +152,6 @@ export const wordService = {
     const payload = mapAppToDb(word, userId, true);
     let { data, error } = await supabase.from('words').insert([payload]).select().single();
 
-    // Eğer is_archived sütunu yüzünden hata alıyorsak, o alan olmadan tekrar dene
     if (error && error.message.includes('is_archived')) {
       const fallbackPayload = mapAppToDb(word, userId, false);
       const retry = await supabase.from('words').insert([fallbackPayload]).select().single();
@@ -129,63 +169,84 @@ export const wordService = {
   },
 
   async addWordsBulk(words: Omit<Word, 'id' | 'created_at'>[], userId?: string): Promise<Word[]> {
-    if (words.length === 0) return [];
+    if (!words || words.length === 0) return [];
 
-    // Eğer set_name varsa, global "unique" kontrolünü atlıyoruz veya ona göre yapıyoruz.
-    // Şimdilik set_name olanlar için direkt ekleme yapalım (Kullanıcı aynı kelimeyi farklı setlerde isteyebilir).
-    // Ancak set olmayanlar (normal kelimeler) için kontrol devam etmeli.
+    // Filter duplicates against local storage if needed
+    const currentLocal = getLocalWords();
+    const localEngSet = new Set(currentLocal.map(w => w.english.toLowerCase().trim()));
 
-    const wordsWithSet = words.filter(w => !!w.set_name);
-    const wordsWithoutSet = words.filter(w => !w.set_name);
+    // Always create valid fallback local Word objects first
+    const nowIso = new Date().toISOString();
+    const fallbackLocalWords: Word[] = words.map(w => ({
+      id: typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `w_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`,
+      english: w.english.trim(),
+      turkish: (w.turkish || w.english).trim(),
+      example_sentence: w.example_sentence || '',
+      turkish_sentence: w.turkish_sentence || '',
+      created_at: nowIso,
+      user_id: userId,
+      set_name: w.set_name || undefined,
+      category: w.category || undefined,
+      word_type: w.word_type || undefined
+    }));
 
-    let finalWordsToAdd = [...wordsWithSet];
+    // Filter out items that are already in local storage
+    const uniqueLocalWords = fallbackLocalWords.filter(w => !localEngSet.has(w.english.toLowerCase()));
+    const finalLocalToAdd = uniqueLocalWords.length > 0 ? uniqueLocalWords : fallbackLocalWords;
 
-    if (wordsWithoutSet.length > 0) {
-      const latestFromDb = await this.getAllWords(userId);
-      const dbMap = new Set(latestFromDb.map(w => w.english.toLowerCase().trim()));
-      const uniqueSimpleWords = wordsWithoutSet.filter(w => !dbMap.has(w.english.toLowerCase().trim()));
-      finalWordsToAdd = [...finalWordsToAdd, ...uniqueSimpleWords];
+    // Try Supabase insert
+    try {
+      let payload = words.map(w => mapAppToDb(w, userId, true));
+      let { data, error } = await supabase.from('words').insert(payload).select();
+
+      if (error && (error.message.includes('is_archived') || error.message.includes('category') || error.message.includes('word_type'))) {
+        payload = words.map(w => {
+          const p = mapAppToDb(w, userId, false);
+          delete p.category;
+          delete p.word_type;
+          return p;
+        });
+        const retry = await supabase.from('words').insert(payload).select();
+        data = retry.data;
+        error = retry.error;
+      }
+
+      if (!error && data && data.length > 0) {
+        const addedRemote = data.map(mapDbToApp);
+        const updatedLocal = [...addedRemote, ...currentLocal];
+        setLocalWords(updatedLocal);
+        return addedRemote;
+      }
+    } catch (e) {
+      console.warn("Supabase Bulk Insert warning, using local fallback:", e);
     }
 
-    if (finalWordsToAdd.length === 0) return [];
-
-    let payload = finalWordsToAdd.map(w => mapAppToDb(w, userId, true));
-    let { data, error } = await supabase.from('words').insert(payload).select();
-
-    // Fallback: is_archived alanı yoksa silip tekrar dene
-    if (error && error.message.includes('is_archived')) {
-      console.warn("is_archived sütunu bulunamadı, bu alan olmadan deneniyor...");
-      payload = finalWordsToAdd.map(w => mapAppToDb(w, userId, false));
-      const retry = await supabase.from('words').insert(payload).select();
-      data = retry.data;
-      error = retry.error;
-    }
-
-    if (!error && data) {
-      const added = data.map(mapDbToApp);
-      // Local cache güncelleme
-      const currentLocal = getLocalWords();
-      const finalLocal = [...added, ...currentLocal];
-      setLocalWords(finalLocal);
-      return added;
-    }
-
-    if (error) {
-      console.error("Supabase Bulk Insert Error:", error.message);
-      throw new Error(error.message);
-    }
-
-    return [];
+    // Fallback to local storage
+    const updatedLocal = [...finalLocalToAdd, ...currentLocal];
+    setLocalWords(updatedLocal);
+    return finalLocalToAdd;
   },
 
   async deleteWord(id: string): Promise<void> {
     setLocalWords(getLocalWords().filter(w => w.id !== id));
-    await supabase.from('words').delete().eq('id', id);
+    try {
+      await supabase.from('words').delete().eq('id', id);
+    } catch (e) {
+      console.warn("deleteWord Supabase warning:", e);
+    }
   },
 
   async deleteWords(ids: string[]): Promise<void> {
+    if (!ids || ids.length === 0) return;
     setLocalWords(getLocalWords().filter(w => !ids.includes(w.id)));
-    await supabase.from('words').delete().in('id', ids);
+    try {
+      const { error } = await supabase.from('words').delete().in('id', ids);
+      if (error) {
+        console.warn("deleteWords Supabase warning:", error.message);
+      }
+    } catch (e) {
+      console.warn("deleteWords exception:", e);
+    }
   },
 
   async renameCustomSet(oldName: string, newName: string): Promise<void> {
@@ -195,7 +256,67 @@ export const wordService = {
   },
 
   async deleteCustomSet(setName: string): Promise<void> {
-    setLocalWords(getLocalWords().filter(w => w.set_name !== setName));
+    setLocalWords(getLocalWords().filter(w => !w.set_name || w.set_name !== setName));
     await supabase.from('words').delete().eq('set_name', setName);
+  },
+
+  // User Progress Methods for Flashcards ("Öğrendim / Öğrenmedim / Biliyorum")
+  async saveUserProgress(wordId: string, status: WordProgressStatus, userId?: string): Promise<void> {
+    // 1. Local Storage update
+    try {
+      const existingStr = localStorage.getItem(LOCAL_PROGRESS_KEY);
+      const progressMap: Record<string, WordProgressStatus> = existingStr ? JSON.parse(existingStr) : {};
+      progressMap[wordId] = status;
+      localStorage.setItem(LOCAL_PROGRESS_KEY, JSON.stringify(progressMap));
+    } catch (e) {
+      console.error("Failed to save local word progress:", e);
+    }
+
+    // 2. Supabase DB update if user logged in
+    if (userId) {
+      try {
+        await supabase.from('user_progress').upsert({
+          user_id: userId,
+          word_id: wordId,
+          status,
+          module: 'flashcards',
+          updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id,word_id,module' });
+      } catch (e) {
+        console.warn("user_progress upsert warning:", e);
+      }
+    }
+  },
+
+  async getUserProgress(userId?: string): Promise<Record<string, WordProgressStatus>> {
+    let localProgress: Record<string, WordProgressStatus> = {};
+    try {
+      const stored = localStorage.getItem(LOCAL_PROGRESS_KEY);
+      if (stored) localProgress = JSON.parse(stored);
+    } catch (e) {}
+
+    if (userId) {
+      try {
+        const { data, error } = await supabase
+          .from('user_progress')
+          .select('word_id, status')
+          .eq('user_id', userId)
+          .eq('module', 'flashcards');
+
+        if (!error && data) {
+          const remoteProgress: Record<string, WordProgressStatus> = {};
+          data.forEach(item => {
+            remoteProgress[item.word_id] = item.status as WordProgressStatus;
+          });
+          const merged = { ...localProgress, ...remoteProgress };
+          localStorage.setItem(LOCAL_PROGRESS_KEY, JSON.stringify(merged));
+          return merged;
+        }
+      } catch (e) {
+        console.warn("Error fetching remote user progress:", e);
+      }
+    }
+
+    return localProgress;
   }
 };

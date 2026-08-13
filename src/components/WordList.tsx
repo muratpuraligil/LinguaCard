@@ -241,10 +241,13 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
           const dateStr = formatDate(word.created_at);
           const isFlipped = flippedSentenceId === word.id;
 
-          // Eğer cümle kelimenin kendisiyse veya çok kısaysa bozuk sayıp göstermiyoruz
-          const hasValidSentence = word.example_sentence &&
-            word.example_sentence.trim().length > 3 &&
-            word.example_sentence.trim().toLowerCase() !== word.english.trim().toLowerCase();
+          const displayTurkish = word.turkish?.trim() || word.english.trim();
+          const displaySentence = (word.example_sentence && word.example_sentence.trim().length > 2)
+            ? word.example_sentence.trim()
+            : `I am practicing '${word.english}'.`;
+          const displayTrSentence = (word.turkish_sentence && word.turkish_sentence.trim().length > 2)
+            ? word.turkish_sentence.trim()
+            : `'${word.english}' kalıbını çalışıyorum.`;
 
           return (
             <div key={word.id} className="bg-zinc-800 p-6 rounded-[32px] border-b-4 border-slate-700 hover:border-slate-500 transition-all group relative flex flex-col h-full items-start text-left shadow-lg">
@@ -260,37 +263,33 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                   <Volume2 size={18} />
                 </button>
               </div>
-              <p className="text-slate-500 font-bold text-base mb-4">{word.turkish}</p>
+              <p className="text-slate-500 font-bold text-base mb-4">{displayTurkish}</p>
 
-              {hasValidSentence ? (
-                <div
-                  className="perspective-1000 w-full mb-4 cursor-pointer group/sentence"
-                  onClick={() => handleSentenceClick(word.id)}
-                >
-                  <div className={`relative w-full transition-transform duration-700 transform-style-3d min-h-[90px] ${isFlipped ? 'rotate-y-180' : ''}`}>
+              <div
+                className="perspective-1000 w-full mb-4 cursor-pointer group/sentence"
+                onClick={() => handleSentenceClick(word.id)}
+              >
+                <div className={`relative w-full transition-transform duration-700 transform-style-3d min-h-[90px] ${isFlipped ? 'rotate-y-180' : ''}`}>
 
-                    {/* ÖN YÜZ (EN Cümle) */}
-                    <div className="absolute inset-0 backface-hidden bg-black/40 border border-white/5 p-4 rounded-[24px] group-hover/sentence:bg-black/60 transition-colors flex items-center">
-                      <p className="text-xs font-bold leading-relaxed text-blue-100 italic relative z-10">
-                        "{word.example_sentence}"
-                      </p>
-                      <div className="absolute bottom-2 right-3 opacity-30 group-hover/sentence:opacity-100 transition-opacity">
-                        <Languages size={12} className="text-slate-500" />
-                      </div>
+                  {/* ÖN YÜZ (EN Cümle) */}
+                  <div className="absolute inset-0 backface-hidden bg-black/40 border border-white/5 p-4 rounded-[24px] group-hover/sentence:bg-black/60 transition-colors flex items-center">
+                    <p className="text-xs font-bold leading-relaxed text-blue-100 italic relative z-10">
+                      "{displaySentence}"
+                    </p>
+                    <div className="absolute bottom-2 right-3 opacity-30 group-hover/sentence:opacity-100 transition-opacity">
+                      <Languages size={12} className="text-slate-500" />
                     </div>
-
-                    {/* ARKA YÜZ (TR Çeviri) */}
-                    <div className="absolute inset-0 backface-hidden rotate-y-180 bg-blue-600 border border-blue-500 p-4 rounded-[24px] flex items-center shadow-lg shadow-blue-900/20">
-                      <p className="text-[10px] font-black leading-relaxed text-white uppercase tracking-wider relative z-10">
-                        {word.turkish_sentence || 'Çeviri eklenmemiş'}
-                      </p>
-                    </div>
-
                   </div>
+
+                  {/* ARKA YÜZ (TR Çeviri) */}
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-blue-600 border border-blue-500 p-4 rounded-[24px] flex items-center shadow-lg shadow-blue-900/20">
+                    <p className="text-[10px] font-black leading-relaxed text-white uppercase tracking-wider relative z-10">
+                      {displayTrSentence}
+                    </p>
+                  </div>
+
                 </div>
-              ) : (
-                <div className="flex-1 mb-4 w-full"></div>
-              )}
+              </div>
 
               <div className="w-full flex justify-between items-center mt-auto pt-1">
                 <button 

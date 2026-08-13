@@ -296,10 +296,6 @@ const Dashboard: React.FC<DashboardProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-8 mb-10 perspective-1000">
           <AnimatedCard
             onClick={() => {
-              if (words.length === 0) {
-                alert("Öğrenilecek kelime bulunamadı! Lütfen önce kütüphanenize kelime ekleyin.");
-                return;
-              }
               onModeSelect(AppMode.FLASHCARDS);
             }}
             className="rounded-[32px] border-b-4 border-yellow-500 bg-zinc-900/80"

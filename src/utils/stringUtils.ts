@@ -113,6 +113,7 @@ export const isMatch = (input: string, target: string): boolean => {
 export const getLocalDateString = (isoString?: string): string => {
   if (!isoString) return 'Tarih Yok';
   const date = new Date(isoString);
+  // Yerel saat dilimine göre tarih — UTC yerine lokal gün/ay/yıl
   const day = String(date.getDate()).padStart(2, '0');
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const year = date.getFullYear();

@@ -478,7 +478,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
           </div>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 pb-36">
           {filteredSentences.length === 0 && (
             <div className="flex flex-col items-center justify-center p-12 bg-zinc-900/50 border border-dashed border-zinc-800 rounded-[24px] text-center animate-fadeIn w-full">
               <div className="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 mb-4">

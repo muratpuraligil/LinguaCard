@@ -1,7 +1,17 @@
 import { supabase } from './supabaseClient';
+import { analyzeImageDirect, analyzeTextDirect } from './geminiService';
+import { parseTextLocally } from './localTextParser';
+
+const normalizeWord = (w: any) => ({
+  english: (w.english || w.word_en || '').trim(),
+  turkish: (w.turkish || w.word_tr || w.english || 'Kelime').trim(),
+  example_sentence: (w.example_sentence || w.example_sentence_en || `I am practicing '${w.english || 'this phrase'}'.`).trim(),
+  turkish_sentence: (w.turkish_sentence || w.example_sentence_tr || `'${w.english || 'bu kalıbı'}' pratik yapıyorum.`).trim()
+});
 
 /**
- * Görseli analiz etmek için Supabase Edge Function'ı (super-handler) çağırır.
+ * Görseli analiz etmek için Supabase Edge Function'ı çağırır.
+ * Edge Function başarısız olursa istemci tarafı Gemini API'sine düşer.
  */
 export async function analyzeImage(
   base64Image: string,
@@ -9,76 +19,54 @@ export async function analyzeImage(
   signal?: AbortSignal,
   analysisType: 'general' | 'document' = 'general'
 ) {
-  // KESİN VE DOĞRU ÇÖZÜM: Prefix'i ayır ve mimeType'ı dinamik yakala
-  const [meta, pureBase64] = base64Image.split(",");
-  const mimeType = meta.match(/data:(.*);base64/)?.[1] || "image/jpeg"; // Fallback olarak jpeg
+  const [meta] = base64Image.split(",");
+  const mimeType = meta?.match(/data:(.*);base64/)?.[1] || "image/jpeg";
 
+  // Tier 1: Supabase Edge Function
   try {
-    // raw fetch yerine supabase client kullanıyoruz.
-    // Bu sayede Auth headerları ve token yönetimi otomatik yapılıyor.
+    const pureBase64 = base64Image.includes(",") ? base64Image.split(",")[1] : base64Image;
     const { data, error } = await supabase.functions.invoke('analyze-image', {
       body: {
         imageBase64: pureBase64,
         mimeType: mimeType,
         analysisType: analysisType
-      },
-      headers: {
-        // Ekstra header gerekirse buraya eklenebilir ama invoke() auth header'ı otomatik ekler.
       }
     });
 
-    if (error) {
-      console.error("Edge Function Error:", error);
-
-      // Supabase FunctionsHttpError objesi dönebilir
-      const contextMsg = error instanceof Error ? error.message : "Bilinmeyen hata";
-
-      if (contextMsg.includes("Unauthorized") || contextMsg.includes("Jwt")) {
-        throw new Error("Oturum süreniz dolmuş olabilir. Lütfen sayfayı yenileyip tekrar giriş yapın (401).");
+    if (!error && data) {
+      const rawList = data.word ? (Array.isArray(data.word) ? data.word : [data.word]) : (Array.isArray(data) ? data : []);
+      if (rawList.length > 0) {
+        return rawList.map(normalizeWord);
       }
-
-      throw new Error(contextMsg || "Servis hatası");
     }
-
-    if (!data) {
-      throw new Error("Servisten boş yanıt döndü.");
-    }
-
-    // Edge Function başarı durumunda { word: [...] } veya { error: ... } dönebilir.
-    // Ancak invoke(), fonksiyon 2xx dönse bile body'yi 'data' içine koyar.
-    // Eğer fonksiyonumuz catch bloğuna girip 500 dönerse, invoke() bunu 'error' olarak döndürür.
-
-    // Fonksiyon başarılı çalıştı ama mantıksal hata döndürdüyse (örn. AI analiz edemedi):
-    if (data.error) {
-      if (data.error === "AI processing failed") {
-        throw new Error("Yapay zeka görseli anlamlandıramadı. Lütfen yazının daha net olduğu farklı bir görsel deneyin.");
-      }
-      throw new Error(data.error);
-    }
-
-    if (data.word) {
-      return Array.isArray(data.word) ? data.word : [data.word];
-    }
-
-    if (Array.isArray(data)) return data;
-
-    return [];
-
-  } catch (err: any) {
-    if (err.name === 'AbortError') throw err;
-    console.error("analyzeImage hatası:", err.message);
-    throw err;
+    if (error) console.warn("Supabase Edge Function uyarısı:", error);
+  } catch (edgeErr) {
+    console.warn("Supabase Edge Function erişilemedi, istemci Gemini servisine geçiliyor...", edgeErr);
   }
+
+  // Tier 2 Fallback: Client-Side Direct Gemini API
+  try {
+    const directResults = await analyzeImageDirect(base64Image, mimeType);
+    if (directResults && directResults.length > 0) {
+      return directResults.map(normalizeWord);
+    }
+  } catch (directErr) {
+    console.error("İstemci Gemini görsel analizi hatası:", directErr);
+  }
+
+  throw new Error("Görsel analiz edilemedi. Lütfen yazının daha net olduğu bir görsel deneyin.");
 }
 
 /**
  * Metin analizi için Supabase Edge Function'ı çağırır.
+ * Sırasıyla Edge Function -> İstemci Gemini -> Yerel Metin Ayrıştırıcısı (Local Parser) dener.
  */
 export async function analyzeText(
   text: string,
   session: any,
   signal?: AbortSignal
 ) {
+  // Tier 1: Supabase Edge Function
   try {
     const { data, error } = await supabase.functions.invoke('analyze-image', {
       body: {
@@ -87,26 +75,32 @@ export async function analyzeText(
       }
     });
 
-    if (error) {
-      console.error("Text Analysis Error:", error);
-      throw new Error(error.message || "Analiz servisi hatası");
-    }
-
-    if (data.error) {
-      throw new Error(data.error);
-    }
-
-    if (data.word) {
-      if (Array.isArray(data.word)) {
-        return data.word.length === 1 ? data.word[0] : data.word;
+    if (!error && data) {
+      const rawList = data.word ? (Array.isArray(data.word) ? data.word : [data.word]) : (Array.isArray(data) ? data : []);
+      if (rawList.length > 0) {
+        return rawList.map(normalizeWord);
       }
-      return data.word;
     }
-
-    throw new Error("Anlamlı bir sonuç üretilemedi.");
-
-  } catch (err: any) {
-    console.error("analyzeText hatası:", err.message);
-    throw err;
+    if (error) console.warn("Supabase Edge Function metin analizi uyarısı:", error);
+  } catch (edgeErr) {
+    console.warn("Edge Function metin analizi başarısız, istemci Gemini servisine geçiliyor...", edgeErr);
   }
+
+  // Tier 2 Fallback: Client-Side Direct Gemini API
+  try {
+    const directResults = await analyzeTextDirect(text);
+    if (directResults && directResults.length > 0) {
+      return directResults.map(normalizeWord);
+    }
+  } catch (directErr) {
+    console.warn("İstemci Gemini metin analizi başarısız, yerel metin ayrıştırıcısına geçiliyor...", directErr);
+  }
+
+  // Tier 3 Fallback: Local Intelligent Text Parser (Kopyala-yapıştır metinlerinde asla başarısız olmaz)
+  const localResults = parseTextLocally(text);
+  if (localResults && localResults.length > 0) {
+    return localResults.map(normalizeWord);
+  }
+
+  throw new Error("Metin içerisinden kelime çıkarılamadı.");
 }

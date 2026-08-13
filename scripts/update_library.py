@@ -34,9 +34,9 @@ def main():
         if pattern.search(ts_content):
             ts_content = pattern.sub(r'\g<1>' + sentences_str, ts_content)
         else:
-            # What if it's already populated?
-            pattern2 = re.compile(r'(\{ id: "' + key + r'", title: "[^"]+", sentences: )\[.*?\]\n      \}', flags=re.MULTILINE | re.DOTALL)
-            ts_content = pattern2.sub(r'\g<1>' + sentences_str + '\n      }', ts_content)
+            # Match existing populated array
+            pattern2 = re.compile(r'(\{ id: "' + key + r'", title: "[^"]+", sentences: )\[.*?\](\s*\},|\s*\}\s*\])', flags=re.DOTALL)
+            ts_content = pattern2.sub(r'\g<1>' + sentences_str + r'\g<2>', ts_content)
 
     with open('src/data/libraryData.ts', 'w', encoding='utf-8') as f:
         f.write(ts_content)

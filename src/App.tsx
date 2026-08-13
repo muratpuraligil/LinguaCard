@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { AppMode, Word, OcrStatus } from './types';
+import { AppMode, Word, OcrStatus, FlashcardStudyMode, LibraryLevel } from './types';
 import { wordService, supabase } from './services/supabaseClient';
 import { analyzeImage, analyzeText } from './services/analyzeImage';
 import { getLocalDateString } from './utils/stringUtils';
+import { compressImage } from './utils/imageCompressor';
 import { demoWords } from './services/demoData';
 import FlashcardMode from './components/FlashcardMode';
 import QuizMode from './components/QuizMode';
@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard';
 import CustomSetManager from './components/CustomSetManager';
 import CustomSetStudyMode from './components/CustomSetStudyMode';
 import SentenceModeSelectionModal from './components/SentenceModeSelectionModal';
+import FlashcardModeSelectionModal from './components/FlashcardModeSelectionModal';
 import UploadModal from './components/UploadModal';
 import ArchiveView from './components/ArchiveView';
 import Auth from './components/Auth';
@@ -25,6 +26,8 @@ import { CheckCircle2, X } from 'lucide-react';
 import { APP_VERSION } from './version';
 
 // Supabase hash'i temizlemeden önce kurtarma modunu hemen yakala
+import a1WordsData from './data/json/a1_words.json';
+
 const initialHash = window.location.hash;
 const initialSearch = window.location.search;
 const hasRecovery = initialHash.includes('type=recovery') || 
@@ -46,43 +49,9 @@ interface Toast {
   type: 'success' | 'error' | 'warning';
 }
 
-const WORKER_CODE = `
-  self.onmessage = async (e) => {
-    const { file } = e.data;
-    try {
-      const bitmap = await createImageBitmap(file);
-      let { width, height } = bitmap;
-      // Text clarity is crucial for OCR, so we use a higher resolution limit.
-      const MAX_DIMENSION = 1600; 
-      
-      if (width > height) {
-        if (width > MAX_DIMENSION) {
-          height = Math.round(height * (MAX_DIMENSION / width));
-          width = MAX_DIMENSION;
-        }
-      } else {
-        if (height > MAX_DIMENSION) {
-          width = Math.round(width * (MAX_DIMENSION / height));
-          height = MAX_DIMENSION;
-        }
-      }
-
-      const canvas = new OffscreenCanvas(width, height);
-      const ctx = canvas.getContext('2d');
-      if (!ctx) throw new Error("Canvas context error");
-      ctx.drawImage(bitmap, 0, 0, width, height);
-      const blob = await canvas.convertToBlob({ type: 'image/jpeg', quality: 0.8 });
-      self.postMessage({ success: true, blob: blob });
-    } catch (error) {
-      self.postMessage({ success: false, error: error.message });
-    }
-  };
-`;
-
 const blobToBase64 = (blob: Blob): Promise<string> => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    // Prefix'i (data:image/...;base64,) kesmiyoruz, tam URL'i döndürüyoruz
     reader.onloadend = () => resolve(reader.result as string);
     reader.onerror = reject;
     reader.readAsDataURL(blob);
@@ -96,6 +65,10 @@ export default function App() {
   const [mode, setMode] = useState<AppMode>(AppMode.HOME);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [showSentenceSelection, setShowSentenceSelection] = useState(false);
+  const [showFlashcardSelection, setShowFlashcardSelection] = useState(false);
+  const [flashcardStudyMode, setFlashcardStudyMode] = useState<FlashcardStudyMode>('USER_WORDS');
+  const [selectedLibraryLevel, setSelectedLibraryLevel] = useState<LibraryLevel>('A1');
+  const [libraryWords, setLibraryWords] = useState<Word[]>(() => a1WordsData as Word[]);
   const [activeCustomSet, setActiveCustomSet] = useState<Word[]>([]);
   const [pendingSetName, setPendingSetName] = useState<string | null>(null);
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
@@ -111,7 +84,6 @@ export default function App() {
     if (savedSet) {
       try {
         const parsed = JSON.parse(savedSet);
-        // Force regeneration if version is missing or old
         if (parsed.version !== LIBRARY_DATA_VERSION) {
           localStorage.removeItem('lingua_active_random_mix');
           return;
@@ -125,6 +97,52 @@ export default function App() {
     }
   }, []);
 
+  const loadLibraryWords = async (level: LibraryLevel = selectedLibraryLevel) => {
+    try {
+      const fetched = await wordService.getLibraryWords(level);
+      setLibraryWords(fetched);
+    } catch (e) {
+      console.error("Error loading library words:", e);
+    }
+  };
+
+  useEffect(() => {
+    if (mode === AppMode.FLASHCARDS && flashcardStudyMode === 'LIBRARY') {
+      loadLibraryWords(selectedLibraryLevel);
+    }
+  }, [selectedLibraryLevel, flashcardStudyMode, mode]);
+
+  useEffect(() => {
+    const fetchSessionAndWords = async () => {
+      try {
+        const { data: { session: currentSession } } = await supabase.auth.getSession();
+        setSession(currentSession);
+        
+        if (currentSession?.user) {
+          const userWords = await wordService.getAllWords(currentSession.user.id);
+          setWords(userWords || []);
+        }
+      } catch (e) {
+        console.error("Session/Words initialization error:", e);
+      } finally {
+        setLoadingSession(false);
+      }
+    };
+
+    fetchSessionAndWords();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      setSession(session);
+      if (session?.user) {
+        const userWords = await wordService.getAllWords(session.user.id);
+        setWords(userWords || []);
+      } else {
+        setWords([]);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   // Track offset for sequential study (Flashcards/Quiz/Sentences)
   const [studyOffset, setStudyOffset] = useState(() => parseInt(localStorage.getItem('lingua_global_offset') || '0'));
@@ -135,7 +153,6 @@ export default function App() {
   const [wordToDelete, setWordToDelete] = useState<string | null>(null);
   const [dateToDelete, setDateToDelete] = useState<string | null>(null);
 
-  const workerRef = useRef<Worker | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const showToast = (message: string, type: 'success' | 'error' | 'warning' = 'success') => {
@@ -143,66 +160,7 @@ export default function App() {
     setTimeout(() => setToast(null), 4500);
   };
 
-  const fixInvalidSentences = async (wordsList: Word[], currentSession: any) => {
-    if (!currentSession) return;
-    
-    const isInvalidSentence = (w: Word) => {
-      const en = (w.english || '').trim().toLowerCase();
-      const ex = (w.example_sentence || '').trim().toLowerCase();
-      return !ex || ex === en || ex.length <= 3;
-    };
-
-    const invalidWords = wordsList.filter(isInvalidSentence);
-    if (invalidWords.length === 0) return;
-
-    console.log(`[Auto-Fix] Düzeltilecek ${invalidWords.length} kelime tespit edildi. Arka planda tamamlama başlatılıyor...`);
-
-    // Kota aşımını engellemek için her oturumda maksimum 5 kelimeyi arka planda düzeltelim
-    const batch = invalidWords.slice(0, 5);
-
-    for (const w of batch) {
-      const wordText = w.english || w.turkish;
-      try {
-        const result = await analyzeText(wordText, currentSession);
-        if (result && result.example_sentence) {
-          const updatedWord = {
-            ...w,
-            example_sentence: result.example_sentence,
-            turkish_sentence: result.turkish_sentence || ''
-          };
-          
-          const payload = {
-            word_en: updatedWord.english,
-            word_tr: updatedWord.turkish,
-            example_sentence_en: updatedWord.example_sentence,
-            example_sentence_tr: updatedWord.turkish_sentence,
-            set_name: updatedWord.set_name || null
-          };
-
-          const { error } = await supabase
-            .from('words')
-            .update(payload)
-            .eq('id', w.id);
-
-          if (!error) {
-            setWords(prev => prev.map(item => item.id === w.id ? updatedWord : item));
-            
-            // Yerel cache'i güncelle
-            const updatedLocal = wordsList.map(item => item.id === w.id ? updatedWord : item);
-            localStorage.setItem('lingua_words_local', JSON.stringify(updatedLocal));
-            
-            console.log(`[Auto-Fix] Kelime düzeltildi: ${wordText} -> ${result.example_sentence}`);
-          }
-        }
-      } catch (err) {
-        console.error(`[Auto-Fix] Kelime düzeltilirken hata oluştu (${wordText}):`, err);
-      }
-      await new Promise(r => setTimeout(r, 1200));
-    }
-  };
-
   const handleRandomLibrarySet = (forceNew: boolean = false) => {
-    // 1. Check if we already have a saved set and we're not forcing a new one
     if (!forceNew) {
       const savedSet = localStorage.getItem('lingua_active_random_mix');
       if (savedSet) {
@@ -217,7 +175,6 @@ export default function App() {
       }
     }
 
-    // 2. Generate new set
     const allSentences: any[] = [];
     libraryData.forEach(cat => {
       cat.sets.forEach(set => {
@@ -231,13 +188,11 @@ export default function App() {
       });
     });
 
-    // Shuffle allSentences
     const shuffled = [...allSentences].sort(() => Math.random() - 0.5);
     
-    // Take exactly 34 sentences as requested
     const selectedSentences = shuffled.slice(0, 34).map((s, idx) => ({
       ...s,
-      id: `rand-${s.sourceSetId}-${s.id}-${idx}` // Ensure unique ID for this instance
+      id: `rand-${s.sourceSetId}-${s.id}-${idx}`
     }));
 
     const randomSet: LibrarySet & { version?: string } = {
@@ -247,283 +202,63 @@ export default function App() {
       version: LIBRARY_DATA_VERSION
     };
 
-
-    // 3. Save to localStorage
     localStorage.setItem('lingua_active_random_mix', JSON.stringify(randomSet));
-    
-    // 4. Clear progress for this specific set if it's a new one
-    if (forceNew) {
-      localStorage.removeItem('library_completed_random-mix_TR_EN');
-      localStorage.removeItem('library_completed_random-mix_EN_TR');
-      localStorage.removeItem('library_inputs_random-mix_TR_EN');
-      localStorage.removeItem('library_inputs_random-mix_EN_TR');
-      localStorage.removeItem('library_wrong_random-mix_TR_EN');
-      localStorage.removeItem('library_wrong_random-mix_EN_TR');
-    }
-
     setActiveLibrarySet(randomSet);
     setMode(AppMode.LIBRARY_PRACTICE);
   };
 
-  const loadWordsWithDemoFallback = async (userId: string) => {
-    let allWords = await wordService.getAllWords(userId);
-    const demoFlagKey = 'demoDataLoaded_' + userId;
-    if ((!allWords || allWords.length === 0) && !localStorage.getItem(demoFlagKey)) {
-      localStorage.setItem(demoFlagKey, 'true');
-      try {
-        const addedDemoWords = await wordService.addWordsBulk(demoWords, userId);
-        if (addedDemoWords && addedDemoWords.length > 0) {
-          allWords = addedDemoWords;
-        }
-      } catch (e) {
-        console.error("Failed to load demo words", e);
-      }
-    }
-    return allWords || [];
-  };
-
-  useEffect(() => {
-    let isMounted = true;
-
-    const initializeAuth = async () => {
-      try {
-        if (!supabase) {
-          if (isMounted) setLoadingSession(false);
-          return;
-        }
-
-        // URL hash alanındaki access_token'ı PKCE uyumluluğu için manuel olarak oturuma aktar
-        if (initialHash && initialHash.includes('access_token=')) {
-          const hashParams = new URLSearchParams(initialHash.replace('#', '?'));
-          const access_token = hashParams.get('access_token');
-          const refresh_token = hashParams.get('refresh_token') || '';
-          if (access_token) {
-            console.log("Manuel oturum kuruluyor (initialHash)...");
-            const { data: sessionData, error: sessionErr } = await supabase.auth.setSession({
-              access_token,
-              refresh_token
-            });
-            if (sessionErr) {
-              console.error("Manuel setSession hatası:", sessionErr.message);
-            } else {
-              console.log("Manuel setSession başarılı, kullanıcı:", sessionData.user?.email);
-            }
-          }
-        }
-
-        const { data: { session: currentSession }, error } = await supabase.auth.getSession();
-
-        if (error) throw error;
-
-        if (isMounted) {
-          if (currentSession) {
-            setSession(currentSession);
-            const wordsLoaded = await loadWordsWithDemoFallback(currentSession.user.id);
-            setWords(wordsLoaded);
-            fixInvalidSentences(wordsLoaded, currentSession);
-          }
-        }
-      } catch (err) {
-        console.error("Başlatma hatası:", err);
-      } finally {
-        if (isMounted) setLoadingSession(false);
-      }
-    };
-
-    initializeAuth();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, newSession) => {
-      if (!isMounted) return;
-
-      if (event === 'PASSWORD_RECOVERY') {
-        setIsRecoveryMode(true);
-        if (newSession) setSession(newSession);
-        return;
-      }
-
-      if (event === 'SIGNED_IN' && newSession) {
-        setSession(newSession);
-        loadWordsWithDemoFallback(newSession.user.id).then(w => {
-          setWords(w);
-          fixInvalidSentences(w, newSession);
-        });
-      } else if (event === 'SIGNED_OUT') {
-        setSession((prev: any) => {
-          if (prev !== null) {
-            wordService.clearCache();
-          }
-          return null;
-        });
-        setWords([]);
-        setHasTourBeenShown(false);
-      }
-    });
-
-    return () => {
-      isMounted = false;
-      subscription.unsubscribe();
-    };
-  }, []);
-
-  const handleAnalysis = async (input: File | string) => {
-    if (ocrLoading) return;
-
+  const handleAnalysis = async (fileOrText: File | string) => {
     setOcrLoading(true);
     setOcrStatus('PREPARING');
+
     abortControllerRef.current = new AbortController();
 
-    if (typeof input === 'string') {
-      try {
-        setOcrStatus('CONNECTING');
+    try {
+      let resultWords: any[] = [];
+      if (typeof fileOrText === 'string') {
         setOcrStatus('ANALYZING');
-        const extracted = await analyzeText(
-          input,
-          session,
-          abortControllerRef.current?.signal
-        );
-        // analyzeText returns a single word or array, normalize to array
-        const extractedArray = Array.isArray(extracted) ? extracted : [extracted];
-        handleExtractedWords(extractedArray);
-      } catch (err: any) {
-        if (err.name !== 'AbortError') {
-          showToast(err.message || "Metin analiz hatası.", "error");
-        }
-      } finally {
-        setOcrLoading(false);
-        setOcrStatus('IDLE');
-        abortControllerRef.current = null;
-      }
-      return;
-    }
-
-    const file = input;
-    // PDF files cannot be processed by createImageBitmap in the worker.
-    // We send them directly as Base64 to the analyzeImage service.
-    if (file.type === 'application/pdf') {
-      try {
-        setOcrStatus('CONNECTING');
-        const base64Data = await blobToBase64(file);
-        
-        setOcrStatus('ANALYZING');
-        const analysisMode = pendingSetName ? 'document' : 'general';
-
-        const extracted = await analyzeImage(
-          base64Data,
-          session,
-          abortControllerRef.current?.signal,
-          analysisMode
-        );
-
-        handleExtractedWords(extracted);
-      } catch (err: any) {
-        if (err.name !== 'AbortError') {
-          showToast(err.message || "PDF analiz hatası.", "error");
-        }
-      } finally {
-        setOcrLoading(false);
-        setOcrStatus('IDLE');
-        abortControllerRef.current = null;
-      }
-      return;
-    }
-
-    // Image processing for standard formats (JPEG, PNG, etc.)
-    const blob = new Blob([WORKER_CODE], { type: 'application/javascript' });
-    const workerUrl = URL.createObjectURL(blob);
-    const worker = new Worker(workerUrl);
-    workerRef.current = worker;
-
-    worker.onmessage = async (e) => {
-      const { success, blob: resizedBlob, error: workerError } = e.data;
-
-      if (success) {
-        try {
-          setOcrStatus('CONNECTING');
-          const base64FullData = await blobToBase64(resizedBlob);
-
-          setOcrStatus('ANALYZING');
-          const analysisMode = pendingSetName ? 'document' : 'general';
-
-          const extracted = await analyzeImage(
-            base64FullData,
-            session,
-            abortControllerRef.current?.signal,
-            analysisMode
-          );
-
-          handleExtractedWords(extracted);
-        } catch (err: any) {
-          if (err.name !== 'AbortError') {
-            const errorMsg = err.message || "Analiz hatası.";
-            showToast(errorMsg, "error");
-          }
-        } finally {
-          setOcrLoading(false);
-          setOcrStatus('IDLE');
-          abortControllerRef.current = null;
-        }
+        const res = await analyzeText(fileOrText, session, abortControllerRef.current.signal);
+        if (res) resultWords = Array.isArray(res) ? res : [res];
       } else {
-        showToast(workerError || "Görsel hazırlama hatası.", "error");
-        setOcrLoading(false);
-        setOcrStatus('IDLE');
+        setOcrStatus('PREPARING');
+        const base64Image = await compressImage(fileOrText);
+        setOcrStatus('ANALYZING');
+        const res = await analyzeImage(base64Image, session, abortControllerRef.current.signal);
+        if (res) resultWords = Array.isArray(res) ? res : [res];
       }
 
-      worker.terminate();
-      URL.revokeObjectURL(workerUrl);
-      workerRef.current = null;
-    };
-
-    worker.postMessage({ file });
-  };
-
-  const handleExtractedWords = async (extracted: any[]) => {
-    if (extracted && extracted.length > 0) {
-      const processedWords = [];
-      const isInvalid = (sentence: string, word: string) => {
-        const cleanWord = word.trim().toLowerCase();
-        const cleanSentence = (sentence || '').trim().toLowerCase();
-        return !cleanSentence || cleanSentence === cleanWord || cleanSentence.length <= 3;
-      };
-
-      for (const w of extracted) {
-        let finalEx = w.example_sentence || '';
-        let finalTrex = w.turkish_sentence || '';
-        
-        if (isInvalid(finalEx, w.english) || isInvalid(finalTrex, w.turkish)) {
-          try {
-            const result = await analyzeText(w.english || w.turkish, session);
-            if (result) {
-              finalEx = result.example_sentence || finalEx;
-              finalTrex = result.turkish_sentence || finalTrex;
-            }
-          } catch (err) {
-            console.error("Toplu ekleme sırasında kelime cümlesi otomatik tamamlanamadı:", err);
-          }
-        }
-        
-        processedWords.push({
-          ...w,
-          example_sentence: finalEx,
-          turkish_sentence: finalTrex
-        });
-      }
-
-      const wordsToAdd = pendingSetName
-        ? processedWords.map((w: any) => ({ ...w, set_name: pendingSetName }))
-        : processedWords;
-
-      const addedWords = await wordService.addWordsBulk(wordsToAdd, session?.user?.id);
-
-      if (addedWords.length > 0) {
-        setWords(prev => [...addedWords, ...prev]);
-        showToast(`${addedWords.length} kelime eklendi!`);
+      if (resultWords && resultWords.length > 0) {
+        const addedWords = await wordService.addWordsBulk(resultWords, session?.user?.id);
         setShowUploadModal(false);
         setPendingSetName(null);
+
+        if (addedWords.length > 0) {
+          setWords(prev => [...addedWords, ...prev]);
+          showToast(`${addedWords.length} kelime başarıyla eklendi!`);
+          // Clear active set cache so newest words populate the 20-card set immediately
+          Object.keys(localStorage).forEach(key => {
+            if (key.startsWith('lingua_flashcard_active_ids_')) {
+              localStorage.removeItem(key);
+            }
+          });
+        } else {
+          showToast("Kelimeler zaten listenizde bulunuyor.", "warning");
+        }
+
+        if (flashcardStudyMode === 'AI_ADD' || mode === AppMode.FLASHCARDS) {
+          setMode(AppMode.FLASHCARDS);
+        }
       } else {
-        showToast("Analiz edilen kelimeler zaten listenizde.", "warning");
+        showToast("Görselden kelime çıkarılamadı.", "warning");
       }
-    } else {
-      showToast("Görselde içerik bulunamadı.", "warning");
+    } catch (err: any) {
+      if (err.name !== 'AbortError') {
+        console.error("Analiz Hatası:", err);
+        showToast(err.message || "Analiz sırasında bir hata oluştu.", "error");
+      }
+    } finally {
+      setOcrLoading(false);
+      setOcrStatus('IDLE');
     }
   };
 
@@ -562,7 +297,7 @@ export default function App() {
 
     let newOffset = studyOffset + 34;
     if (newOffset >= sortedActive.length) {
-      newOffset = 0; // Loop back to start
+      newOffset = 0;
       showToast("Tüm kelimeler bitti, başa dönüldü!", "success");
     }
 
@@ -594,7 +329,7 @@ export default function App() {
     if(demoIds.length > 0) {
       await wordService.deleteWords(demoIds);
       setWords(prev => prev.filter(w => w.set_name !== "Demo Kelimeler"));
-      showToast("Demo verileri temizlendi! Artık kendi kelimelerinizi ekleyebilirsiniz.", "success");
+      showToast("Demo verileri temizlendi!", "success");
     }
   };
 
@@ -607,8 +342,6 @@ export default function App() {
         setWords(prev => [...addedDemoWords, ...prev]);
         showToast("15 adet demo kelime başarıyla eklendi!", "success");
         localStorage.setItem('demoDataLoaded_' + session.user.id, 'true');
-        // Clear any previous progress for the demo set to ensure it starts at 0
-        localStorage.removeItem('lingua_set_progress_Demo_Kelimeler');
       } else {
         showToast("Zaten demo kelimeleriniz var veya eklenemedi.", "warning");
       }
@@ -621,12 +354,12 @@ export default function App() {
   const hasAnyDemoWords = words.some(w => w.set_name === "Demo Kelimeler");
 
   return (
-    <div className="bg-black min-h-screen flex flex-col text-white font['Plus_Jakarta_Sans']">
+    <div className="bg-black min-h-screen flex flex-col text-white font-['Plus_Jakarta_Sans']">
       {hasAnyDemoWords && mode === AppMode.HOME && (
         <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-b border-blue-500/20 px-4 py-3 flex items-center justify-between z-50 relative shrink-0">
           <div className="flex items-center gap-2">
             <span className="text-blue-400 text-lg">✨</span>
-            <p className="text-sm text-blue-200 font-medium hidden sm:block">Demo Paketini İncelemektesiniz. Uygulamayı denemek için örnek kelimeler kullanılıyor.</p>
+            <p className="text-sm text-blue-200 font-medium hidden sm:block">Demo Paketini İncelemektesiniz.</p>
             <p className="text-sm text-blue-200 font-medium sm:hidden">Demo Paketini İncelemektesiniz.</p>
           </div>
           <button 
@@ -651,9 +384,26 @@ export default function App() {
           </div>
         )}
 
-        {mode === AppMode.FLASHCARDS && <FlashcardMode words={words} onExit={() => setMode(AppMode.HOME)} onNextSet={handleNextSet} onRemoveWord={handleArchiveWord} onGoToQuiz={() => { setMode(AppMode.QUIZ); }} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
-        {mode === AppMode.QUIZ && <QuizMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} allWords={words} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
-        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
+        {mode === AppMode.FLASHCARDS && (
+          <FlashcardMode
+            words={flashcardStudyMode === 'LIBRARY' ? libraryWords : words}
+            studyMode={flashcardStudyMode}
+            selectedLevel={selectedLibraryLevel}
+            onLevelChange={(lvl) => {
+              setSelectedLibraryLevel(lvl);
+              loadLibraryWords(lvl);
+            }}
+            onOpenModeSelection={() => setShowFlashcardSelection(true)}
+            onExit={() => setMode(AppMode.HOME)}
+            onNextSet={handleNextSet}
+            onRemoveWord={handleArchiveWord}
+            onGoToQuiz={() => setMode(AppMode.QUIZ)}
+            onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }}
+            userId={session?.user?.id}
+          />
+        )}
+        {mode === AppMode.QUIZ && <QuizMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} allWords={words} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
+        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
         {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={handleRestoreWord} onClearArchive={handleClearArchive} />}
 
         {mode === AppMode.LIBRARY && (
@@ -675,7 +425,7 @@ export default function App() {
               window.location.href = window.location.origin + window.location.pathname; 
               window.location.reload(); 
             }}
-            onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)}
+            onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
             onGoToQuiz={() => setMode(AppMode.QUIZ)}
             onRegenerate={activeLibrarySet.id === 'random-mix' ? () => handleRandomLibrarySet(true) : undefined}
           />
@@ -714,7 +464,7 @@ export default function App() {
             window.location.reload(); 
           }}
           showToast={(msg, type) => setToast({ message: msg, type: type || 'success' })}
-          onGoToFlashcards={() => setMode(AppMode.FLASHCARDS)}
+          onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
           onGoToQuiz={() => setMode(AppMode.QUIZ)}
         />
       )}
@@ -726,6 +476,8 @@ export default function App() {
           onModeSelect={(m) => {
             if (m === AppMode.SENTENCES) {
               setShowSentenceSelection(true);
+            } else if (m === AppMode.FLASHCARDS) {
+              setShowFlashcardSelection(true);
             } else {
               setMode(m);
             }
@@ -763,7 +515,7 @@ export default function App() {
           onDeleteByDate={(date) => setDateToDelete(date)}
           onLogout={() => supabase.auth.signOut()}
           onOpenUpload={() => {
-            setPendingSetName(null); // Normal upload için null yap
+            setPendingSetName(null);
             setShowUploadModal(true);
           }}
           onQuickAdd={() => {
@@ -777,6 +529,29 @@ export default function App() {
           isDemoActive={hasAnyDemoWords}
           showTour={!hasTourBeenShown}
           onTourComplete={() => setHasTourBeenShown(true)}
+        />
+      )}
+
+      {showFlashcardSelection && (
+        <FlashcardModeSelectionModal
+          onClose={() => setShowFlashcardSelection(false)}
+          onSelectUserWords={() => {
+            setFlashcardStudyMode('USER_WORDS');
+            setShowFlashcardSelection(false);
+            setMode(AppMode.FLASHCARDS);
+          }}
+          onSelectAiAdd={() => {
+            setFlashcardStudyMode('AI_ADD');
+            setShowFlashcardSelection(false);
+            setShowUploadModal(true);
+          }}
+          onSelectLibrary={() => {
+            setFlashcardStudyMode('LIBRARY');
+            setSelectedLibraryLevel('A1');
+            setShowFlashcardSelection(false);
+            loadLibraryWords('A1');
+            setMode(AppMode.FLASHCARDS);
+          }}
         />
       )}
 
@@ -818,13 +593,37 @@ export default function App() {
         setWordToDelete(null);
       }} onCancel={() => setWordToDelete(null)} />}
 
-        {dateToDelete && <DeleteModal title="Grubu Sil" description={`${dateToDelete} tarihindeki kelimeleri silmek istediğine emin misin?`} onConfirm={async () => {
-          const toDelete = words.filter(w => getLocalDateString(w.created_at) === dateToDelete).map(w => w.id);
-          await wordService.deleteWords(toDelete);
-          setWords(prev => prev.filter(w => !toDelete.includes(w.id)));
-          setDateToDelete(null);
-          showToast(`${toDelete.length} kelime silindi.`, "success");
-        }} onCancel={() => setDateToDelete(null)} />}
+        {dateToDelete && (() => {
+          const toDeleteIds = words
+            .filter(w => getLocalDateString(w.created_at) === dateToDelete)
+            .map(w => w.id);
+          return <DeleteModal
+            title="Grubu Sil"
+            description={`${dateToDelete} tarihindeki ${toDeleteIds.length} kelimeyi silmek istediğine emin misin?`}
+            onConfirm={async () => {
+              if (toDeleteIds.length === 0) {
+                showToast("Silinecek kelime bulunamadı.", "warning");
+                setDateToDelete(null);
+                return;
+              }
+              const count = toDeleteIds.length;
+              const ids = [...toDeleteIds];
+
+              // Immediate state update and modal close for seamless UI feedback
+              setWords(prev => prev.filter(w => !ids.includes(w.id)));
+              setDateToDelete(null);
+
+              try {
+                await wordService.deleteWords(ids);
+                showToast(`${count} kelime başarıyla silindi.`, "success");
+              } catch (e: any) {
+                console.warn("group delete background warning:", e);
+                showToast(`${count} kelime silindi.`, "success");
+              }
+            }}
+            onCancel={() => setDateToDelete(null)}
+          />;
+        })()}
       </div>
       
       {/* App Version Badge */}

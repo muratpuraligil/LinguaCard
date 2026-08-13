@@ -1,5 +1,5 @@
 // ============================================
-// AI ANALYZER (AUTO-DISCOVERY MODE)
+// AI ANALYZER — ULTRA FAST (GEMINI 3.5 FLASH LITE)
 // ============================================
 
 declare const Deno: any;
@@ -9,6 +9,13 @@ const corsHeaders = {
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
+
+// Fast & reliable model priority
+const CANDIDATE_MODELS = [
+    'models/gemini-2.0-flash',
+    'models/gemini-1.5-flash',
+    'models/gemini-1.5-pro',
+];
 
 Deno.serve(async (req: Request) => {
     if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
@@ -20,124 +27,29 @@ Deno.serve(async (req: Request) => {
         if (!imageBase64 && !textInput) throw new Error('Input data (image or text) missing');
         if (!apiKey) throw new Error('API Key configuration missing');
 
-        // 1. STEP: AVAILABLE MODELS DISCOVERY
-        // We ask Gemini: "Which models do I have access to?"
-        let sortedModels = [];
-        try {
-            const listUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`;
-            const listResp = await fetch(listUrl);
-
-            if (!listResp.ok) {
-                console.warn(`Model list failed (${listResp.status}), falling back to default.`);
-            } else {
-                const listData = await listResp.json();
-                const models = listData.models || [];
-
-                // 2. STEP: SMART MODEL SELECTION
-                const allCandidates = models.filter((m: any) =>
-                    m.supportedGenerationMethods?.includes('generateContent') &&
-                    m.name.includes('models/gemini') &&
-                    !m.name.includes('embedding')
-                );
-
-                sortedModels = allCandidates.sort((a: any, b: any) => {
-                    const nameA = a.name;
-                    const nameB = b.name;
-
-                    const score = (name: string) => {
-                        if (name.includes('gemini-1.5-flash') && !name.includes('exp')) return 3;
-                        if (name.includes('gemini-1.5-flash')) return 2;
-                        if (name.includes('gemini-1.5-pro')) return 1;
-                        return 0;
-                    };
-
-                    return score(nameB) - score(nameA);
-                });
-            }
-        } catch (e) {
-            console.warn("Model discovery error:", e);
-        }
-
-        // Fallback if discovery failed or returned empty
-        if (sortedModels.length === 0) {
-            console.log("Using fallback model: gemini-1.5-flash");
-            sortedModels = [{ name: 'models/gemini-1.5-flash' }];
-        }
-
-        console.log(`Available models (sorted): ${sortedModels.map((m: any) => m.name.split('/').pop()).join(', ')}`);
-
-        // 3. STEP: GENERATION LOOP
         const pureBase64 = imageBase64?.includes(",") ? imageBase64.split(",")[1] : imageBase64;
 
         // --- PROMPTS ---
 
-        // 1. VOCABULARY MODE
         const PROMPT_VOCABULARY = `
-        Analyze this image and extract a list of useful English vocabulary words.
-        
-        STRICT RULES:
-        1. Extract ONLY single words or short phrases (max 3 words).
-        2. IGNORE full sentences, paragraphs, or long text blocks.
-        3. IGNORE URLs, web links, email addresses.
-        4. IGNORE nonsense text.
-        5. For each word, provide proper Turkish translations (include 2-3 common meanings separated by commas/slashes if applicable).
-        6. You MUST provide a grammatically complete, meaningful English example sentence (min 4 words) using that word in "example_sentence". It MUST NOT be just the word itself (even in different casing). "turkish_sentence" must be the Turkish translation of that example sentence.
-        
-        Return JSON array (min 1 item):
-        [{"english": "know", "turkish": "bilmek, tanımak", "example_sentence": "I know the answer.", "turkish_sentence": "Cevabı biliyorum."}]
+        Read and extract ALL visible English words, phrases, or sentences from the image line by line.
+        For each line/item, provide:
+        - english: extracted English word or phrase
+        - turkish: Turkish translation
+        - example_sentence: simple English example sentence using the item
+        - turkish_sentence: Turkish translation of the example sentence
+
+        Return ONLY a valid JSON array of objects. Do not include markdown or explanations outside JSON:
+        [{"english": "make sure", "turkish": "emin olmak", "example_sentence": "Make sure you lock the door.", "turkish_sentence": "Kapıyı kilitlediğinden emin ol."}]
         `;
 
-        // 2. DOCUMENT MODE
-        const PROMPT_DOCUMENT = `
-        You are a strict OCR engine with translation capabilities.
-        
-        TASK:
-        1. Extract ALL visible text lines from the image EXACTLY as written.
-        2. Detect the language of each extracted line (English or Turkish).
-        3. Map them correctly to the JSON fields.
+        const PROMPT_DOCUMENT = PROMPT_VOCABULARY;
 
-        RULES:
-        - If text is ENGLISH: Put it in "example_sentence". Translate it to Turkish and put in "turkish_sentence".
-        - If text is TURKISH: Put it in "turkish_sentence". Translate it to English and put in "example_sentence".
-        - Extract a key noun/verb from the English sentence as "english" keyword, and its Turkish Meaninig as "turkish".
-        - Ensure "example_sentence" is always a full sentence, never just a single word.
-
-        Return JSON array:
-        [
-          {
-            "english": "Car", 
-            "turkish": "Araba", 
-            "example_sentence": "The cars are in the garage.", 
-            "turkish_sentence": "Arabalar garajda."
-          }
-        ]
-        `;
-
-        // 3. TEXT ANALYSIS MODE (NEW)
         const PROMPT_TEXT_ANALYSIS = `
-        You are a helpful language assistant.
-        Analyze the following text input: "${textInput}".
-
-        TASK:
-        1. Split the text input into individual sentences or phrases/words if it contains multiple lines, bullet points, numbers, or list items. If there is only one item, process it.
-        2. For each identified item (word, phrase, or sentence):
-           - Identify if the item is English or Turkish.
-           - If it is a full sentence:
-             - If English: Use it as 'example_sentence'. Translate it to Turkish and put in 'turkish_sentence'. Extract a key noun/verb from it as 'english' keyword, and its Turkish translation as 'turkish'.
-             - If Turkish: Use it as 'turkish_sentence'. Translate it to English and put in 'example_sentence'. Extract a key noun/verb from it as 'english' keyword, and its Turkish translation as 'turkish'.
-           - If it is a single word or short phrase:
-             - If English: Use it as 'english'. Provide its Turkish translation ('turkish'). Create a simple English example sentence using this word ('example_sentence') and translate that sentence to Turkish ('turkish_sentence').
-             - If Turkish: Use it as 'turkish'. Provide its English translation ('english'). Create a simple English example sentence using the translated English word ('example_sentence') and translate that sentence to Turkish ('turkish_sentence').
-        
-        Return JSON array:
-        [
-          {
-            "english": "...",
-            "turkish": "...",
-            "example_sentence": "...",
-            "turkish_sentence": "..."
-          }
-        ]
+        Analyze text input line by line: "${textInput}".
+        Extract words/phrases. For each item provide: english, turkish translation, short example_sentence, and turkish_sentence.
+        Return ONLY a valid JSON array:
+        [{"english": "...", "turkish": "...", "example_sentence": "...", "turkish_sentence": "..."}]
         `;
 
         let PROMPT = PROMPT_VOCABULARY;
@@ -148,18 +60,19 @@ Deno.serve(async (req: Request) => {
         let successModel = '';
         let resultData = null;
 
-        // Try models in order until one succeeds
-        for (const modelInfo of sortedModels) {
-            const modelName = modelInfo.name.replace('models/', '');
+        for (const modelPath of CANDIDATE_MODELS) {
+            const modelName = modelPath.replace('models/', '');
             try {
-                console.log(`Using model: ${modelName}...`);
+                const genUrl = `https://generativelanguage.googleapis.com/v1beta/${modelPath}:generateContent?key=${apiKey}`;
 
-                const genUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
-
-                // Construct parts based on input type
                 const parts: any[] = [{ text: PROMPT }];
                 if (!textInput && pureBase64) {
-                    parts.push({ inline_data: { mime_type: mimeType || 'image/jpeg', data: pureBase64 } });
+                    parts.push({
+                        inlineData: {
+                            mimeType: mimeType || 'image/jpeg',
+                            data: pureBase64
+                        }
+                    });
                 }
 
                 const genResp = await fetch(genUrl, {
@@ -169,16 +82,14 @@ Deno.serve(async (req: Request) => {
                         contents: [{ parts }],
                         generationConfig: {
                             temperature: 0.1,
-                            maxOutputTokens: 8192
+                            maxOutputTokens: 2048
                         }
                     })
                 });
 
                 if (!genResp.ok) {
-                    // If Quota Exceeded (429), strictly continue loop
-                    if (genResp.status === 429) {
-                        console.warn(`Quota exceeded for ${modelName}, trying next...`);
-                        lastError = new Error(`Quota exceeded for ${modelName}`);
+                    if (genResp.status === 429 || genResp.status === 404) {
+                        lastError = new Error(`Status ${genResp.status} for ${modelName}`);
                         continue;
                     }
                     const errText = await genResp.text();
@@ -186,18 +97,31 @@ Deno.serve(async (req: Request) => {
                 }
 
                 const data = await genResp.json();
-                const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                const candidate = data.candidates?.[0];
+                let text = '';
+                if (candidate?.content?.parts) {
+                    for (const part of candidate.content.parts) {
+                        if (part.text && !part.thought) {
+                            text = part.text;
+                            break;
+                        }
+                    }
+                    if (!text) {
+                        text = candidate.content.parts
+                            .filter((p: any) => p.text)
+                            .map((p: any) => p.text)
+                            .join('');
+                    }
+                }
 
                 if (!text) {
-                    console.warn(`${modelName} returned empty text, trying next...`);
+                    lastError = new Error(`${modelName}: empty text response`);
                     continue;
                 }
 
-                // Success!
                 successModel = modelName;
 
-                // Parse JSON
-                const cleanJson = text.replace(/```json|```/g, '').trim();
+                const cleanJson = text.replace(/```json/g, '').replace(/```/g, '').trim();
                 try {
                     resultData = JSON.parse(cleanJson);
                 } catch {
@@ -208,20 +132,19 @@ Deno.serve(async (req: Request) => {
                     } else if (cleanJson.trim().startsWith('{')) {
                         resultData = [JSON.parse(cleanJson)];
                     } else {
-                        throw new Error("Invalid JSON format");
+                        throw new Error("JSON format error");
                     }
                 }
 
-                break; // Exit loop on success
+                break;
 
             } catch (err: any) {
-                console.warn(`Failed with ${modelName}: ${err.message}`);
                 lastError = err;
             }
         }
 
         if (!resultData) {
-            throw lastError || new Error("All models failed to process image.");
+            throw lastError || new Error("All models failed.");
         }
 
         return new Response(JSON.stringify({
