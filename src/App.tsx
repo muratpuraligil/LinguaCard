@@ -77,7 +77,7 @@ export default function App() {
     return sessionStorage.getItem('lingua_recovery_pending') === 'true';
   });
 
-  const LIBRARY_DATA_VERSION = 'v2';
+  const LIBRARY_DATA_VERSION = 'v3';
 
   useEffect(() => {
     const savedSet = localStorage.getItem('lingua_active_random_mix');
@@ -166,9 +166,31 @@ export default function App() {
       if (savedSet) {
         try {
           const parsed = JSON.parse(savedSet);
-          setActiveLibrarySet(parsed);
-          setMode(AppMode.LIBRARY_PRACTICE);
-          return;
+          if (parsed && parsed.version === LIBRARY_DATA_VERSION) {
+            // Re-sync with libraryData to ensure all sentence text/translation updates are active
+            const syncedSentences = parsed.sentences.map((s: any) => {
+              if (s.sourceSetId) {
+                for (const cat of libraryData) {
+                  for (const set of cat.sets) {
+                    if (set.id === s.sourceSetId) {
+                      const baseId = s.id ? s.id.split('-')[2] || s.id : s.id;
+                      const found = set.sentences.find(orig => orig.id === baseId || orig.id === s.id);
+                      if (found) {
+                        return { ...s, turkish: found.turkish, english: found.english };
+                      }
+                    }
+                  }
+                }
+              }
+              return s;
+            });
+            parsed.sentences = syncedSentences;
+            setActiveLibrarySet(parsed);
+            setMode(AppMode.LIBRARY_PRACTICE);
+            return;
+          } else {
+            localStorage.removeItem('lingua_active_random_mix');
+          }
         } catch (e) {
           console.error("Failed to parse saved random mix", e);
         }

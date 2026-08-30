@@ -25,7 +25,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
       2. **Yeni Kelimelerle Çalış (AI Destekli Alan):** Resim yükleme (OCR) veya metin yapıştırma ile AI destekli yeni kelimeler oluşturma ortamı. Üretilen kelimeler kullanıcının kendi `user_id` değeri ile veritabanına kaydedilir ve doğrudan kart çalışmasına yönlendirilir.
       3. **Kütüphaneden Çalış (Ortak Alan):** Tüm kullanıcıların erişebildiği global kelime kütüphanesi (`words.user_id IS NULL`). A1-1000 seviye seti dahil edilmiş olup, üst kısımda yer alan seviye seçici tabs/dropdown (A1, A2, B1, B2, C1, C2) ile seviyeler arası geçiş yapılır.
     - **Kategori ve Tür Rozetleri:** Kartların ön ve arka yüzlerinde kelimenin kategorisi (`category` - Örn: "Travel and Transport") ve kelime türü (`word_type` - Örn: "Noun", "Verb") rozet olarak şık bir tasarımla sunulur.
-    - **İlerleme Takibi (User Progress):** Çalışma esnasında "Öğrendim / Öğrenmedim / Biliyorum" durumları Supabase `user_progress` tablosuna (`word_id, user_id, status, module='flashcards'`) ve yerel hafızaya kaydedilir.
+    - **İlerleme Takibi (User Progress):** Çalışma esnasında "Öğrendim / Öğrenmedim / Biliyorum" durumları Supabase `user_progress` tablosuna (`word_id, user_id, status, module='flashcards'`) ve yerel hafızaya kaydedilir. "Öğrendim" butonuna basıldığında kelime arşivlenir ve aktif setteki kart sırası başa dönmeden kullanıcının kaldığı indeksten sıradaki kartla akıcı şekilde devam eder.
     - **Seçim & Sıralama Mantığı:** Kelimeler oluşturulma tarihine göre 20'şerli setlere bölünür ve set içindeki kartlar sıra ezberini önlemek için karıştırılır (shuffled).
     - **Mod Değiştirme:** Kartlar çalışma ekranının üst menüsünde bulunan "Mod Seç" butonu ile istenildiğinde mod seçim ekranına dönülebilir.
     - **Otomatik Telaffuz:** Kartın İngilizce yüzü görüntülendiği anda seslendirme otomatik yapılır.
@@ -45,7 +45,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - **Kaldığın Yerden Devam:** Her set için son çalışılan satırın otomatik kaydedilmesi ve scroll focus.
 
 ### 2.3. İçerik Yönetimi
-- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri. Tüm cümle setlerinin Türkçe karakter hataları, OCR bozulmaları ve eşleşme kaymaları (örn: Had Better / Need To - `modal-11` ve `modal-12` setleri dahil) taranarak veri bütünlüğü tam olarak sağlanmıştır.
+- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri. Tüm cümle setlerindeki Türkçe karakter bozulmaları (é, ¢, §, $, OCR kaymaları), İngilizce zamir boru ('|' -> 'I') ve sayı ('1' -> 'I') hataları taranıp temizlenmiş; karma çalışma setlerinde (Random Mix) versiyon bazlı önbellek senkronizasyonu ve string eşleştirme normalizasyonu (`isMatch`) tam olarak sağlanmıştır.
 - **Özel Cümle Setleri:** Kullanıcının kendi oluşturduğu isimlendirilmiş çalışma paketleri.
 - **Arşivleme:** Öğrenilen kelimelerin ana listeden temizlenip başarı kütüphanesine aktarılması.
 

@@ -1,7 +1,8 @@
 export const isMatch = (input: string, target: string): boolean => {
   const getVariants = (text: string): string[] => {
-    // Turkish character normalization for robust matching
-    let s = text.replace(/İ/g, 'i')
+    // Character normalization for robust matching (Turkish letters, OCR pipe/symbols)
+    let s = text.replace(/\|/g, 'i')
+                .replace(/İ/g, 'i')
                 .replace(/I/g, 'i')
                 .replace(/ı/g, 'i')
                 .replace(/Ç/g, 'c')
@@ -16,7 +17,8 @@ export const isMatch = (input: string, target: string): boolean => {
                 .replace(/ö/g, 'o')
                 .toLowerCase()
                 .trim();
-    s = s.replace(/["“”‘’«»]/g, "'").replace(/[.,!?;:()]/g, ' ').replace(/\s+/g, ' ').trim();
+    s = s.replace(/["“”‘’«»`´]/g, "'").replace(/[.,!?;:()]/g, ' ').replace(/\s+/g, ' ').trim();
+
 
     let currentVariants = new Set<string>([s]);
 

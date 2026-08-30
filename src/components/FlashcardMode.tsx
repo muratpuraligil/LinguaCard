@@ -86,25 +86,46 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         return sortedWords.slice(0, FLASHCARD_SET_SIZE);
     }, [activeIds, sortedWords]);
 
+    const prevConfigRef = React.useRef({ studyMode, selectedLevel, currentSetNum });
+
     useEffect(() => {
-        setCurrentIndex(0);
-        setIsFinished(false);
-        setIsFlipped(false);
+        const prev = prevConfigRef.current;
+        const configChanged = 
+            prev.studyMode !== studyMode || 
+            prev.selectedLevel !== selectedLevel || 
+            prev.currentSetNum !== currentSetNum;
+
+        prevConfigRef.current = { studyMode, selectedLevel, currentSetNum };
+
+        if (configChanged) {
+            setCurrentIndex(0);
+            setIsFinished(false);
+            setIsFlipped(false);
+        }
 
         if (sortedWords.length === 0) {
             setActiveIds([]);
             return;
         }
 
-        const targetSetSize = Math.min(FLASHCARD_SET_SIZE, sortedWords.length);
+        // If config did not change and we already have activeIds, keep them (filtering out any removed IDs)
+        if (!configChanged && activeIds.length > 0) {
+            const currentValidIds = activeIds.filter(id => sortedWords.some(w => w.id === id));
+            if (currentValidIds.length !== activeIds.length) {
+                setActiveIds(currentValidIds);
+                localStorage.setItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`, JSON.stringify(currentValidIds));
+            }
+            return;
+        }
+
+        // If config changed or activeIds is empty: check localStorage first
         const savedIdsJson = localStorage.getItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`);
         if (savedIdsJson) {
             try {
                 const savedIds = JSON.parse(savedIdsJson);
                 if (Array.isArray(savedIds) && savedIds.length > 0) {
                     const validIds = savedIds.filter((id: string) => sortedWords.some(w => w.id === id));
-                    // Keep saved set only if it covers the expected target set size (no new words added)
-                    if (validIds.length > 0 && validIds.length >= targetSetSize) {
+                    if (validIds.length > 0) {
                         setActiveIds(validIds);
                         return;
                     }
@@ -182,14 +203,39 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         e.stopPropagation();
         if (!currentWord) return;
 
-        setUserProgressMap(prev => ({ ...prev, [currentWord.id]: status }));
-        wordService.saveUserProgress(currentWord.id, status, userId);
+        const currentWordId = currentWord.id;
+        setUserProgressMap(prev => ({ ...prev, [currentWordId]: status }));
+        wordService.saveUserProgress(currentWordId, status, userId);
 
         if (status === 'known' && studyMode === 'USER_WORDS') {
-            onRemoveWord(currentWord.id);
-        }
+            const updatedActiveIds = activeIds.filter(id => id !== currentWordId);
+            
+            localStorage.setItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`, JSON.stringify(updatedActiveIds));
+            setActiveIds(updatedActiveIds);
+            onRemoveWord(currentWordId);
 
-        handleNext();
+            const isLastCard = currentIndex >= currentSet.length - 1;
+
+            const doAdvanceOrFinish = () => {
+                if (updatedActiveIds.length === 0 || (isLastCard && currentIndex >= updatedActiveIds.length)) {
+                    setIsFinished(true);
+                    triggerSuccessConfetti();
+                } else if (currentIndex >= updatedActiveIds.length) {
+                    setCurrentIndex(Math.max(0, updatedActiveIds.length - 1));
+                }
+                // If currentIndex < updatedActiveIds.length, currentIndex stays the same,
+                // which automatically displays the next card in the sequence!
+            };
+
+            if (isFlipped) {
+                setIsFlipped(false);
+                setTimeout(doAdvanceOrFinish, 300);
+            } else {
+                doAdvanceOrFinish();
+            }
+        } else {
+            handleNext();
+        }
     };
 
     const handleNewSet = () => {
