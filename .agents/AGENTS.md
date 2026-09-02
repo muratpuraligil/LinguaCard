@@ -8,9 +8,10 @@ Bu dosya, LinguaCard projesinde geliştirme yaparken uyulması gereken yerel pro
 - Her yeni özellik geliştirme veya değişiklik sonrasında `docs/PRD.md` (Ürün Gereksinim Belgesi) dosyasını mutlaka inceleyin ve yapılan değişiklikleri otomatik olarak `docs/PRD.md` belgesine de yansıtın.
 - Kullanıcının ekstra olarak "PRD'yi güncelle" demesine gerek kalmadan, her majör/minör işlevsel güncellemede PRD'yi güncel tutun.
 
-### 2. Sürüm ve Tarih Güncellemesi
+### 2. Sürüm, Tarih ve Canlı Senkronizasyonu
 - Yerelde yeni bir özellik geliştirildiğinde veya hata düzeltildiğinde (fix) `src/version.ts` dosyasındaki sürüm numarasını ve tarihi mutlaka güncelleyin (atlanmamalıdır).
 - Sürüm `1.0.99` değerine ulaştıktan sonra, bir sonraki sürümde ikinci haneyi 1 artırarak `1.2.0` şeklinde devam ettirin.
+- **Lokal ve Canlı Versiyon Ayrımı:** Kullanıcıya bilgilendirme yaparken Lokal Versiyon ile Canlı Versiyon (deploy edilmiş sürüm) her zaman ayrı ve doğru şekilde belirtilmelidir. `npm run deploy` öncesi `prebuild` (`scripts/bump-version.js`) sürümü 1 artırdığından, canlıya çıkan sürüm ile çalışma dizinindeki sürüm dikkatle takip edilmeli ve kullanıcıya net aktarılmalıdır.
 
 ### 3. Kaizen (Sürekli İyileştirme)
 - Kodu her zaman bulduğunuzdan daha temiz bırakın (Boy Scout Rule).

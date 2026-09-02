@@ -90,6 +90,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ## 6. Sürüm Takibi ve Release Yönetimi
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY`
 - **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya fix yapıldığında versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra `1.2.0` şeklinde devam eder.
+- **Lokal ve Canlı Versiyon Ayrımı:** Kullanıcıya bilgilendirme yapılırken Lokal Versiyon ile Canlı Versiyon (`gh-pages`) her zaman ayrı ve net olarak belirtilir. Canlı derlemede `prebuild` tetiklenmesiyle oluşan versiyon artışı raporlanır.
 
 ---
 

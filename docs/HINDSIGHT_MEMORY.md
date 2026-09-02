@@ -39,3 +39,4 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
 - **Versiyon Artışı:** Her fix veya özellik geliştirmede `src/version.ts` ve `package.json` senkronize artırılır (`scripts/bump-version.js`).
 - **PRD Takibi:** `docs/PRD.md` her işlevsel değişiklikte otomatik güncellenir.
 - **Conventional Commits:** `feat:`, `fix:`, `refactor:`, `chore:` standartlarına sadık kalınır.
+- **Lokal vs Canlı Versiyon Ayrımı:** `npm run deploy` öncesinde çalışan `prebuild` (`scripts/bump-version.js`) canlıya derlenen sürümü 1 artırır. Kullanıcıya bilgi verilirken hem **Lokal Versiyon** hem de **Canlı Versiyon** (`gh-pages`) ayrı ayrı ve tam doğru numarasıyla bildirilmelidir.
