@@ -257,9 +257,9 @@ export default function App() {
         if (addedWords.length > 0) {
           setWords(prev => [...addedWords, ...prev]);
           showToast(`${addedWords.length} kelime başarıyla eklendi!`);
-          // Clear active set cache so newest words populate the 20-card set immediately
+          // Clear active set and index cache so newest words populate the 20-card set immediately from start
           Object.keys(localStorage).forEach(key => {
-            if (key.startsWith('lingua_flashcard_active_ids_')) {
+            if (key.startsWith('lingua_flashcard_active_ids_') || key.startsWith('lingua_flashcard_current_index_') || key.startsWith('lingua_flashcard_set_num_')) {
               localStorage.removeItem(key);
             }
           });

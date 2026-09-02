@@ -68,10 +68,11 @@ export const wordService = {
 
   clearCache() {
     localStorage.removeItem(LOCAL_STORAGE_KEY);
-    localStorage.removeItem('lingua_flashcard_active_ids');
-    localStorage.removeItem('lingua_flashcard_current_index');
-    localStorage.removeItem('lingua_flashcard_is_finished');
-    localStorage.removeItem('lingua_flashcard_direction');
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith('lingua_flashcard_')) {
+        localStorage.removeItem(key);
+      }
+    });
   },
 
   async getAllWords(userId?: string): Promise<Word[]> {

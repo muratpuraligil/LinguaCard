@@ -6,6 +6,22 @@ import confetti from 'canvas-confetti';
 
 const FLASHCARD_SET_SIZE = 20;
 
+const STORAGE_KEYS = {
+    ACTIVE_IDS: 'lingua_flashcard_active_ids',
+    CURRENT_INDEX: 'lingua_flashcard_current_index',
+    SET_NUM: 'lingua_flashcard_set_num',
+    DIRECTION: 'lingua_flashcard_direction',
+} as const;
+
+const getActiveIdsKey = (mode: FlashcardStudyMode, level: LibraryLevel) =>
+    `${STORAGE_KEYS.ACTIVE_IDS}_${mode}_${level}`;
+
+const getCurrentIndexKey = (mode: FlashcardStudyMode, level: LibraryLevel) =>
+    `${STORAGE_KEYS.CURRENT_INDEX}_${mode}_${level}`;
+
+const getSetNumKey = (mode: FlashcardStudyMode, level: LibraryLevel) =>
+    `${STORAGE_KEYS.SET_NUM}_${mode}_${level}`;
+
 interface FlashcardModeProps {
     words: Word[];
     studyMode: FlashcardStudyMode;
@@ -36,28 +52,42 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     userId
 }) => {
     const [activeIds, setActiveIds] = useState<string[]>(() => {
-        const savedIdsJson = localStorage.getItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`);
+        const savedIdsJson = localStorage.getItem(getActiveIdsKey(studyMode, selectedLevel));
         if (savedIdsJson) {
             try {
                 const savedIds = JSON.parse(savedIdsJson);
                 if (Array.isArray(savedIds) && savedIds.length > 0) {
                     return savedIds;
                 }
-            } catch (e) {
-                console.error("Failed to parse saved flashcard set IDs", e);
-            }
+            } catch {}
         }
         return [];
     });
 
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const [currentSetNum, setCurrentSetNum] = useState<number>(1);
+    const [currentSetNum, setCurrentSetNum] = useState<number>(() => {
+        const saved = localStorage.getItem(getSetNumKey(studyMode, selectedLevel));
+        if (saved) {
+            const parsed = parseInt(saved, 10);
+            if (!isNaN(parsed) && parsed > 0) return parsed;
+        }
+        return 1;
+    });
+
+    const [currentIndex, setCurrentIndex] = useState<number>(() => {
+        const saved = localStorage.getItem(getCurrentIndexKey(studyMode, selectedLevel));
+        if (saved) {
+            const parsed = parseInt(saved, 10);
+            if (!isNaN(parsed) && parsed >= 0) return parsed;
+        }
+        return 0;
+    });
+
     const [isFlipped, setIsFlipped] = useState(false);
     const [isFinished, setIsFinished] = useState<boolean>(false);
     const [userProgressMap, setUserProgressMap] = useState<Record<string, WordProgressStatus>>({});
 
     const [direction, setDirection] = useState<LanguageDirection>(() => {
-        const saved = localStorage.getItem('lingua_flashcard_direction');
+        const saved = localStorage.getItem(STORAGE_KEYS.DIRECTION);
         return (saved as LanguageDirection) || LanguageDirection.TR_EN;
     });
 
@@ -90,14 +120,25 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
     useEffect(() => {
         const prev = prevConfigRef.current;
-        const configChanged = 
+        const modeOrLevelChanged = 
             prev.studyMode !== studyMode || 
-            prev.selectedLevel !== selectedLevel || 
-            prev.currentSetNum !== currentSetNum;
+            prev.selectedLevel !== selectedLevel;
+        const setChanged = prev.currentSetNum !== currentSetNum;
 
         prevConfigRef.current = { studyMode, selectedLevel, currentSetNum };
 
-        if (configChanged) {
+        if (modeOrLevelChanged) {
+            const savedIndex = localStorage.getItem(getCurrentIndexKey(studyMode, selectedLevel));
+            const parsedIndex = savedIndex ? parseInt(savedIndex, 10) : 0;
+            setCurrentIndex(!isNaN(parsedIndex) && parsedIndex >= 0 ? parsedIndex : 0);
+
+            const savedSet = localStorage.getItem(getSetNumKey(studyMode, selectedLevel));
+            const parsedSet = savedSet ? parseInt(savedSet, 10) : 1;
+            setCurrentSetNum(!isNaN(parsedSet) && parsedSet > 0 ? parsedSet : 1);
+
+            setIsFinished(false);
+            setIsFlipped(false);
+        } else if (setChanged) {
             setCurrentIndex(0);
             setIsFinished(false);
             setIsFlipped(false);
@@ -108,18 +149,18 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             return;
         }
 
-        // If config did not change and we already have activeIds, keep them (filtering out any removed IDs)
-        if (!configChanged && activeIds.length > 0) {
+        // If mode and level did not change and we already have activeIds, keep them (filtering out any removed IDs)
+        if (!modeOrLevelChanged && activeIds.length > 0) {
             const currentValidIds = activeIds.filter(id => sortedWords.some(w => w.id === id));
             if (currentValidIds.length !== activeIds.length) {
                 setActiveIds(currentValidIds);
-                localStorage.setItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`, JSON.stringify(currentValidIds));
+                localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(currentValidIds));
             }
             return;
         }
 
-        // If config changed or activeIds is empty: check localStorage first
-        const savedIdsJson = localStorage.getItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`);
+        // If mode/level changed or activeIds is empty: check localStorage first
+        const savedIdsJson = localStorage.getItem(getActiveIdsKey(studyMode, selectedLevel));
         if (savedIdsJson) {
             try {
                 const savedIds = JSON.parse(savedIdsJson);
@@ -130,9 +171,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         return;
                     }
                 }
-            } catch (e) {
-                console.error("Failed to parse saved flashcard set IDs", e);
-            }
+            } catch {}
         }
 
         const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
@@ -142,7 +181,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         if (setWords.length > 0) {
             const shuffled = [...setWords].sort(() => Math.random() - 0.5);
             const newIds = shuffled.map(w => w.id);
-            localStorage.setItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`, JSON.stringify(newIds));
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(newIds));
             setActiveIds(newIds);
         }
     }, [sortedWords, currentSetNum, studyMode, selectedLevel]);
@@ -151,11 +190,25 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const currentWord = currentSet.length > 0 ? currentSet[safeIndex] : null;
 
     useEffect(() => {
+        if (currentSet.length > 0 && currentIndex >= currentSet.length) {
+            setCurrentIndex(Math.max(0, currentSet.length - 1));
+        }
+    }, [currentSet.length, currentIndex]);
+
+    useEffect(() => {
+        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), currentIndex.toString());
+    }, [currentIndex, studyMode, selectedLevel]);
+
+    useEffect(() => {
+        localStorage.setItem(getSetNumKey(studyMode, selectedLevel), currentSetNum.toString());
+    }, [currentSetNum, studyMode, selectedLevel]);
+
+    useEffect(() => {
         setIsFlipped(false);
     }, [currentIndex]);
 
     useEffect(() => {
-        localStorage.setItem('lingua_flashcard_direction', direction);
+        localStorage.setItem(STORAGE_KEYS.DIRECTION, direction);
     }, [direction]);
 
     useEffect(() => {
@@ -210,7 +263,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         if (status === 'known' && studyMode === 'USER_WORDS') {
             const updatedActiveIds = activeIds.filter(id => id !== currentWordId);
             
-            localStorage.setItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`, JSON.stringify(updatedActiveIds));
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(updatedActiveIds));
             setActiveIds(updatedActiveIds);
             onRemoveWord(currentWordId);
 
@@ -221,10 +274,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                     setIsFinished(true);
                     triggerSuccessConfetti();
                 } else if (currentIndex >= updatedActiveIds.length) {
-                    setCurrentIndex(Math.max(0, updatedActiveIds.length - 1));
+                    const newIdx = Math.max(0, updatedActiveIds.length - 1);
+                    setCurrentIndex(newIdx);
+                    localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), newIdx.toString());
                 }
-                // If currentIndex < updatedActiveIds.length, currentIndex stays the same,
-                // which automatically displays the next card in the sequence!
             };
 
             if (isFlipped) {
@@ -240,8 +293,11 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
     const handleNewSet = () => {
         const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
-        localStorage.removeItem(`lingua_flashcard_active_ids_${studyMode}_${selectedLevel}`);
+        localStorage.removeItem(getActiveIdsKey(studyMode, selectedLevel));
+        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), '0');
+        localStorage.setItem(getSetNumKey(studyMode, selectedLevel), nextSetNum.toString());
         setActiveIds([]);
+        setCurrentIndex(0);
         setCurrentSetNum(nextSetNum);
         setIsFlipped(false);
         setIsFinished(false);
