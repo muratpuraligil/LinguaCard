@@ -91,7 +91,10 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
             setShowScrollTop(window.scrollY > 400);
         };
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.speechSynthesis.cancel();
+        };
     }, []);
 
     // Yükleme
@@ -101,9 +104,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
             try {
                 const parsed = JSON.parse(saved);
                 setProgress(parsed);
-            } catch (e) {
-                console.error("İlerleme yüklenemedi", e);
-            }
+            } catch {}
         } else {
             const initial: Record<string, ProgressState> = {};
             words.forEach(w => {

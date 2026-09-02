@@ -72,6 +72,13 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Yapay Zeka:** Google Gemini AI (Google Generative AI SDK).
 - **Dosya İşleme:** Offscreen Canvas + Base64 Pipeline.
 
+### 4.1. Geliştirici Standartları ve Entegre Kalite Yetenekleri
+- **Kaizen (Sürekli İyileştirme):** Kademeli, güvenli ve test edilmiş refactoring adımları; ölü kodların ve gereksiz bağımlılıkların düzenli temizliği.
+- **Bellek Sızıntısı Önleme (Memory Leak Prevention):** Tüm bileşenlerde (`FlashcardMode`, `SentenceMode`, `QuizMode`, `LibraryPracticeScreen`, `CustomSetStudyMode`, `WordList`, `UploadModal`) unmount anında `speechSynthesis.cancel()`, `clearTimeout`, `URL.revokeObjectURL` ve event listener cleanup güvencesi.
+- **Ürün ve Arayüz Tasarımı (Product & Frontend Design):** Apple seviyesinde karanlık neon estetiği, dokunsal mikro geri bildirimler (`active:scale-95`), WCAG AA kontrast ve yönlendirici boş durum tasarımları.
+- **Hindsight Memory:** Ajan deneyimleri ve mimari kararların `docs/HINDSIGHT_MEMORY.md` üzerinden kalıcı saklanması.
+- **Git Pushing:** Conventional Commits standardı ile izlenebilir sürüm kontrolü.
+
 ---
 
 ## 5. Uygulama Kuralları ve Mantık

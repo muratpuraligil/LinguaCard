@@ -54,7 +54,10 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
       setShowScrollTop(window.scrollY > 400);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.speechSynthesis.cancel();
+    };
   }, []);
 
   const handleSentenceClick = (id: string) => {

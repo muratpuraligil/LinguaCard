@@ -154,10 +154,14 @@ export default function App() {
   const [dateToDelete, setDateToDelete] = useState<string | null>(null);
 
   const abortControllerRef = useRef<AbortController | null>(null);
+  const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const showToast = (message: string, type: 'success' | 'error' | 'warning' = 'success') => {
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+    }
     setToast({ message, type });
-    setTimeout(() => setToast(null), 4500);
+    toastTimeoutRef.current = setTimeout(() => setToast(null), 4500);
   };
 
   const handleRandomLibrarySet = (forceNew: boolean = false) => {

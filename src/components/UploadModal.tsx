@@ -52,7 +52,9 @@ const UploadModal: React.FC<UploadModalProps> = ({ onClose, onFileSelect, isLoad
         window.addEventListener('paste', handlePaste);
         return () => {
             window.removeEventListener('paste', handlePaste);
-            if (previewUrl) URL.revokeObjectURL(previewUrl);
+            if (previewUrl && previewUrl.startsWith('blob:')) {
+                URL.revokeObjectURL(previewUrl);
+            }
         };
     }, [handleFileChange, isLoading, previewUrl]);
 

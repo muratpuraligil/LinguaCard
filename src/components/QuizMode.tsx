@@ -86,6 +86,12 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
   }, [direction]);
 
   useEffect(() => {
+    return () => {
+      window.speechSynthesis.cancel();
+    };
+  }, []);
+
+  useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.TTS_ENABLED, isTtsEnabled.toString());
   }, [isTtsEnabled]);
 

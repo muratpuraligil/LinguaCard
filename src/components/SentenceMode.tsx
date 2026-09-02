@@ -68,9 +68,7 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
             example_sentence = aiResult.example_sentence || '';
             turkish_sentence = aiResult.turkish_sentence || '';
           }
-        } catch (aiErr) {
-          console.error("AI completion failed, falling back to raw addition", aiErr);
-        }
+        } catch {}
 
         await wordService.addWord({
           english,
@@ -79,12 +77,16 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
           turkish_sentence
         }, session?.user?.id);
         setSelectedWord(null);
-      } catch (e) {
-        console.error(e);
-      } finally {
+      } catch {} finally {
         setIsAddingWord(false);
       }
     };
+
+    useEffect(() => {
+        return () => {
+            window.speechSynthesis.cancel();
+        };
+    }, []);
 
     useEffect(() => {
         localStorage.setItem('lingua_sentence_direction', direction);

@@ -212,6 +212,12 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     }, [direction]);
 
     useEffect(() => {
+        return () => {
+            window.speechSynthesis.cancel();
+        };
+    }, []);
+
+    useEffect(() => {
         if (!currentWord) return;
         const isEnglishVisible = (direction === LanguageDirection.EN_TR && !isFlipped) ||
                                  (direction === LanguageDirection.TR_EN && isFlipped);
