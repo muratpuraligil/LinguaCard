@@ -101,8 +101,11 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
   };
 
   const handleAiFill = async () => {
-    const input = newEng || newTr;
-    if (!input || input.trim().length < 2) {
+    const input = (newEng.trim() && newTr.trim()) 
+      ? `${newEng.trim()} : ${newTr.trim()}` 
+      : (newEng.trim() || newTr.trim());
+
+    if (!input || input.length < 2) {
       setFormError('Lütfen en az bir kelime girin.');
       return;
     }
@@ -113,15 +116,17 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     try {
       const { data: { session } } = await supabase.auth.getSession();
       const result = await analyzeText(input, session);
+      const item = Array.isArray(result) ? result[0] : result;
 
-      if (result) {
-        setNewEng(result.english || newEng);
-        setNewTr(result.turkish || newTr);
-        setNewEx(result.example_sentence || '');
-        setNewTrEx(result.turkish_sentence || '');
+      if (item) {
+        setNewEng(item.english || newEng);
+        setNewTr(item.turkish || newTr);
+        setNewEx(item.example_sentence || '');
+        setNewTrEx(item.turkish_sentence || '');
+      } else {
+        setFormError('Kelime analiz edilemedi, lütfen tekrar deneyin.');
       }
     } catch (err: any) {
-      console.error(err);
       setFormError(err.message || 'AI ile doldurma başarısız.');
     } finally {
       setIsAiFilling(false);

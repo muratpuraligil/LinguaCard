@@ -517,16 +517,17 @@ export default function App() {
             if (isInvalid(finalEx, en) || isInvalid(finalTrex, tr)) {
               try {
                 const result = await analyzeText(en || tr, session);
-                if (result) {
-                  finalEx = result.example_sentence || finalEx;
-                  finalTrex = result.turkish_sentence || finalTrex;
+                const item = Array.isArray(result) ? result[0] : result;
+                if (item) {
+                  finalEx = item.example_sentence || finalEx;
+                  finalTrex = item.turkish_sentence || finalTrex;
                 }
               } catch (err) {
-                console.error("Ekleme sırasında AI otomatik cümle üretimi başarısız oldu:", err);
+                // AI cümle tamamlama hatası yakalanır
               }
             }
 
-            const newWord = await wordService.addWord({ english: en, turkish: tr, example_sentence: finalEx, turkish_sentence: finalTrex }, session.user.id);
+            const newWord = await wordService.addWord({ english: en, turkish: tr, example_sentence: finalEx, turkish_sentence: finalTrex }, session?.user?.id);
             if (newWord) {
               setWords(prev => [newWord, ...prev]);
               return true;

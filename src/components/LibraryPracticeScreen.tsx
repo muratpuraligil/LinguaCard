@@ -255,7 +255,8 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       let turkish_sentence = '';
 
       try {
-        const aiResult = await analyzeText(selectedWord, session);
+        const rawResult = await analyzeText(selectedWord, session);
+        const aiResult = Array.isArray(rawResult) ? rawResult[0] : rawResult;
         if (aiResult) {
           english = aiResult.english || selectedWord;
           turkish = aiResult.turkish || '';

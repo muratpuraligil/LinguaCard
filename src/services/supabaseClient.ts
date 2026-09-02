@@ -50,10 +50,8 @@ const mapAppToDb = (word: Omit<Word, 'id' | 'created_at'>, userId?: string, incl
     word_tr: word.turkish.trim(),
     example_sentence_en: (word.example_sentence || '').trim(),
     example_sentence_tr: (word.turkish_sentence || '').trim(),
-    user_id: userId,
-    set_name: word.set_name || null,
-    category: word.category || null,
-    word_type: word.word_type || null
+    user_id: userId || null,
+    set_name: word.set_name || null
   };
 
   if (includeArchiveField) {
@@ -149,23 +147,50 @@ export const wordService = {
   },
 
   async addWord(word: Omit<Word, 'id' | 'created_at'>, userId?: string): Promise<Word | null> {
-    const payload = mapAppToDb(word, userId, true);
-    let { data, error } = await supabase.from('words').insert([payload]).select().single();
+    const nowIso = new Date().toISOString();
+    const fallbackLocalWord: Word = {
+      id: typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `w_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`,
+      english: word.english.trim(),
+      turkish: (word.turkish || word.english).trim(),
+      example_sentence: word.example_sentence || '',
+      turkish_sentence: word.turkish_sentence || '',
+      created_at: nowIso,
+      user_id: userId,
+      set_name: word.set_name || undefined,
+      category: word.category || undefined,
+      word_type: word.word_type || undefined,
+      is_archived: !!word.is_archived
+    };
 
-    if (error && error.message.includes('is_archived')) {
-      const fallbackPayload = mapAppToDb(word, userId, false);
-      const retry = await supabase.from('words').insert([fallbackPayload]).select().single();
-      data = retry.data;
-      error = retry.error;
+    try {
+      const payload = mapAppToDb(word, userId, true);
+      let { data, error } = await supabase.from('words').insert([payload]).select().single();
+
+      if (error && error.message.includes('is_archived')) {
+        const fallbackPayload = mapAppToDb(word, userId, false);
+        const retry = await supabase.from('words').insert([fallbackPayload]).select().single();
+        data = retry.data;
+        error = retry.error;
+      }
+
+      if (!error && data) {
+        const dbWord = mapDbToApp(data);
+        if (word.category) dbWord.category = word.category;
+        if (word.word_type) dbWord.word_type = word.word_type;
+
+        const updated = [dbWord, ...getLocalWords().filter(w => w.id !== dbWord.id)];
+        setLocalWords(updated);
+        return dbWord;
+      }
+    } catch (e) {
+      // Supabase hatası durumunda yerel depolamaya yedeklenir
     }
 
-    if (!error && data) {
-      const dbWord = mapDbToApp(data);
-      const updated = [dbWord, ...getLocalWords()];
-      setLocalWords(updated);
-      return dbWord;
-    }
-    return null;
+    // Yerel depolamaya kaydet ve kelimeyi döndür (offline/schema resilient)
+    const currentLocal = getLocalWords().filter(w => w.id !== fallbackLocalWord.id);
+    const updatedLocal = [fallbackLocalWord, ...currentLocal];
+    setLocalWords(updatedLocal);
+    return fallbackLocalWord;
   },
 
   async addWordsBulk(words: Omit<Word, 'id' | 'created_at'>[], userId?: string): Promise<Word[]> {

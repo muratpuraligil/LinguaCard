@@ -14,7 +14,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **PDF Desteği:** PDF dökümanlarını doğrudan yükleyerek içerik analizi yapabilme.
 - **Kesintisiz Çok Kademeli AI & Yerel Ayrıştırıcı Mimarisi (3-Tier Resilience):** Görsel OCR veya metin yapıştırmalarında (CTRL+V) 1. Kademede Supabase Edge Function (`gemini-2.0-flash`), 2. Kademede İstemci Gemini API (`VITE_GEMINI_API_KEY`), 3. Kademede ise Yerel Metin Ayrıştırıcısı (Local Parser) kesintisiz yedekli çalışır. Sunucu veya API hatalarında kullanıcı asla sonsuz yüklenmede (spinner) kalmaz.
 - **Metin Yapıştırma (CTRL+V):** Panodaki çok satırlı metinleri doğrudan yapıştırarak AI'nın veya yerel ayrıştırıcının bunları tek tek cümle/kelime olarak ayrıştırıp sisteme topluca eklemesi (Çoklu Cümle Analizi).
-- **Akıllı Hızlı Ekleme:** Tek kelime girildiğinde AI'nın otomatik anlam, örnek cümle ve çeviri üretmesi.
+- **Akıllı Hızlı Ekleme (Manuel Ekleme - AI ile Tamamla):** Kelime Listesinde yer alan Hızlı Ekle formunda tek kelime (İngilizce veya Türkçe) girilip "AI ile Tamamla" butonuna tıklandığında, AI'nın kelime karşılığını, İngilizce örnek cümleyi ve Türkçe çevirisini otomatik doldurması; "Listeye Kaydet" işleminde Supabase şemasıyla tam uyumlu kolon yönetimi (`category`/`word_type` temizliği) ve offline-resilient yerel depolama yedeklemesi sağlanmıştır.
 - **Akıllı Bağlamsal Ekleme:** Cümleler, Kütüphane ve Özel Set çalışmalarında kelimelere çift tıklandığında AI'nın arka planda otomatik olarak kelime anlamını, örnek cümleyi ve çevirisini üretip kaydetmesi.
 
 ### 2.2. Öğrenme ve Pratik Modülleri

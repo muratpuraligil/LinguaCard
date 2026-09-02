@@ -276,7 +276,8 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
 
             if (!isExactMatch) {
                 try {
-                    const aiResult = await analyzeText(selectionToAdd.text, session);
+                    const rawResult = await analyzeText(selectionToAdd.text, session);
+                    const aiResult = Array.isArray(rawResult) ? rawResult[0] : rawResult;
                     if (aiResult) {
                         english = aiResult.english || selectionToAdd.text;
                         turkish = aiResult.turkish || '';
