@@ -40,3 +40,9 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
 - **PRD Takibi:** `docs/PRD.md` her işlevsel değişiklikte otomatik güncellenir.
 - **Conventional Commits:** `feat:`, `fix:`, `refactor:`, `chore:` standartlarına sadık kalınır.
 - **Lokal vs Canlı Versiyon Ayrımı:** `npm run deploy` öncesinde çalışan `prebuild` (`scripts/bump-version.js`) canlıya derlenen sürümü 1 artırır. Kullanıcıya bilgi verilirken hem **Lokal Versiyon** hem de **Canlı Versiyon** (`gh-pages`) ayrı ayrı ve tam doğru numarasıyla bildirilmelidir.
+
+---
+
+## 🧪 5. Test Güdümlü Geliştirme (Test Driven Development - TDD)
+- **RED-GREEN-REFACTOR:** Yeni mantık, algoritma veya bugfix geliştirirken önce test yazılır ve çalıştığında başarısız olduğu görülür (`node --test`). Minimal kod ile test yeşile geçirilir, ardından refactoring yapılır.
+- **İzole Birim Testler:** `node:test` ve `node:assert` yerleşik test motoru ile yardımcı fonksiyonlar (`stringUtils`, progress hesaplayıcıları vb.) harici ağır bağımlılıklara ihtiyaç duymadan milisaniyeler içinde test edilir.

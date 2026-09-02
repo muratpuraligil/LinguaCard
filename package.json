@@ -1,13 +1,14 @@
 {
   "name": "linguacard",
   "private": true,
-  "version": "1.0.64",
+  "version": "1.0.65",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/bump-version.js",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "node --test 'tests/**/*.test.js'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

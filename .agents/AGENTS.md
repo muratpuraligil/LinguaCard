@@ -32,3 +32,8 @@ Bu dosya, LinguaCard projesinde geliştirme yaparken uyulması gereken yerel pro
 
 ### 7. Git Pushing & Commit Standartları
 - Yapılan değişiklikler mantıksal olarak paketlenmeli ve Conventional Commits formatında (`feat:`, `fix:`, `refactor:`, `chore:`) açık, net Türkçe/İngilizce mesajlarla commit edilip GitHub'a gönderilmelidir.
+
+### 8. Test Güdümlü Geliştirme (Test Driven Development - TDD)
+- Yeni özellik, bugfix veya refactoring geliştirirken RED-GREEN-REFACTOR döngüsü zorunludur.
+- **Demir Kural:** Önce başarısız olan test yazılmalı (`RED`), testin başarısız olduğu doğrulanmalı, ardından testi geçiren en minimal kod yazılmalı (`GREEN`), son olarak kod temizlenip yeniden düzenlenmelidir (`REFACTOR`).
+- Test yazmadan prodüksiyon kodu yazmak yasaktır. Yapılan mantık değişiklikleri mutlaka birim testlerle doğrulanmalıdır.

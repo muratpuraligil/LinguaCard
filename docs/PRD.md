@@ -77,6 +77,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Bellek Sızıntısı Önleme (Memory Leak Prevention):** Tüm bileşenlerde (`FlashcardMode`, `SentenceMode`, `QuizMode`, `LibraryPracticeScreen`, `CustomSetStudyMode`, `WordList`, `UploadModal`) unmount anında `speechSynthesis.cancel()`, `clearTimeout`, `URL.revokeObjectURL` ve event listener cleanup güvencesi.
 - **Ürün ve Arayüz Tasarımı (Product & Frontend Design):** Apple seviyesinde karanlık neon estetiği, dokunsal mikro geri bildirimler (`active:scale-95`), WCAG AA kontrast ve yönlendirici boş durum tasarımları.
 - **Hindsight Memory:** Ajan deneyimleri ve mimari kararların `docs/HINDSIGHT_MEMORY.md` üzerinden kalıcı saklanması.
+- **Test Güdümlü Geliştirme (TDD):** Yeni özellik ve hata düzeltmelerinde RED-GREEN-REFACTOR döngüsü; önce başarısız test, ardından minimal kod ve refactor disiplini.
 - **Git Pushing:** Conventional Commits standardı ile izlenebilir sürüm kontrolü.
 
 ---
