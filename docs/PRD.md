@@ -46,7 +46,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - **Kaldığın Yerden Devam:** Her set için son çalışılan satırın otomatik kaydedilmesi ve scroll focus.
 
 ### 2.3. İçerik Yönetimi
-- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri. Tüm cümle setlerindeki Türkçe karakter bozulmaları (é, ¢, §, $, OCR kaymaları), İngilizce zamir boru ('|' -> 'I') ve sayı ('1' -> 'I') hataları taranıp temizlenmiş; karma çalışma setlerinde (Random Mix) versiyon bazlı önbellek senkronizasyonu ve string eşleştirme normalizasyonu (`isMatch`) tam olarak sağlanmıştır.
+- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri. Tüm cümle setlerindeki Türkçe karakter bozulmaları (é, ¢, §, $, OCR kaymaları), İngilizce zamir boru ('|' -> 'I') ve sayı ('1' -> 'I') hataları, çapraz eşleşen cümle kaymaları (örn. Modal-11 Had Better ve Modal-12 Need çaprazlamaları) ile İngilizce zaman ve belirli tanımlık düzeltmeleri (örn: "since last night", "on the board", "The doctors") taranıp temizlenmiş; karma çalışma setlerinde (Random Mix) versiyon bazlı önbellek senkronizasyonu ve string eşleştirme normalizasyonu (`isMatch`) tam olarak sağlanmıştır.
 - **Özel Cümle Setleri:** Kullanıcının kendi oluşturduğu isimlendirilmiş çalışma paketleri.
 - **Arşivleme:** Öğrenilen kelimelerin ana listeden temizlenip başarı kütüphanesine aktarılması.
 

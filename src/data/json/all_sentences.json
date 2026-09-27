@@ -1222,7 +1222,7 @@
     {
       "id": "s44",
       "turkish": "Bir saattir tahtada zor sorular var.",
-      "english": "There have been difficult questions on board for an hour."
+      "english": "There have been difficult questions on the board for an hour."
     },
     {
       "id": "s45",
@@ -1452,11 +1452,11 @@
     {
       "id": "s90",
       "turkish": "Doktorlar üç saattir ameliyathanedeler.",
-      "english": "Doctors have been in the operating room for three hours."
+      "english": "The doctors have been in the operating room for three hours."
     },
     {
       "id": "s91",
-      "turkish": "Takipgileri günlerdir 6fkeliler.",
+      "turkish": "Takipçileri günlerdir öfkeliler.",
       "english": "His followers have been angry for days."
     },
     {
@@ -3556,8 +3556,8 @@
     },
     {
       "id": "s9",
-      "turkish": "Bebeğim tüm geceden beri uyudu / uyumuş(tur).",
-      "english": "My baby has slept since all night."
+      "turkish": "Bebeğim dün geceden beri uyudu / uyumuş(tur).",
+      "english": "My baby has slept since last night."
     },
     {
       "id": "s10",
@@ -14483,7 +14483,7 @@
     },
     {
       "id": "s90",
-      "turkish": "Yarın erken kalkmanız gerekiyor mu?",
+      "turkish": "Ona gerçeği söylesem mi yoksa bir süre beklesem mi?",
       "english": "Had I better tell him the truth or wait for a while?"
     },
     {
@@ -14985,7 +14985,7 @@
     },
     {
       "id": "s90",
-      "turkish": "Ona gerçeği sdylesem mi yoksa bir süre beklesem mi?",
+      "turkish": "Yarın erken kalkmanız gerekiyor mu?",
       "english": "Do you need to get up early tomorrow?"
     },
     {
