@@ -5,6 +5,11 @@
  */
 
 const COMMON_DICTIONARY: Record<string, { turkish: string; example_sentence: string; turkish_sentence: string }> = {
+  "drop off": {
+    turkish: "bırakmak, arabayla bırakmak, uyuyakalmak",
+    example_sentence: "Can you drop me off at the train station?",
+    turkish_sentence: "Beni tren istasyonunda bırakabilir misin?"
+  },
   "make sure": {
     turkish: "emin olmak, garantiye almak",
     example_sentence: "Make sure you lock the door before leaving.",

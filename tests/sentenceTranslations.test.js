@@ -137,3 +137,71 @@ test('Sentence aux-8 s9 "since all night" OCR fix to "since last night"', () => 
     /id:\s*"s9",\s*turkish:\s*"Bebeğim dün geceden beri uyudu \/ uyumuş\(tur\)\.",\s*english:\s*"My baby has slept since last night\."/
   );
 });
+
+test('Sentence modal-5 s22 "so! can\'t" fix to "so I can\'t" and Turkish OCR cleanup', () => {
+  const allSentences = JSON.parse(
+    fs.readFileSync(path.join(rootDir, 'src/data/json/all_sentences.json'), 'utf8')
+  );
+  const s22 = allSentences['modal-5']?.find((s) => s.id === 's22');
+  assert.ok(s22, 'modal-5 s22 must exist in all_sentences.json');
+  assert.equal(
+    s22.english,
+    "When I was six, I could play violin but I haven't practiced since then so I can't play anymore.",
+    'modal-5 s22 english must have "so I can\'t" instead of "so! can\'t"'
+  );
+  assert.equal(
+    s22.turkish,
+    'Altı yaşımdayken keman çalabiliyordum ama o zamandan beri pratik yapmadığım için artık çalamıyorum.',
+    'modal-5 s22 turkish OCR errors must be fixed'
+  );
+
+  const libraryContent = fs.readFileSync(path.join(rootDir, 'src/data/libraryData.ts'), 'utf8');
+  assert.match(
+    libraryContent,
+    /id:\s*"s22",\s*turkish:\s*"Altı yaşımdayken keman çalabiliyordum ama o zamandan beri pratik yapmadığım için artık çalamıyorum\.",\s*english:\s*"When I was six, I could play violin but I haven't practiced since then so I can't play anymore\."/
+  );
+});
+
+test('Sentence aux-12 s65 Turkish OCR fix "kalacaoim" -> "kalacağını"', () => {
+  const allSentences = JSON.parse(
+    fs.readFileSync(path.join(rootDir, 'src/data/json/all_sentences.json'), 'utf8')
+  );
+  const s65 = allSentences['aux-12']?.find((s) => s.id === 's65');
+  assert.ok(s65, 'aux-12 s65 must exist in all_sentences.json');
+  assert.equal(
+    s65.turkish,
+    'Konferansa geç kalacağını biliyor ama gelmeden önce sona ermeyeceğini umuyor.',
+    'aux-12 s65 turkish OCR error must be fixed'
+  );
+  assert.equal(
+    s65.english,
+    "He knows he'll be late for the conference but he hopes it will not have ended before he arrives."
+  );
+
+  const libraryContent = fs.readFileSync(path.join(rootDir, 'src/data/libraryData.ts'), 'utf8');
+  assert.match(
+    libraryContent,
+    /id:\s*"s65",\s*turkish:\s*"Konferansa geç kalacağını biliyor ama gelmeden önce sona ermeyeceğini umuyor\.",\s*english:\s*"He knows he'll be late for the conference but he hopes it will not have ended before he arrives\."/
+  );
+});
+
+test('Sentence aux-18 s72 grammatical correction "have been boil" -> "have been boiling"', () => {
+  const allSentences = JSON.parse(
+    fs.readFileSync(path.join(rootDir, 'src/data/json/all_sentences.json'), 'utf8')
+  );
+  const s72 = allSentences['aux-18']?.find((s) => s.id === 's72');
+  assert.ok(s72, 'aux-18 s72 must exist in all_sentences.json');
+  assert.equal(
+    s72.english,
+    'Will the soup have been boiling too long when we get home?',
+    'aux-18 s72 english should be grammatically correct ("have been boiling")'
+  );
+
+  const libraryContent = fs.readFileSync(path.join(rootDir, 'src/data/libraryData.ts'), 'utf8');
+  assert.match(
+    libraryContent,
+    /id:\s*"s72",\s*turkish:\s*"Eve gittiğimizde, çorba çok uzun süre kaynıyor olacak mı\?",\s*english:\s*"Will the soup have been boiling too long when we get home\?"/
+  );
+});
+
+

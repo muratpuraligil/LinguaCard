@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Word } from '../types';
 import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive, Info, ArrowUp } from 'lucide-react';
 import { analyzeText } from '../services/analyzeImage';
@@ -31,6 +31,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAiFilling, setIsAiFilling] = useState(false);
   const [archiveId, setArchiveId] = useState<string | null>(null);
+  const aiAbortControllerRef = useRef<AbortController | null>(null);
 
   // Çevirisi açık olan cümlenin ID'si
   const [flippedSentenceId, setFlippedSentenceId] = useState<string | null>(null);
@@ -57,6 +58,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.speechSynthesis.cancel();
+      aiAbortControllerRef.current?.abort();
     };
   }, []);
 
@@ -116,9 +118,17 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     setIsAiFilling(true);
     setFormError(null);
 
+    // Abort previous in-flight AI request if any
+    aiAbortControllerRef.current?.abort();
+    const abortController = new AbortController();
+    aiAbortControllerRef.current = abortController;
+
+    const safetyTimeout = setTimeout(() => {
+      abortController.abort();
+    }, 12000);
+
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      const result = await analyzeText(input, session);
+      const result = await analyzeText(input, null, abortController.signal);
       const item = Array.isArray(result) ? result[0] : result;
 
       if (item) {
@@ -130,8 +140,13 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
         setFormError('Kelime analiz edilemedi, lütfen tekrar deneyin.');
       }
     } catch (err: any) {
-      setFormError(err.message || 'AI ile doldurma başarısız.');
+      if (err.name === 'AbortError') {
+        setFormError('İşlem zaman aşımına uğradı, lütfen tekrar deneyin.');
+      } else {
+        setFormError(err.message || 'AI ile doldurma başarısız.');
+      }
     } finally {
+      clearTimeout(safetyTimeout);
       setIsAiFilling(false);
     }
   };

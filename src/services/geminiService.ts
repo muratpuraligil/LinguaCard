@@ -4,8 +4,10 @@
  */
 
 const CANDIDATE_MODELS = [
-  'models/gemini-2.0-flash',
-  'models/gemini-1.5-flash',
+  'models/gemini-2.5-flash',
+  'models/gemini-2.5-flash-lite',
+  'models/gemini-3.8-flash',
+  'models/gemini-flash-latest',
 ];
 
 export async function analyzeTextDirect(textInput: string): Promise<any[]> {
@@ -22,16 +24,20 @@ export async function analyzeTextDirect(textInput: string): Promise<any[]> {
   let lastErr: any = null;
 
   for (const modelPath of CANDIDATE_MODELS) {
+    const abortController = new AbortController();
+    const timeoutId = setTimeout(() => abortController.abort(), 6000);
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/${modelPath}:generateContent?key=${apiKey}`;
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal: abortController.signal,
         body: JSON.stringify({
           contents: [{ parts: [{ text: PROMPT }] }],
           generationConfig: { temperature: 0.1, maxOutputTokens: 1024 }
         })
       });
+      clearTimeout(timeoutId);
 
       if (!res.ok) {
         lastErr = new Error(`Gemini REST error ${res.status}`);
@@ -55,6 +61,7 @@ export async function analyzeTextDirect(textInput: string): Promise<any[]> {
 
       return Array.isArray(parsed) ? parsed : [parsed];
     } catch (e) {
+      clearTimeout(timeoutId);
       lastErr = e;
     }
   }
@@ -78,11 +85,14 @@ export async function analyzeImageDirect(base64Image: string, mimeType: string =
   let lastErr: any = null;
 
   for (const modelPath of CANDIDATE_MODELS) {
+    const abortController = new AbortController();
+    const timeoutId = setTimeout(() => abortController.abort(), 6000);
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/${modelPath}:generateContent?key=${apiKey}`;
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal: abortController.signal,
         body: JSON.stringify({
           contents: [{
             parts: [
@@ -93,6 +103,7 @@ export async function analyzeImageDirect(base64Image: string, mimeType: string =
           generationConfig: { temperature: 0.1, maxOutputTokens: 1024 }
         })
       });
+      clearTimeout(timeoutId);
 
       if (!res.ok) {
         lastErr = new Error(`Gemini REST error ${res.status}`);
@@ -116,6 +127,7 @@ export async function analyzeImageDirect(base64Image: string, mimeType: string =
 
       return Array.isArray(parsed) ? parsed : [parsed];
     } catch (e) {
+      clearTimeout(timeoutId);
       lastErr = e;
     }
   }

@@ -19,6 +19,25 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
 - **Hafıza Gerçeği:** Cümle pratiği ve OCR'dan gelen verilerde `'` ile `’`, `é`, `¢`, `§`, OCR kaynaklı `|` -> `I`, `1` -> `I` hataları meydana gelebilir.
 - **Kalıcı Çözüm:** `src/utils/stringUtils.ts` içerisindeki `isMatch` ve `cleanPunctuation` yardımcıları tüm modüllerde (`SentenceMode`, `LibraryPracticeScreen`, `CustomSetStudyMode`) standart olarak kullanılmalıdır.
 
+### 1.4. Orijinal Doküman Kaynakları & OCR/Gramer Düzeltmeleri
+- **Hafıza Gerçeği:** Projedeki kütüphane cümleleri `docs/resources/PratikYap/` klasöründeki orijinal Perfectionist English PDF antrenman ve cevap anahtarı kitapçıklarından taranmıştır. Bazı cümlelerde orijinal PDF basımında dizgi hataları (örn. `18. WILL HAVE BEEN Ving.pdf` sayfa 3 satır 72'de kural gereği `have been boiling` olması gerekirken orijinal PDF'te `have been boil` basılmıştır) veya tarama/OCR aşamasında ünlem/harf karışıklıkları (örn. Modal-5 satır 22'de `so! can't` -> `so I can't`, `Alt:` -> `Altı`, `galamıyorum` -> `çalamıyorum`; Aux-12 satır 65'te `kalacaoim` -> `kalacağını`) oluşabilir.
+- **Kalıcı Çözüm:** Cümle şüphelerinde doğrudan orijinal PDF sayfaları (`docs/resources/PratikYap/`) incelenmeli, hem basım kaynağındaki orijinal durum hem de doğru dilbilgisi kuralı kullanıcıya açıkça sunulmalı; `all_sentences.json` ve `libraryData.ts` dosyaları TDD testleriyle doğrulanarak düzeltilmelidir.
+
+### 1.5. Supabase Auth `initializePromise` & `onAuthStateChange` Kilitlenmesi (Circular Deadlock)
+- **Hafıza Gerçeği:** `@supabase/auth-js` (`v2.89+`) istemcisi başlatıldığında `this.initializePromise` içinde `_recoverAndRefresh()` çalışır ve yerel depolamada geçerli bir oturum varsa `await this._notifyAllSubscribers('SIGNED_IN', currentSession)` çağrılır. Eğer `supabase.auth.onAuthStateChange` içerisine doğrudan `async` bir fonksiyon verilip içeride `await wordService.getAllWords()` gibi bir Supabase sorgusu çalıştırılırsa, Supabase sorgusu token almak için `await supabase.auth.getSession()` -> `await this.initializePromise` beklerken `initializePromise` de `onAuthStateChange` callback'inin bitmesini bekler. Bu döngüsel kilitlenme (circular deadlock) sonucunda hiçbir ağ isteği çıkmaz ve ekran sonsuza dek `"SİSTEM HAZIRLANIYOR..."` ekranında asılı kalır.
+- **Kalıcı Çözüm:**
+  1. `onAuthStateChange` callback'i içinde asla doğrudan `await supabase.*` veya `await wordService.*` çağrısı yapılmaz; veri çekme işlemleri `setTimeout(..., 0)` ile auth kilit döngüsünün dışına ertelenir.
+  2. `supabaseClient.ts` içinde `navigator.locks` kilitlenmelerine karşı 3 saniye zaman aşımı korumalı `safeAuthLock` kullanılır.
+  3. `App.tsx` içerisinde `loadingSession` durumu `getSession()` tamamlanır tamamlanmaz (kelime sorgusunu beklemeden, önbellekteki kelimeleri anında göstererek) kapatılır ve 4 saniyelik emniyet zamanlayıcısı (`safetyTimer`) ile sonsuz yükleme ekranı engellenir.
+
+### 1.6. Manuel Kelime Ekleme - AI Analizi & Zaman Aşımı Koruması (AI Fill Resilience)
+- **Hafıza Gerçeği:** `WordList.tsx` içerisindeki "AI ile Tamamla" butonunda `handleAiFill` fonksiyonu `await supabase.auth.getSession()` çağrısı yaparak gereksiz yere auth kilidine takılabiliyordu. Ayrıca Tier 1 Supabase Edge Function (`analyze-image`), Tier 2 doğrudan Gemini REST çağrısı (`geminiService.ts`) ve bileşen üzerinde zaman aşımı (timeout) koruması bulunmadığı için ağ veya API aksamalarında buton kalıcı olarak `"AI ANALİZ EDİYOR..."` durumunda kilitleniyordu. Ek olarak `geminiService.ts` içindeki eski modeller (`gemini-2.0-flash`, `gemini-1.5-flash`) emekliye ayrıldığı için doğrudan çağrılar 404 dönüyordu.
+- **Kalıcı Çözüm:**
+  1. `WordList.tsx`'te gereksiz `getSession()` engeli kaldırıldı; `useRef` destekli `AbortController` ve 12 saniyelik emniyet zamanlayıcısı (`safetyTimeout`) ile unmount anında iptal koruması eklendi.
+  2. `analyzeImage.ts` içinde Tier 1 Edge Function çağrısına 7 saniyelik `Promise.race` zaman aşımı getirildi.
+  3. `geminiService.ts` içindeki model listesi güncel modellere (`gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-3.8-flash`, `gemini-flash-latest`) güncellendi ve 6 saniyelik `fetch` AbortSignal zaman aşımı eklendi.
+  4. Tier 3 `localTextParser.ts` yerel sözlüğüne "drop off" vb. popüler kalıplar eklenerek tam çevrimdışı yedekleme sağlandı.
+
 ---
 
 ## 🛡️ 2. Bellek Yönetimi & Temizlik Standartları (Memory Leaks Prevention)

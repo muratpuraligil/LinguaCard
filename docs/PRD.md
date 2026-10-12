@@ -46,12 +46,13 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - **Kaldığın Yerden Devam:** Her set için son çalışılan satırın otomatik kaydedilmesi ve scroll focus.
 
 ### 2.3. İçerik Yönetimi
-- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri. Tüm cümle setlerindeki Türkçe karakter bozulmaları (é, ¢, §, $, OCR kaymaları), İngilizce zamir boru ('|' -> 'I') ve sayı ('1' -> 'I') hataları, çapraz eşleşen cümle kaymaları (örn. Modal-11 Had Better ve Modal-12 Need çaprazlamaları) ile İngilizce zaman ve belirli tanımlık düzeltmeleri (örn: "since last night", "on the board", "The doctors") taranıp temizlenmiş; karma çalışma setlerinde (Random Mix) versiyon bazlı önbellek senkronizasyonu ve string eşleştirme normalizasyonu (`isMatch`) tam olarak sağlanmıştır.
+- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri. Tüm cümle setlerindeki Türkçe karakter bozulmaları (é, ¢, §, $, OCR kaymaları), İngilizce zamir boru ('|' -> 'I') ve sayı ('1' -> 'I') hataları, ünlem/zamir karışıklıkları (`so! can't` -> `so I can't` düzeltmesi - Modal-5 s22), çapraz eşleşen cümle kaymaları (örn. Modal-11 Had Better ve Modal-12 Need çaprazlamaları) ile İngilizce zaman, gramer ve belirli tanımlık düzeltmeleri (örn: "since last night", "on the board", "The doctors", `aux-18 s72` dilbilgisi düzeltmesi: `have been boil` -> `have been boiling`, `aux-12 s65` Türkçe OCR düzeltmesi: `kalacaoim` -> `kalacağını`) taranıp temizlenmiş; orijinal Perfectionist English PDF kaynaklarıyla doğrulanmış, karma çalışma setlerinde (Random Mix) versiyon bazlı önbellek senkronizasyonu ve string eşleştirme normalizasyonu (`isMatch`) tam olarak sağlanmıştır.
 - **Özel Cümle Setleri:** Kullanıcının kendi oluşturduğu isimlendirilmiş çalışma paketleri.
 - **Arşivleme:** Öğrenilen kelimelerin ana listeden temizlenip başarı kütüphanesine aktarılması.
 
 ### 2.4. Kullanıcı Hesabı & Auth
 - **Güvenli Kimlik Doğrulama:** Supabase Auth entegrasyonu ile E-posta/Şifre ve Google OAuth giriş yöntemleri.
+- **Kilitlenmesiz Oturum Başlatma (Deadlock-Free Auth & Safe Web Lock):** `onAuthStateChange` dinleyicisinde döngüsel `initializePromise` kilitlenmesini önlemek için veritabanı sorguları auth kilit döngüsü dışına (`setTimeout`) ayrıştırılmış, `navigator.locks` için 3 saniye zaman aşımı korumalı `safeAuthLock` ve açılış ekranı için 4 saniyelik emniyet zamanlayıcısı (`safetyTimer`) ile `"Sistem Hazırlanıyor..."` ekranında takılı kalma sorunu kalıcı olarak engellenmiştir.
 - **Şifremi Unuttum & Şifre Sıfırlama:** Kullanıcıların e-posta adresi girerek şifre sıfırlama talebinde bulunabilmesi.
 - **Türkçe Hata Mesajları:** API'den dönen auth hatalarının açıklayıcı Türkçe gösterimi.
 
@@ -77,7 +78,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Bellek Sızıntısı Önleme (Memory Leak Prevention):** Tüm bileşenlerde (`FlashcardMode`, `SentenceMode`, `QuizMode`, `LibraryPracticeScreen`, `CustomSetStudyMode`, `WordList`, `UploadModal`) unmount anında `speechSynthesis.cancel()`, `clearTimeout`, `URL.revokeObjectURL` ve event listener cleanup güvencesi.
 - **Ürün ve Arayüz Tasarımı (Product & Frontend Design):** Apple seviyesinde karanlık neon estetiği, dokunsal mikro geri bildirimler (`active:scale-95`), WCAG AA kontrast ve yönlendirici boş durum tasarımları.
 - **Hindsight Memory:** Ajan deneyimleri ve mimari kararların `docs/HINDSIGHT_MEMORY.md` üzerinden kalıcı saklanması.
-- **Test Güdümlü Geliştirme (TDD):** Yeni özellik ve hata düzeltmelerinde RED-GREEN-REFACTOR döngüsü; önce başarısız test, ardından minimal kod ve refactor disiplini.
+- **Test Güdümlü Geliştirme (TDD) & E2E Testleri:** Yeni özellik ve hata düzeltmelerinde RED-GREEN-REFACTOR döngüsü; `e2e` runner ile modern agentic ve deterministik E2E testleri (`tests/login.e2e.ts`, `tests/example.e2e.ts`). Supabase kimlik doğrulama akışı ve anasayfa yüklenme kontrolleri otomatik test güvencesi altındadır.
 - **Git Pushing:** Conventional Commits standardı ile izlenebilir sürüm kontrolü.
 
 ---

@@ -5,12 +5,38 @@ import a1WordsData from '../data/json/a1_words.json';
 const supabaseUrl = 'https://xxjfrsbcygpcksndjrzm.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4amZyc2JjeWdwY2tzbmRqcnptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYyNTc1NDQsImV4cCI6MjA4MTgzMzU0NH0.j8sFVCH1A_hbrDOMEAUHPn5-0seRK6ZtxS2KQXxRaho';
 
+const safeAuthLock = async <R>(name: string, acquireTimeout: number, fn: () => Promise<R>): Promise<R> => {
+  if (typeof navigator !== 'undefined' && navigator.locks && typeof navigator.locks.request === 'function') {
+    const timeoutMs = acquireTimeout > 0 ? acquireTimeout : 3000;
+    const abortController = new AbortController();
+    const timerId = setTimeout(() => abortController.abort(), timeoutMs);
+    try {
+      return await navigator.locks.request(
+        name,
+        acquireTimeout === 0
+          ? { mode: 'exclusive', ifAvailable: true }
+          : { mode: 'exclusive', signal: abortController.signal },
+        async () => {
+          clearTimeout(timerId);
+          return await fn();
+        }
+      );
+    } catch (err: any) {
+      clearTimeout(timerId);
+      if (acquireTimeout === 0) throw err;
+      return await fn();
+    }
+  }
+  return await fn();
+};
+
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     autoRefreshToken: true,
     persistSession: true,
     detectSessionInUrl: true,
-    flowType: 'pkce'
+    flowType: 'pkce',
+    lock: safeAuthLock
   }
 });
 

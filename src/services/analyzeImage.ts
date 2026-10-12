@@ -25,13 +25,18 @@ export async function analyzeImage(
   // Tier 1: Supabase Edge Function
   try {
     const pureBase64 = base64Image.includes(",") ? base64Image.split(",")[1] : base64Image;
-    const { data, error } = await supabase.functions.invoke('analyze-image', {
+    const edgePromise = supabase.functions.invoke('analyze-image', {
       body: {
         imageBase64: pureBase64,
         mimeType: mimeType,
         analysisType: analysisType
       }
     });
+    const timeoutPromise = new Promise<{ data: null; error: any }>((_, reject) =>
+      setTimeout(() => reject(new Error('Edge Function image analysis timeout (7s)')), 7000)
+    );
+
+    const { data, error } = await Promise.race([edgePromise, timeoutPromise]);
 
     if (!error && data) {
       const rawList = data.word ? (Array.isArray(data.word) ? data.word : [data.word]) : (Array.isArray(data) ? data : []);
@@ -66,14 +71,19 @@ export async function analyzeText(
   session: any,
   signal?: AbortSignal
 ) {
-  // Tier 1: Supabase Edge Function
+  // Tier 1: Supabase Edge Function with 7s timeout
   try {
-    const { data, error } = await supabase.functions.invoke('analyze-image', {
+    const edgePromise = supabase.functions.invoke('analyze-image', {
       body: {
         textInput: text,
         analysisType: 'text'
       }
     });
+    const timeoutPromise = new Promise<{ data: null; error: any }>((_, reject) =>
+      setTimeout(() => reject(new Error('Edge Function text analysis timeout (7s)')), 7000)
+    );
+
+    const { data, error } = await Promise.race([edgePromise, timeoutPromise]);
 
     if (!error && data) {
       const rawList = data.word ? (Array.isArray(data.word) ? data.word : [data.word]) : (Array.isArray(data) ? data : []);

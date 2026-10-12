@@ -113,35 +113,74 @@ export default function App() {
   }, [selectedLibraryLevel, flashcardStudyMode, mode]);
 
   useEffect(() => {
+    let isMounted = true;
+    let deferredTimer: ReturnType<typeof setTimeout> | null = null;
+    const safetyTimer = setTimeout(() => {
+      if (isMounted) setLoadingSession(false);
+    }, 4000);
+
+    const loadUserWords = async (userId: string) => {
+      const cached = wordService.getCachedWords();
+      if (isMounted && cached.length > 0) {
+        setWords(cached);
+      }
+      try {
+        const userWords = await wordService.getAllWords(userId);
+        if (isMounted) {
+          setWords(userWords || []);
+        }
+      } catch (e) {
+        console.error("Words fetch error:", e);
+      }
+    };
+
     const fetchSessionAndWords = async () => {
       try {
         const { data: { session: currentSession } } = await supabase.auth.getSession();
+        if (!isMounted) return;
         setSession(currentSession);
-        
+        setLoadingSession(false);
+        clearTimeout(safetyTimer);
+
         if (currentSession?.user) {
-          const userWords = await wordService.getAllWords(currentSession.user.id);
-          setWords(userWords || []);
+          await loadUserWords(currentSession.user.id);
         }
       } catch (e) {
         console.error("Session/Words initialization error:", e);
       } finally {
-        setLoadingSession(false);
+        if (isMounted) {
+          setLoadingSession(false);
+        }
+        clearTimeout(safetyTimer);
       }
     };
 
     fetchSessionAndWords();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      setSession(session);
-      if (session?.user) {
-        const userWords = await wordService.getAllWords(session.user.id);
-        setWords(userWords || []);
-      } else {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, currentSession) => {
+      if (!isMounted) return;
+      setSession(currentSession);
+      setLoadingSession(false);
+      if (event === 'SIGNED_OUT' || !currentSession?.user) {
         setWords([]);
+        return;
+      }
+      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') {
+        if (deferredTimer) clearTimeout(deferredTimer);
+        deferredTimer = setTimeout(() => {
+          if (isMounted && currentSession?.user) {
+            loadUserWords(currentSession.user.id);
+          }
+        }, 0);
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      isMounted = false;
+      clearTimeout(safetyTimer);
+      if (deferredTimer) clearTimeout(deferredTimer);
+      subscription.unsubscribe();
+    };
   }, []);
 
   // Track offset for sequential study (Flashcards/Quiz/Sentences)
