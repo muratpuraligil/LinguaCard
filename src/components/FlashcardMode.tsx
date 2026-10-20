@@ -26,6 +26,7 @@ interface FlashcardModeProps {
     words: Word[];
     studyMode: FlashcardStudyMode;
     selectedLevel: LibraryLevel;
+    isLoading?: boolean;
     onLevelChange: (level: LibraryLevel) => void;
     onOpenModeSelection: () => void;
     onExit: () => void;
@@ -42,6 +43,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     words,
     studyMode,
     selectedLevel,
+    isLoading = false,
     onLevelChange,
     onOpenModeSelection,
     onExit,
@@ -365,6 +367,8 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     }
 
     const isFrontTR = direction === LanguageDirection.TR_EN;
+    const isLevelTransitioning = studyMode === 'LIBRARY' && words.length > 0 && !words.some(w => !w.set_name || w.set_name.toUpperCase() === selectedLevel.toUpperCase());
+    const isLevelLoading = Boolean(isLoading) || isLevelTransitioning;
 
     return (
         <div className="min-h-screen bg-black flex flex-col text-white font-['Plus_Jakarta_Sans']">
@@ -416,8 +420,20 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                 )}
             </div>
 
-            {/* If no currentWord (empty level state) */}
-            {!currentWord ? (
+            {/* Loading / Transition State - Guard against flickering empty state during tab switches */}
+            {isLevelLoading ? (
+                <div className="flex-1 flex flex-col items-center justify-center p-6 w-full max-w-md mx-auto text-center">
+                    <div className="bg-zinc-900 border border-white/5 p-8 md:p-10 rounded-[40px] w-full max-w-sm flex flex-col items-center justify-center min-h-[280px] shadow-2xl">
+                        <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4">
+                            <BookOpen size={28} className="text-blue-400 animate-pulse" />
+                        </div>
+                        <h3 className="text-xl font-black text-white mb-2">Yükleniyor...</h3>
+                        <p className="text-slate-400 text-xs font-bold">
+                            {selectedLevel} seviyesi kelimeleri hazırlanıyor
+                        </p>
+                    </div>
+                </div>
+            ) : !currentWord ? (
                 <div className="flex-1 flex flex-col items-center justify-center p-6 w-full max-w-md mx-auto text-center">
                     <div className="bg-zinc-900 border border-white/10 p-8 md:p-10 rounded-[40px] w-full shadow-2xl">
                         <BookOpen size={56} className="text-blue-500 mx-auto mb-4 animate-pulse" />

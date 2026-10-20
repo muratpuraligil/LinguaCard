@@ -69,6 +69,7 @@ export default function App() {
   const [flashcardStudyMode, setFlashcardStudyMode] = useState<FlashcardStudyMode>('USER_WORDS');
   const [selectedLibraryLevel, setSelectedLibraryLevel] = useState<LibraryLevel>('A1');
   const [libraryWords, setLibraryWords] = useState<Word[]>(() => a1WordsData as Word[]);
+  const [isLibraryLoading, setIsLibraryLoading] = useState(false);
   const [activeCustomSet, setActiveCustomSet] = useState<Word[]>([]);
   const [pendingSetName, setPendingSetName] = useState<string | null>(null);
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
@@ -98,11 +99,33 @@ export default function App() {
   }, []);
 
   const loadLibraryWords = async (level: LibraryLevel = selectedLibraryLevel) => {
+    const local = wordService.getLocalLibraryWords(level);
+    if (local && local.length > 0) {
+      setLibraryWords(local);
+      setIsLibraryLoading(false);
+      return;
+    }
+    setIsLibraryLoading(true);
     try {
       const fetched = await wordService.getLibraryWords(level);
-      setLibraryWords(fetched);
+      setLibraryWords(fetched || []);
     } catch (e) {
       console.error("Error loading library words:", e);
+    } finally {
+      setIsLibraryLoading(false);
+    }
+  };
+
+  const handleLevelChange = (lvl: LibraryLevel) => {
+    setSelectedLibraryLevel(lvl);
+    const local = wordService.getLocalLibraryWords(lvl);
+    if (local && local.length > 0) {
+      setLibraryWords(local);
+      setIsLibraryLoading(false);
+    } else {
+      setIsLibraryLoading(true);
+      setLibraryWords([]);
+      loadLibraryWords(lvl);
     }
   };
 
@@ -454,10 +477,8 @@ export default function App() {
             words={flashcardStudyMode === 'LIBRARY' ? libraryWords : words}
             studyMode={flashcardStudyMode}
             selectedLevel={selectedLibraryLevel}
-            onLevelChange={(lvl) => {
-              setSelectedLibraryLevel(lvl);
-              loadLibraryWords(lvl);
-            }}
+            isLoading={flashcardStudyMode === 'LIBRARY' ? isLibraryLoading : false}
+            onLevelChange={handleLevelChange}
             onOpenModeSelection={() => setShowFlashcardSelection(true)}
             onExit={() => setMode(AppMode.HOME)}
             onNextSet={handleNextSet}
@@ -615,7 +636,7 @@ export default function App() {
             setFlashcardStudyMode('LIBRARY');
             setSelectedLibraryLevel('A1');
             setShowFlashcardSelection(false);
-            loadLibraryWords('A1');
+            handleLevelChange('A1');
             setMode(AppMode.FLASHCARDS);
           }}
         />

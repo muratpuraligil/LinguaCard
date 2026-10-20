@@ -132,25 +132,17 @@ export const wordService = {
     return getLocalWords();
   },
 
+  getLocalLibraryWords(level: string = 'A1'): Word[] {
+    const targetLevel = (level || 'A1').toUpperCase().trim();
+    return localLibraryBundles[targetLevel] || [];
+  },
+
   async getLibraryWords(level: string = 'A1'): Promise<Word[]> {
     const targetLevel = (level || 'A1').toUpperCase().trim();
     const localBundle = localLibraryBundles[targetLevel];
 
-    // If level has local bundle, check it for instant loading & fallback
+    // If level has local bundle, return it instantly to avoid network round-trip delay
     if (localBundle && Array.isArray(localBundle) && localBundle.length > 0) {
-      try {
-        const { data, error } = await supabase
-          .from('words')
-          .select('*')
-          .is('user_id', null)
-          .eq('set_name', targetLevel);
-
-        if (!error && data && data.length > 0) {
-          return data.map(mapDbToApp);
-        }
-      } catch (e) {
-        console.warn(`Supabase library fetch error, returning local ${targetLevel} bundle:`, e);
-      }
       return localBundle;
     }
 
