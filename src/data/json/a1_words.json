@@ -26,7 +26,7 @@
   {
     "id": "a1-lib-3",
     "english": "Blog",
-    "turkish": "Blog, Web günlüğü",
+    "turkish": "Web günlüğü",
     "example_sentence": "",
     "turkish_sentence": "",
     "word_type": "Noun",
@@ -62,7 +62,7 @@
   {
     "id": "a1-lib-6",
     "english": "Cell",
-    "turkish": "Hücre, Cep telefonu",
+    "turkish": "Hücre",
     "example_sentence": "",
     "turkish_sentence": "",
     "word_type": "Noun",

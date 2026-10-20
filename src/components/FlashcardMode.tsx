@@ -97,12 +97,12 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
     const sortedWords = useMemo(() => {
         if (studyMode === 'LIBRARY') {
-            return words;
+            return words.filter(w => !w.set_name || w.set_name.toUpperCase() === selectedLevel.toUpperCase());
         }
         return [...words]
             .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
             .sort((a, b) => new Date(b.created_at || 0).getTime() - new Date(a.created_at || 0).getTime());
-    }, [words, studyMode]);
+    }, [words, studyMode, selectedLevel]);
 
     const totalSets = Math.max(1, Math.ceil(sortedWords.length / FLASHCARD_SET_SIZE));
 
@@ -113,8 +113,9 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                 .filter((w): w is Word => !!w);
             if (mapped.length > 0) return mapped;
         }
-        return sortedWords.slice(0, FLASHCARD_SET_SIZE);
-    }, [activeIds, sortedWords]);
+        const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
+        return sortedWords.slice(setStart, setStart + FLASHCARD_SET_SIZE);
+    }, [activeIds, sortedWords, currentSetNum]);
 
     const prevConfigRef = React.useRef({ studyMode, selectedLevel, currentSetNum });
 
@@ -179,8 +180,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         const setWords = sortedWords.slice(setStart, setEnd);
 
         if (setWords.length > 0) {
-            const shuffled = [...setWords].sort(() => Math.random() - 0.5);
-            const newIds = shuffled.map(w => w.id);
+            const newIds = setWords.map(w => w.id);
             localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(newIds));
             setActiveIds(newIds);
         }
@@ -459,7 +459,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             ) : (
                 <>
                     {/* Set Progress Bar */}
-                    <div className="w-full max-w-sm mx-auto px-6 mb-2 mt-1">
+                    <div className="w-full max-w-[340px] sm:max-w-sm mx-auto px-6 mb-1.5 mt-0.5">
                         <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1.5">
                             <span>İlerleyen: {currentIndex + 1} / {currentSet.length}</span>
                             <span>SET {currentSetNum} / {totalSets}</span>
@@ -473,12 +473,12 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                     </div>
 
                     {/* Main Flashcard */}
-                    <div className="flex-1 flex flex-col items-center justify-center p-4 w-full max-w-sm mx-auto relative">
-                        <div className="w-full aspect-[4/5.6] cursor-pointer perspective-1000 group" onClick={() => setIsFlipped(!isFlipped)}>
+                    <div className="flex-1 flex flex-col items-center justify-center px-4 py-1 w-full max-w-[340px] sm:max-w-[360px] mx-auto relative">
+                        <div className="w-full aspect-[4/4.8] max-h-[46vh] min-h-[290px] cursor-pointer perspective-1000 group" onClick={() => setIsFlipped(!isFlipped)}>
                             <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
 
                                 {/* ÖN YÜZ */}
-                                <div className={`absolute inset-0 backface-hidden rounded-[40px] flex flex-col items-center justify-between p-7 shadow-2xl ${isFrontTR ? 'bg-zinc-900 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
+                                <div className={`absolute inset-0 backface-hidden rounded-[32px] sm:rounded-[40px] flex flex-col items-center justify-between p-5 sm:p-6 shadow-2xl ${isFrontTR ? 'bg-zinc-900 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
                                     <div className="w-full flex items-center justify-between">
                                         <span className={`font-black uppercase tracking-[0.2em] text-[10px] ${isFrontTR ? 'text-slate-500' : 'text-black/50'}`}>
                                             {isFrontTR ? 'TURKISH' : 'ENGLISH'}
@@ -498,35 +498,35 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                         {!isFrontTR && (
                                             <button
                                                 onClick={(e) => speak(e, currentWord.english, 'en-US')}
-                                                className="mb-2 p-3 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
+                                                className="mb-1.5 p-2.5 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
                                             >
-                                                <Volume2 size={26} />
+                                                <Volume2 size={24} />
                                             </button>
                                         )}
-                                        <h2 className="text-3xl md:text-4xl font-black text-center mb-3 tracking-tight leading-tight">{isFrontTR ? currentWord.turkish : currentWord.english}</h2>
+                                        <h2 className="text-2xl sm:text-3xl font-black text-center mb-2 tracking-tight leading-snug">{isFrontTR ? currentWord.turkish : currentWord.english}</h2>
 
                                         {currentWord.category && (
-                                            <span className={`text-[11px] font-bold px-3 py-1 rounded-full mb-3 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-zinc-800 text-blue-300' : 'bg-black/10 text-black/80'}`}>
+                                            <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-2 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-zinc-800 text-blue-300' : 'bg-black/10 text-black/80'}`}>
                                                 <Tag size={10} /> {currentWord.category}
                                             </span>
                                         )}
 
                                         {(isFrontTR ? currentWord.turkish_sentence : currentWord.example_sentence) && (
-                                            <p className="text-center text-xs font-bold italic px-3 leading-relaxed opacity-75">
+                                            <p className="text-center text-xs font-bold italic px-2 leading-relaxed opacity-75 line-clamp-2">
                                                 "{isFrontTR ? currentWord.turkish_sentence : currentWord.example_sentence}"
                                             </p>
                                         )}
                                     </div>
 
-                                    <div className="w-full flex flex-col items-center gap-3">
-                                        <span className={`text-[10px] font-black tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/50'}`}>
+                                    <div className="w-full flex flex-col items-center gap-2.5">
+                                        <span className={`text-[9px] font-black tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/50'}`}>
                                             ÇEVİRİ İÇİN TIKLA
                                         </span>
 
                                         <div className="flex items-center justify-center gap-2 w-full">
                                             <button
                                                 onClick={(e) => handleSetProgressStatus(e, 'known')}
-                                                className={`px-3 py-2 rounded-xl font-black text-[9px] uppercase tracking-wider flex items-center gap-1.5 transition-all active:scale-95 ${
+                                                className={`px-3 py-1.5 rounded-xl font-black text-[9px] uppercase tracking-wider flex items-center gap-1.5 transition-all active:scale-95 ${
                                                     userProgressMap[currentWord.id] === 'known'
                                                         ? 'bg-emerald-500 text-white shadow-lg'
                                                         : isFrontTR ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white' : 'bg-black/10 text-black border border-black/10 hover:bg-black hover:text-white'
@@ -539,7 +539,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                 </div>
 
                                 {/* ARKA YÜZ */}
-                                <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[40px] flex flex-col items-center justify-between p-7 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-900 text-white border-2 border-zinc-800'}`}>
+                                <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[32px] sm:rounded-[40px] flex flex-col items-center justify-between p-5 sm:p-6 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-900 text-white border-2 border-zinc-800'}`}>
                                     <div className="w-full flex items-center justify-between">
                                         <span className={`font-black uppercase tracking-[0.2em] text-[10px] ${isFrontTR ? 'text-black/50' : 'text-slate-500'}`}>
                                             {isFrontTR ? 'ENGLISH' : 'TURKISH'}
@@ -555,35 +555,35 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                         {isFrontTR && (
                                             <button
                                                 onClick={(e) => speak(e, currentWord.english, 'en-US')}
-                                                className="mb-2 p-3 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
+                                                className="mb-1.5 p-2.5 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
                                             >
-                                                <Volume2 size={26} />
+                                                <Volume2 size={24} />
                                             </button>
                                         )}
-                                        <h2 className="text-3xl md:text-4xl font-black text-center mb-3 tracking-tight leading-tight">{isFrontTR ? currentWord.english : currentWord.turkish}</h2>
+                                        <h2 className="text-2xl sm:text-3xl font-black text-center mb-2 tracking-tight leading-snug">{isFrontTR ? currentWord.english : currentWord.turkish}</h2>
 
                                         {currentWord.category && (
-                                            <span className={`text-[11px] font-bold px-3 py-1 rounded-full mb-3 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-black/10 text-black/80' : 'bg-zinc-800 text-blue-300'}`}>
+                                            <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-2 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-black/10 text-black/80' : 'bg-zinc-800 text-blue-300'}`}>
                                                 <Tag size={10} /> {currentWord.category}
                                             </span>
                                         )}
 
                                         {(isFrontTR ? currentWord.example_sentence : currentWord.turkish_sentence) && (
-                                            <p className="text-center text-xs font-bold italic px-3 leading-relaxed opacity-75">
+                                            <p className="text-center text-xs font-bold italic px-2 leading-relaxed opacity-75 line-clamp-2">
                                                 "{isFrontTR ? currentWord.example_sentence : currentWord.turkish_sentence}"
                                             </p>
                                         )}
                                     </div>
 
-                                    <div className="w-full flex flex-col items-center gap-3">
-                                        <span className={`text-[10px] font-black tracking-widest animate-blink ${isFrontTR ? 'text-black/50' : 'text-blue-400'}`}>
+                                    <div className="w-full flex flex-col items-center gap-2.5">
+                                        <span className={`text-[9px] font-black tracking-widest animate-blink ${isFrontTR ? 'text-black/50' : 'text-blue-400'}`}>
                                             KELİMEYE DÖN
                                         </span>
 
                                         <div className="flex items-center justify-center gap-2 w-full">
                                             <button
                                                 onClick={(e) => handleSetProgressStatus(e, 'known')}
-                                                className={`px-3 py-2 rounded-xl font-black text-[9px] uppercase tracking-wider flex items-center gap-1.5 transition-all active:scale-95 ${
+                                                className={`px-3 py-1.5 rounded-xl font-black text-[9px] uppercase tracking-wider flex items-center gap-1.5 transition-all active:scale-95 ${
                                                     userProgressMap[currentWord.id] === 'known'
                                                         ? 'bg-emerald-500 text-white shadow-lg'
                                                         : isFrontTR ? 'bg-black/10 text-black border border-black/10 hover:bg-black hover:text-white' : 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white'
@@ -598,28 +598,28 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         </div>
 
                         {/* Navigation Controls */}
-                        <div className="mt-6 w-full flex justify-center items-center gap-4">
+                        <div className="mt-3 sm:mt-4 w-full flex justify-center items-center gap-3">
                             {currentIndex > 0 ? (
                                 <>
                                     <button
                                         onClick={handlePrev}
-                                        className="flex items-center justify-center w-12 h-12 rounded-2xl bg-zinc-900 text-slate-400 hover:text-white border border-white/5 transition-all active:scale-90 shadow-xl"
+                                        className="flex items-center justify-center w-11 h-11 rounded-xl bg-zinc-900 text-slate-400 hover:text-white border border-white/5 transition-all active:scale-90 shadow-xl"
                                     >
-                                        <ChevronLeft size={22} />
+                                        <ChevronLeft size={20} />
                                     </button>
                                     <button
                                         onClick={handleNext}
-                                        className="px-8 py-3.5 bg-white text-black rounded-2xl font-black text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5 min-w-[140px]"
+                                        className="px-6 py-2.5 sm:py-3 bg-white text-black rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5 min-w-[130px]"
                                     >
-                                        Sıradaki <ChevronRight size={18} />
+                                        Sıradaki <ChevronRight size={16} />
                                     </button>
                                 </>
                             ) : (
                                 <button
                                     onClick={handleNext}
-                                    className="w-full max-w-[200px] py-3.5 bg-white text-black rounded-2xl font-black text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5"
+                                    className="w-full max-w-[180px] sm:max-w-[200px] py-2.5 sm:py-3 bg-white text-black rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5"
                                 >
-                                    Sıradaki <ChevronRight size={18} />
+                                    Sıradaki <ChevronRight size={16} />
                                 </button>
                             )}
                         </div>
