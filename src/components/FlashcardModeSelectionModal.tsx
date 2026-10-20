@@ -32,6 +32,19 @@ const FlashcardModeSelectionModal: React.FC<FlashcardModeSelectionModalProps> = 
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <button
+            onClick={onSelectLibrary}
+            className="p-8 bg-emerald-600/10 hover:bg-emerald-600 hover:text-white text-emerald-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-emerald-500/20 text-center"
+          >
+            <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all">
+              <BookOpen size={32} strokeWidth={2.5} />
+            </div>
+            <div>
+              <span className="block font-black text-xl mb-1">Kütüphaneden Çalış</span>
+              <span className="text-sm font-bold opacity-70">Ortak alan; A1–C2 seviye kelime setleri.</span>
+            </div>
+          </button>
+
+          <button
             onClick={onSelectUserWords}
             className="p-8 bg-purple-600/10 hover:bg-purple-600 hover:text-white text-purple-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-purple-500/20 text-center"
           >
@@ -54,19 +67,6 @@ const FlashcardModeSelectionModal: React.FC<FlashcardModeSelectionModalProps> = 
             <div>
               <span className="block font-black text-xl mb-1">Yeni Kelimelerle Çalış</span>
               <span className="text-sm font-bold opacity-70">AI destekli; resim veya metinle kelime ekleme.</span>
-            </div>
-          </button>
-
-          <button
-            onClick={onSelectLibrary}
-            className="p-8 bg-emerald-600/10 hover:bg-emerald-600 hover:text-white text-emerald-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-emerald-500/20 text-center"
-          >
-            <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all">
-              <BookOpen size={32} strokeWidth={2.5} />
-            </div>
-            <div>
-              <span className="block font-black text-xl mb-1">Kütüphaneden Çalış</span>
-              <span className="text-sm font-bold opacity-70">Ortak alan; A1-C2 seviye kelime setleri.</span>
             </div>
           </button>
         </div>
