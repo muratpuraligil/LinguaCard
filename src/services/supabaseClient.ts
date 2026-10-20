@@ -1,6 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
 import { Word, WordProgressStatus, UserWordProgress } from '../types';
 import a1WordsData from '../data/json/a1_words.json';
+import a2WordsData from '../data/json/a2_words.json';
+import b1WordsData from '../data/json/b1_words.json';
+import b2WordsData from '../data/json/b2_words.json';
+
+const localLibraryBundles: Record<string, Word[]> = {
+  A1: a1WordsData as Word[],
+  A2: a2WordsData as Word[],
+  B1: b1WordsData as Word[],
+  B2: b2WordsData as Word[]
+};
 
 const supabaseUrl = 'https://xxjfrsbcygpcksndjrzm.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4amZyc2JjeWdwY2tzbmRqcnptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYyNTc1NDQsImV4cCI6MjA4MTgzMzU0NH0.j8sFVCH1A_hbrDOMEAUHPn5-0seRK6ZtxS2KQXxRaho';
@@ -124,24 +134,24 @@ export const wordService = {
 
   async getLibraryWords(level: string = 'A1'): Promise<Word[]> {
     const targetLevel = (level || 'A1').toUpperCase().trim();
+    const localBundle = localLibraryBundles[targetLevel];
 
-    // If level is A1, check local bundle first for instant loading
-    if (targetLevel === 'A1' && Array.isArray(a1WordsData) && a1WordsData.length > 0) {
-      // Background sync check with Supabase DB
+    // If level has local bundle, check it for instant loading & fallback
+    if (localBundle && Array.isArray(localBundle) && localBundle.length > 0) {
       try {
         const { data, error } = await supabase
           .from('words')
           .select('*')
           .is('user_id', null)
-          .eq('set_name', 'A1');
+          .eq('set_name', targetLevel);
 
         if (!error && data && data.length > 0) {
           return data.map(mapDbToApp);
         }
       } catch (e) {
-        console.warn("Supabase library fetch error, returning local A1 bundle:", e);
+        console.warn(`Supabase library fetch error, returning local ${targetLevel} bundle:`, e);
       }
-      return a1WordsData as Word[];
+      return localBundle;
     }
 
     try {

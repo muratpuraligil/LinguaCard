@@ -19,11 +19,11 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 
 ### 2.2. Öğrenme ve Pratik Modülleri
 
-- **Flaşkartlar (Flashcards - Moda Dayalı Çalışma & A1 Entegrasyonu):** 
+- **Flaşkartlar (Flashcards - Moda Dayalı Çalışma & A1-B2 Kütüphane Entegrasyonu):** 
     - **3 Farklı Çalışma Modu (Mode Selector):**
       1. **Listendeki Kelimelerle Çalış (Bireysel Alan):** Kullanıcının kendi eklediği veya oluşturduğu kişisel kelimelerle çalışması (`words.user_id = auth.uid()`).
       2. **Yeni Kelimelerle Çalış (AI Destekli Alan):** Resim yükleme (OCR) veya metin yapıştırma ile AI destekli yeni kelimeler oluşturma ortamı. Üretilen kelimeler kullanıcının kendi `user_id` değeri ile veritabanına kaydedilir ve doğrudan kart çalışmasına yönlendirilir.
-      3. **Kütüphaneden Çalış (Ortak Alan):** Tüm kullanıcıların erişebildiği global kelime kütüphanesi (`words.user_id IS NULL`). A1-1000 seviye seti dahil edilmiş olup, üst kısımda yer alan seviye seçici tabs/dropdown (A1, A2, B1, B2, C1, C2) ile seviyeler arası geçiş yapılır.
+      3. **Kütüphaneden Çalış (Ortak Alan):** Tüm kullanıcıların erişebildiği global kelime kütüphanesi (`words.user_id IS NULL`). A1-1000, A2-1000, B1-1000 ve B2-1000 seviye setleri (her biri 1.000+ kelime, toplam 4.100+ CEFR uyumlu kelime) sisteme dahil edilmiş olup; hem `docs/` klasöründe Excel (`.xlsx`) kaynakları hem de `src/data/json/` paketleri olarak entegre edilmiştir. Üst kısımda yer alan seviye seçici sekmeler (A1, A2, B1, B2, C1, C2) ile seviyeler arası akıcı geçiş sağlanır.
     - **Kategori ve Tür Rozetleri:** Kartların ön ve arka yüzlerinde kelimenin kategorisi (`category` - Örn: "Travel and Transport") ve kelime türü (`word_type` - Örn: "Noun", "Verb") rozet olarak şık bir tasarımla sunulur.
     - **İlerleme Takibi (User Progress):** Çalışma esnasında "Öğrendim / Öğrenmedim / Biliyorum" durumları Supabase `user_progress` tablosuna (`word_id, user_id, status, module='flashcards'`) ve yerel hafızaya kaydedilir. "Öğrendim" butonuna basıldığında kelime arşivlenir ve aktif setteki kart sırası başa dönmeden kullanıcının kaldığı indeksten sıradaki kartla akıcı şekilde devam eder.
     - **Kaldığın Yerden Devam (Persistent Progress):** Aktif set numarası (`lingua_flashcard_set_num_{mode}_{level}`), aktif set ID listesi (`lingua_flashcard_active_ids_{mode}_{level}`) ve kullanıcının kaldığı kart sırası (`lingua_flashcard_current_index_{mode}_{level}`) yerel depolamada saklanır. Kullanıcı çalışma esnasında Ana Sayfa'ya dönüp tekrar karta girdiğinde en baştan başlamak yerine kaldığı karttan kesintisiz devam eder.
@@ -68,7 +68,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 
 ## 4. Teknik Altyapı
 - **Frontend:** React 19 + Vite (Performance-first).
-- **Veritabanı & Auth:** Supabase (Real-time data, RLS & secure authentication).
+- **Veritabanı & Auth:** Supabase (Real-time data, RLS & secure authentication). 30 Ekim 2026 Supabase PostgREST güvenlik güncellemesi gereğince tüm public tablolar (`words`, `user_progress`) için `anon`, `authenticated` ve `service_role` rolleri açık `GRANT` direktifleriyle güvenceye alınmıştır.
 - **Veri Şeması:** `words` (`category`, `word_type`, `set_name`, `user_id`), `user_progress` (`word_id`, `user_id`, `status`, `module`).
 - **Yapay Zeka:** Google Gemini AI (Google Generative AI SDK).
 - **Dosya İşleme:** Offscreen Canvas + Base64 Pipeline.
@@ -97,6 +97,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ---
 
 ## 7. Gelecek Yol Haritası (Roadmap)
-- [ ] **A2-C2 Kelime Setlerinin Tamamlanması:** A2, B1, B2, C1, C2 seviye verilerinin kütüphaneye aktarılması.
+- [x] **A2-B2 Kelime Setlerinin Tamamlanması:** A2-1000, B1-1000 ve B2-1000 seviye verilerinin hazırlanması, docs klasörüne Excel (`.xlsx`) olarak eklenmesi ve kütüphaneye entegrasyonu tamamlandı.
+- [ ] **C1-C2 Kelime Setlerinin Tamamlanması:** C1 ve C2 seviye verilerinin kütüphaneye aktarılması.
 - [ ] **Aralıklı Tekrar (Spaced Repetition):** Unutma eğrisine göre kart hatırlatma.
 - [ ] **Mobil Native Uygulama:** iOS ve Android sürümleri.

@@ -1,0 +1,6212 @@
+[
+  [
+    "Abolish",
+    "Yürürlükten kaldırmak, feshetmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Abuse",
+    "Kötüye kullanmak, suistimal",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Accelerate",
+    "Hızlandırmak, ivme kazandırmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Accessible",
+    "Erişilebilir, ulaşılabilir",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Accommodate",
+    "Barındırmak, intibak ettirmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Accountability",
+    "Hesap verebilirlik, sorumluluk",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Accuracy",
+    "Doğruluk, hassasiyet",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Accusation",
+    "İtham, suçlama",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Acquisition",
+    "Edinim, şirket satın alımı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Activate",
+    "Etkinleştirmek, faaliyete geçirmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Acute",
+    "Şiddetli, keskin, dar açı",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Administer",
+    "Yönetmek, idare etmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Administration",
+    "İdare, yönetim organı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Administrative",
+    "İdari, yönetsel",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Adolescent",
+    "Ergen, delikanlı",
+    "Noun / Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Adverse",
+    "Olumsuz, aleyhte olan",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Advocate",
+    "Savunmak, taraftarı olmak, avukat",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Aesthetic",
+    "Estetik, güzellik algısı",
+    "Adjective / Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Affiliate",
+    "Bağlı kuruluş, iştirak etmek",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Affluent",
+    "Varlıklı, zengin, refah içinde",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Aggregate",
+    "Toplam, küme, toplamak",
+    "Noun / Adjective / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Agitate",
+    "Kışkırtmak, çalkalamak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Agony",
+    "Can çekişme, büyük acı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Allege",
+    "İddia etmek, ileri sürmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Allegation",
+    "İddia, isnat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Alleged",
+    "İddia edilen, sözde",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Allocate",
+    "Tahsis etmek, pay etmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Allocation",
+    "Tahsisat, ödenek",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Allowance",
+    "Harçlık, tahsisat, pay",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Ally",
+    "Müttefik, ittifak kurmak",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Alteration",
+    "Değişiklik, tadilat",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Altitude",
+    "Rakım, irtifa",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Ambiguity",
+    "Belirsizlik, muğlaklık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Ambiguous",
+    "Muğlak, iki anlamlı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Amend",
+    "Yasa maddesini değiştirmek, ıslah etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Amendment",
+    "Yasa değişikliği, tadil",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Ample",
+    "Bol, kafi derecede geniş",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Analogy",
+    "Andırma, analoji, kıyas",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Anchor",
+    "Demir atmak, çıpa, ana sunucu",
+    "Noun / Verb",
+    "Leisure and Media"
+  ],
+  [
+    "Anomaly",
+    "Anomali, kuraldışılık",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Anticipation",
+    "Beklenti, merakla bekleme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Applicable",
+    "Uygulanabilir, geçerli",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Appraisal",
+    "Değer takdiri, kıymet biçme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Apprehend",
+    "Yakalayarak tutuklamak, kavramak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Apprehension",
+    "Endişe, tutuklama, sezgi",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Aptitude",
+    "Yetenek, kabiliyet, meyil",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Arbitrary",
+    "Keyfi, rastlantısal",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Archive",
+    "Arşiv, arşivlemek",
+    "Noun / Verb",
+    "Documents and Texts"
+  ],
+  [
+    "Arduous",
+    "Çetin, meşakkatli",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Arguable",
+    "Tartışılabilir, iddia edilebilir",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Aristocracy",
+    "Aristokrasi, soylular sınıfı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Arouse",
+    "Uyandırmak, harekete geçirmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Array",
+    "Geniş dizi, saf, sıralamak",
+    "Noun / Verb",
+    "Science and Research"
+  ],
+  [
+    "Articulate",
+    "Meramını iyi anlatan, telaffuz etmek",
+    "Adjective / Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Artifact",
+    "Tarihi eser, insan yapımı nesne",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Ascend",
+    "Yukarı çıkmak, yükselmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Aspiration",
+    "Büyük amaç, emel",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Aspire",
+    "Heves etmek, can atmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Assault",
+    "Saldırı, hücum etmek",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Assemble",
+    "Toplanmak, monte etmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Assembly",
+    "Meclis, montaj hattı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Assert",
+    "İddia etmek, hakkını savunmak",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Assertion",
+    "İddia, sav",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Asset",
+    "Varlık, aktif, değerli nitelik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Assimilate",
+    "Özümsemek, benzeştirmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Assortment",
+    "Çeşitlilik, garnitür",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Assurance",
+    "Güvence, teminat",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Astonish",
+    "Hayrete düşürmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Asylum",
+    "Sığınma hakkı, iltica",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Atrocity",
+    "Vahşet, gaddarlık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Attain",
+    "Elde etmek, erişmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Attainment",
+    "Kazanım, erişme",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Authenticate",
+    "Kimliğini doğrulamak, tasdik etmek",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Authorize",
+    "Yetkilendirmek, izin vermek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Autonomous",
+    "Özerk, otonom",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Autonomy",
+    "Özerklik, muhtariyet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Aversion",
+    "Nefret, tiksinti",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Avert",
+    "Önlemek, başka yöne çevirmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Avid",
+    "Hırslı, istekli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Backlash",
+    "Ters tepki, şiddetli itiraz",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Bail",
+    "Kefalet, kefaletle serbest bırakmak",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Barrier",
+    "Engel, bariyer",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Benchmark",
+    "Kriter, kıyaslama noktası",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Beneficiary",
+    "Hak sahibi, lehtar",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Benevolent",
+    "Hayırsever, iyilik dolu",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Bias",
+    "Önyargı, taraflılık",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Biased",
+    "Önyargılı, taraflı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Blueprint",
+    "Taslak plan, mimari proje",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Blunt",
+    "Kör (bıçak), patavatsız",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Boast",
+    "Böbürlenmek, övünmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Bold",
+    "Cesur, cüretkar, kalın yazı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Boom",
+    "Patlama, ekonomik canlanma",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Boost",
+    "Artırmak, yukarı itmek",
+    "Verb / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Breach",
+    "İhlal etmek, gedik açmak",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Breakdown",
+    "Arıza, çöküş, döküm",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Breakthrough",
+    "Çığır açan gelişme",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Breed",
+    "Üremek, yetiştirmek, cins",
+    "Verb / Noun",
+    "Science and Research"
+  ],
+  [
+    "Brevity",
+    "Kısalık, özlülük",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Broaden",
+    "Genişletmek, ufkunu açmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Buffer",
+    "Tampon bölge, amortisör",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Bureaucracy",
+    "Bürokrasi, kırtasiyecilik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Capitalize",
+    "Sermayeye çevirmek, fırsattan yararlanmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Catalyst",
+    "Katalizör, tetikleyici unsur",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Catastrophe",
+    "Büyük felaket, yıkım",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Cease",
+    "Durdurmak, son vermek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Censure",
+    "Kınama, şiddetle yermek",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Chaos",
+    "Kaos, kargaşa",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Chronicle",
+    "Tarihe kaydetmek, vekayiname",
+    "Verb / Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Circulation",
+    "Dolaşım, tiraj (gazete)",
+    "Noun",
+    "Leisure and Media"
+  ],
+  [
+    "Clarity",
+    "Açıklık, berraklık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Climax",
+    "Zirve noktası, doruk",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Coalition",
+    "Koalisyon, bağlaşma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Cognitive",
+    "Bilişsel, idraki",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Coincide",
+    "Aynı zamana rastlamak, örtüşmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Collaborate",
+    "İşbirliği yapmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Collective",
+    "Kolektif, ortaklaşa",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Collision",
+    "Çarpışma, fikir ayrılığı",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Colossal",
+    "Muazzam büyüklükte, dev",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Commemorate",
+    "Anmak, hatırasını yad etmek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Commend",
+    "Övmek, takdir etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Commentary",
+    "Yorum, tefsir, canlı anlatım",
+    "Noun",
+    "Leisure and Media"
+  ],
+  [
+    "Commodity",
+    "Ticari mal, emtia",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Compatible",
+    "Uyumlu, bağdaşan",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Compelling",
+    "İkna edici, sürükleyici",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Compensation",
+    "Tazminat, telafi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Competence",
+    "Yetkinlik, ehliyet",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Competent",
+    "Yetkin, işinin ehli",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Complement",
+    "Tamamlamak, bütünleyici parça",
+    "Verb / Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Complicate",
+    "Karmaşıklaştırmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Comply",
+    "Riayet etmek, kurallara uymak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Compromise",
+    "Uzlaşmak, ödün vermek",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Compulsory",
+    "Zorunlu, mecburi",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Concede",
+    "Kabullenmek, teslim etmek (yenilgiyi)",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Conceive",
+    "Tasarlamak, gebe kalmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Concentration",
+    "Yoğunlaşma, konsantrasyon",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Concrete",
+    "Somut, beton",
+    "Adjective / Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Condemn",
+    "Kınamak, mahkum etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Condense",
+    "Yoğunlaştırmak, özetlemek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Confer",
+    "Görüş alışverişinde bulunmak, bahşetmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Confrontation",
+    "Yüzleşme, hesaplaşma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Congregate",
+    "Toplanmak, bir araya gelmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Congress",
+    "Kongre, meclis",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Conjecture",
+    "Varsayım, tahmin",
+    "Noun / Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Conscience",
+    "Vicdan",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Conscientious",
+    "Vicdanlı, görevine sadık",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Consecutive",
+    "Ardışık, peş peşe gelen",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Consensus",
+    "Fikir birliği, konsensüs",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Consequently",
+    "Sonuç olarak, binaenaleyh",
+    "Adverb",
+    "Abstract Concepts"
+  ],
+  [
+    "Conservative",
+    "Muhafazakar, tutucu",
+    "Adjective / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Considerate",
+    "Düşünceli, ince ruhlu",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Consistency",
+    "Tutarlılık, kıvam",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Conspicuous",
+    "Göze batan, dikkat çekici",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Conspiracy",
+    "Komplo, fesat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Constituent",
+    "Kurucu unsur, seçmen",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Constitute",
+    "Oluşturmak, teşkil etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Constrain",
+    "Kısıtlamak, zora sokmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Constraint",
+    "Kısıtlama, baskı",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Consultation",
+    "Danışma, istişare",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Contempt",
+    "Aşağılama, hakir görme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Contention",
+    "Uyuşmazlık, sav",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Contingent",
+    "Bağlı, şarta bağlı, birlik",
+    "Adjective / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Contradict",
+    "Çelişmek, yalanlamak",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Contrary",
+    "Aksine, zıt",
+    "Adjective / Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Controversy",
+    "Münakaşa, kamuoyu tartışması",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Convene",
+    "Toplanmak, toplantıya çağırmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Converge",
+    "Aynı noktada birleşmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Conversion",
+    "Dönüşüm, ihtida",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Convict",
+    "Hüküm giydirmek, mahkum",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Conviction",
+    "Mahkumiyet kararı, kesin inanç",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Coordinate",
+    "Koordine etmek, eşgüdüm sağlamak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Coordination",
+    "Eşgüdüm, koordinasyon",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Cordial",
+    "Samimi, candan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Core",
+    "Çekirdek, öz, merkez",
+    "Noun / Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Correlate",
+    "Karşılıklı ilişki kurmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Correlation",
+    "Korelasyon, karşılıklı bağıntı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Correspondence",
+    "Yazışma, haberleşme, uygunluk",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Corrupt",
+    "Yozlaşmış, rüşvetçi",
+    "Adjective / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Corruption",
+    "Yolsuzluk, rüşvet çarkı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Counsel",
+    "Danışmanlık vermek, hukuk danışmanı",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Counteract",
+    "Etkisini yok etmek, karşı koymak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Counterpart",
+    "Makamdaşı, emsali, mevkidaş",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Courteous",
+    "Nezaketli, saygılı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Courtesy",
+    "Nezaket, kibarlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Covert",
+    "Gizli, örtülü",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Crackdown",
+    "Sert tedbir, baskı uygulama",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Credential",
+    "Yeterlilik belgesi, referans",
+    "Noun",
+    "Education and Learning"
+  ],
+  [
+    "Credible",
+    "İnanılır, güvenilir",
+    "Adjective",
+    "Communication and Technology"
+  ],
+  [
+    "Critique",
+    "Eleştiri yazısı, irdeleme",
+    "Noun / Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Crude",
+    "Ham, işlenmemiş, kaba",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Crumble",
+    "Ufalanmak, çökmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Crusade",
+    "Mücadele, sefer",
+    "Noun / Verb",
+    "History and Society"
+  ],
+  [
+    "Cue",
+    "İşaret, başlama işareti",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Culminate",
+    "Doruğa ulaşmak, neticelenmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Cumulative",
+    "Kümülatif, birikerek artan",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Curb",
+    "Frenlemek, dizginlemek",
+    "Verb / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Curtail",
+    "Kısmak, kısıntı yapmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Custody",
+    "Gözaltı, velayet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Customary",
+    "Geleneksel, alışılmış",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Cynical",
+    "Kinizm yanlısı, alaycı, güvensiz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Dampen",
+    "Nemlendirmek, hevesini kırmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Dangle",
+    "Sallanmak, sarkıtmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Daunt",
+    "Gözünü korkutmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Dazzle",
+    "Gözlerini kamaştırmak, büyülemek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Debris",
+    "Enkaz, döküntü",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Deceive",
+    "Kandırmak, aldatmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Deceptive",
+    "Aldatıcı, yanıltıcı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Decompose",
+    "Çürümek, bileşenlerine ayrılmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Decree",
+    "Kararname, buyruk",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Deduce",
+    "Tümdengelim yapmak, sonuca varmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Deduction",
+    "Tümdengelim, kesinti (maaş)",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Deem",
+    "Addetmek, farz etmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Defame",
+    "İftira atmak, karalamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Defect",
+    "Kusur, firar etmek",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Deficiency",
+    "Eksiklik, yetersizlik",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Deficit",
+    "Bütçe açığı, yetersizlik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Defy",
+    "Meydan okumak, hiçe saymak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Degrade",
+    "İtibarsızlaştırmak, aşındırmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Delegate",
+    "Temsilci, delege, yetki devretmek",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Deliberation",
+    "Enine boyuna tartışma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Delinquent",
+    "Suçlu, kusurlu (özellikle genç)",
+    "Noun / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Demolish",
+    "Yıkmak, yerle bir etmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Denounce",
+    "İhbar etmek, alenen kınamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Dense",
+    "Yoğun, sık, kalın kafalı",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Density",
+    "Özgül ağırlık, yoğunluk",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Deplete",
+    "Tüketmek, suyunu çekmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Deploy",
+    "Mevzilendirmek, yaymak (asker/teknoloji)",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Deposit",
+    "Mevduat yatırmak, tortu bırakmak",
+    "Verb / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Deprive",
+    "Mahrum bırakmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Deputy",
+    "Vekil, yardımcı amir",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Designate",
+    "Belirlemek, tayin etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Desolate",
+    "Issız, virane",
+    "Adjective",
+    "Nature and Environment"
+  ],
+  [
+    "Despise",
+    "Hakir görmek, küçümsemek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Destined",
+    "Kaderinde olan, mukadder",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Detain",
+    "Gözaltına almak, alıkoymak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Detect",
+    "Sezmek, tespit etmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Deter",
+    "Caydırmak, vazgeçirmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Deteriorate",
+    "Kötüleşmek, fenalaşmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Deterrent",
+    "Caydırıcı unsur",
+    "Noun / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Detour",
+    "Sapma, dolambaçlı yol",
+    "Noun",
+    "Travel and Transport"
+  ],
+  [
+    "Detriment",
+    "Zarar, ziyan",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Devastate",
+    "Kırıp geçirmek, mahvetmek",
+    "Verb",
+    "Nature and Environment"
+  ],
+  [
+    "Deviate",
+    "Yoldan sapmak, farklılaşmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Deviation",
+    "Sapma, farklılık",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Devise",
+    "Akıl etmek, tasarlamak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Devoid",
+    "Yoksun, mahrum",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Dialect",
+    "Lehçe, ağız",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Diameter",
+    "Çap",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Dictate",
+    "Yazdırmak, dikte etmek, emretmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Differentiate",
+    "Farklılaştırmak, ayırt etmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Diffuse",
+    "Yaymak, dağıtmak",
+    "Verb / Adjective",
+    "Science and Research"
+  ],
+  [
+    "Dignity",
+    "Ağırbaşlılık, asalet, haysiyet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Dilute",
+    "Seyreltmek, sulandırmak",
+    "Verb / Adjective",
+    "Science and Research"
+  ],
+  [
+    "Diplomacy",
+    "Diplomasi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Disarm",
+    "Silahsızlandırmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Disband",
+    "Dağıtmak (ordu/kurul)",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Discard",
+    "İskonto etmek, çöpe atmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Discern",
+    "Fark etmek, ayırt etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Discharge",
+    "Tahliye etmek, taburcu etmek",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Discourse",
+    "Söylem, nutuk",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Discreet",
+    "Ağzı sıkı, tedbirli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Discrepancy",
+    "Çelişki, uyuşmazlık",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Discrete",
+    "Ayrık, münferit",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Discriminate",
+    "Ayrımcılık yapmak, ayırt etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Discrimination",
+    "Ayrımcılık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Disdain",
+    "Tenhir etmek, küçümseme",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Disguise",
+    "Kılık değiştirmek, kamufle etmek",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Disillusion",
+    "Hayal kırıklığına uğratmak",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Dismantle",
+    "Parçalarına ayırmak, sökmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Dismay",
+    "Dehşet, hüsran",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Disparate",
+    "Uyumsuz, tamamen farklı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Dispatch",
+    "Sevk etmek, yollamak",
+    "Verb / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Dispel",
+    "Defetmek, zihninden atmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Dispense",
+    "Dağıtmak, muaf tutmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Disperse",
+    "Dağılmak, saçılmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Displace",
+    "Yerinden etmek, yerini almak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Dispose",
+    "Elden çıkarmak, tasarruf etmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Disregard",
+    "Aldırmamak, hiçe saymak",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Disrupt",
+    "Ahengini bozmak, sekteye uğratmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Disruption",
+    "Aksama, bölünme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Dissect",
+    "Teşrih etmek, ince ince ayırmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Disseminate",
+    "Yaymak, neşretmek (bilgi)",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Dissent",
+    "Fikir ayrılığı, muhalefet",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Dissolve",
+    "Eritmek, feshetmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Distort",
+    "Çarpıtmak, tahrif etmek",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Distortion",
+    "Çarpıtma, bozulma",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Distress",
+    "Izdırap, tehlike hali",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Diverge",
+    "Ayrılmak, farklı yollara gitmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Diverse",
+    "Çeşitli, türlü",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Divert",
+    "Yönünü saptırmak, oyalamak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Dividend",
+    "Kar payı, temettü",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Divine",
+    "İlahi, kutsal",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Doctrine",
+    "Öğreti, doktrin",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Domain",
+    "Alan, etki sahası, web alanı",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Domestic",
+    "Evcil, yurtiçi, ailevi",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Dominance",
+    "Hakimiyet, üstünlük",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Donate",
+    "Bağışta bulunmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Donation",
+    "Bağış, teberru",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Doom",
+    "Kötü kader, felakete sürüklemek",
+    "Noun / Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Dormant",
+    "Uykuda olan, faal olmayan",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Dose",
+    "Doz, porsiyon",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Downfall",
+    "Çöküş, sukut",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Drastic",
+    "Köklü, sert, şiddetli",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Drastically",
+    "Radikal biçimde",
+    "Adverb",
+    "Abstract Concepts"
+  ],
+  [
+    "Dubious",
+    "Şüpheli, kuşkulu",
+    "Adjective",
+    "Communication and Technology"
+  ],
+  [
+    "Duplicate",
+    "Kopyasını çıkarmak, eş",
+    "Verb / Noun",
+    "Documents and Texts"
+  ],
+  [
+    "Durable",
+    "Dayanıklı, uzun ömürlü",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Dwell",
+    "İkamet etmek, üzerinde durmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Dynamic",
+    "Dinamik, hareketli",
+    "Adjective / Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Eclipse",
+    "Tutulma (güneş/ay), gölgede bırakmak",
+    "Noun / Verb",
+    "Science and Research"
+  ],
+  [
+    "Efficacy",
+    "Yararlılık, etkililik derecesi",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Elapse",
+    "Zamanın akıp gitmesi",
+    "Verb",
+    "Time and Dates"
+  ],
+  [
+    "Elevation",
+    "Yükselti, terfi",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Elicit",
+    "Cevap koparmak, açığa çıkarmak",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Elusive",
+    "Ele avuca sığmaz, anlaşılması güç",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Embargo",
+    "Ambargo uygulamak, ambargo",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Embark",
+    "Gemiye binmek, girişmek (işe)",
+    "Verb",
+    "Travel and Transport"
+  ],
+  [
+    "Embed",
+    "İçine gömmek, yerleştirmek",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Embody",
+    "Bünyesinde toplamak, somutlaştırmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Empirical",
+    "Deneysel, tecrübeye dayalı",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Empower",
+    "Güçlendirmek, yetkilendirmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Enact",
+    "Kanunlaştırmak, sahnelemek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Enclose",
+    "Etrafını çevirmek, iliştirmek",
+    "Verb",
+    "Documents and Texts"
+  ],
+  [
+    "Encompass",
+    "Kuşatmak, kapsamak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Endeavor",
+    "Gayret sarf etmek, çaba",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Endorse",
+    "Desteklemek, onaylamak (çek/fikir)",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Endorsement",
+    "Onay, ciro etme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Endow",
+    "Bağışlamak, vakfetmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Engage",
+    "Meşgul olmak, angaje olmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Engrave",
+    "Hakketmek, oymak",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Engrossed",
+    "Kendini kaptırmış, dalmış",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Enlighten",
+    "Aydınlatmak, bilgi vermek",
+    "Verb",
+    "Education and Learning"
+  ],
+  [
+    "Enlist",
+    "Askere almak, desteğini sağlamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Enrage",
+    "Çileden çıkarmak, delirtmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Enrich",
+    "Zenginleştirmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Ensemble",
+    "Topluluk, orkestra heyeti",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Ensuing",
+    "Ardından gelen, sonraki",
+    "Adjective",
+    "Time and Dates"
+  ],
+  [
+    "Entail",
+    "Gerektirmek, zorunlu kılmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Enthusiast",
+    "Tutkulu kimse, meraklı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Envision",
+    "Gözünün önüne getirmek, tasavvur etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Epoch",
+    "Çağ, dönüm noktası",
+    "Noun",
+    "Time and Dates"
+  ],
+  [
+    "Equate",
+    "Eşit tutmak, denkleştirmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Equilibrium",
+    "Denge, itidal",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Equip",
+    "Donatmak, techiz etmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Equity",
+    "Hakkaniyet, hisse senedi özsermayesi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Eradicate",
+    "Kökünü kurutmak, yok etmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Erode",
+    "Aşındırmak, yıpratmak",
+    "Verb",
+    "Nature and Environment"
+  ],
+  [
+    "Erosion",
+    "Erozyon, aşınma",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Escalate",
+    "Tırmandırmak, tırmanmak (gerginlik)",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Esteem",
+    "İtibar, hürmet etmek",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Euphemism",
+    "Hüsnütalil, yumuşatma",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Evacuate",
+    "Tahliye etmek, boşaltmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Evaporate",
+    "Buharlaşmak, yok olmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Evoke",
+    "Hatırlatmak, çağrıştırmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Excellence",
+    "Üstün başarı, mükemmellik",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Excerpt",
+    "Alıntı, iktibas",
+    "Noun",
+    "Documents and Texts"
+  ],
+  [
+    "Exemplify",
+    "Örneklerle açıklamak",
+    "Verb",
+    "Education and Learning"
+  ],
+  [
+    "Exempt",
+    "Muaf tutmak, muaf",
+    "Verb / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Exert",
+    "Kullanmak, sarf etmek (baskı/çaba)",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Exile",
+    "Sürgün, sürgüne göndermek",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Expend",
+    "Sarf etmek, harcamak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Expedite",
+    "Hızlandırmak, çabuklaştırmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Explicitly",
+    "Açıkça, sarih bir biçimde",
+    "Adverb",
+    "Communication and Technology"
+  ],
+  [
+    "Exploration",
+    "Keşif gezisi, araştırma",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Exponent",
+    "Temsilci, üs (matematik)",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Exquisite",
+    "Nefis, fevkalade güzel",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Extravagant",
+    "Müsrif, aşırı savurgan",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Fabricate",
+    "Uydurmak (yalan), imal etmek",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Facet",
+    "Yön, veçhe, faset",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Faction",
+    "Hizip, klik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Fade",
+    "Solmak, sönükleşmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Feasible",
+    "Yapılabilir, uygulanabilir",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Feat",
+    "Maharet, büyük başarı",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Fertile",
+    "Verimli, bereketli",
+    "Adjective",
+    "Nature and Environment"
+  ],
+  [
+    "Fierce",
+    "Hırçın, amansız, azgın",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Filter",
+    "Süzmek, filtre",
+    "Verb / Noun",
+    "Science and Technology"
+  ],
+  [
+    "Fiscal",
+    "Mali, vergiye ilişkin",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Flaw",
+    "Kusur, leke, hata",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Flawless",
+    "Kusursuz, eksiksiz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Fleet",
+    "Filo, donanma",
+    "Noun",
+    "Travel and Transport"
+  ],
+  [
+    "Fluctuate",
+    "Dalgalanmak, inip çıkmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Fluctuation",
+    "Dalgalanma, iniş çıkış",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Focal",
+    "Odakla ilgili, merkezi",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Formidable",
+    "Korku salan, dişli, yenilmez",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Fortify",
+    "Tahkim etmek, güçlendirmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Fragile",
+    "Kırılgan, hassas",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Franchise",
+    "İmtiyaz hakkı, bayilik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Friction",
+    "Sürtünme, fikir uyuşmazlığı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Gauge",
+    "Ölçmek, gösterge",
+    "Verb / Noun",
+    "Science and Research"
+  ],
+  [
+    "Glaring",
+    "Göz alıcı, apaçık (hata)",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Grievance",
+    "Şikayet konusu, yakınma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Gross",
+    "Brüt, fahiş, kaba",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Hazardous",
+    "Tehlikeli, riskli",
+    "Adjective",
+    "Nature and Environment"
+  ],
+  [
+    "Hostage",
+    "Rehine",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Imminent",
+    "Eli kulağında, pek yakın",
+    "Adjective",
+    "Time and Dates"
+  ],
+  [
+    "Impair",
+    "Bozmak, sakatlamak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Impartial",
+    "Tarafsız, bitaraf",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Impasse",
+    "Çıkmaz, tıkantı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Impeccable",
+    "Kusursuz, lekesiz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Impediment",
+    "Engel, mani",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Implicit",
+    "Üstü kapalı, zımni",
+    "Adjective",
+    "Communication and Technology"
+  ],
+  [
+    "Incur",
+    "Uğramak, maruz kalmak (zarara)",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Indict",
+    "Hakkında dava açmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Indispensable",
+    "Vazgeçilmez, zaruri",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Infallible",
+    "Yanılamaz, şaşmaz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Infringe",
+    "Hakkını çiğnemek, ihlal etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Inherent",
+    "Doğasında olan, mündemiç",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Injunction",
+    "Mahkeme ihtiyati tedbir kararı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Integrity",
+    "Dürüstlük, bütünlük",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Interim",
+    "Geçici, ara dönem",
+    "Adjective / Noun",
+    "Time and Dates"
+  ],
+  [
+    "Intimidate",
+    "Gözdağı vermek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Intrinsic",
+    "Asli, özünde olan",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Invulnerable",
+    "Yara almaz, zedelenmez",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Jurisdiction",
+    "Yargı yetkisi, salahiyet sahası",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Legislation",
+    "Mevzuat, yasama faaliyeti",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Liaison",
+    "İrtibat, temas",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Lucrative",
+    "Çok karlı, kazançlı",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Magnitude",
+    "Büyüklük, vüsat (deprem/olay)",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Mandatory",
+    "Zorunlu, amir hüküm",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Manifest",
+    "Bariz, aşikar kılmak",
+    "Adjective / Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Maritime",
+    "Denizcilikle ilgili",
+    "Adjective",
+    "Travel and Transport"
+  ],
+  [
+    "Mediate",
+    "Arabuluculuk etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Monopoly",
+    "Tekel, inhisar",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Morale",
+    "Moral, maneviyat",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Mundane",
+    "Sıradan, dünyevi",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Negligible",
+    "İhmal edilebilir, önemsiz",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Notorious",
+    "Adı çıkmış, kötü şöhretli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Novelty",
+    "Yenilik, tuhaflık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Oblivious",
+    "Habersiz, kayıtsız",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Obsolete",
+    "Kullanımdan kalkmış, köhne",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Omnipresent",
+    "Her yerde hazır ve nazır",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Omission",
+    "Atlama, ihmal",
+    "Noun",
+    "Documents and Texts"
+  ],
+  [
+    "Onslaught",
+    "Şiddetli taarruz, hücum",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Opulent",
+    "Gösterişli, şatafatlı",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Ordeal",
+    "Çile, zorlu imtihan",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Paradigm",
+    "Değerler dizisi, paradigma",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Paradox",
+    "Çelişki, paradoks",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Patronize",
+    "Lütfeder gibi davranmak, himaye etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Perjury",
+    "Yalancı şahitlik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Plummet",
+    "Dimdik düşmek, çakılmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Postulate",
+    "Varsayımda bulunmak, aksiyom",
+    "Verb / Noun",
+    "Science and Research"
+  ],
+  [
+    "Precedent",
+    "Emsal teşkil eden karar",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Precursor",
+    "Öncü, haberci",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Predicate",
+    "Dayandırmak, yüklem",
+    "Verb / Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Predominant",
+    "Ağır basan, baskın",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Prejudice",
+    "Önyargı, peşin hüküm",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Premise",
+    "Öncül, temel dayanak",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Prevalent",
+    "Geniş kabul gören, cari",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Probation",
+    "Denetimli serbestlik, stajyerlik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Profound",
+    "Derin, köklü (bilgi/etki)",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Profoundly",
+    "Derinden, son derece",
+    "Adverb",
+    "Abstract Concepts"
+  ],
+  [
+    "Prolific",
+    "Üretken, velud",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Prosecute",
+    "Dava açmak, kovuşturmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Prospectus",
+    "Tanıtım bülteni, izahname",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Protocol",
+    "Protokol, resmi kural",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Provocative",
+    "Kışkırtıcı, tahrikkar",
+    "Adjective",
+    "Communication and Technology"
+  ],
+  [
+    "Prudent",
+    "İhtiyatlı, basiretli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Ratify",
+    "Onaylamak, tasdik etmek (antlaşmayı)",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Rationale",
+    "Mantıklı gerekçe, mantalite",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Rebuttal",
+    "Çürütme, aksi iddia",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Receptive",
+    "Yeni fikirlere açık, anlayışlı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Reciprocal",
+    "Karşılıklı, mütekabil",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Redundant",
+    "Gereksiz, işten çıkarılmış",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Relinquish",
+    "Feragat etmek, el çekmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Remnant",
+    "Kalıntı, bakiye",
+    "Noun",
+    "History and Society"
+  ],
+  [
+    "Renowned",
+    "Meşhur, namdar",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Repatriate",
+    "Vatanına iade etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Repression",
+    "Baskı rejimi, sindirme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Resilient",
+    "Çabuk toparlanan, mukavim",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Rhetoric",
+    "Hitabet sanatı, retorik",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Rigorous",
+    "Kılı kırk yaran, tavizsiz",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Sanction",
+    "Yaptırım, müeyyide",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Scrutiny",
+    "Kılı kırk yaran inceleme",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Segregate",
+    "Ayrım yapmak, tecrit etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Sever",
+    "Kesip ayırmak, bağını koparmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Sovereignty",
+    "Egemenlik, hakimiyet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Stagnant",
+    "Durgun (su/ekonomi)",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Stipulate",
+    "Şart koşmak, sözleşmeye yazmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Subordinate",
+    "Ast, ikincil derecede",
+    "Adjective / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Subsidize",
+    "Sübvanse etmek, mali desteklemek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Subsidy",
+    "Sübvansiyon, devlet desteği",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Subversive",
+    "Yıkıcı, düzeni bozmaya çalışan",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Supremacy",
+    "Üstünlük, hakimiyet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Surveillance",
+    "Gözetim, izleme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Tariff",
+    "Gümrük tarifesi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Tenure",
+    "Görev süresi, kadro hakkı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Treason",
+    "Vatana ihanet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Tribunal",
+    "Yargı kurulu, mahkeme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Turbulence",
+    "Türbülans, çalkantı",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Ubiquitous",
+    "Her yerde rastlanan",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Usurp",
+    "Gasp etmek, zorla almak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Venture",
+    "Riskli girişim",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Verdict",
+    "Mahkeme kararı, hüküm",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Veto",
+    "Veto etmek, veto hakkı",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Vindicate",
+    "Aklamak, haklılığını ispatlamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Warrant",
+    "Arama emri, ruhsat, haklı çıkarmak",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Zeal",
+    "Gayret, şevk",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Aberration",
+    "Sapma, kuraldışı durum",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Abundance",
+    "Bolluk, bereket",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Adherence",
+    "Bağlılık, sadakat, ilkeye uyma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Adjournment",
+    "Oturumu erteleme, ara verme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Adversity",
+    "Güçlük, sıkıntı, talihsizlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Affirmation",
+    "Doğrulama, teyit, tasdik",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Affliction",
+    "Dert, keder, ızdırap",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Aftermath",
+    "Sonrası, akabinde gelişen olaylar",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Allegiance",
+    "Bağlılık, sadakat yemini",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Alliance",
+    "İttifak, bağlaşma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Allusion",
+    "İma, üstü kapalı dokundurma",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Ambivalence",
+    "Duygu karmaşası, ikirciklilik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Amenity",
+    "Sosyal imkan, konfor tesisi",
+    "Noun",
+    "House and Home"
+  ],
+  [
+    "Amplify",
+    "Büyütmek, sesini yükseltmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Ancestry",
+    "Soy, ata mirası",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Annexation",
+    "İlhak, zorla toprak katma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Antipathy",
+    "Garez, güçlü antipati",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Antithesis",
+    "Zıtlık, antitez",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Apex",
+    "Doruk, zirve noktası",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Apparel",
+    "Giyim kuşam, kılık",
+    "Noun",
+    "Shopping and Clothes"
+  ],
+  [
+    "Arbitrator",
+    "Hakem, arabulucu tayin edilen kimse",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Archetype",
+    "İlk örnek, temel prototip",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Armistice",
+    "Ateşkes antlaşması",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Arrears",
+    "Gecikmiş borçlar, bakiye",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Ascertain",
+    "Tahkik etmek, aslını öğrenmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Attorney",
+    "Dava vekili, avukat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Audacity",
+    "Cüret, yüzsüzce cesaret",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Audit",
+    "Mali denetim, teftiş",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Auditor",
+    "Mali denetçi, hesap uzmanı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Auspices",
+    "Himaye, gözetim",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Authenticity",
+    "Özgünlük, sahicilik",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Axiom",
+    "Belit, aksiyom",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Backlog",
+    "Birikmiş işler yığını",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Barometer",
+    "Barometre, ölçüt göstergesi",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Bastion",
+    "Burç, son kale, dayanak noktası",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Bedrock",
+    "Temel dayanak, ana kaya",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Bequest",
+    "Vasiyet ile bırakılan mal",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Bilateral",
+    "İki taraflı, karşılıklı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Blackmail",
+    "Şantaj yapmak, şantaj",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Blockade",
+    "Abluka, kuşatma",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Blunder",
+    "Büyük gaf, pot kırma",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Boardroom",
+    "Yönetim kurulu salonu",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Boon",
+    "Büyük nimet, lütuf",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Bottleneck",
+    "Tıkanıklık noktası, darboğaz",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Bounty",
+    "Ödül, cömertçe verilen bahşiş",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Bourgeoisie",
+    "Burjuvazi, orta sınıf",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Boycott",
+    "Boykot etmek, boykot",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Broker",
+    "Komisyoncu, aracı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Brokerage",
+    "Komisyonculuk faaliyeti",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Buoyancy",
+    "Suyun kaldırma kuvveti, neşe, canlılık",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Bureaucrat",
+    "Bürokrat, devlet memuru",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Byproduct",
+    "Yan ürün",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Calamity",
+    "Büyük felaket, afet",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Callous",
+    "Duygusuz, nasırlaşmış, katı yürekli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Capitulation",
+    "Teslim olma, kapitülasyon",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Cartel",
+    "Kartel, tröst",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Casualty",
+    "Kayıp (ölü veya yaralı)",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Cessation",
+    "Durdurma, kesilme",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Choreography",
+    "Koreografi",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Civility",
+    "Nezaket, uygarca davranış",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Clamor",
+    "Feryat, gürültülü talep",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Clout",
+    "Ağırlık, siyasi nüfuz",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Coercion",
+    "Baskı uygulama, zorbalık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Cognition",
+    "Biliş, idrak süreci",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Cohesion",
+    "Uyum, kaynaşma, bağlılık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Collusion",
+    "Danışıklı dövüş, gizli anlaşma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Commonwealth",
+    "Milletler topluluğu, refah",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Communique",
+    "Resmi bildiri, tebliğ",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Compatibility",
+    "Bağdaşabilirlik, uyumluluk",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Compendium",
+    "El kitabı, özet derleme",
+    "Noun",
+    "Documents and Texts"
+  ],
+  [
+    "Compilation",
+    "Derleme, seçki",
+    "Noun",
+    "Documents and Texts"
+  ],
+  [
+    "Complicity",
+    "Suç ortaklığı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Composure",
+    "Soğukkanlılık, sükunet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Compulsion",
+    "Dürtü, zorunluluk",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Concession",
+    "Ödün, taviz, imtiyaz",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Conciliation",
+    "Uzlaştırma, arabuluculuk",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Concord",
+    "Uyum, ahenk, barış",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Condolence",
+    "Taziye, başsağlığı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Conduit",
+    "İletim kanalı, boru hattı",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Confederation",
+    "Konfederasyon",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Confidentiality",
+    "Gizlilik derecesi, sır saklama",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Configuration",
+    "Yapılandırma, biçimlendirme",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Confiscation",
+    "Müsadere, el koyma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Conflagration",
+    "Büyük yangın, yangın felaketi",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Conformity",
+    "Uyum, boyun eğme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Conglomerate",
+    "Şirketler topluluğu, holding",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Congruence",
+    "Örtüşme, mutabakat",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Connoisseur",
+    "Ehlivukuf, sanat erbabı",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Connotation",
+    "Yan anlam, çağrışım",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Consignment",
+    "Konsinye mal, sevkiyat",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Consonance",
+    "Uyum, ahenk",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Consortium",
+    "Konsorsiyum, şirketler birliği",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Consternation",
+    "Büyük şaşkınlık ve dehşet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Constituency",
+    "Seçim bölgesi, seçmen kitlesi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Contagion",
+    "Hastalık bulaşması, sirayet",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Contender",
+    "Aday, şampiyonluk yarışçısı",
+    "Noun",
+    "Sports and Hobbies"
+  ],
+  [
+    "Contentment",
+    "Hoşnutluk, iç huzuru",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Contingency",
+    "Beklenmedik durum, ihtimal planı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Continuity",
+    "Süreklilik, devamlılık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Contour",
+    "Çevre çizgisi, kontur",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Contravention",
+    "Kanuna aykırılık, ihlal",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Conundrum",
+    "İçinden çıkılmaz mesele, bilmece",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Covenant",
+    "Mukavele, ahit",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Coverage",
+    "Basında yer alma, sigorta kapsamı",
+    "Noun",
+    "Leisure and Media"
+  ],
+  [
+    "Craftsmanship",
+    "Ustalık, el işçiliği hüneri",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Credence",
+    "İtimat, inanırlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Creditor",
+    "Alacaklı taraf",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Creed",
+    "İnanç manifestosu, doktrin",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Crucible",
+    "Pota, zorlu sınav ortamı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Culmination",
+    "Zirveye erişme, doruk noktası",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Custodian",
+    "Muhafız, yediemin, emanetçi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Cynic",
+    "Her şeye şüpheyle bakan alaycı kimse",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Cynicism",
+    "Kinizm, insan doğasına güvensizlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Debacle",
+    "Büyük hezimet, fiyasko",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Deceit",
+    "Hilekarlık, dolandırıcılık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Decorum",
+    "Görgü kurallarına uygunluk, vakar",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Defamation",
+    "İftira, hakaret davası",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Defiance",
+    "Meydan okuma, itaat etmeme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Demarcation",
+    "Sınır çizme, tefrik etme",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Demeanor",
+    "Tavır, hal ve hareket",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Demise",
+    "Vefat, çöküş, son bulma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Denunciation",
+    "Alenen suçlama, ihbarname",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Deprivation",
+    "Yoksunluk, mahrumiyet hali",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Dereliction",
+    "Görevini kasten ihmal etme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Derision",
+    "Alay etme, maskara etme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Despotism",
+    "Zorbalık, despotizm",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Deviance",
+    "Sapma, normal dışı davranış",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Dexterity",
+    "El becerisi, çeviklik",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Dichotomy",
+    "İkilik, iki zıt uca bölünme",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Diffidence",
+    "Çekingenlik, özgüven azlığı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Disenchantment",
+    "Gözünün açılması, hayal kırıklığı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Disparity",
+    "Uçurum, dengesizlik, nispetsizlik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Disrepute",
+    "Gözden düşme, kötü ün",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Dissemination",
+    "Neşriyat, etrafa yayma",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Dissension",
+    "Nifak, fikir uyuşmazlığı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Dissident",
+    "Muhalif, rejim karşıtı",
+    "Noun / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Dissonance",
+    "Uyumsuzluk, kakofoni",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Divestment",
+    "Yatırımı geri çekme, elden çıkarma",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Dogma",
+    "Dogma, sorgulanamaz öğreti",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Domestication",
+    "Evcilleştirme",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Downpour",
+    "Sağanak yağmur",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Duplicity",
+    "İkiyüzlülük, hilekarlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Earmark",
+    "Belli amaca tahsis etmek",
+    "Verb / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Earnest",
+    "Ağırbaşlı, samimi niyetli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Eccentric",
+    "Eksantrik, alışılmışın dışında",
+    "Adjective / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Eccentricity",
+    "Gariplik, sıra dışılık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Echo",
+    "Yankılanmak, yankı",
+    "Verb / Noun",
+    "Science and Research"
+  ],
+  [
+    "Egoism",
+    "Bencillik, egoizm",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Elaboration",
+    "Ayrıntılandırma, detay verme",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Elation",
+    "Büyük sevinç, coşku",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Electorate",
+    "Seçmen kitlesi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Eloquence",
+    "Fesahat, beliğ konuşma ustalığı",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Eloquent",
+    "Güzel ve etkili konuşan",
+    "Adjective",
+    "Communication and Technology"
+  ],
+  [
+    "Elucidation",
+    "Açıklığa kavuşturma, izah",
+    "Noun",
+    "Education and Learning"
+  ],
+  [
+    "Emancipation",
+    "Kölelikten/baskıdan kurtulma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Embezzlement",
+    "Zimmete para geçirme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Empiricism",
+    "Deneycilik, ampirizm",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Enactment",
+    "Yasalaştırma, mevzuata sokma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Enclave",
+    "Anklav, yabancı toprakla çevrili bölge",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Encumbrance",
+    "Yük, ayak bağı, ipotek",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Enigma",
+    "Gizem, muamma",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Enigmatic",
+    "Gizemli, esrarengiz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Enmity",
+    "Husumet, kin, düşmanlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Enormity",
+    "Vahamet, muazzam büyüklük",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Entrench",
+    "Sağlamlaştırmak, kökleştirmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Equanimity",
+    "Huzur, itidal, vakar",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Equivalence",
+    "Denklik, muadelet",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Eradication",
+    "Kökünü kazıma, imha",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Erudite",
+    "Alim, derin ilim sahibi",
+    "Adjective",
+    "Education and Learning"
+  ],
+  [
+    "Espionage",
+    "Casusluk, istihbarat savaşı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Euphoria",
+    "Kendinden geçme derecesinde sevinç",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Evasion",
+    "Kaçınma, vergi kaçırma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Exaltation",
+    "Yüceltme, vecid hali",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Exasperation",
+    "Çileden çıkma, cinnet hali",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Exclusion",
+    "Dışlama, hariç bırakma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Exemplar",
+    "Örnek numune, model",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Exemption",
+    "Bağışıklık, istisna tutulma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Exorbitant",
+    "Fahiş, aşırı yüksek (fiyat)",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Expediency",
+    "Amaca uygunluk, menfaat",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Expedient",
+    "Çıkarına uygun, geçici tedbir",
+    "Adjective / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Expertise",
+    "Uzmanlık bilgisi, ehliyet",
+    "Noun",
+    "Education and Learning"
+  ],
+  [
+    "Expropriation",
+    "Kamulaştırma, istimlak",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Expulsion",
+    "Okuldan/ülkeden kovulma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Extradition",
+    "Suçlunun iadesi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Extrapolation",
+    "Verilerden sonuç çıkarma, kestirim",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Fallacy",
+    "Safsata, yanıltıcı mantık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Feasibility",
+    "Fizibilite, yapılabilirlik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Ferocity",
+    "Yırtıcılık, gaddarlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Fervor",
+    "Ateşli heves, hararet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Fiasco",
+    "Tam bir fiyasko, hezimet",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Fidelity",
+    "Sadakat, doğruluğa bağlılık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Filibuster",
+    "Kürsüyü işgal ederek yasayı engelleme",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Fiscal policy",
+    "Maliye politikası",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Flagrant",
+    "Apaçık, utanmazca yapılan",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Foreclosure",
+    "İpoteğin paraya çevrilmesi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Formulation",
+    "Formüle etme, tanzim",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Fortitude",
+    "Metanet, mukavemet gücü",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Fraudulent",
+    "Dolandırıcılık mahiyetinde",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Futility",
+    "Boşunalık, nafilelik",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Galvanize",
+    "Harekete geçirmek, canlandırmak",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Gambit",
+    "Riskli taktik, hamle",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Garner",
+    "Toparlamak, elde etmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Generic",
+    "Jenerik, cinse özgü",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Gestation",
+    "Gebelikte büyüme, olgunlaşma dönemi",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Glut",
+    "Piyasa doygunluğu, aşırı arz",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Graft",
+    "Aşılamak, rüşvet yoluyla kazanç",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Grandeur",
+    "Heybet, haşmet",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Hallmark",
+    "Ayırt edici vasıf, damga",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Haphazard",
+    "Rastgele, plansız programsız",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Harbinger",
+    "Haberci, müjdeci alamet",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Hedonism",
+    "Hazcılık, zevk düşkünlüğü",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Hegemony",
+    "Hegemonya, üstünlük hakimiyeti",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Heinous",
+    "Tüyler ürpertici, nefret uyandıran",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Heretic",
+    "Sapkın, doktrine ters düşen",
+    "Noun / Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Hiatus",
+    "Kesinti, fetret dönemi",
+    "Noun",
+    "Time and Dates"
+  ],
+  [
+    "Homage",
+    "Hürmet sunma, saygı duruşu",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Homogeneity",
+    "Türdeşlik, homojenlik",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Hypocrisy",
+    "Münafıklık, riyakarlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Hypocrite",
+    "Riyakar, ikiyüzlü kimse",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Iconoclast",
+    "Yerleşik inançları yıkan, putkırıcı",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Ideology",
+    "İdeoloji, fikir sistemi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Idiosyncrasy",
+    "Kişiye has mizaç tuhaflığı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Ignominy",
+    "Alçaklık, rezalet, yüz karası",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Imbalance",
+    "Dengesizlik, nispetsizlik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Immediacy",
+    "Aciliyet, dolaysızlık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Immensity",
+    "Sonsuz genişlik, büyüklük",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Impairment",
+    "Kusurluluk, sakatlık durumu",
+    "Noun",
+    "Health and Body"
+  ],
+  [
+    "Impetus",
+    "İtici güç, saik",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Imposition",
+    "Zorla kabul ettirme, dayatma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Impunity",
+    "Cezasızlık, ceza muafiyeti",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Inception",
+    "Başlangıç, ihdas",
+    "Noun",
+    "Time and Dates"
+  ],
+  [
+    "Incidence",
+    "Vaka sıklığı, isabet oranı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Inconsistency",
+    "Tutarsızlık, istikrarsızlık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Incumbent",
+    "Mevcut makam sahibi, vazife",
+    "Noun / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Indemnification",
+    "Zararın tazmin edilmesi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Indemnity",
+    "Tazminat teminatı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Indictment",
+    "İddianame, ağır suçlama",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Indignation",
+    "Haksızlığa karşı duyulan öfke",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Inducement",
+    "Teşvik vesilesi, ikna vasıtası",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Inertia",
+    "Eylemsizlik, atalet",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Inference",
+    "Mantıksal çıkarım",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Influx",
+    "Akın, yoğun giriş",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Infrastructure",
+    "Altyapı tesisleri",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Ingenuity",
+    "Ustalık, hüner, buluş zekası",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Innervation",
+    "Sinir donatımı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Innuendo",
+    "İmalı dokundurma, taşlama",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Insolvency",
+    "Borç ödeyememe, aciz hali",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Instigation",
+    "Kışkırtma, fitne çıkarma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Insurgency",
+    "Ayaklanma, isyan hareketi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Insurgent",
+    "Asi, isyancı militan",
+    "Noun / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Intellectual",
+    "Aydın, entelektüel",
+    "Noun / Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Intercession",
+    "Şefaat, araya girip af dileme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Interlocutor",
+    "Muhatap, karşılıklı konuşan taraf",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Intermediary",
+    "Aracı, mutavassıt",
+    "Noun / Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Intimidation",
+    "Korkutma, yıldırma politikası",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Intricacy",
+    "Giriftlik, incelikli karmaşa",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Intuition",
+    "Sezgi, içe doğma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Invective",
+    "Ağır hakaret, sövgü",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Jurisprudence",
+    "Hukuk felsefesi, içtihat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Juxtaposition",
+    "Yan yana koyma, tezat oluşturma",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Kudos",
+    "Tebrik, övgü, itibar",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Labyrinth",
+    "Labirent, çıkmaz sokaklar bütünü",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Leniency",
+    "Müsamaha, merhametli ceza verme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Levy",
+    "Vergi koyma, harç toplama",
+    "Verb / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Liability",
+    "Mali yükümlülük, borç",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Libel",
+    "Yazılı iftira ve neşir yoluyla hakaret",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Liberation",
+    "Kurtuluş, azat etme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Liquidation",
+    "Tasfiye, nakde çevirme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Litigation",
+    "Dava açma, yargılama süreci",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Loathing",
+    "İğrenme, derin nefret",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Longevity",
+    "Uzun ömürlülük, kıdemlilik",
+    "Noun",
+    "Health and Body"
+  ],
+  [
+    "Loophole",
+    "Kanun açığı, yasal boşluk",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Lucidity",
+    "Düşüncede berraklık, sarihlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Magnanimity",
+    "Alperenlik, yüce gönüllülük",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Malady",
+    "İllet, dermansız dert",
+    "Noun",
+    "Health and Body"
+  ],
+  [
+    "Malice",
+    "Kasıt, fesatlık, kem niyet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Malpractice",
+    "Mesleki kusur, hatalı tedavi/iş",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Mandate",
+    "Yetki belgesi, mazbata",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Manifesto",
+    "Bildiri, manifesto",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Manipulation",
+    "Yönlendirme, ustaca kullanma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Marginalization",
+    "Marjinalleştirme, ötekileştirme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Mediation",
+    "Uzlaştırıcı arabuluculuk",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Megalomaniac",
+    "Büyüklük delisi",
+    "Noun / Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Memorandum",
+    "Muhtıra, resmi bilgi notu",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Mercenary",
+    "Paralı asker",
+    "Noun / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Merger",
+    "Şirket birleşmesi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Militancy",
+    "Militanlık, kavgacılık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Misappropriation",
+    "Kötüye harcama, zimmet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Misconception",
+    "Yanlış kanı, yanılgı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Misdemeanor",
+    "Hafif cürüm, kabahat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Misgiving",
+    "Kuşku, endişe",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Mitigation",
+    "Hafifletme, yatıştırma",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Mobility",
+    "Hareketlilik, devingenlik",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Momentum",
+    "İvme, hız momenti",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Monarchy",
+    "Monarşi, krallık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Moratorium",
+    "Borç öteleme, moratoryum",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Morbidity",
+    "Marazilik, hastalık oranı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Mortality",
+    "Ölümlülük, ölüm oranı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Motif",
+    "Motif, ana tema",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Multitude",
+    "Kalabalık yığın, çokluk",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Municipal",
+    "Belediyeye ait, kentsel",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Mutiny",
+    "Gemi/ordu isyanı, ayaklanma",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Narrative",
+    "Anlatı, hikaye örgüsü",
+    "Noun / Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Nationalism",
+    "Milliyetçilik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Negotiator",
+    "Müzakereci, aracı delege",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Nemesis",
+    "Amansız hasım, hak edilen ceza",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Nepotism",
+    "Akraba kayırma, torpil",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Neutrality",
+    "Tarafsızlık politikası",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Nirvana",
+    "Yetkinlik mertebesi, nirvana",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Nobility",
+    "Asalet, soyluluk",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Nomination",
+    "Aday gösterme işlemi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Nonchalance",
+    "Kaygısızlık, vurdumduymazlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Norm",
+    "Kural, toplumsal norm",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Notoriety",
+    "Kötü ün, dillere düşme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Nuance",
+    "İnce nüans, ufak ayrım",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Nullification",
+    "Hükümsüz kılma, iptal",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Oasis",
+    "Vaha, ferahlık veren yer",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Obedience",
+    "İtaat, söz dinleme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Obligation",
+    "Hukuki mükellefiyet, yükümlülük",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Obscurity",
+    "Bilinmezlik, karanlıkta kalma",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Obstinacy",
+    "İnatçılık, dik kafalılık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Offshoot",
+    "Yan dal, türev",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Oligarchy",
+    "Oligarşi, azınlık iktidarı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Onset",
+    "Hastalığın veya kışın başlangıcı",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Opulence",
+    "Bolluk, şaşaa, aşırı servet",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Oratory",
+    "Hitabet sanatı, hatiplik",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Ordinance",
+    "Belediye tüzüğü, buyruk",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Orientation",
+    "Uyum sağlama, yönelim",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Outbreak",
+    "Hastalık/savaş patlak vermesi",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Outflow",
+    "Dışa akış, sermaye kaçışı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Outrage",
+    "Büyük infial, hakaret",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Overhaul",
+    "Kapsamlı revizyon, baştan aşağı yenileme",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Overseer",
+    "Gözetmen, nezaretçi",
+    "Noun",
+    "Work and Business"
+  ],
+  [
+    "Overture",
+    "Uvertür, barış teklifi adımı",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Pacifism",
+    "Barışçılık, pasifizm",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Panacea",
+    "Her derde deva ilaç",
+    "Noun",
+    "Health and Body"
+  ],
+  [
+    "Pang",
+    "Sancı, ani acı hissi",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Parable",
+    "Ders veren mesel, kıssa",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Paramount",
+    "Her şeyden üstün, fevkalade mühim",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Paranoia",
+    "Paranoya, kuruntu",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Parity",
+    "Eşitlik, parite",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Partiality",
+    "Tarafgirlik, kayırma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Partition",
+    "Bölme, taksimat",
+    "Noun / Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Patent",
+    "Patent hakkı, tescil",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Patronage",
+    "Maddi destekleme, hamilik",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Paucity",
+    "Kıtlık, azlık, noksanlık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Peerage",
+    "Asiller sınıfı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Penalization",
+    "Cezalandırma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Perception",
+    "Kavrayış, algılama yetisi",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Perennial",
+    "Yıllarca süren, daimi",
+    "Adjective",
+    "Nature and Environment"
+  ],
+  [
+    "Periphery",
+    "Çevre hattı, kenar bölge",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Permeation",
+    "Nüfuz etme, içine işleme",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Perpetrator",
+    "Fail, suç işleyen şahıs",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Perpetuity",
+    "Ebediyet, sonsuzluk",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Pervasive",
+    "Her yere yayılan, sinen",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Pinnacle",
+    "Zirve, şahika",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Plight",
+    "Acınası hal, müşkil durum",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Pluralism",
+    "Çoğulculuk",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Polarity",
+    "Kutupluluk",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Polemic",
+    "Kalem kavgası, sert polemik",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Populace",
+    "Halk tabakası, ahali",
+    "Noun",
+    "People and Society"
+  ],
+  [
+    "Postscript",
+    "Ek not, dipnot (PS)",
+    "Noun",
+    "Documents and Texts"
+  ],
+  [
+    "Potency",
+    "Tesir kuvveti, kudret",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Pragmatism",
+    "Faydacılık, pragmatizm",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Precaution",
+    "Önlem, tedbir",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Precipice",
+    "Sarp uçurum",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Precision",
+    "Hassas ölçüm, dakiklik",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Predilection",
+    "Özel meyil, düşkünlük",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Predisposition",
+    "Yatkınlık, istidat",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Prerogative",
+    "Ayrıcalık, münhasır hak",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Pretense",
+    "Yalandan tavır, numara yapma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Prevalence",
+    "Yaygınlık derecesi",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Privation",
+    "Mahrumiyet, darlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Privilege",
+    "İmtiyaz, ayrıcalık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Proclivity",
+    "Doğal eğilim, meyil",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Prodigy",
+    "Harika çocuk, deha",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Propensity",
+    "Yatkınlık, meyil gösterme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Prophecy",
+    "Kehanet",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Proposition",
+    "Teklif, mantıksal önerme",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Prosecution",
+    "Savcılık, kovuşturma makamı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Prosperity",
+    "Refah, bolluk içinde yaşama",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Proximity",
+    "Yakınlık, civarlık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Prudence",
+    "Basiret, tedbirlilik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Psephology",
+    "Seçim bilimi, oy analizi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Pseudonym",
+    "Müstear isim, takma ad",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Pugnacity",
+    "Kavgacılık, hırçınlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Purport",
+    "Manasına gelmek, anafikir",
+    "Verb / Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Quagmire",
+    "Bataklık, içinden çıkılmaz vaziyet",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Qualm",
+    "Vicdan azabı, kuşku",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Quandary",
+    "Tereddüt, müşkül durum",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Quarantine",
+    "Karantina altına alma",
+    "Noun / Verb",
+    "Health and Body"
+  ],
+  [
+    "Quarry",
+    "Taş ocağı, av hedefi",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Quell",
+    "Bastırmak, dindirmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Quorum",
+    "Toplantı yeter sayısı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Quota",
+    "Kota, kontenjan payı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Rally",
+    "Miting, toparlanıp atağa kalkmak",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Rancor",
+    "Kin, garaz, husumet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Recession",
+    "Ekonomik durgunluk, resesyon",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Reclamation",
+    "Islah etme, geri kazanma",
+    "Noun",
+    "Nature and Environment"
+  ],
+  [
+    "Recourse",
+    "Başvuru hakkı, çare",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Redress",
+    "Düzeltme, tazmin etme",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Redundancy",
+    "İş gücü fazlalığı, gereksizlik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Reformation",
+    "Islahat, köklü yenilik",
+    "Noun",
+    "History and Society"
+  ],
+  [
+    "Regime",
+    "Rejim, yönetim şekli",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Reluctance",
+    "İsteksizlik, gönülsüzlük",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Remittance",
+    "Havale edilen para miktarı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Renunciation",
+    "Vazgeçme, feragat bildirimi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Reprisal",
+    "Misilleme tedbiri",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Repudiation",
+    "Tanımama, feshetme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Requisite",
+    "Gerekli vasıf, lazım şart",
+    "Noun / Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Resolution",
+    "Kararlılık, meclis kararı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Resonance",
+    "Rezonans, derin tesir",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Restitution",
+    "Gasp edilen hakkın iadesi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Retaliation",
+    "Misillemede bulunma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Retention",
+    "Elde tutma oranı, hafıza gücü",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Retribution",
+    "Hak edilen ceza, intikam",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Reverence",
+    "Derin saygı, tazim",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Revocation",
+    "İptal etme, hükümsüz kılma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Rigidity",
+    "Esnemezlik, katılık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Sanctuary",
+    "Sığınak, barınak, kutsal alan",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Savvy",
+    "Kurnaz, pratik zekalı",
+    "Adjective / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Schism",
+    "Fırkalara bölünme, mezhep ayrılığı",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Scarcity",
+    "Darlık, az bulunma",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Seclusion",
+    "Köşesine çekilme, halvete girme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Secularism",
+    "Laiklik, sekülarizm",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Sediment",
+    "Tortu, çökelti",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Serenity",
+    "Huzur, iç dinginliği",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Servitude",
+    "Kulluk, kölelik hali",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Settlement",
+    "Uzlaşma, yerleşim yeri",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Severance",
+    "Kıdem tazminatı, bağları koparma",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Slander",
+    "Sözlü iftira, kara çalma",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Solitude",
+    "Yalnızlık, tek başına kalma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Spectrum",
+    "Tayf, geniş yelpaze",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Speculation",
+    "Kurgu, spekülasyon, borsa oyunu",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Stagnation",
+    "Durgunluk, hareketsizlik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Statute",
+    "Kanun hükmü, tüzük",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Stereotype",
+    "Kalıp yargı, basmakalıp fikir",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Stipulation",
+    "Şartname koşulu",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Stratagem",
+    "Hileli manevra, taktik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Stratification",
+    "Tabakalaşma, katmanlaşma",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Strife",
+    "Çekişme, husumet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Subjugation",
+    "Boyun eğdirme, zapt etme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Subordination",
+    "Astlık ilişkisi, tabi kılma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Subpoena",
+    "Mahkeme celbi, çağrı kağıdı",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Suffrage",
+    "Oy kullanma hakkı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Surplus",
+    "Fazlalık, cari fazla",
+    "Noun / Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Sustenance",
+    "Gıda, hayatta kalma vasıtası",
+    "Noun",
+    "Food and Drink"
+  ],
+  [
+    "Symbiosis",
+    "Ortakyaşam, simbiyoz",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Synthesis",
+    "Sentez, bileşim",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Tactician",
+    "Taktisyen, planlamacı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Tangible",
+    "Somut, elle tutulur",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Taxonomy",
+    "Sınıflandırma bilimi",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Tenacity",
+    "Azim, inatla sarılma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Terminology",
+    "Terimler dizisi, terminoloji",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Testament",
+    "Vasiyetname, kesin kanıt",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Testimony",
+    "Şahit ifadesi, beyan",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Tolerance",
+    "Müsamaha, hoşgörü",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Trajectory",
+    "Yörünge çizgisi, gidişat",
+    "Noun",
+    "Science and Research"
+  ],
+  [
+    "Transgression",
+    "Haddini aşma, günah",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Transition",
+    "Geçiş evresi",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Transparency",
+    "Şeffaflık, aleniyet",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Treaty",
+    "Devletlerarası antlaşma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Trepidation",
+    "Ürperme, tedirginlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Tribute",
+    "Hürmet nişanesi, anma payesi",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Tyranny",
+    "Zulüm rejimi, tiranlık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Unification",
+    "Tevhit etme, birleştirme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Upheaval",
+    "Kargaşa, köklü altüst oluş",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Utility",
+    "Fayda, kamu hizmeti (elektrik vb.)",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Utopia",
+    "Ütopya, hayali ideal nizam",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Valor",
+    "Yüreklilik, cengaverlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Vanguard",
+    "Öncü kuvvet, avant-garde",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Vehemence",
+    "Şiddet, aşırı hararetlilik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Veneration",
+    "Hürmet duyma, yüceltme",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Veracity",
+    "Doğruluk, dürüstlük",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Verbiage",
+    "Laf kalabalığı",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Viability",
+    "Yaşayabilirlik, sürdürülebilirlik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Vicissitude",
+    "Talihin iniş çıkışları",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Vindication",
+    "Aklanma, haklılığın kanıtlanması",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Vintage",
+    "Klasik, belli yıla ait ürün",
+    "Noun / Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Volatility",
+    "Oynaklık, dalgalanma şiddeti",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Volition",
+    "Kendi iradesi, istem gücü",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Vulnerability",
+    "Savunmasızlık, zedelenirlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Zealot",
+    "Bağnaz, fanatik militan",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Zenith",
+    "Zirve, şahika mertebesi",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Acumen",
+    "Keskin zeka, basiret",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Adroit",
+    "Becerikli, mahir",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Alacrity",
+    "Çeviklik, şevk",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Anachronism",
+    "Tarih yanılgısı, çağdışılık",
+    "Noun",
+    "History and Society"
+  ],
+  [
+    "Antiquity",
+    "İlkçağ, kadim zamanlar",
+    "Noun",
+    "History and Society"
+  ],
+  [
+    "Apostasy",
+    "Dinden dönme, inancı terk",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Apparition",
+    "Hayalet, tayf",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Appellation",
+    "Unvan, adlandırma",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Arcane",
+    "Gizli, ezoterik",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Asperity",
+    "Sertlik, haşinlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Astringent",
+    "Büzücü, sert eleştiri",
+    "Adjective / Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Attrition",
+    "Aşınma, yıpratma savaşı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Augment",
+    "Artırmak, büyütmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Belligerent",
+    "Savaşçı, kavgacı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Blandishment",
+    "Tatlı sözlerle kandırma",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Bombastic",
+    "Ağdalı, tumturaklı",
+    "Adjective",
+    "Communication and Technology"
+  ],
+  [
+    "Burgeon",
+    "Tomurcuklanmak, hızla gelişmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Cacophony",
+    "Ses kargaşası, kakofoni",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Cajole",
+    "Tatlı dille ayartmak",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Calumny",
+    "Kara çalma, tezvirat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Candor",
+    "Açık yüreklilik, samimiyet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Capricious",
+    "Maymun iştahlı, kaprisli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Castigate",
+    "Şiddetle azarlamak, yermek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Catharsis",
+    "Arınma, katarsis",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Circuitous",
+    "Dolambaçlı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Circumlocution",
+    "Lafı dolandırma",
+    "Noun",
+    "Communication and Technology"
+  ],
+  [
+    "Circumscribe",
+    "Sınırlamak, çevrelemek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Clandestine",
+    "Gizli kapaklı, el altından",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Clemency",
+    "Merhamet, af lütfu",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Coalesce",
+    "Tek vücut olmak, birleşmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Cogent",
+    "İkna edici, sağlam kanıtlı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Comely",
+    "Sevimli, alımlı",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Commensurate",
+    "Orantılı, layık",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Compunction",
+    "Vicdan sızısı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Concomitant",
+    "Beraberinde gelen, eşlik eden",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Consanguinity",
+    "Soy birliği, kan bağı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Contumacious",
+    "Boyun eğmez, dik başlı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Copious",
+    "Bol, gani",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Corpulent",
+    "Şişman, cüsseli",
+    "Adjective",
+    "Health and Body"
+  ],
+  [
+    "Corroborate",
+    "Doğrulamak, teyit etmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Craven",
+    "Korkak, ödlek",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Credulity",
+    "Saflık, her şeye inanma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Cursory",
+    "Üstünkörü, gelişigüzel",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Dauntless",
+    "Yılmak bilmez, gözü pek",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Dearth",
+    "Kıtlık, yokluk",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Debauchery",
+    "Ahlaksızlık, sefahat",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Decimate",
+    "Büyük kısmını yok etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Deleterious",
+    "Muzır, zararlı",
+    "Adjective",
+    "Science and Research"
+  ],
+  [
+    "Delineate",
+    "Ana hatlarını çizmek, tarif etmek",
+    "Verb",
+    "Science and Research"
+  ],
+  [
+    "Demagogue",
+    "Halk avcısı, demagog",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Deprecate",
+    "Kınamak, değerini düşürmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Deride",
+    "Gülünç bulmak, istihza etmek",
+    "Verb",
+    "Communication and Technology"
+  ],
+  [
+    "Despot",
+    "Despot, müstebit hükümdar",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Desultory",
+    "Daldan dala konan, hedefsiz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Diatribe",
+    "Acı yerme, zehir zemberek nutuk",
+    "Noun",
+    "Communication and Technology"
+  ]
+]

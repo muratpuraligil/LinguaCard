@@ -38,3 +38,5 @@ node_modules/
 .mcp.json
 scratch/
 temp_extracted/
+__pycache__/
+*.pyc

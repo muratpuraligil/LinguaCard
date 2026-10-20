@@ -426,7 +426,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         </h3>
                         <p className="text-slate-400 text-sm font-bold mb-8 leading-relaxed">
                             {studyMode === 'LIBRARY'
-                                ? `${selectedLevel} seviyesindeki kelimeler yakında eklenecektir. Yukarıdaki sekmelerden A1 seviyesine geçebilir veya başka bir mod seçebilirsiniz.`
+                                ? `${selectedLevel} seviyesindeki kelimeler yakında eklenecektir. Yukarıdaki sekmelerden A1, A2, B1 veya B2 seviyelerine geçebilir ya da başka bir mod seçebilirsiniz.`
                                 : 'Kelime listeniz henüz boş. AI ile yeni kelimeler ekleyebilir veya Kütüphane modundan çalışabilirsiniz.'}
                         </p>
                         
@@ -436,7 +436,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                     onClick={() => onLevelChange('A1')}
                                     className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-black rounded-2xl font-black text-sm transition-all shadow-lg shadow-emerald-500/20 active:scale-95 flex items-center justify-center gap-2"
                                 >
-                                    <Sparkles size={18} /> A1 Seviyesine Geç
+                                    <Sparkles size={18} /> Hazır Seviyelere Dön (A1)
                                 </button>
                             )}
 

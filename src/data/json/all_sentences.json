@@ -2807,7 +2807,7 @@
     },
     {
       "id": "s60",
-      "turkish": "Michael calışmaz.",
+      "turkish": "Michael çalışmaz.",
       "english": "Michael doesn't work."
     },
     {
@@ -3591,7 +3591,7 @@
     },
     {
       "id": "s16",
-      "turkish": "İspanyolca konuşmayı dgrendi / öğrenmiş(tir).",
+      "turkish": "İspanyolca konuşmayı öğrendi / öğrenmiş(tir).",
       "english": "She has learned to speak Spanish."
     },
     {
@@ -4006,7 +4006,7 @@
     },
     {
       "id": "s99",
-      "turkish": "Golii hiç görmedim / görmemişim(dir).",
+      "turkish": "Gölü hiç görmedim / görmemişim(dir).",
       "english": "I have ever seen the lake."
     },
     {
@@ -5338,27 +5338,27 @@
     {
       "id": "s65",
       "turkish": "Bu harika takımı ne zaman giyeceksin?",
-      "english": "I am going to fail this exam if I do not study harder."
+      "english": "When are you going to wear that great suit?"
     },
     {
       "id": "s66",
       "turkish": "Partiye bisikletle gidecek misiniz?",
-      "english": ""
+      "english": "Are you going to cycle to the party?"
     },
     {
       "id": "s67",
-      "turkish": "Doğum gününii kutlayacak mı?",
-      "english": ""
+      "turkish": "Doğum gününü kutlayacak mı?",
+      "english": "Is she going to celebrate her birthday?"
     },
     {
       "id": "s68",
       "turkish": "Sabah saat 8'de ofise gidiyoruz.",
-      "english": ""
+      "english": "We are going to the office at 8 o'clock in the morning."
     },
     {
       "id": "s69",
-      "turkish": "Daha çok çalışmazsam bu sınavda başarısız olacadım.",
-      "english": ""
+      "turkish": "Daha çok çalışmazsam bu sınavda başarısız olacağım.",
+      "english": "I am going to fail this exam if I do not study harder."
     },
     {
       "id": "s70",

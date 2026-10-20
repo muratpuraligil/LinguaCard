@@ -38,6 +38,12 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
   3. `geminiService.ts` içindeki model listesi güncel modellere (`gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-3.8-flash`, `gemini-flash-latest`) güncellendi ve 6 saniyelik `fetch` AbortSignal zaman aşımı eklendi.
   4. Tier 3 `localTextParser.ts` yerel sözlüğüne "drop off" vb. popüler kalıplar eklenerek tam çevrimdışı yedekleme sağlandı.
 
+### 1.7. Supabase PostgREST Data API 30 Ekim İzin Standardı (Explicit GRANT Requirement)
+- **Hafıza Gerçeği:** 30 Ekim 2026 itibarıyla Supabase, `public` şemasında yeni oluşturulan tablolara PostgREST / Veri API otomatik yetkisi vermeyi durdurmuştur. Açık `GRANT` izinleri tanımlanmayan tablolara istemci SDK'sından (`supabase-js`) yapılan istekler `permission denied` hatası döndürür. Mevcut tablolar (`words`, `user_progress`) bu değişiklikten geriye dönük etkilenmese de, yeni tablo eklemeleri veya sıfırdan şema kurulumları açık `GRANT` gerektirir. Ücretsiz plan (Free Tier) veya maliyetle ilgisi yoktur, saf yetkilendirme kuralıdır.
+- **Kalıcı Çözüm:**
+  1. `database/SUPABASE_SETUP.sql` ve tüm gelecekteki migration dosyalarında tablo oluşturulurken `anon`, `authenticated` ve `service_role` rolleri için `GRANT SELECT, INSERT, UPDATE, DELETE` izinleri zorunlu olarak eklenmelidir.
+  2. `tests/supabasePermissions.test.js` birim testi ile kurulum ve migrasyon dosyalarının bu kurala uyduğu otomatik doğrulanır.
+
 ---
 
 ## 🛡️ 2. Bellek Yönetimi & Temizlik Standartları (Memory Leaks Prevention)

@@ -53,3 +53,12 @@ BEGIN
             FOR ALL USING (auth.uid() = user_id);
     END IF;
 END $$;
+
+-- 4. Explicit GRANT permissions for PostgREST Data API exposure (Required starting October 30, 2026)
+GRANT SELECT, INSERT ON public.words TO anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.words TO authenticated;
+GRANT ALL ON public.words TO service_role;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.user_progress TO authenticated;
+GRANT ALL ON public.user_progress TO service_role;
+
