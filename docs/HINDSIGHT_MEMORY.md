@@ -65,6 +65,13 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
   2. Kapsam tercihi `lingua_flashcard_library_scope` anahtarıyla yerel depolamada saklanır.
   3. İlerleme çubuğunda toplam kelime sayısı parantez içinde net olarak gösterilir: `SET 1 / 15 (300)` veya `SET 1 / 52 (1026)`.
 
+### 1.11. Mobil Web Kilit Ekranı Flaşkart Artwork & Dinleme Modu Otomatik Geçiş
+- **Hafıza Gerçeği:** Mobil tarayıcılarda (iOS Safari, Android Chrome) yerel kilit ekranı overlay izni bulunmaz. Kullanıcı eller serbest dinleme modundayken telefon kilitlendiğinde kartı görememekte ve set bittiğinde telefon cebindeyken bir sonraki sete geçmek için telefona dokunmak zorunda kalmaktaydı.
+- **Kalıcı Çözüm:**
+  1. `audioStudyService.ts` içinde 512x512 Canvas üzerinde dinamik flashcard üretilip `navigator.mediaSession.metadata.artwork` olarak verilir. Kilit ekranında albüm kapağı olarak kelime ve çevirisi görsel bir kart halinde görünür.
+  2. Donanım ve kilit ekranı butonları (`play`, `pause`, `nexttrack`, `previoustrack`) ile tam kontrol sağlanır.
+  3. Set bittiğinde `FlashcardMode.tsx` içinde 10 saniyelik geri sayım sayacı çalışır (`autoAdvanceCountdown`); kullanıcı müdahale etmezse bir sonraki sete otomatik geçer ve dinleme modunu kesintisiz başlatır. İstenildiğinde iptal butonuyla durdurulabilir.
+
 ### 1.10. Mobil Web Responsive (320px - 480px Küçük Ekran Optimizasyonu)
 - **Hafıza Gerçeği:** iPhone SE (375px) ve Android (360px) gibi dar mobil ekranlarda kartlar ekranı ve floating dinleme çubuğu açıldığında butonların ekrandan taşması, seviye sekmelerinin sararak dikey yüksekliği artırması ve kart yüksekliğinin alt aksiyon butonlarını ("Öğrendim", "Sıradaki") ekran dışına itmesi nedeniyle dikey kaydırma gereksinimi oluşabiliyordu.
 - **Kalıcı Çözüm:**

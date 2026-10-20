@@ -256,13 +256,12 @@ export class AudioStudyService {
         const currentWord = this.words[this.currentIndex];
         if (!currentWord) return;
 
-        this.updateMediaSession(currentWord);
-
         const isFrontTR = this.direction === LanguageDirection.TR_EN;
         const frontText = isFrontTR ? currentWord.turkish : currentWord.english;
         const frontLang = isFrontTR ? 'tr' : 'en';
 
         this.currentPhase = 'front';
+        this.updateMediaSession(currentWord, 'front');
         this.callbacks.onWordChange?.(this.currentIndex, currentWord, 'front');
         this.callbacks.onStateChange?.(true, 'front');
 
@@ -306,6 +305,7 @@ export class AudioStudyService {
         const backLang = isFrontTR ? 'en' : 'tr';
 
         this.currentPhase = 'back';
+        this.updateMediaSession(currentWord, 'back');
         this.callbacks.onWordChange?.(this.currentIndex, currentWord, 'back');
         this.callbacks.onStateChange?.(true, 'back');
 
@@ -418,17 +418,123 @@ export class AudioStudyService {
         }
     }
 
-    private updateMediaSession(word: Word) {
+    private generateCardArtwork(word: Word, phase: AudioPhase): string | null {
+        if (typeof document === 'undefined') return null;
+        try {
+            const canvas = document.createElement('canvas');
+            canvas.width = 512;
+            canvas.height = 512;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return null;
+
+            const isFrontTR = this.direction === LanguageDirection.TR_EN;
+            const primaryText = isFrontTR ? word.turkish : word.english;
+            const secondaryText = isFrontTR ? word.english : word.turkish;
+            const showBack = phase === 'back';
+
+            // Background canvas
+            ctx.fillStyle = '#09090b';
+            ctx.fillRect(0, 0, 512, 512);
+
+            // Card container: Golden yellow when translation is shown, zinc dark when thinking
+            ctx.fillStyle = showBack ? '#eab308' : '#18181b';
+            ctx.strokeStyle = showBack ? '#fde047' : '#27272a';
+            ctx.lineWidth = 6;
+            
+            const r = 32;
+            const x = 24, y = 24, w = 464, h = 464;
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.arcTo(x + w, y, x + w, y + h, r);
+            ctx.arcTo(x + w, y + h, x, y + h, r);
+            ctx.arcTo(x, y + h, x, y, r);
+            ctx.arcTo(x, y, x + w, y, r);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            // Top Header: LinguaCard & Progress
+            ctx.fillStyle = showBack ? '#000000' : '#a1a1aa';
+            ctx.font = 'bold 22px system-ui, -apple-system, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(`LinguaCard • ${this.currentIndex + 1}/${this.words.length}`, 48, 72);
+
+            // Status Badge
+            ctx.textAlign = 'right';
+            ctx.font = 'bold 18px system-ui, -apple-system, sans-serif';
+            if (showBack) {
+                ctx.fillText('✨ ÇEVİRİ', 464, 72);
+            } else {
+                ctx.fillText('🤔 DÜŞÜNÜN...', 464, 72);
+            }
+
+            // Category if available
+            if (word.category) {
+                ctx.fillStyle = showBack ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.08)';
+                ctx.fillRect(48, 96, Math.min(416, ctx.measureText(word.category).width + 24), 32);
+                ctx.fillStyle = showBack ? '#000000' : '#60a5fa';
+                ctx.font = '600 16px system-ui, -apple-system, sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText(word.category, 60, 118);
+            }
+
+            // Primary Word (Big text)
+            ctx.fillStyle = showBack ? '#000000' : '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.font = '900 46px system-ui, -apple-system, sans-serif';
+            ctx.fillText(primaryText, 256, 230);
+
+            // Divider
+            ctx.strokeStyle = showBack ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.15)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(80, 270);
+            ctx.lineTo(432, 270);
+            ctx.stroke();
+
+            // Translation / Secondary Text
+            if (showBack) {
+                ctx.fillStyle = '#000000';
+                ctx.font = 'bold 34px system-ui, -apple-system, sans-serif';
+                ctx.fillText(secondaryText, 256, 330);
+
+                if (word.example_sentence) {
+                    ctx.fillStyle = 'rgba(0,0,0,0.7)';
+                    ctx.font = 'italic 18px system-ui, -apple-system, sans-serif';
+                    ctx.fillText(`"${word.example_sentence.slice(0, 40)}..."`, 256, 385);
+                }
+            } else {
+                ctx.fillStyle = '#71717a';
+                ctx.font = 'italic 24px system-ui, -apple-system, sans-serif';
+                ctx.fillText('Çeviriyi tahmin edin...', 256, 330);
+            }
+
+            // Bottom Brand
+            ctx.fillStyle = showBack ? 'rgba(0,0,0,0.4)' : '#52525b';
+            ctx.font = 'bold 16px system-ui, -apple-system, sans-serif';
+            ctx.fillText('LinguaCard Akıllı Sesli Pratik', 256, 445);
+
+            return canvas.toDataURL('image/png');
+        } catch {
+            return null;
+        }
+    }
+
+    private updateMediaSession(word: Word, phase: AudioPhase = 'front') {
         if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return;
         try {
             const isFrontTR = this.direction === LanguageDirection.TR_EN;
             const primary = isFrontTR ? word.turkish : word.english;
             const secondary = isFrontTR ? word.english : word.turkish;
 
+            const artworkDataUrl = this.generateCardArtwork(word, phase);
+            const artworkList = artworkDataUrl ? [{ src: artworkDataUrl, sizes: '512x512', type: 'image/png' }] : [];
+
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: `${this.currentIndex + 1}/${this.words.length}: ${primary}`,
-                artist: `Çeviri: ${secondary}`,
-                album: 'LinguaCard Dinleme Modu'
+                artist: phase === 'back' ? `✨ Çeviri: ${secondary}` : `🤔 Çeviriyi düşünün...`,
+                album: 'LinguaCard Dinleme Modu',
+                artwork: artworkList
             });
             navigator.mediaSession.playbackState = this.isPaused ? 'paused' : 'playing';
         } catch (e) {

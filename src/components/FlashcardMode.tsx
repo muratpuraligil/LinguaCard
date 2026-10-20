@@ -100,6 +100,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const [remainingDelay, setRemainingDelay] = useState<number>(4);
     const [delaySeconds, setDelaySeconds] = useState<number>(4);
     const [isAudioPaused, setIsAudioPaused] = useState<boolean>(false);
+    const [autoAdvanceCountdown, setAutoAdvanceCountdown] = useState<number | null>(null);
 
     const [libraryScope, setLibraryScope] = useState<'CORE_300' | 'ALL'>(() => {
         const saved = localStorage.getItem('lingua_flashcard_library_scope');
@@ -164,7 +165,8 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         const modeOrLevelChanged = 
             prev.studyMode !== studyMode || 
             prev.selectedLevel !== selectedLevel;
-        const setChanged = prev.currentSetNum !== currentSetNum;
+        // setChanged SADECE aynı seviye ve mod içindeyken manuel yeni sete geçildiğinde tetiklenmeli
+        const setChanged = !modeOrLevelChanged && prev.currentSetNum !== currentSetNum;
 
         if (modeOrLevelChanged) {
             // 1. Ayrılmakta olan seviyenin güncel currentIndex ve currentSetNum'ı o seviyenin anahtarlarına yazılmalı.
@@ -175,11 +177,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             if (activeSessionRef.current.activeIds.length > 0) {
                 localStorage.setItem(getActiveIdsKey(outgoingMode, outgoingLevel), JSON.stringify(activeSessionRef.current.activeIds));
             }
-        }
 
-        prevConfigRef.current = { studyMode, selectedLevel, currentSetNum };
-
-        if (modeOrLevelChanged) {
             // 2. Yeni seçilen seviyenin kayıtlı savedIndex, savedSet ve savedActiveIds değerleri yüklenmeli.
             const savedIndex = localStorage.getItem(getCurrentIndexKey(studyMode, selectedLevel));
             const parsedIndex = savedIndex ? parseInt(savedIndex, 10) : 0;
@@ -189,14 +187,20 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             const parsedSet = savedSet ? parseInt(savedSet, 10) : 1;
             const targetSet = !isNaN(parsedSet) && parsedSet > 0 ? parsedSet : 1;
 
+            // prevConfigRef'i YENİ targetSet ile güncelle ki sonraki render'da sahte setChanged tetiklenmesin
+            prevConfigRef.current = { studyMode, selectedLevel, currentSetNum: targetSet };
+
             setCurrentIndex(targetIndex);
             setCurrentSetNum(targetSet);
             setIsFinished(false);
             setIsFlipped(false);
 
-            // 3. activeIds state'i yeni seviyenin kelimeleriyle senkronize edilmeli (önceki seviyenin ID'leri yeni seviyeyi bloke etmemeli).
+            if (studyMode === 'LIBRARY') {
+                localStorage.setItem('lingua_flashcard_last_level', selectedLevel);
+            }
+
+            // 3. activeIds state'i yeni seviyenin kelimeleriyle senkronize edilmeli
             if (scopedWords.length === 0) {
-                setActiveIds([]);
                 return;
             }
 
@@ -226,14 +230,17 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
             setActiveIds(targetActiveIds);
             return;
-        } else if (setChanged) {
+        }
+
+        prevConfigRef.current = { studyMode, selectedLevel, currentSetNum };
+
+        if (setChanged) {
             setCurrentIndex(0);
             setIsFinished(false);
             setIsFlipped(false);
         }
 
         if (scopedWords.length === 0) {
-            setActiveIds([]);
             return;
         }
 
@@ -372,6 +379,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                     onComplete: () => {
                         setIsListeningMode(false);
                         setIsFinished(true);
+                        setAutoAdvanceCountdown(10);
                         triggerSuccessConfetti();
                     }
                 }
@@ -483,7 +491,8 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         }
     };
 
-    const handleNewSet = () => {
+    const handleNewSet = (resumeListening: boolean = false) => {
+        setAutoAdvanceCountdown(null);
         const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
         localStorage.removeItem(getActiveIdsKey(studyMode, selectedLevel));
         localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), '0');
@@ -494,7 +503,68 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         setIsFlipped(false);
         setIsFinished(false);
         onNextSet();
+
+        if (resumeListening) {
+            setTimeout(() => {
+                const nextSetStart = (nextSetNum - 1) * FLASHCARD_SET_SIZE;
+                const nextWords = scopedWords.slice(nextSetStart, nextSetStart + FLASHCARD_SET_SIZE);
+                if (nextWords.length > 0) {
+                    setIsListeningMode(true);
+                    setIsAudioPaused(false);
+                    setListeningPhase('front');
+                    setRemainingDelay(delaySeconds);
+
+                    audioStudyService.startListeningSession({
+                        words: nextWords,
+                        startIndex: 0,
+                        direction,
+                        delaySeconds,
+                        callbacks: {
+                            onWordChange: (idx, word, phase) => {
+                                if (phase === 'front') {
+                                    setCurrentIndex(idx);
+                                    setIsFlipped(false);
+                                } else if (phase === 'back') {
+                                    setIsFlipped(true);
+                                } else if (phase === 'transition') {
+                                    setIsFlipped(false);
+                                }
+                                setListeningPhase(phase);
+                            },
+                            onStateChange: (playing, phase, remaining) => {
+                                setIsAudioPaused(!playing);
+                                setListeningPhase(phase);
+                                if (remaining !== undefined) {
+                                    setRemainingDelay(remaining);
+                                }
+                            },
+                            onComplete: () => {
+                                setIsListeningMode(false);
+                                setIsFinished(true);
+                                setAutoAdvanceCountdown(10);
+                                triggerSuccessConfetti();
+                            }
+                        }
+                    });
+                }
+            }, 100);
+        }
     };
+
+    useEffect(() => {
+        if (autoAdvanceCountdown === null || !isFinished) return;
+
+        if (autoAdvanceCountdown <= 0) {
+            handleNewSet(true);
+            return;
+        }
+
+        const timer = setTimeout(() => {
+            setAutoAdvanceCountdown(prev => (prev !== null && prev > 0 ? prev - 1 : 0));
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [autoAdvanceCountdown, isFinished]);
 
     const handleLevelTabClick = (lvl: LibraryLevel) => {
         if (lvl === selectedLevel) return;
@@ -536,18 +606,42 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                     <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-3xl"></div>
                     <Trophy size={72} className="text-yellow-500 mx-auto mb-6 animate-bounce" />
                     <h2 className="text-4xl font-black text-white mb-2">Harika Bir Set!</h2>
-                    <p className="text-slate-500 font-bold mb-8">Bu gruptaki tüm kelimeleri inceledin.</p>
+                    <p className="text-slate-500 font-bold mb-6">Bu gruptaki tüm kelimeleri inceledin.</p>
+
+                    {autoAdvanceCountdown !== null && (
+                        <div className="mb-6 p-4 rounded-3xl bg-emerald-950/40 border border-emerald-500/30 flex flex-col items-center gap-2">
+                            <div className="flex items-center gap-2 text-emerald-400 font-black text-xs sm:text-sm">
+                                <Headphones size={16} className="animate-pulse" />
+                                <span>Dinleme Modu: <b>{autoAdvanceCountdown}s</b> sonra yeni sete geçiliyor</span>
+                            </div>
+                            <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+                                <div 
+                                    className="bg-emerald-500 h-full transition-all duration-1000 ease-linear rounded-full"
+                                    style={{ width: `${(autoAdvanceCountdown / 10) * 100}%` }}
+                                />
+                            </div>
+                            <button
+                                onClick={() => setAutoAdvanceCountdown(null)}
+                                className="text-[11px] text-slate-400 hover:text-white font-bold underline transition-colors mt-1"
+                            >
+                                ⏸️ Otomatik Geçişi Durdur / İptal Et
+                            </button>
+                        </div>
+                    )}
 
                     <div className="space-y-3 w-full">
                         <button
-                            onClick={handleNewSet}
+                            onClick={() => handleNewSet(autoAdvanceCountdown !== null)}
                             className="w-full py-4 bg-yellow-500 hover:bg-yellow-400 text-black rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl shadow-yellow-500/20 active:scale-95 flex items-center justify-center gap-2"
                         >
-                            <BookOpen size={18} /> Yeni Set ile Devam Et
+                            <BookOpen size={18} /> {autoAdvanceCountdown !== null ? 'Hemen Yeni Sete Geç' : 'Yeni Set ile Devam Et'}
                         </button>
 
                         <button
-                            onClick={onOpenModeSelection}
+                            onClick={() => {
+                                setAutoAdvanceCountdown(null);
+                                onOpenModeSelection();
+                            }}
                             className="w-full py-4 bg-purple-600/10 text-purple-400 border border-purple-500/20 rounded-3xl font-black text-base hover:bg-purple-600 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
                         >
                             <SlidersHorizontal size={18} /> Başka Moda Geç
@@ -555,7 +649,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
                         {onGoToQuiz && (
                             <button
-                                onClick={onGoToQuiz}
+                                onClick={() => {
+                                    setAutoAdvanceCountdown(null);
+                                    onGoToQuiz();
+                                }}
                                 className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
                                 <Puzzle size={18} /> Test Çöz
@@ -563,7 +660,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         )}
 
                         <button
-                            onClick={onExit}
+                            onClick={() => {
+                                setAutoAdvanceCountdown(null);
+                                onExit();
+                            }}
                             className="w-full py-4 bg-zinc-900 text-slate-400 rounded-3xl font-black text-base border border-white/5 active:scale-95 transition-all hover:text-white"
                         >
                             Dashboard'a Dön

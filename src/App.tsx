@@ -67,8 +67,18 @@ export default function App() {
   const [showSentenceSelection, setShowSentenceSelection] = useState(false);
   const [showFlashcardSelection, setShowFlashcardSelection] = useState(false);
   const [flashcardStudyMode, setFlashcardStudyMode] = useState<FlashcardStudyMode>('USER_WORDS');
-  const [selectedLibraryLevel, setSelectedLibraryLevel] = useState<LibraryLevel>('A1');
-  const [libraryWords, setLibraryWords] = useState<Word[]>(() => a1WordsData as Word[]);
+  const [selectedLibraryLevel, setSelectedLibraryLevel] = useState<LibraryLevel>(() => {
+    const saved = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
+    const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    return saved && validLevels.includes(saved) ? saved : 'A1';
+  });
+  const [libraryWords, setLibraryWords] = useState<Word[]>(() => {
+    const saved = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
+    const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    const initialLevel = saved && validLevels.includes(saved) ? saved : 'A1';
+    const local = wordService.getLocalLibraryWords(initialLevel);
+    return local && local.length > 0 ? local : (a1WordsData as Word[]);
+  });
   const [isLibraryLoading, setIsLibraryLoading] = useState(false);
   const [activeCustomSet, setActiveCustomSet] = useState<Word[]>([]);
   const [pendingSetName, setPendingSetName] = useState<string | null>(null);
@@ -633,10 +643,13 @@ export default function App() {
             setShowUploadModal(true);
           }}
           onSelectLibrary={() => {
+            const saved = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
+            const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+            const targetLevel = saved && validLevels.includes(saved) ? saved : 'A1';
             setFlashcardStudyMode('LIBRARY');
-            setSelectedLibraryLevel('A1');
+            setSelectedLibraryLevel(targetLevel);
             setShowFlashcardSelection(false);
-            handleLevelChange('A1');
+            handleLevelChange(targetLevel);
             setMode(AppMode.FLASHCARDS);
           }}
         />
