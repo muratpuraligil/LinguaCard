@@ -116,6 +116,11 @@ export class AudioStudyService {
         // Resume based on current phase
         if (this.currentPhase === 'thinking') {
             this.startThinkingDelay();
+        } else if (this.currentPhase === 'transition') {
+            this.delayTimer = setTimeout(() => {
+                if (!this.isRunning || this.isPaused) return;
+                this.advanceToNext();
+            }, 500);
         } else {
             this.playCurrentStep();
         }
@@ -124,6 +129,24 @@ export class AudioStudyService {
     public next() {
         if (!this.isRunning || this.words.length === 0) return;
         this.clearTimers();
+        if (this.currentPhase === 'back') {
+            // Flip back to front face first before advancing to avoid translation flash
+            this.currentPhase = 'transition';
+            const currentWord = this.words[this.currentIndex];
+            if (currentWord) {
+                this.callbacks.onWordChange?.(this.currentIndex, currentWord, 'transition');
+                this.callbacks.onStateChange?.(true, 'transition');
+            }
+            this.delayTimer = setTimeout(() => {
+                if (!this.isRunning || this.isPaused) return;
+                this.advanceToNext();
+            }, 450);
+            return;
+        }
+        this.advanceToNext();
+    }
+
+    private advanceToNext() {
         if (this.currentIndex < this.words.length - 1) {
             this.currentIndex += 1;
             this.currentPhase = 'front';
@@ -136,6 +159,24 @@ export class AudioStudyService {
     public prev() {
         if (!this.isRunning || this.words.length === 0) return;
         this.clearTimers();
+        if (this.currentPhase === 'back') {
+            // Flip back to front face first before jumping to previous word
+            this.currentPhase = 'transition';
+            const currentWord = this.words[this.currentIndex];
+            if (currentWord) {
+                this.callbacks.onWordChange?.(this.currentIndex, currentWord, 'transition');
+                this.callbacks.onStateChange?.(true, 'transition');
+            }
+            this.delayTimer = setTimeout(() => {
+                if (!this.isRunning || this.isPaused) return;
+                this.advanceToPrev();
+            }, 450);
+            return;
+        }
+        this.advanceToPrev();
+    }
+
+    private advanceToPrev() {
         if (this.currentIndex > 0) {
             this.currentIndex -= 1;
             this.currentPhase = 'front';
@@ -271,15 +312,21 @@ export class AudioStudyService {
         this.speakText(backText, backLang, () => {
             if (!this.isRunning || this.isPaused) return;
 
-            // Wait 1.5s after translation before moving to next word
-            this.currentPhase = 'transition';
-            this.callbacks.onWordChange?.(this.currentIndex, currentWord, 'transition');
-            this.callbacks.onStateChange?.(true, 'transition');
-
+            // Step 1: Kullanıcının sarı kartı rahatça görmesi ve okuyabilmesi için çeviri sonrası 2.2 saniye açık tut
             this.delayTimer = setTimeout(() => {
                 if (!this.isRunning || this.isPaused) return;
-                this.next();
-            }, 1500);
+
+                // Step 2: handleNext mantığı - Önce kartı ön yüze çevir (isFlipped = false)
+                this.currentPhase = 'transition';
+                this.callbacks.onWordChange?.(this.currentIndex, currentWord, 'transition');
+                this.callbacks.onStateChange?.(true, 'transition');
+
+                // Step 3: Kart ön yüze dönerken tam 350ms bekle, ardından yeni kelimeye geç (böylece sonraki çeviri asla yansımaz)
+                this.delayTimer = setTimeout(() => {
+                    if (!this.isRunning || this.isPaused) return;
+                    this.advanceToNext();
+                }, 350);
+            }, 2200);
         });
     }
 

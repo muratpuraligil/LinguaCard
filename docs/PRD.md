@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.0
+# LinguaCard PRD (Product Requirements Document) - v1.0.98 (21 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -26,19 +26,39 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
       3. **Yeni Kelimelerle Çalış (AI Destekli Alan):** Resim yükleme (OCR) veya metin yapıştırma ile AI destekli yeni kelimeler oluşturma ortamı. Üretilen kelimeler kullanıcının kendi `user_id` değeri ile veritabanına kaydedilir ve doğrudan kart çalışmasına yönlendirilir.
     - **Kategori ve Tür Rozetleri:** Kartların ön ve arka yüzlerinde kelimenin kategorisi (`category` - Örn: "Academic and Research", "Culture and Arts") ve kelime türü (`word_type` - Örn: "Noun", "Verb", "Adjective") rozet olarak şık bir tasarımla sunulur.
     - **İlerleme Takibi (User Progress):** Çalışma esnasında "Öğrendim / Öğrenmedim / Biliyorum" durumları Supabase `user_progress` tablosuna (`word_id, user_id, status, module='flashcards'`) ve yerel hafızaya kaydedilir. "Öğrendim" butonuna basıldığında kelime arşivlenir ve aktif setteki kart sırası başa dönmeden kullanıcının kaldığı indeksten sıradaki kartla akıcı şekilde devam eder.
-    - **Kaldığın Yerden Devam (Persistent Progress):** Aktif set numarası (`lingua_flashcard_set_num_{mode}_{level}`), aktif set ID listesi (`lingua_flashcard_active_ids_{mode}_{level}`) ve kullanıcının kaldığı kart sırası (`lingua_flashcard_current_index_{mode}_{level}`) yerel depolamada saklanır. Kullanıcı çalışma esnasında Ana Sayfa'ya dönüp tekrar karta girdiğinde en baştan başlamak yerine kaldığı karttan kesintisiz devam eder.
-    - **Seçim & Sıralama Mantığı:** Kelimeler oluşturulma tarihine göre 20'şerli setlere bölünür. Seviye sekmeleri (A1, A2, B1, B2, C1, C2 vb.) ve çalışma modları arasında geçiş yapıldığında 1. kelimenin sürekli değişmesini önlemek adına deterministik/sabit sıralama uygulanır.
+    - **Seviye Bazlı Bağımsız Kalıcı Hafıza ve Kaldığı Yerden Devam (Per-Level Independent Persistent Memory):** 
+      - **Bağımsız Durum Anahtarları:** Her CEFR seviyesi ve çalışma modu için izole yerel depolama anahtarları kullanılır: Aktif set numarası (`lingua_flashcard_set_num_${mode}_${level}`), aktif set ID listesi (`lingua_flashcard_active_ids_${mode}_${level}`) ve kullanıcının kaldığı kart sırası (`lingua_flashcard_current_index_${mode}_${level}`).
+      - **Seviyeler Arası Çapraz Koruma:** Kütüphaneden Çalış modundaki her seviye sekmesi (A1, A2, B1, B2, C1, C2) bağımsız çalışma hafızasına sahiptir. Örneğin kullanıcı A1'de 7. karttayken B1 seviyesine geçip 14. karta ulaştığında, tekrar A1'e döndüğünde A1'de 7. karttan; B1'e döndüğünde ise B1'de 14. karttan kesintisiz devam eder.
+      - **Senkronizasyon ve Emniyetli Ayrılma:** Seviye değişimi tetiklendiğinde ayrılmakta olan seviyenin ilerlemesi anında diske kaydedilir; yeni seçilen seviyenin kayıtlı ilerlemesi ve kelime kimlikleri senkronize edilerek eski ID'lerin yeni seviyeyi bloke etmesi kalıcı olarak engellenir.
+      - **Uygulama Genelinde Süreklilik:** Kullanıcı Ana Sayfa'ya dönüp karta yeniden girdiğinde, tarayıcıyı yenilediğinde veya oturum kapandığında kaldığı kart ve setten sıfır veri kaybıyla kesintisiz devam eder.
+    - **Hands-Free Arka Plan & Kilit Ekranı Dinleme Modu (Background & Lock Screen Audio):** 
+      - **Kesintisiz Çift Dilli Oynatma Döngüsü:** Kartlar ekranında yer alan "Dinleme Modu" butonu ile başlatılan bu mod, ilgili 20'lik kelime setini ekrana dokunmaya veya bakmaya gerek kalmadan seslendirir: Önce kartın ön yüzündeki kelime (İngilizce) telaffuz edilir, ardından ayarlanabilir düşünme süresi (3s / 4s / 5s, varsayılan 4s) beklenir, ardından kartın çevirisi (Türkçe) telaffuz edilir ve kart otomatik olarak sonraki adıma geçer.
+      - **Mobil Kilit Ekranı ve Sekme Arka Planı Desteği (HTML5 Audio + Silent Loop Keep-Alive):** Mobil işletim sistemlerinin (iOS Safari, Android Chrome) sekme arka plana atıldığında veya ekran kilitlendiğinde Web Speech API'yi dondurma (sleep/suspend) engeli; kesintisiz HTML5 Audio taşıyıcı döngüsü (Silent Loop Keep-Alive) ile aşılmıştır. Kullanıcı telefonunu cebine koysa veya ekranı kapatsa dahi telaffuz zinciri kesintisiz çalışmaya devam eder.
+      - **Tarayıcı Sekmesi Mute ve Pause Kontrolü:** Tarayıcı sekmesinde gerçek bir medya akışı çalıştığı için masaüstünde sekme doğrudan hoparlör ikonuyla veya sağ tıkla tek dokunuşla susturulabilir (mute/unmute) ve medya tuşlarıyla duraklatılabilir.
+      - **Media Session API & Kilit Ekranı / Bluetooth Donanım Kontrolleri:** `navigator.mediaSession` entegrasyonu sayesinde kilit ekranı widget'ında, bildirim merkezinde ve akıllı saatlerde o anki kelime (`Set X - Sıra Y/20: Kelime`) ve çevirisi medya başlığı ve sanatçısı olarak görüntülenir. Kilit ekranı bildiriminden ve Bluetooth kulaklık üzerindeki Oynat/Duraklat (Play/Pause), Sonraki Parça (Next - sonraki kelime) ve Önceki Parça (Prev - önceki kelime) butonları tam işlevsel olarak kart akışını yönetir.
+      - **Yüzen Kontrol Paneli (ListeningModeBar):** Kartın üstünde anlık fazı ("Kelime Okunuyor", "Düşünme Payı: 4s", "Çeviri Okunuyor", "Sıradakine Geçiliyor..."), bekleme süresi seçicilerini (3s, 4s, 5s), oynat/duraklat ve kart atlama butonlarını içeren Apple standartlarında minimalist, yarı saydam (`backdrop-blur`) ve şık kontrol çubuğu sunulur.
+    - **Kart Geçiş Senkronizasyonu & Bilgi Gizliliği Koruması (Zero-Leak Flip Transition & Yellow Card Visibility):** 
+      - **Sarı Çeviri Kartı Görünürlüğü (Yellow Card Visibility):** Dinleme modunda düşünme süresi tamamlandığında kart mutlaka 3D animasyonla arka yüze çevrilir (`isFlipped = true`) ve sarı arka yüz (çeviri) ekranda net şekilde açılır. Çeviri telaffuzu bittikten sonra kullanıcının kartı rahatça okuyabilmesi için sarı kart 2.2 saniye boyunca ekranda sabit görünür kalır; erken kapanma engellenmiştir.
+      - **Bilgi Sızıntısı Önleme:** Çeviri okunduktan ve 2.2 saniyelik okuma payı tamamlandıktan sonra, doğrudan sonraki kelimeye geçilmez; normal moddaki `handleNext` mantığıyla önce kart ön yüze döndürülür (`isFlipped = false`). 350ms'lik dönme süresinden sonra yeni kelimeye geçilir (`advanceToNext`). Böylece sonraki kelimenin çevirisi geçiş anında asla ve asla yansımaz ("spoiler" etkisi sıfırlanmıştır).
+    - **Kademeli Kelime Kapsamı & Temel 300 Seçicisi (Tiered Word Scope: Temel 300 vs Tümü):**
+      - **Pedagojik Temel 300 Yaklaşımı:** Her CEFR seviyesinde (A1-C2) 1.000+ kelimelik devasa havuzun yeni başlayanları bunaltmaması ve en sık kullanılan çekirdek kelimelerin öncelikle pekiştirilmesi için varsayılan olarak **"⭐ Temel 300"** (15 set, 300 kelime) kapsamı sunulur.
+      - **Kapsam Geçişi (Scope Toggle):** Seviye sekmelerinin hemen altında yer alan minimalist ve kompakt segmented pill (`[⭐ Temel 300] [📚 Tümü (1000+)]`) ile kullanıcı dilediğinde seviyenin tüm kelime havuzuna (1.000+ kelime, 52 set) tek tıkla geçiş yapabilir.
+      - **Kalıcı Tercih Saklama:** Kullanıcının seçtiği kapsam tercihi yerel depolamada (`lingua_flashcard_library_scope`) güvenle saklanır ve oturumlar arasında korunur.
+    - **Toplam Kelime Sayısı Göstergesi (Set & Total Word Count Indicator):**
+      - İlerleme çubuğunda kaçıncı sette bulunulduğunun yanı sıra, seçili kapsamdaki toplam kelime adedi parantez içinde açıkça belirtilir: `SET 1 / 15 (300)` veya `SET 1 / 52 (1026)`. Böylece kullanıcı o seviyede ve kapsamda toplam kaç kelime çalıştığını anlık olarak takip edebilir.
+    - **Üst Menü ve Seviye Sekmeleri Simetrik Merkezleme Mimarisi (Header & Level Tabs Centered Alignment):** 
+      - **Dengeli 3 Sütunlu Izgara:** Flaşkartlar ekranının üst başlığında `grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start` dengeli 3 sütunlu ızgara yapısı kullanılarak sol blok (`Ana Sayfa` butonu) ve sağ blok (`Home` simgesi) eşit genişlikte dengelenmiş, orta sütun matematiksel olarak ekran merkezine oturtulmuştur.
+      - **Üst Butonlara Göre Ortalanmış Seviye Sekmeleri:** `Dinleme Modu`, `Mod Seç`, `TR -> EN` buton grubu ile altındaki `A1 - C2` seviye sekmeleri ve kapsam seçici hapı aynı orta kolon içinde `flex flex-col items-center justify-center` yapısıyla ortalanmıştır. Dinleme modu butonuna sol kenardan hizalanma sebebiyle sağ tarafta oluşan asimetrik boşluk tamamen giderilmiş, kusursuz bir optik merkezleme sağlanmıştır.
+    - **Mobil Web Responsive & Küçük Ekran Optimizasyonları (320px - 480px Viewport Optimization):** 
+      - **Kaydırmasız Tek Ekran Yerleşimi (Viewport-Fit UX):** iPhone SE (375px), Android (360px) ve küçük mobil cihazlarda dikey kaydırmayı (scroll) tamamen ortadan kaldırmak amacıyla kart boyutları (`aspect-[4/4.8] max-h-[38vh] sm:max-h-[46vh] min-h-[250px] sm:min-h-[290px]`, iç padding `p-4 sm:p-6`) ve dikey boşluklar dinamik olarak optimize edilmiştir. "Öğrenmedim / Biliyorum" ve "Sıradaki / Başarılı" butonlarının en küçük mobil cihazlarda dahi tek ekranda görünür kalması güvenceye alınmıştır.
+      - **Kompakt Başlık ve Esnek Tipografi:** Üst başlıkta dar ekran kenar boşlukları (`px-3 sm:px-6 md:px-10 py-2.5 sm:py-4`) ve mod butonlarında esnek tipografi (`text-[10px] sm:text-xs`) ile kompakt padding (`px-2.5 py-1.5 sm:px-3.5 sm:py-2`) kullanılarak dar ekranda taşma önlenmiştir.
+      - **Yatay Kaydırılabilir Seviye Sekmeleri:** Seviye sekmeleri (A1 - C2) dikeyde satır kırarak ekran yüksekliğini işgal etmek yerine gizli çubuklu, pürüzsüz yatay kaydırma (`overflow-x-auto no-scrollbar shrink-0`) yapısıyla sunulmuştur.
+      - **Dokunmatik Hedef Erişilebilirliği (Touch Target Accessibility):** Hands-Free Dinleme Modu oynatıcı çubuğunda (`ListeningModeBar`) dar mobil genişlik (`max-w-md sm:max-w-xl`), taşmayan durum rozetleri (`truncate`) ve Apple HIG standartlarına uygun dokunmatik buton hedefleri (`min-w-[36px] min-h-[36px]`) sağlanmıştır.
     - **Kusursuz ve Anlık Sekme Geçişi (Zero-Flicker Tab Transition):** Seviye sekmeleri (A1-C2) arasında geçiş yapıldığında, yerel veri paketleri (`getLocalLibraryWords`) sayesinde kelimeler anlık (0ms) ve senkronize olarak yüklenir. Asenkron veri çekimleri sırasında oluşan ara durumlar için `isLoading` ve `isLevelTransitioning` koruması getirilmiş; sekme geçişi esnasında "Kelime Bulunamadı" modalının anlık görünmesi (flicker) tamamen engellenmiştir.
-    - **Ekran Uyumlu Kompakt Kart Tasarımı (Viewport-Fit UX):** Kullanıcıların alt gezinme kontrollerine ("Öğrenmedim / Biliyorum", "Sıradaki / Başarılı") erişirken gereksiz dikey kaydırma (scroll) yapmasını önlemek amacıyla kart boyutları (`aspect-[4/4.8] max-h-[46vh] min-h-[290px]`) ve dikey boşluklar optimize edilerek tüm aksiyon butonları kaydırmasız tek ekranda sunulmuştur.
+    - **Seçim & Sıralama Mantığı:** Kelimeler oluşturulma tarihine göre 20'şerli setlere bölünür. Seviye sekmeleri (A1, A2, B1, B2, C1, C2 vb.) ve çalışma modları arasında geçiş yapıldığında 1. kelimenin sürekli değişmesini önlemek adına deterministik/sabit sıralama uygulanır.
     - **Kütüphane Kelime Düzeltmeleri:** A1 kelime havuzunda bağlamsal doğruluğu artırmak için Türkçe çeviriler rafine edilmiştir (Örn: "Blog" -> "Web günlüğü", "Cell" -> "Hücre").
     - **Mod Değiştirme:** Kartlar çalışma ekranının üst menüsünde bulunan "Mod Seç" butonu ile istenildiğinde mod seçim ekranına dönülebilir.
     - **Otomatik Telaffuz:** Kartın İngilizce yüzü görüntülendiği anda seslendirme otomatik yapılır.
-    - **Hands-Free Arka Plan & Kilit Ekranı Dinleme Modu (Background & Lock Screen Audio):** 
-      - **Kesintisiz Dinleme Deneyimi:** Kartlar ekranında yer alan şık "Dinleme Modu" butonu ile başlatılan bu mod, ilgili 20'lik kelime setini ekrana bakmaya gerek kalmadan sırayla seslendirir: Önce kartın ön yüzündeki kelime telaffuz edilir, ardından ayarlanabilir düşünme süresi (3s / 4s / 5s, varsayılan 4s) beklenir, ardından çevirisi telaffuz edilir ve kart otomatik olarak sonraki adıma geçer.
-      - **Mobil Kilit Ekranı ve Sekme Arka Planı Desteği (HTML5 Audio + Silent Keep-Alive Loop):** Mobil işletim sistemlerinin (iOS Safari, Android Chrome) sekme arka plana atıldığında veya ekran kilitlendiğinde Web Speech API'yi dondurma engeli; kesintisiz HTML5 Audio akışı ve arka plan taşıyıcı döngüsü (Silent Keep-Alive Loop) ile aşılmıştır. Kullanıcı telefonunu cebine koysa veya ekranı kapatsa dahi telaffuz zinciri kesintisiz çalışmaya devam eder.
-      - **Sekme Mute ve Pause Kontrolü:** Tarayıcı sekmesinde gerçek bir medya akışı çalıştığı için masaüstünde sekme doğrudan hoparlör ikonuyla veya sağ tıkla susturulabilir (mute/unmute) ve duraklatılabilir.
-      - **Media Session API & Kilit Ekranı / Bluetooth Kulaklık Kontrolleri:** `navigator.mediaSession` entegrasyonu sayesinde kilit ekranı widget'ında veya bildirim merkezinde o anki kelime (`X/20: Kelime`) ve çevirisi bir müzik parçası gibi görüntülenir; kilit ekranı ve Bluetooth kulaklık üzerindeki Oynat/Duraklat, Sonraki Parça (Next) ve Önceki Parça (Prev) butonları tam işlevsel olarak kart akışını yönetir.
-      - **Yüzen Kontrol Paneli (ListeningModeBar):** Kartın üstünde anlık fazı ("Kelime Okunuyor", "Düşünme Payı: 4s", "Çeviri Okunuyor"), bekleme süresi seçicilerini, oynat/duraklat ve kart atlama butonlarını içeren Apple standartlarında minimalist ve yarı saydam kontrol çubuğu sunulur.
 
 - **Quiz (Test Çöz):** 
     - Çoktan seçmeli, puan tabanlı dinamik testler.
@@ -71,6 +91,9 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Dinamik Dashboard:** Görsel ilerleme takibi ve pratik alanları.
 - **Kart Modu Seçici Modal:** Hızlı erişim için optimize edilmiş 3 kartlı Mod Seçim Modalı (1. Kütüphaneden Çalış, 2. Listendeki Kelimelerle Çalış, 3. Yeni Kelimelerle Çalış).
 - **A1–C2 Seviye Sekmeleri:** Kütüphane modunda 6 CEFR seviyesi (A1, A2, B1, B2, C1, C2) arasında sıfır gecikmeli (0ms) ve titreşimsiz (zero-flicker) sekme geçişi.
+- **Hands-Free Dinleme Modu Deneyimi:** Ekrana dokunmadan kilit ekranından ve Bluetooth kulaklık üzerinden çalışma imkanı; şık yüzen kontrol barı (`ListeningModeBar`), animasyon geçiş koruması ve sızıntısız kart akışı.
+- **Hassas Dikey Hizalama & Tipografik Denge:** Başlık kontrolleri ile seviye sekmelerinin matematiksel olarak aynı dikey hizada konumlanması, 3 sütunlu dengeli ızgara yapısı.
+- **Mobil Web Öncelikli & Viewport-Fit Uyum:** 320px - 480px küçük ekranlarda dikey kaydırmayı ortadan kaldıran dinamik viewport sığdırma ve dokunmatik erişilebilirlik.
 - **Rehberli Tur (Onboarding):** Tanıtım turları.
 - **Premium Arayüz:** Karanlık mod odaklı, neon efektli, glassmorphism ve akıcı animasyonlar.
 
@@ -80,6 +103,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Frontend:** React 19 + Vite (Performance-first).
 - **Veritabanı & Auth:** Supabase (Real-time data, RLS & secure authentication). 30 Ekim 2026 Supabase PostgREST güvenlik güncellemesi gereğince tüm public tablolar (`words`, `user_progress`) için `anon`, `authenticated` ve `service_role` rolleri açık `GRANT` direktifleriyle güvenceye alınmıştır.
 - **Veri Şeması:** `words` (`category`, `word_type`, `set_name`, `user_id`), `user_progress` (`word_id`, `user_id`, `status`, `module`).
+- **Ses & Arka Plan Medya Motoru:** Web Speech API (`speechSynthesis`), HTML5 Audio (`audioStudyService`), Silent Keep-Alive Loop (arka planda dondurma engeli), Media Session API (`navigator.mediaSession`).
 - **Yapay Zeka:** Google Gemini AI (Google Generative AI SDK).
 - **Dosya İşleme:** Offscreen Canvas + Base64 Pipeline.
 
@@ -100,6 +124,8 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ---
 
 ## 6. Sürüm Takibi ve Release Yönetimi
+- **Aktif Lokal Sürüm:** `v1.0.96` (20 Ekim 2026)
+- **Hedef Sürüm Kilometre Taşı (Milestone):** `v1.2.0` (A1-C2 Tam Kütüphane, Hands-Free Dinleme Modu, Bağımsız Hafıza ve Mobil Responsive Paketi)
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY`
 - **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya fix yapıldığında versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra `1.2.0` şeklinde devam eder.
 - **Lokal ve Canlı Versiyon Ayrımı:** Kullanıcıya bilgilendirme yapılırken Lokal Versiyon ile Canlı Versiyon (`gh-pages`) her zaman ayrı ve net olarak belirtilir. Canlı derlemede `prebuild` tetiklenmesiyle oluşan versiyon artışı raporlanır.
@@ -109,5 +135,10 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ## 7. Gelecek Yol Haritası (Roadmap)
 - [x] **A2-B2 Kelime Setlerinin Tamamlanması:** A2-1000, B1-1000 ve B2-1000 seviye verilerinin hazırlanması, docs klasörüne Excel (`.xlsx`) olarak eklenmesi ve kütüphaneye entegrasyonu tamamlandı.
 - [x] **C1-C2 Kelime Setlerinin Tamamlanması:** C1-1000 ve C2-1000 seviye verilerinin hazırlanması, docs klasörüne Excel (`.xlsx`) olarak eklenmesi ve kütüphaneye entegrasyonu tamamlandı.
+- [x] **Hands-Free Arka Plan & Kilit Ekranı Dinleme Modu:** HTML5 Audio Silent Loop, Media Session API ve Bluetooth donanım kontrolleri tamamlandı.
+- [x] **Bilgi Gizliliği Korumalı Kart Geçiş Senkronizasyonu:** Çevirinin yeni kelimeye sızmasını engelleyen 3D animasyonlu geçiş fazı tamamlandı.
+- [x] **Seviye Bazlı Bağımsız Kalıcı Hafıza:** Her CEFR seviyesi (A1-C2) için bağımsız indeks, set ve aktif ID depolaması tamamlandı.
+- [x] **Üst Başlık Dikey Hizalama Mimarisi:** 3 sütunlu dengeli ızgara ve sol kenar dikey hizalaması tamamlandı.
+- [x] **Mobil Web Responsive & Küçük Ekran Uyumu:** 320px-480px ekranlarda viewport-fit kaydırmasız kart tasarımı ve dokunmatik erişilebilirlik tamamlandı.
 - [ ] **Aralıklı Tekrar (Spaced Repetition):** Unutma eğrisine göre kart hatırlatma.
 - [ ] **Mobil Native Uygulama:** iOS ve Android sürümleri.

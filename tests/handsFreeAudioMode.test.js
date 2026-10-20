@@ -32,3 +32,54 @@ test('ListeningModeBar.tsx component exists with play/pause and delay controls',
     assert.match(content, /play|pause/i, 'ListeningModeBar must have play/pause controls');
     assert.match(content, /Önceki|Sonraki|Chevron|Skip/i, 'ListeningModeBar must have navigation buttons');
 });
+
+test('FlashcardMode and audioStudyService keep yellow back card visible and prevent next translation leak', async () => {
+    const flashcardPath = path.resolve('src/components/FlashcardMode.tsx');
+    const flashcardContent = fs.readFileSync(flashcardPath, 'utf8');
+
+    // In FlashcardMode.tsx onWordChange, phase 'back' must set isFlipped to true without resetting via setCurrentIndex
+    assert.match(
+        flashcardContent,
+        /phase\s*===\s*'front'[\s\S]*?setCurrentIndex\(idx\)[\s\S]*?setIsFlipped\(false\)/,
+        'FlashcardMode.tsx must only update currentIndex on front phase'
+    );
+    assert.match(
+        flashcardContent,
+        /phase\s*===\s*'back'[\s\S]*?setIsFlipped\(true\)/,
+        'FlashcardMode.tsx must set isFlipped(true) on back phase so yellow card displays clearly'
+    );
+    assert.match(
+        flashcardContent,
+        /phase\s*===\s*'transition'[\s\S]*?setIsFlipped\(false\)/,
+        'FlashcardMode.tsx must set isFlipped(false) on transition phase before advancing word'
+    );
+
+    const servicePath = path.resolve('src/services/audioStudyService.ts');
+    const serviceContent = fs.readFileSync(servicePath, 'utf8');
+
+    // In audioStudyService.ts, translation must remain visible with reading pause before transition and advance
+    assert.match(
+        serviceContent,
+        /transition/,
+        'audioStudyService.ts must handle transition phase'
+    );
+    assert.match(
+        serviceContent,
+        /advanceToNext/,
+        'audioStudyService.ts must have advanceToNext after flip animation delay'
+    );
+    assert.match(
+        serviceContent,
+        /if\s*\(\s*this\.currentPhase\s*===\s*'back'\s*\)/,
+        'audioStudyService.ts next/prev must check if card is flipped back and flip to front first'
+    );
+
+    // In FlashcardMode.tsx, handleAudioNext and handleAudioPrev must flip card first if flipped
+    assert.match(
+        flashcardContent,
+        /handleAudioNext\s*=\s*\(\)\s*=>\s*\{[\s\S]*?if\s*\(\s*isFlipped\s*\)[\s\S]*?setIsFlipped\(false\)/,
+        'FlashcardMode.tsx handleAudioNext must flip card front first if isFlipped is true'
+    );
+});
+
+

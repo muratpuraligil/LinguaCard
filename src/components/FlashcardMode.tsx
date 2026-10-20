@@ -101,6 +101,11 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const [delaySeconds, setDelaySeconds] = useState<number>(4);
     const [isAudioPaused, setIsAudioPaused] = useState<boolean>(false);
 
+    const [libraryScope, setLibraryScope] = useState<'CORE_300' | 'ALL'>(() => {
+        const saved = localStorage.getItem('lingua_flashcard_library_scope');
+        return saved === 'ALL' ? 'ALL' : 'CORE_300';
+    });
+
     useEffect(() => {
         wordService.getUserProgress(userId).then(setUserProgressMap);
     }, [userId]);
@@ -114,20 +119,45 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             .sort((a, b) => new Date(b.created_at || 0).getTime() - new Date(a.created_at || 0).getTime());
     }, [words, studyMode, selectedLevel]);
 
-    const totalSets = Math.max(1, Math.ceil(sortedWords.length / FLASHCARD_SET_SIZE));
+    const scopedWords = useMemo(() => {
+        if (studyMode === 'LIBRARY' && libraryScope === 'CORE_300') {
+            return sortedWords.slice(0, 300);
+        }
+        return sortedWords;
+    }, [studyMode, libraryScope, sortedWords]);
+
+    const totalSets = Math.max(1, Math.ceil(scopedWords.length / FLASHCARD_SET_SIZE));
 
     const currentSet = useMemo(() => {
         if (activeIds.length > 0) {
             const mapped = activeIds
-                .map(id => sortedWords.find(w => w.id === id))
+                .map(id => scopedWords.find(w => w.id === id))
                 .filter((w): w is Word => !!w);
             if (mapped.length > 0) return mapped;
         }
         const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
-        return sortedWords.slice(setStart, setStart + FLASHCARD_SET_SIZE);
-    }, [activeIds, sortedWords, currentSetNum]);
+        return scopedWords.slice(setStart, setStart + FLASHCARD_SET_SIZE);
+    }, [activeIds, scopedWords, currentSetNum]);
 
-    const prevConfigRef = React.useRef({ studyMode, selectedLevel, currentSetNum });
+    const activeSessionRef = useRef({
+        studyMode,
+        selectedLevel,
+        currentIndex,
+        currentSetNum,
+        activeIds
+    });
+
+    useEffect(() => {
+        activeSessionRef.current = {
+            studyMode,
+            selectedLevel,
+            currentIndex,
+            currentSetNum,
+            activeIds
+        };
+    }, [studyMode, selectedLevel, currentIndex, currentSetNum, activeIds]);
+
+    const prevConfigRef = useRef({ studyMode, selectedLevel, currentSetNum });
 
     useEffect(() => {
         const prev = prevConfigRef.current;
@@ -136,33 +166,80 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             prev.selectedLevel !== selectedLevel;
         const setChanged = prev.currentSetNum !== currentSetNum;
 
+        if (modeOrLevelChanged) {
+            // 1. Ayrılmakta olan seviyenin güncel currentIndex ve currentSetNum'ı o seviyenin anahtarlarına yazılmalı.
+            const outgoingMode = prev.studyMode;
+            const outgoingLevel = prev.selectedLevel;
+            localStorage.setItem(getCurrentIndexKey(outgoingMode, outgoingLevel), activeSessionRef.current.currentIndex.toString());
+            localStorage.setItem(getSetNumKey(outgoingMode, outgoingLevel), activeSessionRef.current.currentSetNum.toString());
+            if (activeSessionRef.current.activeIds.length > 0) {
+                localStorage.setItem(getActiveIdsKey(outgoingMode, outgoingLevel), JSON.stringify(activeSessionRef.current.activeIds));
+            }
+        }
+
         prevConfigRef.current = { studyMode, selectedLevel, currentSetNum };
 
         if (modeOrLevelChanged) {
+            // 2. Yeni seçilen seviyenin kayıtlı savedIndex, savedSet ve savedActiveIds değerleri yüklenmeli.
             const savedIndex = localStorage.getItem(getCurrentIndexKey(studyMode, selectedLevel));
             const parsedIndex = savedIndex ? parseInt(savedIndex, 10) : 0;
-            setCurrentIndex(!isNaN(parsedIndex) && parsedIndex >= 0 ? parsedIndex : 0);
+            const targetIndex = !isNaN(parsedIndex) && parsedIndex >= 0 ? parsedIndex : 0;
 
             const savedSet = localStorage.getItem(getSetNumKey(studyMode, selectedLevel));
             const parsedSet = savedSet ? parseInt(savedSet, 10) : 1;
-            setCurrentSetNum(!isNaN(parsedSet) && parsedSet > 0 ? parsedSet : 1);
+            const targetSet = !isNaN(parsedSet) && parsedSet > 0 ? parsedSet : 1;
 
+            setCurrentIndex(targetIndex);
+            setCurrentSetNum(targetSet);
             setIsFinished(false);
             setIsFlipped(false);
+
+            // 3. activeIds state'i yeni seviyenin kelimeleriyle senkronize edilmeli (önceki seviyenin ID'leri yeni seviyeyi bloke etmemeli).
+            if (scopedWords.length === 0) {
+                setActiveIds([]);
+                return;
+            }
+
+            const savedIdsJson = localStorage.getItem(getActiveIdsKey(studyMode, selectedLevel));
+            let targetActiveIds: string[] = [];
+            if (savedIdsJson) {
+                try {
+                    const savedIds = JSON.parse(savedIdsJson);
+                    if (Array.isArray(savedIds) && savedIds.length > 0) {
+                        const validIds = savedIds.filter((id: string) => sortedWords.some(w => w.id === id) && scopedWords.some(w => w.id === id));
+                        if (validIds.length > 0) {
+                            targetActiveIds = validIds;
+                        }
+                    }
+                } catch {}
+            }
+
+            if (targetActiveIds.length === 0) {
+                const setStart = (targetSet - 1) * FLASHCARD_SET_SIZE;
+                const setEnd = Math.min(setStart + FLASHCARD_SET_SIZE, scopedWords.length);
+                const setWords = scopedWords.slice(setStart, setEnd);
+                if (setWords.length > 0) {
+                    targetActiveIds = setWords.map(w => w.id);
+                    localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(targetActiveIds));
+                }
+            }
+
+            setActiveIds(targetActiveIds);
+            return;
         } else if (setChanged) {
             setCurrentIndex(0);
             setIsFinished(false);
             setIsFlipped(false);
         }
 
-        if (sortedWords.length === 0) {
+        if (scopedWords.length === 0) {
             setActiveIds([]);
             return;
         }
 
         // If mode and level did not change and we already have activeIds, keep them (filtering out any removed IDs)
-        if (!modeOrLevelChanged && activeIds.length > 0) {
-            const currentValidIds = activeIds.filter(id => sortedWords.some(w => w.id === id));
+        if (activeIds.length > 0) {
+            const currentValidIds = activeIds.filter(id => scopedWords.some(w => w.id === id));
             if (currentValidIds.length !== activeIds.length) {
                 setActiveIds(currentValidIds);
                 localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(currentValidIds));
@@ -170,13 +247,13 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             return;
         }
 
-        // If mode/level changed or activeIds is empty: check localStorage first
+        // If activeIds is empty: check localStorage first
         const savedIdsJson = localStorage.getItem(getActiveIdsKey(studyMode, selectedLevel));
         if (savedIdsJson) {
             try {
                 const savedIds = JSON.parse(savedIdsJson);
                 if (Array.isArray(savedIds) && savedIds.length > 0) {
-                    const validIds = savedIds.filter((id: string) => sortedWords.some(w => w.id === id));
+                    const validIds = savedIds.filter((id: string) => scopedWords.some(w => w.id === id));
                     if (validIds.length > 0) {
                         setActiveIds(validIds);
                         return;
@@ -186,15 +263,15 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         }
 
         const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
-        const setEnd = Math.min(setStart + FLASHCARD_SET_SIZE, sortedWords.length);
-        const setWords = sortedWords.slice(setStart, setEnd);
+        const setEnd = Math.min(setStart + FLASHCARD_SET_SIZE, scopedWords.length);
+        const setWords = scopedWords.slice(setStart, setEnd);
 
         if (setWords.length > 0) {
             const newIds = setWords.map(w => w.id);
             localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(newIds));
             setActiveIds(newIds);
         }
-    }, [sortedWords, currentSetNum, studyMode, selectedLevel]);
+    }, [scopedWords, currentSetNum, studyMode, selectedLevel]);
 
     const safeIndex = currentIndex >= currentSet.length ? Math.max(0, currentSet.length - 1) : currentIndex;
     const currentWord = currentSet.length > 0 ? currentSet[safeIndex] : null;
@@ -206,11 +283,15 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     }, [currentSet.length, currentIndex]);
 
     useEffect(() => {
-        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), currentIndex.toString());
+        if (prevConfigRef.current.studyMode === studyMode && prevConfigRef.current.selectedLevel === selectedLevel) {
+            localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), currentIndex.toString());
+        }
     }, [currentIndex, studyMode, selectedLevel]);
 
     useEffect(() => {
-        localStorage.setItem(getSetNumKey(studyMode, selectedLevel), currentSetNum.toString());
+        if (prevConfigRef.current.studyMode === studyMode && prevConfigRef.current.selectedLevel === selectedLevel) {
+            localStorage.setItem(getSetNumKey(studyMode, selectedLevel), currentSetNum.toString());
+        }
     }, [currentSetNum, studyMode, selectedLevel]);
 
     useEffect(() => {
@@ -225,6 +306,13 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         return () => {
             audioStudyService.cleanup();
             window.speechSynthesis.cancel();
+            // Save current session progress on unmount
+            const current = activeSessionRef.current;
+            localStorage.setItem(getCurrentIndexKey(current.studyMode, current.selectedLevel), current.currentIndex.toString());
+            localStorage.setItem(getSetNumKey(current.studyMode, current.selectedLevel), current.currentSetNum.toString());
+            if (current.activeIds.length > 0) {
+                localStorage.setItem(getActiveIdsKey(current.studyMode, current.selectedLevel), JSON.stringify(current.activeIds));
+            }
         };
     }, []);
 
@@ -264,13 +352,15 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                 delaySeconds,
                 callbacks: {
                     onWordChange: (idx, word, phase) => {
-                        setCurrentIndex(idx);
-                        setListeningPhase(phase);
-                        if (phase === 'back') {
+                        if (phase === 'front') {
+                            setCurrentIndex(idx);
+                            setIsFlipped(false);
+                        } else if (phase === 'back') {
                             setIsFlipped(true);
-                        } else if (phase === 'front') {
+                        } else if (phase === 'transition') {
                             setIsFlipped(false);
                         }
+                        setListeningPhase(phase);
                     },
                     onStateChange: (playing, phase, remaining) => {
                         setIsAudioPaused(!playing);
@@ -303,11 +393,25 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     };
 
     const handleAudioNext = () => {
-        audioStudyService.next();
+        if (isFlipped) {
+            setIsFlipped(false);
+            setTimeout(() => {
+                audioStudyService.next();
+            }, 300);
+        } else {
+            audioStudyService.next();
+        }
     };
 
     const handleAudioPrev = () => {
-        audioStudyService.prev();
+        if (isFlipped) {
+            setIsFlipped(false);
+            setTimeout(() => {
+                audioStudyService.prev();
+            }, 300);
+        } else {
+            audioStudyService.prev();
+        }
     };
 
     const handleCloseListening = () => {
@@ -392,6 +496,30 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         onNextSet();
     };
 
+    const handleLevelTabClick = (lvl: LibraryLevel) => {
+        if (lvl === selectedLevel) return;
+        handleCloseListening();
+        // 1. Ayrılmakta olan seviyenin güncel currentIndex ve currentSetNum'ı o seviyenin anahtarlarına yazılmalı.
+        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), currentIndex.toString());
+        localStorage.setItem(getSetNumKey(studyMode, selectedLevel), currentSetNum.toString());
+        if (activeIds.length > 0) {
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(activeIds));
+        }
+        onLevelChange(lvl);
+    };
+
+    const handleScopeChange = (newScope: 'CORE_300' | 'ALL') => {
+        if (newScope === libraryScope) return;
+        handleCloseListening();
+        setLibraryScope(newScope);
+        localStorage.setItem('lingua_flashcard_library_scope', newScope);
+        setCurrentIndex(0);
+        setCurrentSetNum(1);
+        setActiveIds([]);
+        setIsFlipped(false);
+        setIsFinished(false);
+    };
+
     const speak = (e: React.MouseEvent, text: string, lang: 'en-US' | 'tr-TR') => {
         e.stopPropagation();
         window.speechSynthesis.cancel();
@@ -453,44 +581,98 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     return (
         <div className="min-h-screen bg-black flex flex-col text-white font-['Plus_Jakarta_Sans']">
             {/* Top Header - Always visible */}
-            <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-4 relative z-50">
-                <div className="flex justify-between items-center w-full">
-                    <button onClick={onExit} className="p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg flex items-center gap-2">
-                        <ArrowLeft size={20} />
+            <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 md:px-10 py-2.5 sm:py-4 relative z-50">
+                <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-1.5 sm:gap-4 w-full">
+                    <button 
+                        onClick={onExit} 
+                        className="p-2 sm:p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg flex items-center gap-1.5 sm:gap-2 justify-self-start shrink-0"
+                        title="Dashboard'a Dön"
+                    >
+                        <ArrowLeft size={18} className="sm:w-5 sm:h-5" />
                         <span className="hidden sm:inline text-xs font-bold">Ana Sayfa</span>
                     </button>
 
-                    <div className="flex items-center gap-2 sm:gap-3">
-                        <button
-                            onClick={handleToggleListeningMode}
-                            className={`px-3.5 py-2 rounded-full font-black text-xs flex items-center gap-1.5 transition-all shadow-lg active:scale-95 ${
-                                isListeningMode
-                                    ? 'bg-emerald-500 text-black shadow-emerald-500/30 animate-pulse'
-                                    : 'bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-600 hover:text-white'
-                            }`}
-                            title="Arka planda ve kilit ekranında dinleme modu"
-                        >
-                            <Headphones size={14} />
-                            <span>{isListeningMode ? 'Dinleniyor' : 'Dinleme Modu'}</span>
-                        </button>
-                        <button
-                            onClick={() => {
-                                handleCloseListening();
-                                onOpenModeSelection();
-                            }}
-                            className="bg-purple-600/20 border border-purple-500/30 px-3.5 py-2 rounded-full text-purple-300 font-black text-xs flex items-center gap-1.5 hover:bg-purple-600 hover:text-white transition-all"
-                        >
-                            <SlidersHorizontal size={14} /> <span className="hidden sm:inline">Mod Seç</span>
-                        </button>
-                        <button
-                            onClick={() => {
-                                handleCloseListening();
-                                setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR);
-                            }}
-                            className="bg-zinc-900 border border-white/10 px-3 py-2 rounded-full text-slate-400 font-black text-xs tracking-widest uppercase flex items-center gap-1.5 hover:text-white transition-all shadow-xl"
-                        >
-                            <Languages size={14} /> {direction === LanguageDirection.TR_EN ? 'TR → EN' : 'EN → TR'}
-                        </button>
+                    {/* Center Column: Mod Buttons + Level Tabs + Scope Selector centered */}
+                    <div className="flex flex-col items-center gap-1.5 sm:gap-2.5 justify-self-center max-w-full min-w-0">
+                        {/* Mode / Action Buttons */}
+                        <div className="flex items-center justify-center gap-1.5 sm:gap-3 flex-nowrap max-w-full">
+                            <button
+                                onClick={handleToggleListeningMode}
+                                className={`px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full font-black text-[10px] sm:text-xs flex items-center gap-1 sm:gap-1.5 transition-all shadow-lg active:scale-95 shrink-0 ${
+                                    isListeningMode
+                                        ? 'bg-emerald-500 text-black shadow-emerald-500/30 animate-pulse'
+                                        : 'bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-600 hover:text-white'
+                                }`}
+                                title="Arka planda ve kilit ekranında dinleme modu"
+                            >
+                                <Headphones size={13} className="sm:w-3.5 sm:h-3.5" />
+                                <span>{isListeningMode ? 'Dinleniyor' : 'Dinleme Modu'}</span>
+                            </button>
+                            <button
+                                onClick={() => {
+                                    handleCloseListening();
+                                    onOpenModeSelection();
+                                }}
+                                className="bg-purple-600/20 border border-purple-500/30 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-purple-300 font-black text-[10px] sm:text-xs flex items-center gap-1 sm:gap-1.5 hover:bg-purple-600 hover:text-white transition-all shrink-0"
+                            >
+                                <SlidersHorizontal size={13} className="sm:w-3.5 sm:h-3.5" /> <span className="hidden sm:inline">Mod Seç</span>
+                            </button>
+                            <button
+                                onClick={() => {
+                                    handleCloseListening();
+                                    setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR);
+                                }}
+                                className="bg-zinc-900 border border-white/10 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-full text-slate-400 font-black text-[10px] sm:text-xs tracking-wider sm:tracking-widest uppercase flex items-center gap-1 sm:gap-1.5 hover:text-white transition-all shadow-xl shrink-0"
+                            >
+                                <Languages size={13} className="sm:w-3.5 sm:h-3.5" /> {direction === LanguageDirection.TR_EN ? 'TR → EN' : 'EN → TR'}
+                            </button>
+                        </div>
+
+                        {/* Level Tabs & Scope Selector for Library Mode - Centered under mode buttons */}
+                        {studyMode === 'LIBRARY' && (
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 w-full">
+                                <div className="flex items-center justify-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar max-w-full py-0.5">
+                                    {LEVELS.map(lvl => (
+                                        <button
+                                            key={lvl}
+                                            onClick={() => handleLevelTabClick(lvl)}
+                                            className={`px-2.5 py-1 sm:px-3.5 sm:py-1 rounded-full font-black text-[10px] sm:text-xs transition-all border shrink-0 ${
+                                                selectedLevel === lvl
+                                                    ? 'bg-emerald-500 text-black border-emerald-400 shadow-lg shadow-emerald-500/20'
+                                                    : 'bg-zinc-900 text-slate-400 border-white/10 hover:border-white/30 hover:text-white'
+                                            }`}
+                                        >
+                                            {lvl}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                <div className="flex items-center justify-center gap-0.5 bg-zinc-900/90 border border-white/10 p-0.5 rounded-full shrink-0 shadow-inner">
+                                    <button
+                                        onClick={() => handleScopeChange('CORE_300')}
+                                        className={`px-2 sm:px-2.5 py-0.5 rounded-full font-black text-[9px] sm:text-[10px] transition-all flex items-center gap-1 ${
+                                            libraryScope === 'CORE_300'
+                                                ? 'bg-amber-400 text-black shadow-md'
+                                                : 'text-slate-400 hover:text-white'
+                                        }`}
+                                        title="Seviyenin en temel ve sık kullanılan ilk 300 kelimesi"
+                                    >
+                                        <span>⭐ Temel 300</span>
+                                    </button>
+                                    <button
+                                        onClick={() => handleScopeChange('ALL')}
+                                        className={`px-2 sm:px-2.5 py-0.5 rounded-full font-black text-[9px] sm:text-[10px] transition-all flex items-center gap-1 ${
+                                            libraryScope === 'ALL'
+                                                ? 'bg-blue-500 text-white shadow-md'
+                                                : 'text-slate-400 hover:text-white'
+                                        }`}
+                                        title="Tüm kelime havuzu (1000+)"
+                                    >
+                                        <span>📚 Tümü ({sortedWords.length || '1000+'})</span>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     <button 
@@ -498,33 +680,12 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                             handleCloseListening();
                             onExit();
                         }} 
-                        className="p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg"
+                        className="p-2 sm:p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg justify-self-end shrink-0"
+                        title="Ana Sayfa"
                     >
-                        <Home size={20} />
+                        <Home size={18} className="sm:w-5 sm:h-5" />
                     </button>
                 </div>
-
-                {/* Level Tabs for Library Mode - Always visible */}
-                {studyMode === 'LIBRARY' && (
-                    <div className="flex justify-center items-center gap-2 mt-4 overflow-x-auto py-2">
-                        {LEVELS.map(lvl => (
-                            <button
-                                key={lvl}
-                                onClick={() => {
-                                    handleCloseListening();
-                                    onLevelChange(lvl);
-                                }}
-                                className={`px-4 py-1.5 rounded-full font-black text-xs transition-all border ${
-                                    selectedLevel === lvl
-                                        ? 'bg-emerald-500 text-black border-emerald-400 shadow-lg shadow-emerald-500/20'
-                                        : 'bg-zinc-900 text-slate-400 border-white/10 hover:border-white/30 hover:text-white'
-                                }`}
-                            >
-                                {lvl}
-                            </button>
-                        ))}
-                    </div>
-                )}
             </div>
 
             {/* Loading / Transition State - Guard against flickering empty state during tab switches */}
@@ -600,10 +761,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                     )}
 
                     {/* Set Progress Bar */}
-                    <div className="w-full max-w-[340px] sm:max-w-sm mx-auto px-6 mb-1.5 mt-0.5">
-                        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1.5">
+                    <div className="w-full max-w-[340px] sm:max-w-sm mx-auto px-4 sm:px-6 mb-1 sm:mb-1.5 mt-0.5">
+                        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">
                             <span>İlerleyen: {currentIndex + 1} / {currentSet.length}</span>
-                            <span>SET {currentSetNum} / {totalSets}</span>
+                            <span>SET {currentSetNum} / {totalSets} ({scopedWords.length})</span>
                         </div>
                         <div className="w-full h-1.5 bg-zinc-950 rounded-full overflow-hidden border border-white/5">
                             <div 
@@ -614,12 +775,12 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                     </div>
 
                     {/* Main Flashcard */}
-                    <div className="flex-1 flex flex-col items-center justify-center px-4 py-1 w-full max-w-[340px] sm:max-w-[360px] mx-auto relative">
-                        <div className="w-full aspect-[4/4.8] max-h-[46vh] min-h-[290px] cursor-pointer perspective-1000 group" onClick={() => setIsFlipped(!isFlipped)}>
+                    <div className="flex-1 flex flex-col items-center justify-center px-3 sm:px-4 py-1 w-full max-w-[340px] sm:max-w-[360px] mx-auto relative">
+                        <div className="w-full aspect-[4/4.8] max-h-[38vh] sm:max-h-[46vh] min-h-[250px] sm:min-h-[290px] cursor-pointer perspective-1000 group" onClick={() => setIsFlipped(!isFlipped)}>
                             <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
 
                                 {/* ÖN YÜZ */}
-                                <div className={`absolute inset-0 backface-hidden rounded-[32px] sm:rounded-[40px] flex flex-col items-center justify-between p-5 sm:p-6 shadow-2xl ${isFrontTR ? 'bg-zinc-900 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
+                                <div className={`absolute inset-0 backface-hidden rounded-[28px] sm:rounded-[40px] flex flex-col items-center justify-between p-4 sm:p-6 shadow-2xl ${isFrontTR ? 'bg-zinc-900 text-white border-2 border-zinc-800' : 'bg-yellow-400 text-black'}`}>
                                     <div className="w-full flex items-center justify-between">
                                         <span className={`font-black uppercase tracking-[0.2em] text-[10px] ${isFrontTR ? 'text-slate-500' : 'text-black/50'}`}>
                                             {isFrontTR ? 'TURKISH' : 'ENGLISH'}
@@ -639,27 +800,27 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                         {!isFrontTR && (
                                             <button
                                                 onClick={(e) => speak(e, currentWord.english, 'en-US')}
-                                                className="mb-1.5 p-2.5 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
+                                                className="mb-1 p-2 sm:p-2.5 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
                                             >
-                                                <Volume2 size={24} />
+                                                <Volume2 size={22} className="sm:w-6 sm:h-6" />
                                             </button>
                                         )}
-                                        <h2 className="text-2xl sm:text-3xl font-black text-center mb-2 tracking-tight leading-snug">{isFrontTR ? currentWord.turkish : currentWord.english}</h2>
+                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-center mb-1.5 sm:mb-2 tracking-tight leading-snug">{isFrontTR ? currentWord.turkish : currentWord.english}</h2>
 
                                         {currentWord.category && (
-                                            <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-2 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-zinc-800 text-blue-300' : 'bg-black/10 text-black/80'}`}>
+                                            <span className={`text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-1.5 sm:mb-2 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-zinc-800 text-blue-300' : 'bg-black/10 text-black/80'}`}>
                                                 <Tag size={10} /> {currentWord.category}
                                             </span>
                                         )}
 
                                         {(isFrontTR ? currentWord.turkish_sentence : currentWord.example_sentence) && (
-                                            <p className="text-center text-xs font-bold italic px-2 leading-relaxed opacity-75 line-clamp-2">
+                                            <p className="text-center text-[11px] sm:text-xs font-bold italic px-2 leading-relaxed opacity-75 line-clamp-2">
                                                 "{isFrontTR ? currentWord.turkish_sentence : currentWord.example_sentence}"
                                             </p>
                                         )}
                                     </div>
 
-                                    <div className="w-full flex flex-col items-center gap-2.5">
+                                    <div className="w-full flex flex-col items-center gap-2 sm:gap-2.5">
                                         <span className={`text-[9px] font-black tracking-widest animate-blink ${isFrontTR ? 'text-blue-400' : 'text-black/50'}`}>
                                             ÇEVİRİ İÇİN TIKLA
                                         </span>
@@ -680,7 +841,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                 </div>
 
                                 {/* ARKA YÜZ */}
-                                <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[32px] sm:rounded-[40px] flex flex-col items-center justify-between p-5 sm:p-6 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-900 text-white border-2 border-zinc-800'}`}>
+                                <div className={`absolute inset-0 backface-hidden rotate-y-180 rounded-[28px] sm:rounded-[40px] flex flex-col items-center justify-between p-4 sm:p-6 shadow-2xl ${isFrontTR ? 'bg-yellow-400 text-black' : 'bg-zinc-900 text-white border-2 border-zinc-800'}`}>
                                     <div className="w-full flex items-center justify-between">
                                         <span className={`font-black uppercase tracking-[0.2em] text-[10px] ${isFrontTR ? 'text-black/50' : 'text-slate-500'}`}>
                                             {isFrontTR ? 'ENGLISH' : 'TURKISH'}
@@ -696,27 +857,27 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                         {isFrontTR && (
                                             <button
                                                 onClick={(e) => speak(e, currentWord.english, 'en-US')}
-                                                className="mb-1.5 p-2.5 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
+                                                className="mb-1 p-2 sm:p-2.5 rounded-2xl bg-black/5 text-black/50 hover:bg-black/10 transition-all active:scale-90 hover:text-black"
                                             >
-                                                <Volume2 size={24} />
+                                                <Volume2 size={22} className="sm:w-6 sm:h-6" />
                                             </button>
                                         )}
-                                        <h2 className="text-2xl sm:text-3xl font-black text-center mb-2 tracking-tight leading-snug">{isFrontTR ? currentWord.english : currentWord.turkish}</h2>
+                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-center mb-1.5 sm:mb-2 tracking-tight leading-snug">{isFrontTR ? currentWord.english : currentWord.turkish}</h2>
 
                                         {currentWord.category && (
-                                            <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-2 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-black/10 text-black/80' : 'bg-zinc-800 text-blue-300'}`}>
+                                            <span className={`text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-1.5 sm:mb-2 flex items-center gap-1 opacity-80 ${isFrontTR ? 'bg-black/10 text-black/80' : 'bg-zinc-800 text-blue-300'}`}>
                                                 <Tag size={10} /> {currentWord.category}
                                             </span>
                                         )}
 
                                         {(isFrontTR ? currentWord.example_sentence : currentWord.turkish_sentence) && (
-                                            <p className="text-center text-xs font-bold italic px-2 leading-relaxed opacity-75 line-clamp-2">
+                                            <p className="text-center text-[11px] sm:text-xs font-bold italic px-2 leading-relaxed opacity-75 line-clamp-2">
                                                 "{isFrontTR ? currentWord.example_sentence : currentWord.turkish_sentence}"
                                             </p>
                                         )}
                                     </div>
 
-                                    <div className="w-full flex flex-col items-center gap-2.5">
+                                    <div className="w-full flex flex-col items-center gap-2 sm:gap-2.5">
                                         <span className={`text-[9px] font-black tracking-widest animate-blink ${isFrontTR ? 'text-black/50' : 'text-blue-400'}`}>
                                             KELİMEYE DÖN
                                         </span>
@@ -739,18 +900,18 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         </div>
 
                         {/* Navigation Controls */}
-                        <div className="mt-3 sm:mt-4 w-full flex justify-center items-center gap-3">
+                        <div className="mt-2.5 sm:mt-4 w-full flex justify-center items-center gap-2 sm:gap-3 pb-2 sm:pb-0">
                             {currentIndex > 0 ? (
                                 <>
                                     <button
                                         onClick={handlePrev}
-                                        className="flex items-center justify-center w-11 h-11 rounded-xl bg-zinc-900 text-slate-400 hover:text-white border border-white/5 transition-all active:scale-90 shadow-xl"
+                                        className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-zinc-900 text-slate-400 hover:text-white border border-white/5 transition-all active:scale-90 shadow-xl shrink-0"
                                     >
                                         <ChevronLeft size={20} />
                                     </button>
                                     <button
                                         onClick={handleNext}
-                                        className="px-6 py-2.5 sm:py-3 bg-white text-black rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5 min-w-[130px]"
+                                        className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-black rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5 min-w-[120px] sm:min-w-[130px]"
                                     >
                                         Sıradaki <ChevronRight size={16} />
                                     </button>
@@ -758,7 +919,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                             ) : (
                                 <button
                                     onClick={handleNext}
-                                    className="w-full max-w-[180px] sm:max-w-[200px] py-2.5 sm:py-3 bg-white text-black rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5"
+                                    className="w-full max-w-[160px] sm:max-w-[200px] py-2.5 sm:py-3 bg-white text-black rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm hover:bg-blue-50 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-white/5"
                                 >
                                     Sıradaki <ChevronRight size={16} />
                                 </button>

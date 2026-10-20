@@ -44,6 +44,35 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
   1. `database/SUPABASE_SETUP.sql` ve tüm gelecekteki migration dosyalarında tablo oluşturulurken `anon`, `authenticated` ve `service_role` rolleri için `GRANT SELECT, INSERT, UPDATE, DELETE` izinleri zorunlu olarak eklenmelidir.
   2. `tests/supabasePermissions.test.js` birim testi ile kurulum ve migrasyon dosyalarının bu kurala uyduğu otomatik doğrulanır.
 
+
+### 1.8. Hands-free Dinleme Modunda Çevirinin Erken Sızması (Card Flip Transition Leak)
+- **Hafıza Gerçeği:** Hands-free dinleme modunda çeviri okunduktan sonra kart arkaya dönük (`isFlipped = true`) kalıyordu. Süre dolup `next()` çağrıldığında `currentIndex` hemen artıyor, kart henüz arkaya dönükken bir sonraki kelimenin arkası (çevirisi) ekranda anlık olarak belirip sonra dönüyordu. Bu durum sonraki kelimenin anlamının erkenden görülmesine neden oluyordu.
+- **Kalıcı Çözüm:**
+  1. `audioStudyService.ts` içinde çeviri telaffuzu bittiğinde doğrudan kelime artırılmaz; önce `transition` fazı tetiklenir.
+  2. `FlashcardMode.tsx` bileşeninde `phase === 'transition'` durumunda veya manuel sonraki/önceki butonuna basıldığında `isFlipped = false` yapılarak kart mevcut kelime gösterilirken ön yüze döndürülür.
+  3. Kartın 3D dönme animasyonu tamamlandıktan sonra yeni kelimeye geçilir; sonraki kelimenin daima ve yalnızca ön yüzüyle ekrana gelmesi garanti edilir.
+
+### 1.9. Flashcard Üst Başlık Hizalama & Merkezleme (Header Button & Level Tab Centering)
+- **Hafıza Gerçeği:** `FlashcardMode.tsx` üst başlığında `flex justify-between` kullanıldığında sol buton (`Ana Sayfa` metinli) ve sağ buton (`Home` sadece ikon) eşit genişlikte olmadığı için orta buton grubu hafifçe sağa kayıyordu. Daha sonra `items-start` ile sol kenardan hizalama yapıldığında ise seviye sekmeleri ile üstteki mod butonları farklı genişlikte olduğundan sağ tarafta asimetrik boşluk kalıyordu.
+- **Kalıcı Çözüm:**
+  1. Üst başlık `grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start` düzeninde kalarak sol ve sağ kolonlar eşit genişlikte tutulur ve orta kolon ekranın tam merkezine oturtulur.
+  2. Orta kolon içerisinde mod butonları ve seviye sekmeleri `flex flex-col items-center justify-center` düzenine alınarak seviye sekmelerinin ve kapsam seçicinin üstteki butonlara göre simetrik biçimde ortalanması sağlandı.
+
+### 1.10. Kademeli Kelime Kapsamı (Temel 300 vs. Tümü) ve İlerleme Göstergesi
+- **Hafıza Gerçeği:** Her seviyede 1.000+ kelime bulunması yeni başlayan öğrenciler için başlangıçta göz korkutucu olabilmekteydi. Ayrıca kullanıcının o an aktif sette ve havuzda toplam kaç kelimeyle çalıştığını bilmesi gerekiyordu.
+- **Kalıcı Çözüm:**
+  1. `FlashcardMode.tsx` içerisine varsayılan olarak `CORE_300` ("⭐ Temel 300", ilk 300 kelime / 15 set) ve opsiyonel `ALL` ("📚 Tümü (1000+)") desteği eklendi.
+  2. Kapsam tercihi `lingua_flashcard_library_scope` anahtarıyla yerel depolamada saklanır.
+  3. İlerleme çubuğunda toplam kelime sayısı parantez içinde net olarak gösterilir: `SET 1 / 15 (300)` veya `SET 1 / 52 (1026)`.
+
+### 1.10. Mobil Web Responsive (320px - 480px Küçük Ekran Optimizasyonu)
+- **Hafıza Gerçeği:** iPhone SE (375px) ve Android (360px) gibi dar mobil ekranlarda kartlar ekranı ve floating dinleme çubuğu açıldığında butonların ekrandan taşması, seviye sekmelerinin sararak dikey yüksekliği artırması ve kart yüksekliğinin alt aksiyon butonlarını ("Öğrendim", "Sıradaki") ekran dışına itmesi nedeniyle dikey kaydırma gereksinimi oluşabiliyordu.
+- **Kalıcı Çözüm:**
+  1. **Başlık Izgarası & Dolgusu:** Üst bar padding'i dar ekranlarda `px-3 sm:px-6 md:px-10 py-2.5 sm:py-4` olarak ayarlanmış; `grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]` dengeli ızgara korunarak orta kolonun taşması engellenmiştir.
+  2. **Mod Butonları & Seviye Sekmeleri:** Mod butonlarında `text-[10px] sm:text-xs` ve `px-2.5 py-1.5 sm:px-3.5 sm:py-2` boyutlandırması uygulanmıştır. Seviye sekmelerine `overflow-x-auto no-scrollbar` ve `shrink-0` verilerek yatayda akıcı ve gizli çubuklu kaydırma sağlanmıştır.
+  3. **Viewport-Fit Kart Sınırları:** Kart alanı için `max-h-[38vh] sm:max-h-[46vh]` ve `min-h-[250px] sm:min-h-[290px]` yükseklikleri belirlenerek "Öğrendim" ve "Sıradaki" butonlarının en küçük mobil cihazlarda dahi dikey kaydırma olmadan tek ekranda görünür kalması güvenceye alınmıştır.
+  4. **ListeningModeBar Mobil Ergonomisi:** Çubuk genişliği `max-w-md sm:max-w-xl`, dokunmatik hedefler Apple HIG standartlarında `min-w-[36px] min-h-[36px]`, durum rozetleri ise dar alanlarda metin kesintisi (truncate) ve kompakt padding ile korunmuştur.
+
 ---
 
 ## 🛡️ 2. Bellek Yönetimi & Temizlik Standartları (Memory Leaks Prevention)
