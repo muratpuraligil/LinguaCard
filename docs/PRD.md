@@ -69,7 +69,8 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 
 ## 3. Kullanıcı Deneyimi (UX)
 - **Dinamik Dashboard:** Görsel ilerleme takibi ve pratik alanları.
-- **Kart Modu Seçici Modal:** Cümleler modundaki yapıyla birebir uyumlu 3 kartlı Mod Seçim Modalı.
+- **Kart Modu Seçici Modal:** Hızlı erişim için optimize edilmiş 3 kartlı Mod Seçim Modalı (1. Kütüphaneden Çalış, 2. Listendeki Kelimelerle Çalış, 3. Yeni Kelimelerle Çalış).
+- **A1–C2 Seviye Sekmeleri:** Kütüphane modunda 6 CEFR seviyesi (A1, A2, B1, B2, C1, C2) arasında sıfır gecikmeli (0ms) ve titreşimsiz (zero-flicker) sekme geçişi.
 - **Rehberli Tur (Onboarding):** Tanıtım turları.
 - **Premium Arayüz:** Karanlık mod odaklı, neon efektli, glassmorphism ve akıcı animasyonlar.
 
