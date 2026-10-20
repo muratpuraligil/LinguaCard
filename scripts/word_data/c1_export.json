@@ -1,0 +1,6242 @@
+[
+  [
+    "Accountable",
+    "Sorumlu, hesap verebilir",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Accredit",
+    "Akredite etmek, yetkilendirmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Accreditation",
+    "Akreditasyon, denklik",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Acquiesce",
+    "Sessizce kabul etmek, razı olmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Activism",
+    "Aktivizm, eylemcilik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Adhere",
+    "Bağlı kalmak, yapışmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Adjudicate",
+    "Hüküm vermek, hakemlik etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Adversary",
+    "Hasmı, rakip, düşman",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Advocacy",
+    "Savunuculuk, dava savunması",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Afflict",
+    "Musallat olmak, acı vermek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Aggravate",
+    "Ağırlaştırmak, fenalaştırmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Alienate",
+    "Yabancılaştırmak, soğutmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Alienation",
+    "Yabancılaşma, tecrit",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Alleviate",
+    "Hafifletmek, dindirmek",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Allude",
+    "İmada bulunmak, değinmek",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Ambivalent",
+    "Çelişik hisler besleyen, ikircikli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Amiable",
+    "Cana yakın, sevecen",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Analytical",
+    "Çözümleyici, analitik",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Anarchy",
+    "Kargaşa, anarşi, başsızlık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Annex",
+    "Toprak katmak, ilhak etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Antagonism",
+    "Düşmanlık, zıtlaşma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Antagonist",
+    "Hasım, karşıt güç",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Antagonize",
+    "Düşman etmek, kışkırtmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Anthropology",
+    "İnsanbilim, antropoloji",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Appease",
+    "Yatıştırmak, gönlünü almak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Appeasement",
+    "Yatıştırma politikası, ödün verme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Appraise",
+    "Kıymet biçmek, değerlendirmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Arbitration",
+    "Tahkim, hakem kararı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Archaic",
+    "Eski zamanlara ait, köhne",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Ardent",
+    "Ateşli, coşkulu, gayretli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Assertive",
+    "Kendine güvenen, iddialı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Assimilation",
+    "Özümseme, asimilasyon",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Astonishment",
+    "Şaşkınlık, hayret",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Astronomy",
+    "Gökbilim, astronomi",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Astute",
+    "Ferasetli, cin fikirli, zeki",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Attentive",
+    "Dikkatli, özenli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Audacious",
+    "Cüretkar, gözü pek",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Auspicious",
+    "Uğurlu, hayırlı, elverişli",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Austerity",
+    "Kemer sıkma, sadelik, riyazet",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Authoritarian",
+    "Baskıcı, yetkeci, otoriter",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Baffle",
+    "Aklını karıştırmak, afallatmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Banal",
+    "Sıradan, beylik, basmakalıp",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Banish",
+    "Sürgün etmek, aklından çıkarmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Barren",
+    "Kısır, çorak, verimsiz",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Belittle",
+    "Küçümsemek, hafife almak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Benign",
+    "İyi huylu, zararsız, müşfik",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Berate",
+    "Azarlamak, paylamak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Besiege",
+    "Kuşatmak, abluka altına almak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Bestow",
+    "Bahşetmek, ihsan etmek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Betrayal",
+    "İhanet, hıyanet",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Bewilder",
+    "Afallatmak, şaşkına çevirmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Blatant",
+    "Bariz, apaçık, frapan",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Bleak",
+    "Kasvetli, umutsuz, çorak",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Bolster",
+    "Desteklemek, güçlendirmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Bondage",
+    "Esaret, kölelik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Candid",
+    "İçten, dolaysız, dobra",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Canonical",
+    "Kurala uygun, kanonik",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Captivate",
+    "Büyülemek, cezbetmek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Catastrophic",
+    "Feci, felaket getiren",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Categorical",
+    "Kesin, şartsız, kategorik",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Chagrin",
+    "Kırgınlık, mahcubiyet, üzüntü",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Charismatic",
+    "Karizmatik, etkileyici",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Chronological",
+    "Zaman sırasına göre",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Circumspect",
+    "Tedbirli, basiretli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Circumvent",
+    "Etrafından dolaşmak, savuşturmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Coagulate",
+    "Pıhtılaşmak, donmak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Coercive",
+    "Zorlayıcı, baskıcı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Coherence",
+    "Bağdaşıklık, tutarlılık",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Coherent",
+    "Tutarlı, ahenkli, mantıklı",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Collaborative",
+    "İş birlikli, ortaklaşa",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Collateral",
+    "Teminat, yan teminat, kefalet",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Colloquial",
+    "Günlük konuşma diline ait",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Commencement",
+    "Başlangıç, mezuniyet töreni",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Commendable",
+    "Övgüye değer, takdire şayan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Compassionate",
+    "Merhametli, müşfik",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Complacent",
+    "Halinden memnun, rehavete kapılmış",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Complementary",
+    "Tamamlayıcı, bütünleyici",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Compliance",
+    "Uyum, riayet etme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Comprise",
+    "Kapsamak, -den oluşmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Compulsive",
+    "Dürtüsel, önlenemez",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Conceivable",
+    "Tasavvur edilebilir, makul",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Concise",
+    "Özlü, veciz, kısa ve net",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Conclusive",
+    "Kesin, nihai, sonuca bağlayıcı",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Condone",
+    "Göz yummak, hoş görmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Conducive",
+    "Olanak sağlayan, yararlı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Confound",
+    "Afalatmak, altüst etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Congenial",
+    "Cana yakın, kafa dengi",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Consequential",
+    "Önemli, neticesi ağır olan",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Contemptuous",
+    "Küçümseyen, kibirli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Contentious",
+    "Tartışmalı, çekişmeli",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Contradictory",
+    "Çelişkili, tutarsız",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Convergence",
+    "Yakınsama, bir noktada birleşme",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Converse",
+    "Tersine dönmek, zıttı",
+    "Noun / Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Corroboration",
+    "Doğrulama, destekleyici kanıt",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Corrosive",
+    "Aşındırıcı, yıpratıcı",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Credibility",
+    "Güvenilirlik, inandırıcılık",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Criteria",
+    "Kriterler, ölçütler",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Culpable",
+    "Kusurlu, suçlanabilir",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Daunting",
+    "Göz korkutucu, yıldırıcı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Debilitate",
+    "Güçten düşürmek, halsizleştirmek",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Debility",
+    "Halsizlik, dermansızlık",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Decadence",
+    "Çöküş, ahlaki yozlaşma",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Decadent",
+    "Yozlaşmış, sefih",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Deceitful",
+    "Düzenbaz, aldatıcı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Decipher",
+    "Şifresini çözmek, anlamını sökmek",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Declaration",
+    "Bildiri, beyanname",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Decommission",
+    "Hizmetten çıkarmak, kapatmak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Deconstruct",
+    "Yapısökümüne uğratmak, analiz etmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Decorate",
+    "Süslemek, nişan vermek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Defamatory",
+    "Kötüleyici, iftira niteliğinde",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Default",
+    "Temerrüt, yükümlülüğü yerine getirmeme",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Defection",
+    "Döneklik, taraf değiştirme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Defective",
+    "Kusurlu, arızalı",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Defendant",
+    "Davalı, sanık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Definitive",
+    "Nihai, kesin, yetkin",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Defraud",
+    "Dolandırmak, hakkını yemek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Deft",
+    "Becerikli, usta, çevik",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Degenerate",
+    "Yozlaşmak, soysuzlaşmak",
+    "Verb / Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Degradation",
+    "Bozulma, itibar kaybı, tahribat",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Deity",
+    "İlah, tanrı, tanrısal varlık",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Delinquency",
+    "Suç işleme, kabahat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Demographic",
+    "Nüfusbilimsel, demografik",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Demography",
+    "Nüfusbilim",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Demolition",
+    "Yıkım, tahribat",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Depletion",
+    "Tükenme, eksilme",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Deplore",
+    "Teessüf etmek, esefle karşılamak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Deplorable",
+    "Acınası, teessüf edilecek",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Derive",
+    "Türemek, elde etmek, köken almak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Derivative",
+    "Türev, özgün olmayan",
+    "Noun / Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Derogatory",
+    "Aşağılayıcı, küçültücü",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Descendant",
+    "Torun, ahbap, soyundan gelen",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Despair",
+    "Çaresizlik, yeis, umutsuzluk",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Despondent",
+    "Umutsuz, kederli, boynu bükük",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Destitute",
+    "Muhtaç, sefil, fakir",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Destitution",
+    "Fakirlik, muhtaçlık",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Detach",
+    "Ayırmak, koparmak, tecrit etmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Detached",
+    "Bağımsız, yansız, mesafeli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Deterioration",
+    "Kötüye gitme, bozulma",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Detrimental",
+    "Zararlı, hasar veren",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Devastation",
+    "Büyük yıkım, tahribat",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Diagnostic",
+    "Tanısal, teşhise yönelik",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Dialectic",
+    "Eytişim, diyalektik",
+    "Noun / Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Dictator",
+    "Diktatör, zorba",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Diffident",
+    "Çekingen, kendine güvensiz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Diffusion",
+    "Yayılma, difüzyon",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Digress",
+    "Konudan sapmak, lafı dağıtmak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Digression",
+    "Konu dışına çıkma, sapma",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Diligence",
+    "Gayret, özen, sebat",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Diligent",
+    "Çalışkan, özenli, gayretli",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Disavow",
+    "İnkar etmek, sahiplenmemek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Discerning",
+    "Farkı anlayan, basiretli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Disciple",
+    "Mürit, takipçi, havari",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Discipline",
+    "Disiplin, bilim dalı",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Disclaim",
+    "Feragat etmek, reddetmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Disclosure",
+    "İfşaat, açıklama",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Discord",
+    "Anlaşmazlık, uyumsuzluk, nifak",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Discordant",
+    "Uyumsuz, ahenksiz, aykırı",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Discretion",
+    "Sağduyu, takdir yetkisi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Disdainful",
+    "Kibirli, küçümseyici",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Disillusionment",
+    "Gözünün açılması, sükutuhayal",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Dismissive",
+    "Umursamaz, baştan savıcı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Dispassionate",
+    "Tarafsız, duygusuz, nesnel",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Dispersion",
+    "Dağılma, saçılma",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Disposition",
+    "Yaratılış, mizaç, tasarruf",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Disproportionate",
+    "Orantısız, aşırı",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Disruptive",
+    "Düzen bozucu, yıkıcı",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Dissenter",
+    "Muhalif, karşı görüşlü",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Dissipate",
+    "Dağıtmak, israf etmek, yok olmak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Dissolution",
+    "Fesih, dağılma, erime",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Diversify",
+    "Çeşitlendirmek, dallanmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Divest",
+    "Elden çıkarmak, hissesini satmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Divisive",
+    "Bölücü, ayrılık tohumları eken",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Dogmatic",
+    "Körü körüne inanan, dogmatik",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Domineering",
+    "Zorba, hükmetmeyi seven",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Dwindle",
+    "Gittikçe azalmak, küçülmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Effortless",
+    "Zahmetsiz, tereyağından kıl çeker gibi",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Egregious",
+    "Vahim, affedilmez derecede kötü",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Elated",
+    "Sevinçten havalara uçan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Elucidate",
+    "Aydınlatmak, izah etmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Emancipate",
+    "Azat etmek, özgürlüğe kavuşturmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Embellish",
+    "Süslemek, allayıp pullamak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Embezzle",
+    "Zimmetine para geçirmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Embodiment",
+    "Timsal, somutlaşmış hal",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Eminence",
+    "Yücelik, saygınlık, seçkinlik",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Eminent",
+    "Seçkin, tanınmış, saygın",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Empathetic",
+    "Empati kurabilen, halden anlayan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Empowerment",
+    "Güçlendirme, yetki verme",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Emulate",
+    "Örnek almak, yarışarak taklit etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Encroach",
+    "Hakkını çiğnemek, sınırını aşmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Encroachment",
+    "Müdahale, sınır tecavüzü",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Endemic",
+    "Yöreye özgü, yerleşik hastalık",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Endowment",
+    "Vakıf fonu, doğuştan gelen yetenek",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Enduring",
+    "Dayanıklı, kalıcı, baki",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Engender",
+    "Yol açmak, vücuda getirmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Enlightenment",
+    "Aydınlanma, vukuf",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Entrenched",
+    "Kök salmış, kemikleşmiş",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Enumerate",
+    "Tek tek saymak, sıralamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Ephemeral",
+    "Fani, gelip geçici, kısa ömürlü",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Epilogue",
+    "Sonsöz, hatime",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Epitome",
+    "Mükemmel örnek, timsal",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Equitable",
+    "Adil, tarafsız, hakkaniyetli",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Equivocal",
+    "Çift anlamlı, kaçamaklı, kuşkulu",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Erratic",
+    "Düzensiz, tutarsız, değişken",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Erroneous",
+    "Hatalı, yanlış, kusurlu",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Escalation",
+    "Tırmanma, gerginliğin artması",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Esoteric",
+    "Sadece ehlinin bildiği, ezoterik",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Espouse",
+    "Benimsemek, davasını gütmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Euphony",
+    "Ses uyumu, kulak okşama",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Evade",
+    "Yan çizmek, savuşturmak, kaçınmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Evaluation",
+    "Değerlendirme, kıymetlendirme",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Evanescent",
+    "Çabuk kaybolan, uçucu",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Evasive",
+    "Kaçamaklı, dolambaçlı",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Eventuality",
+    "Olasılık, ihtimal",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Evict",
+    "Tahliye etmek, evden çıkarmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Eviction",
+    "Tahliye, kapı dışarı etme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Exacerbate",
+    "Fenalaştırmak, zıvanadan çıkarmak",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Exactitude",
+    "Hassasiyet, tamı tamına olma",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Exalt",
+    "Göklere çıkarmak, yüceltmek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Exasperate",
+    "Çileden çıkarmak, fena halde kızdırmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Excavate",
+    "Kazı yapmak, toprak altından çıkarmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Excavation",
+    "Arkeolojik kazı, hafriyat",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Exemplary",
+    "Örnek alınacak, ibretlik",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Exertion",
+    "Gayret sarf etme, çaba",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Exhaustive",
+    "Tepeden tırnağa, eksiksiz, etraflı",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Exhilarating",
+    "Canlandırıcı, coşku verici",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Exonerate",
+    "Aklamak, suçsuzluğunu kanıtlamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Exploitation",
+    "Sömürü, istismar, işletme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Exponential",
+    "Katlanarak artan, eksponansiyel",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Expound",
+    "Enine boyuna açıklamak, tefsir etmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Extenuating",
+    "Hafifletici (neden/kusur)",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Extol",
+    "Methetmek, göklere çıkarmak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Extort",
+    "Şantajla almak, haraç kesmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Extortion",
+    "Şantaj, irtikap, zorbalıkla para alma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Extradite",
+    "Suçluyu iade etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Extraneous",
+    "Konu dışı, yabancı, alakasız",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Extrapolate",
+    "Eldeki veriden sonuca varmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Exuberant",
+    "Taşkın, hayat dolu, bereketli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Fabrication",
+    "Uydurma, sahtecilik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Facilitator",
+    "Kolaylaştırıcı, moderatör",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Factional",
+    "Hizipçi, fırkacı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Fallacious",
+    "Yanıltıcı, safsata dolu",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Fanatical",
+    "Bağnaz, fanatik, körü körüne",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Fastidious",
+    "Titiz, müşkülpesent, zor beğenen",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Fatality",
+    "Ölüm vakası, kayıp",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Fathom",
+    "Akıl sır erdirmek, derinliğini ölçmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Fervent",
+    "Hararetli, coşkulu, samimi",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Feud",
+    "Kan davası, köklü husumet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Flamboyant",
+    "Gösterişli, şatafatlı",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Flattery",
+    "Dalkavukluk, pohpohlama",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Flawed",
+    "Kusurlu, defolu, sakat",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Fleeting",
+    "Gelip geçici, anlık",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Flexibility",
+    "Esneklik, intibak kabiliyeti",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Foreboding",
+    "Kötü his, önsezi, meşum duygu",
+    "Noun / Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Forefather",
+    "Ata, cet, ecdat",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Forensic",
+    "Adli tıp ve yargıya ilişkin",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Foresight",
+    "İleriyi görme, basiret, öngörü",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Forestall",
+    "Daha erken davranıp engellemek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Forsake",
+    "Yüzüstü bırakmak, terk etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Fortress",
+    "Kale, hisar, müstahkem mevki",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Fortuitous",
+    "Şans eseri olan, tesadüfi",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Fragility",
+    "Kırılganlık, hassasiyet",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Frenzy",
+    "Çılgınlık, cinnet, taşkınlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Frivolous",
+    "Ciddiyetsiz, havai, boş",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Frugal",
+    "Tutumlu, sade, kanaatkar",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Frugality",
+    "Tutum, iktisat, kanaatkarlık",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Frustrate",
+    "Boşa çıkarmak, hevesini kırmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Frustration",
+    "Hüsran, engellenmişlik hissi",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Futile",
+    "Nafile, beyhude, boş",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Genesis",
+    "Doğuş, köken, yaratılış",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Genocide",
+    "Soykırım",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Gesticulate",
+    "El kol hareketleriyle anlatmak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Gloomy",
+    "Kasvetli, hüzünlü, loş",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Governance",
+    "Yönetişim, idare tarzı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Grievous",
+    "Ağır, elem verici, feci",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Grotesque",
+    "Gülünç derecede tuhaf, ucube",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Guile",
+    "Kurnazlık, hilekarlık, desise",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Harmonious",
+    "Uyumlu, ahenkli",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Harness",
+    "Koşum takmak, dizginleyip kullanmak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Hedge",
+    "Sağlama bağlamak, sınırlandırmak",
+    "Verb / Noun",
+    "Business and Economy"
+  ],
+  [
+    "Heed",
+    "Kulak asmak, dikkate almak",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Hierarchical",
+    "Aşamalı, hiyerarşik",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Hinder",
+    "Engel olmak, güçleştirmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Hindrance",
+    "Ayak bağı, mani, engel",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Homogeneous",
+    "Bağdaşık, homojen",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Humane",
+    "İnsancıl, merhametli",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Humanitarian",
+    "İnsani yardım yanlısı",
+    "Adjective / Noun",
+    "Society and Politics"
+  ],
+  [
+    "Hypothetical",
+    "Varsayımsal, farazi",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Iconic",
+    "Simgeleşmiş, ikonik",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Idealism",
+    "Ülkücülük, idealizm",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Ignite",
+    "Ateşlemek, tutuşturmak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Ignoble",
+    "Aşağılık, soysuz, alçakça",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Illustrious",
+    "Şanlı, meşhur, güzide",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Immutable",
+    "Değişmez, başkalaşmaz",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Impacting",
+    "Etki eden, tesir bırakan",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Impartiality",
+    "Tarafsızlık, bitaraflık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Impede",
+    "Ayak bağı olmak, kösteklemek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Imperative",
+    "Mecburi, kaçınılmaz buyruk",
+    "Adjective / Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Imperial",
+    "İmparatorlukla ilgili, şahan",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Impervious",
+    "Geçirimsiz, etkilenmez",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Implicate",
+    "İlişiği olduğunu göstermek, ima etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Impotent",
+    "İktidarsız, çaresiz, güçsüz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Impoverish",
+    "Yoksullaştırmak, verimsizleştirmek",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Impracticable",
+    "Uygulanamaz, hayata geçirilemez",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Impregnable",
+    "Zaptedilemez, sarsılmaz, geçit vermez",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Impressionable",
+    "Kolay etkilenen, telkine açık",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Impromptu",
+    "Doğaçlama, hazırlıksız",
+    "Adjective / Adverb",
+    "Culture and Arts"
+  ],
+  [
+    "Improvise",
+    "Doğaçlama yapmak, irticalen söylemek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Inaccessible",
+    "Ulaşılamaz, erişilmez",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Inadvertent",
+    "Kasıtsız, istemeyerek yapılan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Inalienable",
+    "Devredilemez, feragat edilemez",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Inanimate",
+    "Cansız, ruhsuz, donuk",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Inaugurate",
+    "Açılışını yapmak, törenle göreve başlatmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Inauguration",
+    "Göreve başlama töreni, açılış",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Incalculable",
+    "Hesaba sığmaz, sayısız",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Incandescent",
+    "Akkor, ışık saçan, parıltılı",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Incarcerate",
+    "Hapse tıkmak, hapsetmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Incarceration",
+    "Hapis cezası, tevkif",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Incendiary",
+    "Kundaklayıcı, yangın çıkarıcı, kışkırtıcı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Incessant",
+    "Aralıksız, durup dinlenmeksizin",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Incision",
+    "Kesi, ameliyat kesisi",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Incisive",
+    "Keskin zekalı, can alıcı, net",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Incite",
+    "Kışkırtmak, ayaklandırmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Incitement",
+    "Tahrik, kışkırtma suçu",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Inclination",
+    "Eğilim, meyil, yatkınlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Incompatible",
+    "Uyuşmaz, bağdaşamaz",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Incompetent",
+    "Beceriksiz, yetersiz, ehliyetsiz",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Inconceivable",
+    "Akıl almaz, tasavvur edilemez",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Incongruous",
+    "Uyumsuz, anlamsız şekilde aykırı",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Inconsequential",
+    "Önemsiz, neticesi hafif",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Incontestable",
+    "Tartışmasız, itiraz götürmez",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Incontrovertible",
+    "Su götürmez, reddedilemez",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Incorporation",
+    "Tüzel kişilik kazanma, dahil etme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Incredulous",
+    "Şüpheci, inanmakta zorlanan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Increment",
+    "Artış, kademe, zam",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Incremental",
+    "Aşamalı, kademeli artan",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Incriminate",
+    "Suçlamak, suça ortak göstermek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Indebted",
+    "Borçlu, minnettar",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Indecisive",
+    "Kararsız, mütereddit",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Indefensible",
+    "Savunulamaz, haksız",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Indelible",
+    "Silinmez, çıkmaz (leke/hatıra)",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Indifference",
+    "Kayıtsızlık, umursamazlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Indifferent",
+    "İlgisiz, farksız, kayıtsız",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Indigenous",
+    "Yerli, otokton, yöreye özgü",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Indisputable",
+    "Su götürmez, itirazsız",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Indoctrinate",
+    "Fikir aşılamak, beyin yıkamak",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Indoctrination",
+    "Beyin yıkama, doktrin aşılama",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Induce",
+    "Kandırmak, tetiklemek, sebep olmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Induction",
+    "Tümevarım, göreve başlatma",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Indulge",
+    "Şımartmak, zevkine boyun eğmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Indulgence",
+    "Müsamaha, hoşgörü, haz düşkünlüğü",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Industrious",
+    "Çalışkan, gayretkeş",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Inept",
+    "Beceriksiz, yakışıksız, acemi",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Ineptitude",
+    "Yetersizlik, beceriksizlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Inequality",
+    "Eşitsizlik, adaletsizlik",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Inequity",
+    "Haksızlık, adaletsizlik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Inert",
+    "Hareketsiz, eylemsiz, soy gaz",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Inevitable",
+    "Kaçınılmaz, mukadder",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Inevitability",
+    "Kaçınılmazlık, mukadderat",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Inexorable",
+    "Durdurulamaz, amansız, merhametsiz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Inexplicable",
+    "İzah edilemez, akıl sır ermez",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Infamous",
+    "Kötü şöhretli, adı çıkmış",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Infamy",
+    "Rezillik, yüz karası, leke",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Inferior",
+    "Aşağı, kalitesiz, madun",
+    "Adjective / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Inferiority",
+    "Aşağılık duygusu, kalitesizlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Infiltrate",
+    "Sızmak, arasına sokulmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Infiltration",
+    "Sızma, gizlice girme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Infinite",
+    "Sonsuz, nihayetsiz",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Infinity",
+    "Sonsuzluk, ebediyet",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Inflame",
+    "Alevlendirmek, kızıştırmak",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Inflammatory",
+    "Kışkırtıcı, yangısal",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Inflict",
+    "Vermek (acı/ceza), uğratmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Infringement",
+    "İhlal, tecavüz",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Ingenious",
+    "Dahiyane, hünerli, harika",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Ingrained",
+    "Kökleşmiş, iliklerine işlemiş",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Inherit",
+    "Miras almak, kalıtım yoluyla geçmek",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Inhibit",
+    "Kısıtlamak, ket vurmak, engellemek",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Inhibition",
+    "Çekingenlik, ket vurma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Inhospitable",
+    "Misafirperver olmayan, yaşanmaz",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Inimical",
+    "Zararlı, düşmanca, hasım",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Injustice",
+    "Adaletsizlik, haksızlık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Innate",
+    "Doğuştan gelen, fıtri",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Inordinate",
+    "Haddinden fazla, aşırı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Inquest",
+    "Adli soruşturma, tahkikat",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Insatiable",
+    "Doyumsuz, gözü aç",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Inscribe",
+    "Yazıt kazımak, ithaf etmek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Inscription",
+    "Kitabe, yazıt",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Insinuate",
+    "Üstü kapalı ima etmek, sokulmak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Insipid",
+    "Tatsız tuzsuz, yavşan, yavan",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Insolent",
+    "Küstah, terbiyesiz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Insolvent",
+    "Borca batık, aciz",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Instigate",
+    "Kışkırtmak, fitilini ateşlemek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Instinctive",
+    "İçgüdüsel, sevki tabii",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Institutional",
+    "Kurumsal, yerleşik",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Instrumental",
+    "Vasıta olan, etkin rol oynayan",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Insubordinate",
+    "İtaatsiz, başına buyruk",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Insular",
+    "Dar görüşlü, adalı gibi izole",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Insurmountable",
+    "Aşılamaz, başa çıkılamaz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Intact",
+    "Eksiksiz, dokunulmamış, sağlam",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Intangible",
+    "Maddi olmayan, soyut, elle tutulmaz",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Intelligible",
+    "Anlaşılır, açık, sarih",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Intensify",
+    "Şiddetlendirmek, pekiştirmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Interception",
+    "Yolunu kesme, araya girme",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Interchangeable",
+    "Birbiri yerine geçebilir",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Intermittent",
+    "Aralıklı, kesik kesik olan",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Internalize",
+    "İçselleştirmek, benimsemek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Interrogate",
+    "Sorguya çekmek, sorgulamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Interrogation",
+    "Sorgulama, istintak",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Intimate",
+    "Samimi, mahrem, hissettirmek",
+    "Adjective / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Intolerable",
+    "Çekilmez, katlanılamaz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Intolerance",
+    "Hoşgörüsüzlük, tahammülsüzlük",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Intricate",
+    "Girift, karmaşık, incelikli",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Intrigue",
+    "Entrika, merakını uyandırmak",
+    "Noun / Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Introspective",
+    "İç gözlem yapan, kendi içine dönük",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Introversion",
+    "İçe dönüklük",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Intrude",
+    "İzinsiz girmek, davetsiz gelmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Intrusion",
+    "İhlal, davetsiz sokulma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Intuitive",
+    "Sezgisel, sağduyuyla anlaşılan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Invalidate",
+    "Geçersiz kılmak, hükümsüzleştirmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Invariable",
+    "Değişmez, hep aynı kalan",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Invariably",
+    "İstisnasız, her defasında",
+    "Adverb",
+    "Academic and Research"
+  ],
+  [
+    "Inventive",
+    "Buluşçu, yaratıcı, mucit",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Inverse",
+    "Ters, aksi, zıt oran",
+    "Adjective / Noun",
+    "Academic and Research"
+  ],
+  [
+    "Invigorate",
+    "Zindelik vermek, canlandırmak",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Invincible",
+    "Yenilmez, mağlup edilemez",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Inviolable",
+    "Dokunulmaz, kutsal, bozulamaz",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Invoke",
+    "Yasalara başvurmak, dua ile çağırmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Involuntary",
+    "İstem dışı, gayriihtiyari",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Ironic",
+    "Kinayeli, alaycı, beklenmedik",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Irrational",
+    "Akıl dışı, mantıksız",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Irreconcilable",
+    "Bağdaşamaz, uzlaşmaz",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Irrefutable",
+    "Aksi iddia edilemez, kesin",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Irrelevant",
+    "Konu dışı, ilgisiz, yersiz",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Irreparable",
+    "Tamir edilemez, onarılmaz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Irreplaceable",
+    "Yeri doldurulamaz, biricik",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Irreverent",
+    "Hürmetsiz, saygısız",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Irrevocable",
+    "Geri dönülemez, fesh edilemez",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Jeopardize",
+    "Tehlikeye atmak, riske etmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Jeopardy",
+    "Tehlike, rizikolu durum",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Judicial",
+    "Yargısal, adli",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Judiciary",
+    "Yargı organı, adliye teşkilatı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Judicious",
+    "Sağgörülü, basiretli, tedbirli",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Justification",
+    "Gerekçe, haklı çıkarma",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Knack",
+    "Püf noktası, el yatkınlığı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Lament",
+    "Yas tutmak, feryat etmek, ağıt",
+    "Verb / Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Lamentable",
+    "Acıklı, esef verici",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Languish",
+    "Gittikçe zayıflamak, solup gitmek",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Latency",
+    "Gizlilik, örtük bekleme süresi",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Latent",
+    "Gizil, potansiyel, uyur vaziyette",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Lateral",
+    "Yanal, enlemesine olan",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Laudable",
+    "Övgüye değer, methedilecek",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Lavish",
+    "Müsrifçe, cömert, savurgan",
+    "Adjective / Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Legitimacy",
+    "Meşruiyet, yasallık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Lethargic",
+    "Uyuşuk, miskin, uykulu",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Lethargy",
+    "Uyuşukluk, rehavet",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Leverage",
+    "Kaldıraç gücü, koz olarak kullanmak",
+    "Noun / Verb",
+    "Business and Economy"
+  ],
+  [
+    "Liberalism",
+    "Özgürlükçülük, liberalizm",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Liberate",
+    "Kurtarmak, serbest bırakmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Linear",
+    "Çizgisel, doğrusal, lineer",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Linguistic",
+    "Dilbilimsel, lisana ait",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Linguistics",
+    "Dilbilim, lisaniyat",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Liquidate",
+    "Tasfiye etmek, nakde çevirmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Literacy",
+    "Okuryazarlık, temel kültür",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Literal",
+    "Kelimesi kelimesine, harfi harfine",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Litigant",
+    "Davacı veya davalı taraf",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Litigious",
+    "Dava açmaya meraklı, kavgacı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Lucid",
+    "Berrak, anlaşılır, zihni açık",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Ludicrous",
+    "Gülünç, saçma sapan",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Luminous",
+    "Işık saçan, parıltılı, aydın",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Magnanimous",
+    "Alçakgönüllü, yüce gönüllü",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Magnate",
+    "Büyük tüccar, kodaman, patron",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Malaise",
+    "Huzursuzluk, keyifsizlik, buhran",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Malevolent",
+    "Kötü niyetli, kem gözlü",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Malicious",
+    "Kasıtlı, haince, muzır",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Malign",
+    "Kötülemek, iftira atmak",
+    "Verb / Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Malignant",
+    "Habis, kötü huylu (tümör)",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Malleable",
+    "Şekil verilebilir, kolay yönlendirilen",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Manifestation",
+    "Belirti, tezahür, dışavurum",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Marginal",
+    "Kenarda kalan, sınırdaki, cüzi",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Marginalize",
+    "Dışlamak, önemsizleştirmek",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Mastery",
+    "Ustalık, hakimiyet, üstün başarı",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Materialize",
+    "Somutlaşmak, vücut bulmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Matriarchy",
+    "Anaerkillik",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Mediator",
+    "Arabulucu, uzlaştırıcı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Mediocre",
+    "Vasat, orta halli, sıradan",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Mediocrity",
+    "Vasatlık, bayağılık",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Melancholy",
+    "Hüzün, melankoli, kara sevda",
+    "Noun / Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Mendacity",
+    "Yalancılık, sahtekarlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Merciless",
+    "Acımasız, insafsız, merhametsiz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Metaphor",
+    "Eğretileme, metafor",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Metaphorical",
+    "Mecazi, metaforik",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Meticulous",
+    "Kılı kırk yaran, aşırı titiz",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Microcosm",
+    "Küçük evren, model, mikrokosmos",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Migrate",
+    "Göç etmek, yer değiştirmek",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Migration",
+    "Göç, hicret",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Milieu",
+    "Çevre, sosyal muhit, ortam",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Militant",
+    "Kavgacı, militan, saldırgan",
+    "Adjective / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Mimic",
+    "Taklidini yapmak, öykünmek",
+    "Verb / Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Mindset",
+    "Zihniyet, düşünce yapısı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Mitigate",
+    "Hafifletmek, teskin etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Mockery",
+    "Alay, maskaralık, eğlence konusu",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Moderation",
+    "Ilımlılık, itidal, ölçülülük",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Modulation",
+    "Ton ayarlama, kiplenim",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Momentous",
+    "Tarihi, çok önemli, hayati",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Monotonous",
+    "Tekdüze, yeknesak, can sıkıcı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Monumental",
+    "Anıtsal, abidevi, devasa",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Morality",
+    "Ahlak, fazilet, etik",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Motivation",
+    "Güdü, motivasyon, teşvik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Multifaceted",
+    "Çok yönlü, çok cepheli",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Multilateral",
+    "Çok taraflı (antlaşma vb.)",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Mutation",
+    "Mutasyon, başkalaşım",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Mutuality",
+    "Karşılıklılık, müştereklik",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Myriad",
+    "Sayısız, pek çok, on binlerce",
+    "Adjective / Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Naturalize",
+    "Vatandaşlığa kabul etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Nebulous",
+    "Bulutlu, belirsiz, puslu",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Necessitate",
+    "Gerektirmek, zorunlu kılmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Negate",
+    "Geçersiz kılmak, olumsuzlamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Negation",
+    "İnkar, olumsuzlama, yokluk",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Negligence",
+    "İhmal, savsaklama, kusur",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Negligent",
+    "İhmalkar, kayıtsız",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Nocturnal",
+    "Geceye ait, gece faal olan",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Nominal",
+    "Sembolik, sözde, nominal",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Nonchalant",
+    "Kaygısız, umursamaz, laubali",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Nonconformist",
+    "Uyumsuz, yerleşik düzene karşı",
+    "Noun / Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Nonpartisan",
+    "Partiler üstü, tarafsız",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Normative",
+    "Kural koyucu, normatif",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Nostalgia",
+    "Geçmişe özlem, nostalji",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Noteworthy",
+    "Dikkate değer, kayda değer",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Nullify",
+    "Hükümsüz kılmak, sıfırlamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Nurture",
+    "Besleyip büyütmek, terbiye etmek",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Objectivity",
+    "Nesnellik, tarafsızlık",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Obligate",
+    "Mecbur etmek, yükümlü kılmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Oblivion",
+    "Unutulma, kayıtsızlık, yokluk",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Obscure",
+    "Belirsiz, anlaşılması güç, gizlemek",
+    "Adjective / Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Obstacle",
+    "Engel, mani, köstek",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Obstinate",
+    "İnatçı, dik kafalı, aksi",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Obtuse",
+    "Kafası zor çalışan, duygusuz, geniş açı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Occurrence",
+    "Olay, hadise, vukuat",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Offensive",
+    "Saldırgan, incitici, taarruz",
+    "Adjective / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Omit",
+    "Dışarıda bırakmak, atlamak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Omnipotent",
+    "Her şeye gücü yeten, kadir-i mutlak",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Onerous",
+    "Ağır, külfetli, zahmetli",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Opaque",
+    "Mat, ışık geçirmez, kapalı",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Optimism",
+    "İyimserlik, hüsnüzan",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Optimum",
+    "En elverişli, optimum seviye",
+    "Adjective / Noun",
+    "Academic and Research"
+  ],
+  [
+    "Organism",
+    "Canlı varlık, bünye",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Orthodox",
+    "Geleneklere bağlı, ortodoks",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Orthodoxy",
+    "Geleneksellik, resmi öğreti",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Oscillate",
+    "Salınmak, tereddüt etmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Ostentatious",
+    "Gösteriş budalası, fiyakalı",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Oust",
+    "Makamından etmek, defetmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Outrageous",
+    "Aşırı, rezilce, infial uyandıran",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Outright",
+    "Açıkça, derhal, toptan",
+    "Adjective / Adverb",
+    "Abstract Concepts"
+  ],
+  [
+    "Overreach",
+    "Boyunu aşan işe kalkışmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Oversee",
+    "Gözetmek, denetlemek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Oversight",
+    "Gözden kaçırma, teftiş yetkisi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Overwhelm",
+    "Ezmek, bunaltmak, gark etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Overwhelming",
+    "Ezici, karşı konulamaz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Palatable",
+    "Damak tadına uygun, kabul edilebilir",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Paradoxical",
+    "Çelişkili, tezat barındıran",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Paragon",
+    "Mükemmellik timsali, kusursuz örnek",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Parallel",
+    "Koşut, benzer, paralel",
+    "Adjective / Noun",
+    "Academic and Research"
+  ],
+  [
+    "Paralyze",
+    "Felç etmek, hareketsiz kılmak",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Parasite",
+    "Asalak, parazit",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Parliamentary",
+    "Parlamentoya ait, meclisle ilgili",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Parochial",
+    "Dar kafalı, mahalli zihniyetli",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Parsimonious",
+    "Aşırı cimri, eli sıkı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Partisan",
+    "Partizan, körü körüne taraf olan",
+    "Adjective / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Partisanship",
+    "Fırkacılık, partizanlık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Patriarchy",
+    "Ataerkillik, pederşahilik",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Peculiar",
+    "Kendine has, acayip, garip",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Peculiarity",
+    "Özellik, tuhaflık",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Pedagogy",
+    "Eğitimbilim, pedagoji",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Pedantic",
+    "Kuralcı, bilgiçlik taslayan",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Penalize",
+    "Cezalandırmak, aleyhine olmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Penalty",
+    "Ceza, penaltı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Penchant",
+    "Düşkünlük, meyil, zaaf",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Pending",
+    "Bekleyen, askıda olan, -e kadar",
+    "Adjective / Preposition",
+    "Law and Politics"
+  ],
+  [
+    "Perceptive",
+    "Sezgisi kuvvetli, anlayışlı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Perilous",
+    "Çok tehlikeli, korkulu",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Periodic",
+    "Dönemsel, periyodik",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Peripheral",
+    "Çevresel, tali, ikincil",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Permeate",
+    "İçine işlemek, nüfuz etmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Permissible",
+    "Caiz, izin verilebilir",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Pernicious",
+    "Sinsi ve ölümcül, çok zararlı",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Perpetual",
+    "Ebedi, daimi, kesintisiz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Perpetuate",
+    "Sürdürmek, ebedileştirmek",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Perpetuation",
+    "Devam ettirme, idame",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Perplex",
+    "Aklını karıştırmak, şaşırtmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Perplexity",
+    "Şaşkınlık, kafa karışıklığı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Persecute",
+    "Zulmetmek, eziyet etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Persecution",
+    "Zulüm, eza, cefa",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Perseverance",
+    "Sebat, azim, tahammül",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Persevere",
+    "Sebat etmek, yılmamak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Persist",
+    "Israr etmek, sürüp gitmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Persistence",
+    "Israr, süreklilik, inat",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Pertinent",
+    "İlgili, yerinde, münasebetli",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Pessimism",
+    "Kötümserlik, karamsarlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Petty",
+    "Önemsiz, ufak tefek, dar kafalı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Philanthropy",
+    "İnsanseverlik, hayırseverlik",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Pious",
+    "Dindar, takva sahibi",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Plagiarism",
+    "İntihal, aşırma",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Plagiarize",
+    "İntihal yapmak, fikir çalmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Plague",
+    "Veba, musallat olmak, afet",
+    "Noun / Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Platitude",
+    "Beylik laf, basmakalıp söz",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Plausibility",
+    "İnandırıcılık, akla yatkınlık",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Plead",
+    "Yalvarmak, savunma yapmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Plebiscite",
+    "Halk oylaması, referandum",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Polarization",
+    "Kutuplaşma, polarizasyon",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Polarize",
+    "Kutuplaştırmak, ikiye bölmek",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Polemics",
+    "Münakaşa ilmi, polemik sanatı",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Pompous",
+    "Kibirli, tumturaklı, kendini beğenmiş",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Potent",
+    "Kuvvetli, çok etkili",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Pragmatic",
+    "Uygulamacı, faydacı, pragmatik",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Precedented",
+    "Emsali görülmüş",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Precept",
+    "Öğüt, ahlaki ilke, nizam",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Precipitate",
+    "Tetiklemek, hızlandırmak, çökelmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Preclude",
+    "Önüne geçmek, peşinen engellemek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Predatory",
+    "Yırtıcı, sömürücü, talancı",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Predecessor",
+    "Selef, kendinden önce gelen",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Predicament",
+    "Çıkmaz durum, müşkilat",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Predominate",
+    "Ağır basmak, hakim olmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Preeminence",
+    "Üstünlük, seçkinlik",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Preeminent",
+    "Seçkin, emsalsiz, en önde gelen",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Prejudicial",
+    "Zararlı, önyargı doğuran",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Preponderance",
+    "Üstünlük, sayıca çokluk",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Prerequisite",
+    "Önkoşul, ilk şart",
+    "Noun / Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Presumptive",
+    "Kuvvetle muhtemel, varsayılan",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Presumption",
+    "Karasızlık, hadsizlik, karine",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Pretentious",
+    "Gösterişçi, iddialı, havalı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Pretext",
+    "Bahane, kulp takma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Privileged",
+    "Ayrıcalıklı, imtiyazlı",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Proactive",
+    "Önlem alıcı, proaktif",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Proclaim",
+    "İlan etmek, haykırmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Proclamation",
+    "Bildiri, beyanname, ilan",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Procure",
+    "Tedarik etmek, güç bela sağlamak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Procurement",
+    "Tedarik, satınalma",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Prodigious",
+    "Fevkalade büyük, harikulade",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Proficiency",
+    "Yetkinlik, ustalık derecesi",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Proficient",
+    "Usta, mahir, yetkin",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Profundity",
+    "Derinlik, enginlik",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Prognosis",
+    "Hastalık seyri tahmini, prognoz",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Proliferate",
+    "Hızla çoğalmak, üremek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Proliferation",
+    "Çoğalma, nükleer yayılma",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Prolong",
+    "Uzatmak, temdit etmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Prominence",
+    "Belirginlik, şöhret, öne çıkma",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Promulgate",
+    "Yürürlüğe koymak, alenen yaymak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Propagation",
+    "Çoğaltma, yayılma, propaganda",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Prophetic",
+    "Peygamberane, geleceği haber veren",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Proponent",
+    "Savunucu, taraftar, lehte olan",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Proportionate",
+    "Orantılı, mütenasip",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Proprietary",
+    "Mülkiyetinde olan, patentli",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Protagonist",
+    "Başkahraman, öncü savunucu",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Protract",
+    "Boş yere uzatmak, sürüncemede bırakmak",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Providence",
+    "İlahi takdir, inayet",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Provincial",
+    "Taşralı, dar görüşlü",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Provision",
+    "Hüküm, tedarik, şart",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Provisional",
+    "Geçici, şartlı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Pseudoscience",
+    "Sözdebilim",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Punitive",
+    "Cezalandırıcı, ibretlik ceza",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Purity",
+    "Saflık, arılık, paklık",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Qualitative",
+    "Niteliksel, kalitatif",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Quantitative",
+    "Niceliksel, kantitatif",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Quantum",
+    "Kuantum, pay, hisse",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Quasi",
+    "Görünüşte, yarı, -imsi",
+    "Adjective / Prefix",
+    "Academic and Research"
+  ],
+  [
+    "Quench",
+    "Susuzluğu gidermek, söndürmek",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Ramification",
+    "Dallanıp budaklanma, karmaşık sonuç",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Rampant",
+    "Alıp başını yürüyen, şahlanmış",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Ratification",
+    "Onaylama, tasdik etme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Rationality",
+    "Akılcılık, rasyonalite",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Reactionary",
+    "Gerici, irticacı, mürteci",
+    "Adjective / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Reaffirm",
+    "Yeniden teyit etmek, tazelemek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Rebut",
+    "Aksini ispatlamak, çürütmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Recapitulate",
+    "Özetlemek, ana hatları tekrarlamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Reciprocate",
+    "Karşılık vermek, iade etmek",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Reciprocity",
+    "Mütekabiliyet, karşılıklılık ilkesi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Reckless",
+    "Pervasız, gözü kara, sorumsuz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Rectify",
+    "Düzeltmek, tashih etmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Recurrent",
+    "Nükseden, tekrarlayan",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Redeem",
+    "Kurtarmak, telafi etmek, bozdurmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Redemption",
+    "Kefaret, kurtuluş, telafi",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Refine",
+    "Arıtmak, inceltmek, kusursuzlaştırmak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Refinement",
+    "İncelik, nezaket, arıtma",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Refrain",
+    "Kendini sakınmak, nakarat",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Refute",
+    "Çürütmek, yalanlamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Rehabilitate",
+    "İyileştirmek, itibarını iade etmek",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Reign",
+    "Hüküm sürmek, saltanat",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Reimburse",
+    "Masrafı tazmin etmek, geri ödemek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Reimbursement",
+    "Tazminat, masraf iadesi",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Reinforce",
+    "Pekiştirmek, takviye etmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Reinforcement",
+    "Takviye, pekiştirme kuvveti",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Reiterate",
+    "Tekrar tekrar vurgulamak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Reluctant",
+    "Gönülsüz, kerhen razı olan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Remedy",
+    "Çare, derman, deva",
+    "Noun / Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Reminiscent",
+    "Andıran, hatıraları canlandıran",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Remorse",
+    "Vicdan azabı, derin pişmanlık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Renounce",
+    "Terk etmek, feragat etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Repeal",
+    "Yürürlükten kaldırmak, feshetmek",
+    "Verb / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Repel",
+    "Püskürtmek, itmek, tiksindirmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Repertoire",
+    "Dağarcık, repertuar",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Replenish",
+    "Yeniden doldurmak, takviye etmek",
+    "Verb",
+    "Environment and Nature"
+  ],
+  [
+    "Replicate",
+    "Kopyasını çıkarmak, tekrarlamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Replication",
+    "Tekrarlanabilirlik, kopya",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Reprehensible",
+    "Kınanması gereken, kusurlu",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Repress",
+    "Bastırmak, baskı altında tutmak",
+    "Verb",
+    "Psychology and Society"
+  ],
+  [
+    "Reproach",
+    "Sitem etmek, kınamak",
+    "Verb / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Repudiate",
+    "Reddetmek, tanımamak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Repugnant",
+    "İğrenç, tiksindirici, aykırı",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Rescind",
+    "Feshetmek, hükümsüz bırakmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Resilience",
+    "Mukavemet, toparlanma gücü",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Resonant",
+    "Çınlayan, yankı uyandıran",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Restraint",
+    "Özdenetim, itidal, baskı",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Restrictive",
+    "Kısıtlayıcı, tahdit edici",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Resurgence",
+    "Yeniden canlanma, diriliş",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Resurrect",
+    "Diriltmek, yeniden hayata döndürmek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Retaliate",
+    "Misilleme yapmak, kısasa kısas",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Reticent",
+    "Ağzı sıkı, az konuşan, çekingen",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Retrieve",
+    "Geri almak, bulup getirmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Retrospect",
+    "Geçmişe bakış, maziyi anma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Retrospective",
+    "Geçmişe yönelik, retrospektif",
+    "Adjective / Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Revere",
+    "Saygıyla eğilmek, hürmet etmek",
+    "Verb",
+    "Culture and Arts"
+  ],
+  [
+    "Rhetorical",
+    "Sözde kalan, retorik",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Rigor",
+    "Sertlik, titizlik, katılık",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Robust",
+    "Gürbüz, sarsılmaz, güçlü",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Rupture",
+    "Kopma, yırtılma, bağların kopması",
+    "Noun / Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Sarcasm",
+    "İğneleme, kinaye, acı alay",
+    "Noun",
+    "Language and Communication"
+  ],
+  [
+    "Sarcastic",
+    "İğneleyici, acı dilli",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Savor",
+    "Tadını çıkarmak, lezzetini almak",
+    "Verb / Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Scrutinize",
+    "Kılı kırk yararcasına incelemek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Secular",
+    "Laik, dünyevi",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Sedentary",
+    "Hareketsiz, masa başı yaşayan",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Sentiment",
+    "Duygu, his, kanaat",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Sequential",
+    "Birbiri ardına gelen, sıralı",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Serendipity",
+    "Mutlu tesadüf, şans eseri buluş",
+    "Noun",
+    "Abstract Concepts"
+  ],
+  [
+    "Skeptical",
+    "Şüpheci, kuşkucu",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Skepticism",
+    "Kuşkuculuk, şüphecilik",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Solidarity",
+    "Dayanışma, tesanüt",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Solitary",
+    "Yalnız, tek başına, münzevi",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Sovereign",
+    "Egemen, hükümdar, bağımsız",
+    "Adjective / Noun",
+    "Law and Politics"
+  ],
+  [
+    "Spontaneous",
+    "Kendiliğinden olan, içten gelen",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Sporadic",
+    "Tek tük, ara sıra olan",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Stimulus",
+    "Uyarıcı etken, teşvik",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Substantiate",
+    "Somut kanıtlarla doğrulamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Subtlety",
+    "İncelik, nüans",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Subvert",
+    "Düzeni altüst etmek, yıkmak",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Successive",
+    "Birbiri ardınca gelen, müteakip",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Suffice",
+    "Yeterli olmak, kafi gelmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Superficial",
+    "Yüzeysel, sathi, göstermelik",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Superfluous",
+    "Lüzumsuz, gereğinden fazla",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Supersede",
+    "Yerini almak, yürürlükten düşürmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Supplant",
+    "Tahtından etmek, yerini kapmak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Suppression",
+    "Baskılama, tenkil",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Susceptible",
+    "Hassas, kolay etkilenen, yatkın",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Symbiotic",
+    "Ortakyaşar, simbiyotik",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Synergy",
+    "Sinerji, ortak güç birlikteliği",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Synthesize",
+    "Sentezlemek, birleştirmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Tacit",
+    "Zımni, sözsüz anlaşılmış",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Tactical",
+    "Taktiksel, manevraya dayalı",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Tedious",
+    "Can sıkıcı, usandırıcı, bıktırıcı",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Temperament",
+    "Yaratılış, mizaç, huy",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Tenacious",
+    "İnatçı, tuttuğunu koparan, yapışkan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Tentative",
+    "Kesin olmayan, deneme mahiyetinde",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Termination",
+    "Fesih, sona erdirme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Terrestrial",
+    "Karaya ait, yeryüzüne ilişkin",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Thrive",
+    "Serpilmek, gelişip zenginleşmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Tolerant",
+    "Hoşgörülü, müsamahakar",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Treachery",
+    "Hıyanet, kalleşlik",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Treacherous",
+    "Haince, tekinsiz, güvenilmez",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Tremendous",
+    "Muazzam, olağanüstü büyük",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Trivial",
+    "Ehemmiyetsiz, incir çekirdeğini doldurmaz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Turbulent",
+    "Fırtınalı, çalkantılı",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Unanimity",
+    "Oybirliği, ittifak",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Unequivocal",
+    "Açık ve kesin, tartışmasız",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Uniformity",
+    "Tekdüzelik, yeknesaklık",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Unilateral",
+    "Tek taraflı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Unravel",
+    "Çözülmek, aydınlanmak, ipliği sökmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Unscrupulous",
+    "Vicdansız, ahlaksız, ilkesiz",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Untenable",
+    "Savunulamaz, tutarsız",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Uphold",
+    "Arkalamak, onamak, teyit etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Uprising",
+    "Ayaklanma, isyan",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Utilitarian",
+    "Faydacı, pratik yarar gözeten",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Vague",
+    "Muğlak, flu, belirsiz",
+    "Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Validation",
+    "Geçerleme, tasdik",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Vanquish",
+    "Hakkından gelmek, mağlup etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Variance",
+    "Farklılık, ayrılık, varyans",
+    "Noun",
+    "Academic and Research"
+  ],
+  [
+    "Vehement",
+    "Şiddetli, hiddetli, ateşli",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Venerable",
+    "Saygıdeğer, muhterem, ulu",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Ventilation",
+    "Havalandırma",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Verbatim",
+    "Kelimesi kelimesine, aynen",
+    "Adverb / Adjective",
+    "Language and Communication"
+  ],
+  [
+    "Versatile",
+    "Çok yönlü, marifetli",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Versatility",
+    "Çok yönlülük, maharet",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Viable",
+    "Yaşayabilir, uygulanabilir",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Vibrant",
+    "Canlı, kıpır kıpır, parlak",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Vicarious",
+    "Başkası üzerinden vekaleten yaşanan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Vicious",
+    "Kısır (döngü), gaddar, hırçın",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Violation",
+    "İhlal, tecavüz, çiğneme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Virtue",
+    "Erdem, fazilet, meziyet",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Virtuous",
+    "Erdemli, namuslu, faziletli",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Visceral",
+    "İçgüdüsel, derinlerden gelen",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Vitality",
+    "Yaşam enerjisi, zindelik",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Vivid",
+    "Canlı, parlak, berrak",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Vocational",
+    "Mesleki, mesleğe yönelik",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Volatile",
+    "Uçucu, değişken, istikrarsız",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Wholesome",
+    "Sağlıklı, faydalı, temiz ruhlu",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Wield",
+    "Kullanmak (güç/silah), sözü geçmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Withstand",
+    "Dayanmak, direnmek, mukavemet etmek",
+    "Verb",
+    "Abstract Concepts"
+  ],
+  [
+    "Zealous",
+    "Gayretli, şevkli, ateşli savunucu",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Demystify",
+    "Gizemini çözmek, aydınlatmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Envisage",
+    "Zihninde canlandırmak, tasarlamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Conceptualize",
+    "Kavramlaştırmak, soyutlaştırmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Contextualize",
+    "Bağlamına oturtmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Problematize",
+    "Sorunsallaştırmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Rationalize",
+    "Akla uydurmak, rasyonelleştirmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Institutionalize",
+    "Kurumsallaştırmak",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Operationalize",
+    "İşlevsel hale getirmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Categorize",
+    "Sınıflandırmak, kategorilere ayırmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Prioritize",
+    "Önceliklendirmek, ilk sıraya koymak",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Hypothesize",
+    "Hipotez kurmak, varsayımda bulunmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Generalize",
+    "Genelleme yapmak, yaygınlaştırmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Disaggregate",
+    "Bileşenlerine ayırmak, ayrıştırmak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Understate",
+    "Hafife alarak anlatmak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Overstate",
+    "Mübalağa etmek, abartmak",
+    "Verb",
+    "Language and Communication"
+  ],
+  [
+    "Reconceptualize",
+    "Kavramı yeniden inşa etmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Foreground",
+    "Ön plana çıkarmak",
+    "Verb / Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Reconfigure",
+    "Yeniden yapılandırmak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Recalibrate",
+    "Yeniden kalibre etmek, ayarlamak",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Reinvigorate",
+    "Yeniden canlandırmak, taze kan vermek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Revitalize",
+    "Hayatiyet kazandırmak, diriltmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Regenerate",
+    "Yenilenmek, kendini üretmek",
+    "Verb",
+    "Science and Technology"
+  ],
+  [
+    "Reconstitute",
+    "Yeniden teşkil etmek, sulandırarak eski haline getirmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Reorient",
+    "Yönünü yeniden belirlemek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Redefine",
+    "Yeniden tanımlamak",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Reorganize",
+    "Yeniden düzenlemek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Restructure",
+    "Yeniden yapılandırmak (borç/şirket)",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Disillusioned",
+    "Hayalleri yıkılmış, gözü açılmış",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Disenchanted",
+    "Büyüsü bozulmuş, soğumuş",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Disaffected",
+    "Düzene küskün, hoşnutsuz",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Alienated",
+    "Yabancılaşmış, itilmiş",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Estranged",
+    "Yabancılaşmış, ayrı yaşayan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Unsettling",
+    "Huzursuz edici, tedirgin kılan",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Distasteful",
+    "Tatsız, nahoş, yakışıksız",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Disquieting",
+    "Endişe verici, tekinsiz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Alarming",
+    "Korku salan, dehşete düşüren",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Deep-seated",
+    "Kök salmış, derinlere işlemiş",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Immovable",
+    "Kıpırdamaz, sabit, taş gibi",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Inflexible",
+    "Eğilmez, bükülmez, tavizsiz",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Steadfast",
+    "Yolundan dönmez, sadık, sebatkar",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Unwavering",
+    "Tereddütsüz, sarsılmaz",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Unyielding",
+    "Boyun eğmez, inatçı, sert",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Relentless",
+    "Aman vermez, dur durak bilmez",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Implacable",
+    "Yatıştırılamaz, uzlaşmaz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Unrelenting",
+    "Gevşemeyen, amansız",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Interminable",
+    "Bitmek tükenmek bilmeyen",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Fugitive",
+    "Kaçak, firari, geçici",
+    "Noun / Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Transitory",
+    "Muvakkat, fani, geçici",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Transient",
+    "Gelip geçici, süreksiz",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Momentary",
+    "Anlık, bir lahzalık",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Abrupt",
+    "Ani, pat diye olan, kaba",
+    "Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Precipitous",
+    "Sarp, dik, çok ani ve tehlikeli",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Steep",
+    "Dik, aşırı, fahiş (fiyat)",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Interdependent",
+    "Birbirine bağımlı, karşılıklı bağlı",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Interconnected",
+    "Birbiriyle bağlantılı, kenetli",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Intertwined",
+    "İç içe geçmiş, sarmaş dolaş",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Inseparable",
+    "Ayrılmaz, etle tırnak gibi",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Indissoluble",
+    "Çözülemez, dağıtılmaz (birlik/nikah)",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Integral",
+    "Tamamlayıcı, ayrılmaz parça",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Overriding",
+    "Her şeyden üstün gelen, başat",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Prevailing",
+    "Hüküm süren, cari, genel",
+    "Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Foremost",
+    "En başta gelen, en seçkin",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Incomparable",
+    "Kıyas kabul etmez, eşsiz",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Matchless",
+    "Benzersiz, dengi bulunmaz",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Peerless",
+    "Akranı olmayan, eşsiz",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Unrivaled",
+    "Rakipsiz, bileği bükülmez",
+    "Adjective",
+    "Business and Economy"
+  ],
+  [
+    "Unmatched",
+    "Boy ölçüşülemez, dengi yok",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Unequaled",
+    "Eşitine rastlanmamış",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Unsurpassed",
+    "Aşılamamış, üstüne çıkılamamış",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Coexist",
+    "Birlikte barış içinde yaşamak",
+    "Verb",
+    "Society and Politics"
+  ],
+  [
+    "Coexistence",
+    "Birlikte var olma, bir arada yaşama",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Mutualism",
+    "Karşılıklılık esası",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Parasitism",
+    "Asalaklık, parazitlik",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Commensalism",
+    "Ortak beslenme, tekyanlı yararlanma",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Ecosphere",
+    "Canlıküre, ekosfer",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Biosphere",
+    "Biyosfer, canlılar alanı",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Reforestation",
+    "Yeniden ağaçlandırma",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Afforestation",
+    "Çorak araziyi ormanlaştırma",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Desertification",
+    "Çölleşme, kuraklaşma",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Acidification",
+    "Asitlenme (okyanus/toprak)",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Salinization",
+    "Tuzlanma (tarım toprağında)",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Pollutant",
+    "Kirletici madde",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Nonrenewable",
+    "Tükenebilir, yenilenemez",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Geothermal",
+    "Jeotermal, yer ısıl",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Hydroelectric",
+    "Hidroelektrik, su gücü",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Photovoltaic",
+    "Güneş pili niteliğinde, fotovoltaik",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Semiconductor",
+    "Yarı iletken madde",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Superconductor",
+    "Süper iletken",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Nanotechnology",
+    "Nanoteknoloji, moleküler üretim",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Microprocessor",
+    "Mikroişlemci",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Algorithmic",
+    "Algoritmik, kurala dayalı",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Machine learning",
+    "Makine öğrenimi",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Neural network",
+    "Yapay sinir ağı",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Cryptography",
+    "Kriptografi, şifrebilim",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Encryption",
+    "Şifreleme, kriptolama",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Decryption",
+    "Şifre çözme",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Reconnaissance",
+    "Keşif faaliyeti, tarama",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Subversion",
+    "Devleti içten çökertme, yıkıcılık",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Sabotage",
+    "Kundaklama, sabotaj",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Coup d'etat",
+    "Hükümet darbesi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Insurrection",
+    "Silahlı başkaldırı, ayaklanma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Sedimentary",
+    "Tortul, tortul kayaç",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Igneous",
+    "Volkanik kökenli, magmatik",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Metamorphic",
+    "Başkalaşmış (kayaç)",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Tectonic",
+    "Tektonik, yerkabuğuna ait",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Seismic",
+    "Depremsel, sismik, yer sarsıcı",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Epicenter",
+    "Deprem üssü, odak noktası",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Aftershock",
+    "Artçı sarsıntı",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Tremor",
+    "Hafif sarsıntı, titreme",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Vibration",
+    "Titreşim, rezonans",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Wavelength",
+    "Dalga boyu, kafa dengi olma",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Electromagnetic",
+    "Elektromanyetik",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Radioactive",
+    "Radyoaktif, ışınetkin",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Isotope",
+    "İzotop atom",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Molecule",
+    "Molekül, tanecik",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Molecular",
+    "Moleküler, moleküle ait",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Cellular",
+    "Hücresel, hücresel ağ",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Chromosomal",
+    "Kromozomlara ilişkin",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Genomic",
+    "Genomik, gen dizilimine ait",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Cloning",
+    "Klonlama, kopyalama",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Bioethics",
+    "Biyoetik, tıp ahlakı",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Biotechnology",
+    "Biyoteknoloji",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Pharmaceutical",
+    "Eczacılıkla ilgili, ilaç sanayii",
+    "Adjective / Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Therapeutic",
+    "Tedavi edici, şifa verici",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Pathology",
+    "Hastalıkbilim, patoloji",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Pathological",
+    "Hastalıklı, patolojik",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Symptomatic",
+    "Belirti gösteren, semptomatik",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Asymptomatic",
+    "Belirti göstermeyen, sessiz seyreden",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Epidemiology",
+    "Salgın hastalıklar bilimi",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Inoculation",
+    "Aşılama, mikrop aşılama",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Immunization",
+    "Bağışıklama",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Congenital",
+    "Doğuştan var olan kusur",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Hereditary",
+    "Kalıtsal, irsi",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Psychosomatic",
+    "Ruhsal kaynaklı bedensel rahatsızlık",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Neurosis",
+    "Nevroz, ruhsal gerginlik",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Psychosis",
+    "Ağır akıl hastalığı, psikoz",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Subconscious",
+    "Bilinçaltı",
+    "Noun / Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Unconscious",
+    "Bilinçsiz, baygın, şuur dışı",
+    "Adjective / Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Consciousness",
+    "Bilinç, şuur, farkındalık",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Self-actualization",
+    "Kendini gerçekleştirme",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Conditioning",
+    "Şartlanma, koşullanma",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Segregation",
+    "Irk/inanç ayrımı, tecrit politikası",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Integration",
+    "Bütünleşme, kaynaşma, entegrasyon",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Multiculturalism",
+    "Çokkültürlülük",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Secularization",
+    "Dünyevileşme, sekülerleşme süreci",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Modernization",
+    "Çağdaşlaşma, modernleşme",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Urbanization",
+    "Kentleşme, şehirlileşme",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Globalization",
+    "Küreselleşme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Localization",
+    "Yerelleşme, mahalleleştirme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Decentralization",
+    "Adem-i merkeziyetçilik, yetki devri",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Privatization",
+    "Özelleştirme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Nationalization",
+    "Devletleştirme, kamulaştırma",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Liberalization",
+    "Serbestleşme, piyasayı açma",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Deregulation",
+    "Kuralsızlaştırma, serbest piyasa denetimsizliği",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Protectionism",
+    "Korumacılık (gümrük duvarları)",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Stagflation",
+    "Enflasyon içinde durgunluk, stagflasyon",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Hyperinflation",
+    "Aşırı yüksek enflasyon",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Deflation",
+    "Fiyatların sürekli düşmesi, deflasyon",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Devaluation",
+    "Paranın değerini düşürme, devalüasyon",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Revaluation",
+    "Paranın değerini yükseltme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Appreciation",
+    "Değer kazanma, takdir etme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Depreciation",
+    "Amortisman, değer kaybı",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Amortization",
+    "Borç itfası, amortisman",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Liquidity",
+    "Likidite, nakit akışı gücü",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Solvency",
+    "Borç ödeme yeterliliği",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Mortgage",
+    "Konut kredisi, ipotek",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Repossession",
+    "Malın mülkiyetini geri alma, el koyma",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Adjudication",
+    "Hüküm verme, yargılama",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Affidavit",
+    "Yeminli yazılı ifade",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Deposition",
+    "Yeminli ifade zaptı, tahttan indirme",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Contempt of court",
+    "Mahkemeye itaatsizlik suçu",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Acquittal",
+    "Beraat kararı",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Parole",
+    "Şartlı tahliye",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Pardon",
+    "Genel veya özel af",
+    "Noun / Verb",
+    "Law and Politics"
+  ],
+  [
+    "Amnesty",
+    "Genel af kanunu",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Refugee",
+    "Mülteci, sığınmacı",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Devolution",
+    "Merkezi yetkilerin yerel meclise devri",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Secession",
+    "Birlikten resmen ayrılma",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Adjudicator",
+    "Hakem, yargıç sıfatıyla karar veren",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Aggressor",
+    "Saldırgan devlet veya taraf",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Allotment",
+    "Paylaştırma, tahsisat payı, parsel",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Altruism",
+    "Özgecilik, başkalarını düşünme",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Altruistic",
+    "Özgeci, fedakar",
+    "Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Amicable",
+    "Dostane, barışçıl",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Anachronistic",
+    "Çağdışı, zamanına uymayan",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Anesthetic",
+    "Uyuşturucu madde, anestezik",
+    "Noun / Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Annihilate",
+    "Kökünü kazımak, tamamen yok etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Annihilation",
+    "Yok oluş, imha",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Antidote",
+    "Panzehir, deva",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Apathy",
+    "Kayıtsızlık, hissizlik, uyuşukluk",
+    "Noun",
+    "Psychology and Society"
+  ],
+  [
+    "Apathetic",
+    "Hissiz, kayıtsız, umursamaz",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Apportion",
+    "Hisse etmek, bölüştürmek",
+    "Verb",
+    "Business and Economy"
+  ],
+  [
+    "Aquatic",
+    "Suda yaşayan, sucul",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Arbiter",
+    "Hakem, son sözü söyleyen kişi",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Architectural",
+    "Mimari, mimarlıkla ilgili",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Artisan",
+    "Zanaatkar, usta el işçisi",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Ascetic",
+    "Çileci, riyazet ehli, zahit",
+    "Noun / Adjective",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Ascribe",
+    "Atfetmek, yüklemek, mal etmek",
+    "Verb",
+    "Academic and Research"
+  ],
+  [
+    "Asphyxiation",
+    "Boğulma, havasızlıktan ölme",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Assassin",
+    "Suikastçı, katil",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Assassination",
+    "Suikast, siyasi cinayet",
+    "Noun",
+    "Law and Politics"
+  ],
+  [
+    "Astray",
+    "Yoldan çıkmış, sapmış",
+    "Adverb / Adjective",
+    "Abstract Concepts"
+  ],
+  [
+    "Asymmetry",
+    "Bakışımsızlık, asimetri",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Asymmetric",
+    "Asimetrik, simetrisiz",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Atmospheric",
+    "Atmosferik, havaya ait, etkileyici",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Augmentation",
+    "Artış, çoğaltma, ekleme",
+    "Noun",
+    "Business and Economy"
+  ],
+  [
+    "Autocratic",
+    "Buyurgan, tek adam yönetimine dayalı",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Barbaric",
+    "Barbarca, vahşi, ilkel",
+    "Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Benefactor",
+    "İyiliksever, hayırsever bağışçı",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Benevolence",
+    "Hayırseverlik, lütufkarlık",
+    "Noun",
+    "Philosophy and Ethics"
+  ],
+  [
+    "Bias-free",
+    "Yansız, önyargısız",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Bipartisan",
+    "İki partinin uzlaştığı, partilerüstü",
+    "Adjective",
+    "Law and Politics"
+  ],
+  [
+    "Blasphemy",
+    "Kutsala saygısızlık, küfür",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Boisterous",
+    "Gürültülü, şamatacı, taşkın",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Bourgeois",
+    "Burjuva, orta sınıf mülk sahibi",
+    "Noun / Adjective",
+    "Society and Politics"
+  ],
+  [
+    "Burlesque",
+    "Abartılı komedi, parodi",
+    "Noun / Adjective",
+    "Culture and Arts"
+  ],
+  [
+    "Bystander",
+    "Seyirci, görgü tanığı, kenarda duran",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Calcify",
+    "Kireçleşmek, kemikleşmek",
+    "Verb",
+    "Health and Medicine"
+  ],
+  [
+    "Calligraphy",
+    "Hat sanatı, güzel yazı sanatı",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Camouflage",
+    "Kamuflaj, gizleme, kamufle etmek",
+    "Noun / Verb",
+    "Environment and Nature"
+  ],
+  [
+    "Cannibalism",
+    "Yamyamlık, türdeşini yeme",
+    "Noun",
+    "Society and Politics"
+  ],
+  [
+    "Capitulate",
+    "Teslim olmak, şartları kabul etmek",
+    "Verb",
+    "Law and Politics"
+  ],
+  [
+    "Carcinogen",
+    "Kanserojen madde",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Carcinogenic",
+    "Kanser yapıcı, kanserojen",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Cardiovascular",
+    "Kalp ve damarlara ait",
+    "Adjective",
+    "Health and Medicine"
+  ],
+  [
+    "Cartography",
+    "Haritacılık, harita yapım bilimi",
+    "Noun",
+    "Science and Technology"
+  ],
+  [
+    "Cataclysm",
+    "Tufan, büyük yıkıcı felaket",
+    "Noun",
+    "Environment and Nature"
+  ],
+  [
+    "Cataclysmic",
+    "Yıkıcı, yerle bir eden",
+    "Adjective",
+    "Environment and Nature"
+  ],
+  [
+    "Caustic",
+    "Aşındırıcı, yakıcı, iğneleyici",
+    "Adjective",
+    "Science and Technology"
+  ],
+  [
+    "Cerebral",
+    "Beyinsel, zihne hitap eden",
+    "Adjective",
+    "Academic and Research"
+  ],
+  [
+    "Chivalrous",
+    "Şövalye ruhlu, mert, centilmen",
+    "Adjective",
+    "Psychology and Society"
+  ],
+  [
+    "Chivalry",
+    "Şövalyelik, mertlik, nezaket",
+    "Noun",
+    "Culture and Arts"
+  ],
+  [
+    "Coagulation",
+    "Pıhtılaşma süreci",
+    "Noun",
+    "Health and Medicine"
+  ],
+  [
+    "Codify",
+    "Kanunlaştırmak, kuralları derlemek",
+    "Verb",
+    "Law and Politics"
+  ]
+]

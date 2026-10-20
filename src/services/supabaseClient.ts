@@ -4,12 +4,16 @@ import a1WordsData from '../data/json/a1_words.json';
 import a2WordsData from '../data/json/a2_words.json';
 import b1WordsData from '../data/json/b1_words.json';
 import b2WordsData from '../data/json/b2_words.json';
+import c1WordsData from '../data/json/c1_words.json';
+import c2WordsData from '../data/json/c2_words.json';
 
 const localLibraryBundles: Record<string, Word[]> = {
   A1: a1WordsData as Word[],
   A2: a2WordsData as Word[],
   B1: b1WordsData as Word[],
-  B2: b2WordsData as Word[]
+  B2: b2WordsData as Word[],
+  C1: c1WordsData as Word[],
+  C2: c2WordsData as Word[]
 };
 
 const supabaseUrl = 'https://xxjfrsbcygpcksndjrzm.supabase.co';

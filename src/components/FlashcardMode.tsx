@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Word, LanguageDirection, FlashcardStudyMode, LibraryLevel, WordProgressStatus } from '../types';
-import { ArrowLeft, Volume2, Languages, Trophy, ChevronLeft, ChevronRight, Check, BookOpen, Puzzle, Sparkles, SlidersHorizontal, Tag, Home } from 'lucide-react';
+import { ArrowLeft, Volume2, Languages, Trophy, ChevronLeft, ChevronRight, Check, BookOpen, Puzzle, Sparkles, SlidersHorizontal, Tag, Home, Headphones, Play, Pause } from 'lucide-react';
 import { wordService } from '../services/supabaseClient';
+import { audioStudyService, AudioPhase } from '../services/audioStudyService';
+import ListeningModeBar from './ListeningModeBar';
 import confetti from 'canvas-confetti';
 
 const FLASHCARD_SET_SIZE = 20;
@@ -92,6 +94,12 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         const saved = localStorage.getItem(STORAGE_KEYS.DIRECTION);
         return (saved as LanguageDirection) || LanguageDirection.TR_EN;
     });
+
+    const [isListeningMode, setIsListeningMode] = useState<boolean>(false);
+    const [listeningPhase, setListeningPhase] = useState<AudioPhase>('front');
+    const [remainingDelay, setRemainingDelay] = useState<number>(4);
+    const [delaySeconds, setDelaySeconds] = useState<number>(4);
+    const [isAudioPaused, setIsAudioPaused] = useState<boolean>(false);
 
     useEffect(() => {
         wordService.getUserProgress(userId).then(setUserProgressMap);
@@ -215,12 +223,13 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
     useEffect(() => {
         return () => {
+            audioStudyService.cleanup();
             window.speechSynthesis.cancel();
         };
     }, []);
 
     useEffect(() => {
-        if (!currentWord) return;
+        if (!currentWord || isListeningMode) return;
         const isEnglishVisible = (direction === LanguageDirection.EN_TR && !isFlipped) ||
                                  (direction === LanguageDirection.TR_EN && isFlipped);
         if (isEnglishVisible) {
@@ -230,10 +239,81 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             u.rate = 0.9;
             window.speechSynthesis.speak(u);
         }
-    }, [currentIndex, isFlipped, direction, currentWord]);
+    }, [currentIndex, isFlipped, direction, currentWord, isListeningMode]);
 
     const triggerSuccessConfetti = () => {
         confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+    };
+
+    const handleToggleListeningMode = () => {
+        if (isListeningMode) {
+            audioStudyService.stop();
+            setIsListeningMode(false);
+            setIsAudioPaused(false);
+        } else {
+            if (currentSet.length === 0) return;
+            setIsListeningMode(true);
+            setIsAudioPaused(false);
+            setListeningPhase('front');
+            setRemainingDelay(delaySeconds);
+
+            audioStudyService.startListeningSession({
+                words: currentSet,
+                startIndex: currentIndex,
+                direction,
+                delaySeconds,
+                callbacks: {
+                    onWordChange: (idx, word, phase) => {
+                        setCurrentIndex(idx);
+                        setListeningPhase(phase);
+                        if (phase === 'back') {
+                            setIsFlipped(true);
+                        } else if (phase === 'front') {
+                            setIsFlipped(false);
+                        }
+                    },
+                    onStateChange: (playing, phase, remaining) => {
+                        setIsAudioPaused(!playing);
+                        setListeningPhase(phase);
+                        if (remaining !== undefined) {
+                            setRemainingDelay(remaining);
+                        }
+                    },
+                    onComplete: () => {
+                        setIsListeningMode(false);
+                        setIsFinished(true);
+                        triggerSuccessConfetti();
+                    }
+                }
+            });
+        }
+    };
+
+    const handleDelayChange = (seconds: number) => {
+        setDelaySeconds(seconds);
+        audioStudyService.setDelaySeconds(seconds);
+    };
+
+    const handleAudioTogglePlayPause = () => {
+        if (isAudioPaused) {
+            audioStudyService.resume();
+        } else {
+            audioStudyService.pause();
+        }
+    };
+
+    const handleAudioNext = () => {
+        audioStudyService.next();
+    };
+
+    const handleAudioPrev = () => {
+        audioStudyService.prev();
+    };
+
+    const handleCloseListening = () => {
+        audioStudyService.stop();
+        setIsListeningMode(false);
+        setIsAudioPaused(false);
     };
 
     const handleNext = (e?: React.MouseEvent) => {
@@ -380,22 +460,46 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         <span className="hidden sm:inline text-xs font-bold">Ana Sayfa</span>
                     </button>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                         <button
-                            onClick={onOpenModeSelection}
-                            className="bg-purple-600/20 border border-purple-500/30 px-4 py-2 rounded-full text-purple-300 font-black text-xs flex items-center gap-2 hover:bg-purple-600 hover:text-white transition-all"
+                            onClick={handleToggleListeningMode}
+                            className={`px-3.5 py-2 rounded-full font-black text-xs flex items-center gap-1.5 transition-all shadow-lg active:scale-95 ${
+                                isListeningMode
+                                    ? 'bg-emerald-500 text-black shadow-emerald-500/30 animate-pulse'
+                                    : 'bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-600 hover:text-white'
+                            }`}
+                            title="Arka planda ve kilit ekranında dinleme modu"
                         >
-                            <SlidersHorizontal size={14} /> Mod Seç
+                            <Headphones size={14} />
+                            <span>{isListeningMode ? 'Dinleniyor' : 'Dinleme Modu'}</span>
                         </button>
                         <button
-                            onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
-                            className="bg-zinc-900 border border-white/10 px-4 py-2 rounded-full text-slate-400 font-black text-xs tracking-widest uppercase flex items-center gap-2 hover:text-white transition-all shadow-xl"
+                            onClick={() => {
+                                handleCloseListening();
+                                onOpenModeSelection();
+                            }}
+                            className="bg-purple-600/20 border border-purple-500/30 px-3.5 py-2 rounded-full text-purple-300 font-black text-xs flex items-center gap-1.5 hover:bg-purple-600 hover:text-white transition-all"
+                        >
+                            <SlidersHorizontal size={14} /> <span className="hidden sm:inline">Mod Seç</span>
+                        </button>
+                        <button
+                            onClick={() => {
+                                handleCloseListening();
+                                setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR);
+                            }}
+                            className="bg-zinc-900 border border-white/10 px-3 py-2 rounded-full text-slate-400 font-black text-xs tracking-widest uppercase flex items-center gap-1.5 hover:text-white transition-all shadow-xl"
                         >
                             <Languages size={14} /> {direction === LanguageDirection.TR_EN ? 'TR → EN' : 'EN → TR'}
                         </button>
                     </div>
 
-                    <button onClick={onExit} className="p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg">
+                    <button 
+                        onClick={() => {
+                            handleCloseListening();
+                            onExit();
+                        }} 
+                        className="p-3 bg-zinc-900 rounded-xl text-slate-400 hover:text-white transition-all border border-white/5 shadow-lg"
+                    >
                         <Home size={20} />
                     </button>
                 </div>
@@ -406,7 +510,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         {LEVELS.map(lvl => (
                             <button
                                 key={lvl}
-                                onClick={() => onLevelChange(lvl)}
+                                onClick={() => {
+                                    handleCloseListening();
+                                    onLevelChange(lvl);
+                                }}
                                 className={`px-4 py-1.5 rounded-full font-black text-xs transition-all border ${
                                     selectedLevel === lvl
                                         ? 'bg-emerald-500 text-black border-emerald-400 shadow-lg shadow-emerald-500/20'
@@ -442,7 +549,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                         </h3>
                         <p className="text-slate-400 text-sm font-bold mb-8 leading-relaxed">
                             {studyMode === 'LIBRARY'
-                                ? `${selectedLevel} seviyesindeki kelimeler yakında eklenecektir. Yukarıdaki sekmelerden A1, A2, B1 veya B2 seviyelerine geçebilir ya da başka bir mod seçebilirsiniz.`
+                                ? `${selectedLevel} seviyesinde henüz kelime bulunmuyor. Yukarıdaki sekmelerden diğer seviyelere geçebilir ya da başka bir mod seçebilirsiniz.`
                                 : 'Kelime listeniz henüz boş. AI ile yeni kelimeler ekleyebilir veya Kütüphane modundan çalışabilirsiniz.'}
                         </p>
                         
@@ -474,6 +581,24 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                 </div>
             ) : (
                 <>
+                    {/* Listening Mode Floating/Docked Player Bar */}
+                    {isListeningMode && (
+                        <ListeningModeBar
+                            currentIndex={currentIndex}
+                            totalWords={currentSet.length}
+                            isPlaying={!isAudioPaused}
+                            isPaused={isAudioPaused}
+                            phase={listeningPhase}
+                            remainingDelay={remainingDelay}
+                            delaySeconds={delaySeconds}
+                            onTogglePlayPause={handleAudioTogglePlayPause}
+                            onNext={handleAudioNext}
+                            onPrev={handleAudioPrev}
+                            onClose={handleCloseListening}
+                            onDelayChange={handleDelayChange}
+                        />
+                    )}
+
                     {/* Set Progress Bar */}
                     <div className="w-full max-w-[340px] sm:max-w-sm mx-auto px-6 mb-1.5 mt-0.5">
                         <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1.5">
