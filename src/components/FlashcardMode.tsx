@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Word, LanguageDirection, FlashcardStudyMode, LibraryLevel, WordProgressStatus } from '../types';
+import { Word, LanguageDirection, FlashcardStudyMode, LibraryLevel, LibraryScope, WordProgressStatus } from '../types';
 import { ArrowLeft, Volume2, Languages, Trophy, ChevronLeft, ChevronRight, Check, BookOpen, Puzzle, Sparkles, SlidersHorizontal, Tag, Home, Headphones, Play, Pause } from 'lucide-react';
 import { wordService } from '../services/supabaseClient';
 import { audioStudyService, AudioPhase } from '../services/audioStudyService';
@@ -15,14 +15,71 @@ const STORAGE_KEYS = {
     DIRECTION: 'lingua_flashcard_direction',
 } as const;
 
-const getActiveIdsKey = (mode: FlashcardStudyMode, level: LibraryLevel) =>
-    `${STORAGE_KEYS.ACTIVE_IDS}_${mode}_${level}`;
+const getActiveIdsKey = (mode: FlashcardStudyMode, level: LibraryLevel, scope: LibraryScope = 'CORE_300') =>
+    mode === 'LIBRARY'
+        ? `${STORAGE_KEYS.ACTIVE_IDS}_${mode}_${level}_${scope}`
+        : `${STORAGE_KEYS.ACTIVE_IDS}_${mode}_${level}`;
 
-const getCurrentIndexKey = (mode: FlashcardStudyMode, level: LibraryLevel) =>
-    `${STORAGE_KEYS.CURRENT_INDEX}_${mode}_${level}`;
+const getCurrentIndexKey = (mode: FlashcardStudyMode, level: LibraryLevel, scope: LibraryScope = 'CORE_300') =>
+    mode === 'LIBRARY'
+        ? `${STORAGE_KEYS.CURRENT_INDEX}_${mode}_${level}_${scope}`
+        : `${STORAGE_KEYS.CURRENT_INDEX}_${mode}_${level}`;
 
-const getSetNumKey = (mode: FlashcardStudyMode, level: LibraryLevel) =>
-    `${STORAGE_KEYS.SET_NUM}_${mode}_${level}`;
+const getSetNumKey = (mode: FlashcardStudyMode, level: LibraryLevel, scope: LibraryScope = 'CORE_300') =>
+    mode === 'LIBRARY'
+        ? `${STORAGE_KEYS.SET_NUM}_${mode}_${level}_${scope}`
+        : `${STORAGE_KEYS.SET_NUM}_${mode}_${level}`;
+
+const getStoredCurrentIndex = (mode: FlashcardStudyMode, level: LibraryLevel, scope: LibraryScope): number => {
+    const scopedKey = getCurrentIndexKey(mode, level, scope);
+    const saved = localStorage.getItem(scopedKey);
+    if (saved !== null) {
+        const parsed = parseInt(saved, 10);
+        if (!isNaN(parsed) && parsed >= 0) return parsed;
+    }
+    if (mode === 'LIBRARY' && scope === 'CORE_300') {
+        const legacyKey = `${STORAGE_KEYS.CURRENT_INDEX}_${mode}_${level}`;
+        const legacySaved = localStorage.getItem(legacyKey);
+        if (legacySaved !== null) {
+            const parsed = parseInt(legacySaved, 10);
+            if (!isNaN(parsed) && parsed >= 0) return parsed;
+        }
+    }
+    return 0;
+};
+
+const getStoredSetNum = (mode: FlashcardStudyMode, level: LibraryLevel, scope: LibraryScope): number => {
+    const scopedKey = getSetNumKey(mode, level, scope);
+    const saved = localStorage.getItem(scopedKey);
+    if (saved !== null) {
+        const parsed = parseInt(saved, 10);
+        if (!isNaN(parsed) && parsed > 0) return parsed;
+    }
+    if (mode === 'LIBRARY' && scope === 'CORE_300') {
+        const legacyKey = `${STORAGE_KEYS.SET_NUM}_${mode}_${level}`;
+        const legacySaved = localStorage.getItem(legacyKey);
+        if (legacySaved !== null) {
+            const parsed = parseInt(legacySaved, 10);
+            if (!isNaN(parsed) && parsed > 0) return parsed;
+        }
+    }
+    return 1;
+};
+
+const getStoredActiveIds = (mode: FlashcardStudyMode, level: LibraryLevel, scope: LibraryScope): string[] => {
+    const scopedKey = getActiveIdsKey(mode, level, scope);
+    let saved = localStorage.getItem(scopedKey);
+    if (!saved && mode === 'LIBRARY' && scope === 'CORE_300') {
+        saved = localStorage.getItem(`${STORAGE_KEYS.ACTIVE_IDS}_${mode}_${level}`);
+    }
+    if (saved) {
+        try {
+            const parsed = JSON.parse(saved);
+            if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        } catch {}
+    }
+    return [];
+};
 
 interface FlashcardModeProps {
     words: Word[];
@@ -55,35 +112,21 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     onGoToSentences,
     userId
 }) => {
+    const [libraryScope, setLibraryScope] = useState<LibraryScope>(() => {
+        const saved = localStorage.getItem('lingua_flashcard_library_scope');
+        return saved === 'ALL' ? 'ALL' : 'CORE_300';
+    });
+
     const [activeIds, setActiveIds] = useState<string[]>(() => {
-        const savedIdsJson = localStorage.getItem(getActiveIdsKey(studyMode, selectedLevel));
-        if (savedIdsJson) {
-            try {
-                const savedIds = JSON.parse(savedIdsJson);
-                if (Array.isArray(savedIds) && savedIds.length > 0) {
-                    return savedIds;
-                }
-            } catch {}
-        }
-        return [];
+        return getStoredActiveIds(studyMode, selectedLevel, libraryScope);
     });
 
     const [currentSetNum, setCurrentSetNum] = useState<number>(() => {
-        const saved = localStorage.getItem(getSetNumKey(studyMode, selectedLevel));
-        if (saved) {
-            const parsed = parseInt(saved, 10);
-            if (!isNaN(parsed) && parsed > 0) return parsed;
-        }
-        return 1;
+        return getStoredSetNum(studyMode, selectedLevel, libraryScope);
     });
 
     const [currentIndex, setCurrentIndex] = useState<number>(() => {
-        const saved = localStorage.getItem(getCurrentIndexKey(studyMode, selectedLevel));
-        if (saved) {
-            const parsed = parseInt(saved, 10);
-            if (!isNaN(parsed) && parsed >= 0) return parsed;
-        }
-        return 0;
+        return getStoredCurrentIndex(studyMode, selectedLevel, libraryScope);
     });
 
     const [isFlipped, setIsFlipped] = useState(false);
@@ -101,11 +144,6 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const [delaySeconds, setDelaySeconds] = useState<number>(4);
     const [isAudioPaused, setIsAudioPaused] = useState<boolean>(false);
     const [autoAdvanceCountdown, setAutoAdvanceCountdown] = useState<number | null>(null);
-
-    const [libraryScope, setLibraryScope] = useState<'CORE_300' | 'ALL'>(() => {
-        const saved = localStorage.getItem('lingua_flashcard_library_scope');
-        return saved === 'ALL' ? 'ALL' : 'CORE_300';
-    });
 
     useEffect(() => {
         wordService.getUserProgress(userId).then(setUserProgressMap);
@@ -143,6 +181,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const activeSessionRef = useRef({
         studyMode,
         selectedLevel,
+        libraryScope,
         currentIndex,
         currentSetNum,
         activeIds
@@ -152,13 +191,14 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         activeSessionRef.current = {
             studyMode,
             selectedLevel,
+            libraryScope,
             currentIndex,
             currentSetNum,
             activeIds
         };
-    }, [studyMode, selectedLevel, currentIndex, currentSetNum, activeIds]);
+    }, [studyMode, selectedLevel, libraryScope, currentIndex, currentSetNum, activeIds]);
 
-    const prevConfigRef = useRef({ studyMode, selectedLevel, currentSetNum });
+    const prevConfigRef = useRef({ studyMode, selectedLevel, libraryScope, currentSetNum });
 
     useEffect(() => {
         const prev = prevConfigRef.current;
@@ -172,23 +212,19 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             // 1. Ayrılmakta olan seviyenin güncel currentIndex ve currentSetNum'ı o seviyenin anahtarlarına yazılmalı.
             const outgoingMode = prev.studyMode;
             const outgoingLevel = prev.selectedLevel;
-            localStorage.setItem(getCurrentIndexKey(outgoingMode, outgoingLevel), activeSessionRef.current.currentIndex.toString());
-            localStorage.setItem(getSetNumKey(outgoingMode, outgoingLevel), activeSessionRef.current.currentSetNum.toString());
+            const outgoingScope = prev.libraryScope;
+            localStorage.setItem(getCurrentIndexKey(outgoingMode, outgoingLevel, outgoingScope), activeSessionRef.current.currentIndex.toString());
+            localStorage.setItem(getSetNumKey(outgoingMode, outgoingLevel, outgoingScope), activeSessionRef.current.currentSetNum.toString());
             if (activeSessionRef.current.activeIds.length > 0) {
-                localStorage.setItem(getActiveIdsKey(outgoingMode, outgoingLevel), JSON.stringify(activeSessionRef.current.activeIds));
+                localStorage.setItem(getActiveIdsKey(outgoingMode, outgoingLevel, outgoingScope), JSON.stringify(activeSessionRef.current.activeIds));
             }
 
             // 2. Yeni seçilen seviyenin kayıtlı savedIndex, savedSet ve savedActiveIds değerleri yüklenmeli.
-            const savedIndex = localStorage.getItem(getCurrentIndexKey(studyMode, selectedLevel));
-            const parsedIndex = savedIndex ? parseInt(savedIndex, 10) : 0;
-            const targetIndex = !isNaN(parsedIndex) && parsedIndex >= 0 ? parsedIndex : 0;
-
-            const savedSet = localStorage.getItem(getSetNumKey(studyMode, selectedLevel));
-            const parsedSet = savedSet ? parseInt(savedSet, 10) : 1;
-            const targetSet = !isNaN(parsedSet) && parsedSet > 0 ? parsedSet : 1;
+            const targetIndex = getStoredCurrentIndex(studyMode, selectedLevel, libraryScope);
+            const targetSet = getStoredSetNum(studyMode, selectedLevel, libraryScope);
 
             // prevConfigRef'i YENİ targetSet ile güncelle ki sonraki render'da sahte setChanged tetiklenmesin
-            prevConfigRef.current = { studyMode, selectedLevel, currentSetNum: targetSet };
+            prevConfigRef.current = { studyMode, selectedLevel, libraryScope, currentSetNum: targetSet };
 
             setCurrentIndex(targetIndex);
             setCurrentSetNum(targetSet);
@@ -204,18 +240,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                 return;
             }
 
-            const savedIdsJson = localStorage.getItem(getActiveIdsKey(studyMode, selectedLevel));
-            let targetActiveIds: string[] = [];
-            if (savedIdsJson) {
-                try {
-                    const savedIds = JSON.parse(savedIdsJson);
-                    if (Array.isArray(savedIds) && savedIds.length > 0) {
-                        const validIds = savedIds.filter((id: string) => sortedWords.some(w => w.id === id) && scopedWords.some(w => w.id === id));
-                        if (validIds.length > 0) {
-                            targetActiveIds = validIds;
-                        }
-                    }
-                } catch {}
+            let targetActiveIds = getStoredActiveIds(studyMode, selectedLevel, libraryScope);
+            if (targetActiveIds.length > 0) {
+                const validIds = targetActiveIds.filter((id: string) => sortedWords.some(w => w.id === id) && scopedWords.some(w => w.id === id));
+                targetActiveIds = validIds;
             }
 
             if (targetActiveIds.length === 0) {
@@ -224,7 +252,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                 const setWords = scopedWords.slice(setStart, setEnd);
                 if (setWords.length > 0) {
                     targetActiveIds = setWords.map(w => w.id);
-                    localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(targetActiveIds));
+                    localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(targetActiveIds));
                 }
             }
 
@@ -232,7 +260,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             return;
         }
 
-        prevConfigRef.current = { studyMode, selectedLevel, currentSetNum };
+        prevConfigRef.current = { studyMode, selectedLevel, libraryScope, currentSetNum };
 
         if (setChanged) {
             setCurrentIndex(0);
@@ -249,24 +277,19 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             const currentValidIds = activeIds.filter(id => scopedWords.some(w => w.id === id));
             if (currentValidIds.length !== activeIds.length) {
                 setActiveIds(currentValidIds);
-                localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(currentValidIds));
+                localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(currentValidIds));
             }
             return;
         }
 
         // If activeIds is empty: check localStorage first
-        const savedIdsJson = localStorage.getItem(getActiveIdsKey(studyMode, selectedLevel));
-        if (savedIdsJson) {
-            try {
-                const savedIds = JSON.parse(savedIdsJson);
-                if (Array.isArray(savedIds) && savedIds.length > 0) {
-                    const validIds = savedIds.filter((id: string) => scopedWords.some(w => w.id === id));
-                    if (validIds.length > 0) {
-                        setActiveIds(validIds);
-                        return;
-                    }
-                }
-            } catch {}
+        const savedIds = getStoredActiveIds(studyMode, selectedLevel, libraryScope);
+        if (savedIds.length > 0) {
+            const validIds = savedIds.filter((id: string) => scopedWords.some(w => w.id === id));
+            if (validIds.length > 0) {
+                setActiveIds(validIds);
+                return;
+            }
         }
 
         const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
@@ -275,10 +298,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
         if (setWords.length > 0) {
             const newIds = setWords.map(w => w.id);
-            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(newIds));
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(newIds));
             setActiveIds(newIds);
         }
-    }, [scopedWords, currentSetNum, studyMode, selectedLevel]);
+    }, [scopedWords, currentSetNum, studyMode, selectedLevel, libraryScope]);
 
     const safeIndex = currentIndex >= currentSet.length ? Math.max(0, currentSet.length - 1) : currentIndex;
     const currentWord = currentSet.length > 0 ? currentSet[safeIndex] : null;
@@ -290,16 +313,24 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     }, [currentSet.length, currentIndex]);
 
     useEffect(() => {
-        if (prevConfigRef.current.studyMode === studyMode && prevConfigRef.current.selectedLevel === selectedLevel) {
-            localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), currentIndex.toString());
+        if (
+            prevConfigRef.current.studyMode === studyMode && 
+            prevConfigRef.current.selectedLevel === selectedLevel &&
+            prevConfigRef.current.libraryScope === libraryScope
+        ) {
+            localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel, libraryScope), currentIndex.toString());
         }
-    }, [currentIndex, studyMode, selectedLevel]);
+    }, [currentIndex, studyMode, selectedLevel, libraryScope]);
 
     useEffect(() => {
-        if (prevConfigRef.current.studyMode === studyMode && prevConfigRef.current.selectedLevel === selectedLevel) {
-            localStorage.setItem(getSetNumKey(studyMode, selectedLevel), currentSetNum.toString());
+        if (
+            prevConfigRef.current.studyMode === studyMode && 
+            prevConfigRef.current.selectedLevel === selectedLevel &&
+            prevConfigRef.current.libraryScope === libraryScope
+        ) {
+            localStorage.setItem(getSetNumKey(studyMode, selectedLevel, libraryScope), currentSetNum.toString());
         }
-    }, [currentSetNum, studyMode, selectedLevel]);
+    }, [currentSetNum, studyMode, selectedLevel, libraryScope]);
 
     useEffect(() => {
         setIsFlipped(false);
@@ -315,10 +346,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             window.speechSynthesis.cancel();
             // Save current session progress on unmount
             const current = activeSessionRef.current;
-            localStorage.setItem(getCurrentIndexKey(current.studyMode, current.selectedLevel), current.currentIndex.toString());
-            localStorage.setItem(getSetNumKey(current.studyMode, current.selectedLevel), current.currentSetNum.toString());
+            localStorage.setItem(getCurrentIndexKey(current.studyMode, current.selectedLevel, current.libraryScope), current.currentIndex.toString());
+            localStorage.setItem(getSetNumKey(current.studyMode, current.selectedLevel, current.libraryScope), current.currentSetNum.toString());
             if (current.activeIds.length > 0) {
-                localStorage.setItem(getActiveIdsKey(current.studyMode, current.selectedLevel), JSON.stringify(current.activeIds));
+                localStorage.setItem(getActiveIdsKey(current.studyMode, current.selectedLevel, current.libraryScope), JSON.stringify(current.activeIds));
             }
         };
     }, []);
@@ -463,7 +494,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         if (status === 'known' && studyMode === 'USER_WORDS') {
             const updatedActiveIds = activeIds.filter(id => id !== currentWordId);
             
-            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(updatedActiveIds));
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(updatedActiveIds));
             setActiveIds(updatedActiveIds);
             onRemoveWord(currentWordId);
 
@@ -476,7 +507,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                 } else if (currentIndex >= updatedActiveIds.length) {
                     const newIdx = Math.max(0, updatedActiveIds.length - 1);
                     setCurrentIndex(newIdx);
-                    localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), newIdx.toString());
+                    localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel, libraryScope), newIdx.toString());
                 }
             };
 
@@ -494,9 +525,9 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const handleNewSet = (resumeListening: boolean = false) => {
         setAutoAdvanceCountdown(null);
         const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
-        localStorage.removeItem(getActiveIdsKey(studyMode, selectedLevel));
-        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), '0');
-        localStorage.setItem(getSetNumKey(studyMode, selectedLevel), nextSetNum.toString());
+        localStorage.removeItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope));
+        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel, libraryScope), '0');
+        localStorage.setItem(getSetNumKey(studyMode, selectedLevel, libraryScope), nextSetNum.toString());
         setActiveIds([]);
         setCurrentIndex(0);
         setCurrentSetNum(nextSetNum);
@@ -570,22 +601,66 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         if (lvl === selectedLevel) return;
         handleCloseListening();
         // 1. Ayrılmakta olan seviyenin güncel currentIndex ve currentSetNum'ı o seviyenin anahtarlarına yazılmalı.
-        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel), currentIndex.toString());
-        localStorage.setItem(getSetNumKey(studyMode, selectedLevel), currentSetNum.toString());
+        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel, libraryScope), currentIndex.toString());
+        localStorage.setItem(getSetNumKey(studyMode, selectedLevel, libraryScope), currentSetNum.toString());
         if (activeIds.length > 0) {
-            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel), JSON.stringify(activeIds));
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(activeIds));
         }
         onLevelChange(lvl);
     };
 
-    const handleScopeChange = (newScope: 'CORE_300' | 'ALL') => {
+    const handleScopeChange = (newScope: LibraryScope) => {
         if (newScope === libraryScope) return;
         handleCloseListening();
+
+        // 1. Ayrılmakta olan kapsamın (scope) güncel ilerlemesini kaydet
+        localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel, libraryScope), currentIndex.toString());
+        localStorage.setItem(getSetNumKey(studyMode, selectedLevel, libraryScope), currentSetNum.toString());
+        if (activeIds.length > 0) {
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(activeIds));
+        }
+
+        // 2. Yeni kapsam tercihini kaydet
         setLibraryScope(newScope);
         localStorage.setItem('lingua_flashcard_library_scope', newScope);
-        setCurrentIndex(0);
-        setCurrentSetNum(1);
-        setActiveIds([]);
+
+        // 3. Yeni kapsamın daha önce kaydedilmiş kart ve set bilgisini yükle
+        const targetIndex = getStoredCurrentIndex(studyMode, selectedLevel, newScope);
+        const targetSet = getStoredSetNum(studyMode, selectedLevel, newScope);
+
+        // Yeni kapsama göre kelime havuzunu hesapla
+        const newScopedWords = (studyMode === 'LIBRARY' && newScope === 'CORE_300')
+            ? sortedWords.slice(0, 300)
+            : sortedWords;
+        const newTotalSets = Math.max(1, Math.ceil(newScopedWords.length / FLASHCARD_SET_SIZE));
+        const safeSet = Math.min(targetSet, newTotalSets);
+
+        // Yeni kapsamın kayıtlı activeIds bilgisini kontrol et
+        let targetActiveIds = getStoredActiveIds(studyMode, selectedLevel, newScope);
+        if (targetActiveIds.length > 0) {
+            targetActiveIds = targetActiveIds.filter(id => newScopedWords.some(w => w.id === id));
+        }
+
+        if (targetActiveIds.length === 0 && newScopedWords.length > 0) {
+            const setStart = (safeSet - 1) * FLASHCARD_SET_SIZE;
+            const setEnd = Math.min(setStart + FLASHCARD_SET_SIZE, newScopedWords.length);
+            const setWords = newScopedWords.slice(setStart, setEnd);
+            targetActiveIds = setWords.map(w => w.id);
+            if (targetActiveIds.length > 0) {
+                localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, newScope), JSON.stringify(targetActiveIds));
+            }
+        }
+
+        prevConfigRef.current = {
+            studyMode,
+            selectedLevel,
+            libraryScope: newScope,
+            currentSetNum: safeSet
+        };
+
+        setCurrentIndex(targetIndex);
+        setCurrentSetNum(safeSet);
+        setActiveIds(targetActiveIds);
         setIsFlipped(false);
         setIsFinished(false);
     };

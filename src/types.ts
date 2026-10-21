@@ -28,6 +28,8 @@ export type FlashcardStudyMode = 'USER_WORDS' | 'AI_ADD' | 'LIBRARY';
 
 export type LibraryLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
+export type LibraryScope = 'CORE_300' | 'ALL';
+
 export type WordProgressStatus = 'known' | 'learning' | 'unlearned';
 
 export interface UserWordProgress {

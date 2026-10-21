@@ -113,3 +113,10 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
 ## 🧪 5. Test Güdümlü Geliştirme (Test Driven Development - TDD)
 - **RED-GREEN-REFACTOR:** Yeni mantık, algoritma veya bugfix geliştirirken önce test yazılır ve çalıştığında başarısız olduğu görülür (`node --test`). Minimal kod ile test yeşile geçirilir, ardından refactoring yapılır.
 - **İzole Birim Testler:** `node:test` ve `node:assert` yerleşik test motoru ile yardımcı fonksiyonlar (`stringUtils`, progress hesaplayıcıları vb.) harici ağır bağımlılıklara ihtiyaç duymadan milisaniyeler içinde test edilir.
+
+
+---
+
+## 💾 6. Çok Boyutlu İlerleme Durum Yönetimi (Multi-Dimensional Scope & Level Persistence)
+- **Problem:** Flaşkart modunda seviyeler (`A1..C2`) arasında bağımsız ilerleme varken, seviye içi kapsam filtreleri (`Temel 300` vs `Tümü`) eklendiğinde depolama anahtarlarında sadece `${mode}_${level}` bulunması filtre değişiminde ilerlemenin sıfırlanmasına (`currentIndex: 0`, `currentSetNum: 1`) sebep oluyordu.
+- **Çözüm:** Depolama anahtarları `${mode}_${level}_${scope}` biçiminde 3 boyutlu hale getirildi (`getStoredCurrentIndex`, `getStoredSetNum`, `getStoredActiveIds`). Kapsam değişimi anında (`handleScopeChange`) ayrılmakta olan kapsamın verisi diske yazılır ve hedef kapsamın verisi okunarak state'e yüklenir. Eski tek boyutlu anahtarlara geriye dönük fallback sağlandı. Kapsam ve seviye değişikliklerinde `prevConfigRef` senkronize tutularak sahte `setChanged` sıfırlamaları tamamen engellendi.

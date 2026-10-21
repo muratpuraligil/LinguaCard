@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.3 (21 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.4 (21 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -47,6 +47,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
       - **Pedagojik Temel 300 Yaklaşımı:** Her CEFR seviyesinde (A1-C2) 1.000+ kelimelik devasa havuzun yeni başlayanları bunaltmaması ve en sık kullanılan çekirdek kelimelerin öncelikle pekiştirilmesi için varsayılan olarak **"⭐ Temel 300"** (15 set, 300 kelime) kapsamı sunulur.
       - **Kapsam Geçişi (Scope Toggle):** Seviye sekmelerinin hemen altında yer alan minimalist ve kompakt segmented pill (`[⭐ Temel 300] [📚 Tümü (1000+)]`) ile kullanıcı dilediğinde seviyenin tüm kelime havuzuna (1.000+ kelime, 52 set) tek tıkla geçiş yapabilir.
       - **Kalıcı Tercih Saklama:** Kullanıcının seçtiği kapsam tercihi yerel depolamada (`lingua_flashcard_library_scope`) güvenle saklanır ve oturumlar arasında korunur.
+      - **Kapsam Bazlı Bağımsız İlerleme Hafızası (Scope-Isolated Persistent Memory: Temel 300 <-> Tümü):** Kullanıcı "Temel 300" ve "Tümü" filtreleri arasında geçiş yaptığında önceki çalışması asla sıfırlanmaz. Her seviye ve her kapsam için izole depolama anahtarları (`lingua_flashcard_current_index_${mode}_${level}_${scope}`, `lingua_flashcard_set_num_${mode}_${level}_${scope}`, `lingua_flashcard_active_ids_${mode}_${level}_${scope}`) kullanılır. Örneğin B2 seviyesinde "Temel 300"de Set 2 Kart 5'te olan bir kullanıcı "Tümü"ne geçip Set 4 Kart 10'a ulaştığında, tekrar "Temel 300"e döndüğünde Set 2 Kart 5'ten; "Tümü"ne döndüğünde ise Set 4 Kart 10'dan eksiksiz ve anlık olarak devam eder. Eski tekil anahtarlarla geriye dönük tam uyumluluk (backward compatibility) sağlanmıştır.
     - **Toplam Kelime Sayısı Göstergesi (Set & Total Word Count Indicator):**
       - İlerleme çubuğunda kaçıncı sette bulunulduğunun yanı sıra, seçili kapsamdaki toplam kelime adedi parantez içinde açıkça belirtilir: `SET 1 / 15 (300)` veya `SET 1 / 52 (1026)`. Böylece kullanıcı o seviyede ve kapsamda toplam kaç kelime çalıştığını anlık olarak takip edebilir.
     - **Üst Menü ve Seviye Sekmeleri Simetrik Merkezleme Mimarisi (Header & Level Tabs Centered Alignment):** 
