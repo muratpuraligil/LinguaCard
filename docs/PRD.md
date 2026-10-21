@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.15 (21 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.16 (21 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -127,6 +127,10 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Kompakt ve Kaydırmasız Set Sonu Bildirim Popupları (Zero-Scroll Completion Views):**
   - **QuizMode:** Kullanıcıyı dikey scroll yapmaya zorlayan aşırı büyük `p-10 rounded-[56px]`, `w-20 h-20` ikon, `text-7xl` skor ve `py-4 rounded-3xl` buton yapıları; `p-4 sm:p-5 rounded-3xl`, `w-9 h-9` ikon, `text-4xl` skor ve `py-2.5 rounded-xl` kompakt buton yapısına kavuşturulmuştur. Tüm skor istatistikleri ve aksiyon butonları mobil ekran dahil tek ekranda, kaydırmasız olarak görüntülenir. Ayrıca "Mod Seç / Değiştir" butonu popup'tan kaldırılarak kafa karışıklığı önlenmiş; "Arkadaşlarını Challenge'a Davet Et" CTA butonu `Swords` ikonu ile 1. sıraya taşınmıştır.
   - **FlashcardMode & SentenceMode & Özel Setler:** "Harika Bir Set!" bitiş kartlarındaki `p-12 / p-10`, devasa kupa ikonları ve kalın butonlar kompakt `p-4 sm:p-5 rounded-3xl` ve `py-2.5 rounded-xl` buton ergonomisiyle hizalanmıştır.
+- **WhatsApp ve Sosyal Medya Marka Kimliği (Open Graph & PWA Brand Asset):**
+  - WhatsApp link paylaşımlarında çıkan yanıltıcı sarı-siyah dinleme modu ikonu tamamen kaldırılmıştır.
+  - LinguaCard'ın resmi kurumsal kimliği (mavi-indigo gradient açık kitap ikonu + LinguaCard tipografisi + "YAPAY ZEKA DESTEKLİ KELİME ÖĞRENME PLATFORMU" sloganı); `public/og-image.png` (1200x630 geniş banner), `public/icon-512.png` ve `public/icon-192.png` kare formatlarında yeniden üretilmiştir.
+  - `index.html` içerisine `og:image`, `og:image:secure_url`, `og:title`, `og:description` ve `twitter:image` meta etiketleri eksiksiz eklenmiştir.
 - **Premium Arayüz:** Karanlık mod odaklı, neon efektli, glassmorphism ve akıcı animasyonlar.
 
 ---
@@ -156,7 +160,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ---
 
 ## 6. Sürüm Takibi ve Release Yönetimi
-- **Aktif Lokal Sürüm:** `v1.2.15` (21 Ekim 2026)
+- **Aktif Lokal Sürüm:** `v1.2.16` (21 Ekim 2026)
 - **Hedef Sürüm Kilometre Taşı (Milestone):** `v1.2.0` (A1-C2 Tam Kütüphane, Hands-Free Dinleme Modu, Bağımsız Hafıza ve Mobil Responsive Paketi)
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY`
 - **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya fix yapıldığında versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra `1.2.0` şeklinde devam eder.
