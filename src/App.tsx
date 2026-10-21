@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { AppMode, Word, OcrStatus, FlashcardStudyMode, QuizStudyMode, LibraryLevel } from './types';
+import { AppMode, Word, OcrStatus, FlashcardStudyMode, QuizStudyMode, LibraryLevel, QuizChallengeData } from './types';
 import { wordService, supabase } from './services/supabaseClient';
 import { analyzeImage, analyzeText } from './services/analyzeImage';
 import { getLocalDateString } from './utils/stringUtils';
 import { compressImage } from './utils/imageCompressor';
+import { parseChallengeUrl } from './utils/challengeUtils';
 import { demoWords } from './services/demoData';
 import FlashcardMode from './components/FlashcardMode';
 import QuizMode from './components/QuizMode';
@@ -87,6 +88,9 @@ export default function App() {
   const [pendingSetName, setPendingSetName] = useState<string | null>(null);
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
   const [activeLibrarySet, setActiveLibrarySet] = useState<LibrarySet | null>(null);
+  const [challengeData, setChallengeData] = useState<QuizChallengeData | null>(() => {
+    return parseChallengeUrl(window.location.search || window.location.hash);
+  });
   const [isRecoveryMode, setIsRecoveryMode] = useState(() => {
     return sessionStorage.getItem('lingua_recovery_pending') === 'true';
   });
@@ -141,6 +145,15 @@ export default function App() {
       loadLibraryWords(lvl);
     }
   };
+
+  useEffect(() => {
+    if (challengeData) {
+      setQuizStudyMode('LIBRARY');
+      setSelectedLibraryLevel(challengeData.level);
+      handleLevelChange(challengeData.level);
+      setMode(AppMode.QUIZ);
+    }
+  }, []);
 
   useEffect(() => {
     if ((mode === AppMode.FLASHCARDS && flashcardStudyMode === 'LIBRARY') ||
@@ -364,14 +377,14 @@ export default function App() {
     }
   };
 
-  if (loadingSession) return (
+  if (loadingSession && !challengeData) return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center">
       <PulseLoader />
       <p className="text-slate-500 font-bold mt-8 animate-pulse text-[10px] uppercase tracking-[0.4em]">Sistem Hazırlanıyor...</p>
     </div>
   );
 
-  if (!session || isRecoveryMode) return <Auth mode={isRecoveryMode ? 'reset' : undefined} onRecoveryComplete={() => { sessionStorage.removeItem('lingua_recovery_pending'); setIsRecoveryMode(false); }} />;
+  if ((!session || isRecoveryMode) && !challengeData) return <Auth mode={isRecoveryMode ? 'reset' : undefined} onRecoveryComplete={() => { sessionStorage.removeItem('lingua_recovery_pending'); setIsRecoveryMode(false); }} />;
 
   const displayWords = words
     .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
@@ -508,9 +521,19 @@ export default function App() {
             allWords={quizStudyMode === 'LIBRARY' ? libraryWords : words}
             studyMode={quizStudyMode}
             selectedLevel={selectedLibraryLevel}
+            challengeData={challengeData}
+            isChallenge={!!challengeData}
             onLevelChange={handleLevelChange}
             onOpenModeSelection={() => setShowQuizSelection(true)}
-            onExit={() => setMode(AppMode.HOME)}
+            onExit={() => {
+              if (challengeData) {
+                setChallengeData(null);
+                if (window.history.replaceState) {
+                  window.history.replaceState({}, document.title, window.location.pathname);
+                }
+              }
+              setMode(AppMode.HOME);
+            }}
             onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
             onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }}
           />

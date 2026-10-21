@@ -1,6 +1,8 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { Word, LanguageDirection, QuizStudyMode, LibraryLevel } from '../types';
-import { CheckCircle, ArrowLeft, Languages, Zap, BookOpen, Sparkles, RefreshCw, X, Volume2, VolumeX, SlidersHorizontal } from 'lucide-react';
+import { Word, LanguageDirection, QuizStudyMode, LibraryLevel, QuizChallengeData } from '../types';
+import { CheckCircle, ArrowLeft, Languages, Zap, BookOpen, Sparkles, RefreshCw, X, Volume2, VolumeX, SlidersHorizontal, Share2, Trophy, Swords } from 'lucide-react';
+import QuizShareModal from './QuizShareModal';
+import QuizChallengeResultModal from './QuizChallengeResultModal';
 
 const QUIZ_SET_SIZE = 20;
 const LEVELS: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -53,6 +55,8 @@ interface QuizModeProps {
   allWords: Word[];
   studyMode?: QuizStudyMode;
   selectedLevel?: LibraryLevel;
+  challengeData?: QuizChallengeData | null;
+  isChallenge?: boolean;
   onLevelChange?: (level: LibraryLevel) => void;
   onOpenModeSelection?: () => void;
   onExit: () => void;
@@ -65,14 +69,16 @@ const QuizMode: React.FC<QuizModeProps> = ({
   allWords,
   studyMode = 'USER_WORDS',
   selectedLevel = 'A1',
+  challengeData,
+  isChallenge = false,
   onLevelChange,
   onOpenModeSelection,
   onExit,
   onGoToFlashcards,
   onGoToSentences
 }) => {
-  const currentMode: QuizStudyMode = studyMode;
-  const currentLevel: LibraryLevel = selectedLevel;
+  const currentMode: QuizStudyMode = isChallenge ? 'LIBRARY' : studyMode;
+  const currentLevel: LibraryLevel = isChallenge && challengeData ? challengeData.level : selectedLevel;
 
   // Filter and sort words
   const sortedWords = useMemo(() => {
@@ -87,14 +93,19 @@ const QuizMode: React.FC<QuizModeProps> = ({
   const totalSets = Math.max(1, Math.ceil(sortedWords.length / QUIZ_SET_SIZE));
 
   const [currentSetNum, setCurrentSetNum] = useState<number>(() => {
+    if (isChallenge && challengeData) return challengeData.setNum;
     return getStoredQuizSetNum(currentMode, currentLevel);
   });
 
   const [currentIndex, setCurrentIndex] = useState<number>(() => {
+    if (isChallenge) return 0;
     return getStoredQuizIndex(currentMode, currentLevel);
   });
 
   const [activeIds, setActiveIds] = useState<string[]>(() => {
+    if (isChallenge && challengeData && challengeData.wordIds && challengeData.wordIds.length > 0) {
+      return challengeData.wordIds;
+    }
     return getStoredQuizActiveIds(currentMode, currentLevel);
   });
 
@@ -102,6 +113,10 @@ const QuizMode: React.FC<QuizModeProps> = ({
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [finished, setFinished] = useState(false);
+
+  // Modals state
+  const [showShareModal, setShowShareModal] = useState(false);
+  const [showChallengeResultModal, setShowChallengeResultModal] = useState(false);
 
   const [direction, setDirection] = useState<LanguageDirection>(() => {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEYS.DIRECTION);
@@ -137,6 +152,8 @@ const QuizMode: React.FC<QuizModeProps> = ({
 
   // Handle switching between modes or levels seamlessly
   useEffect(() => {
+    if (isChallenge) return;
+
     const prev = prevConfigRef.current;
     const modeOrLevelChanged = prev.currentMode !== currentMode || prev.currentLevel !== currentLevel;
 
@@ -190,15 +207,19 @@ const QuizMode: React.FC<QuizModeProps> = ({
     }
 
     prevConfigRef.current = { currentMode, currentLevel };
-  }, [currentMode, currentLevel, sortedWords]);
+  }, [currentMode, currentLevel, sortedWords, isChallenge]);
 
   useEffect(() => {
-    localStorage.setItem(getQuizSetNumKey(currentMode, currentLevel), currentSetNum.toString());
-  }, [currentSetNum, currentMode, currentLevel]);
+    if (!isChallenge) {
+      localStorage.setItem(getQuizSetNumKey(currentMode, currentLevel), currentSetNum.toString());
+    }
+  }, [currentSetNum, currentMode, currentLevel, isChallenge]);
 
   useEffect(() => {
-    localStorage.setItem(getQuizCurrentIndexKey(currentMode, currentLevel), currentIndex.toString());
-  }, [currentIndex, currentMode, currentLevel]);
+    if (!isChallenge) {
+      localStorage.setItem(getQuizCurrentIndexKey(currentMode, currentLevel), currentIndex.toString());
+    }
+  }, [currentIndex, currentMode, currentLevel, isChallenge]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.DIRECTION, direction);
@@ -214,9 +235,26 @@ const QuizMode: React.FC<QuizModeProps> = ({
     localStorage.setItem(LOCAL_STORAGE_KEYS.TTS_ENABLED, isTtsEnabled.toString());
   }, [isTtsEnabled]);
 
-  // Chronological set generator
+  // Set generator (Standard & Challenge)
   useEffect(() => {
     if (sortedWords.length === 0) return;
+
+    if (isChallenge) {
+      if (challengeData?.wordIds && challengeData.wordIds.length > 0 && activeIds.length === 0) {
+        setActiveIds(challengeData.wordIds);
+        return;
+      }
+      if (activeIds.length > 0) return;
+
+      const setStart = (currentSetNum - 1) * QUIZ_SET_SIZE;
+      const setEnd = Math.min(setStart + QUIZ_SET_SIZE, sortedWords.length);
+      const setWords = sortedWords.slice(setStart, setEnd);
+      if (setWords.length > 0) {
+        const newIds = setWords.map(w => w.id);
+        setActiveIds(newIds);
+      }
+      return;
+    }
 
     const hasSaved = localStorage.getItem(getQuizActiveIdsKey(currentMode, currentLevel));
     const savedSetNum = localStorage.getItem(getQuizSetNumKey(currentMode, currentLevel));
@@ -241,13 +279,13 @@ const QuizMode: React.FC<QuizModeProps> = ({
       setFinished(false);
       setIncorrectWords([]);
     }
-  }, [sortedWords, currentSetNum, activeIds.length, currentMode, currentLevel]);
+  }, [sortedWords, currentSetNum, activeIds.length, currentMode, currentLevel, isChallenge, challengeData]);
 
   const quizSet = useMemo(() => {
     return activeIds
-      .map(id => sortedWords.find(w => w.id === id) || words.find(w => w.id === id))
+      .map(id => sortedWords.find(w => w.id === id) || words.find(w => w.id === id) || allWords.find(w => w.id === id))
       .filter((w): w is Word => !!w);
-  }, [activeIds, sortedWords, words]);
+  }, [activeIds, sortedWords, words, allWords]);
 
   const speak = useCallback((text: string) => {
     window.speechSynthesis.cancel();
@@ -302,13 +340,18 @@ const QuizMode: React.FC<QuizModeProps> = ({
         setShowResult(false);
       } else {
         setFinished(true);
+        if (isChallenge) {
+          setShowChallengeResultModal(true);
+        }
       }
     }, 1200);
   };
 
   const handleNewSet = useCallback(() => {
     const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
-    localStorage.removeItem(getQuizActiveIdsKey(currentMode, currentLevel));
+    if (!isChallenge) {
+      localStorage.removeItem(getQuizActiveIdsKey(currentMode, currentLevel));
+    }
     setActiveIds([]);
     setCurrentSetNum(nextSetNum);
     setSelectedOption(null);
@@ -317,7 +360,17 @@ const QuizMode: React.FC<QuizModeProps> = ({
     setScore(0);
     setIncorrectWords([]);
     setShowWrongAnswersModal(false);
-  }, [currentSetNum, totalSets, currentMode, currentLevel]);
+  }, [currentSetNum, totalSets, currentMode, currentLevel, isChallenge]);
+
+  const handlePlayAgain = () => {
+    setCurrentIndex(0);
+    setScore(0);
+    setSelectedOption(null);
+    setShowResult(false);
+    setFinished(false);
+    setIncorrectWords([]);
+    setShowChallengeResultModal(false);
+  };
 
   const progressPercent = quizSet.length > 0 ? ((currentIndex + 1) / quizSet.length) * 100 : 0;
 
@@ -359,45 +412,65 @@ const QuizMode: React.FC<QuizModeProps> = ({
           </div>
 
           <div className="space-y-3">
-            <button
-              onClick={handleNewSet}
-              className="w-full bg-white text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
-            >
-              <RefreshCw size={18} /> Yeni Set ile Devam Et
-            </button>
-
-            {onOpenModeSelection && (
+            {isChallenge && challengeData ? (
               <button
-                onClick={onOpenModeSelection}
-                className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                onClick={() => setShowChallengeResultModal(true)}
+                className="w-full bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
               >
-                <SlidersHorizontal size={18} /> Mod Seç / Değiştir
+                <Trophy size={18} /> Meydan Okuma Sonucunu Gör
               </button>
-            )}
+            ) : (
+              <>
+                <button
+                  onClick={handleNewSet}
+                  className="w-full bg-white text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
+                >
+                  <RefreshCw size={18} /> Yeni Set ile Devam Et
+                </button>
 
-            {onGoToFlashcards && (
-              <button
-                onClick={onGoToFlashcards}
-                className="w-full py-4 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-3xl font-black text-base hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
-              >
-                <BookOpen size={18} /> Kartlarla Çalış
-              </button>
-            )}
+                {currentMode === 'LIBRARY' && (
+                  <button
+                    onClick={() => setShowShareModal(true)}
+                    className="w-full py-4 bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-black border border-[#25D366]/30 rounded-3xl font-black text-base transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg"
+                  >
+                    <Share2 size={18} /> Skorunu WhatsApp ile Paylaş
+                  </button>
+                )}
 
-            {onGoToSentences && (
-              <button
-                onClick={onGoToSentences}
-                className="w-full py-4 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-3xl font-black text-base hover:bg-purple-500 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
-              >
-                <Sparkles size={18} /> Cümle Pratiği Yap
-              </button>
+                {onOpenModeSelection && (
+                  <button
+                    onClick={onOpenModeSelection}
+                    className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <SlidersHorizontal size={18} /> Mod Seç / Değiştir
+                  </button>
+                )}
+
+                {onGoToFlashcards && (
+                  <button
+                    onClick={onGoToFlashcards}
+                    className="w-full py-4 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-3xl font-black text-base hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <BookOpen size={18} /> Kartlarla Çalış
+                  </button>
+                )}
+
+                {onGoToSentences && (
+                  <button
+                    onClick={onGoToSentences}
+                    className="w-full py-4 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-3xl font-black text-base hover:bg-purple-500 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <Sparkles size={18} /> Cümle Pratiği Yap
+                  </button>
+                )}
+              </>
             )}
 
             <button
               onClick={onExit}
               className="w-full py-4 bg-zinc-900 text-slate-400 rounded-3xl font-black text-base border border-white/5 active:scale-95 transition-all hover:text-white"
             >
-              Dashboard'a Dön
+              Ana Sayfaya Dön
             </button>
           </div>
         </div>
@@ -459,6 +532,20 @@ const QuizMode: React.FC<QuizModeProps> = ({
             </div>
           </div>
         )}
+
+        {/* Meydan Okuma Sonuç Modalı */}
+        {isChallenge && challengeData && (
+          <QuizChallengeResultModal
+            isOpen={showChallengeResultModal}
+            onClose={() => {
+              setShowChallengeResultModal(false);
+              onExit();
+            }}
+            challengeData={challengeData}
+            recipientScore={score}
+            onPlayAgain={handlePlayAgain}
+          />
+        )}
       </div>
     );
   }
@@ -519,15 +606,22 @@ const QuizMode: React.FC<QuizModeProps> = ({
           {/* Center: Mod Seç, Toggles & Level Tabs */}
           <div className="flex flex-col items-center gap-1 sm:gap-1.5 justify-self-center max-w-full min-w-0">
             <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
-              {onOpenModeSelection && (
-                <button
-                  onClick={onOpenModeSelection}
-                  className="bg-purple-600/20 border border-purple-500/30 px-2.5 sm:px-3 py-1 sm:py-1 rounded-full text-purple-300 font-black text-[10px] sm:text-xs flex items-center gap-1 hover:bg-purple-600 hover:text-white transition-all shrink-0"
-                  title="Test Çalışma Modunu Değiştir"
-                >
-                  <SlidersHorizontal size={12} />
-                  <span>Mod Seç</span>
-                </button>
+              {isChallenge && challengeData ? (
+                <div className="bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 rounded-full text-emerald-300 font-black text-[10px] sm:text-xs flex items-center gap-1.5 shadow-sm">
+                  <Swords size={13} className="text-emerald-400" />
+                  <span>Hedef: {challengeData.challengerScore} Puan ({challengeData.challengerName || 'Arkadaşın'})</span>
+                </div>
+              ) : (
+                onOpenModeSelection && (
+                  <button
+                    onClick={onOpenModeSelection}
+                    className="bg-purple-600/20 border border-purple-500/30 px-2.5 sm:px-3 py-1 sm:py-1 rounded-full text-purple-300 font-black text-[10px] sm:text-xs flex items-center gap-1 hover:bg-purple-600 hover:text-white transition-all shrink-0"
+                    title="Test Çalışma Modunu Değiştir"
+                  >
+                    <SlidersHorizontal size={12} />
+                    <span>Mod Seç</span>
+                  </button>
+                )
               )}
 
               <button
@@ -557,8 +651,8 @@ const QuizMode: React.FC<QuizModeProps> = ({
               </button>
             </div>
 
-            {/* Level Tabs for Library Mode */}
-            {currentMode === 'LIBRARY' && onLevelChange && (
+            {/* Level Tabs for Library Mode (hidden during challenge to keep set locked) */}
+            {currentMode === 'LIBRARY' && !isChallenge && onLevelChange && (
               <div className="flex items-center justify-center gap-1 overflow-x-auto no-scrollbar max-w-full py-0.5">
                 {LEVELS.map(lvl => (
                   <button
@@ -581,9 +675,22 @@ const QuizMode: React.FC<QuizModeProps> = ({
             )}
           </div>
 
-          <div className="flex items-center gap-1.5 bg-white/5 border border-white/5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-black text-emerald-400 text-xs sm:text-sm shrink-0">
-            <Zap size={14} fill="currentColor" />
-            {score}
+          {/* Right Header Area: Score badge and Share button */}
+          <div className="flex items-center gap-1.5 shrink-0">
+            <div className="flex items-center gap-1.5 bg-white/5 border border-white/5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-black text-emerald-400 text-xs sm:text-sm">
+              <Zap size={14} fill="currentColor" />
+              {score}
+            </div>
+
+            {currentMode === 'LIBRARY' && !isChallenge && (
+              <button
+                onClick={() => setShowShareModal(true)}
+                className="p-1.5 sm:p-2 bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-black border border-emerald-500/20 rounded-full transition-all active:scale-90 shrink-0 shadow-lg"
+                title="Bu Seti ve Skorunu Paylaş"
+              >
+                <Share2 size={16} />
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -631,6 +738,18 @@ const QuizMode: React.FC<QuizModeProps> = ({
           })}
         </div>
       </div>
+
+      {/* Paylaş Modalı */}
+      <QuizShareModal
+        isOpen={showShareModal}
+        onClose={() => setShowShareModal(false)}
+        challengeData={{
+          level: currentLevel,
+          setNum: currentSetNum,
+          challengerScore: score,
+          wordIds: activeIds
+        }}
+      />
     </div>
   );
 };

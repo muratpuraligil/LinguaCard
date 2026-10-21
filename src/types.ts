@@ -27,6 +27,14 @@ export enum AppMode {
 export type FlashcardStudyMode = 'USER_WORDS' | 'AI_ADD' | 'LIBRARY';
 export type QuizStudyMode = 'USER_WORDS' | 'LIBRARY';
 
+export interface QuizChallengeData {
+  level: LibraryLevel;
+  setNum: number;
+  challengerScore: number;
+  challengerName?: string;
+  wordIds: string[];
+}
+
 export type LibraryLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
 export type LibraryScope = 'CORE_300' | 'ALL';

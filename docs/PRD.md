@@ -76,6 +76,12 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - **Sıfır Kaydırma & Viewport-Fit Tasarım (Zero-Scroll Layout):** Test Çöz ekranında aşırı dikey boşluklar, padding'ler ve buton min-yükseklikleri optimize edilerek soru kartı ve 4 seçeneğin tüm ekran çözünürlüklerinde (özellikle laptop ve dar mobil ekranlarda) kaydırma çubuğu (scroll) gerektirmeden tek ekrana tam sığması sağlanmıştır.
     - **Otomatik Telaffuz & Ses Kontrolü:** Cevap seçildiği anda doğru İngilizce kelimenin telaffuzu otomatik olarak seslendirilir. TR-EN yön butonunun yanındaki hoparlör ikonu ile bu özellik açılıp kapatılabilir.
     - **Yapılan Yanlışları İzleme:** Test bitiş ekranında yanlış cevaplanan kelimeleri detaylı inceleme ve telaffuzlarını dinleme modalı.
+    - **WhatsApp ile Skor Paylaşımı & Meydan Okuma (Quiz Challenge):**
+      - **Header ve Bitiş Ekranı Paylaşım Butonu:** Kütüphaneden Çalış test ekranının sağ üst köşesinde (skor rozetinin hemen yanında) ve test tamamlandığında bitiş ekranında yer alan "Skorunu Paylaş / Meydan Oku" butonu ile aktif set ve alınan puan tek tıkla paylaşılabilir.
+      - **WhatsApp Davet Linki & Parametreleri:** Seviye (`lvl`), set numarası (`set`), alınan puan (`score`) ve setteki kelime kimlikleri (`ids`) URL query parametresi olarak kodlanır ve otomatik olarak samimi bir davet metniyle WhatsApp üzerinden gönderilebilir.
+      - **İzole Çalışma Garantisi (Zero-Conflict Session):** Linke tıklayan arkadaşların kendi çalışma setleri, kaldıkları soru sıraları veya aktif ID'leri **kesinlikle ezilmez ve sıfırlanmaz**. Meydan okuma oturumu bellekte izole çalışır (`isChallenge: true`) ve yerel depolama anahtarlarını etkilemez.
+      - **Girişsiz Misafir Erişimi (Guest-Friendly Challenge):** Hesabı olmayan veya giriş yapmamış arkadaşlar, kütüphane kelimeleri yerel paketlerde hazır olduğu için Auth engeline takılmadan linke tıklayarak doğrudan meydan okumaya katılabilir.
+      - **Kazandın / Kaybettin Sonuç Modalı & WhatsApp Yanıtı:** Davetli testi tamamladığında kendi puanı ile meydan okuyanın puanını karşılaştıran dinamik sonuç modalı açılır (`Kazandın! 🏆`, `Kaybettin! 😢`, `Berabere! 🤝`) ve "WhatsApp ile Sonucu Gönder" butonuyla hazır karşılaştırma metnini meydan okuyana geri gönderebilir.
     - **Boş Liste Koruması:** Kullanıcının henüz kendi kelimesi olmasa bile Dashboard'dan Test Çöz modülünü başlatıp doğrudan Kütüphaneden Çöz moduna geçebilmesi.
 
 - **Cümleler (Sentence Builder):** 
