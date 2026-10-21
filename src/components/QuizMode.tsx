@@ -546,6 +546,18 @@ const QuizMode: React.FC<QuizModeProps> = ({
             onPlayAgain={handlePlayAgain}
           />
         )}
+
+        {/* Paylaş Modalı */}
+        <QuizShareModal
+          isOpen={showShareModal}
+          onClose={() => setShowShareModal(false)}
+          challengeData={{
+            level: currentLevel,
+            setNum: currentSetNum,
+            challengerScore: score,
+            wordIds: activeIds
+          }}
+        />
       </div>
     );
   }

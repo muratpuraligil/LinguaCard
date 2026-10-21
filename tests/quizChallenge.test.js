@@ -105,6 +105,22 @@ test('QuizMode.tsx integrates Share button in header and finish screen, and prot
   assert.ok(quizSource.includes('QuizChallengeResultModal'), 'QuizMode.tsx must render QuizChallengeResultModal upon challenge completion');
 });
 
+test('QuizMode.tsx must render QuizShareModal inside the finished screen return block', () => {
+  const quizSource = fs.readFileSync(path.join(rootDir, 'src/components/QuizMode.tsx'), 'utf8');
+
+  const finishedBlockStart = quizSource.indexOf('if (finished) {');
+  assert.ok(finishedBlockStart !== -1, 'if (finished) block must exist');
+
+  const emptyStateStart = quizSource.indexOf('// Empty state handling');
+  assert.ok(emptyStateStart !== -1, 'empty state block must exist');
+
+  const finishedBlock = quizSource.substring(finishedBlockStart, emptyStateStart);
+  assert.ok(
+    finishedBlock.includes('<QuizShareModal'),
+    'QuizMode.tsx must render QuizShareModal inside the if (finished) block so the finish screen share button works'
+  );
+});
+
 test('App.tsx parses challenge params and supports guest challenge gameplay', () => {
   const appSource = fs.readFileSync(path.join(rootDir, 'src/App.tsx'), 'utf8');
 
