@@ -676,17 +676,17 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
     if (isFinished) {
         return (
-            <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 text-center font-['Plus_Jakarta_Sans']">
-                <div className="bg-zinc-900 border border-yellow-500/20 p-12 rounded-[56px] shadow-2xl w-full max-w-sm relative overflow-hidden">
-                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-3xl"></div>
-                    <Trophy size={72} className="text-yellow-500 mx-auto mb-6 animate-bounce" />
-                    <h2 className="text-4xl font-black text-white mb-2">Harika Bir Set!</h2>
-                    <p className="text-slate-500 font-bold mb-6">Bu gruptaki tüm kelimeleri inceledin.</p>
+            <div className="min-h-screen bg-black flex flex-col items-center justify-center p-3 sm:p-4 text-center font-['Plus_Jakarta_Sans']">
+                <div className="bg-zinc-900 border border-yellow-500/20 p-4 sm:p-5 rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden">
+                    <div className="absolute -top-10 -right-10 w-24 h-24 bg-yellow-500/10 rounded-full blur-2xl"></div>
+                    <Trophy size={36} className="text-yellow-500 mx-auto mb-2 animate-bounce" />
+                    <h2 className="text-xl font-black text-white mb-0.5">Harika Bir Set!</h2>
+                    <p className="text-slate-500 font-bold text-xs mb-3">Bu gruptaki tüm kelimeleri inceledin.</p>
 
                     {autoAdvanceCountdown !== null && (
-                        <div className="mb-6 p-4 rounded-3xl bg-emerald-950/40 border border-emerald-500/30 flex flex-col items-center gap-2">
-                            <div className="flex items-center gap-2 text-emerald-400 font-black text-xs sm:text-sm">
-                                <Headphones size={16} className="animate-pulse" />
+                        <div className="mb-3 p-2.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 flex flex-col items-center gap-1.5">
+                            <div className="flex items-center gap-1.5 text-emerald-400 font-black text-xs">
+                                <Headphones size={14} className="animate-pulse" />
                                 <span>Dinleme Modu: <b>{autoAdvanceCountdown}s</b> sonra yeni sete geçiliyor</span>
                             </div>
                             <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
@@ -697,19 +697,19 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                             </div>
                             <button
                                 onClick={() => setAutoAdvanceCountdown(null)}
-                                className="text-[11px] text-slate-400 hover:text-white font-bold underline transition-colors mt-1"
+                                className="text-[10px] text-slate-400 hover:text-white font-bold underline transition-colors mt-0.5"
                             >
                                 ⏸️ Otomatik Geçişi Durdur / İptal Et
                             </button>
                         </div>
                     )}
 
-                    <div className="space-y-3 w-full">
+                    <div className="space-y-1.5 w-full">
                         <button
                             onClick={() => handleNewSet(autoAdvanceCountdown !== null)}
-                            className="w-full py-4 bg-yellow-500 hover:bg-yellow-400 text-black rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl shadow-yellow-500/20 active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full py-2.5 bg-yellow-500 hover:bg-yellow-400 text-black rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md shadow-yellow-500/20 active:scale-95 flex items-center justify-center gap-2"
                         >
-                            <BookOpen size={18} /> {autoAdvanceCountdown !== null ? 'Hemen Yeni Sete Geç' : 'Yeni Set ile Devam Et'}
+                            <BookOpen size={15} /> {autoAdvanceCountdown !== null ? 'Hemen Yeni Sete Geç' : 'Yeni Set ile Devam Et'}
                         </button>
 
                         <button
@@ -717,9 +717,9 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                 setAutoAdvanceCountdown(null);
                                 onOpenModeSelection();
                             }}
-                            className="w-full py-4 bg-purple-600/10 text-purple-400 border border-purple-500/20 rounded-3xl font-black text-base hover:bg-purple-600 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full py-2.5 bg-purple-600/10 text-purple-400 border border-purple-500/20 rounded-xl font-black text-xs hover:bg-purple-600 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
                         >
-                            <SlidersHorizontal size={18} /> Başka Moda Geç
+                            <SlidersHorizontal size={15} /> Başka Moda Geç
                         </button>
 
                         {onGoToQuiz && (
@@ -728,9 +728,9 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                     setAutoAdvanceCountdown(null);
                                     onGoToQuiz();
                                 }}
-                                className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                                className="w-full py-2.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl font-black text-xs hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
-                                <Puzzle size={18} /> Test Çöz
+                                <Puzzle size={15} /> Test Çöz
                             </button>
                         )}
 
@@ -739,7 +739,7 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
                                 setAutoAdvanceCountdown(null);
                                 onExit();
                             }}
-                            className="w-full py-4 bg-zinc-900 text-slate-400 rounded-3xl font-black text-base border border-white/5 active:scale-95 transition-all hover:text-white"
+                            className="w-full py-2.5 bg-zinc-900 text-slate-400 rounded-xl font-black text-xs border border-white/5 active:scale-95 transition-all hover:text-white"
                         >
                             Dashboard'a Dön
                         </button>

@@ -385,91 +385,91 @@ const QuizMode: React.FC<QuizModeProps> = ({
 
   if (finished) {
     return (
-      <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 text-center font-['Plus_Jakarta_Sans'] relative">
-        <div className="bg-zinc-900 border border-emerald-500/20 p-10 rounded-[56px] shadow-2xl w-full max-w-sm relative overflow-hidden">
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
-          <CheckCircle className="text-emerald-500 w-20 h-20 mx-auto mb-6 animate-bounce" />
-          <h2 className="text-4xl font-black text-white mb-2">Harika İş!</h2>
-          <p className="text-slate-500 font-bold mb-8">Testi başarıyla tamamladın.</p>
+      <div className="min-h-screen bg-black flex flex-col items-center justify-center p-3 sm:p-4 text-center font-['Plus_Jakarta_Sans'] relative">
+        <div className="bg-zinc-900 border border-emerald-500/20 p-4 sm:p-5 rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden">
+          <div className="absolute -top-10 -right-10 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl"></div>
+          <CheckCircle className="text-emerald-500 w-9 h-9 mx-auto mb-1 animate-bounce" />
+          <h2 className="text-xl font-black text-white mb-0.5">Harika İş!</h2>
+          <p className="text-slate-500 font-bold text-xs mb-2.5">Testi başarıyla tamamladın.</p>
 
-          <div className="mb-8 space-y-3">
-            <div className="flex flex-col items-center">
-              <span className="text-7xl font-black text-emerald-500 tracking-tighter">{score}</span>
-              <span className="text-emerald-900 text-sm font-black uppercase tracking-widest">Puan</span>
+          <div className="mb-3 space-y-1.5">
+            <div className="flex items-baseline justify-center gap-1.5">
+              <span className="text-4xl font-black text-emerald-500 tracking-tight">{score}</span>
+              <span className="text-emerald-600 text-[11px] font-black uppercase tracking-wider">Puan</span>
             </div>
-            <div className="flex flex-col gap-2">
-              <div className="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/5">
+            <div className="flex flex-col gap-1">
+              <div className="flex justify-between items-center bg-white/5 px-3 py-1.5 rounded-xl border border-white/5">
                 <div className="text-left">
-                  <p className="text-xs font-bold text-slate-500 uppercase">Doğru Sayısı</p>
-                  <p className="text-xl font-black text-white">{score / 10} / {quizSet.length}</p>
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Doğru Sayısı</p>
+                  <p className="text-sm font-black text-white">{score / 10} / {quizSet.length}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs font-bold text-slate-500 uppercase">Başarı Oranı</p>
-                  <p className="text-xl font-black text-emerald-500">%{Math.round(((score / 10) / (quizSet.length || 1)) * 100)}</p>
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Başarı Oranı</p>
+                  <p className="text-sm font-black text-emerald-500">%{Math.round(((score / 10) / (quizSet.length || 1)) * 100)}</p>
                 </div>
               </div>
 
               {incorrectWords.length > 0 && (
                 <button
                   onClick={() => setShowWrongAnswersModal(true)}
-                  className="text-xs font-bold text-red-400 hover:text-red-350 transition-all underline decoration-red-500/50 underline-offset-4 mt-2 block mx-auto hover:scale-105 active:scale-95 cursor-pointer"
+                  className="text-[11px] font-bold text-red-400 hover:text-red-350 transition-all underline decoration-red-500/50 underline-offset-4 mt-0.5 block mx-auto hover:scale-105 active:scale-95 cursor-pointer"
                 >
-                  Yanlışları görmek için tıkla
+                  Yanlışları görmek için tıkla ({incorrectWords.length})
                 </button>
               )}
             </div>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-1.5">
             {isChallenge && challengeData ? (
               <button
                 onClick={() => setShowChallengeResultModal(true)}
-                className="w-full bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
+                className="w-full bg-emerald-500 hover:bg-emerald-400 text-black py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
               >
-                <Trophy size={18} /> Meydan Okuma Sonucunu Gör
+                <Trophy size={15} /> Meydan Okuma Sonucunu Gör
               </button>
             ) : (
               <>
                 <button
                   onClick={handleNewSet}
-                  className="w-full bg-white text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
+                  className="w-full bg-white text-black py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
                 >
-                  <RefreshCw size={18} /> Yeni Set ile Devam Et
+                  <RefreshCw size={15} /> Yeni Set ile Devam Et
                 </button>
 
                 {currentMode === 'LIBRARY' && (
                   <button
                     onClick={() => setShowShareModal(true)}
-                    className="w-full py-4 bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-black border border-[#25D366]/30 rounded-3xl font-black text-base transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg"
+                    className="w-full py-2.5 bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-black border border-[#25D366]/30 rounded-xl font-black text-xs transition-all active:scale-95 flex items-center justify-center gap-2 shadow-sm"
                   >
-                    <Share2 size={18} /> Skorunu WhatsApp ile Paylaş
+                    <Share2 size={15} /> Skorunu WhatsApp ile Paylaş
                   </button>
                 )}
 
                 {onOpenModeSelection && (
                   <button
                     onClick={onOpenModeSelection}
-                    className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full py-2.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl font-black text-xs hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                   >
-                    <SlidersHorizontal size={18} /> Mod Seç / Değiştir
+                    <SlidersHorizontal size={15} /> Mod Seç / Değiştir
                   </button>
                 )}
 
                 {onGoToFlashcards && (
                   <button
                     onClick={onGoToFlashcards}
-                    className="w-full py-4 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-3xl font-black text-base hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full py-2.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-xl font-black text-xs hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                   >
-                    <BookOpen size={18} /> Kartlarla Çalış
+                    <BookOpen size={15} /> Kartlarla Çalış
                   </button>
                 )}
 
                 {onGoToSentences && (
                   <button
                     onClick={onGoToSentences}
-                    className="w-full py-4 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-3xl font-black text-base hover:bg-purple-500 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full py-2.5 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-xl font-black text-xs hover:bg-purple-500 hover:text-white transition-all active:scale-95 flex items-center justify-center gap-2"
                   >
-                    <Sparkles size={18} /> Cümle Pratiği Yap
+                    <Sparkles size={15} /> Cümle Pratiği Yap
                   </button>
                 )}
               </>
@@ -477,7 +477,7 @@ const QuizMode: React.FC<QuizModeProps> = ({
 
             <button
               onClick={onExit}
-              className="w-full py-4 bg-zinc-900 text-slate-400 rounded-3xl font-black text-base border border-white/5 active:scale-95 transition-all hover:text-white"
+              className="w-full py-2.5 bg-zinc-900 text-slate-400 rounded-xl font-black text-xs border border-white/5 active:scale-95 transition-all hover:text-white"
             >
               Ana Sayfaya Dön
             </button>

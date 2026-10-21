@@ -325,31 +325,31 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         <div className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center p-8 font-['Plus_Jakarta_Sans']">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black"></div>
 
-            <div className="relative z-10 w-full max-w-md bg-zinc-900 border border-purple-500/20 p-10 rounded-[56px] text-center shadow-2xl animate-float">
-                <div className="w-24 h-24 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(168,85,247,0.2)]">
-                    <Trophy size={48} className="text-purple-500" strokeWidth={2} />
+            <div className="relative z-10 w-full max-w-sm bg-zinc-900 border border-purple-500/20 p-4 sm:p-5 rounded-3xl text-center shadow-2xl animate-float">
+                <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-2 shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+                    <Trophy size={24} className="text-purple-500" strokeWidth={2} />
                 </div>
 
-                <h2 className="text-4xl font-black text-white mb-4 tracking-tight">Harika Bir Set!</h2>
-                <p className="text-slate-400 font-medium text-lg mb-8 leading-relaxed">
+                <h2 className="text-xl font-black text-white mb-0.5 tracking-tight">Harika Bir Set!</h2>
+                <p className="text-slate-400 font-medium text-xs mb-3 leading-relaxed">
                     <span className="text-purple-400 font-bold">{set.title}</span> kütüphane setindeki tüm cümleleri başarıyla çalıştın.
                 </p>
 
                 {set.id === 'random-mix' && (
-                    <div className="mb-10 text-left bg-black/40 border border-white/5 rounded-3xl p-6">
-                        <div className="flex items-center gap-2 mb-4">
-                            <Info size={16} className="text-blue-400" />
-                            <h3 className="text-xs font-black text-blue-400 uppercase tracking-widest">Hata Yapılan Gruplar</h3>
+                    <div className="mb-4 text-left bg-black/40 border border-white/5 rounded-2xl p-3">
+                        <div className="flex items-center gap-1.5 mb-2">
+                            <Info size={14} className="text-blue-400" />
+                            <h3 className="text-[10px] font-black text-blue-400 uppercase tracking-widest">Hata Yapılan Gruplar</h3>
                         </div>
                         {everWrongIds.size > 0 ? (
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-1.5">
                                 {Array.from(new Set(
                                     set.sentences
                                         .filter(s => everWrongIds.has(s.id))
                                         .map(s => s.sourceSetTitle)
                                         .filter(Boolean)
                                 )).map((title, i) => (
-                                    <span key={i} className="text-[10px] font-bold px-2.5 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-lg">
+                                    <span key={i} className="text-[9px] font-bold px-2 py-0.5 bg-red-500/10 text-red-400 border border-red-500/20 rounded-md">
                                         {title}
                                     </span>
                                 ))}
@@ -360,12 +360,12 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                     </div>
                 )}
 
-                <div className="space-y-3">
+                <div className="space-y-1.5">
                     <button
                         onClick={handleRestart}
-                        className="w-full bg-white text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
+                        className="w-full bg-white text-black py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
                     >
-                        <RefreshCw size={18} /> Cümleler ile Tekrar Çalış
+                        <RefreshCw size={15} /> Cümleler ile Tekrar Çalış
                     </button>
 
                     {onRegenerate && (
@@ -374,33 +374,33 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                                 onRegenerate();
                                 setShowFinishedModal(false);
                             }}
-                            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 border border-white/10"
+                            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 border border-white/10"
                         >
-                            <RefreshCw size={18} /> Yeni Set Üret
+                            <RefreshCw size={15} /> Yeni Set Üret
                         </button>
                     )}
 
                     {onGoToFlashcards && (
                         <button
                             onClick={onGoToFlashcards}
-                            className="w-full py-4 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-3xl font-black text-base hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full py-2.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-xl font-black text-xs hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                         >
-                            <BookOpen size={18} /> Kartlar ile Çalış
+                            <BookOpen size={15} /> Kartlar ile Çalış
                         </button>
                     )}
 
                     {onGoToQuiz && (
                         <button
                             onClick={onGoToQuiz}
-                            className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full py-2.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl font-black text-xs hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                         >
-                            <Zap size={18} /> Test Çöz Modülüne Geç
+                            <Zap size={15} /> Test Çöz Modülüne Geç
                         </button>
                     )}
 
                     <button
                         onClick={onGoHome}
-                        className="w-full py-4 bg-zinc-900 text-slate-400 rounded-3xl font-black text-base border border-white/5 active:scale-95 transition-all hover:text-white"
+                        className="w-full py-2.5 bg-zinc-900 text-slate-400 rounded-xl font-black text-xs border border-white/5 active:scale-95 transition-all hover:text-white"
                     >
                         Dashboard'a Dön
                     </button>

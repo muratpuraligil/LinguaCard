@@ -329,45 +329,45 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
             <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 font-['Plus_Jakarta_Sans'] relative overflow-hidden z-[100]">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black"></div>
 
-                <div className="relative z-10 w-full max-w-md bg-zinc-900 border border-purple-500/20 p-10 rounded-[56px] text-center shadow-2xl animate-float">
-                    <div className="w-24 h-24 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(168,85,247,0.2)]">
-                        <Trophy size={48} className="text-purple-500" strokeWidth={2} />
+                <div className="relative z-10 w-full max-w-sm bg-zinc-900 border border-purple-500/20 p-4 sm:p-5 rounded-3xl text-center shadow-2xl animate-float">
+                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-2 shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+                        <Trophy size={24} className="text-purple-500" strokeWidth={2} />
                     </div>
 
-                    <h2 className="text-4xl font-black text-white mb-4 tracking-tight">Harika Bir Set!</h2>
-                    <p className="text-slate-400 font-medium text-lg mb-10 leading-relaxed">
+                    <h2 className="text-xl font-black text-white mb-0.5 tracking-tight">Harika Bir Set!</h2>
+                    <p className="text-slate-400 font-medium text-xs mb-3 leading-relaxed">
                         <span className="text-purple-400 font-bold">{setName}</span> setindeki tüm cümleleri başarıyla çalıştın.
                     </p>
 
-                    <div className="space-y-3">
+                    <div className="space-y-1.5">
                         <button
                             onClick={handleRestart}
-                            className="w-full bg-white text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full bg-white text-black py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
                         >
-                            <RefreshCw size={18} /> Cümleler ile Tekrar Çalış
+                            <RefreshCw size={15} /> Cümleler ile Tekrar Çalış
                         </button>
 
                         {onGoToFlashcards && (
                             <button
                                 onClick={onGoToFlashcards}
-                                className="w-full py-4 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-3xl font-black text-base hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                                className="w-full py-2.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-xl font-black text-xs hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
-                                <BookOpen size={18} /> Kartlar ile Çalış
+                                <BookOpen size={15} /> Kartlar ile Çalış
                             </button>
                         )}
 
                         {onGoToQuiz && (
                             <button
                                 onClick={onGoToQuiz}
-                                className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                                className="w-full py-2.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl font-black text-xs hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
-                                <Zap size={18} /> Test Çöz Modülüne Geç
+                                <Zap size={15} /> Test Çöz Modülüne Geç
                             </button>
                         )}
 
                         <button
                             onClick={onGoHome}
-                            className="w-full py-4 bg-zinc-900 text-slate-400 rounded-3xl font-black text-base border border-white/5 active:scale-95 transition-all hover:text-white"
+                            className="w-full py-2.5 bg-zinc-900 text-slate-400 rounded-xl font-black text-xs border border-white/5 active:scale-95 transition-all hover:text-white"
                         >
                             Dashboard'a Dön
                         </button>

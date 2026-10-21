@@ -177,19 +177,19 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
 
     if (finished) {
         return (
-            <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 text-center font-['Plus_Jakarta_Sans']">
-                <div className="bg-zinc-900 border border-purple-500/20 p-10 rounded-[56px] shadow-2xl w-full max-w-sm relative overflow-hidden">
-                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
-                    <Trophy className="text-purple-500 w-20 h-20 mx-auto mb-6 animate-bounce" />
-                    <h2 className="text-4xl font-black text-white mb-2 tracking-tight">Harika Bir Set!</h2>
-                    <p className="text-slate-500 font-bold mb-8">Bu gruptaki tüm cümleleri tamamladın.</p>
+            <div className="min-h-screen bg-black flex flex-col items-center justify-center p-3 sm:p-4 text-center font-['Plus_Jakarta_Sans']">
+                <div className="bg-zinc-900 border border-purple-500/20 p-4 sm:p-5 rounded-3xl shadow-2xl w-full max-w-sm relative overflow-hidden">
+                    <div className="absolute -top-10 -right-10 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl"></div>
+                    <Trophy className="text-purple-500 w-9 h-9 mx-auto mb-1 animate-bounce" />
+                    <h2 className="text-xl font-black text-white mb-0.5 tracking-tight">Harika Bir Set!</h2>
+                    <p className="text-slate-500 font-bold text-xs mb-3">Bu gruptaki tüm cümleleri tamamladın.</p>
 
-                    <div className="space-y-3">
+                    <div className="space-y-1.5">
                         <button
                             onClick={handleRestart}
-                            className="w-full bg-white text-black py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full bg-white text-black py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
                         >
-                            <RefreshCw size={18} /> Cümleler ile Tekrar Çalış
+                            <RefreshCw size={15} /> Cümleler ile Tekrar Çalış
                         </button>
 
                         {onRegenerate && (
@@ -198,33 +198,33 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
                                     onRegenerate();
                                     setFinished(false);
                                 }}
-                                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-3xl font-black text-base hover:scale-105 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 border border-white/10"
+                                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 border border-white/10"
                             >
-                                <RefreshCw size={18} /> Yeni Set Üret
+                                <RefreshCw size={15} /> Yeni Set Üret
                             </button>
                         )}
 
                         {onGoToFlashcards && (
                             <button
                                 onClick={onGoToFlashcards}
-                                className="w-full py-4 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-3xl font-black text-base hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                                className="w-full py-2.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-xl font-black text-xs hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
-                                <BookOpen size={18} /> Kartlar ile Çalış
+                                <BookOpen size={15} /> Kartlar ile Çalış
                             </button>
                         )}
 
                         {onGoToQuiz && (
                             <button
                                 onClick={onGoToQuiz}
-                                className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+                                className="w-full py-2.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl font-black text-xs hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                             >
-                                <Zap size={18} /> Test Çöz Modülüne Geç
+                                <Zap size={15} /> Test Çöz Modülüne Geç
                             </button>
                         )}
 
                         <button
                             onClick={onExit}
-                            className="w-full py-4 bg-zinc-900 text-slate-400 rounded-3xl font-black text-base border border-white/5 active:scale-95 transition-all hover:text-white"
+                            className="w-full py-2.5 bg-zinc-900 text-slate-400 rounded-xl font-black text-xs border border-white/5 active:scale-95 transition-all hover:text-white"
                         >
                             Dashboard'a Dön
                         </button>
