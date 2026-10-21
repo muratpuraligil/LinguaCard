@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Sparkles, Layers } from 'lucide-react';
+import { X, Sparkles, Layers, BookOpen } from 'lucide-react';
 
 interface SentenceModeSelectionModalProps {
   onClose: () => void;
@@ -32,13 +32,26 @@ const SentenceModeSelectionModal: React.FC<SentenceModeSelectionModalProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <button
+            onClick={onSelectLibrary}
+            className="p-8 bg-emerald-600/10 hover:bg-emerald-600 hover:text-white text-emerald-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-emerald-500/20 text-center"
+          >
+            <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all">
+              <BookOpen size={32} strokeWidth={2.5} />
+            </div>
+            <div>
+              <span className="block font-black text-xl mb-1">Kütüphaneden Çalış</span>
+              <span className="text-sm font-bold opacity-70">Yardımcı fiil ve modallar özelinde çalış</span>
+            </div>
+          </button>
+
+          <button
             onClick={onSelectStandard}
-            className="p-8 bg-purple-600/10 hover:bg-purple-600 hover:text-white text-purple-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-purple-500/20"
+            className="p-8 bg-purple-600/10 hover:bg-purple-600 hover:text-white text-purple-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-purple-500/20 text-center"
           >
             <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all">
               <Sparkles size={32} strokeWidth={2.5} />
             </div>
-            <div className="text-center">
+            <div>
               <span className="block font-black text-xl mb-1">Listendeki Kelimelerle Çalış</span>
               <span className="text-sm font-bold opacity-70">Kelime listeni kullanır.</span>
             </div>
@@ -46,27 +59,14 @@ const SentenceModeSelectionModal: React.FC<SentenceModeSelectionModalProps> = ({
 
           <button
             onClick={onSelectCustom}
-            className="p-8 bg-blue-600/10 hover:bg-blue-600 hover:text-white text-blue-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-blue-500/20"
+            className="p-8 bg-blue-600/10 hover:bg-blue-600 hover:text-white text-blue-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-blue-500/20 text-center"
           >
             <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all">
               <Layers size={32} strokeWidth={2.5} />
             </div>
-            <div className="text-center">
+            <div>
               <span className="block font-black text-xl mb-1">Yeni Cümlelerle Çalış</span>
               <span className="text-sm font-bold opacity-70">Resim yükleyerek çalış</span>
-            </div>
-          </button>
-
-          <button
-            onClick={onSelectLibrary}
-            className="p-8 bg-emerald-600/10 hover:bg-emerald-600 hover:text-white text-emerald-400 rounded-[32px] flex flex-col items-center gap-5 transition-all group active:scale-95 border border-emerald-500/20"
-          >
-            <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center group-hover:bg-white/20 transition-all">
-              <Sparkles size={32} strokeWidth={2.5} className="rotate-12" />
-            </div>
-            <div className="text-center">
-              <span className="block font-black text-xl mb-1">Kütüphaneden Çalış</span>
-              <span className="text-sm font-bold opacity-70">Yardımcı fiil ve modallar özelinde çalış</span>
             </div>
           </button>
         </div>

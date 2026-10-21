@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { AppMode, Word, OcrStatus, FlashcardStudyMode, LibraryLevel } from './types';
+import { AppMode, Word, OcrStatus, FlashcardStudyMode, QuizStudyMode, LibraryLevel } from './types';
 import { wordService, supabase } from './services/supabaseClient';
 import { analyzeImage, analyzeText } from './services/analyzeImage';
 import { getLocalDateString } from './utils/stringUtils';
@@ -13,6 +13,7 @@ import CustomSetManager from './components/CustomSetManager';
 import CustomSetStudyMode from './components/CustomSetStudyMode';
 import SentenceModeSelectionModal from './components/SentenceModeSelectionModal';
 import FlashcardModeSelectionModal from './components/FlashcardModeSelectionModal';
+import QuizModeSelectionModal from './components/QuizModeSelectionModal';
 import UploadModal from './components/UploadModal';
 import ArchiveView from './components/ArchiveView';
 import Auth from './components/Auth';
@@ -66,7 +67,9 @@ export default function App() {
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [showSentenceSelection, setShowSentenceSelection] = useState(false);
   const [showFlashcardSelection, setShowFlashcardSelection] = useState(false);
+  const [showQuizSelection, setShowQuizSelection] = useState(false);
   const [flashcardStudyMode, setFlashcardStudyMode] = useState<FlashcardStudyMode>('USER_WORDS');
+  const [quizStudyMode, setQuizStudyMode] = useState<QuizStudyMode>('USER_WORDS');
   const [selectedLibraryLevel, setSelectedLibraryLevel] = useState<LibraryLevel>(() => {
     const saved = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
     const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -140,10 +143,11 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (mode === AppMode.FLASHCARDS && flashcardStudyMode === 'LIBRARY') {
+    if ((mode === AppMode.FLASHCARDS && flashcardStudyMode === 'LIBRARY') ||
+        (mode === AppMode.QUIZ && quizStudyMode === 'LIBRARY')) {
       loadLibraryWords(selectedLibraryLevel);
     }
-  }, [selectedLibraryLevel, flashcardStudyMode, mode]);
+  }, [selectedLibraryLevel, flashcardStudyMode, quizStudyMode, mode]);
 
   useEffect(() => {
     let isMounted = true;
@@ -493,13 +497,25 @@ export default function App() {
             onExit={() => setMode(AppMode.HOME)}
             onNextSet={handleNextSet}
             onRemoveWord={handleArchiveWord}
-            onGoToQuiz={() => setMode(AppMode.QUIZ)}
+            onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}
             onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }}
             userId={session?.user?.id}
           />
         )}
-        {mode === AppMode.QUIZ && <QuizMode words={words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))} allWords={words} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }} />}
-        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} onGoToQuiz={() => setMode(AppMode.QUIZ)} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
+        {mode === AppMode.QUIZ && (
+          <QuizMode
+            words={quizStudyMode === 'LIBRARY' ? libraryWords : words.filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))}
+            allWords={quizStudyMode === 'LIBRARY' ? libraryWords : words}
+            studyMode={quizStudyMode}
+            selectedLevel={selectedLibraryLevel}
+            onLevelChange={handleLevelChange}
+            onOpenModeSelection={() => setShowQuizSelection(true)}
+            onExit={() => setMode(AppMode.HOME)}
+            onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
+            onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }}
+          />
+        )}
+        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
         {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={handleRestoreWord} onClearArchive={handleClearArchive} />}
 
         {mode === AppMode.LIBRARY && (
@@ -522,7 +538,7 @@ export default function App() {
               window.location.reload(); 
             }}
             onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
-            onGoToQuiz={() => setMode(AppMode.QUIZ)}
+            onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}
             onRegenerate={activeLibrarySet.id === 'random-mix' ? () => handleRandomLibrarySet(true) : undefined}
           />
         )}
@@ -561,7 +577,7 @@ export default function App() {
           }}
           showToast={(msg, type) => setToast({ message: msg, type: type || 'success' })}
           onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
-          onGoToQuiz={() => setMode(AppMode.QUIZ)}
+          onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}
         />
       )}
 
@@ -574,6 +590,8 @@ export default function App() {
               setShowSentenceSelection(true);
             } else if (m === AppMode.FLASHCARDS) {
               setShowFlashcardSelection(true);
+            } else if (m === AppMode.QUIZ) {
+              setShowQuizSelection(true);
             } else {
               setMode(m);
             }
@@ -669,6 +687,27 @@ export default function App() {
           onSelectLibrary={() => {
             setShowSentenceSelection(false);
             setMode(AppMode.LIBRARY);
+          }}
+        />
+      )}
+
+      {showQuizSelection && (
+        <QuizModeSelectionModal
+          onClose={() => setShowQuizSelection(false)}
+          onSelectLibrary={() => {
+            const saved = (localStorage.getItem('lingua_quiz_last_level') || localStorage.getItem('lingua_flashcard_last_level')) as LibraryLevel;
+            const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+            const targetLevel = saved && validLevels.includes(saved) ? saved : 'A1';
+            setQuizStudyMode('LIBRARY');
+            setSelectedLibraryLevel(targetLevel);
+            setShowQuizSelection(false);
+            handleLevelChange(targetLevel);
+            setMode(AppMode.QUIZ);
+          }}
+          onSelectUserWords={() => {
+            setQuizStudyMode('USER_WORDS');
+            setShowQuizSelection(false);
+            setMode(AppMode.QUIZ);
           }}
         />
       )}

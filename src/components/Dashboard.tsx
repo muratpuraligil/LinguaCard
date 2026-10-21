@@ -311,10 +311,6 @@ const Dashboard: React.FC<DashboardProps> = ({
 
           <AnimatedCard
             onClick={() => {
-              if (words.length === 0) {
-                alert("Test edilecek kelime bulunamadı! Lütfen önce kütüphanenize kelime ekleyin.");
-                return;
-              }
               onModeSelect(AppMode.QUIZ);
             }}
             className="rounded-[32px] border-b-4 border-emerald-500 bg-zinc-900/80"

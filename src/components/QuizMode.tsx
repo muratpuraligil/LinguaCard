@@ -1,59 +1,101 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { Word, LanguageDirection } from '../types';
-import { CheckCircle, ArrowLeft, Languages, Zap, BookOpen, Sparkles, RefreshCw, X, Volume2, VolumeX } from 'lucide-react';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { Word, LanguageDirection, QuizStudyMode, LibraryLevel } from '../types';
+import { CheckCircle, ArrowLeft, Languages, Zap, BookOpen, Sparkles, RefreshCw, X, Volume2, VolumeX, SlidersHorizontal } from 'lucide-react';
 
 const QUIZ_SET_SIZE = 20;
+const LEVELS: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 const LOCAL_STORAGE_KEYS = {
   DIRECTION: 'lingua_quiz_direction',
   TTS_ENABLED: 'lingua_quiz_tts_enabled',
 };
 
+const getQuizActiveIdsKey = (mode: QuizStudyMode, level?: LibraryLevel) =>
+  mode === 'LIBRARY' ? `lingua_quiz_active_ids_${level || 'A1'}` : 'lingua_quiz_active_ids';
+
+const getQuizCurrentIndexKey = (mode: QuizStudyMode, level?: LibraryLevel) =>
+  mode === 'LIBRARY' ? `lingua_quiz_current_index_${level || 'A1'}` : 'lingua_quiz_current_index';
+
+const getQuizSetNumKey = (mode: QuizStudyMode, level?: LibraryLevel) =>
+  mode === 'LIBRARY' ? `lingua_quiz_set_num_${level || 'A1'}` : 'lingua_quiz_set_num';
+
+const getStoredQuizIndex = (mode: QuizStudyMode, level?: LibraryLevel): number => {
+  const saved = localStorage.getItem(getQuizCurrentIndexKey(mode, level));
+  if (saved) {
+    const parsed = parseInt(saved, 10);
+    if (!isNaN(parsed) && parsed >= 0) return parsed;
+  }
+  return 0;
+};
+
+const getStoredQuizSetNum = (mode: QuizStudyMode, level?: LibraryLevel): number => {
+  const saved = localStorage.getItem(getQuizSetNumKey(mode, level));
+  if (saved) {
+    const parsed = parseInt(saved, 10);
+    if (!isNaN(parsed) && parsed > 0) return parsed;
+  }
+  return 1;
+};
+
+const getStoredQuizActiveIds = (mode: QuizStudyMode, level?: LibraryLevel): string[] => {
+  const saved = localStorage.getItem(getQuizActiveIdsKey(mode, level));
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    } catch (e) {}
+  }
+  return [];
+};
+
 interface QuizModeProps {
   words: Word[];
   allWords: Word[];
+  studyMode?: QuizStudyMode;
+  selectedLevel?: LibraryLevel;
+  onLevelChange?: (level: LibraryLevel) => void;
+  onOpenModeSelection?: () => void;
   onExit: () => void;
   onGoToFlashcards?: () => void;
   onGoToSentences?: () => void;
 }
 
-const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlashcards, onGoToSentences }) => {
-  // Sort words chronologically (oldest to newest)
+const QuizMode: React.FC<QuizModeProps> = ({
+  words,
+  allWords,
+  studyMode = 'USER_WORDS',
+  selectedLevel = 'A1',
+  onLevelChange,
+  onOpenModeSelection,
+  onExit,
+  onGoToFlashcards,
+  onGoToSentences
+}) => {
+  const currentMode: QuizStudyMode = studyMode;
+  const currentLevel: LibraryLevel = selectedLevel;
+
+  // Filter and sort words
   const sortedWords = useMemo(() => {
+    if (currentMode === 'LIBRARY') {
+      return words.filter(w => !w.set_name || w.set_name.toUpperCase() === currentLevel.toUpperCase());
+    }
     return words
       .filter(w => !w.is_archived && (!w.set_name || w.set_name === "Demo Kelimeler"))
       .sort((a, b) => new Date(a.created_at || 0).getTime() - new Date(b.created_at || 0).getTime());
-  }, [words]);
+  }, [words, currentMode, currentLevel]);
 
   const totalSets = Math.max(1, Math.ceil(sortedWords.length / QUIZ_SET_SIZE));
 
   const [currentSetNum, setCurrentSetNum] = useState<number>(() => {
-    const saved = localStorage.getItem('lingua_quiz_set_num');
-    if (saved) {
-      const parsed = parseInt(saved, 10);
-      if (!isNaN(parsed) && parsed > 0) return parsed;
-    }
-    return 1;
+    return getStoredQuizSetNum(currentMode, currentLevel);
   });
 
   const [currentIndex, setCurrentIndex] = useState<number>(() => {
-    const saved = localStorage.getItem('lingua_quiz_current_index');
-    if (saved) {
-      const parsed = parseInt(saved, 10);
-      if (!isNaN(parsed) && parsed >= 0) return parsed;
-    }
-    return 0;
+    return getStoredQuizIndex(currentMode, currentLevel);
   });
 
   const [activeIds, setActiveIds] = useState<string[]>(() => {
-    const saved = localStorage.getItem('lingua_quiz_active_ids');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-      } catch (e) {}
-    }
-    return [];
+    return getStoredQuizActiveIds(currentMode, currentLevel);
   });
 
   const [score, setScore] = useState(0);
@@ -73,13 +115,90 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     return saved === null ? true : saved === 'true';
   });
 
-  useEffect(() => {
-    localStorage.setItem('lingua_quiz_set_num', currentSetNum.toString());
-  }, [currentSetNum]);
+  const activeSessionRef = useRef({
+    currentMode,
+    currentLevel,
+    currentIndex,
+    currentSetNum,
+    activeIds
+  });
 
   useEffect(() => {
-    localStorage.setItem('lingua_quiz_current_index', currentIndex.toString());
-  }, [currentIndex]);
+    activeSessionRef.current = {
+      currentMode,
+      currentLevel,
+      currentIndex,
+      currentSetNum,
+      activeIds
+    };
+  }, [currentMode, currentLevel, currentIndex, currentSetNum, activeIds]);
+
+  const prevConfigRef = useRef({ currentMode, currentLevel });
+
+  // Handle switching between modes or levels seamlessly
+  useEffect(() => {
+    const prev = prevConfigRef.current;
+    const modeOrLevelChanged = prev.currentMode !== currentMode || prev.currentLevel !== currentLevel;
+
+    if (modeOrLevelChanged) {
+      // 1. Save outgoing state
+      localStorage.setItem(getQuizCurrentIndexKey(prev.currentMode, prev.currentLevel), activeSessionRef.current.currentIndex.toString());
+      localStorage.setItem(getQuizSetNumKey(prev.currentMode, prev.currentLevel), activeSessionRef.current.currentSetNum.toString());
+      if (activeSessionRef.current.activeIds.length > 0) {
+        localStorage.setItem(getQuizActiveIdsKey(prev.currentMode, prev.currentLevel), JSON.stringify(activeSessionRef.current.activeIds));
+      }
+
+      // 2. Load incoming state
+      const targetIndex = getStoredQuizIndex(currentMode, currentLevel);
+      const targetSet = getStoredQuizSetNum(currentMode, currentLevel);
+      let targetActiveIds = getStoredQuizActiveIds(currentMode, currentLevel);
+
+      prevConfigRef.current = { currentMode, currentLevel };
+
+      setCurrentIndex(targetIndex);
+      setCurrentSetNum(targetSet);
+      setSelectedOption(null);
+      setShowResult(false);
+      setFinished(false);
+      setScore(0);
+      setIncorrectWords([]);
+
+      // 3. Sync activeIds with words
+      if (sortedWords.length === 0) {
+        setActiveIds([]);
+        return;
+      }
+
+      if (targetActiveIds.length > 0) {
+        const validIds = targetActiveIds.filter(id => sortedWords.some(w => w.id === id));
+        targetActiveIds = validIds;
+      }
+
+      if (targetActiveIds.length === 0) {
+        const setStart = (targetSet - 1) * QUIZ_SET_SIZE;
+        const setEnd = Math.min(setStart + QUIZ_SET_SIZE, sortedWords.length);
+        const setWords = sortedWords.slice(setStart, setEnd);
+        if (setWords.length > 0) {
+          const shuffled = [...setWords].sort(() => Math.random() - 0.5);
+          targetActiveIds = shuffled.map(w => w.id);
+          localStorage.setItem(getQuizActiveIdsKey(currentMode, currentLevel), JSON.stringify(targetActiveIds));
+        }
+      }
+
+      setActiveIds(targetActiveIds);
+      return;
+    }
+
+    prevConfigRef.current = { currentMode, currentLevel };
+  }, [currentMode, currentLevel, sortedWords]);
+
+  useEffect(() => {
+    localStorage.setItem(getQuizSetNumKey(currentMode, currentLevel), currentSetNum.toString());
+  }, [currentSetNum, currentMode, currentLevel]);
+
+  useEffect(() => {
+    localStorage.setItem(getQuizCurrentIndexKey(currentMode, currentLevel), currentIndex.toString());
+  }, [currentIndex, currentMode, currentLevel]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.DIRECTION, direction);
@@ -99,8 +218,8 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
   useEffect(() => {
     if (sortedWords.length === 0) return;
 
-    const hasSaved = localStorage.getItem('lingua_quiz_active_ids');
-    const savedSetNum = localStorage.getItem('lingua_quiz_set_num');
+    const hasSaved = localStorage.getItem(getQuizActiveIdsKey(currentMode, currentLevel));
+    const savedSetNum = localStorage.getItem(getQuizSetNumKey(currentMode, currentLevel));
 
     // If activeIds already matches the currentSetNum's words, skip generating
     if (hasSaved && savedSetNum && parseInt(savedSetNum, 10) === currentSetNum && activeIds.length > 0) {
@@ -112,24 +231,23 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     const setWords = sortedWords.slice(setStart, setEnd);
 
     if (setWords.length > 0) {
-      // Shuffle the set items internally to avoid order bias within the 20 words
       const shuffled = [...setWords].sort(() => Math.random() - 0.5);
       const newIds = shuffled.map(w => w.id);
-      localStorage.setItem('lingua_quiz_active_ids', JSON.stringify(newIds));
-      localStorage.setItem('lingua_quiz_current_index', '0');
+      localStorage.setItem(getQuizActiveIdsKey(currentMode, currentLevel), JSON.stringify(newIds));
+      localStorage.setItem(getQuizCurrentIndexKey(currentMode, currentLevel), '0');
       setActiveIds(newIds);
       setCurrentIndex(0);
       setScore(0);
       setFinished(false);
       setIncorrectWords([]);
     }
-  }, [sortedWords, currentSetNum, activeIds.length]);
+  }, [sortedWords, currentSetNum, activeIds.length, currentMode, currentLevel]);
 
   const quizSet = useMemo(() => {
     return activeIds
-      .map(id => words.find(w => w.id === id))
+      .map(id => sortedWords.find(w => w.id === id) || words.find(w => w.id === id))
       .filter((w): w is Word => !!w);
-  }, [activeIds, words]);
+  }, [activeIds, sortedWords, words]);
 
   const speak = useCallback((text: string) => {
     window.speechSynthesis.cancel();
@@ -147,7 +265,8 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     const correct = direction === LanguageDirection.EN_TR ? currentWord.turkish : currentWord.english;
     const key = direction === LanguageDirection.EN_TR ? 'turkish' : 'english';
 
-    const otherWords = allWords.filter(w => w.id !== currentWord.id);
+    const pool = allWords.length > 3 ? allWords : (sortedWords.length > 3 ? sortedWords : words);
+    const otherWords = pool.filter(w => w.id !== currentWord.id);
     const shuffledOthers = [...otherWords].sort(() => 0.5 - Math.random());
     const wrongAnswers = shuffledOthers.slice(0, 3).map(w => (w as any)[key]);
 
@@ -156,7 +275,7 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     }
 
     return [correct, ...wrongAnswers].sort(() => 0.5 - Math.random());
-  }, [currentWord, allWords, direction]);
+  }, [currentWord, allWords, sortedWords, words, direction]);
 
   const handleSelect = (option: string) => {
     if (showResult) return;
@@ -189,15 +308,16 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
 
   const handleNewSet = useCallback(() => {
     const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
-    localStorage.removeItem('lingua_quiz_active_ids');
+    localStorage.removeItem(getQuizActiveIdsKey(currentMode, currentLevel));
     setActiveIds([]);
     setCurrentSetNum(nextSetNum);
     setSelectedOption(null);
     setShowResult(false);
     setFinished(false);
+    setScore(0);
     setIncorrectWords([]);
     setShowWrongAnswersModal(false);
-  }, [currentSetNum, totalSets]);
+  }, [currentSetNum, totalSets, currentMode, currentLevel]);
 
   const progressPercent = quizSet.length > 0 ? ((currentIndex + 1) / quizSet.length) * 100 : 0;
 
@@ -218,15 +338,15 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
             <div className="flex flex-col gap-2">
               <div className="flex justify-between items-center bg-white/5 p-4 rounded-2xl border border-white/5">
                 <div className="text-left">
-                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Doğru Sayısı</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase">Doğru Sayısı</p>
                   <p className="text-xl font-black text-white">{score / 10} / {quizSet.length}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Başarı Oranı</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase">Başarı Oranı</p>
                   <p className="text-xl font-black text-emerald-500">%{Math.round(((score / 10) / (quizSet.length || 1)) * 100)}</p>
                 </div>
               </div>
-              
+
               {incorrectWords.length > 0 && (
                 <button
                   onClick={() => setShowWrongAnswersModal(true)}
@@ -245,6 +365,15 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
             >
               <RefreshCw size={18} /> Yeni Set ile Devam Et
             </button>
+
+            {onOpenModeSelection && (
+              <button
+                onClick={onOpenModeSelection}
+                className="w-full py-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-3xl font-black text-base hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
+              >
+                <SlidersHorizontal size={18} /> Mod Seç / Değiştir
+              </button>
+            )}
 
             {onGoToFlashcards && (
               <button
@@ -334,6 +463,41 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
     );
   }
 
+  // Empty state handling
+  if (sortedWords.length === 0) {
+    return (
+      <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 text-center font-['Plus_Jakarta_Sans'] text-white relative">
+        <div className="bg-zinc-900 border border-white/10 p-8 rounded-[40px] max-w-md w-full shadow-2xl">
+          <BookOpen className="w-16 h-16 text-emerald-400 mx-auto mb-4 opacity-70" />
+          <h2 className="text-2xl font-black mb-2">
+            {currentMode === 'LIBRARY' ? `${currentLevel} Seviyesinde Kelime Bulunamadı` : 'Kelimeleriniz Bulunamadı'}
+          </h2>
+          <p className="text-slate-400 text-sm font-bold mb-6 leading-relaxed">
+            {currentMode === 'LIBRARY'
+              ? 'Bu seviyede kelime bulunamadı veya yükleniyor.'
+              : 'Henüz kelime listenizde kelime bulunmuyor. Kütüphaneden test çözebilir ya da kelime ekleyebilirsiniz.'}
+          </p>
+          <div className="space-y-3">
+            {onOpenModeSelection && (
+              <button
+                onClick={onOpenModeSelection}
+                className="w-full py-3.5 bg-emerald-500 text-black font-black rounded-2xl hover:bg-emerald-400 transition-all active:scale-95"
+              >
+                Farklı Bir Mod Seç
+              </button>
+            )}
+            <button
+              onClick={onExit}
+              className="w-full py-3.5 bg-zinc-800 text-slate-300 font-bold rounded-2xl hover:bg-zinc-700 transition-all active:scale-95"
+            >
+              Ana Sayfaya Dön
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!currentWord) return null;
 
   return (
@@ -341,21 +505,91 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-blue-500 opacity-20"></div>
 
       {/* Header */}
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-10 py-6 md:py-8 relative z-10">
-        <div className="flex justify-between items-center w-full">
-          <button onClick={onExit} className="p-4 bg-white/5 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all">
-            <ArrowLeft size={24} />
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-10 py-4 sm:py-6 relative z-10">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-2 sm:gap-4 w-full">
+          <button 
+            onClick={onExit} 
+            className="p-2.5 sm:p-3 bg-white/5 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all flex items-center gap-1.5 shrink-0"
+            title="Ana Sayfa"
+          >
+            <ArrowLeft size={18} />
+            <span className="hidden sm:inline text-xs font-bold">Ana Sayfa</span>
           </button>
 
-          <div className="flex items-center gap-3 bg-white/5 border border-white/5 px-6 py-3 rounded-full font-black text-emerald-400">
-            <Zap size={16} fill="currentColor" />
+          {/* Center: Mod Seç, Toggles & Level Tabs */}
+          <div className="flex flex-col items-center gap-1.5 sm:gap-2 justify-self-center max-w-full min-w-0">
+            <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
+              {onOpenModeSelection && (
+                <button
+                  onClick={onOpenModeSelection}
+                  className="bg-purple-600/20 border border-purple-500/30 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-purple-300 font-black text-[10px] sm:text-xs flex items-center gap-1 hover:bg-purple-600 hover:text-white transition-all shrink-0"
+                  title="Test Çalışma Modunu Değiştir"
+                >
+                  <SlidersHorizontal size={13} />
+                  <span>Mod Seç</span>
+                </button>
+              )}
+
+              <button
+                onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
+                className="bg-emerald-500/10 border border-emerald-500/20 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-emerald-500 font-black text-[10px] sm:text-xs tracking-wider uppercase flex items-center gap-1 hover:bg-emerald-500/20 transition-all shrink-0"
+              >
+                <Languages size={13} /> {direction.replace('_', ' → ')}
+              </button>
+
+              <button
+                onClick={() => setIsTtsEnabled(prev => !prev)}
+                className={`p-1.5 rounded-full border transition-all shrink-0 ${
+                  isTtsEnabled 
+                    ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-500 hover:bg-emerald-500/20" 
+                    : "bg-zinc-900 border-white/5 text-slate-500 hover:bg-zinc-800"
+                }`}
+                title={isTtsEnabled ? "Sesli Okuma Açık" : "Sesli Okuma Kapalı"}
+              >
+                {isTtsEnabled ? (
+                  <Volume2 size={14} />
+                ) : (
+                  <div className="relative flex items-center justify-center">
+                    <VolumeX size={14} className="opacity-60" />
+                    <div className="absolute w-[16px] h-[1.5px] bg-slate-500 rotate-45" />
+                  </div>
+                )}
+              </button>
+            </div>
+
+            {/* Level Tabs for Library Mode */}
+            {currentMode === 'LIBRARY' && onLevelChange && (
+              <div className="flex items-center justify-center gap-1 overflow-x-auto no-scrollbar max-w-full py-0.5">
+                {LEVELS.map(lvl => (
+                  <button
+                    key={lvl}
+                    onClick={() => {
+                      if (lvl !== currentLevel) {
+                        onLevelChange(lvl);
+                      }
+                    }}
+                    className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full font-black text-[10px] sm:text-xs transition-all border shrink-0 ${
+                      currentLevel === lvl
+                        ? 'bg-emerald-500 text-black border-emerald-400 shadow-lg shadow-emerald-500/20'
+                        : 'bg-zinc-900 text-slate-400 border-white/10 hover:border-white/30 hover:text-white'
+                    }`}
+                  >
+                    {lvl}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="flex items-center gap-1.5 bg-white/5 border border-white/5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-black text-emerald-400 text-xs sm:text-sm shrink-0">
+            <Zap size={14} fill="currentColor" />
             {score}
           </div>
         </div>
       </div>
 
       {/* Set Progress Bar */}
-      <div className="w-full max-w-sm mx-auto px-6 mb-4 mt-2 relative z-10">
+      <div className="w-full max-w-sm mx-auto px-6 mb-4 mt-1 relative z-10">
         <div className="flex justify-start items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1.5">
           <span>İlerleyen: {currentIndex + 1} / {quizSet.length}</span>
         </div>
@@ -371,35 +605,6 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
       </div>
 
       <div className="flex-1 px-8 flex flex-col justify-center max-w-lg mx-auto w-full relative z-10">
-
-        <div className="flex justify-center items-center gap-3 mb-8">
-          <button
-            onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
-            className="bg-emerald-500/10 border border-emerald-500/20 px-6 py-2 rounded-full text-emerald-500 font-black text-[10px] tracking-widest uppercase flex items-center gap-3 hover:bg-emerald-500/20 transition-all"
-          >
-            <Languages size={16} /> {direction.replace('_', ' → ')}
-          </button>
-
-          <button
-            onClick={() => setIsTtsEnabled(prev => !prev)}
-            className={`p-2.5 rounded-full border transition-all ${
-              isTtsEnabled 
-                ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-500 hover:bg-emerald-500/20" 
-                : "bg-zinc-900 border-white/5 text-slate-500 hover:bg-zinc-800"
-            }`}
-            title={isTtsEnabled ? "Sesli Okuma Açık" : "Sesli Okuma Kapalı"}
-          >
-            {isTtsEnabled ? (
-              <Volume2 size={16} />
-            ) : (
-              <div className="relative flex items-center justify-center">
-                <VolumeX size={16} className="opacity-60" />
-                <div className="absolute w-[18px] h-[1.5px] bg-slate-500 rotate-45" />
-              </div>
-            )}
-          </button>
-        </div>
-
         <div className="bg-zinc-900 rounded-[56px] p-12 border border-white/5 shadow-2xl mb-12 text-center relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-2 bg-emerald-500/30 group-hover:h-3 transition-all"></div>
           <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.3em] mb-4">
@@ -427,8 +632,6 @@ const QuizMode: React.FC<QuizModeProps> = ({ words, allWords, onExit, onGoToFlas
           })}
         </div>
       </div>
-
-      <div className="pb-8"></div>
     </div>
   );
 };

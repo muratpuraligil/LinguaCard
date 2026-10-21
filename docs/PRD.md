@@ -64,16 +64,25 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - **Mod Değiştirme:** Kartlar çalışma ekranının üst menüsünde bulunan "Mod Seç" butonu ile istenildiğinde mod seçim ekranına dönülebilir.
     - **Otomatik Telaffuz:** Kartın İngilizce yüzü görüntülendiği anda seslendirme otomatik yapılır.
 
-- **Quiz (Test Çöz):** 
+- **Quiz (Test Çöz - Çalışma Modları & Kütüphane Entegrasyonu):** 
+    - **2 Farklı Çalışma Modu (Mode Selector):**
+      1. **Kütüphaneden Çöz (Ortak Alan):** Tüm kullanıcıların erişebildiği global kütüphanedeki A1, A2, B1, B2, C1, C2 seviye kelime havuzları ile test çözme imkanı. Test ekranı başlığında yer alan seviye sekmeleri ile anında seviye değiştirilebilir; her seviye için bağımsız kalıcı hafıza anahtarları (`lingua_quiz_set_num_${level}`, `lingua_quiz_current_index_${level}`, `lingua_quiz_active_ids_${level}`) kullanılır. Yanlış şıklar (distractors) ilgili seviyenin kelime havuzundan dinamik olarak çekilir.
+      2. **Listendeki Kelimelerle Çöz (Bireysel Alan):** Kullanıcının kendi eklediği kişisel kelime listesi üzerinden kronolojik 20'şerli setlerle test çözme ortamı.
+    - **Çalışma Modu Seçici Modal (`QuizModeSelectionModal`):** Dashboard üzerinden veya test içindeki "Mod Seç" butonuyla açılan, 1. Kütüphaneden Çöz (Emerald) ve 2. Listendeki Kelimelerle Çöz (Mor) seçeneklerini içeren minimalist modal ("Yeni kelimelerle çalış" modu test çözme mantığına uygun olmadığı için hariç tutulmuştur).
     - Çoktan seçmeli, puan tabanlı dinamik testler.
-    - **Seçim Mantığı:** Flaşkartlardaki gibi aktif kelimeler kronolojik olarak 20'şerli setlere bölünür ve set içi karıştırılarak test oluşturulur.
-    - **Kaldığın Yerden Devam:** Çalışılan aktif set numarası (`lingua_quiz_set_num`) ve set içindeki aktif soru sırası (`lingua_quiz_current_index`) otomatik kaydedilir. Test yarım kalırsa kalınan set ve sorudan devam edilir.
-    - **İlerleme Takibi:** Ekranın en üstünde yer alan progress bar ile kaçıncı sette olunduğu (`Set X / Y`) ve o testin içindeki ilerleme gösterilir.
+    - **Seçim Mantığı:** Aktif kelimeler kronolojik veya seviye bazlı olarak 20'şerli setlere bölünür ve set içi karıştırılarak test oluşturulur.
+    - **Kaldığın Yerden Devam:** Çalışılan aktif set numarası ve set içindeki aktif soru sırası çalışma modu ve seviyeye göre izole olarak otomatik kaydedilir. Test yarım kalırsa kalınan set ve sorudan devam edilir.
+    - **İlerleme Takibi:** Ekranın üstünde yer alan progress bar ile kaçıncı sette olunduğu (`SET X / Y`) ve o testin içindeki soru ilerlemesi gösterilir.
     - **Otomatik Telaffuz & Ses Kontrolü:** Cevap seçildiği anda doğru İngilizce kelimenin telaffuzu otomatik olarak seslendirilir. TR-EN yön butonunun yanındaki hoparlör ikonu ile bu özellik açılıp kapatılabilir.
-    - **Yapılan Yanlışları İzleme:** Test bitiş ekranında yanlış cevaplanan kelimeleri detaylı inceleme modalı.
+    - **Yapılan Yanlışları İzleme:** Test bitiş ekranında yanlış cevaplanan kelimeleri detaylı inceleme ve telaffuzlarını dinleme modalı.
+    - **Boş Liste Koruması:** Kullanıcının henüz kendi kelimesi olmasa bile Dashboard'dan Test Çöz modülünü başlatıp doğrudan Kütüphaneden Çöz moduna geçebilmesi.
 
 - **Cümleler (Sentence Builder):** 
     - İnteraktif yazım pratiği ve mod seçim modalı.
+    - **Hizalanmış Mod Seçim Sırası (Aligned Mode Selector):** Cümleler modülündeki çalışma modları sırası, Kartlar modülü ile tam olarak hizalanmıştır:
+      1. **Kütüphaneden Çalış** (Ortak alan; yardımcı fiil ve modallar özelinde çalışma)
+      2. **Listendeki Kelimelerle Çalış** (Bireysel alan; kullanıcının kendi kelime listesi)
+      3. **Yeni Cümlelerle Çalış** (Resim yükleme ve özel setler)
     - **Esnek Kontrol:** Kısaltmaları (I'm / I am, She's / She is) kabul eden akıllı eşleşme algoritması.
     - **Sesli Geri Bildirim:** Doğru cevaplarda otomatik telaffuz.
     - **Kaldığın Yerden Devam:** Her set için son çalışılan satırın otomatik kaydedilmesi ve scroll focus.
@@ -93,8 +102,11 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 
 ## 3. Kullanıcı Deneyimi (UX)
 - **Dinamik Dashboard:** Görsel ilerleme takibi ve pratik alanları.
-- **Kart Modu Seçici Modal:** Hızlı erişim için optimize edilmiş 3 kartlı Mod Seçim Modalı (1. Kütüphaneden Çalış, 2. Listendeki Kelimelerle Çalış, 3. Yeni Kelimelerle Çalış).
-- **A1–C2 Seviye Sekmeleri:** Kütüphane modunda 6 CEFR seviyesi (A1, A2, B1, B2, C1, C2) arasında sıfır gecikmeli (0ms) ve titreşimsiz (zero-flicker) sekme geçişi.
+- **Modüller Arası Tutarlı Mod Seçim Modalları (Cross-Module Aligned Selection Modals):** Kartlar, Cümleler ve Test Çöz modüllerinde ortak görsel hiyerarşi, renk kodlaması (Yeşil: Kütüphane, Mor: Kişisel Liste, Mavi: Yeni İçerik/AI) ve standart ikonografi:
+  - **Kartlar:** 1. Kütüphaneden Çalış, 2. Listendeki Kelimelerle Çalış, 3. Yeni Kelimelerle Çalış
+  - **Cümleler:** 1. Kütüphaneden Çalış, 2. Listendeki Kelimelerle Çalış, 3. Yeni Cümlelerle Çalış
+  - **Test Çöz:** 1. Kütüphaneden Çöz, 2. Listendeki Kelimelerle Çöz (Yeni kelimeler hariç tutulmuştur)
+- **A1–C2 Seviye Sekmeleri:** Kütüphane ve Test modlarında 6 CEFR seviyesi (A1, A2, B1, B2, C1, C2) arasında sıfır gecikmeli (0ms) ve titreşimsiz (zero-flicker) sekme geçişi.
 - **Hands-Free Dinleme Modu Deneyimi:** Ekrana dokunmadan kilit ekranından ve Bluetooth kulaklık üzerinden çalışma imkanı; şık yüzen kontrol barı (`ListeningModeBar`), animasyon geçiş koruması ve sızıntısız kart akışı.
 - **Hassas Dikey Hizalama & Tipografik Denge:** Başlık kontrolleri ile seviye sekmelerinin matematiksel olarak aynı dikey hizada konumlanması, 3 sütunlu dengeli ızgara yapısı.
 - **Mobil Web Öncelikli & Viewport-Fit Uyum:** 320px - 480px küçük ekranlarda dikey kaydırmayı ortadan kaldıran dinamik viewport sığdırma ve dokunmatik erişilebilirlik.
