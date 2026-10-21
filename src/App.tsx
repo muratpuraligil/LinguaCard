@@ -61,26 +61,34 @@ const blobToBase64 = (blob: Blob): Promise<string> => {
 };
 
 export default function App() {
+  const [initialChallenge] = useState<QuizChallengeData | null>(() => {
+    return parseChallengeUrl(window.location.search || window.location.hash);
+  });
+  const [challengeData, setChallengeData] = useState<QuizChallengeData | null>(initialChallenge);
+
   const [session, setSession] = useState<any>(null);
   const [loadingSession, setLoadingSession] = useState(true);
   const [words, setWords] = useState<Word[]>([]);
-  const [mode, setMode] = useState<AppMode>(AppMode.HOME);
+  const [mode, setMode] = useState<AppMode>(() => initialChallenge ? AppMode.QUIZ : AppMode.HOME);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [showSentenceSelection, setShowSentenceSelection] = useState(false);
   const [showFlashcardSelection, setShowFlashcardSelection] = useState(false);
   const [showQuizSelection, setShowQuizSelection] = useState(false);
   const [flashcardStudyMode, setFlashcardStudyMode] = useState<FlashcardStudyMode>('USER_WORDS');
-  const [quizStudyMode, setQuizStudyMode] = useState<QuizStudyMode>('USER_WORDS');
+  const [quizStudyMode, setQuizStudyMode] = useState<QuizStudyMode>(() => initialChallenge ? 'LIBRARY' : 'USER_WORDS');
   const [selectedLibraryLevel, setSelectedLibraryLevel] = useState<LibraryLevel>(() => {
+    if (initialChallenge) return initialChallenge.level;
     const saved = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
     const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
     return saved && validLevels.includes(saved) ? saved : 'A1';
   });
   const [libraryWords, setLibraryWords] = useState<Word[]>(() => {
-    const saved = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
-    const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-    const initialLevel = saved && validLevels.includes(saved) ? saved : 'A1';
-    const local = wordService.getLocalLibraryWords(initialLevel);
+    const targetLevel = initialChallenge ? initialChallenge.level : (() => {
+      const saved = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
+      const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+      return saved && validLevels.includes(saved) ? saved : 'A1';
+    })();
+    const local = wordService.getLocalLibraryWords(targetLevel);
     return local && local.length > 0 ? local : (a1WordsData as Word[]);
   });
   const [isLibraryLoading, setIsLibraryLoading] = useState(false);
@@ -88,9 +96,6 @@ export default function App() {
   const [pendingSetName, setPendingSetName] = useState<string | null>(null);
   const [hasTourBeenShown, setHasTourBeenShown] = useState(false);
   const [activeLibrarySet, setActiveLibrarySet] = useState<LibrarySet | null>(null);
-  const [challengeData, setChallengeData] = useState<QuizChallengeData | null>(() => {
-    return parseChallengeUrl(window.location.search || window.location.hash);
-  });
   const [isRecoveryMode, setIsRecoveryMode] = useState(() => {
     return sessionStorage.getItem('lingua_recovery_pending') === 'true';
   });
@@ -606,7 +611,7 @@ export default function App() {
 
       {mode === AppMode.HOME && (
         <Dashboard
-          userEmail={session.user.email}
+          userEmail={session?.user?.email || 'Misafir'}
           words={displayWords}
           onModeSelect={(m) => {
             if (m === AppMode.SENTENCES) {

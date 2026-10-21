@@ -1,28 +1,28 @@
 import type { QuizChallengeData, LibraryLevel } from '../types.ts';
 
 /**
- * Generates a challenge URL containing level, set, score, and wordIds.
+ * Generates a challenge URL containing level, set, score, and optional custom parameters.
+ * Produces an ultra-compact URL format (?ch=LEVEL-SET-SCORE) to fit neatly on mobile/WhatsApp without line wrapping.
  */
 export function generateChallengeUrl(data: QuizChallengeData, baseUrl?: string): string {
   const base = baseUrl || (typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : '');
-  const params = new URLSearchParams();
-
-  params.set('challenge', 'quiz');
-  params.set('lvl', data.level);
-  params.set('set', data.setNum.toString());
-  params.set('score', data.challengerScore.toString());
+  
+  // Compact format: ?ch=LEVEL-SET-SCORE[-NAME]
+  let chValue = `${data.level}-${data.setNum}-${data.challengerScore}`;
   if (data.challengerName) {
-    params.set('by', data.challengerName);
-  }
-  if (data.wordIds && data.wordIds.length > 0) {
-    params.set('ids', data.wordIds.join(','));
+    chValue += `-${encodeURIComponent(data.challengerName)}`;
   }
 
-  return `${base}?${params.toString()}`;
+  // If non-library custom wordIds exist, append as query parameter (rare)
+  const isCustomWords = data.wordIds && data.wordIds.length > 0 && !data.wordIds[0].includes('-lib-');
+  const query = isCustomWords ? `?ch=${chValue}&ids=${data.wordIds!.join(',')}` : `?ch=${chValue}`;
+
+  return `${base}${query}`;
 }
 
 /**
  * Parses challenge parameters from window.location.search or hash.
+ * Supports both compact ?ch=LEVEL-SET-SCORE and legacy/verbose ?challenge=quiz&lvl=...
  */
 export function parseChallengeUrl(searchOrHash: string): QuizChallengeData | null {
   if (!searchOrHash) return null;
@@ -32,22 +32,49 @@ export function parseChallengeUrl(searchOrHash: string): QuizChallengeData | nul
     : (searchOrHash.startsWith('#') ? searchOrHash.replace('#', '?') : searchOrHash);
 
   const params = new URLSearchParams(clean);
-  const challengeType = params.get('challenge');
 
-  if (challengeType !== 'quiz') {
+  // 1. Check compact format: ?ch=LEVEL-SET-SCORE[-NAME]
+  const ch = params.get('ch');
+  if (ch) {
+    const parts = ch.split('-');
+    if (parts.length >= 3) {
+      const lvl = parts[0].toUpperCase() as LibraryLevel;
+      const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+      const level = validLevels.includes(lvl) ? lvl : 'A1';
+      const setNum = parseInt(parts[1], 10) || 1;
+      const challengerScore = parseInt(parts[2], 10) || 0;
+      const challengerName = parts.length > 3 ? decodeURIComponent(parts.slice(3).join('-')) : (params.get('by') || undefined);
+
+      const idsParam = params.get('ids');
+      const wordIds = idsParam ? idsParam.split(',').filter(Boolean) : undefined;
+
+      return {
+        level,
+        setNum,
+        challengerScore,
+        challengerName,
+        wordIds
+      };
+    }
+  }
+
+  // 2. Check standard / verbose format: ?challenge=quiz or ?c=q
+  const challengeType = params.get('challenge') || params.get('c');
+
+  if (challengeType !== 'quiz' && challengeType !== 'q') {
     return null;
   }
 
-  const lvl = (params.get('lvl') || 'A1').toUpperCase() as LibraryLevel;
+  const lvl = (params.get('lvl') || params.get('l') || 'A1').toUpperCase() as LibraryLevel;
   const validLevels: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
   const level = validLevels.includes(lvl) ? lvl : 'A1';
 
-  const setNum = parseInt(params.get('set') || '1', 10) || 1;
-  const challengerScore = parseInt(params.get('score') || '0', 10) || 0;
+  const setNum = parseInt(params.get('set') || params.get('s') || '1', 10) || 1;
+  const challengerScore = parseInt(params.get('score') || params.get('sc') || '0', 10) || 0;
   const challengerName = params.get('by') || undefined;
 
   const idsParam = params.get('ids');
-  const wordIds = idsParam ? idsParam.split(',').filter(Boolean) : [];
+  const wordIds = idsParam ? idsParam.split(',').filter(Boolean) : undefined;
 
   return {
     level,

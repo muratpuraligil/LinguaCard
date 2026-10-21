@@ -103,8 +103,17 @@ const QuizMode: React.FC<QuizModeProps> = ({
   });
 
   const [activeIds, setActiveIds] = useState<string[]>(() => {
-    if (isChallenge && challengeData && challengeData.wordIds && challengeData.wordIds.length > 0) {
-      return challengeData.wordIds;
+    if (isChallenge && challengeData) {
+      if (challengeData.wordIds && challengeData.wordIds.length > 0) {
+        return challengeData.wordIds;
+      }
+      const setStart = (challengeData.setNum - 1) * QUIZ_SET_SIZE;
+      const targetPool = words.length > 0 ? words : (allWords.length > 0 ? allWords : []);
+      const setSlice = targetPool.slice(setStart, setStart + QUIZ_SET_SIZE);
+      if (setSlice.length > 0) {
+        return setSlice.map(w => w.id);
+      }
+      return [];
     }
     return getStoredQuizActiveIds(currentMode, currentLevel);
   });
@@ -597,7 +606,16 @@ const QuizMode: React.FC<QuizModeProps> = ({
     );
   }
 
-  if (!currentWord) return null;
+  if (!currentWord) {
+    return (
+      <div className="min-h-screen bg-black flex flex-col items-center justify-center font-['Plus_Jakarta_Sans'] text-white">
+        <div className="w-10 h-10 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin mb-4" />
+        <p className="text-slate-400 font-bold text-xs uppercase tracking-widest animate-pulse">
+          Yarışma Soruları Hazırlanıyor...
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="h-screen max-h-screen bg-black flex flex-col justify-between font-['Plus_Jakarta_Sans'] relative overflow-hidden text-white select-none">

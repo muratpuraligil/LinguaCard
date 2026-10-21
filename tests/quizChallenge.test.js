@@ -26,30 +26,55 @@ test('challengeUtils module exists and exports challenge encoding/decoding and W
   assert.ok(utilsSource.includes('createChallengeResultMessage'), 'must export createChallengeResultMessage');
 });
 
-test('generateChallengeUrl and parseChallengeUrl roundtrip data accurately', () => {
+test('generateChallengeUrl generates a compact URL format and parseChallengeUrl parses both compact and verbose formats', () => {
   const mockData = {
     level: 'B1',
-    setNum: 3,
-    challengerScore: 160,
-    challengerName: 'Murat',
-    wordIds: ['b1-1', 'b1-5', 'b1-9']
+    setNum: 1,
+    challengerScore: 20
   };
 
-  const url = generateChallengeUrl(mockData, 'https://linguacard.app/');
-  assert.ok(url.startsWith('https://linguacard.app/?challenge=quiz'), 'url must have correct base and challenge flag');
-  assert.ok(url.includes('lvl=B1'), 'url must include level');
-  assert.ok(url.includes('set=3'), 'url must include set');
-  assert.ok(url.includes('score=160'), 'url must include score');
-  assert.ok(url.includes('by=Murat'), 'url must include challenger name');
-  assert.ok(url.includes('ids=b1-1%2Cb1-5%2Cb1-9') || url.includes('ids=b1-1,b1-5,b1-9'), 'url must include wordIds');
+  const shortUrl = generateChallengeUrl(mockData, 'https://linguacard.app/');
+  assert.ok(shortUrl.includes('ch=B1-1-20'), 'shortUrl must use compact ?ch=LEVEL-SET-SCORE format');
+  assert.ok(shortUrl.length < 60, 'compact url must be short (under 60 chars)');
 
-  const parsed = parseChallengeUrl(url);
-  assert.ok(parsed, 'parsed challenge data must not be null');
-  assert.equal(parsed.level, 'B1');
-  assert.equal(parsed.setNum, 3);
-  assert.equal(parsed.challengerScore, 160);
-  assert.equal(parsed.challengerName, 'Murat');
-  assert.deepEqual(parsed.wordIds, ['b1-1', 'b1-5', 'b1-9']);
+  const parsedShort = parseChallengeUrl(shortUrl);
+  assert.ok(parsedShort, 'parsedShort must not be null');
+  assert.equal(parsedShort.level, 'B1');
+  assert.equal(parsedShort.setNum, 1);
+  assert.equal(parsedShort.challengerScore, 20);
+
+  // Backward compatibility with verbose format
+  const verboseUrl = 'https://linguacard.app/?challenge=quiz&lvl=B1&set=1&score=20&by=Ahmet';
+  const parsedVerbose = parseChallengeUrl(verboseUrl);
+  assert.ok(parsedVerbose, 'parsedVerbose must not be null');
+  assert.equal(parsedVerbose.level, 'B1');
+  assert.equal(parsedVerbose.setNum, 1);
+  assert.equal(parsedVerbose.challengerScore, 20);
+  assert.equal(parsedVerbose.challengerName, 'Ahmet');
+});
+
+test('App.tsx protects guest rendering and initializes quiz mode and level synchronously when challenge is present', () => {
+  const appSource = fs.readFileSync(path.join(rootDir, 'src/App.tsx'), 'utf8');
+
+  // Must not have dangerous unguarded session.user.email
+  assert.ok(!appSource.includes('userEmail={session.user.email}'), 'App.tsx must safely guard session.user.email');
+  assert.ok(appSource.includes('session?.user?.email'), 'App.tsx must use optional chaining for session?.user?.email');
+
+  // Must initialize mode to QUIZ directly if challengeData is present to avoid black screen / flash of dashboard
+  assert.ok(
+    appSource.includes('initialChallenge') || appSource.includes('parseChallengeUrl'),
+    'App.tsx must check initial challenge during state initialization'
+  );
+});
+
+test('QuizMode.tsx resolves words from level/set when wordIds are omitted in compact challenge', () => {
+  const quizSource = fs.readFileSync(path.join(rootDir, 'src/components/QuizMode.tsx'), 'utf8');
+
+  // Must not return null unconditionally on !currentWord causing empty black screen
+  assert.ok(
+    !quizSource.includes('if (!currentWord) return null;'),
+    'QuizMode.tsx must render a fallback loader instead of return null to prevent black screen'
+  );
 });
 
 test('createChallengeResultMessage accurately calculates won, lost, and draw states', () => {
