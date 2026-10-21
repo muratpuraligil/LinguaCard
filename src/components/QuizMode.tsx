@@ -430,30 +430,21 @@ const QuizMode: React.FC<QuizModeProps> = ({
               </button>
             ) : (
               <>
+                {currentMode === 'LIBRARY' && (
+                  <button
+                    onClick={() => setShowShareModal(true)}
+                    className="w-full py-2.5 bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-black border border-[#25D366]/30 rounded-xl font-black text-xs transition-all active:scale-95 flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <Swords size={15} /> Arkadaşlarını Challenge'a Davet Et
+                  </button>
+                )}
+
                 <button
                   onClick={handleNewSet}
                   className="w-full bg-white text-black py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
                 >
                   <RefreshCw size={15} /> Yeni Set ile Devam Et
                 </button>
-
-                {currentMode === 'LIBRARY' && (
-                  <button
-                    onClick={() => setShowShareModal(true)}
-                    className="w-full py-2.5 bg-[#25D366]/15 hover:bg-[#25D366] text-[#25D366] hover:text-black border border-[#25D366]/30 rounded-xl font-black text-xs transition-all active:scale-95 flex items-center justify-center gap-2 shadow-sm"
-                  >
-                    <Share2 size={15} /> Skorunu WhatsApp ile Paylaş
-                  </button>
-                )}
-
-                {onOpenModeSelection && (
-                  <button
-                    onClick={onOpenModeSelection}
-                    className="w-full py-2.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl font-black text-xs hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
-                  >
-                    <SlidersHorizontal size={15} /> Mod Seç / Değiştir
-                  </button>
-                )}
 
                 {onGoToFlashcards && (
                   <button
