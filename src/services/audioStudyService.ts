@@ -16,8 +16,41 @@ export interface AudioStudyOptions {
     callbacks?: AudioStudyCallbacks;
 }
 
-// Minimal silent wav base64 to keep media session & audio engine active in background/lockscreen
-const SILENT_AUDIO_URI = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==';
+// Generate a real 3-second PCM WAV silence buffer to keep audio engine & hardware clock running on iOS/Android background
+function generateSilentWavUrl(durationSec = 3): string {
+    if (typeof window === 'undefined') return '';
+    try {
+        const sampleRate = 8000;
+        const numChannels = 1;
+        const bytesPerSample = 1;
+        const numSamples = sampleRate * durationSec;
+        const dataSize = numSamples * numChannels * bytesPerSample;
+        const buffer = new ArrayBuffer(44 + dataSize);
+        const view = new DataView(buffer);
+
+        view.setUint32(0, 0x52494646, false); // "RIFF"
+        view.setUint32(4, 36 + dataSize, true);
+        view.setUint32(8, 0x57415645, false); // "WAVE"
+        view.setUint32(12, 0x666d7420, false); // "fmt "
+        view.setUint32(16, 16, true);
+        view.setUint16(20, 1, true); // PCM
+        view.setUint16(22, numChannels, true);
+        view.setUint32(24, sampleRate, true);
+        view.setUint32(28, sampleRate * numChannels * bytesPerSample, true);
+        view.setUint16(32, numChannels * bytesPerSample, true);
+        view.setUint16(34, 8, true); // 8-bit
+        view.setUint32(36, 0x64617461, false); // "data"
+        view.setUint32(40, dataSize, true);
+
+        const uint8 = new Uint8Array(buffer, 44, dataSize);
+        uint8.fill(128); // 8-bit PCM silence is 128
+
+        const blob = new Blob([buffer], { type: 'audio/wav' });
+        return URL.createObjectURL(blob);
+    } catch {
+        return '';
+    }
+}
 
 export class AudioStudyService {
     private words: Word[] = [];
@@ -29,9 +62,12 @@ export class AudioStudyService {
     private currentPhase: AudioPhase = 'front';
 
     private carrierAudio: HTMLAudioElement | null = null;
+    private carrierBlobUrl: string | null = null;
     private speechAudio: HTMLAudioElement | null = null;
     private delayTimer: ReturnType<typeof setTimeout> | null = null;
     private countdownInterval: ReturnType<typeof setInterval> | null = null;
+    private phaseEndTime: number = 0;
+    private onPhaseEndCallback: (() => void) | null = null;
     private callbacks: AudioStudyCallbacks = {};
     private abortController: AbortController | null = null;
 
@@ -43,17 +79,53 @@ export class AudioStudyService {
 
     private initAudioElements() {
         try {
-            if (!this.carrierAudio) {
-                this.carrierAudio = new Audio(SILENT_AUDIO_URI);
-                this.carrierAudio.loop = true;
-                this.carrierAudio.volume = 0.01;
+            if (!this.carrierAudio && typeof window !== 'undefined') {
+                this.carrierBlobUrl = generateSilentWavUrl(3);
+                if (this.carrierBlobUrl) {
+                    this.carrierAudio = new Audio(this.carrierBlobUrl);
+                    this.carrierAudio.loop = true;
+                    this.carrierAudio.playsInline = true;
+                    this.carrierAudio.volume = 0.05;
+                    this.carrierAudio.ontimeupdate = () => {
+                        this.handleCarrierClockTick();
+                    };
+                }
             }
-            if (!this.speechAudio) {
+            if (!this.speechAudio && typeof window !== 'undefined') {
                 this.speechAudio = new Audio();
                 this.speechAudio.preload = 'auto';
+                this.speechAudio.playsInline = true;
+                this.speechAudio.referrerPolicy = 'no-referrer';
             }
         } catch (e) {
             console.warn('[AudioStudyService] Audio element initialization notice:', e);
+        }
+    }
+
+    private setPhaseTimer(durationMs: number, onEnd: () => void) {
+        this.clearTimers();
+        this.phaseEndTime = Date.now() + durationMs;
+        this.onPhaseEndCallback = onEnd;
+
+        // Backup setTimeout for desktop and active tabs
+        this.delayTimer = setTimeout(() => {
+            if (this.onPhaseEndCallback === onEnd) {
+                this.phaseEndTime = 0;
+                this.onPhaseEndCallback = null;
+                onEnd();
+            }
+        }, durationMs);
+    }
+
+    private handleCarrierClockTick() {
+        if (!this.isRunning || this.isPaused) return;
+
+        if (this.phaseEndTime > 0 && Date.now() >= this.phaseEndTime) {
+            const cb = this.onPhaseEndCallback;
+            this.phaseEndTime = 0;
+            this.onPhaseEndCallback = null;
+            this.clearTimers();
+            cb?.();
         }
     }
 
@@ -219,6 +291,10 @@ export class AudioStudyService {
     public cleanup() {
         this.stop();
         this.callbacks = {};
+        if (this.carrierBlobUrl && typeof window !== 'undefined') {
+            URL.revokeObjectURL(this.carrierBlobUrl);
+            this.carrierBlobUrl = null;
+        }
         this.carrierAudio = null;
         this.speechAudio = null;
     }
@@ -244,6 +320,8 @@ export class AudioStudyService {
             clearInterval(this.countdownInterval);
             this.countdownInterval = null;
         }
+        this.phaseEndTime = 0;
+        this.onPhaseEndCallback = null;
     }
 
     private playCurrentStep() {
@@ -288,11 +366,10 @@ export class AudioStudyService {
             }
         }, 1000);
 
-        this.delayTimer = setTimeout(() => {
-            this.clearTimers();
+        this.setPhaseTimer(this.delaySeconds * 1000, () => {
             if (!this.isRunning || this.isPaused) return;
             this.playBackTranslation();
-        }, this.delaySeconds * 1000);
+        });
     }
 
     private playBackTranslation() {
@@ -313,7 +390,7 @@ export class AudioStudyService {
             if (!this.isRunning || this.isPaused) return;
 
             // Step 1: Kullanıcının sarı kartı rahatça görmesi ve okuyabilmesi için çeviri sonrası 2.2 saniye açık tut
-            this.delayTimer = setTimeout(() => {
+            this.setPhaseTimer(2200, () => {
                 if (!this.isRunning || this.isPaused) return;
 
                 // Step 2: handleNext mantığı - Önce kartı ön yüze çevir (isFlipped = false)
@@ -322,11 +399,11 @@ export class AudioStudyService {
                 this.callbacks.onStateChange?.(true, 'transition');
 
                 // Step 3: Kart ön yüze dönerken tam 350ms bekle, ardından yeni kelimeye geç (böylece sonraki çeviri asla yansımaz)
-                this.delayTimer = setTimeout(() => {
+                this.setPhaseTimer(350, () => {
                     if (!this.isRunning || this.isPaused) return;
                     this.advanceToNext();
-                }, 350);
-            }, 2200);
+                });
+            });
         });
     }
 
@@ -341,6 +418,12 @@ export class AudioStudyService {
 
         if (!this.speechAudio) {
             this.speechAudio = new Audio();
+            this.speechAudio.preload = 'auto';
+            this.speechAudio.playsInline = true;
+            this.speechAudio.referrerPolicy = 'no-referrer';
+        } else {
+            this.speechAudio.referrerPolicy = 'no-referrer';
+            this.speechAudio.playsInline = true;
         }
 
         let hasEnded = false;
@@ -527,12 +610,24 @@ export class AudioStudyService {
             const primary = isFrontTR ? word.turkish : word.english;
             const secondary = isFrontTR ? word.english : word.turkish;
 
+            const baseOrigin = typeof window !== 'undefined' ? window.location.origin : '';
+            const basePath = typeof window !== 'undefined' ? window.location.pathname.replace(/\/$/, '') : '';
+            const icon512 = `${baseOrigin}${basePath}/icon-512.png`;
+            const icon192 = `${baseOrigin}${basePath}/icon-192.png`;
+
+            const artworkList: MediaImage[] = [
+                { src: icon512, sizes: '512x512', type: 'image/png' },
+                { src: icon192, sizes: '192x192', type: 'image/png' }
+            ];
+
             const artworkDataUrl = this.generateCardArtwork(word, phase);
-            const artworkList = artworkDataUrl ? [{ src: artworkDataUrl, sizes: '512x512', type: 'image/png' }] : [];
+            if (artworkDataUrl) {
+                artworkList.push({ src: artworkDataUrl, sizes: '512x512', type: 'image/png' });
+            }
 
             navigator.mediaSession.metadata = new MediaMetadata({
-                title: `${this.currentIndex + 1}/${this.words.length}: ${primary}`,
-                artist: phase === 'back' ? `✨ Çeviri: ${secondary}` : `🤔 Çeviriyi düşünün...`,
+                title: `[${this.currentIndex + 1}/${this.words.length}] ${primary}`,
+                artist: phase === 'back' ? `✨ Çeviri: ${secondary}` : `🤔 Çeviriyi düşünün... (${secondary.slice(0, 1)}...)`,
                 album: 'LinguaCard Dinleme Modu',
                 artwork: artworkList
             });

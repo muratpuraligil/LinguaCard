@@ -9,6 +9,9 @@ const flashcardCode = fs.readFileSync(flashcardFilePath, 'utf-8');
 const audioServiceFilePath = path.resolve(process.cwd(), 'src/services/audioStudyService.ts');
 const audioServiceCode = fs.readFileSync(audioServiceFilePath, 'utf-8');
 
+const indexHtmlPath = path.resolve(process.cwd(), 'index.html');
+const indexHtmlCode = fs.readFileSync(indexHtmlPath, 'utf-8');
+
 test('FlashcardMode: Auto-advance countdown on set completion in listening mode', () => {
     // 1. Must track auto advance countdown (10 seconds)
     assert.match(
@@ -58,5 +61,28 @@ test('AudioStudyService: Media Session Lock Screen display with dynamic card art
         audioServiceCode,
         /updateMediaSession/,
         'AudioStudyService must update lock screen display during playback phases'
+    );
+});
+
+test('AudioStudyService: Mobile background keep-alive and zero-referrer TTS protections', () => {
+    // 1. Must use no-referrer on speechAudio to prevent 404 from external origins
+    assert.match(
+        audioServiceCode,
+        /referrerPolicy\s*=\s*['"]no-referrer['"]/,
+        'speechAudio must specify no-referrer policy'
+    );
+
+    // 2. index.html must specify no-referrer meta tag
+    assert.match(
+        indexHtmlCode,
+        /<meta\s+name=["']referrer["']\s+content=["']no-referrer["']/,
+        'index.html must include no-referrer meta tag'
+    );
+
+    // 3. Must have carrier audio ontimeupdate hardware clock tick for background execution
+    assert.match(
+        audioServiceCode,
+        /ontimeupdate/,
+        'carrierAudio must use ontimeupdate for hardware clock timing in background'
     );
 });

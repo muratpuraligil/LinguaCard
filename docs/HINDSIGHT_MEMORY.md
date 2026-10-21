@@ -65,12 +65,18 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
   2. Kapsam tercihi `lingua_flashcard_library_scope` anahtarıyla yerel depolamada saklanır.
   3. İlerleme çubuğunda toplam kelime sayısı parantez içinde net olarak gösterilir: `SET 1 / 15 (300)` veya `SET 1 / 52 (1026)`.
 
-### 1.11. Mobil Web Kilit Ekranı Flaşkart Artwork & Dinleme Modu Otomatik Geçiş
-- **Hafıza Gerçeği:** Mobil tarayıcılarda (iOS Safari, Android Chrome) yerel kilit ekranı overlay izni bulunmaz. Kullanıcı eller serbest dinleme modundayken telefon kilitlendiğinde kartı görememekte ve set bittiğinde telefon cebindeyken bir sonraki sete geçmek için telefona dokunmak zorunda kalmaktaydı.
+### 1.11. Mobil Web Kilit Ekranı Flaşkart Artwork & Arka Planda Kesintisiz Çalma
+- **Hafıza Gerçeği:** 
+  1. `window.speechSynthesis` API'si mobil tarayıcılarda (iOS Safari, Android Chrome) ekran kilitlendiğinde veya başka uygulamaya geçildiğinde WebKit/Chromium tarafından anında uyutulur/durdurulur. Bu nedenle dinleme modu sadece tarayıcı açıkken çalışıyor, ekran kilitlenince donuyordu.
+  2. Google Translate TTS endpoint'ine tarayıcıdan istek atıldığında `Referer: https://...` başlığı iletildiği için Google 404 döndürüyor ve kod `speechSynthesis`'e düşüyordu.
+  3. iOS Safari `navigator.mediaSession.metadata.artwork` içinde büyük base64 `data:` URI'lerini reddediyor; geçerli HTTPS dosya URL'leri (`icon-512.png`) istiyordu.
+  4. Ekran kilitlendiğinde işletim sistemi `setTimeout` ve `setInterval` sayaçlarını donduruyordu.
 - **Kalıcı Çözüm:**
-  1. `audioStudyService.ts` içinde 512x512 Canvas üzerinde dinamik flashcard üretilip `navigator.mediaSession.metadata.artwork` olarak verilir. Kilit ekranında albüm kapağı olarak kelime ve çevirisi görsel bir kart halinde görünür.
-  2. Donanım ve kilit ekranı butonları (`play`, `pause`, `nexttrack`, `previoustrack`) ile tam kontrol sağlanır.
-  3. Set bittiğinde `FlashcardMode.tsx` içinde 10 saniyelik geri sayım sayacı çalışır (`autoAdvanceCountdown`); kullanıcı müdahale etmezse bir sonraki sete otomatik geçer ve dinleme modunu kesintisiz başlatır. İstenildiğinde iptal butonuyla durdurulabilir.
+  1. `index.html` içerisine `<meta name="referrer" content="no-referrer">` ve `speechAudio.referrerPolicy = 'no-referrer'` eklendi. Google TTS istekleri Referer olmadan 200 OK ile doğrudan gerçek MP3 olarak `<audio>` elementi üzerinden akar.
+  2. 3 saniyelik PCM WAV sessizlik taşıyıcısı (`carrierAudio`) arka planda sürekli döngüde tutularak mobil ses oturumu açık bırakılır.
+  3. Düşünme süresi ve kart geçiş sayaçları işletim sisteminin dondurabileceği `setTimeout` yerine `carrierAudio.ontimeupdate` donanım saatine bağlandı (`setPhaseTimer`). Ekran kilitliyken dahi ses ve kart geçişleri kesintisiz devam eder.
+  4. Kilit ekranı albüm görseli için `public/icon-512.png` ve `public/icon-192.png` gerçek HTTPS URL'leri sağlandı.
+  5. Set bittiğinde `FlashcardMode.tsx` içinde 10 saniyelik görsel sayaç çalışır (`autoAdvanceCountdown`); kullanıcı müdahale etmezse bir sonraki sete otomatik geçer ve dinleme modunu kesintisiz sürdürür.
 
 ### 1.10. Mobil Web Responsive (320px - 480px Küçük Ekran Optimizasyonu)
 - **Hafıza Gerçeği:** iPhone SE (375px) ve Android (360px) gibi dar mobil ekranlarda kartlar ekranı ve floating dinleme çubuğu açıldığında butonların ekrandan taşması, seviye sekmelerinin sararak dikey yüksekliği artırması ve kart yüksekliğinin alt aksiyon butonlarını ("Öğrendim", "Sıradaki") ekran dışına itmesi nedeniyle dikey kaydırma gereksinimi oluşabiliyordu.
