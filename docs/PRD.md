@@ -72,7 +72,8 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - Çoktan seçmeli, puan tabanlı dinamik testler.
     - **Seçim Mantığı:** Aktif kelimeler kronolojik veya seviye bazlı olarak 20'şerli setlere bölünür ve set içi karıştırılarak test oluşturulur.
     - **Kaldığın Yerden Devam:** Çalışılan aktif set numarası ve set içindeki aktif soru sırası çalışma modu ve seviyeye göre izole olarak otomatik kaydedilir. Test yarım kalırsa kalınan set ve sorudan devam edilir.
-    - **İlerleme Takibi:** Ekranın üstünde yer alan progress bar ile kaçıncı sette olunduğu (`SET X / Y`) ve o testin içindeki soru ilerlemesi gösterilir.
+    - **İlerleme Takibi & Kompakt Format:** Ekranın üstünde yer alan progress bar, Kartlar modülündeki formatla tam olarak hizalanmıştır: Barın hemen üstündeki tek satırda hem mevcut set içi ilerleme (`İlerleyen: X / Y`) hem de set ve toplam kelime sayısı (`SET X / Y (Toplam)`) gösterilir. Barın altında yer alan gereksiz ikinci satır kaldırılarak dikey alan tasarrufu sağlanmıştır.
+    - **Sıfır Kaydırma & Viewport-Fit Tasarım (Zero-Scroll Layout):** Test Çöz ekranında aşırı dikey boşluklar, padding'ler ve buton min-yükseklikleri optimize edilerek soru kartı ve 4 seçeneğin tüm ekran çözünürlüklerinde (özellikle laptop ve dar mobil ekranlarda) kaydırma çubuğu (scroll) gerektirmeden tek ekrana tam sığması sağlanmıştır.
     - **Otomatik Telaffuz & Ses Kontrolü:** Cevap seçildiği anda doğru İngilizce kelimenin telaffuzu otomatik olarak seslendirilir. TR-EN yön butonunun yanındaki hoparlör ikonu ile bu özellik açılıp kapatılabilir.
     - **Yapılan Yanlışları İzleme:** Test bitiş ekranında yanlış cevaplanan kelimeleri detaylı inceleme ve telaffuzlarını dinleme modalı.
     - **Boş Liste Koruması:** Kullanıcının henüz kendi kelimesi olmasa bile Dashboard'dan Test Çöz modülünü başlatıp doğrudan Kütüphaneden Çöz moduna geçebilmesi.
@@ -109,8 +110,8 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **A1–C2 Seviye Sekmeleri:** Kütüphane ve Test modlarında 6 CEFR seviyesi (A1, A2, B1, B2, C1, C2) arasında sıfır gecikmeli (0ms) ve titreşimsiz (zero-flicker) sekme geçişi.
 - **Hands-Free Dinleme Modu Deneyimi:** Ekrana dokunmadan kilit ekranından ve Bluetooth kulaklık üzerinden çalışma imkanı; şık yüzen kontrol barı (`ListeningModeBar`), animasyon geçiş koruması ve sızıntısız kart akışı.
 - **Hassas Dikey Hizalama & Tipografik Denge:** Başlık kontrolleri ile seviye sekmelerinin matematiksel olarak aynı dikey hizada konumlanması, 3 sütunlu dengeli ızgara yapısı.
-- **Mobil Web Öncelikli & Viewport-Fit Uyum:** 320px - 480px küçük ekranlarda dikey kaydırmayı ortadan kaldıran dinamik viewport sığdırma ve dokunmatik erişilebilirlik.
-- **Rehberli Tur (Onboarding):** Tanıtım turları.
+- **Mobil Web Öncelikli & Viewport-Fit Uyum:** 320px - 480px küçük ekranlarda ve laptop pencerelerinde dikey kaydırmayı ortadan kaldıran dinamik viewport sığdırma ve dokunmatik erişilebilirlik. Test Çöz ekranında tüm şıklar kaydırma yapmadan tek ekranda görüntülenir.
+- **Sade ve Odaklı Arayüz:** Dashboard üzerindeki yönlendirme tooltip'leri kaldırılarak daha temiz, dikkat dağıtmayan ve doğrudan aksiyona odaklanan minimalist arayüz sağlanmıştır.
 - **Premium Arayüz:** Karanlık mod odaklı, neon efektli, glassmorphism ve akıcı animasyonlar.
 
 ---

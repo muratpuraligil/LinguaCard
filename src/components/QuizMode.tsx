@@ -501,15 +501,15 @@ const QuizMode: React.FC<QuizModeProps> = ({
   if (!currentWord) return null;
 
   return (
-    <div className="min-h-screen bg-black flex flex-col font-['Plus_Jakarta_Sans'] relative overflow-hidden text-white">
+    <div className="h-screen max-h-screen bg-black flex flex-col justify-between font-['Plus_Jakarta_Sans'] relative overflow-hidden text-white select-none">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-blue-500 opacity-20"></div>
 
       {/* Header */}
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-10 py-4 sm:py-6 relative z-10">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-10 py-2 sm:py-3 relative z-10 shrink-0">
         <div className="grid grid-cols-[auto_1fr_auto] items-center gap-2 sm:gap-4 w-full">
           <button 
             onClick={onExit} 
-            className="p-2.5 sm:p-3 bg-white/5 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all flex items-center gap-1.5 shrink-0"
+            className="p-2 sm:p-2.5 bg-white/5 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all flex items-center gap-1.5 shrink-0"
             title="Ana Sayfa"
           >
             <ArrowLeft size={18} />
@@ -517,24 +517,24 @@ const QuizMode: React.FC<QuizModeProps> = ({
           </button>
 
           {/* Center: Mod Seç, Toggles & Level Tabs */}
-          <div className="flex flex-col items-center gap-1.5 sm:gap-2 justify-self-center max-w-full min-w-0">
+          <div className="flex flex-col items-center gap-1 sm:gap-1.5 justify-self-center max-w-full min-w-0">
             <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
               {onOpenModeSelection && (
                 <button
                   onClick={onOpenModeSelection}
-                  className="bg-purple-600/20 border border-purple-500/30 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-purple-300 font-black text-[10px] sm:text-xs flex items-center gap-1 hover:bg-purple-600 hover:text-white transition-all shrink-0"
+                  className="bg-purple-600/20 border border-purple-500/30 px-2.5 sm:px-3 py-1 sm:py-1 rounded-full text-purple-300 font-black text-[10px] sm:text-xs flex items-center gap-1 hover:bg-purple-600 hover:text-white transition-all shrink-0"
                   title="Test Çalışma Modunu Değiştir"
                 >
-                  <SlidersHorizontal size={13} />
+                  <SlidersHorizontal size={12} />
                   <span>Mod Seç</span>
                 </button>
               )}
 
               <button
                 onClick={() => setDirection(d => d === LanguageDirection.EN_TR ? LanguageDirection.TR_EN : LanguageDirection.EN_TR)}
-                className="bg-emerald-500/10 border border-emerald-500/20 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-emerald-500 font-black text-[10px] sm:text-xs tracking-wider uppercase flex items-center gap-1 hover:bg-emerald-500/20 transition-all shrink-0"
+                className="bg-emerald-500/10 border border-emerald-500/20 px-2.5 sm:px-3 py-1 sm:py-1 rounded-full text-emerald-500 font-black text-[10px] sm:text-xs tracking-wider uppercase flex items-center gap-1 hover:bg-emerald-500/20 transition-all shrink-0"
               >
-                <Languages size={13} /> {direction.replace('_', ' → ')}
+                <Languages size={12} /> {direction.replace('_', ' → ')}
               </button>
 
               <button
@@ -547,11 +547,11 @@ const QuizMode: React.FC<QuizModeProps> = ({
                 title={isTtsEnabled ? "Sesli Okuma Açık" : "Sesli Okuma Kapalı"}
               >
                 {isTtsEnabled ? (
-                  <Volume2 size={14} />
+                  <Volume2 size={13} />
                 ) : (
                   <div className="relative flex items-center justify-center">
-                    <VolumeX size={14} className="opacity-60" />
-                    <div className="absolute w-[16px] h-[1.5px] bg-slate-500 rotate-45" />
+                    <VolumeX size={13} className="opacity-60" />
+                    <div className="absolute w-[14px] h-[1.5px] bg-slate-500 rotate-45" />
                   </div>
                 )}
               </button>
@@ -568,7 +568,7 @@ const QuizMode: React.FC<QuizModeProps> = ({
                         onLevelChange(lvl);
                       }
                     }}
-                    className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full font-black text-[10px] sm:text-xs transition-all border shrink-0 ${
+                    className={`px-2.5 py-0.5 sm:px-3 sm:py-0.5 rounded-full font-black text-[10px] sm:text-xs transition-all border shrink-0 ${
                       currentLevel === lvl
                         ? 'bg-emerald-500 text-black border-emerald-400 shadow-lg shadow-emerald-500/20'
                         : 'bg-zinc-900 text-slate-400 border-white/10 hover:border-white/30 hover:text-white'
@@ -589,43 +589,42 @@ const QuizMode: React.FC<QuizModeProps> = ({
       </div>
 
       {/* Set Progress Bar */}
-      <div className="w-full max-w-sm mx-auto px-6 mb-4 mt-1 relative z-10">
-        <div className="flex justify-start items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1.5">
+      <div className="w-full max-w-[340px] sm:max-w-sm mx-auto px-4 sm:px-6 mb-1 sm:mb-2 mt-0.5 relative z-10 shrink-0">
+        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">
           <span>İlerleyen: {currentIndex + 1} / {quizSet.length}</span>
+          <span>SET {currentSetNum} / {totalSets} ({sortedWords.length})</span>
         </div>
-        <div className="w-full h-1.5 bg-zinc-950 rounded-full overflow-hidden border border-white/5 mb-1.5">
+        <div className="w-full h-1.5 bg-zinc-950 rounded-full overflow-hidden border border-white/5">
           <div 
             className="h-full bg-emerald-500 transition-all duration-300 rounded-full shadow-[0_0_8px_#10b981]"
             style={{ width: `${progressPercent}%` }}
           ></div>
         </div>
-        <div className="flex justify-end items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
-          <span>SET {currentSetNum} / {totalSets}</span>
-        </div>
       </div>
 
-      <div className="flex-1 px-8 flex flex-col justify-center max-w-lg mx-auto w-full relative z-10">
-        <div className="bg-zinc-900 rounded-[56px] p-12 border border-white/5 shadow-2xl mb-12 text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-2 bg-emerald-500/30 group-hover:h-3 transition-all"></div>
-          <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.3em] mb-4">
+      {/* Question & Options Area */}
+      <div className="flex-1 px-4 sm:px-6 flex flex-col justify-center max-w-lg mx-auto w-full relative z-10 min-h-0 pb-3 sm:pb-5">
+        <div className="bg-zinc-900 rounded-[24px] sm:rounded-[36px] p-4 sm:p-6 md:p-7 border border-white/5 shadow-2xl mb-3 sm:mb-4 text-center relative overflow-hidden group shrink-0">
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-emerald-500/30 group-hover:h-2.5 transition-all"></div>
+          <p className="text-slate-500 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] mb-1.5 sm:mb-2">
             {direction === LanguageDirection.TR_EN ? "İngilizce Karşılığı Nedir?" : "Türkçe Karşılığı Nedir?"}
           </p>
-          <h2 className="text-5xl font-black text-white leading-tight tracking-tighter">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight tracking-tight">
             {direction === LanguageDirection.EN_TR ? currentWord?.english : currentWord?.turkish}
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-2 sm:space-y-2.5 w-full">
           {options.map((opt, idx) => {
-            let btnClass = "w-full p-6 rounded-[32px] text-center font-black text-xl transition-all border-2 flex items-center justify-center min-h-[80px] ";
+            let btnClass = "w-full py-2.5 sm:py-3.5 px-4 sm:px-6 rounded-2xl sm:rounded-[24px] text-center font-black text-base sm:text-lg transition-all border-2 flex items-center justify-center min-h-[46px] sm:min-h-[52px] md:min-h-[58px] ";
             const correct = direction === LanguageDirection.EN_TR ? currentWord.turkish : currentWord.english;
 
             if (showResult) {
-              if (opt === correct) btnClass += "bg-emerald-500 border-emerald-400 text-black shadow-lg shadow-emerald-500/20 scale-105";
+              if (opt === correct) btnClass += "bg-emerald-500 border-emerald-400 text-black shadow-lg shadow-emerald-500/20 scale-[1.02]";
               else if (opt === selectedOption) btnClass += "bg-red-500 border-red-400 text-white shadow-lg shadow-red-500/20";
               else btnClass += "bg-zinc-900/50 border-white/5 text-slate-600 opacity-50";
             } else {
-              btnClass += "bg-zinc-900 border-white/5 text-slate-400 hover:border-emerald-500/50 hover:text-white hover:bg-zinc-800 active:scale-95";
+              btnClass += "bg-zinc-900 border-white/5 text-slate-400 hover:border-emerald-500/50 hover:text-white hover:bg-zinc-800 active:scale-[0.98]";
             }
 
             return <button key={idx} onClick={() => handleSelect(opt)} disabled={showResult} className={btnClass}>{opt}</button>;
