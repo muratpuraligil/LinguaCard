@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.4 (21 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.8 (21 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -118,6 +118,12 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Hassas Dikey Hizalama & Tipografik Denge:** Başlık kontrolleri ile seviye sekmelerinin matematiksel olarak aynı dikey hizada konumlanması, 3 sütunlu dengeli ızgara yapısı.
 - **Mobil Web Öncelikli & Viewport-Fit Uyum:** 320px - 480px küçük ekranlarda ve laptop pencerelerinde dikey kaydırmayı ortadan kaldıran dinamik viewport sığdırma ve dokunmatik erişilebilirlik. Test Çöz ekranında tüm şıklar kaydırma yapmadan tek ekranda görüntülenir.
 - **Sade ve Odaklı Arayüz:** Dashboard üzerindeki yönlendirme tooltip'leri kaldırılarak daha temiz, dikkat dağıtmayan ve doğrudan aksiyona odaklanan minimalist arayüz sağlanmıştır.
+- **Kompakt ve Dengeli Anasayfa Hiyerarşisi (Compact UI Ergonomics):** 
+  - **Header:** Aşırı büyük `w-16 h-16` logo kutusu ve `w-14 h-14` profil butonu, Apple standartlarında minimalist `w-11 h-11` ve `w-10 h-10` ölçeklerine; başlık boyutu `text-2xl` ve padding `px-6 py-5` seviyesine optimize edilmiştir.
+  - **Pratik Banner'ı:** Aşırı yer kaplayan `rounded-[32px]` ve `p-8` gövde, `rounded-2xl` ve `p-5 md:p-6` formatına çekilmiş; "AI ile Yükle" ve "Manuel Ekle" butonları kompakt dokunma ergonomisiyle (`px-4 py-2.5 rounded-xl`) küçültülmüştür.
+  - **Modül Kartları (Kartlar, Test Çöz, Cümleler):** İkon kutuları `w-10 h-10`, kart başlıkları `text-base` ve kart gövdeleri `rounded-2xl p-4 sm:p-5` olarak düzenlenmiş, ekran alanından tasarruf edilmiştir.
+  - **Kelime Listem Alanı:** Başlık (`text-lg`), arama çubuğu (`py-2.5 rounded-xl text-sm`) ve "Hızlı Ekle" butonu (`py-2.5 px-4 rounded-xl`) kompaktlaştırılmıştır.
+  - **Kelime Kartları:** `p-4 rounded-2xl` gövde, `text-base` İngilizce başlık, `text-xs` Türkçe anlam, `min-h-[72px]` kompakt örnek cümle flip kutusu ve ergonomik işlem butonları ile tek bakışta daha fazla kelime görünür kılınmıştır.
 - **Premium Arayüz:** Karanlık mod odaklı, neon efektli, glassmorphism ve akıcı animasyonlar.
 
 ---
@@ -147,7 +153,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ---
 
 ## 6. Sürüm Takibi ve Release Yönetimi
-- **Aktif Lokal Sürüm:** `v1.0.96` (20 Ekim 2026)
+- **Aktif Lokal Sürüm:** `v1.2.8` (21 Ekim 2026)
 - **Hedef Sürüm Kilometre Taşı (Milestone):** `v1.2.0` (A1-C2 Tam Kütüphane, Hands-Free Dinleme Modu, Bağımsız Hafıza ve Mobil Responsive Paketi)
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY`
 - **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya fix yapıldığında versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra `1.2.0` şeklinde devam eder.

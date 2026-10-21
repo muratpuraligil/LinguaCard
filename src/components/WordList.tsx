@@ -159,19 +159,19 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     <div className="w-full" id="word-list-section">
       <button id="force-open-add-word" className="hidden" onClick={handleForceOpen}></button>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-6">
+      <div className="flex flex-col md:flex-row gap-3 mb-5">
         <div className="relative flex-1 group">
-          <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-blue-500 transition-colors pointer-events-none" size={20} />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-blue-500 transition-colors pointer-events-none" size={16} />
           <input
             type="text"
             placeholder="Listende hızlıca ara..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-14 pr-12 py-4 bg-zinc-900 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:bg-zinc-800 transition-all text-base font-bold text-white placeholder:text-slate-600 h-full shadow-lg shadow-black/20"
+            className="w-full pl-11 pr-10 py-2.5 bg-zinc-900 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 focus:bg-zinc-800 transition-all text-sm font-bold text-white placeholder:text-slate-600 h-full shadow-md shadow-black/20"
           />
           {searchTerm && (
-            <button onClick={() => setSearchTerm('')} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors">
-              <X size={18} />
+            <button onClick={() => setSearchTerm('')} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors">
+              <X size={15} />
             </button>
           )}
         </div>
@@ -186,19 +186,19 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             setIsAdding(!isAdding);
             setFormError(null);
           }}
-          className={`flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-black text-base transition-all active:scale-95 whitespace-nowrap ${isAdding ? 'bg-red-500/10 text-red-500 border border-red-500/20' : 'bg-blue-600 text-white hover:bg-blue-500 shadow-xl shadow-blue-900/20'}`}
+          className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-xs uppercase tracking-wider transition-all active:scale-95 whitespace-nowrap ${isAdding ? 'bg-red-500/10 text-red-500 border border-red-500/20' : 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-900/20'}`}
         >
-          <Plus size={20} className={isAdding ? "rotate-45 transition-transform" : "transition-transform"} />
+          <Plus size={16} className={isAdding ? "rotate-45 transition-transform" : "transition-transform"} />
           {isAdding ? 'İptal' : 'Hızlı Ekle'}
         </button>
       </div>
 
       {isAdding && (
         <div id="add-word-form-container">
-          <form onSubmit={handleSubmit} className="mb-8 bg-zinc-900 p-8 rounded-[32px] border border-blue-500/20 animate-fadeIn shadow-2xl relative overflow-hidden">
-            <div className="mb-6">
-              <div className="flex justify-between items-center mb-2">
-                <h4 className="text-xl font-black text-white">Yeni Kelime</h4>
+          <form onSubmit={handleSubmit} className="mb-6 bg-zinc-900 p-5 md:p-6 rounded-2xl border border-blue-500/20 animate-fadeIn shadow-xl relative overflow-hidden">
+            <div className="mb-4">
+              <div className="flex justify-between items-center mb-1">
+                <h4 className="text-lg font-black text-white">Yeni Kelime</h4>
                 <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Manuel Giriş</p>
               </div>
               <div className="flex items-center gap-2 text-slate-500 text-xs font-medium">
@@ -206,39 +206,39 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                 <p>Türkçe yada İngilizce kelimeni gir, diğer alanları AI tamamlasın.</p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
               <div className="relative">
-                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Kelime" className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
               </div>
               <div className="relative">
-                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
               </div>
             </div>
 
             {/* AI Action Button */}
-            <div className="flex justify-start items-center mb-6">
+            <div className="flex justify-start items-center mb-4">
               <button
                 type="button"
                 onClick={handleAiFill}
                 disabled={isAiFilling || (!newEng && !newTr)}
-                className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-purple-600 px-5 py-2.5 rounded-xl hover:bg-purple-500 shadow-lg shadow-purple-600/20 active:scale-95 border-none"
+                className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-purple-600 px-4 py-2 rounded-xl hover:bg-purple-500 shadow-md shadow-purple-600/20 active:scale-95 border-none"
               >
-                <Wand2 size={14} className={isAiFilling ? "animate-spin" : ""} />
+                <Wand2 size={13} className={isAiFilling ? "animate-spin" : ""} />
                 {isAiFilling ? 'AI Analiz Ediyor...' : 'AI ile Tamamla'}
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <input value={newTrEx} onChange={e => setNewTrEx(e.target.value)} placeholder="Türkçe Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
-              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Cümle" className="w-full p-4 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-sm disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+              <input value={newTrEx} onChange={e => setNewTrEx(e.target.value)} placeholder="Türkçe Cümle" className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+              <input value={newEx} onChange={e => setNewEx(e.target.value)} placeholder="İngilizce Cümle" className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
             </div>
-            {formError && <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-400 animate-shake"><AlertCircle size={20} /> <span className="font-bold text-sm">{formError}</span></div>}
+            {formError && <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center gap-2 text-red-400 animate-shake"><AlertCircle size={16} /> <span className="font-bold text-xs">{formError}</span></div>}
 
             <div className="flex items-center gap-3">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-fit bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-black text-sm shadow-xl shadow-blue-900/20 transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center text-center"
+                className="w-fit bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-black text-xs shadow-md shadow-blue-900/20 transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center text-center"
               >
                 {isSubmitting ? 'Kontrol Ediliyor...' : 'Listeye Kaydet'}
               </button>
@@ -249,17 +249,17 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                   setNewEng(''); setNewTr(''); setNewEx(''); setNewTrEx('');
                   setFormError(null);
                 }}
-                className="p-3 bg-zinc-800 hover:bg-zinc-700 text-slate-400 hover:text-white rounded-xl transition-all border border-white/5 disabled:opacity-50"
+                className="p-2.5 bg-zinc-800 hover:bg-zinc-700 text-slate-400 hover:text-white rounded-xl transition-all border border-white/5 disabled:opacity-50"
                 title="Temizle"
               >
-                <Eraser size={20} />
+                <Eraser size={16} />
               </button>
             </div>
           </form>
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
         {displayedWords.map((word) => {
           const dateStr = formatDate(word.created_at);
           const isFlipped = flippedSentenceId === word.id;
@@ -273,40 +273,40 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             : `'${word.english}' kalıbını çalışıyorum.`;
 
           return (
-            <div key={word.id} className="bg-zinc-800 p-6 rounded-[32px] border-b-4 border-slate-700 hover:border-slate-500 transition-all group relative flex flex-col h-full items-start text-left shadow-lg">
+            <div key={word.id} className="bg-zinc-800/90 p-4 rounded-2xl border-b-4 border-slate-700 hover:border-slate-500 transition-all group relative flex flex-col h-full items-start text-left shadow-md">
               {word.set_name && (
-                <div className="absolute top-0 right-0 bg-blue-500/20 text-blue-400 text-[9px] font-black uppercase px-3 py-1.5 rounded-bl-xl border-l border-b border-blue-500/20 flex items-center gap-1.5 backdrop-blur-sm z-10">
+                <div className="absolute top-0 right-0 bg-blue-500/20 text-blue-400 text-[8px] font-black uppercase px-2.5 py-1 rounded-bl-lg border-l border-b border-blue-500/20 flex items-center gap-1 backdrop-blur-sm z-10">
                   <Layers size={10} /> {word.set_name}
                 </div>
               )}
 
-              <div className="flex justify-between items-start w-full mb-2 mt-1">
-                <h3 className="text-xl font-black text-white group-hover:text-blue-400 transition-colors leading-tight">{word.english}</h3>
+              <div className="flex justify-between items-start w-full mb-1 mt-0.5">
+                <h3 className="text-base font-black text-white group-hover:text-blue-400 transition-colors leading-tight">{word.english}</h3>
                 <button onClick={() => speak(word.english)} className="text-slate-600 hover:text-blue-400 p-1.5 rounded-lg bg-white/5 transition-all flex-shrink-0 ml-2">
-                  <Volume2 size={18} />
+                  <Volume2 size={15} />
                 </button>
               </div>
-              <p className="text-slate-500 font-bold text-base mb-4">{displayTurkish}</p>
+              <p className="text-slate-400 font-semibold text-xs mb-3">{displayTurkish}</p>
 
               <div
-                className="perspective-1000 w-full mb-4 cursor-pointer group/sentence"
+                className="perspective-1000 w-full mb-3 cursor-pointer group/sentence"
                 onClick={() => handleSentenceClick(word.id)}
               >
-                <div className={`relative w-full transition-transform duration-700 transform-style-3d min-h-[90px] ${isFlipped ? 'rotate-y-180' : ''}`}>
+                <div className={`relative w-full transition-transform duration-700 transform-style-3d min-h-[72px] ${isFlipped ? 'rotate-y-180' : ''}`}>
 
                   {/* ÖN YÜZ (EN Cümle) */}
-                  <div className="absolute inset-0 backface-hidden bg-black/40 border border-white/5 p-4 rounded-[24px] group-hover/sentence:bg-black/60 transition-colors flex items-center">
-                    <p className="text-xs font-bold leading-relaxed text-blue-100 italic relative z-10">
+                  <div className="absolute inset-0 backface-hidden bg-black/40 border border-white/5 p-3 rounded-xl group-hover/sentence:bg-black/60 transition-colors flex items-center">
+                    <p className="text-[11px] font-medium leading-relaxed text-blue-100 italic relative z-10">
                       "{displaySentence}"
                     </p>
-                    <div className="absolute bottom-2 right-3 opacity-30 group-hover/sentence:opacity-100 transition-opacity">
-                      <Languages size={12} className="text-slate-500" />
+                    <div className="absolute bottom-2 right-2.5 opacity-30 group-hover/sentence:opacity-100 transition-opacity">
+                      <Languages size={11} className="text-slate-500" />
                     </div>
                   </div>
 
                   {/* ARKA YÜZ (TR Çeviri) */}
-                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-blue-600 border border-blue-500 p-4 rounded-[24px] flex items-center shadow-lg shadow-blue-900/20">
-                    <p className="text-[10px] font-black leading-relaxed text-white uppercase tracking-wider relative z-10">
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-blue-600 border border-blue-500 p-3 rounded-xl flex items-center shadow-md shadow-blue-900/20">
+                    <p className="text-[10px] font-bold leading-relaxed text-white uppercase tracking-wider relative z-10">
                       {displayTrSentence}
                     </p>
                   </div>
@@ -317,23 +317,23 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
               <div className="w-full flex justify-between items-center mt-auto pt-1">
                 <button 
                   onClick={() => onDeleteByDate(dateStr)} 
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-orange-500/10 text-orange-500 border border-orange-500/20 hover:bg-orange-500 hover:text-white transition-all group/date"
+                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-orange-500/10 text-orange-500 border border-orange-500/20 hover:bg-orange-500 hover:text-white transition-all group/date"
                   title="bu tarihte yüklenenleri sil."
                 >
-                  <Calendar size={14} /> <span className="text-[10px] font-black tracking-widest">{dateStr}</span>
+                  <Calendar size={12} /> <span className="text-[9px] font-black tracking-widest">{dateStr}</span>
                 </button>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   {/* Archive Button with Tooltip */}
                   <div className="relative group/btn">
                     <button
                       onClick={() => setArchiveId(word.id)}
-                      className="p-2.5 bg-blue-500/10 text-blue-400 rounded-xl hover:bg-blue-500 hover:text-white transition-all active:scale-90"
+                      className="p-2 bg-blue-500/10 text-blue-400 rounded-lg hover:bg-blue-500 hover:text-white transition-all active:scale-90"
                     >
-                      <Archive size={16} />
+                      <Archive size={14} />
                     </button>
-                    <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-zinc-800 text-white text-[9px] font-black uppercase tracking-widest rounded-lg opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
+                    <div className="absolute bottom-full mb-1.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-zinc-800 text-white text-[8px] font-black uppercase tracking-widest rounded opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
                       Arşivle
-                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
                     </div>
                   </div>
 
@@ -341,13 +341,13 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                   <div className="relative group/btn">
                     <button
                       onClick={() => onDelete(word.id)}
-                      className="p-2.5 bg-red-500/10 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition-all active:scale-90"
+                      className="p-2 bg-red-500/10 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition-all active:scale-90"
                     >
-                      <Trash2 size={16} />
+                      <Trash2 size={14} />
                     </button>
-                    <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-zinc-800 text-white text-[9px] font-black uppercase tracking-widest rounded-lg opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
+                    <div className="absolute bottom-full mb-1.5 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-zinc-800 text-white text-[8px] font-black uppercase tracking-widest rounded opacity-0 group-hover/btn:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap border border-white/10 shadow-xl z-50">
                       Sil
-                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
+                      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-zinc-800 border-b border-r border-white/10 rotate-45"></div>
                     </div>
                   </div>
                 </div>
@@ -358,10 +358,10 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
       </div>
 
       {!searchTerm && visibleCount < filteredWords.length && (
-        <div className="w-full flex justify-center mt-8">
+        <div className="w-full flex justify-center mt-6">
           <button
             onClick={() => setVisibleCount(prev => prev + 21)}
-            className="px-8 py-4 bg-zinc-900 border border-white/10 rounded-full text-slate-400 font-bold hover:bg-white/10 hover:text-white transition-all active:scale-95 shadow-lg"
+            className="px-6 py-2.5 bg-zinc-900 border border-white/10 rounded-full text-slate-400 font-bold text-xs hover:bg-white/10 hover:text-white transition-all active:scale-95 shadow-md"
           >
             Daha Fazla Göster ({filteredWords.length - visibleCount} kaldı)
           </button>
