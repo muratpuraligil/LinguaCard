@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.18 (22 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.19 (22 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -160,7 +160,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ---
 
 ## 6. Sürüm Takibi ve Release Yönetimi
-- **Aktif Lokal Sürüm:** `v1.2.18` (22 Ekim 2026)
+- **Aktif Lokal Sürüm:** `v1.2.19` (22 Ekim 2026)
 - **Hedef Sürüm Kilometre Taşı (Milestone):** `v1.2.0` (A1-C2 Tam Kütüphane, Hands-Free Dinleme Modu, Bağımsız Hafıza ve Mobil Responsive Paketi)
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY`
 - **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya fix yapıldığında versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra `1.2.0` şeklinde devam eder.
