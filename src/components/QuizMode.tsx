@@ -139,6 +139,8 @@ const QuizMode: React.FC<QuizModeProps> = ({
     return saved === null ? true : saved === 'true';
   });
 
+  const answerTimerRef = useRef<NodeJS.Timeout | null>(null);
+
   const activeSessionRef = useRef({
     currentMode,
     currentLevel,
@@ -237,6 +239,9 @@ const QuizMode: React.FC<QuizModeProps> = ({
   useEffect(() => {
     return () => {
       window.speechSynthesis.cancel();
+      if (answerTimerRef.current) {
+        clearTimeout(answerTimerRef.current);
+      }
     };
   }, []);
 
@@ -342,7 +347,10 @@ const QuizMode: React.FC<QuizModeProps> = ({
       setIncorrectWords(prev => [...prev, currentWord]);
     }
 
-    setTimeout(() => {
+    if (answerTimerRef.current) {
+      clearTimeout(answerTimerRef.current);
+    }
+    answerTimerRef.current = setTimeout(() => {
       if (currentIndex < quizSet.length - 1) {
         setCurrentIndex(prev => prev + 1);
         setSelectedOption(null);

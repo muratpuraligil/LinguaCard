@@ -36,8 +36,8 @@ const QuizShareModal: React.FC<QuizShareModalProps> = ({
       }
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (e) {
-      console.error('Kopyalama hatası:', e);
+    } catch {
+      // Fallback: Silent handling
     }
   };
 
