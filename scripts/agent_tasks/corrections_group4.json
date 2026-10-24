@@ -1,0 +1,1741 @@
+{
+  "total_corrections": 248,
+  "corrections": [
+    {
+      "set": "modal-9",
+      "id": "s2",
+      "old_turkish": "Okul önünde araba kullanırken, yavaşlamalhyiz.",
+      "new_turkish": "Okul önünde araba kullanırken, yavaşlamalıyız.",
+      "english": "We must slow down while driving in front of a school."
+    },
+    {
+      "set": "modal-9",
+      "id": "s3",
+      "old_turkish": "Bu şarabi denemelisin. Bu mükemmel.",
+      "new_turkish": "Bu şarabı denemelisin. Bu mükemmel.",
+      "english": "You must try this wine. It's excellent."
+    },
+    {
+      "set": "modal-9",
+      "id": "s4",
+      "old_turkish": "Müşterilerle nazikge konuşmalısın.",
+      "new_turkish": "Müşterilerle nazikçe konuşmalısın.",
+      "english": "You must speak politely to the customers."
+    },
+    {
+      "set": "modal-9",
+      "id": "s5",
+      "old_turkish": "Anna'ya yarın geceki partiden bahsetmemelisin. Bu bir şiirpriz!",
+      "new_turkish": "Anna'ya yarın geceki partiden bahsetmemelisin. Bu bir sürpriz!",
+      "english": "You mustn't tell Anna about the party tomorrow night. It's a surprise!"
+    },
+    {
+      "set": "modal-9",
+      "id": "s6",
+      "old_turkish": "Bir köpek, rehber köpek olabilmek için 6zel eğitim almalı.",
+      "new_turkish": "Bir köpek, rehber köpek olabilmek için özel eğitim almalı.",
+      "english": "A dog must get special training in order to be a guide dog."
+    },
+    {
+      "set": "modal-9",
+      "id": "s7",
+      "old_turkish": "Burada sigara iğçmemelisin. Dumansız bir bina.",
+      "new_turkish": "Burada sigara içmemelisin. Dumansız bir bina.",
+      "english": "You mustn't smoke here. It's a smoke-free building."
+    },
+    {
+      "set": "modal-9",
+      "id": "s9",
+      "old_turkish": "Hükümet herkese sağlık hizmeti sa3lamalı.",
+      "new_turkish": "Hükümet herkese sağlık hizmeti sağlamalı.",
+      "english": "The government must provide health care for everybody."
+    },
+    {
+      "set": "modal-9",
+      "id": "s10",
+      "old_turkish": "Herkes yeryüzünün doğal kaynaklarım korumah.",
+      "new_turkish": "Herkes yeryüzünün doğal kaynaklarını korumalı.",
+      "english": "Everyone must save the natural resources of the earth."
+    },
+    {
+      "set": "modal-9",
+      "id": "s11",
+      "old_turkish": "Binada yangın alarm bulunmah.",
+      "new_turkish": "Binada yangın alarmı bulunmalı.",
+      "english": "The building must have a fire alarm."
+    },
+    {
+      "set": "modal-9",
+      "id": "s16",
+      "old_turkish": "Bu çok pahahi görünüyor. Bir servete mal olmuş olmalı!",
+      "new_turkish": "Bu çok pahalı görünüyor. Bir servete mal olmuş olmalı!",
+      "english": "That looks very expensive. It must have cost a fortune!"
+    },
+    {
+      "set": "modal-9",
+      "id": "s22",
+      "old_turkish": "Sınavlar gelecek hafta. Daha çok calığmalıyım.",
+      "new_turkish": "Sınavlar gelecek hafta. Daha çok çalışmalıyım.",
+      "english": "The exams are next week. I must work harder."
+    },
+    {
+      "set": "modal-9",
+      "id": "s24",
+      "old_turkish": "Kırmızı sık yanarken, karşıdan karşıya geçmemelisin.",
+      "new_turkish": "Kırmızı ışık yanarken, karşıdan karşıya geçmemelisin.",
+      "english": "You mustn't cross the road when the red light is showing."
+    },
+    {
+      "set": "modal-9",
+      "id": "s25",
+      "old_turkish": "Şimdi ayrılmahyiz, yoksa uçağı kaçıracağız.",
+      "new_turkish": "Şimdi ayrılmalıyız, yoksa uçağı kaçıracağız.",
+      "english": "We must leave now or we' Il miss the plane."
+    },
+    {
+      "set": "modal-9",
+      "id": "s29",
+      "old_turkish": "Çok geç olmadan biletleri ayırtmaltyiz.",
+      "new_turkish": "Çok geç olmadan biletleri ayırtmalıyız.",
+      "english": "We must book the tickets before it's too late."
+    },
+    {
+      "set": "modal-9",
+      "id": "s30",
+      "old_turkish": "Britanya'da sol taraftan şiirmelisin.",
+      "new_turkish": "Britanya'da sol taraftan sürmelisin.",
+      "english": "In Britain you must drive on the left."
+    },
+    {
+      "set": "modal-9",
+      "id": "s31",
+      "old_turkish": "Doğum gününii tekrar unutmamalısın.",
+      "new_turkish": "Doğum gününü tekrar unutmamalısın.",
+      "english": "You mustn't forget his birthday again."
+    },
+    {
+      "set": "modal-9",
+      "id": "s32",
+      "old_turkish": "Halka açık yerlerde sigara iğçmemelisin.",
+      "new_turkish": "Halka açık yerlerde sigara içmemelisin.",
+      "english": "You mustn't smoke on public places."
+    },
+    {
+      "set": "modal-9",
+      "id": "s33",
+      "old_turkish": "Ugakta bilgisayar kullanmamalısın.",
+      "new_turkish": "Uçakta bilgisayar kullanmamalısın.",
+      "english": "You mustn't use a computer on the plane."
+    },
+    {
+      "set": "modal-9",
+      "id": "s34",
+      "old_turkish": "Uzun seyahatinden sonra bitkin olmalısın. içeri gel ve bir içki al.",
+      "new_turkish": "Uzun seyahatinden sonra bitkin olmalısın. İçeri gel ve bir içki al.",
+      "english": "You must be exhausted after your long trip. Come in and have a drink."
+    },
+    {
+      "set": "modal-9",
+      "id": "s35",
+      "old_turkish": "Cüzdammı arabada aramalıyım.",
+      "new_turkish": "Cüzdanımı arabada aramalıyım.",
+      "english": "I must look for my wallet in the car."
+    },
+    {
+      "set": "modal-9",
+      "id": "s39",
+      "old_turkish": "Öğretmen olmak istiyorsan, bir öğretmen eğitim ıınıversitesine gitmelisin.",
+      "new_turkish": "Öğretmen olmak istiyorsan, bir öğretmen eğitim üniversitesine gitmelisin.",
+      "english": "If you want to be a teacher, you must attend a teacher's training college."
+    },
+    {
+      "set": "modal-9",
+      "id": "s41",
+      "old_turkish": "Fırına dokunmamahsin. Hava çok sıcak ve kendine zarar verebilirsin.",
+      "new_turkish": "Fırına dokunmamalısın. Hava çok sıcak ve kendine zarar verebilirsin.",
+      "english": "You mustn't touch the oven. It's very hot and you might hurt yourself."
+    },
+    {
+      "set": "modal-9",
+      "id": "s44",
+      "old_turkish": "Sınavı geğmek istiyorsa, daha çok çalışmalı.",
+      "new_turkish": "Sınavı geçmek istiyorsa, daha çok çalışmalı.",
+      "english": "She must study harder if she wants to pass the exam."
+    },
+    {
+      "set": "modal-9",
+      "id": "s47",
+      "old_turkish": "Otobüs şimdiye kadar burada olmalı. Program Öyle diyor.",
+      "new_turkish": "Otobüs şimdiye kadar burada olmalı. Program öyle diyor.",
+      "english": "The bus must be here by now. That's what the schedule says."
+    },
+    {
+      "set": "modal-9",
+      "id": "s50",
+      "old_turkish": "Annem bana göndermem için 6nemli bir mektup verdi, bu yüzden onu göndermeyi unutmamalıyım.",
+      "new_turkish": "Annem bana göndermem için önemli bir mektup verdi, bu yüzden onu göndermeyi unutmamalıyım.",
+      "english": "My mother gave me an important letter to post, so I mustn't forget to post it."
+    },
+    {
+      "set": "modal-9",
+      "id": "s53",
+      "old_turkish": "Halka açık yerlerde veya restoranlarda sigara iğçmemelisin. Bu kanuna aykırt.",
+      "new_turkish": "Halka açık yerlerde veya restoranlarda sigara içmemelisin. Bu kanuna aykırı.",
+      "english": "You mustn't smoke in public places or restaurants. It's against the law."
+    },
+    {
+      "set": "modal-9",
+      "id": "s56",
+      "old_turkish": "John, bu kadar hızl konuşmamalısın. Seni kimse anlayamaz!",
+      "new_turkish": "John, bu kadar hızlı konuşmamalısın. Seni kimse anlayamaz!",
+      "english": "John, you mustn't speak so quickly. Nobody can understand you!"
+    },
+    {
+      "set": "modal-9",
+      "id": "s57",
+      "old_turkish": "Bu kadar kötü bir Gksüri",
+      "new_turkish": "Bu kadar kötü bir öksürüğün varsa, sigara içmemelisin.",
+      "english": "If you've got such a bad cough, you mustn't smoke."
+    },
+    {
+      "set": "modal-9",
+      "id": "s64",
+      "old_turkish": "Raporu üzerinde çok çalıştı, ardından yanlışlıkla dosyayı bilgisayarından sildi. Üzgün olmal.",
+      "new_turkish": "Raporu üzerinde çok çalıştı, ardından yanlışlıkla dosyayı bilgisayarından sildi. Üzgün olmalı.",
+      "english": "He worked hard on his report, then accidentally deleted the file from his computer. He must be upset."
+    },
+    {
+      "set": "modal-9",
+      "id": "s66",
+      "old_turkish": "İlağları, göçukların alabileceği yerlere bırakmamalısın.",
+      "new_turkish": "İlaçları, çocukların alabileceği yerlere bırakmamalısın.",
+      "english": "You mustn't leave medicines in places where children can get hold of them."
+    },
+    {
+      "set": "modal-9",
+      "id": "s67",
+      "old_turkish": "Ateşi var, bugün dışarı çıkmamah, yatakta kalmalı.",
+      "new_turkish": "Ateşi var, bugün dışarı çıkmamalı, yatakta kalmalı.",
+      "english": "She's got temperature, she mustn't go out today, she must stay in bed."
+    },
+    {
+      "set": "modal-9",
+      "id": "s68",
+      "old_turkish": "Evet, fulleri smavdan Önce 6grenmelisin.",
+      "new_turkish": "Evet, fiilleri sınavdan önce öğrenmelisin.",
+      "english": "Yes, you must learn the verbs before the exam."
+    },
+    {
+      "set": "modal-9",
+      "id": "s70",
+      "old_turkish": "Sütcii süte şu koymamalı.",
+      "new_turkish": "Sütçü süte su koymamalı.",
+      "english": "The milkman mustn't put water in the milk."
+    },
+    {
+      "set": "modal-9",
+      "id": "s72",
+      "old_turkish": "Bir şemsiye almalyim. Benimki kırık.",
+      "new_turkish": "Bir şemsiye almalıyım. Benimki kırık.",
+      "english": "I must buy an umbrella. Mine is broken."
+    },
+    {
+      "set": "modal-9",
+      "id": "s78",
+      "old_turkish": "Mary seni ararsa, bana sdylemelisin.",
+      "new_turkish": "Mary seni ararsa, bana söylemelisin.",
+      "english": "If Mary phones you, you must tell me."
+    },
+    {
+      "set": "modal-9",
+      "id": "s81",
+      "old_turkish": "Kinlmamışsa, onarmaya çalışmamah.",
+      "new_turkish": "Kırılmamışsa, onarmaya çalışmamalı.",
+      "english": "She mustn't try fix it if it's not broken."
+    },
+    {
+      "set": "modal-9",
+      "id": "s82",
+      "old_turkish": "Ann yann bir konuşma yapacak, bu yüzden bu gece erken yatmalı.",
+      "new_turkish": "Ann yarın bir konuşma yapacak, bu yüzden bu gece erken yatmalı.",
+      "english": "Ann is going to give a speech tomorrow so she must go to bed early tonight."
+    },
+    {
+      "set": "modal-9",
+      "id": "s83",
+      "old_turkish": "Tüm konserin tadını çıkarmak için zamanında varmaltyiz.",
+      "new_turkish": "Tüm konserin tadını çıkarmak için zamanında varmalıyız.",
+      "english": "We must arrive on time in order to enjoy the whole concert."
+    },
+    {
+      "set": "modal-9",
+      "id": "s84",
+      "old_turkish": "Çocuklar iyi alışkanlıklar 6grenmeliler.",
+      "new_turkish": "Çocuklar iyi alışkanlıklar öğrenmeliler.",
+      "english": "Children must learn good habits."
+    },
+    {
+      "set": "modal-9",
+      "id": "s85",
+      "old_turkish": "Şirketlerimiz verimliliklerini artırmal.",
+      "new_turkish": "Şirketlerimiz verimliliklerini artırmalı.",
+      "english": "Our companies must increase their productivity."
+    },
+    {
+      "set": "modal-9",
+      "id": "s87",
+      "old_turkish": "O çocuk \"tesekkiir ederim\" demeyi 6grenmeli.",
+      "new_turkish": "O çocuk \"teşekkür ederim\" demeyi öğrenmeli.",
+      "english": "That child must learn to say ‘thank-you'."
+    },
+    {
+      "set": "modal-9",
+      "id": "s92",
+      "old_turkish": "Mimkun olduğu kadar çabuk bir iş bulmah.",
+      "new_turkish": "Mümkün olduğu kadar çabuk bir iş bulmalı.",
+      "english": "He must find a job as sson as possible."
+    },
+    {
+      "set": "modal-9",
+      "id": "s95",
+      "old_turkish": "Komşularımızla 6öğle yemeğini unutmamalısın!",
+      "new_turkish": "Komşularımızla öğle yemeğini unutmamalısın!",
+      "english": "You mustn't forget the lunch with our neighbours!"
+    },
+    {
+      "set": "modal-9",
+      "id": "s98",
+      "old_turkish": "Seksen yasin üzerinde olmalı, 1940'ta doğdu.",
+      "new_turkish": "Seksen yaşın üzerinde olmalı, 1940'ta doğdu.",
+      "english": "He must be over eighty, he was born in 1940."
+    },
+    {
+      "set": "modal-9",
+      "id": "s99",
+      "old_turkish": "Trafik ışıklan kırmızıya döndüğünde, durmah.",
+      "new_turkish": "Trafik ışıkları kırmızıya döndüğünde, durmalı.",
+      "english": "He must stop when the traffic lights turn red."
+    },
+    {
+      "set": "modal-10",
+      "id": "s5",
+      "old_turkish": "Patricia otobüs için uzun süre beklemek zorunda deildi.",
+      "new_turkish": "Patricia otobüs için uzun süre beklemek zorunda değildi.",
+      "english": "Patricia didn't have to wait long for the bus."
+    },
+    {
+      "set": "modal-10",
+      "id": "s8",
+      "old_turkish": "İngilizce'deki yardımc' fiilleri anlamak zorunda mısın?",
+      "new_turkish": "İngilizce'deki yardımcı fiilleri anlamak zorunda mısın?",
+      "english": "Do you have to understand modal verbs in English?"
+    },
+    {
+      "set": "modal-10",
+      "id": "s9",
+      "old_turkish": "Yarın erken kalkmak zorunda olmayacaoim.",
+      "new_turkish": "Yarın erken kalkmak zorunda olmayacağım.",
+      "english": "Tomorrow, I won't have to get up early."
+    },
+    {
+      "set": "modal-10",
+      "id": "s11",
+      "old_turkish": "Kitapları yarın getirmek zorunda dedilsin.",
+      "new_turkish": "Kitapları yarın getirmek zorunda değilsin.",
+      "english": "You don't have to bring the books tomorrow."
+    },
+    {
+      "set": "modal-10",
+      "id": "s13",
+      "old_turkish": "Proje nedeniyle dün gece geç saatlere kadar calığşmak zorunda kaldım.",
+      "new_turkish": "Proje nedeniyle dün gece geç saatlere kadar çalışmak zorunda kaldım.",
+      "english": "I had to work late last night because of the project."
+    },
+    {
+      "set": "modal-10",
+      "id": "s16",
+      "old_turkish": "Tim'in bugün okula gitmek zorunda değil. Tatil.",
+      "new_turkish": "Tim bugün okula gitmek zorunda değil. Tatil.",
+      "english": "Tim doesn't have to go to school today. It's a holiday."
+    },
+    {
+      "set": "modal-10",
+      "id": "s24",
+      "old_turkish": "Cuma gündelik kıyafet günüdür. Takım elbise giymek zorunda dediliz.",
+      "new_turkish": "Cuma gündelik kıyafet günüdür. Takım elbise giymek zorunda değiliz.",
+      "english": "Friday is casual dress day. We don't have to wear suits."
+    },
+    {
+      "set": "modal-10",
+      "id": "s25",
+      "old_turkish": "İngilizceyi akıcı bir şekilde konuşmayı dgrenmek istiyorsan, çok calığmak zorundasın.",
+      "new_turkish": "İngilizceyi akıcı bir şekilde konuşmayı öğrenmek istiyorsan, çok çalışmak zorundasın.",
+      "english": "If you want to learn to speak English fluently, you have to work hard."
+    },
+    {
+      "set": "modal-10",
+      "id": "s26",
+      "old_turkish": "Sorun defil. istemiyorsan Muriel'in di",
+      "new_turkish": "Sorun değil. İstemiyorsan Muriel'in düğününe gelmek zorunda değilsin.",
+      "english": "It's alright. You don't have to come to Muriel's wedding if you don't want to."
+    },
+    {
+      "set": "modal-10",
+      "id": "s33",
+      "old_turkish": "İspanya'da öğretmenlerin ııniforma giymek zorunda deiilller.",
+      "new_turkish": "İspanya'da öğretmenler üniforma giymek zorunda değiller.",
+      "english": "In Spain, teachers don't have to wear uniforms."
+    },
+    {
+      "set": "modal-10",
+      "id": "s35",
+      "old_turkish": "Yangın durumunda, asansör kullanmak zorunda dedilsin.",
+      "new_turkish": "Yangın durumunda, asansör kullanmak zorunda değilsin.",
+      "english": "You don't have to use the elevators in case of fire."
+    },
+    {
+      "set": "modal-10",
+      "id": "s37",
+      "old_turkish": "Bugün alışverişe çıkmak zorunda dedilsin. Hiçbir şeye ihtiyacımız yok.",
+      "new_turkish": "Bugün alışverişe çıkmak zorunda değilsin. Hiçbir şeye ihtiyacımız yok.",
+      "english": "You don't have go shopping today. We don't need anything."
+    },
+    {
+      "set": "modal-10",
+      "id": "s40",
+      "old_turkish": "Günümüzde ispanya'da dgrenciler okulda Latince 6grenmek zorunda değiller.",
+      "new_turkish": "Günümüzde İspanya'da öğrenciler okulda Latince öğrenmek zorunda değiller.",
+      "english": "Nowadays in Spain pupils don't have to learn Latin at school."
+    },
+    {
+      "set": "modal-10",
+      "id": "s41",
+      "old_turkish": "Karımın bugün işe gitmek zorunda değil. Tatil.",
+      "new_turkish": "Karım bugün işe gitmek zorunda değil. Tatil.",
+      "english": "My wife doesn't have to go to work today. It's a holiday."
+    },
+    {
+      "set": "modal-10",
+      "id": "s42",
+      "old_turkish": "Bunu tek başına yapmak zorunda dedğilsin. Sana yardım edebilirim.",
+      "new_turkish": "Bunu tek başına yapmak zorunda değilsin. Sana yardım edebilirim.",
+      "english": "You don't have to do this by yourself. I can help you."
+    },
+    {
+      "set": "modal-10",
+      "id": "s45",
+      "old_turkish": "Bir restoranda faturay: Gdemek zorundasın ama her şeyi yemek zorunda değilsin.",
+      "new_turkish": "Bir restoranda faturayı ödemek zorundasın ama her şeyi yemek zorunda değilsin.",
+      "english": "At arrestaurant you have to pay the bill but you don't have to eat everything."
+    },
+    {
+      "set": "modal-10",
+      "id": "s46",
+      "old_turkish": "Okulumuzda ııniforma giymek zorundayız.",
+      "new_turkish": "Okulumuzda üniforma giymek zorundayız.",
+      "english": "At our school we have to wear a uniform."
+    },
+    {
+      "set": "modal-10",
+      "id": "s48",
+      "old_turkish": "Henüz ise başvurmak zorunda değilsin. Bunu bu hafta daha sonra yapabilirsin.",
+      "new_turkish": "Henüz işe başvurmak zorunda değilsin. Bunu bu hafta daha sonra yapabilirsin.",
+      "english": "You don't have to apply for the job yet. You can do it later this week."
+    },
+    {
+      "set": "modal-10",
+      "id": "s52",
+      "old_turkish": "Havaalanına taksiyle gitmek zorunda kalacaoiz, aksi takdirde uçağımızı kaçırabiliriz.",
+      "new_turkish": "Havaalanına taksiyle gitmek zorunda kalacağız, aksi takdirde uçağımızı kaçırabiliriz.",
+      "english": "We will have to take a taxi to the airport, otherwise we might miss our plane."
+    },
+    {
+      "set": "modal-10",
+      "id": "s53",
+      "old_turkish": "Kendini hasta hissetti ve daha Önce ofisi terk etmek zorunda kaldı.",
+      "new_turkish": "Kendini hasta hissetti ve daha önce ofisi terk etmek zorunda kaldı.",
+      "english": "She felt ill and had to leave the office earlier."
+    },
+    {
+      "set": "modal-10",
+      "id": "s54",
+      "old_turkish": "300 satır yazmak zorunda dedilsin. 30 yeter.",
+      "new_turkish": "300 satır yazmak zorunda değilsin. 30 yeter.",
+      "english": "You don't have to write 300 lines. 30 will be enough."
+    },
+    {
+      "set": "modal-10",
+      "id": "s55",
+      "old_turkish": "Lütfen, dzur dilerim ama gerçekten şimdi gitmek zorundayım.",
+      "new_turkish": "Lütfen, özür dilerim ama gerçekten şimdi gitmek zorundayım.",
+      "english": "Please, excuse me but I really have to go now."
+    },
+    {
+      "set": "modal-10",
+      "id": "s56",
+      "old_turkish": "Çok calığşmak zorunda çünkü bekar bir ebeveyn ve çok az parası var.",
+      "new_turkish": "Çok çalışmak zorunda çünkü bekar bir ebeveyn ve çok az parası var.",
+      "english": "She has to work hard because she's a single parent and has little money."
+    },
+    {
+      "set": "modal-10",
+      "id": "s58",
+      "old_turkish": "Fransızca konuşmak zorunda dedilsin. ingilizceyi oldukça iyi konuşabiliyorsun.",
+      "new_turkish": "Fransızca konuşmak zorunda değilsin. İngilizceyi oldukça iyi konuşabiliyorsun.",
+      "english": "You don't have to speak French. You can speak English quite well."
+    },
+    {
+      "set": "modal-10",
+      "id": "s60",
+      "old_turkish": "Geg saatlere kadar çalışmak zorunda kaldığım için eve on birde geldim.",
+      "new_turkish": "Geç saatlere kadar çalışmak zorunda kaldığım için eve on birde geldim.",
+      "english": "I arrived home at eleven p.m. because I had to work late."
+    },
+    {
+      "set": "modal-10",
+      "id": "s63",
+      "old_turkish": "Acele etmek zorunda değiliz. Film altrya kadar başlamaz.",
+      "new_turkish": "Acele etmek zorunda değiliz. Film altıya kadar başlamaz.",
+      "english": "We don't have to hurry. The film doesn't start until six."
+    },
+    {
+      "set": "modal-10",
+      "id": "s64",
+      "old_turkish": "Yarın bir test için düzensiz fulleri öğrenmek zorundayım.",
+      "new_turkish": "Yarın bir test için düzensiz fiilleri öğrenmek zorundayım.",
+      "english": "I have to learn the irregular verbs for a test tomorrow."
+    },
+    {
+      "set": "modal-10",
+      "id": "s65",
+      "old_turkish": "Kardeşini yanına almak zorunda kaldh.",
+      "new_turkish": "Kardeşini yanına almak zorunda kaldı.",
+      "english": "She had to take her brother along with her."
+    },
+    {
+      "set": "modal-10",
+      "id": "s76",
+      "old_turkish": "Şam'ın bu hafta sonu ev işlerinde annesine yardım etmek zorunda olacak.",
+      "new_turkish": "Sam bu hafta sonu ev işlerinde annesine yardım etmek zorunda olacak.",
+      "english": "Sam will have to help his mum with the housework this weekend."
+    },
+    {
+      "set": "modal-10",
+      "id": "s77",
+      "old_turkish": "Yönergeler, Hong Kong'daki sosyal sorunlan incelemek zorunda olduğumuzu sGyliiyor.",
+      "new_turkish": "Yönergeler, Hong Kong'daki sosyal sorunları incelemek zorunda olduğumuzu söylüyor.",
+      "english": "The guidelines say we have to examine social problems in Hong Kong."
+    },
+    {
+      "set": "modal-10",
+      "id": "s78",
+      "old_turkish": "Lütfen ona okulda iyi sonuçlar almak zorunda olduğunu sdyle!",
+      "new_turkish": "Lütfen ona okulda iyi sonuçlar almak zorunda olduğunu söyle!",
+      "english": "Please, tell her that she has to get good results at school!"
+    },
+    {
+      "set": "modal-10",
+      "id": "s81",
+      "old_turkish": "Yarın sabah 8'de okulda olmak zorndayım, sınavım var!",
+      "new_turkish": "Yarın sabah 8'de okulda olmak zorundayım, sınavım var!",
+      "english": "I have to be at school tomorrow at 8 a.m. I have an exam!"
+    },
+    {
+      "set": "modal-10",
+      "id": "s87",
+      "old_turkish": "Bir patlamayı Gnlemek için bu fünyeyi çok yavaş çıkarmak zorundayım.",
+      "new_turkish": "Bir patlamayı önlemek için bu fünyeyi çok yavaş çıkarmak zorundayım.",
+      "english": "I have to take out this detonator very slowly, to avoid an explosion."
+    },
+    {
+      "set": "modal-10",
+      "id": "s90",
+      "old_turkish": "Bütün doğru cevaplan aldım, kazananlardan biri olmak zorundayım!",
+      "new_turkish": "Bütün doğru cevapları aldım, kazananlardan biri olmak zorundayım!",
+      "english": "I've got all the right answers, I must be one of the winners!"
+    },
+    {
+      "set": "modal-10",
+      "id": "s92",
+      "old_turkish": "Sally Üniversiteye gitmek istediği için tüm sınavlarım' geçmek zorunda.",
+      "new_turkish": "Sally üniversiteye gitmek istediği için tüm sınavlarını geçmek zorunda.",
+      "english": "Sally has to pass all her exams because she wants to go to university."
+    },
+    {
+      "set": "modal-10",
+      "id": "s96",
+      "old_turkish": "Öyle samyorum, ama kuralları bana tekrar açıklamak zorunda kalacaksın.",
+      "new_turkish": "Öyle sanıyorum, ama kuralları bana tekrar açıklamak zorunda kalacaksın.",
+      "english": "I think so, but you're going to have to explain the rules to me again."
+    },
+    {
+      "set": "modal-11",
+      "id": "s4",
+      "old_turkish": "Yeni bir işe girmeden Önce değişiklik yapsanız iyi olur.",
+      "new_turkish": "Yeni bir işe girmeden önce değişiklik yapsanız iyi olur.",
+      "english": "You had better make changes before you take a new job."
+    },
+    {
+      "set": "modal-11",
+      "id": "s9",
+      "old_turkish": "Final sınavlarından Önce çalışsan iyi olur.",
+      "new_turkish": "Final sınavlarından önce çalışsan iyi olur.",
+      "english": "You had better study before your final exams."
+    },
+    {
+      "set": "modal-11",
+      "id": "s10",
+      "old_turkish": "Alt katta hareket eden biri var. Polisi bir an Önce aramamuz iyi olur.",
+      "new_turkish": "Alt katta hareket eden biri var. Polisi bir an önce aramamız iyi olur.",
+      "english": "There's someone moving about downstairs. We had better call the police, quickly."
+    },
+    {
+      "set": "modal-11",
+      "id": "s13",
+      "old_turkish": "Zaten bir kadeh şarap içtiniz. Araba kullanmasan iyi olur. izin ver.",
+      "new_turkish": "Zaten bir kadeh şarap içtiniz. Araba kullanmasan iyi olur. İzin ver.",
+      "english": "You have already drunken a glass of wine. You had better not drive. Let me."
+    },
+    {
+      "set": "modal-11",
+      "id": "s16",
+      "old_turkish": "Bir ara dinlensen iyi olur. Uyuyacaksın",
+      "new_turkish": "Bir ara dinlensen iyi olur. Uyuyacaksın.",
+      "english": "You had better rest for sometime. You are going to sleep."
+    },
+    {
+      "set": "modal-11",
+      "id": "s18",
+      "old_turkish": "Odayı temizlesek iyi olur. Orada cam pargaları var.",
+      "new_turkish": "Odayı temizlesek iyi olur. Orada cam parçaları var.",
+      "english": "We had better clean the room. There are pieces of glasses there."
+    },
+    {
+      "set": "modal-11",
+      "id": "s22",
+      "old_turkish": "Öğretmen geliyor gürültü yapmasanız iyi olur.",
+      "new_turkish": "Öğretmen geliyor, gürültü yapmasanız iyi olur.",
+      "english": "You had better not make noise the teacher is coming."
+    },
+    {
+      "set": "modal-11",
+      "id": "s26",
+      "old_turkish": "Bu tır soruları çözmek için çok kitap okumanz iyi olur.",
+      "new_turkish": "Bu tür soruları çözmek için çok kitap okumamız iyi olur.",
+      "english": "We had better read a lot of books to solve these kind of questions."
+    },
+    {
+      "set": "modal-11",
+      "id": "s30",
+      "old_turkish": "Geg yatmasak iyi olur. Yarın önemli bir toplantımız var.",
+      "new_turkish": "Geç yatmasak iyi olur. Yarın önemli bir toplantımız var.",
+      "english": "We had better not go to bed late. We have an important meeting tomorrow."
+    },
+    {
+      "set": "modal-11",
+      "id": "s33",
+      "old_turkish": "Öğrenciler notlarını gözden geçirseler iyi olur. Yarın sözlü sınavlan var.",
+      "new_turkish": "Öğrenciler notlarını gözden geçirseler iyi olur. Yarın sözlü sınavları var.",
+      "english": "The students had better revise their notes. They have an oral exam tomorrow."
+    },
+    {
+      "set": "modal-11",
+      "id": "s40",
+      "old_turkish": "Onlan uyarsan iyi olur.",
+      "new_turkish": "Onları uyarsan iyi olur.",
+      "english": "You had better warn them."
+    },
+    {
+      "set": "modal-11",
+      "id": "s42",
+      "old_turkish": "Sınavım geçmek istiyorsan daha çok çalışsan iyi olur.",
+      "new_turkish": "Sınavını geçmek istiyorsan daha çok çalışsan iyi olur.",
+      "english": "You had better work more if you want to pass your exam."
+    },
+    {
+      "set": "modal-11",
+      "id": "s46",
+      "old_turkish": "Doğruyu sdylese iyi olur.",
+      "new_turkish": "Doğruyu söylese iyi olur.",
+      "english": "He had better tell the truth."
+    },
+    {
+      "set": "modal-11",
+      "id": "s55",
+      "old_turkish": "Bir palto giyseniz iyi olur. Dışarısı dönüyor.",
+      "new_turkish": "Bir palto giyseniz iyi olur. Dışarısı donuyor.",
+      "english": "You had better put on a coat. It's freezing outside."
+    },
+    {
+      "set": "modal-11",
+      "id": "s56",
+      "old_turkish": "David'e bir taksi çağırsak iyi olur. Araba şiirmeye uygun durumda değil.",
+      "new_turkish": "David'e bir taksi çağırsak iyi olur. Araba sürmeye uygun durumda değil.",
+      "english": "We had better call David a taxi. He's not in a fit state to drive."
+    },
+    {
+      "set": "modal-11",
+      "id": "s57",
+      "old_turkish": "",
+      "new_turkish": "Tüm aileyi düğüne davet etseniz iyi olur yoksa kırılırlar.",
+      "english": "You had better invite the whole family to the wedding or they will be offended."
+    },
+    {
+      "set": "modal-11",
+      "id": "s59",
+      "old_turkish": "Bir taksiye ihtiyacın vardı. Birkaç dakika sonra senin için bir taksi durdu.",
+      "new_turkish": "Şimdi gitsek iyi olur, yoksa geç kalacağız.",
+      "english": "We'd better go now or we'll be late."
+    },
+    {
+      "set": "modal-11",
+      "id": "s65",
+      "old_turkish": "Bunu atmasan iyi olur, faydal olabilir.",
+      "new_turkish": "Bunu atmasan iyi olur, faydalı olabilir.",
+      "english": "You'd better not throw that, it might be useful."
+    },
+    {
+      "set": "modal-11",
+      "id": "s68",
+      "old_turkish": "Bir çocuk bakıcısı bulsak iyi olur yoksa dışan çıkamayız.",
+      "new_turkish": "Bir çocuk bakıcısı bulsak iyi olur yoksa dışarı çıkamayız.",
+      "english": "We'd better find a babysitter or we can't go out."
+    },
+    {
+      "set": "modal-11",
+      "id": "s69",
+      "old_turkish": "Geg oldu. Partiyi şimdi terk etsek iyi olur.",
+      "new_turkish": "Geç oldu. Partiyi şimdi terk etsek iyi olur.",
+      "english": "It is late. We'd better leave the party now."
+    },
+    {
+      "set": "modal-11",
+      "id": "s74",
+      "old_turkish": "Sağı çok uzundur. Saçım kestirse iyi olur.",
+      "new_turkish": "Saçı çok uzundur. Saçını kestirse iyi olur.",
+      "english": "His hair is very long. He'd better get a haircut."
+    },
+    {
+      "set": "modal-11",
+      "id": "s75",
+      "old_turkish": "Hava soğuk. Sıcak giysiler olmadan dışan çıkmasan iyi olur.",
+      "new_turkish": "Hava soğuk. Sıcak giysiler olmadan dışarı çıkmasan iyi olur.",
+      "english": "The weather is frigid. You'd better not go out without warm clothes."
+    },
+    {
+      "set": "modal-11",
+      "id": "s76",
+      "old_turkish": "Anneni arayıp bu gece burada kalacağını söyleşen iyi olur.",
+      "new_turkish": "Anneni arayıp bu gece burada kalacağını söylesen iyi olur.",
+      "english": "You'd better call your mother and say that you will stay here tonight."
+    },
+    {
+      "set": "modal-11",
+      "id": "s78",
+      "old_turkish": "Sol bacağım ağnyor. - Çok fazla yürümesen iyi olur.",
+      "new_turkish": "Sol bacağım ağrıyor. - Çok fazla yürümesen iyi olur.",
+      "english": "I keep getting pain in my left leg. - You'd better not walk very much."
+    },
+    {
+      "set": "modal-11",
+      "id": "s81",
+      "old_turkish": "Kız kardeşine bağırmasan iyi olur yoksa seni cezalandırınm!",
+      "new_turkish": "Kız kardeşine bağırmasan iyi olur yoksa seni cezalandırırım!",
+      "english": "You'd better not shout at your sister or I'll punish you!"
+    },
+    {
+      "set": "modal-11",
+      "id": "s85",
+      "old_turkish": "Canım, yağmur yağtyor, yürümesen iyi olur.",
+      "new_turkish": "Canım, yağmur yağıyor, yürümesen iyi olur.",
+      "english": "Oh, dear, it's raining, you'd better not walk."
+    },
+    {
+      "set": "modal-11",
+      "id": "s88",
+      "old_turkish": "Kocam arayıp geç kalacağım söylemesen daha iyi olur mu?",
+      "new_turkish": "Kocanı arayıp geç kalacağını söylemesen daha iyi olur mu?",
+      "english": "Had you better not call your husband and tell him you'll be late?"
+    },
+    {
+      "set": "modal-11",
+      "id": "s94",
+      "old_turkish": "Yavaşlaşan iyi olur ... Bizi takip eden bir polis arabası var ...",
+      "new_turkish": "Yavaşlasan iyi olur ... Bizi takip eden bir polis arabası var ...",
+      "english": "You'd better slow down... There's a police car following us..."
+    },
+    {
+      "set": "modal-12",
+      "id": "s3",
+      "old_turkish": "Şam'ın kızını okuldan almaması lazım. Eve otobiişle gidiyor.",
+      "new_turkish": "Sam'in kızını okuldan almaması lazım. Eve otobüsle gidiyor.",
+      "english": "Sam doesn't need to pick his daughter up from school. She's taking the bus home."
+    },
+    {
+      "set": "modal-12",
+      "id": "s5",
+      "old_turkish": "Ulusal Sağlık Hizmeti hastanelerinde tıbbi bakım için Ödeme yapmaya ihtiyaç duymazsın.",
+      "new_turkish": "Ulusal Sağlık Hizmeti hastanelerinde tıbbi bakım için ödeme yapmaya ihtiyaç duymazsın.",
+      "english": "You don't need to pay for medical care in National Health Service hospitals."
+    },
+    {
+      "set": "modal-12",
+      "id": "s12",
+      "old_turkish": "Yabancı bir ülkede ikamet eden biri olarak vergi Ödemen mi lazım?",
+      "new_turkish": "Yabancı bir ülkede ikamet eden biri olarak vergi ödemen mi lazım?",
+      "english": "Do you need to pay taxes as a resident of a foreign country?"
+    },
+    {
+      "set": "modal-12",
+      "id": "s13",
+      "old_turkish": "Törende Üniforma giymesi mi lazım? Gereksiz.",
+      "new_turkish": "Törende üniforma giymesi mi lazım? Gereksiz.",
+      "english": "Does he need to wear a uniform at the ceremony? It's not necessary."
+    },
+    {
+      "set": "modal-12",
+      "id": "s22",
+      "old_turkish": "Bağırmamalan lazım, sizi duyabiliyorum.",
+      "new_turkish": "Bağırmamaları lazım, sizi duyabiliyorum.",
+      "english": "They don't need to shout, I can hear you."
+    },
+    {
+      "set": "modal-12",
+      "id": "s31",
+      "old_turkish": "İlerlemek istiyorsa, daha çok calığması lazım.",
+      "new_turkish": "İlerlemek istiyorsa, daha çok çalışması lazım.",
+      "english": "He needs to work harder if he wants to make progress."
+    },
+    {
+      "set": "modal-12",
+      "id": "s32",
+      "old_turkish": "Sue'nun biraz para Gdiing alması lazımdı. Jerry'ye sormaya çalıştı ama onun da parası yoktu.",
+      "new_turkish": "Sue'nun biraz para ödünç alması lazımdı. Jerry'ye sormaya çalıştı ama onun da parası yoktu.",
+      "english": "Sue needed to borrow some money. She tried to ask Jerry, but he was short of money, too."
+    },
+    {
+      "set": "modal-12",
+      "id": "s36",
+      "old_turkish": "Teklifin hakkında düşünmek için birkaç güneş ihtiyacım var.",
+      "new_turkish": "Teklifin hakkında düşünmek için birkaç güne ihtiyacım var.",
+      "english": "I need a few days to th in k about your proposal."
+    },
+    {
+      "set": "modal-12",
+      "id": "s44",
+      "old_turkish": "Bazı Ülkeleri ziyaret etmek için vize alman lazım, ancak hepsine değil.",
+      "new_turkish": "Bazı ülkeleri ziyaret etmek için vize alman lazım, ancak hepsine değil.",
+      "english": "You need to get visa to visit some countries, but not all of them."
+    },
+    {
+      "set": "modal-12",
+      "id": "s56",
+      "old_turkish": "Giysilerini değiştirmene ihtiyacın yok. Öldüğün gibi dışarı çıkabilirsin.",
+      "new_turkish": "Giysilerini değiştirmene ihtiyacın yok. Olduğun gibi dışarı çıkabilirsin.",
+      "english": "You don't need to change your clothes. You can go out as you are."
+    },
+    {
+      "set": "modal-12",
+      "id": "s57",
+      "old_turkish": "Mark çok yorgun görünüyor. iyi dinlenmeye ihtiyacı varmış gibi görünüyor.",
+      "new_turkish": "Mark çok yorgun görünüyor. İyi dinlenmeye ihtiyacı varmış gibi görünüyor.",
+      "english": "Mark looks very tired. He looks as if he needs a good rest."
+    },
+    {
+      "set": "modal-12",
+      "id": "s58",
+      "old_turkish": "",
+      "new_turkish": "Değişikliğe ihtiyacım var. Sanırım birkaç günlüğüne uzaklara gideceğim.",
+      "english": "I need a change. I think I'll go away for a few days."
+    },
+    {
+      "set": "modal-12",
+      "id": "s59",
+      "old_turkish": "Şimdi gitsek iyi olur, yoksa geç kalacağız.",
+      "new_turkish": "Bir taksiye ihtiyacın vardı. Birkaç dakika sonra senin için bir taksi durdu.",
+      "english": "You needed a taxi. After a few minutes a taxi stopped for you."
+    },
+    {
+      "set": "modal-12",
+      "id": "s63",
+      "old_turkish": "Tüm seyahat ayarlamalartyla ben ilgileneceğim - hiçbir şey yapmanıza gerek yok.",
+      "new_turkish": "Tüm seyahat ayarlamalarıyla ben ilgileneceğim - hiçbir şey yapmanıza gerek yok.",
+      "english": "I'll take care of all the travel arrangements - you don't need to do anything."
+    },
+    {
+      "set": "modal-12",
+      "id": "s67",
+      "old_turkish": "Okul kantininde öğle yemeği yemenize gerek yok. Bazı öğrenciler öğle yemedi için eve gitmeyi tercih ediyor.",
+      "new_turkish": "Okul kantininde öğle yemeği yemenize gerek yok. Bazı öğrenciler öğle yemeği için eve gitmeyi tercih ediyor.",
+      "english": "You don't need to eat lunch in the school canteen. Some students prefer to go home for lunch."
+    },
+    {
+      "set": "modal-12",
+      "id": "s71",
+      "old_turkish": "Bu ıılke çok soğuk. Sanırım daha sıcak bir cekete ihtiyacın olacak.",
+      "new_turkish": "Bu ülke çok soğuk. Sanırım daha sıcak bir cekete ihtiyacın olacak.",
+      "english": "It's very cold in this country. I think you'll need a warmer coat."
+    },
+    {
+      "set": "modal-12",
+      "id": "s73",
+      "old_turkish": "Londra'y ziyaret etmek istiyorsam bu uçağa binmeme gerek yok.",
+      "new_turkish": "Londra'yı ziyaret etmek istiyorsam bu uçağa binmeme gerek yok.",
+      "english": "I do not need to take this plane if I want to visit London."
+    },
+    {
+      "set": "modal-12",
+      "id": "s74",
+      "old_turkish": "Artık arabamzi bana ödünç vermenize gerek yok.",
+      "new_turkish": "Artık arabanızı bana ödünç vermenize gerek yok.",
+      "english": "You do not need to lend me your car anymore."
+    },
+    {
+      "set": "modal-12",
+      "id": "s75",
+      "old_turkish": "Tom Önümüzdeki ay Kanada'ya uçuyor. Ayrılmadan önce çok sıcak giysiler alması gerekiyor.",
+      "new_turkish": "Tom önümüzdeki ay Kanada'ya uçuyor. Ayrılmadan önce çok sıcak giysiler alması gerekiyor.",
+      "english": "Tom is flying to Canada next month. He needs to get very warm clothes before he leaves."
+    },
+    {
+      "set": "modal-12",
+      "id": "s83",
+      "old_turkish": "Bağırmanıza gerek yok. Bu güzel bir replik. Seni çok iyi duyabiliyorum",
+      "new_turkish": "Bağırmanıza gerek yok. Bu güzel bir replik. Seni çok iyi duyabiliyorum.",
+      "english": "You don't need to shout. It's a good line. I can hear you perfectly."
+    },
+    {
+      "set": "modal-12",
+      "id": "s86",
+      "old_turkish": "Konsere ceketimi götürmeme gerek yoktu çünkü çok sıcak olacağım biliyordum.",
+      "new_turkish": "Konsere ceketimi götürmeme gerek yoktu çünkü çok sıcak olacağını biliyordum.",
+      "english": "I didn't need to take my jacket to the concert because I knew it would be so warm."
+    },
+    {
+      "set": "modal-12",
+      "id": "s87",
+      "old_turkish": "Daha sık egzersiz yapmanız gerekir. Kilo alryorsun.",
+      "new_turkish": "Daha sık egzersiz yapmanız gerekir. Kilo alıyorsun.",
+      "english": "You need to exercise more often. You're putting on weight."
+    },
+    {
+      "set": "modal-13",
+      "id": "s4",
+      "old_turkish": "Sizi soyadımız veya adınızla arayayım mı?",
+      "new_turkish": "Sizi soyadınız veya adınızla arayayım mı?",
+      "english": "Shall I call you with your last or first name?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s5",
+      "old_turkish": "Yürüyüşe gikalım, olur mu?",
+      "new_turkish": "Yürüyüşe çıkalım, olur mu?",
+      "english": "Let's go for a walk, shall we?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s8",
+      "old_turkish": "Kalmalı mıyız yoksa dışarn çıkalım mı?",
+      "new_turkish": "Kalmalı mıyız yoksa dışarı çıkalım mı?",
+      "english": "Shall we stay or go out?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s13",
+      "old_turkish": "Parasim ben ddeyeceğim.",
+      "new_turkish": "Parasını ben ödeyeceğim.",
+      "english": "I shall pay for it."
+    },
+    {
+      "set": "modal-13",
+      "id": "s20",
+      "old_turkish": "Seyahat ayarlamalarım yapacağım. Endişelenmenize gerek yok.",
+      "new_turkish": "Seyahat ayarlamalarını yapacağım. Endişelenmenize gerek yok.",
+      "english": "I shall make the travel arrangements. There's no need to worry."
+    },
+    {
+      "set": "modal-13",
+      "id": "s22",
+      "old_turkish": "Orada olmayacaoim. Önceden bir yükümlülüğüm var.",
+      "new_turkish": "Orada olmayacağım. Önceden bir yükümlülüğüm var.",
+      "english": "I shall not be there. I have a previous obligation."
+    },
+    {
+      "set": "modal-13",
+      "id": "s24",
+      "old_turkish": "Özgürlük mücadelesinden asla vazgeğmeyeceğim.",
+      "new_turkish": "Özgürlük mücadelesinden asla vazgeçmeyeceğim.",
+      "english": "I shall never give up the fight for freedom."
+    },
+    {
+      "set": "modal-13",
+      "id": "s28",
+      "old_turkish": "Seni bekleyeyim mi? Bana sdyle.",
+      "new_turkish": "Seni bekleyeyim mi? Bana söyle.",
+      "english": "Shall I wait for you? Tell me."
+    },
+    {
+      "set": "modal-13",
+      "id": "s29",
+      "old_turkish": "Onlan beklemeden kahvaltı yapalım mı?",
+      "new_turkish": "Onları beklemeden kahvaltı yapalım mı?",
+      "english": "Shall we have breakfast without waiting for them?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s30",
+      "old_turkish": "Daha fazla bilgi edindiğimde sizinle tekrar iletişime gegeceğim.",
+      "new_turkish": "Daha fazla bilgi edindiğimde sizinle tekrar iletişime geçeceğim.",
+      "english": "I shall contact you again when I have further information."
+    },
+    {
+      "set": "modal-13",
+      "id": "s41",
+      "old_turkish": "Oturmalan için kalkacaklar mı?",
+      "new_turkish": "Oturmaları için kalkacaklar mı?",
+      "english": "Shall get up for them to sit?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s42",
+      "old_turkish": "Dışarıda m içeride mi yemek yiyelim?",
+      "new_turkish": "Dışarıda mı içeride mi yemek yiyelim?",
+      "english": "Shall we dine outside or inside?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s44",
+      "old_turkish": "Öğle yemedi yapayım mı?",
+      "new_turkish": "Öğle yemeği yapayım mı?",
+      "english": "Shall I make some lunch?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s53",
+      "old_turkish": "Sorunu çözmek için elimizden gelen her şeyi yapacauz.",
+      "new_turkish": "Sorunu çözmek için elimizden gelen her şeyi yapacağız.",
+      "english": "We shall do everything we can to solve the problem."
+    },
+    {
+      "set": "modal-13",
+      "id": "s54",
+      "old_turkish": "O bavulu sizin için taşryayım mı? Ağır görünüyor!",
+      "new_turkish": "O bavulu sizin için taşıyayım mı? Ağır görünüyor!",
+      "english": "Shall I carry that suitcase for you? It looks heavy!"
+    },
+    {
+      "set": "modal-13",
+      "id": "s57",
+      "old_turkish": "Size bir fincan gay veya bir kase tavuk çorbası gibi içecek sıcak bir şeyler ısmarlayayım mı?",
+      "new_turkish": "Size bir fincan çay veya bir kase tavuk çorbası gibi içecek sıcak bir şeyler ısmarlayayım mı?",
+      "english": "Shall I get you something warm to drink, like a cup of tea or a bowl of chicken soup?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s58",
+      "old_turkish": "Sunumun sonunda ise alımla ilgili bir soru soracağım.",
+      "new_turkish": "Sunumun sonunda işe alımla ilgili bir soru soracağım.",
+      "english": "I shall ask a question on recruitment at the end of the presentation."
+    },
+    {
+      "set": "modal-13",
+      "id": "s59",
+      "old_turkish": "Toplantı sırasında iskoç akşamyla konuşmah myim?",
+      "new_turkish": "Toplantı sırasında İskoç aksanıyla konuşmalı mıyım?",
+      "english": "Shall I talk in a Scottish accent during the meeting?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s61",
+      "old_turkish": "Konuyu midi ile tartışmayacağız.",
+      "new_turkish": "Konuyu müdür ile tartışmayacağız.",
+      "english": "We shall not discuss the matter with the Principal."
+    },
+    {
+      "set": "modal-13",
+      "id": "s62",
+      "old_turkish": "Kardeşinizi Üniversiteden alayım mı?",
+      "new_turkish": "Kardeşinizi üniversiteden alayım mı?",
+      "english": "Shall I pick your brother up from college?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s63",
+      "old_turkish": "Kotii davramslarınız için sizi cezalandırayım mı?",
+      "new_turkish": "Kötü davranışlarınız için sizi cezalandırayım mı?",
+      "english": "Shall I punish you for your misbehavior?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s64",
+      "old_turkish": "Koğumuz izin verene kadar ayrılmayacak mıyız?",
+      "new_turkish": "Koçumuz izin verene kadar ayrılmayacak mıyız?",
+      "english": "Shall we not leave by the time our coach lets us?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s65",
+      "old_turkish": "Size bundan daha fazlaşım anlatacağım.",
+      "new_turkish": "Size bundan daha fazlasını anlatacağım.",
+      "english": "I shall tell you more about this."
+    },
+    {
+      "set": "modal-13",
+      "id": "s69",
+      "old_turkish": "Öğleden Önce varmayacauz.",
+      "new_turkish": "Öğleden önce varmayacağız.",
+      "english": "We shall not arrive before noon."
+    },
+    {
+      "set": "modal-13",
+      "id": "s70",
+      "old_turkish": "Doğum günü için ne yapmaltyiz?",
+      "new_turkish": "Doğum günü için ne yapmalıyız?",
+      "english": "What shall we do for her birthday?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s81",
+      "old_turkish": "Odanız dağınık. Yataklan ben yapayım mı?",
+      "new_turkish": "Odanız dağınık. Yatakları ben yapayım mı?",
+      "english": "Your room is untidy. Shall I make the beds?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s84",
+      "old_turkish": "Her departman kıdem listesinin bir kopyasım alacağız.",
+      "new_turkish": "Her departman kıdem listesinin bir kopyasını alacağız.",
+      "english": "We shall receive a copy of every departmental seniority list."
+    },
+    {
+      "set": "modal-13",
+      "id": "s87",
+      "old_turkish": "Gidip bu adam arayacağım ve sonra geri döneceğim.",
+      "new_turkish": "Gidip bu adamı arayacağım ve sonra geri döneceğim.",
+      "english": "I'm going to go call this guy and then I shall return."
+    },
+    {
+      "set": "modal-13",
+      "id": "s88",
+      "old_turkish": "Sağımı arkadan ayırmalı mim?",
+      "new_turkish": "Saçımı arkadan ayırmalı mıyım?",
+      "english": "Shall I part my hair behind?"
+    },
+    {
+      "set": "modal-13",
+      "id": "s90",
+      "old_turkish": "Kabalığım için dzur dilerim.",
+      "new_turkish": "Kabalığım için özür dilerim.",
+      "english": "I shall apologize for my rudeness."
+    },
+    {
+      "set": "modal-13",
+      "id": "s91",
+      "old_turkish": "Kendi yetki alan içindeki herkese hak ve özgürlükleri glivence altına alacağız.",
+      "new_turkish": "Kendi yetki alanı içindeki herkese hak ve özgürlükleri güvence altına alacağız.",
+      "english": "We shall secure to everyone within their jurisdiction the rights and freedoms."
+    },
+    {
+      "set": "modal-13",
+      "id": "s97",
+      "old_turkish": "Bence başka bir otel rezervasyonu yapmaltyiz.",
+      "new_turkish": "Bence başka bir otel rezervasyonu yapmalıyız.",
+      "english": "In my opinion, we shall book another hotel."
+    },
+    {
+      "set": "modal-14",
+      "id": "s3",
+      "old_turkish": "Buğtın kahvaltıda ekmek, tereyağı ve bal yemeyi tercih ederim.",
+      "new_turkish": "Bugün kahvaltıda ekmek, tereyağı ve bal yemeyi tercih ederim.",
+      "english": "Today, at breakfast, I'd rather eat bread, butter and honey."
+    },
+    {
+      "set": "modal-14",
+      "id": "s7",
+      "old_turkish": "Peter'in bekar olmayı tercih edeceğini diisiiniiyoruz!",
+      "new_turkish": "Peter'ın bekar olmayı tercih edeceğini düşünüyoruz!",
+      "english": "We think, Peter would rather be single!"
+    },
+    {
+      "set": "modal-14",
+      "id": "s11",
+      "old_turkish": "Hesabı sorma zaman. önce kahve içmemeyi mi tercih edersiniz?",
+      "new_turkish": "Hesabı sorma zamanı. Önce kahve içmemeyi mi tercih edersiniz?",
+      "english": "It's time to ask for the bill. Would you rather not have coffee first?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s12",
+      "old_turkish": "Anne, banyodan önce akşam yemedi yemeyi tercih ederim ... Aghktan dluyorum.",
+      "new_turkish": "Anne, banyodan önce akşam yemeği yemeyi tercih ederim ... Açlıktan ölüyorum.",
+      "english": "Mom, I'd prefer to have dinner before taking my bath... I'm starving."
+    },
+    {
+      "set": "modal-14",
+      "id": "s13",
+      "old_turkish": "Sabah mı yoksa öğleden sonra ise gelmeyi mi tercih edersiniz?",
+      "new_turkish": "Sabah mı yoksa öğleden sonra işe gelmeyi mi tercih edersiniz?",
+      "english": "Would you rather come to work in the morning, or in the afternoon?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s23",
+      "old_turkish": "Güzel bir bisiklet yerine sık bir arabaya sahip olmayı mı tercih edersiniz?",
+      "new_turkish": "Güzel bir bisiklet yerine şık bir arabaya sahip olmayı mı tercih edersiniz?",
+      "english": "Would you rather have a fancy car than a nice bike?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s24",
+      "old_turkish": "Gerçekten sevdiğiniz Ünlü biriyle tanışmaktansa piyangoyu kazanmayı mı tercih edersiniz?",
+      "new_turkish": "Gerçekten sevdiğiniz ünlü biriyle tanışmaktansa piyangoyu kazanmayı mı tercih edersiniz?",
+      "english": "Would you prefer to win the lottery rather than meet someone famous you really like?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s25",
+      "old_turkish": "Çiftlik yerine şatoda yaşamayı m tercih edersiniz?",
+      "new_turkish": "Çiftlik yerine şatoda yaşamayı mı tercih edersiniz?",
+      "english": "Would you rather live in a castle than in a farm?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s30",
+      "old_turkish": "Dünyayı: dolaşmaktansa kendi ıılkenizi dolaşmayı tercih eder miydiniz?",
+      "new_turkish": "Dünyayı dolaşmaktansa kendi ülkenizi dolaşmayı tercih eder miydiniz?",
+      "english": "Would you prefer to go on a travel around your country rather than around the world?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s33",
+      "old_turkish": "Güneşli bir gün yerine karl bir günde olmayı mı tercih edersiniz?",
+      "new_turkish": "Güneşli bir gün yerine karlı bir günde olmayı mı tercih edersiniz?",
+      "english": "Would you rather be in a snowy day than in a sunny day?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s48",
+      "old_turkish": "Dün gece kocastyla tartışmamayı tercih ederdi.",
+      "new_turkish": "Dün gece kocasıyla tartışmamayı tercih ederdi.",
+      "english": "She'd prefer not to have a row with her husband last night."
+    },
+    {
+      "set": "modal-14",
+      "id": "s50",
+      "old_turkish": "Artık kaza yapmamayt tercih ederim.",
+      "new_turkish": "Artık kaza yapmamayı tercih ederim.",
+      "english": "I'd prefer not to cause an accident anymore."
+    },
+    {
+      "set": "modal-14",
+      "id": "s52",
+      "old_turkish": "Kız kardeşim onunla aym odayı paylaşmamayı tercih ederim.",
+      "new_turkish": "Kız kardeşim onunla aynı odayı paylaşmamayı tercih ederim.",
+      "english": "My sister I would prefer to not to share a room with her."
+    },
+    {
+      "set": "modal-14",
+      "id": "s54",
+      "old_turkish": "Sorunla daha Önce başa çıkmayı tercih ederim.",
+      "new_turkish": "Sorunla daha önce başa çıkmayı tercih ederim.",
+      "english": "I'd prefer to cope with the problem earlier."
+    },
+    {
+      "set": "modal-14",
+      "id": "s56",
+      "old_turkish": "Birkaçç gün önce gördüklerimi görmemeyi tercih ederim.",
+      "new_turkish": "Birkaç gün önce gördüklerimi görmemeyi tercih ederim.",
+      "english": "I'd prefer not to see what I saw some days ago."
+    },
+    {
+      "set": "modal-14",
+      "id": "s58",
+      "old_turkish": "Öğle yemesini içeride yemeyi tercih ederlerdi ama ben bahçede dışarıda yemeyi tercih ederim.",
+      "new_turkish": "Öğle yemeğini içeride yemeyi tercih ederlerdi ama ben bahçede dışarıda yemeyi tercih ederim.",
+      "english": "They'd prefer to have lunch inside, but I prefer to eat outside in the garden."
+    },
+    {
+      "set": "modal-14",
+      "id": "s62",
+      "old_turkish": "Tatillere Kuzey Kutup Dairesi yerine Sahra Coline gitmeyi tercih eder miydiniz?",
+      "new_turkish": "Tatillere Kuzey Kutup Dairesi yerine Sahra Çölü'ne gitmeyi tercih eder miydiniz?",
+      "english": "Would you prefer to go on holidays to the Sahara Desert rather than to the Arctic Circle?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s63",
+      "old_turkish": "Bir taksi şoförü olmaktansa yars arabast sürücüsii, otobüs şoförti, jokey olmayı mı tercih edersiniz?",
+      "new_turkish": "Bir taksi şoförü olmaktansa yarış arabası sürücüsü, otobüs şoförü, jokey olmayı mı tercih edersiniz?",
+      "english": "Would you rather be a racing-car driver, a bus driver, a jockey than a taxi driver?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s65",
+      "old_turkish": "Onbeş kilo kaybetmektense kazanmayı mı tercih edersiniz?",
+      "new_turkish": "On beş kilo kaybetmektense kazanmayı mı tercih edersiniz?",
+      "english": "Would you rather gain than lose15 kilos?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s67",
+      "old_turkish": "Evcil hayvan için Grumçeğe sahip olmaktansa bir maymun, yılan, yunus tercih eder miydiniz?",
+      "new_turkish": "Evcil hayvan için örümceğe sahip olmaktansa bir maymun, yılan, yunus tercih eder miydiniz?",
+      "english": "Would you rather have a monkey, a snake, a dolphin than a spider for a pet?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s76",
+      "old_turkish": "Çip yerine sürmeyi tercih ederim.",
+      "new_turkish": "Cip yerine sürmeyi tercih ederim.",
+      "english": "I would prefer to drive rather than the jeep."
+    },
+    {
+      "set": "modal-14",
+      "id": "s77",
+      "old_turkish": "Akşam yemefine tatlı yerine salata getirmeyi mi tercih edersiniz?",
+      "new_turkish": "Akşam yemeğine tatlı yerine salata getirmeyi mi tercih edersiniz?",
+      "english": "Would you rather bring a salad than dessert to the dinner party?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s80",
+      "old_turkish": "Farklı bir sarktyla dans etmeyi tercih eder miydi?",
+      "new_turkish": "Farklı bir şarkıyla dans etmeyi tercih eder miydi?",
+      "english": "Would he prefer to dance to a different song?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s84",
+      "old_turkish": "Kotii haber olsa bile gerçeği söylemeyi tercih ederim.",
+      "new_turkish": "Kötü haber olsa bile gerçeği söylemeyi tercih ederim.",
+      "english": "I'd prefer to tell the truth, even if it's bad news."
+    },
+    {
+      "set": "modal-14",
+      "id": "s85",
+      "old_turkish": "Kelime bilgisi yerine dilbilgisi çalşmayı tercih ederim.",
+      "new_turkish": "Kelime bilgisi yerine dilbilgisi çalışmayı tercih ederim.",
+      "english": "I'd rather study grammar than vocabulary."
+    },
+    {
+      "set": "modal-14",
+      "id": "s86",
+      "old_turkish": "Sorunlarım hakkında konuşmamayt tercih ederim.",
+      "new_turkish": "Sorunlarım hakkında konuşmamayı tercih ederim.",
+      "english": "I'd prefer not to talk about my problems."
+    },
+    {
+      "set": "modal-14",
+      "id": "s88",
+      "old_turkish": "Elli yıl sağlıklı yağamaktansa 100 yıl sağlıksız yaşamayı tercih ederim.",
+      "new_turkish": "Elli yıl sağlıklı yaşamaktansa 100 yıl sağlıksız yaşamayı tercih ederim.",
+      "english": "I'd prefer to live unhealthy 100 years rather than live healthy 50 years."
+    },
+    {
+      "set": "modal-14",
+      "id": "s96",
+      "old_turkish": "Şu altında nefes almayı mı yoksa uçmayı mı tercih edersiniz?",
+      "new_turkish": "Su altında nefes almayı mı yoksa uçmayı mı tercih edersiniz?",
+      "english": "Would you prefer to be able to breathe underwater or fly?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s98",
+      "old_turkish": "Parlak bir bilim adam m yoksa dünyaca ıınlıı bir ressam mı olmayı tercih edersiniz?",
+      "new_turkish": "Parlak bir bilim adamı mı yoksa dünyaca ünlü bir ressam mı olmayı tercih edersiniz?",
+      "english": "Would you prefer to be a brillant scientist or a world famous painter?"
+    },
+    {
+      "set": "modal-14",
+      "id": "s99",
+      "old_turkish": "Dünyanın en hızlı insam olmaktansa en güçlii kişi ol may tercih eder miydiniz?",
+      "new_turkish": "Dünyanın en hızlı insanı olmaktansa en güçlü kişi olmayı tercih eder miydiniz?",
+      "english": "Would you rather be the strongest person than the fastestest person in the world?"
+    },
+    {
+      "set": "modal-15",
+      "id": "s15",
+      "old_turkish": "Jenny ve ben evilenmek istiyoruz.",
+      "new_turkish": "Jenny ve ben evlenmek istiyoruz.",
+      "english": "Jenny and I would like to get married."
+    },
+    {
+      "set": "modal-15",
+      "id": "s18",
+      "old_turkish": "O büyük yemekten sonra tatl istemiyorum.",
+      "new_turkish": "O büyük yemekten sonra tatlı istemiyorum.",
+      "english": "I would like not any dessert after that big meal."
+    },
+    {
+      "set": "modal-15",
+      "id": "s24",
+      "old_turkish": "Bu dergilerden kağ tane istersiniz?",
+      "new_turkish": "Bu dergilerden kaç tane istersiniz?",
+      "english": "How many of these magazines would you like?"
+    },
+    {
+      "set": "modal-15",
+      "id": "s34",
+      "old_turkish": "Böylesine korkung koşullara tahammül etmemek isterim.",
+      "new_turkish": "Böylesine korkunç koşullara tahammül etmemek isterim.",
+      "english": "I wouldn like not to tolerate such terrible conditions."
+    },
+    {
+      "set": "modal-15",
+      "id": "s37",
+      "old_turkish": "Uzun bir bisiklet yolculuğuna gikmak istiyorum.",
+      "new_turkish": "Uzun bir bisiklet yolculuğuna çıkmak istiyorum.",
+      "english": "I would like to go on a long bike ride."
+    },
+    {
+      "set": "modal-15",
+      "id": "s45",
+      "old_turkish": "Önümüzdeki yaz ispanya'ya seyahat etmek istiyorum ama yeterli param yok.",
+      "new_turkish": "Önümüzdeki yaz İspanya'ya seyahat etmek istiyorum ama yeterli param yok.",
+      "english": "I would like to travel to Spain next summer, but I don't have enough money."
+    },
+    {
+      "set": "modal-15",
+      "id": "s59",
+      "old_turkish": "Ölüm doktor olmak istiyor.",
+      "new_turkish": "Oğlum doktor olmak istiyor.",
+      "english": "My son would like to become a doctor."
+    },
+    {
+      "set": "modal-15",
+      "id": "s73",
+      "old_turkish": "Tüm dgrenciler yeni şeyler öğrenmek ister.",
+      "new_turkish": "Tüm öğrenciler yeni şeyler öğrenmek ister.",
+      "english": "All students would like to learn new things."
+    },
+    {
+      "set": "modal-15",
+      "id": "s76",
+      "old_turkish": "Kotii alışkanlıklarımı değiştirmek istiyor.",
+      "new_turkish": "Kötü alışkanlıklarımı değiştirmek istiyor.",
+      "english": "She would like to change my bad habits."
+    },
+    {
+      "set": "modal-15",
+      "id": "s78",
+      "old_turkish": "Bir satrang kulübii kurmak istiyorum.",
+      "new_turkish": "Bir satranç kulübü kurmak istiyorum.",
+      "english": "I would like to form a chess club."
+    },
+    {
+      "set": "modal-15",
+      "id": "s82",
+      "old_turkish": "İş yükümii artırmak ister miyim?",
+      "new_turkish": "İş yükümü artırmak ister miyim?",
+      "english": "Would I like to increase my work load?"
+    },
+    {
+      "set": "modal-15",
+      "id": "s85",
+      "old_turkish": "Nakit Gdemek istiyor.",
+      "new_turkish": "Nakit ödemek istiyor.",
+      "english": "He'd like to pay cash."
+    },
+    {
+      "set": "modal-15",
+      "id": "s87",
+      "old_turkish": "Bu ayakkabıların başka bir renk olmasınt isterler.",
+      "new_turkish": "Bu ayakkabıların başka bir renk olmasını isterler.",
+      "english": "They'd like these shoes in another colour."
+    },
+    {
+      "set": "modal-16",
+      "id": "s1",
+      "old_turkish": "Eskiden güzel şekilli bir vücuda sahipti. (Artık değil)",
+      "new_turkish": "Eskiden güzel şekilli bir vücuda sahipti. (Artık değil)",
+      "english": "She used to have a beautifully shaped body. (Not any more)"
+    },
+    {
+      "set": "modal-16",
+      "id": "s3",
+      "old_turkish": "Bir dışı aslan tarafından kötü bir şekilde yaralanıncaya kadar aslanları eğitirdi.",
+      "new_turkish": "Bir dişi aslan tarafından kötü bir şekilde yaralanıncaya kadar aslanları eğitirdi.",
+      "english": "He used to train lions until he was badly mauled by a lioness."
+    },
+    {
+      "set": "modal-16",
+      "id": "s4",
+      "old_turkish": "Çocukken, yabanı mantarlan toplamak için ormana giderdik.",
+      "new_turkish": "Çocukken, yabani mantarları toplamak için ormana giderdik.",
+      "english": "When we were children, we used to go into the woods to pick wild mushrooms."
+    },
+    {
+      "set": "modal-16",
+      "id": "s7",
+      "old_turkish": "İnsanlar güneşle yatarlardı. Şimdi neredeyse hiç kimse o kadar erken yatmyor.",
+      "new_turkish": "İnsanlar güneşle yatarlardı. Şimdi neredeyse hiç kimse o kadar erken yatmıyor.",
+      "english": "People used to go to bed with the sun. Now almost no one goes to bed that early."
+    },
+    {
+      "set": "modal-16",
+      "id": "s8",
+      "old_turkish": "Bugünlerde neredeyse herkesin bir cep telefonu var. insanlar sabit hatlara güvenirlerdi.",
+      "new_turkish": "Bugünlerde neredeyse herkesin bir cep telefonu var. İnsanlar sabit hatlara güvenirlerdi.",
+      "english": "Almost everyone has a mobile phone these days. People used to depend on landlines."
+    },
+    {
+      "set": "modal-16",
+      "id": "s12",
+      "old_turkish": "Komşulartyla tartışırlardı.",
+      "new_turkish": "Komşularıyla tartışırlardı.",
+      "english": "They used to quarrel with their neighbor."
+    },
+    {
+      "set": "modal-16",
+      "id": "s13",
+      "old_turkish": "Kolej günlerimde flit calyordum.",
+      "new_turkish": "Kolej günlerimde flüt çalıyordum.",
+      "english": "I used to play the flute in my college days."
+    },
+    {
+      "set": "modal-16",
+      "id": "s18",
+      "old_turkish": "Calığşmaktan zevk almak için kullanmadım, ama şimdi seviyorum.",
+      "new_turkish": "Çalışmaktan zevk almak için kullanmadım, ama şimdi seviyorum.",
+      "english": "I didn't use to enjoy studying, but I do now."
+    },
+    {
+      "set": "modal-16",
+      "id": "s19",
+      "old_turkish": "Ondan hoşlanırdin ... Evet, ama şimdi ondan nefret ediyorum!",
+      "new_turkish": "Ondan hoşlanırdın ... Evet, ama şimdi ondan nefret ediyorum!",
+      "english": "You used to like him... Yes, but now I hate him!"
+    },
+    {
+      "set": "modal-16",
+      "id": "s21",
+      "old_turkish": "Çocukken her sabah balık tutmaya gittiğimizi hatırlyorum.",
+      "new_turkish": "Çocukken her sabah balık tutmaya gittiğimizi hatırlıyorum.",
+      "english": "I remember we used to go fishing every morning when I was a child."
+    },
+    {
+      "set": "modal-16",
+      "id": "s25",
+      "old_turkish": "Sting, ıınlıı bir şarkıcı olmadan önce bir öğretmendi.",
+      "new_turkish": "Sting, ünlü bir şarkıcı olmadan önce bir öğretmendi.",
+      "english": "Sting used to be a teacher before he became a famous singer."
+    },
+    {
+      "set": "modal-16",
+      "id": "s28",
+      "old_turkish": "Mary okula yürürdii ama şimdi otobüse biniyor.",
+      "new_turkish": "Mary okula yürürdü ama şimdi otobüse biniyor.",
+      "english": "Mary used to walk to school but now she takes the bus."
+    },
+    {
+      "set": "modal-16",
+      "id": "s32",
+      "old_turkish": "Gengken her cumartesi fast food'da 6öğle yemeği yiyorlardı.",
+      "new_turkish": "Gençken her cumartesi fast food'da öğle yemeği yiyorlardı.",
+      "english": "They used to have lunch in a fast food every Saturday when they were teenagers."
+    },
+    {
+      "set": "modal-16",
+      "id": "s37",
+      "old_turkish": "İnsanlar televizyon icat edilmeden önce ne yaptyorlardı?",
+      "new_turkish": "İnsanlar televizyon icat edilmeden önce ne yapıyorlardı?",
+      "english": "What did people use to do before television was invented?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s39",
+      "old_turkish": "İnsanlar elektrik lambaları olmadan Önceki geceleri nasıl görürlerdi?",
+      "new_turkish": "İnsanlar elektrik lambaları olmadan önceki geceleri nasıl görürlerdi?",
+      "english": "How did people use to see at night before there were electric lights?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s41",
+      "old_turkish": "Büyükbabanız hangi ise sahipti?",
+      "new_turkish": "Büyükbabanız hangi işe sahipti?",
+      "english": "What job did your grandfather use to have?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s42",
+      "old_turkish": "On yıl Önce sahip olmak için hangi hobiniz vardı?",
+      "new_turkish": "On yıl önce sahip olmak için hangi hobiniz vardı?",
+      "english": "What hobby did you use to have ten years ago?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s43",
+      "old_turkish": "Çoğu insan ne kadar zaman önce hayvanları yemek için aviamaktaydı?",
+      "new_turkish": "Çoğu insan ne kadar zaman önce hayvanları yemek için avlamaktaydı?",
+      "english": "How long ago did most people use to hunt animals for food?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s44",
+      "old_turkish": "İnsanlar kameralar icat edilmeden önce ne yaptyorlardı?",
+      "new_turkish": "İnsanlar kameralar icat edilmeden önce ne yapıyorlardı?",
+      "english": "What did people use to do before cameras were invented?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s46",
+      "old_turkish": "On yıl Önce neye benziyordunuz?",
+      "new_turkish": "On yıl önce neye benziyordunuz?",
+      "english": "What did you use to look like ten years ago?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s52",
+      "old_turkish": "İnsanlar televizyon icat edilmeden önce ne yaptyorlardı?",
+      "new_turkish": "İnsanlar televizyon icat edilmeden önce ne yapıyorlardı?",
+      "english": "What did people use to do before television was invented?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s54",
+      "old_turkish": "İnsanlar 100 yıl Önce boş zamanlarnda ne yaptyorlardı?",
+      "new_turkish": "İnsanlar 100 yıl önce boş zamanlarında ne yapıyorlardı?",
+      "english": "What did people use to do in their free time 100 years ago?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s56",
+      "old_turkish": "İnsanlar cep telefonu olmadan önce ne yaptyorlard?",
+      "new_turkish": "İnsanlar cep telefonu olmadan önce ne yapıyorlardı?",
+      "english": "What did people use to do before there were cell phones?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s57",
+      "old_turkish": "İnsanlar elektrik lambaları olmadan önce ne yaptyorlardı?",
+      "new_turkish": "İnsanlar elektrik lambaları olmadan önce ne yapıyorlardı?",
+      "english": "What did people use to do before there were electric lights?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s58",
+      "old_turkish": "İnsanlar saatler olmadan önce ne yaptyorlardı?",
+      "new_turkish": "İnsanlar saatler olmadan önce ne yapıyorlardı?",
+      "english": "What did people use to do before there were clocks?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s59",
+      "old_turkish": "İnsanlar bilgisayar olmadan önce ne yaptyorlardı?",
+      "new_turkish": "İnsanlar bilgisayar olmadan önce ne yapıyorlardı?",
+      "english": "What did people use to do before there were computers?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s60",
+      "old_turkish": "Çoğu insan ne kadar zaman Önce ateşte yemek pişiriyordu?",
+      "new_turkish": "Çoğu insan ne kadar zaman önce ateşte yemek pişiriyordu?",
+      "english": "How long ago did most people use to cook with fire?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s61",
+      "old_turkish": "Cou insan ne kadar zaman önce yiyecek avlamak için kullandı?",
+      "new_turkish": "Çoğu insan ne kadar zaman önce yiyecek avlamak için kullandı?",
+      "english": "How long ago did most people use to hunt for food?"
+    },
+    {
+      "set": "modal-16",
+      "id": "s63",
+      "old_turkish": "Eskiden bir top modeldim. Medyanın çok ilgisini ccekerdim.",
+      "new_turkish": "Eskiden bir top modeldim. Medyanın çok ilgisini çekerdim.",
+      "english": "I used to be a top model. I used to have a lot of media attention."
+    },
+    {
+      "set": "modal-16",
+      "id": "s72",
+      "old_turkish": "Gürütülii bir odada çalışmaktan nefret ederdim. Şimdi umursamıyorum.",
+      "new_turkish": "Gürültülü bir odada çalışmaktan nefret ederdim. Şimdi umursamıyorum.",
+      "english": "I used to hate working in a noisy room. I don't mind now."
+    },
+    {
+      "set": "modal-16",
+      "id": "s74",
+      "old_turkish": "Terry, diplomat olarak irlanda'da yaşarken çok bira içiyordu.",
+      "new_turkish": "Terry, diplomat olarak İrlanda'da yaşarken çok bira içiyordu.",
+      "english": "Terry used to drink a lot of beer when he lived in Ireland as a diplomat."
+    },
+    {
+      "set": "modal-16",
+      "id": "s75",
+      "old_turkish": "Eskiden sigara içiyordu, ama şimdi artık yapmtyor.",
+      "new_turkish": "Eskiden sigara içiyordu, ama şimdi artık yapmıyor.",
+      "english": "He used to smoke cigarettes, but now he doesn't do it anymore."
+    },
+    {
+      "set": "modal-16",
+      "id": "s77",
+      "old_turkish": "Bay Davis, ıınlıı bir restoranda aşçı olarak çalışıyordu.",
+      "new_turkish": "Bay Davis, ünlü bir restoranda aşçı olarak çalışıyordu.",
+      "english": "Mr. Davis used to work as a cook in a famous restaurant."
+    },
+    {
+      "set": "modal-16",
+      "id": "s78",
+      "old_turkish": "Jamie ve Theo her sabah kosuya giderlerdi.",
+      "new_turkish": "Jamie ve Theo her sabah koşuya giderlerdi.",
+      "english": "Jamie and Theo used to go jogging every morning."
+    },
+    {
+      "set": "modal-16",
+      "id": "s80",
+      "old_turkish": "Benjamin büyük bir şirkette çalışıyordu",
+      "new_turkish": "Benjamin büyük bir şirkette çalışıyordu.",
+      "english": "Benjamin used to work in a big company"
+    },
+    {
+      "set": "modal-16",
+      "id": "s81",
+      "old_turkish": "Layla okulda ip athyordu.",
+      "new_turkish": "Layla okulda ip atlıyordu.",
+      "english": "Layla used to skip rope at school."
+    },
+    {
+      "set": "modal-16",
+      "id": "s82",
+      "old_turkish": "Alice hafta sonları doğa ile iç iğe fotoğraflar çekerdi.",
+      "new_turkish": "Alice hafta sonları doğa ile iç içe fotoğraflar çekerdi.",
+      "english": "Alice use to take photographs in the nature at weekends."
+    },
+    {
+      "set": "modal-16",
+      "id": "s87",
+      "old_turkish": "Isaac, Amy ve Katie her sabah okul otobüsünii beklerlerdi.",
+      "new_turkish": "Isaac, Amy ve Katie her sabah okul otobüsünü beklerlerdi.",
+      "english": "Isaac, Amy and Katie used wait for the school bus every morning."
+    },
+    {
+      "set": "modal-16",
+      "id": "s90",
+      "old_turkish": "Blake ve Kian yürüyüşe gikarlardı.",
+      "new_turkish": "Blake ve Kian yürüyüşe çıkarlardı.",
+      "english": "Blake and Kian used to go hiking."
+    },
+    {
+      "set": "modal-16",
+      "id": "s92",
+      "old_turkish": "Bobby arkadaşlar ile balığa giderdi.",
+      "new_turkish": "Bobby arkadaşları ile balığa giderdi.",
+      "english": "Bobby used to go fishing with his friends."
+    },
+    {
+      "set": "modal-16",
+      "id": "s97",
+      "old_turkish": "Kız elbisesini elde yıkardı ama şimdi tam otomatik gamaşır makinesinde yıkıyor.",
+      "new_turkish": "Kız elbisesini elde yıkardı ama şimdi tam otomatik çamaşır makinesinde yıkıyor.",
+      "english": "The girl used to wash her dress by hand but now she washes them in her full automatic washing-machine."
+    },
+    {
+      "set": "modal-16",
+      "id": "s100",
+      "old_turkish": "Nathan Amca uçurtma uğurmazdı.",
+      "new_turkish": "Nathan Amca uçurtma uçurmazdı.",
+      "english": "Uncle Nathan didn't use to fly a kite."
+    }
+  ]
+}

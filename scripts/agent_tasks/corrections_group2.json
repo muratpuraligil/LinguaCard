@@ -1,0 +1,2098 @@
+{
+  "total_corrections": 299,
+  "corrections": [
+    {
+      "set": "aux-10",
+      "id": "s5",
+      "old_turkish": "Sanınm bu gece James ile bir film izleyeceğim.",
+      "new_turkish": "Sanırım bu gece James ile bir film izleyeceğim.",
+      "english": "I think I will watch a movie with James tonight."
+    },
+    {
+      "set": "aux-10",
+      "id": "s9",
+      "old_turkish": "Muhtemelen cevabt bilecek.",
+      "new_turkish": "Muhtemelen cevabı bilecek.",
+      "english": "She will probably know the answer."
+    },
+    {
+      "set": "aux-10",
+      "id": "s11",
+      "old_turkish": "Barcelona harika bir futbol takım. Bence Barcelona maçı kazanacak.",
+      "new_turkish": "Barcelona harika bir futbol takımı. Bence Barcelona maçı kazanacak.",
+      "english": "Barcelona is a great football team. I think Barcelona will win the match."
+    },
+    {
+      "set": "aux-10",
+      "id": "s12",
+      "old_turkish": "Jenny kötü bir",
+      "new_turkish": "Jenny kötü bir sürücüdür. Sürüş testini geçmeyecek.",
+      "english": "Jenny is a bad driver. She won't pass the driving test."
+    },
+    {
+      "set": "aux-10",
+      "id": "s13",
+      "old_turkish": "Sanınm Tony konsere gidecek. Müziği seviyor.",
+      "new_turkish": "Sanırım Tony konsere gidecek. Müziği seviyor.",
+      "english": "I think Tony will go to concert. He loves music."
+    },
+    {
+      "set": "aux-10",
+      "id": "s15",
+      "old_turkish": "Emma partiye gelmeyecek. Korkung bir baş ağrısı var. Evde kalacak.",
+      "new_turkish": "Emma partiye gelmeyecek. Korkunç bir baş ağrısı var. Evde kalacak.",
+      "english": "Emma won't come to the party. She has a terrible headache. She will stay at home."
+    },
+    {
+      "set": "aux-10",
+      "id": "s16",
+      "old_turkish": "Çok yorgunum. Bu akşam dışan çıkmayacağım.",
+      "new_turkish": "Çok yorgunum. Bu akşam dışarı çıkmayacağım.",
+      "english": "I am very tired. I won't go out this evening."
+    },
+    {
+      "set": "aux-10",
+      "id": "s17",
+      "old_turkish": "Tim tembel bir öğrencidir. Düzenli cahşmnyor. Sınavı geçmeyecek.",
+      "new_turkish": "Tim tembel bir öğrencidir. Düzenli çalışmıyor. Sınavı geçmeyecek.",
+      "english": "Tim is a lazy student. He doesn't study regularly. He won't pass the exam."
+    },
+    {
+      "set": "aux-10",
+      "id": "s22",
+      "old_turkish": "Stislii elbise partisinde ne giyeceksin?",
+      "new_turkish": "Süslü elbise partisinde ne giyeceksin?",
+      "english": "What will you wear at fancy dress party?"
+    },
+    {
+      "set": "aux-10",
+      "id": "s23",
+      "old_turkish": "Partiye kağ kişi gelecek?",
+      "new_turkish": "Partiye kaç kişi gelecek?",
+      "english": "How many people will come to party?"
+    },
+    {
+      "set": "aux-10",
+      "id": "s32",
+      "old_turkish": "Bu sağmalığa katlanmayacağım.",
+      "new_turkish": "Bu saçmalığa katlanmayacağım.",
+      "english": "I won't put up with this nonsense."
+    },
+    {
+      "set": "aux-10",
+      "id": "s34",
+      "old_turkish": "Kaptyi sizin için açık tutacağım.",
+      "new_turkish": "Kapıyı sizin için açık tutacağım.",
+      "english": "I'll hold the door open for you."
+    },
+    {
+      "set": "aux-10",
+      "id": "s35",
+      "old_turkish": "Sanınm bir kahve için vaktimiz olacak.",
+      "new_turkish": "Sanırım bir kahve için vaktimiz olacak.",
+      "english": "I think we'll have time for a coffee."
+    },
+    {
+      "set": "aux-10",
+      "id": "s36",
+      "old_turkish": "Çalışma yaklaşık altı ay sürecekt.",
+      "new_turkish": "Çalışma yaklaşık altı ay sürecek.",
+      "english": "The work will take about six months."
+    },
+    {
+      "set": "aux-10",
+      "id": "s44",
+      "old_turkish": "Formilii hatırlamayacak.",
+      "new_turkish": "Formülü hatırlamayacak.",
+      "english": "He won't remember the formula."
+    },
+    {
+      "set": "aux-10",
+      "id": "s47",
+      "old_turkish": "Jane okuldan eve gelecek ve arkadaşlarım arayacak.",
+      "new_turkish": "Jane okuldan eve gelecek ve arkadaşlarını arayacak.",
+      "english": "Jane will come home from school and ring up the friends."
+    },
+    {
+      "set": "aux-10",
+      "id": "s49",
+      "old_turkish": "Robert ıınıversiteye gidecek.",
+      "new_turkish": "Robert üniversiteye gidecek.",
+      "english": "Robert will be going to the varsity."
+    },
+    {
+      "set": "aux-10",
+      "id": "s51",
+      "old_turkish": "Programda modern şarkılar sdyleyeceğim.",
+      "new_turkish": "Programda modern şarkılar söyleyeceğim.",
+      "english": "I will sing modern songs in the program."
+    },
+    {
+      "set": "aux-10",
+      "id": "s56",
+      "old_turkish": "Alana programda country şarkılan sdyleyecek.",
+      "new_turkish": "Alana programda country şarkıları söyleyecek.",
+      "english": "Alana will sing country songs in the program."
+    },
+    {
+      "set": "aux-10",
+      "id": "s57",
+      "old_turkish": "Bob bir sür yazacak.",
+      "new_turkish": "Bob bir şiir yazacak.",
+      "english": "Bob will write a poem."
+    },
+    {
+      "set": "aux-10",
+      "id": "s59",
+      "old_turkish": "Henry, Mart'ta italya'ya seyahat edecek.",
+      "new_turkish": "Henry, Mart'ta İtalya'ya seyahat edecek.",
+      "english": "Henry will travel to Italy in March."
+    },
+    {
+      "set": "aux-10",
+      "id": "s62",
+      "old_turkish": "Patrick, siz eve varmadan önce yemedi pişirecek.",
+      "new_turkish": "Patrick, siz eve varmadan önce yemeği pişirecek.",
+      "english": "Patrick will cook the meal before you reach home."
+    },
+    {
+      "set": "aux-10",
+      "id": "s63",
+      "old_turkish": "Dona tathyi hazırlayacak.",
+      "new_turkish": "Dona tatlıyı hazırlayacak.",
+      "english": "Dona will prepare the dessert."
+    },
+    {
+      "set": "aux-10",
+      "id": "s65",
+      "old_turkish": "Tom bunu duyduktan sonra ıızülecek.",
+      "new_turkish": "Tom bunu duyduktan sonra üzülecek.",
+      "english": "Tom will get upset after hearing this."
+    },
+    {
+      "set": "aux-10",
+      "id": "s67",
+      "old_turkish": "Oyunda Hamlet rolünii oynayacağım.",
+      "new_turkish": "Oyunda Hamlet rolünü oynayacağım.",
+      "english": "I will perform the role of Hamlet in the play."
+    },
+    {
+      "set": "aux-10",
+      "id": "s71",
+      "old_turkish": "Türtalart pişirecekler.",
+      "new_turkish": "Turtaları pişirecekler.",
+      "english": "They will bake the pies."
+    },
+    {
+      "set": "aux-10",
+      "id": "s74",
+      "old_turkish": "E-postayı tercüme edeceğim, böylece Bay Smith'in okuyabilir",
+      "new_turkish": "E-postayı tercüme edeceğim, böylece Bay Smith de okuyabilir.",
+      "english": "I will translate the email, so Mr. Smith can read it."
+    },
+    {
+      "set": "aux-10",
+      "id": "s75",
+      "old_turkish": "Bu ağır masayı taşımama yardım (edecek) eder misin?",
+      "new_turkish": "Bu ağır masayı taşımama yardım eder misin?",
+      "english": "Will you help me move this heavy table?"
+    },
+    {
+      "set": "aux-10",
+      "id": "s85",
+      "old_turkish": "Dükkam kapatacak.",
+      "new_turkish": "Dükkanı kapatacak.",
+      "english": "He will close the shop."
+    },
+    {
+      "set": "aux-10",
+      "id": "s89",
+      "old_turkish": "Başka bir ıılkeye taşındığında seni özleyeceğim.",
+      "new_turkish": "Başka bir ülkeye taşındığında seni özleyeceğim.",
+      "english": "I will miss you when you move to another country."
+    },
+    {
+      "set": "aux-10",
+      "id": "s93",
+      "old_turkish": "Sorular bir daha tekrar etmeyeceğiz.",
+      "new_turkish": "Soruları bir daha tekrar etmeyeceğiz.",
+      "english": "We won't repeat the questions again."
+    },
+    {
+      "set": "aux-10",
+      "id": "s98",
+      "old_turkish": "En iyi arkadaşlar ile tamışacak.",
+      "new_turkish": "En iyi arkadaşları ile buluşacak.",
+      "english": "She will meet with her best friends."
+    },
+    {
+      "set": "aux-11",
+      "id": "s8",
+      "old_turkish": "Tatilimizi gelecek yıl Fransa'da geçirecediz.",
+      "new_turkish": "Tatilimizi gelecek yıl Fransa'da geçireceğiz.",
+      "english": "We are going to spend our holidays in France next year."
+    },
+    {
+      "set": "aux-11",
+      "id": "s12",
+      "old_turkish": "Biraz yürüyüş yapacaoim.",
+      "new_turkish": "Biraz yürüyüş yapacağım.",
+      "english": "I'm going to do some walking."
+    },
+    {
+      "set": "aux-11",
+      "id": "s13",
+      "old_turkish": "O an beni sokacak,",
+      "new_turkish": "O arı beni sokacak.",
+      "english": "That bee is going to sting me,"
+    },
+    {
+      "set": "aux-11",
+      "id": "s14",
+      "old_turkish": "Çocuklar yarın futbol oynamayacaklar,",
+      "new_turkish": "Çocuklar yarın futbol oynamayacaklar.",
+      "english": "The kids aren't going to play soccer tomorrow,"
+    },
+    {
+      "set": "aux-11",
+      "id": "s16",
+      "old_turkish": "Kızlar \"Amazing Grace\" sarkisim sdyleyecek.",
+      "new_turkish": "Kızlar \"Amazing Grace\" şarkısını söyleyecek.",
+      "english": "The girls are going to sing ‘Amazing Grace'."
+    },
+    {
+      "set": "aux-11",
+      "id": "s19",
+      "old_turkish": "Teddy ve Şam bir daha o restoranda yemek yemeyecekler.",
+      "new_turkish": "Teddy ve Sam bir daha o restoranda yemek yemeyecekler.",
+      "english": "Teddy and Sam aren't going to eat at that restaurant again."
+    },
+    {
+      "set": "aux-11",
+      "id": "s22",
+      "old_turkish": "Yarın yarışa katılacak mişimiz?",
+      "new_turkish": "Yarın yarışa katılacak mısınız?",
+      "english": "Are you going to participate in the race tomorrow?"
+    },
+    {
+      "set": "aux-11",
+      "id": "s29",
+      "old_turkish": "John'un doğum giinii pastasını kim yapacak?",
+      "new_turkish": "John'un doğum günü pastasını kim yapacak?",
+      "english": "Who is going to make John's birthday cake?"
+    },
+    {
+      "set": "aux-11",
+      "id": "s35",
+      "old_turkish": "Bazı gönüllii işler yapmaya başlayacağım.",
+      "new_turkish": "Bazı gönüllü işler yapmaya başlayacağım.",
+      "english": "I'm going to start doing some volunteer work."
+    },
+    {
+      "set": "aux-11",
+      "id": "s41",
+      "old_turkish": "Gömlekleri neden ııtüleyecek?",
+      "new_turkish": "Gömlekleri neden ütüleyecek?",
+      "english": "Why is she going to iron the shirts?"
+    },
+    {
+      "set": "aux-11",
+      "id": "s42",
+      "old_turkish": "Telefon faturasını nasıl Gdeyeceksiniz?",
+      "new_turkish": "Telefon faturasını nasıl ödeyeceksiniz?",
+      "english": "How are you going to pay the telephone bill?"
+    },
+    {
+      "set": "aux-11",
+      "id": "s43",
+      "old_turkish": "Hediyeleri onlar segcmeyecek mi?",
+      "new_turkish": "Hediyeleri onlar seçmeyecek mi?",
+      "english": "Aren't they going to choose the presents?"
+    },
+    {
+      "set": "aux-11",
+      "id": "s49",
+      "old_turkish": "Bu çıt yakında yıkılacak.",
+      "new_turkish": "Bu çit yakında yıkılacak.",
+      "english": "This fence is going tofall down soon."
+    },
+    {
+      "set": "aux-11",
+      "id": "s52",
+      "old_turkish": "Hafta sonu arkadaşlarımızı ziyaret edecediz.",
+      "new_turkish": "Hafta sonu arkadaşlarımızı ziyaret edeceğiz.",
+      "english": "We're going to visitfriends at the weekend."
+    },
+    {
+      "set": "aux-11",
+      "id": "s58",
+      "old_turkish": "Frank Tip okuyacak.",
+      "new_turkish": "Yazı yurtdışında geçireceğiz.",
+      "english": "We're going to spend the summer abroad."
+    },
+    {
+      "set": "aux-11",
+      "id": "s59",
+      "old_turkish": "",
+      "new_turkish": "Frank Tıp okuyacak.",
+      "english": "Frank is going to study Medicine."
+    },
+    {
+      "set": "aux-11",
+      "id": "s62",
+      "old_turkish": "Dikkatli olun! O bulaşıklan düşüreceksin!",
+      "new_turkish": "Dikkatli olun! O bulaşıkları düşüreceksin!",
+      "english": "Be careful! You're going to drop those dishes!"
+    },
+    {
+      "set": "aux-11",
+      "id": "s71",
+      "old_turkish": "Gerçekten üşüyorum. Isıtmayı ağacağım.",
+      "new_turkish": "Gerçekten üşüyorum. Isıtmayı açacağım.",
+      "english": "1am really cold. I am going to turn the heating on."
+    },
+    {
+      "set": "aux-11",
+      "id": "s73",
+      "old_turkish": "Aym hikayeyi anlatmayacaklar.",
+      "new_turkish": "Aynı hikayeyi anlatmayacaklar.",
+      "english": "They aren't going to tell the same story."
+    },
+    {
+      "set": "aux-11",
+      "id": "s83",
+      "old_turkish": "Yarın annemi görmeyeceoiz.",
+      "new_turkish": "Yarın annemi görmeyeceğiz.",
+      "english": "We're not going to see my mother tomorrow."
+    },
+    {
+      "set": "aux-11",
+      "id": "s87",
+      "old_turkish": "Çok fazla taşıyorsun. Senin için kaptyı ağacağım.",
+      "new_turkish": "Çok fazla taşıyorsun. Senin için kapıyı açacağım.",
+      "english": "You're carrying too much. I am going to open the door for you."
+    },
+    {
+      "set": "aux-11",
+      "id": "s89",
+      "old_turkish": "Yarın seni gördüğümde, sana yeni kitabım göstereceğim.",
+      "new_turkish": "Yarın seni gördüğümde, sana yeni kitabımı göstereceğim.",
+      "english": "When I see you tomorrow, I am going to show you my new book."
+    },
+    {
+      "set": "aux-11",
+      "id": "s93",
+      "old_turkish": "Uğ yıl içinde farklı bir ıılkede yaşayacağım.",
+      "new_turkish": "Üç yıl içinde farklı bir ülkede yaşayacağım.",
+      "english": "In three years I am going to live in a different country."
+    },
+    {
+      "set": "aux-11",
+      "id": "s94",
+      "old_turkish": "Çocuklarımızı yanınızda Fransa'ya gotiirecek misiniz?",
+      "new_turkish": "Çocuklarımızı yanınızda Fransa'ya götürecek misiniz?",
+      "english": "Are you going to take your children with you to France?"
+    },
+    {
+      "set": "aux-11",
+      "id": "s98",
+      "old_turkish": "Köpeği bloğun etrafında birkaç kez gezdirecediz.",
+      "new_turkish": "Köpeği bloğun etrafında birkaç kez gezdireceğiz.",
+      "english": "We are going to walk the dog around the block a few times."
+    },
+    {
+      "set": "aux-12",
+      "id": "s2",
+      "old_turkish": "Öğle yemesine kadar gelmiş olacak.",
+      "new_turkish": "Öğle yemeğine kadar gelmiş olacak.",
+      "english": "She will have arrived by lunch."
+    },
+    {
+      "set": "aux-12",
+      "id": "s4",
+      "old_turkish": "Jane, 30 yasına geldiğinde, dünyayı dolaşmış olacak.",
+      "new_turkish": "Jane, 30 yaşına geldiğinde, dünyayı dolaşmış olacak.",
+      "english": "Jane will have traveled the world by the time she turns 30."
+    },
+    {
+      "set": "aux-12",
+      "id": "s5",
+      "old_turkish": "Eve döndüğünde, çoktan akşam yemeoi yemiş olacağım, ama tath için dışart çıkabiliriz!",
+      "new_turkish": "Eve döndüğünde, çoktan akşam yemeği yemiş olacağım, ama tatlı için dışarı çıkabiliriz!",
+      "english": "When you get home I will have eaten dinner already, but we can go out for dessert!"
+    },
+    {
+      "set": "aux-12",
+      "id": "s8",
+      "old_turkish": "Jack, bu metni Türkçeye ccevirmiş olacak.",
+      "new_turkish": "Jack, bu metni Türkçeye çevirmiş olacak.",
+      "english": "Jack will have translated this text into Turkish."
+    },
+    {
+      "set": "aux-12",
+      "id": "s21",
+      "old_turkish": "Bu bölümün sonunda, size tüm zamanlar 6gretmiş olacağım.",
+      "new_turkish": "Bu bölümün sonunda, size tüm zamanları öğretmiş olacağım.",
+      "english": "I will have taught you all the tenses by the end of this chapter."
+    },
+    {
+      "set": "aux-12",
+      "id": "s22",
+      "old_turkish": "Öğrenci bu yılın sonuna kadar derslerin yarışım kaçırmış olacak.",
+      "new_turkish": "Öğrenci bu yılın sonuna kadar derslerin yarısını kaçırmış olacak.",
+      "english": "The student will have missed half of the classes by the end of this year."
+    },
+    {
+      "set": "aux-12",
+      "id": "s30",
+      "old_turkish": "Bu akşam bulaşıkları yıkmış olacazim.",
+      "new_turkish": "Bu akşam bulaşıkları yıkamış olacağım.",
+      "english": "By this evening, I will have done the dishes."
+    },
+    {
+      "set": "aux-12",
+      "id": "s32",
+      "old_turkish": "Bu yılın sonunda yurtdışında altı farklı ıılkeye seyahat etmiş olacaksın.",
+      "new_turkish": "Bu yılın sonunda yurtdışında altı farklı ülkeye seyahat etmiş olacaksın.",
+      "english": "By the end of this year abroad, you will have travelled to six different countries."
+    },
+    {
+      "set": "aux-12",
+      "id": "s35",
+      "old_turkish": "Akşam yemefğine kadar ders kitabımda iki bölüm daha okumuş olacağım.",
+      "new_turkish": "Akşam yemeğine kadar ders kitabımda iki bölüm daha okumuş olacağım.",
+      "english": "I will have read two more chapters in my textbook by dinner."
+    },
+    {
+      "set": "aux-12",
+      "id": "s36",
+      "old_turkish": "Buğtın çerezlerinizin geri kalanım satmayı bitirdiğinde, satışlarda 20 dolar kazanmış olacaksın.",
+      "new_turkish": "Bugün kurabiyelerinizin geri kalanını satmayı bitirdiğinde, satışlarda 20 dolar kazanmış olacaksın.",
+      "english": "You will have made $20 in sales when you finish selling the rest of your cookies today."
+    },
+    {
+      "set": "aux-12",
+      "id": "s41",
+      "old_turkish": "Vardığında, muhtemelen ise başlamış olacağım.",
+      "new_turkish": "Vardığında, muhtemelen işe başlamış olacağım.",
+      "english": "When you arrive, I will probably have started the job."
+    },
+    {
+      "set": "aux-12",
+      "id": "s42",
+      "old_turkish": "Biz oraya vardığımızda, akşam yemedi yemiş olacaklar.",
+      "new_turkish": "Biz oraya vardığımızda, akşam yemeği yemiş olacaklar.",
+      "english": "They will have had dinner by the time we get there."
+    },
+    {
+      "set": "aux-12",
+      "id": "s49",
+      "old_turkish": "Edatların kullanımım öğrenmeden Önce, yaşlanmış olacak.",
+      "new_turkish": "Edatların kullanımını öğrenmeden önce, yaşlanmış olacak.",
+      "english": "She will have grown old before she learns the use of prepositions."
+    },
+    {
+      "set": "aux-12",
+      "id": "s52",
+      "old_turkish": "Sinin geğmeden önce, yirmi mil daha yol almış olacağız.",
+      "new_turkish": "Sınırı geçmeden önce, yirmi mil daha yol almış olacağız.",
+      "english": "We will have travelled twenty miles more before we cross the frontier."
+    },
+    {
+      "set": "aux-12",
+      "id": "s58",
+      "old_turkish": "Sen sabah kalkana kadar, Dana gece vardiyasım bitirmiş olmayacak.",
+      "new_turkish": "Sen sabah kalkana kadar, Dana gece vardiyasını bitirmiş olmayacak.",
+      "english": "Dana won't have finished the night shift by the time you get up in the morning."
+    },
+    {
+      "set": "aux-12",
+      "id": "s60",
+      "old_turkish": "2025'e kadar, umarım araştırmacılar kansere bir gare bulmuş olacaklar.",
+      "new_turkish": "2025'e kadar, umarım araştırmacılar kansere bir çare bulmuş olacaklar.",
+      "english": "By 2025, I hope researchers will have found a cure for cancer."
+    },
+    {
+      "set": "aux-12",
+      "id": "s61",
+      "old_turkish": "Beni yarın ön birde ara. Toplantı bitmiş olacadından daha fazlaşım 6greneceğim.",
+      "new_turkish": "Beni yarın on birde ara. Toplantı bitmiş olacağından daha fazlasını öğreneceğim.",
+      "english": "Call me tomorrow at eleven. I'll know more because the meeting will have finished."
+    },
+    {
+      "set": "aux-12",
+      "id": "s63",
+      "old_turkish": "Umarım Önümüzdeki hafta bu saatlerde ehliyet sınavım geçmiş olacağım ve sonunda bir araba alabileceğim.",
+      "new_turkish": "Umarım önümüzdeki hafta bu saatlerde ehliyet sınavımı geçmiş olacağım ve sonunda bir araba alabileceğim.",
+      "english": "Hopefully, by this time next week I will have passed my driving test and I'll finally be able to get a car."
+    },
+    {
+      "set": "aux-12",
+      "id": "s66",
+      "old_turkish": "Analistler, yeni Ürün satışa çıktığında şirketin 10 milyon doların izerinde harcama yapmış olacağını sdylüyorlar.",
+      "new_turkish": "Analistler, yeni ürün satışa çıktığında şirketin 10 milyon doların üzerinde harcama yapmış olacağını söylüyorlar.",
+      "english": "Analysts say that by the time the new product goes on sale the company will have spent over $10 million."
+    },
+    {
+      "set": "aux-12",
+      "id": "s70",
+      "old_turkish": "Üç yıl içinde ıınıversiteden mezun olmuş olacağım.",
+      "new_turkish": "Üç yıl içinde üniversiteden mezun olmuş olacağım.",
+      "english": "In three years' time, I'll have graduated from university."
+    },
+    {
+      "set": "aux-12",
+      "id": "s73",
+      "old_turkish": "Hasta, onlar hastaneye ulaşmadan önce, dlmuş olacak.",
+      "new_turkish": "Hasta, onlar hastaneye ulaşmadan önce, ölmüş olacak.",
+      "english": "The patient will have died before they reach the hospital."
+    },
+    {
+      "set": "aux-12",
+      "id": "s75",
+      "old_turkish": "Bu şehirden ayrılmadan önce, tüm borçlarımızı geri Gdemiş olacağız.",
+      "new_turkish": "Bu şehirden ayrılmadan önce, tüm borçlarımızı geri ödemiş olacağız.",
+      "english": "We will have paid back all our debts before we leave this city."
+    },
+    {
+      "set": "aux-12",
+      "id": "s80",
+      "old_turkish": "Bu işi yirmi dakika içginde bitirmiş olacağım.",
+      "new_turkish": "Bu işi yirmi dakika içinde bitirmiş olacağım.",
+      "english": "I will have finished this job in twenty minutes."
+    },
+    {
+      "set": "aux-12",
+      "id": "s82",
+      "old_turkish": "Hindistan'a vardığımızda, diinyanin her yerine yelken açmış olacağız.",
+      "new_turkish": "Hindistan'a vardığımızda, dünyanın her yerine yelken açmış olacağız.",
+      "english": "When we reach India, we will have sailed all round the world."
+    },
+    {
+      "set": "aux-12",
+      "id": "s83",
+      "old_turkish": "Gittiği hızda, yirmi bir yaşına kadar bütün parasını harçamts olacaktır.",
+      "new_turkish": "Gittiği hızda, yirmi bir yaşına kadar bütün parasını harcamış olacaktır.",
+      "english": "At the rate he is going, he will have spent all his money by the time he is twenty-one."
+    },
+    {
+      "set": "aux-12",
+      "id": "s91",
+      "old_turkish": "Yıl sonuna kadar bütün bu şarabi iğmiş olacağız.",
+      "new_turkish": "Yıl sonuna kadar bütün bu şarabı içmiş olacağız.",
+      "english": "We will have drunk all that wine by the end of the year."
+    },
+    {
+      "set": "aux-12",
+      "id": "s94",
+      "old_turkish": "Bu gdsteriden sonra, Hamlet'i yirmi iki kez görmiis olacadım.",
+      "new_turkish": "Bu gösteriden sonra, Hamlet'i yirmi iki kez görmüş olacağım.",
+      "english": "After this performance, I will have seen Hamlet twenty-two times."
+    },
+    {
+      "set": "aux-12",
+      "id": "s95",
+      "old_turkish": "Grev lideri, \"Gece yarisina kadar 500 adam greve cikmis olmayacak\" dedi.",
+      "new_turkish": "Grev lideri, \"Gece yarısına kadar 500 adam greve çıkmış olmayacak\" dedi.",
+      "english": "The strike leader said, ‘By midnight 500 men won't have come out on strike.'"
+    },
+    {
+      "set": "aux-12",
+      "id": "s96",
+      "old_turkish": "Şu anki oranında, ayın sonuna kadar bu kömürün tamamım yakmış olacaksın.",
+      "new_turkish": "Şu anki oranında, ayın sonuna kadar bu kömürün tamamını yakmış olacaksın.",
+      "english": "At your present rate, you will have burnt all that coal by the end of the month."
+    },
+    {
+      "set": "aux-12",
+      "id": "s100",
+      "old_turkish": "Hazine sorumlusu, 'Yıl sonuna kadar. tüm borçlarımızı ödemiş olacağız. \"",
+      "new_turkish": "Hazine sorumlusu, 'Yıl sonuna kadar tüm borçlarımızı ödemiş olacağız.'",
+      "english": "The treasurer said, ‘By the end of the year, we will have paid off all our debts.'"
+    },
+    {
+      "set": "aux-13",
+      "id": "s2",
+      "old_turkish": "Mary pencereleri yıktyor.",
+      "new_turkish": "Mary pencereleri yıkıyor.",
+      "english": "Mary is washing the windows."
+    },
+    {
+      "set": "aux-13",
+      "id": "s4",
+      "old_turkish": "Duvarlar boyuyorlar.",
+      "new_turkish": "Duvarları boyuyorlar.",
+      "english": "They're painting the walls."
+    },
+    {
+      "set": "aux-13",
+      "id": "s10",
+      "old_turkish": "Yeni bir aşma kGprii inşa ediyorlar.",
+      "new_turkish": "Yeni bir asma köprü inşa ediyorlar.",
+      "english": "They are building a new suspension bridge."
+    },
+    {
+      "set": "aux-13",
+      "id": "s15",
+      "old_turkish": "Şu anda yolu asfaltlamtyorlar.",
+      "new_turkish": "Şu anda yolu asfaltlamıyorlar.",
+      "english": "They are not paving the way now."
+    },
+    {
+      "set": "aux-13",
+      "id": "s16",
+      "old_turkish": "Artık ona kimse bakmnyor.",
+      "new_turkish": "Artık ona kimse bakmıyor.",
+      "english": "Nobody is looking after him now."
+    },
+    {
+      "set": "aux-13",
+      "id": "s17",
+      "old_turkish": "Raporlar şimdi mi yaztyorlar?",
+      "new_turkish": "Raporları şimdi mi yazıyorlar?",
+      "english": "Are they typing the reports now?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s27",
+      "old_turkish": "Öğretmen tahtaya bir cümle yaztyor.",
+      "new_turkish": "Öğretmen tahtaya bir cümle yazıyor.",
+      "english": "The teacher is writing a sentence on the board."
+    },
+    {
+      "set": "aux-13",
+      "id": "s28",
+      "old_turkish": "Valizleri tastyorlar.",
+      "new_turkish": "Valizleri taşıyorlar.",
+      "english": "They are carrying the suitcases."
+    },
+    {
+      "set": "aux-13",
+      "id": "s30",
+      "old_turkish": "Güneş parlör.",
+      "new_turkish": "Güneş parlıyor.",
+      "english": "The sun is shining."
+    },
+    {
+      "set": "aux-13",
+      "id": "s33",
+      "old_turkish": "Köpek havliyor.",
+      "new_turkish": "Köpek havlıyor.",
+      "english": "The dog is barking."
+    },
+    {
+      "set": "aux-13",
+      "id": "s34",
+      "old_turkish": "Rehber, turistleri Sultanahmet Camii'ne gotiiriiyor.",
+      "new_turkish": "Rehber, turistleri Sultanahmet Camii'ne götürüyor.",
+      "english": "The guide is taking the tourists to the Blue Mosque."
+    },
+    {
+      "set": "aux-13",
+      "id": "s41",
+      "old_turkish": "Çok çalıştyorlar.",
+      "new_turkish": "Çok çalışıyorlar.",
+      "english": "They are working hard."
+    },
+    {
+      "set": "aux-13",
+      "id": "s47",
+      "old_turkish": "Otobüs mii yoksa minibüs mii bekliyorlar?",
+      "new_turkish": "Otobüs mü yoksa minibüs mü bekliyorlar?",
+      "english": "Are they waiting for a bus or a mini-bus?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s50",
+      "old_turkish": "Kapıy mi yoksa pencereyi mi kapatıyorsun?",
+      "new_turkish": "Kapıyı mı yoksa pencereyi mi kapatıyorsun?",
+      "english": "Are you closing the door or the window?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s51",
+      "old_turkish": "Elma m yoksa portakal mi yiyorsun?",
+      "new_turkish": "Elma mı yoksa portakal mı yiyorsun?",
+      "english": "Are you eating an apple or an orange?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s53",
+      "old_turkish": "Kitaplarını mı yoksa defterlerini mi ağıyorsun?",
+      "new_turkish": "Kitaplarını mı yoksa defterlerini mi açıyorsun?",
+      "english": "Are you opening your books or your notebooks?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s55",
+      "old_turkish": "Kitap m yoksa gazete mi okuyorsunuz?",
+      "new_turkish": "Kitap mı yoksa gazete mi okuyorsunuz?",
+      "english": "Are you reading a book or a newspaper?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s56",
+      "old_turkish": "Ahmet Öğle mi artyorsun akşam yemedi mi yiyor?",
+      "new_turkish": "Ahmet öğle yemeği mi yoksa akşam yemeği mi yiyor?",
+      "english": "Is Ahmet having lunch or dinner?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s57",
+      "old_turkish": "Betty dans mı ediyor yoksa şarkı mı sdylüyor?",
+      "new_turkish": "Betty dans mı ediyor yoksa şarkı mı söylüyor?",
+      "english": "Is Betty dancing or singing?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s58",
+      "old_turkish": "Bob Arapga mt yoksa Türkçe mi 6greniyor?",
+      "new_turkish": "Bob Arapça mı yoksa Türkçe mi öğreniyor?",
+      "english": "Is Bob learning Arabic or Turkish?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s60",
+      "old_turkish": "Mary yemek mi yoksa gay mı yapıyor?",
+      "new_turkish": "Mary yemek mi yoksa çay mı yapıyor?",
+      "english": "Is Mary cooking or making tea?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s64",
+      "old_turkish": "Köpek havliyor mu arıyorsun bir şeyler mi yiyor?",
+      "new_turkish": "Köpek havlıyor mu yoksa bir şeyler mi yiyor?",
+      "english": "Is the dog barking or eating something?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s65",
+      "old_turkish": "At ot mu yiyor yoksa şu mu içiyor?",
+      "new_turkish": "At ot mu yiyor yoksa su mu içiyor?",
+      "english": "Is the horse eating grass or drinking water?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s69",
+      "old_turkish": "Bir şeye baktyor.",
+      "new_turkish": "Bir şeye bakıyor.",
+      "english": "He is looking at something."
+    },
+    {
+      "set": "aux-13",
+      "id": "s70",
+      "old_turkish": "Birini artyor.",
+      "new_turkish": "Birini arıyor.",
+      "english": "He is phoning somebody."
+    },
+    {
+      "set": "aux-13",
+      "id": "s71",
+      "old_turkish": "Kitapları bir yere gö",
+      "new_turkish": "Kitapları bir yere götürüyor.",
+      "english": "He is taking the books somewhere."
+    },
+    {
+      "set": "aux-13",
+      "id": "s73",
+      "old_turkish": "Bir şey arlyorum.",
+      "new_turkish": "Bir şey arıyorum.",
+      "english": "I am looking for something."
+    },
+    {
+      "set": "aux-13",
+      "id": "s74",
+      "old_turkish": "Bir şey satın alyor.",
+      "new_turkish": "Bir şey satın alıyor.",
+      "english": "She is buying something."
+    },
+    {
+      "set": "aux-13",
+      "id": "s78",
+      "old_turkish": "Bir yerde kalyor.",
+      "new_turkish": "Bir yerde kalıyor.",
+      "english": "She is staying somewhere."
+    },
+    {
+      "set": "aux-13",
+      "id": "s84",
+      "old_turkish": "Bir şey tastyorlar.",
+      "new_turkish": "Bir şey taşıyorlar.",
+      "english": "They are carrying something."
+    },
+    {
+      "set": "aux-13",
+      "id": "s91",
+      "old_turkish": "Doktor reçete mi yazıyor yoksa hastayı mi muayene ediyor?",
+      "new_turkish": "Doktor reçete mi yazıyor yoksa hastayı mı muayene ediyor?",
+      "english": "Is the doctor writing a prescription or examining a patient?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s92",
+      "old_turkish": "OBretmen soru mu soruyor yoksa cümle mi yazıyor?",
+      "new_turkish": "Öğretmen soru mu soruyor yoksa cümle mi yazıyor?",
+      "english": "Is the teacher asking a question or writing a sentence?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s94",
+      "old_turkish": "Ahmet arabasını mı yıkıyor yoksa arabasını mi boyuyor?",
+      "new_turkish": "Ahmet arabasını mı yıkıyor yoksa arabasını mı boyuyor?",
+      "english": "Is Ahmet washing his car or painting his car?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s95",
+      "old_turkish": "Kardeşiniz Fransızca mı yoksa İngilizce mi 6greniyor?",
+      "new_turkish": "Kardeşiniz Fransızca mı yoksa İngilizce mi öğreniyor?",
+      "english": "Is your brother learning French or English?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s96",
+      "old_turkish": "Öğrenciler okuyorlar mu yoksa yazıyorlar mu?",
+      "new_turkish": "Öğrenciler okuyorlar mı yoksa yazıyorlar mı?",
+      "english": "Are the students reading or writing?"
+    },
+    {
+      "set": "aux-13",
+      "id": "s100",
+      "old_turkish": "Taksi şoförii araba mı kullanıyor yoksa müşteri mi bekliyor?",
+      "new_turkish": "Taksi şoförü araba mı kullanıyor yoksa müşteri mi bekliyor?",
+      "english": "Is the taxi driver driving or waiting for a customer?"
+    },
+    {
+      "set": "aux-14",
+      "id": "s1",
+      "old_turkish": "Arabayt yıkıyordu.",
+      "new_turkish": "Arabayı yıkıyordu.",
+      "english": "He was washing the car."
+    },
+    {
+      "set": "aux-14",
+      "id": "s3",
+      "old_turkish": "Yolu asfaltliyorlardh.",
+      "new_turkish": "Yolu asfaltlıyorlardı.",
+      "english": "They were paving the road."
+    },
+    {
+      "set": "aux-14",
+      "id": "s5",
+      "old_turkish": "Erkek göçuklar inekleri şaŞıyorlardı.",
+      "new_turkish": "Erkek çocuklar inekleri sağıyorlardı.",
+      "english": "The boys were milking the cows."
+    },
+    {
+      "set": "aux-14",
+      "id": "s7",
+      "old_turkish": "Köprüyi tamir ediyorlardı.",
+      "new_turkish": "Köprüyü tamir ediyorlardı.",
+      "english": "They were repairing the bridge."
+    },
+    {
+      "set": "aux-14",
+      "id": "s11",
+      "old_turkish": "Müfettiş geldiğinde, adam sorguluyorlardı.",
+      "new_turkish": "Müfettiş geldiğinde, adamı sorguluyorlardı.",
+      "english": "When the inspector came, they were questioning the man."
+    },
+    {
+      "set": "aux-14",
+      "id": "s12",
+      "old_turkish": "Dün duvarlar boyuyorlardı.",
+      "new_turkish": "Dün duvarları boyuyorlardı.",
+      "english": "They were painting the walls yesterday."
+    },
+    {
+      "set": "aux-14",
+      "id": "s27",
+      "old_turkish": "Sally, Park St.'de bisikletine binerken, bir arkadaşım gördii.",
+      "new_turkish": "Sally, Park St.'de bisikletine binerken, bir arkadaşını gördü.",
+      "english": "Sally saw a friend while she was riding her bicycle along Park St."
+    },
+    {
+      "set": "aux-14",
+      "id": "s32",
+      "old_turkish": "Tommy bir arkadaşının evinde uyurken, bir kabus gördii.",
+      "new_turkish": "Tommy bir arkadaşının evinde uyurken, bir kabus gördü.",
+      "english": "Tommy had a nightmare while he was sleeping at a friend's house."
+    },
+    {
+      "set": "aux-14",
+      "id": "s36",
+      "old_turkish": "",
+      "new_turkish": "Işıklar söndüğünde, radyomu tamir ediyordum.",
+      "english": "When the lights went out, I was mending my radio."
+    },
+    {
+      "set": "aux-14",
+      "id": "s43",
+      "old_turkish": "Siz dışandayken, havadan bahsediyorduk.",
+      "new_turkish": "Siz dışarıdayken, havadan bahsediyorduk.",
+      "english": "When you were outside, we were talking about the weather."
+    },
+    {
+      "set": "aux-14",
+      "id": "s47",
+      "old_turkish": "",
+      "new_turkish": "Öğretmen içeri girdiğinde, hiçbir şey yapmıyordum.",
+      "english": "I wasn't doing anything when the teacher came."
+    },
+    {
+      "set": "aux-14",
+      "id": "s55",
+      "old_turkish": "Onu göre",
+      "new_turkish": "Onu gördüğümde, balık ve patates kızartması yiyordu.",
+      "english": "When I saw him, he was eating fish and chips."
+    },
+    {
+      "set": "aux-14",
+      "id": "s58",
+      "old_turkish": "Adam merdivenlerden yukarı çıkarken, ışıklar sondii.",
+      "new_turkish": "Adam merdivenlerden yukarı çıkarken, ışıklar söndü.",
+      "english": "As the man was walking up the stairs, the lights went out."
+    },
+    {
+      "set": "aux-14",
+      "id": "s69",
+      "old_turkish": "Geldiklerinde, misil misil uyuyordu.",
+      "new_turkish": "Geldiklerinde, mışıl mışıl uyuyordu.",
+      "english": "He was sleeping soundly when they arrived."
+    },
+    {
+      "set": "aux-14",
+      "id": "s71",
+      "old_turkish": "O konuşurken, ben kitabı okumayt bitirdim.",
+      "new_turkish": "O konuşurken, ben kitabı okumayı bitirdim.",
+      "english": "While he was talking, I finished reading the book."
+    },
+    {
+      "set": "aux-14",
+      "id": "s72",
+      "old_turkish": "Sürucii, polisi görünce, telefonla konuşuyordu.",
+      "new_turkish": "Sürücü, polisi görünce, telefonla konuşuyordu.",
+      "english": "When the driver saw the policeman, he was talking on the phone."
+    },
+    {
+      "set": "aux-14",
+      "id": "s80",
+      "old_turkish": "Uçak inerken, dustii.",
+      "new_turkish": "Uçak inerken, düştü.",
+      "english": "The plane crashed while it was landing."
+    },
+    {
+      "set": "aux-14",
+      "id": "s87",
+      "old_turkish": "Öğrenciler korkung bir gürültü duyduklarında, kütüphanede ders çalıştyorlardı.",
+      "new_turkish": "Öğrenciler korkunç bir gürültü duyduklarında, kütüphanede ders çalışıyorlardı.",
+      "english": "Students were studying in the library when they heard an awful noise."
+    },
+    {
+      "set": "aux-14",
+      "id": "s89",
+      "old_turkish": "Yorumlar gözden geçiriyordum.",
+      "new_turkish": "Yorumları gözden geçiriyordum.",
+      "english": "I was reviewing the comments."
+    },
+    {
+      "set": "aux-14",
+      "id": "s90",
+      "old_turkish": "Tatilimiz için bir oda ayırtyordum.",
+      "new_turkish": "Tatilimiz için bir oda ayırtıyordum.",
+      "english": "I was booking a room for our holiday."
+    },
+    {
+      "set": "aux-14",
+      "id": "s92",
+      "old_turkish": "Çocuklar resim çiziyorlard.",
+      "new_turkish": "Çocuklar resim çiziyorlardı.",
+      "english": "The children were drawing pictures."
+    },
+    {
+      "set": "aux-14",
+      "id": "s98",
+      "old_turkish": "Kardeşim masraflan hesaphyordu.",
+      "new_turkish": "Kardeşim masrafları hesaplıyordu.",
+      "english": "My brother was calculating the expenses."
+    },
+    {
+      "set": "aux-15",
+      "id": "s1",
+      "old_turkish": "",
+      "new_turkish": "Beş yıldır burada çalışıyor.",
+      "english": "She has been working here for five years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s2",
+      "old_turkish": "Uğ saattir Matematik çalışıyorum.",
+      "new_turkish": "Üç saattir Matematik çalışıyorum.",
+      "english": "I have been studying Maths for three hours."
+    },
+    {
+      "set": "aux-15",
+      "id": "s3",
+      "old_turkish": "On dakikadır herkese bağıryorsun.",
+      "new_turkish": "On dakikadır herkese bağırıyorsun.",
+      "english": "You have been shouting at everybody for ten minutes."
+    },
+    {
+      "set": "aux-15",
+      "id": "s6",
+      "old_turkish": "İki yıldır İngilizce 6greniyorlar.",
+      "new_turkish": "İki yıldır İngilizce öğreniyorlar.",
+      "english": "They have been learning English for two years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s15",
+      "old_turkish": "Çok uzun zamandır burada yaşamtyorlar.",
+      "new_turkish": "Çok uzun zamandır burada yaşamıyorlar.",
+      "english": "They haven't been living here for very long time."
+    },
+    {
+      "set": "aux-15",
+      "id": "s17",
+      "old_turkish": "Beş yıldır futbol oynamtyor.",
+      "new_turkish": "Beş yıldır futbol oynamıyor.",
+      "english": "He hasn't been playing football for five years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s18",
+      "old_turkish": "Dünden beri yeterince şu içmiyoruz.",
+      "new_turkish": "Dünden beri yeterince su içmiyoruz.",
+      "english": "We haven't been drinking enough water since yesterday."
+    },
+    {
+      "set": "aux-15",
+      "id": "s22",
+      "old_turkish": "İki saattir pasta yapmayı mi Gğreniyorsun?",
+      "new_turkish": "İki saattir pasta yapmayı mı öğreniyorsun?",
+      "english": "Have you been learning how to make a cake for two hours?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s23",
+      "old_turkish": "İngilizce öğretmenin ders başladığından beri size mi bağınyor?",
+      "new_turkish": "İngilizce öğretmenin ders başladığından beri size mi bağırıyor?",
+      "english": "Has your English teacher been shouting at you since the lesson started?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s29",
+      "old_turkish": "Baban yedi yıldır aynı şirkette mi çalıştyor?",
+      "new_turkish": "Baban yedi yıldır aynı şirkette mi çalışıyor?",
+      "english": "Has your father been working at the same company for seven years?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s30",
+      "old_turkish": "Kardeşin altı aydır proje üzerinde mi çalıştyor?",
+      "new_turkish": "Kardeşin altı aydır proje üzerinde mi çalışıyor?",
+      "english": "Has your brother working on the project for six months?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s31",
+      "old_turkish": "Nasıl araba kullanılacağım mı öğrenmeye çalsiyorsun?",
+      "new_turkish": "Nasıl araba kullanılacağını mı öğrenmeye çalışıyorsun?",
+      "english": "Have you been trying to learn how to drive a car?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s32",
+      "old_turkish": "İngilizce öğretmenin geen aydan beri gramer mi dgretiyor?",
+      "new_turkish": "İngilizce öğretmenin geçen aydan beri gramer mi öğretiyor?",
+      "english": "Has your English teacher been teaching grammar since last month?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s33",
+      "old_turkish": "Satıcıyla ön dakikadır pazarlık m yapıyor?",
+      "new_turkish": "Satıcıyla on dakikadır pazarlık mı yapıyor?",
+      "english": "Has he been bargaining with the seller for ten minutes?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s34",
+      "old_turkish": "Annen yarım saattir sana \"mayonezli kizarmis balik\" mi pisiriyor?",
+      "new_turkish": "Annen yarım saattir sana \"mayonezli kızarmış balık\" mı pişiriyor?",
+      "english": "Has your mother cooking \"fried fish with mayonnaise\" for you for half an hour?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s35",
+      "old_turkish": "İngilizce öğretmenleriniz okul başladığından beri çok dev veriyorlar mı?",
+      "new_turkish": "İngilizce öğretmenleriniz okul başladığından beri çok ödev veriyorlar mı?",
+      "english": "Have your English teachers been giving a lot of homework since the school began?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s38",
+      "old_turkish": "Baban yıllardır sigara kullanryor mu?",
+      "new_turkish": "Baban yıllardır sigara kullanıyor mu?",
+      "english": "Has your father been smoking for years?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s40",
+      "old_turkish": "Yıllardır İngilizce sınavlardan en iyi puanları alyor musun?",
+      "new_turkish": "Yıllardır İngilizce sınavlardan en iyi puanları alıyor musun?",
+      "english": "Have you been getting the best points from the quizzes in English for years?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s42",
+      "old_turkish": "On beş yaşından beri tehlikeli bir şeyler mi yapmaya çalıştyorsun?",
+      "new_turkish": "On beş yaşından beri tehlikeli bir şeyler mi yapmaya çalışıyorsun?",
+      "english": "Have you been trying to do something dangerous since you were fifteen years old?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s46",
+      "old_turkish": "İki yılchr o fabrikada calığmyorum.",
+      "new_turkish": "İki yıldır o fabrikada çalışmıyorum.",
+      "english": "I haven't been working in that factory for two years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s49",
+      "old_turkish": "Babam geçen yıldan beri gay içmiyor.",
+      "new_turkish": "Babam geçen yıldan beri çay içmiyor.",
+      "english": "My father hasn't been drinking tea since last year."
+    },
+    {
+      "set": "aux-15",
+      "id": "s54",
+      "old_turkish": "İki yıldır öğretmen olarak galisiyor.",
+      "new_turkish": "İki yıldır öğretmen olarak çalışıyor.",
+      "english": "She has been working as a teacher for two years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s55",
+      "old_turkish": "İki haftadır futbol oynamyorlar.",
+      "new_turkish": "İki haftadır futbol oynamıyorlar.",
+      "english": "They haven't been playing football for a fortnight."
+    },
+    {
+      "set": "aux-15",
+      "id": "s58",
+      "old_turkish": "Onunla saat üçten beri çalışryorum.",
+      "new_turkish": "Onunla saat üçten beri çalışıyorum.",
+      "english": "I have been studying with him since three o'clock."
+    },
+    {
+      "set": "aux-15",
+      "id": "s61",
+      "old_turkish": "Bu firmayı tic yıldır mı yönetiyor?",
+      "new_turkish": "Bu firmayı üç yıldır mı yönetiyor?",
+      "english": "Has he been running this firm for three years?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s65",
+      "old_turkish": "Us yıldır aym şeyleri tartışıyor.",
+      "new_turkish": "Üç yıldır aynı şeyleri tartışıyor.",
+      "english": "He has been discussing the same things for three years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s71",
+      "old_turkish": "Salı gününden beri aynı kötü giyiyor.",
+      "new_turkish": "Salı gününden beri aynı kotu giyiyor.",
+      "english": "He has been wearing the same jeans since Tuesday."
+    },
+    {
+      "set": "aux-15",
+      "id": "s75",
+      "old_turkish": "Onu saatlerdir nerede aryorsun?",
+      "new_turkish": "Onu saatlerdir nerede arıyorsun?",
+      "english": "Where have you been looking for her for hours?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s76",
+      "old_turkish": "Ne zamandhr İngilizce öğreniyorsun?",
+      "new_turkish": "Ne zamandır İngilizce öğreniyorsun?",
+      "english": "How long have you been learning English?"
+    },
+    {
+      "set": "aux-15",
+      "id": "s80",
+      "old_turkish": "Maria iki yıldır İngilizce dgreniyor.",
+      "new_turkish": "Maria iki yıldır İngilizce öğreniyor.",
+      "english": "Maria has been learning English for two years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s81",
+      "old_turkish": "Beni aradıZından beri bisikletimi tamir ediyorum.",
+      "new_turkish": "Beni aradığından beri bisikletimi tamir ediyorum.",
+      "english": "I've been repairing my bike since you called me."
+    },
+    {
+      "set": "aux-15",
+      "id": "s82",
+      "old_turkish": "Joe, son iki yıldır gök fazla yemek yiyor.",
+      "new_turkish": "Joe, son iki yıldır çok fazla yemek yiyor.",
+      "english": "Joe has been eating too much for last two years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s87",
+      "old_turkish": "Uzun zamandır Arapga 6greniyorum.",
+      "new_turkish": "Uzun zamandır Arapça öğreniyorum.",
+      "english": "I have been learning Arabic for a long time."
+    },
+    {
+      "set": "aux-15",
+      "id": "s88",
+      "old_turkish": "Öğle yemeğinden beri yağmur yağtyor.",
+      "new_turkish": "Öğle yemeğinden beri yağmur yağıyor.",
+      "english": "It's been raining since lunchtime."
+    },
+    {
+      "set": "aux-15",
+      "id": "s89",
+      "old_turkish": "Paul on yıldır Brezilya'da yastyor.",
+      "new_turkish": "Paul on yıldır Brezilya'da yaşıyor.",
+      "english": "Paul has been living in Brazil for ten years."
+    },
+    {
+      "set": "aux-15",
+      "id": "s91",
+      "old_turkish": "Kevin haftalardır iş anör.",
+      "new_turkish": "Kevin haftalardır iş arıyor.",
+      "english": "Kevin has been looking for a job for weeks."
+    },
+    {
+      "set": "aux-15",
+      "id": "s96",
+      "old_turkish": "Saatlerdir onun düğünti hakkında konuşuyoruz.",
+      "new_turkish": "Saatlerdir onun düğünü hakkında konuşuyoruz.",
+      "english": "We have been talking about her wedding for hours."
+    },
+    {
+      "set": "aux-16",
+      "id": "s1",
+      "old_turkish": "İlk konserlerini verene kadar, altı aydır ders alıyorlardh.",
+      "new_turkish": "İlk konserlerini verene kadar, altı aydır ders alıyorlardı.",
+      "english": "They had been taking lessons for six months before they performed their first concert."
+    },
+    {
+      "set": "aux-16",
+      "id": "s3",
+      "old_turkish": "Fransa'da bir ıınıversiteye gitmeye karar vermeden Önce, uzun süredir Fransızca 6greniyor muydun?",
+      "new_turkish": "Fransa'da bir üniversiteye gitmeye karar vermeden önce, uzun süredir Fransızca öğreniyor muydun?",
+      "english": "Had you been studying French a long time before you decided to attend a university in France?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s5",
+      "old_turkish": "Jane anahtarım bulduğunda, kapty beş dakikadır ağçmaya çalışıyorduk.",
+      "new_turkish": "Jane anahtarını bulduğunda, kapıyı beş dakikadır açmaya çalışıyorduk.",
+      "english": "We had been trying to open the door for five minutes when Jane found her key."
+    },
+    {
+      "set": "aux-16",
+      "id": "s7",
+      "old_turkish": "İçeri girdiğinde, arkadaşları, polisi aramayı düşünüyorlardh.",
+      "new_turkish": "İçeri girdiğinde, arkadaşları, polisi aramayı düşünüyorlardı.",
+      "english": "Her friends had been thinking of calling the police when she walked in."
+    },
+    {
+      "set": "aux-16",
+      "id": "s10",
+      "old_turkish": "Benzin fiyatı yükselmeden önce, elektrikli bir araba almayı düşüntiyorduk.",
+      "new_turkish": "Benzin fiyatı yükselmeden önce, elektrikli bir araba almayı düşünüyorduk.",
+      "english": "We had been thinking about buying an electric car even before the price of gas went up."
+    },
+    {
+      "set": "aux-16",
+      "id": "s11",
+      "old_turkish": "Kapanmadan önce, yirmi yıldır o parkurda araba yarısı yapıyorlardı.",
+      "new_turkish": "Kapanmadan önce, yirmi yıldır o parkurda araba yarışı yapıyorlardı.",
+      "english": "They had been racing cars at that track for twenty years before it closed."
+    },
+    {
+      "set": "aux-16",
+      "id": "s12",
+      "old_turkish": "Kaza olmadan Önce, bütün öğleden sonra çok hızlı araba kullantyordu.",
+      "new_turkish": "Kaza olmadan önce, bütün öğleden sonra çok hızlı araba kullanıyordu.",
+      "english": "He had been driving too fast all afternoon before the accident happened."
+    },
+    {
+      "set": "aux-16",
+      "id": "s14",
+      "old_turkish": "Bir şaraphane açmaya karar vermeden önce, on iki yıldır ıızum yetiştiriyorduk.",
+      "new_turkish": "Bir şaraphane açmaya karar vermeden önce, on iki yıldır üzüm yetiştiriyorduk.",
+      "english": "We had been growing grapes for twelve years before we decided to open a winery."
+    },
+    {
+      "set": "aux-16",
+      "id": "s16",
+      "old_turkish": "Sea, kendisine yardım etmesi için bir muhasebeci bulmadan Önce iyi mali kayıt tutmuyordu.",
+      "new_turkish": "Sean, kendisine yardım etmesi için bir muhasebeci bulmadan önce iyi mali kayıt tutmuyordu.",
+      "english": "Sean hadn't been keeping good financial records before he got an accountant to help him."
+    },
+    {
+      "set": "aux-16",
+      "id": "s20",
+      "old_turkish": "Gol, 1902'den beri şehre şu salıyordu.",
+      "new_turkish": "Göl, 1902'den beri şehre su sağlıyordu.",
+      "english": "The lake had been supplying water for the town since 1902."
+    },
+    {
+      "set": "aux-16",
+      "id": "s22",
+      "old_turkish": "Koloninin bağımsız çiftğileri, İngiliz yönetimi ve vergilendirilmesinden oturii kendilerini kırgın hissediyorlardı.",
+      "new_turkish": "Koloninin bağımsız çiftçileri, İngiliz yönetimi ve vergilendirilmesinden ötürü kendilerini kırgın hissediyorlardı.",
+      "english": "The colony's independent farmers had been feeling resentful about English rule and taxation."
+    },
+    {
+      "set": "aux-16",
+      "id": "s24",
+      "old_turkish": "Nigel bir kardeşliğe katılana kadar, her Cumartesi babasım arıyordu.",
+      "new_turkish": "Nigel bir kardeşliğe katılana kadar, her Cumartesi babasını arıyordu.",
+      "english": "Until Nigel joined a fraternity, he had been calling his father every Saturday."
+    },
+    {
+      "set": "aux-16",
+      "id": "s25",
+      "old_turkish": "At bacağını kırmadan Önce, genellikle her ay iki yarığ koşuyordu.",
+      "new_turkish": "At bacağını kırmadan önce, genellikle her ay iki yarış koşuyordu.",
+      "english": "Before the horse broke his leg, he had usually been running two races each month."
+    },
+    {
+      "set": "aux-16",
+      "id": "s26",
+      "old_turkish": "Yeni kuyuyu kazmadan önce, köylüler kilometrelerce şu taşıyorlardı.",
+      "new_turkish": "Yeni kuyuyu kazmadan önce, köylüler kilometrelerce su taşıyorlardı.",
+      "english": "The villagers had been carrying water for miles before they dug the new well."
+    },
+    {
+      "set": "aux-16",
+      "id": "s27",
+      "old_turkish": "Jimnastik takımı saat dokuzda hala sıkı çalıştyordu.",
+      "new_turkish": "Jimnastik takımı saat dokuzda hala sıkı çalışıyordu.",
+      "english": "The gymnastics team had still been practicing hard at nine o'clock p.m."
+    },
+    {
+      "set": "aux-16",
+      "id": "s35",
+      "old_turkish": "Köpek o yaz her gece tsrarla havuyordu.",
+      "new_turkish": "Köpek o yaz her gece ısrarla havlıyordu.",
+      "english": "The dog had persistently been barking each night that summer."
+    },
+    {
+      "set": "aux-16",
+      "id": "s41",
+      "old_turkish": "Cathy, yerel orkestra ile solo yaptunda, 35 yıldır piyano çalıyordu.",
+      "new_turkish": "Cathy, yerel orkestra ile solo yaptığında, 35 yıldır piyano çalıyordu.",
+      "english": "Cathy had been playing the piano for 35 years when did a solo with the local orchestra."
+    },
+    {
+      "set": "aux-16",
+      "id": "s44",
+      "old_turkish": "Şam bir şemsiye bulduğunda, on dakikadır yağmur yağıyordu.",
+      "new_turkish": "Sam bir şemsiye bulduğunda, on dakikadır yağmur yağıyordu.",
+      "english": "By the time Sam found an umbrella, it had been raining for ten minutes."
+    },
+    {
+      "set": "aux-16",
+      "id": "s45",
+      "old_turkish": "Takılıp düş' imde, köpekleri besliyordum.",
+      "new_turkish": "Takılıp düştüğümde, köpekleri besliyordum.",
+      "english": "I had been feeding the dogs when I tripped and fell."
+    },
+    {
+      "set": "aux-16",
+      "id": "s49",
+      "old_turkish": "Parmaçım kestiğinde, ne yapıyordun?",
+      "new_turkish": "Parmağını kestiğinde, ne yapıyordun?",
+      "english": "What had you been doing when you cut your finger?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s50",
+      "old_turkish": "Güç kesildiğinde, hangi faks mesajım göndermeye çalışıyordun?",
+      "new_turkish": "Güç kesildiğinde, hangi faks mesajını göndermeye çalışıyordun?",
+      "english": "Which fax message had you been trying to send when the power went off?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s51",
+      "old_turkish": "Bir alıçt bulmadan Önce, arabamı altı aydır satmaya çalışıyordum.",
+      "new_turkish": "Bir alıcı bulmadan önce, arabamı altı aydır satmaya çalışıyordum.",
+      "english": "I‘d been trying to sell my car for six months before I found a buyer."
+    },
+    {
+      "set": "aux-16",
+      "id": "s53",
+      "old_turkish": "Yangın, itfaiyeciler gelmeden önce, ne kadar zamandır yantyordu?",
+      "new_turkish": "Yangın, itfaiyeciler gelmeden önce, ne kadar zamandır yanıyordu?",
+      "english": "How long had the fire been burning before the firefighters arrived?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s54",
+      "old_turkish": "Mark kapryi çaldığında, Louise saatlerdir pratik yapıyordu.",
+      "new_turkish": "Mark kapıyı çaldığında, Louise saatlerdir pratik yapıyordu.",
+      "english": "Louise had been practising for hours when Mark knocked on the door."
+    },
+    {
+      "set": "aux-16",
+      "id": "s62",
+      "old_turkish": "O gelmeden önc,e bir saatten fazla süredir orada oturuyordun.",
+      "new_turkish": "O gelmeden önce, bir saatten fazla süredir orada oturuyordun.",
+      "english": "You had been sitting there for more than an hour before he arrived."
+    },
+    {
+      "set": "aux-16",
+      "id": "s72",
+      "old_turkish": "Annesinin hastalığını duyduğunda, Avrupa'yı dolastyordu.",
+      "new_turkish": "Annesinin hastalığını duyduğunda, Avrupa'yı dolaşıyordu.",
+      "english": "She had been traveling around Europe when she heard about her mother's illness."
+    },
+    {
+      "set": "aux-16",
+      "id": "s73",
+      "old_turkish": "Emekli olduğumda, hayatımın yarısından fazlaşım çiftlikte çalışryordum.",
+      "new_turkish": "Emekli olduğumda, hayatımın yarısından fazlasını çiftlikte çalışıyordum.",
+      "english": "I had been working on the ranch for more than half my life when I retired."
+    },
+    {
+      "set": "aux-16",
+      "id": "s77",
+      "old_turkish": "Bütün hafta çok galisryor olduğum için, göçuklarla oynayacak enerjim yoktu.",
+      "new_turkish": "Bütün hafta çok çalışıyor olduğum için, çocuklarla oynayacak enerjim yoktu.",
+      "english": "I didn't have any energy to play with the kids because I had been working so hard all the week."
+    },
+    {
+      "set": "aux-16",
+      "id": "s80",
+      "old_turkish": "Bol paran vardı, öyleyse neden faturalarım Gdemiyordun?",
+      "new_turkish": "Bol paran vardı, öyleyse neden faturalarını ödemiyordun?",
+      "english": "You had plenty of money, so why hadn't you been paying your bills?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s83",
+      "old_turkish": "Saat 3'ten beri İngilizce mi 68reniyordun?",
+      "new_turkish": "Saat 3'ten beri İngilizce mi öğreniyordun?",
+      "english": "Had you been studying English since 3 o'clock?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s86",
+      "old_turkish": "Bütün gün galisryor muydu?",
+      "new_turkish": "Bütün gün çalışıyor muydu?",
+      "english": "Had she been working all day?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s89",
+      "old_turkish": "Annen seni uyarana kadar, bütün gün İngilizce mi çalışryordun?",
+      "new_turkish": "Annen seni uyarana kadar, bütün gün İngilizce mi çalışıyordun?",
+      "english": "Had you been studying English all day before your mother warned you?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s91",
+      "old_turkish": "Zil çaldığında Göğretmen onlara bir video mi gösteriyordu?",
+      "new_turkish": "Zil çaldığında öğretmen onlara bir video mu gösteriyordu?",
+      "english": "Had the teacher been showing them a video when the bell rang?"
+    },
+    {
+      "set": "aux-16",
+      "id": "s93",
+      "old_turkish": "Yer karla kaplıydı. Birkaç saattir yoğun kar yağtyordu.",
+      "new_turkish": "Yer karla kaplıydı. Birkaç saattir yoğun kar yağıyordu.",
+      "english": "The ground was covered with snow. It had been snowing heavy for several hours."
+    },
+    {
+      "set": "aux-16",
+      "id": "s95",
+      "old_turkish": "Thomas bütün gün telefonu tamir etmeye çalıştyordu.",
+      "new_turkish": "Thomas bütün gün telefonu tamir etmeye çalışıyordu.",
+      "english": "Thomas had been trying to repair the phone the whole day."
+    },
+    {
+      "set": "aux-16",
+      "id": "s96",
+      "old_turkish": "Bütün gün galistyorduk, bu yüzden yorgunduk.",
+      "new_turkish": "Bütün gün çalışıyorduk, bu yüzden yorgunduk.",
+      "english": "We had been studying all day so we tired."
+    },
+    {
+      "set": "aux-16",
+      "id": "s97",
+      "old_turkish": "Eve döndüğümde, Helen dört saattir ayn müziği dinliyordu.",
+      "new_turkish": "Eve döndüğümde, Helen dört saattir aynı müziği dinliyordu.",
+      "english": "Helen had been listening the same music for four hours when I came back home."
+    },
+    {
+      "set": "aux-17",
+      "id": "s3",
+      "old_turkish": "Önümüzdeki hafta törende yüksek lisans derecesini alyor olacak.",
+      "new_turkish": "Önümüzdeki hafta törende yüksek lisans derecesini alıyor olacak.",
+      "english": "He will be receiving his M.A. degree at the ceremony next week."
+    },
+    {
+      "set": "aux-17",
+      "id": "s5",
+      "old_turkish": "Tim şu kızlar sessizce oturuyor olacaklar.",
+      "new_turkish": "Tüm o kızlar sessizce oturuyor olacaklar.",
+      "english": "All those girls will be sitting quietly."
+    },
+    {
+      "set": "aux-17",
+      "id": "s7",
+      "old_turkish": "Yarın ise arabayla gidiyor olacağım.",
+      "new_turkish": "Yarın işe arabayla gidiyor olacağım.",
+      "english": "I'll be driving to work tomorrow."
+    },
+    {
+      "set": "aux-17",
+      "id": "s10",
+      "old_turkish": "Toplantıya geiyor olacak.",
+      "new_turkish": "Toplantıya geliyor olacak.",
+      "english": "He will be coming to the meeting."
+    },
+    {
+      "set": "aux-17",
+      "id": "s11",
+      "old_turkish": "Jane ise arabayla gidiyor olacak.",
+      "new_turkish": "Jane işe arabayla gidiyor olacak.",
+      "english": "Jane will be driving to work."
+    },
+    {
+      "set": "aux-17",
+      "id": "s12",
+      "old_turkish": "",
+      "new_turkish": "Öldüğüm güne kadar, çizburger yiyor olacağım.",
+      "english": "I will be eating a cheeseburgers until the day I die."
+    },
+    {
+      "set": "aux-17",
+      "id": "s13",
+      "old_turkish": "Yarısı 18:00 de yapıyor olacaklar.",
+      "new_turkish": "Yarışı 18:00'de yapıyor olacaklar.",
+      "english": "They will be running the race at 6 pm."
+    },
+    {
+      "set": "aux-17",
+      "id": "s14",
+      "old_turkish": "Siz vardığınızda, kdpekler yüksek sesle havliyor olacak.",
+      "new_turkish": "Siz vardığınızda, köpekler yüksek sesle havlıyor olacak.",
+      "english": "The dogs will be barking loudly when you arrive."
+    },
+    {
+      "set": "aux-17",
+      "id": "s23",
+      "old_turkish": "0 sahada futbol oynuyor olacaklar.",
+      "new_turkish": "O sahada futbol oynuyor olacaklar.",
+      "english": "They will be playing football in that field."
+    },
+    {
+      "set": "aux-17",
+      "id": "s29",
+      "old_turkish": "Farklı türden şarkılar söyleyeceğim, dzellikle modern.",
+      "new_turkish": "Farklı türden şarkılar söyleyeceğim, özellikle modern.",
+      "english": "I will be singing different kinds of songs, especially modern."
+    },
+    {
+      "set": "aux-17",
+      "id": "s30",
+      "old_turkish": "Cuma ıınıversitemin bir programına katılıyor olacağım.",
+      "new_turkish": "Cuma üniversitemin bir programına katılıyor olacağım.",
+      "english": "I will be attending a program of my varsity on Friday."
+    },
+    {
+      "set": "aux-17",
+      "id": "s33",
+      "old_turkish": "Şair, program için romantik bir sür yazıyor olacak.",
+      "new_turkish": "Şair, program için romantik bir şiir yazıyor olacak.",
+      "english": "The poet will be writing a romantic poem for the program."
+    },
+    {
+      "set": "aux-17",
+      "id": "s34",
+      "old_turkish": "Sdz yazan, film için gerçekçi bir şarkı yazıyor olacak.",
+      "new_turkish": "Söz yazarı, film için gerçekçi bir şarkı yazıyor olacak.",
+      "english": "The lyricist will be writing a realistic song for the film."
+    },
+    {
+      "set": "aux-17",
+      "id": "s38",
+      "old_turkish": "Görevi yapmast için ona yardım ediyor olacağım.",
+      "new_turkish": "Görevi yapması için ona yardım ediyor olacağım.",
+      "english": "I will be helping him to do the task."
+    },
+    {
+      "set": "aux-17",
+      "id": "s39",
+      "old_turkish": "Mizikal dramanın tadım çıkarıyor olacağız.",
+      "new_turkish": "Müzikal dramanın tadını çıkarıyor olacağız.",
+      "english": "We will be going to enjoy the musical drama."
+    },
+    {
+      "set": "aux-17",
+      "id": "s41",
+      "old_turkish": "Önümüzdeki hafta bu saatlerde maç başhyor olacak.",
+      "new_turkish": "Önümüzdeki hafta bu saatlerde maç başlıyor olacak.",
+      "english": "This time next week, the match will be starting."
+    },
+    {
+      "set": "aux-17",
+      "id": "s42",
+      "old_turkish": "Bir saat içinde aynhyor olacağız.",
+      "new_turkish": "Bir saat içinde ayrılıyor olacağız.",
+      "english": "In one hour, we will be leaving"
+    },
+    {
+      "set": "aux-17",
+      "id": "s44",
+      "old_turkish": "",
+      "new_turkish": "Önümüzdeki Cuma bir parti veriyor olacağız.",
+      "english": "We'll be having a party next Friday."
+    },
+    {
+      "set": "aux-17",
+      "id": "s45",
+      "old_turkish": "Önümüzdeki yıl ispanya'da yastyor olacak.",
+      "new_turkish": "Önümüzdeki yıl İspanya'da yaşıyor olacak.",
+      "english": "He will be living in Spain next year."
+    },
+    {
+      "set": "aux-17",
+      "id": "s61",
+      "old_turkish": "Önümüzdeki hafta bu sefer isviğre'de kayak yapıyor olacazim!",
+      "new_turkish": "Önümüzdeki hafta bu sefer İsviçre'de kayak yapıyor olacağım!",
+      "english": "This time next week I will be skiing in Switzerland!"
+    },
+    {
+      "set": "aux-17",
+      "id": "s62",
+      "old_turkish": "Yeni komediyi gördÜğünizde, çok gillliyor olacaksınız.",
+      "new_turkish": "Yeni komediyi gördüğünüzde, çok gülüyor olacaksınız.",
+      "english": "You will be laughing so hard when you see the new comedy."
+    },
+    {
+      "set": "aux-17",
+      "id": "s63",
+      "old_turkish": "Otelimizde kağ gün kalıyor olacaksımz?",
+      "new_turkish": "Otelimizde kaç gün kalıyor olacaksınız?",
+      "english": "How many days will you be staying at our hotel?"
+    },
+    {
+      "set": "aux-17",
+      "id": "s65",
+      "old_turkish": "Bu yaz hala dondurma dükkanında çalıştyor olacağım.",
+      "new_turkish": "Bu yaz hala dondurma dükkanında çalışıyor olacağım.",
+      "english": "This summer, I'll still be working at the ice cream shop."
+    },
+    {
+      "set": "aux-17",
+      "id": "s68",
+      "old_turkish": "Önümüzdeki hafta bu zamanlarda, Balı'de giinesleniyor olacağım.",
+      "new_turkish": "Önümüzdeki hafta bu zamanlarda, Bali'de güneşleniyor olacağım.",
+      "english": "This time next week, I will be sun bathing in Bali."
+    },
+    {
+      "set": "aux-17",
+      "id": "s69",
+      "old_turkish": "Toplantıya geliyor olacak, dyle tahmin ediyorum.",
+      "new_turkish": "Toplantıya geliyor olacak, öyle tahmin ediyorum.",
+      "english": "He'll be coming to the meeting, I expect so."
+    },
+    {
+      "set": "aux-17",
+      "id": "s70",
+      "old_turkish": "Sanınm güneşin alnında çalıştıktan sonra, susuyor olacaksın.",
+      "new_turkish": "Sanırım güneşin alnında çalıştıktan sonra, susuyor olacaksın.",
+      "english": "I guess you' ll be feeling thirsty after working in the sun."
+    },
+    {
+      "set": "aux-17",
+      "id": "s71",
+      "old_turkish": "",
+      "new_turkish": "İngiltere'ye döndüğünde, güneş ışığını özlüyor olacaksın.",
+      "english": "You' II be missing the sunshine once you're back in England."
+    },
+    {
+      "set": "aux-17",
+      "id": "s78",
+      "old_turkish": "Bu akşam Jane ile yemek yiyiyor olacağım böylece ona anlatabilirim.",
+      "new_turkish": "Bu akşam Jane ile yemek yiyor olacağım böylece ona anlatabilirim.",
+      "english": "V'll be eating with Jane this evening so I can tell her."
+    },
+    {
+      "set": "aux-17",
+      "id": "s79",
+      "old_turkish": "Bir saat sonra hala giysilerimi ııtuluyor olacağım.",
+      "new_turkish": "Bir saat sonra hala giysilerimi ütülüyor olacağım.",
+      "english": "In an hour, I'll still be ironing my clothes."
+    },
+    {
+      "set": "aux-17",
+      "id": "s80",
+      "old_turkish": "Yarın, hala soğuk çılgınlığı gekiyor olacak.",
+      "new_turkish": "Yarın, hala soğuk algınlığı çekiyor olacak.",
+      "english": "Tomorrow, he' Il still be suffering from his cold."
+    },
+    {
+      "set": "aux-17",
+      "id": "s82",
+      "old_turkish": "Hisse fiyatlan sabahlar hala düşüyor olmayacak mı?",
+      "new_turkish": "Hisse fiyatları sabahları hala düşüyor olmayacak mı?",
+      "english": "Won't stock prices still be falling in the morning?"
+    },
+    {
+      "set": "aux-17",
+      "id": "s83",
+      "old_turkish": "Ne yazık ki, deniz seviyeleri 20 yıl sonra yÜkselmeye devam ediyor olacak.",
+      "new_turkish": "Ne yazık ki, deniz seviyeleri 20 yıl sonra yükselmeye devam ediyor olacak.",
+      "english": "Unfortunately, sea levels will still be rising in 20 years."
+    },
+    {
+      "set": "aux-17",
+      "id": "s92",
+      "old_turkish": "Artık sizin için her şeyi hazırhyor olmayacağım.",
+      "new_turkish": "Artık sizin için her şeyi hazırlıyor olmayacağım.",
+      "english": "I will not be preparing everything for you any longer."
+    },
+    {
+      "set": "aux-17",
+      "id": "s93",
+      "old_turkish": "KG",
+      "new_turkish": "Kötü iş etiğine göre, muhtemelen önümüzdeki yıl bu şirket için çalışıyor olmayacaksın.",
+      "english": "With your bad work ethic, you will probably not be working for this company anymore next year."
+    },
+    {
+      "set": "aux-17",
+      "id": "s95",
+      "old_turkish": "Partide kağ kişi bira içiyor olacak?",
+      "new_turkish": "Partide kaç kişi bira içiyor olacak?",
+      "english": "How many people will be drinking beer at the party?"
+    },
+    {
+      "set": "aux-17",
+      "id": "s96",
+      "old_turkish": "Jane sahnede piyano mu çaltyor olacak?",
+      "new_turkish": "Jane sahnede piyano mu çalıyor olacak?",
+      "english": "Will Jane be playing the piano at the performance?"
+    },
+    {
+      "set": "aux-17",
+      "id": "s99",
+      "old_turkish": "Bangkok'a vardığımda, muhtemelen yağmur yağtyor olacak.",
+      "new_turkish": "Bangkok'a vardığımda, muhtemelen yağmur yağıyor olacak.",
+      "english": "It will probably be raining when I reach Bangkok."
+    },
+    {
+      "set": "aux-18",
+      "id": "s1",
+      "old_turkish": "Sen gelmeden önce, farklı konularda makaleler yatyor olacağım.",
+      "new_turkish": "Sen gelmeden önce, farklı konularda makaleler yazıyor olacağım.",
+      "english": "I will have been written articles on different topics before you come."
+    },
+    {
+      "set": "aux-18",
+      "id": "s3",
+      "old_turkish": "Sen ulaşmadan Öncei onlar o sahada futbol oynuyor olacaklar.",
+      "new_turkish": "Sen ulaşmadan önce, onlar o sahada futbol oynuyor olacaklar.",
+      "english": "They will have been playing football in that field before you reach."
+    },
+    {
+      "set": "aux-18",
+      "id": "s5",
+      "old_turkish": "Bob sınıfa gelmeden önce, kütüphanede çalıştyor olacak.",
+      "new_turkish": "Bob sınıfa gelmeden önce, kütüphanede çalışıyor olacak.",
+      "english": "Bob will have been studying in the library before he comes to the class."
+    },
+    {
+      "set": "aux-18",
+      "id": "s8",
+      "old_turkish": "Annen seni aramdan Önce, ev işi yapıyor olacaksın.",
+      "new_turkish": "Annen seni aramadan önce, ev işi yapıyor olacaksın.",
+      "english": "You will have been doing housework before your calls you."
+    },
+    {
+      "set": "aux-18",
+      "id": "s9",
+      "old_turkish": "Sen bize katılmadan Önce, farklı türden şarkılar sdylüyor olacağım.",
+      "new_turkish": "Sen bize katılmadan önce, farklı türden şarkılar söylüyor olacağım.",
+      "english": "I will have been singing different kinds of songs before you join us."
+    },
+    {
+      "set": "aux-18",
+      "id": "s11",
+      "old_turkish": "Jeff, Bangladeş'e gelmeden Önce diinyayı dolastyor olacak.",
+      "new_turkish": "Jeff, Bangladeş'e gelmeden önce dünyayı dolaşıyor olacak.",
+      "english": "Jeff will have been traveling around the world before he comes to Bangladesh."
+    },
+    {
+      "set": "aux-18",
+      "id": "s13",
+      "old_turkish": "Şair, program başlamadan Önce romantik bir sür yazryor olacak.",
+      "new_turkish": "Şair, program başlamadan önce romantik bir şiir yazıyor olacak.",
+      "english": "The poet will have been writing a romantic poem before the program starts."
+    },
+    {
+      "set": "aux-18",
+      "id": "s14",
+      "old_turkish": "Söz yazart, film için gerçekğı bir şarkı yazıyor olacak.",
+      "new_turkish": "Söz yazarı, film için gerçekçi bir şarkı yazıyor olacak.",
+      "english": "The lyricist will have been writing a realistic song for the film."
+    },
+    {
+      "set": "aux-18",
+      "id": "s15",
+      "old_turkish": "Ben seninle konuşmadan Önce, konsere gidiyor olacak msin?",
+      "new_turkish": "Ben seninle konuşmadan önce, konsere gidiyor olacak mısın?",
+      "english": "Will you have been going to the concert before I talk to you?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s16",
+      "old_turkish": "Bu makaleyi okumadan Önce, toplantıya katilyor olmayacağım.",
+      "new_turkish": "Bu makaleyi okumadan önce, toplantıya katılıyor olmayacağım.",
+      "english": "I will not have been attending the meeting before I read this article."
+    },
+    {
+      "set": "aux-18",
+      "id": "s17",
+      "old_turkish": "Sen sunumu tamamlamadan Ğçe, Robin toplantıda bize katıltyor olacak.",
+      "new_turkish": "Sen sunumu tamamlamadan önce, Robin toplantıda bize katılıyor olacak.",
+      "english": "Robin will have been joining us at the meeting before you complete the presentation."
+    },
+    {
+      "set": "aux-18",
+      "id": "s19",
+      "old_turkish": "Yarışma başlamadan önce, müzikal dramanın tadını çıkanyor olacağız.",
+      "new_turkish": "Yarışma başlamadan önce, müzikal dramanın tadını çıkarıyor olacağız.",
+      "english": "We will have been enjoying the musical drama before the game show starts."
+    },
+    {
+      "set": "aux-18",
+      "id": "s21",
+      "old_turkish": "On yıldır Mümbai'de yastyor olacaklar.",
+      "new_turkish": "On yıldır Mumbai'de yaşıyor olacaklar.",
+      "english": "They will have been living in Mumbai for 10 years."
+    },
+    {
+      "set": "aux-18",
+      "id": "s23",
+      "old_turkish": "Önümüzdeki yıl bu şirkette bir yıldır çalsiyor olacağım.",
+      "new_turkish": "Önümüzdeki yıl bu şirkette bir yıldır çalışıyor olacağım.",
+      "english": "Next year, I will have been working at this company for one year."
+    },
+    {
+      "set": "aux-18",
+      "id": "s26",
+      "old_turkish": "Bitkileri her gün suluyor olacağım; umanm Glmezler.",
+      "new_turkish": "Bitkileri her gün suluyor olacağım; umarım ölmezler.",
+      "english": "I will have been watering the plants every day; I hope they won't die."
+    },
+    {
+      "set": "aux-18",
+      "id": "s28",
+      "old_turkish": "Ofleden beri araba kullanıyor olacak, bu yüzden dinlenmeye ihtiyacı olacak.",
+      "new_turkish": "Öğleden beri araba kullanıyor olacak, bu yüzden dinlenmeye ihtiyacı olacak.",
+      "english": "He will have been driving since noon, so he will need a rest."
+    },
+    {
+      "set": "aux-18",
+      "id": "s39",
+      "old_turkish": "2030 yılına kadar bu şirketin müdürii olarak otuz yıldır çalışıyor olacak.",
+      "new_turkish": "2030 yılına kadar bu şirketin müdürü olarak otuz yıldır çalışıyor olacak.",
+      "english": "By 2030, he will have been working as the director of this company for thirty years."
+    },
+    {
+      "set": "aux-18",
+      "id": "s41",
+      "old_turkish": "",
+      "new_turkish": "Eve döndüğümüzde, 30 dakikadır futbol oynuyor olacaklar.",
+      "english": "By the time we get home, they will have been playing football for 30 minutes."
+    },
+    {
+      "set": "aux-18",
+      "id": "s45",
+      "old_turkish": "Büyükannemin evine vardığımızda, sekiz saattir arabaya sürüyor olacağız.",
+      "new_turkish": "Büyükannemin evine vardığımızda, sekiz saattir araba sürüyor olacağız.",
+      "english": "We will have been driving for eight hours when we reach my grandma's house."
+    },
+    {
+      "set": "aux-18",
+      "id": "s46",
+      "old_turkish": "Saat altrya kadar burada üç saattir bekliyor olacağım.",
+      "new_turkish": "Saat altıya kadar burada üç saattir bekliyor olacağım.",
+      "english": "I will have been waiting here for three hours by six o'clock."
+    },
+    {
+      "set": "aux-18",
+      "id": "s47",
+      "old_turkish": "2022'ye kadar, on altı yıldır Londra'da yastyor olacak.",
+      "new_turkish": "2022'ye kadar, on altı yıldır Londra'da yaşıyor olacak.",
+      "english": "By 2022, he will have been living in London for sixteen years."
+    },
+    {
+      "set": "aux-18",
+      "id": "s48",
+      "old_turkish": "Bu kursu bitirdiğimde, iki aydır İngilizce dgreniyor olacadım.",
+      "new_turkish": "Bu kursu bitirdiğimde, iki aydır İngilizce öğreniyor olacağım.",
+      "english": "When I finish this course, I will have been learning English for two months."
+    },
+    {
+      "set": "aux-18",
+      "id": "s51",
+      "old_turkish": "Başkan Yardımcısı döndüğünde, üç haftadır denizasın seyahat ediyor olacak.",
+      "new_turkish": "Başkan Yardımcısı döndüğünde, üç haftadır denizaşırı seyahat ediyor olacak.",
+      "english": "The Vice President will have been traveling overseas for three weeks when he returns."
+    },
+    {
+      "set": "aux-18",
+      "id": "s53",
+      "old_turkish": "Bu bahar, ikizler iki yıldır aşgilik okuluna gidiyor olacaklar.",
+      "new_turkish": "Bu bahar, ikizler iki yıldır aşçılık okuluna gidiyor olacaklar.",
+      "english": "This spring, the twins will have been attending culinary school for two years."
+    },
+    {
+      "set": "aux-18",
+      "id": "s56",
+      "old_turkish": "Yarın sabaha kadar, dört gündür hiç durmadan kar yağyor olacak!",
+      "new_turkish": "Yarın sabaha kadar, dört gündür hiç durmadan kar yağıyor olacak!",
+      "english": "By tomorrow morning, it will have been snowing for four days without stopping!"
+    },
+    {
+      "set": "aux-18",
+      "id": "s62",
+      "old_turkish": "Arpginin bir molaya ihtiyacı var. Bu parçadan sonra iki saattir Uist liste çalıyor olacak.",
+      "new_turkish": "Arpçının bir molaya ihtiyacı var. Bu parçadan sonra iki saattir üst üste çalıyor olacak.",
+      "english": "The harpist needs a break. After this piece, she will have been playing for two hours straight."
+    },
+    {
+      "set": "aux-18",
+      "id": "s64",
+      "old_turkish": "Saat beşte ne kadar süredir çalıştyo olacaksın?",
+      "new_turkish": "Saat beşte ne kadar süredir çalışıyor olacaksın?",
+      "english": "How long will you have been working by five o'clock?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s65",
+      "old_turkish": "Uçağımz geldiğinde, uzun süre bekliyor olacak mısın?",
+      "new_turkish": "Uçağımız geldiğinde, uzun süre bekliyor olacak mısın?",
+      "english": "Will you have been waiting long when our plane arrives?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s67",
+      "old_turkish": "Pastay! saat ikiye kadar yeterince uzun süre pişiriyor olacak mı?",
+      "new_turkish": "Pastayı saat ikiye kadar yeterince uzun süre pişiriyor olacak mı?",
+      "english": "Will she have been baking the cake long enough by two o'clock?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s68",
+      "old_turkish": "Seni 6:00'da uyandınrsam, yeterince uzun süre uyuyor olacak mısın?",
+      "new_turkish": "Seni 6:00'da uyandırırsam, yeterince uzun süre uyuyor olacak mısın?",
+      "english": "Will you have been sleeping long enough if I wake you at 6:00 a.m.?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s70",
+      "old_turkish": "Bayan Grant, yeni işine başladığında bu şirkette kağ yıldır ccalışıyor olacak?",
+      "new_turkish": "Bayan Grant, yeni işine başladığında bu şirkette kaç yıldır çalışıyor olacak?",
+      "english": "How many years will Mrs. Grant have been working for this company when she starts her new job?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s74",
+      "old_turkish": "Profesör Evans bugün aynı dersi verdiğinde, kağ yartyıl aym dersi veriyor olacak?",
+      "new_turkish": "Profesör Evans bugün aynı dersi verdiğinde, kaç yarıyıl aynı dersi veriyor olacak?",
+      "english": "How many semesters will Professor Evans have been giving this same lecture when he gives it today?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s75",
+      "old_turkish": "Kurtarma ekibi, yarına kadar bir haftadır yürüyüşçülere ulaşmaya çalıştyor olacak mı?",
+      "new_turkish": "Kurtarma ekibi, yarına kadar bir haftadır yürüyüşçülere ulaşmaya çalışıyor olacak mı?",
+      "english": "Will the rescue crew have been trying to reach the hikers for a week by tomorrow?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s76",
+      "old_turkish": "Erma, bitirdiğinde, o elbiseyi kağ saattir dikiyor olacak?",
+      "new_turkish": "Erma, bitirdiğinde, o elbiseyi kaç saattir dikiyor olacak?",
+      "english": "How many hours will Erma have been sewing that dress when she finishes?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s77",
+      "old_turkish": "Bu Noel'e kadar, koro ile beş yıldır mı şarkı sdyliiyor olacaksın?",
+      "new_turkish": "Bu Noel'e kadar, koro ile beş yıldır mı şarkı söylüyor olacaksın?",
+      "english": "Will you have been singing with the choir for five years by this Christmas?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s85",
+      "old_turkish": "Nihayet sınav sonuçlanmızı aldığınızda, ne kadar süredir bekliyor olacaksınız?",
+      "new_turkish": "Nihayet sınav sonuçlarımızı aldığınızda, ne kadar süredir bekliyor olacaksınız?",
+      "english": "How long will you have been waiting when you finally get your exam results?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s87",
+      "old_turkish": "Nihayet taşındığında, ne kadar zamandır eve taşınmay planlıyor olacak?",
+      "new_turkish": "Nihayet taşındığında, ne kadar zamandır eve taşınmayı planlıyor olacak?",
+      "english": "How long will she have been planning) to move house when she finally moves?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s90",
+      "old_turkish": "Bütün gün ders çalışıyor olacaklar, bu yüzden akşam dışan çıkmak isteyecekler.",
+      "new_turkish": "Bütün gün ders çalışıyor olacaklar, bu yüzden akşam dışarı çıkmak isteyecekler.",
+      "english": "They will have been studying all day, so they'll want to go out in the evening."
+    },
+    {
+      "set": "aux-18",
+      "id": "s91",
+      "old_turkish": "O geldiğinde, onlar uzun süredir otelde kalmyor olacaklar.",
+      "new_turkish": "O geldiğinde, onlar uzun süredir otelde kalmıyor olacaklar.",
+      "english": "They won't have been staying in the hotel for long when she arrives."
+    },
+    {
+      "set": "aux-18",
+      "id": "s92",
+      "old_turkish": "Seninle karşılaştığımda, yurliyor olmayacağım.",
+      "new_turkish": "Seninle karşılaştığımda, yürüyor olmayacağım.",
+      "english": "I won't have been walking when I meet you."
+    },
+    {
+      "set": "aux-18",
+      "id": "s94",
+      "old_turkish": "Önümüzdeki Şah dört aydır evlere bakıyor olacağız.",
+      "new_turkish": "Önümüzdeki Salı dört aydır evlere bakıyor olacağız.",
+      "english": "We will have been looking at houses for four months next Tuesday."
+    },
+    {
+      "set": "aux-18",
+      "id": "s97",
+      "old_turkish": "Seni gördüğümde, kıyafet altyor olacak mısın?",
+      "new_turkish": "Seni gördüğümde, kıyafet alıyor olacak mısın?",
+      "english": "Will you have been buying clothes when I see you?"
+    },
+    {
+      "set": "aux-18",
+      "id": "s100",
+      "old_turkish": "Yansmaya girdiğinde, ne kadar süredir antrenman yapıyor olacak?",
+      "new_turkish": "Yarışmaya girdiğinde, ne kadar süredir antrenman yapıyor olacak?",
+      "english": "How long will he have been training when he enters the competition?"
+    }
+  ]
+}

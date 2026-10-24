@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.19 (22 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.22 (24 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -95,7 +95,17 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - **Kaldığın Yerden Devam:** Her set için son çalışılan satırın otomatik kaydedilmesi ve scroll focus.
 
 ### 2.3. İçerik Yönetimi
-- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri. Tüm cümle setlerindeki Türkçe karakter bozulmaları (é, ¢, §, $, OCR kaymaları), İngilizce zamir boru ('|' -> 'I') ve sayı ('1' -> 'I') hataları, ünlem/zamir karışıklıkları (`so! can't` -> `so I can't` düzeltmesi - Modal-5 s22), çapraz eşleşen cümle kaymaları (örn. Modal-11 Had Better ve Modal-12 Need çaprazlamaları) ile İngilizce zaman, gramer ve belirli tanımlık düzeltmeleri (örn: "since last night", "on the board", "The doctors", `aux-18 s72` dilbilgisi düzeltmesi: `have been boil` -> `have been boiling`, `aux-12 s65` Türkçe OCR düzeltmesi: `kalacaoim` -> `kalacağını`) taranıp temizlenmiş; orijinal Perfectionist English PDF kaynaklarıyla doğrulanmış, karma çalışma setlerinde (Random Mix) versiyon bazlı önbellek senkronizasyonu ve string eşleştirme normalizasyonu (`isMatch`) tam olarak sağlanmıştır.
+- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri.
+- **Kapsamlı Arşiv OCR ve Türkçe Karakter Temizliği (34 Set & 1.031 Cümle Düzeltmesi):**
+  - Orijinal Perfectionist English taranmış PDF kaynakları (`docs/resources/PratikYap/`) alt ajanlar tarafından 4 ana grupta (Aux 1-9, Aux 10-18, Modal 1-8, Modal 9-16) sayfa sayfa incelenmiş; şüpheli ve bozuk cümleler PDF görüntü kırpmalarıyla doğrulanmıştır.
+  - Toplam **1.031 cümle** düzeltilerek hem `src/data/libraryData.ts` hem de `src/data/json/all_sentences.json` dosyalarına atomik olarak işlenmiştir.
+  - Öne çıkan düzeltmeler:
+    - Bozuk Türkçe karakter ve OCR hataları (`aux-11 s93`: `"Uğ yıl içinde farklı bir ıılkede yaşayacağım."` ➔ `"Üç yıl içinde farklı bir ülkede yaşayacağım."`).
+    - Eksik/kesik bırakılmış çevirilerin orijinal kaynakla tamamlanması (`aux-17 s93`: `"KG"` ➔ `"Kötü iş etiğine göre, muhtemelen önümüzdeki yıl bu şirket için çalışıyor olmayacaksın."`, `aux-14 s36`, `aux-14 s47`, `aux-15 s1`, `aux-17 s12`, `aux-17 s44`, `aux-17 s71`, `aux-18 s41`, `modal-11 s57`, `modal-12 s58`).
+    - Kaymış/atlamış cümlelerin telafisi (`aux-11 s58` İngilizce karşılığı düzeltildi ve eksik `aux-11 s59` `"Frank Tıp okuyacak."` arşive eklendi; `modal-16 s1` boş İngilizce metni tamamlandı).
+    - Anlamı bozan kritik OCR bozulmaları giderildi (`modal-12 s56`: `"Öldüğün gibi dışarı çıkabilirsin."` ➔ `"Olduğun gibi dışarı çıkabilirsin."`, `modal-15 s59`: `"Ölüm doktor olmak istiyor."` ➔ `"Oğlum doktor olmak istiyor."`).
+    - Karakter, rakam ve ses kaymaları (`6gren` ➔ `öğren`, `sGyliiyor` ➔ `söylüyor`, `deiilller` ➔ `değiller`, `ıınıversite` ➔ `üniversite`, `ııniforma` ➔ `üniforma`, `calığşmak` ➔ `çalışmak`, `tırmanistan` ➔ `tırmanıştan`, `dain` ➔ `dağın`, `dlcumii` ➔ `ölçümü`).
+  - Tüm düzeltmeler `tests/turkishCharacterAndOcrFixes.test.js` birim testleriyle TDD standardında güvenceye alınmıştır.
 - **Özel Cümle Setleri:** Kullanıcının kendi oluşturduğu isimlendirilmiş çalışma paketleri.
 - **Arşivleme:** Öğrenilen kelimelerin ana listeden temizlenip başarı kütüphanesine aktarılması.
 

@@ -1,0 +1,4003 @@
+{
+  "modal-1": [
+    {
+      "id": "s2",
+      "turkish": "Bu binada sigara içemezsin. Yasadisı.",
+      "english": "You can't smoke in this building. It is illegal."
+    },
+    {
+      "id": "s3",
+      "turkish": "Buradan bilgi isteyemezsin. Bu bilgi masası değil.",
+      "english": "You can't ask for information here. This is not information desk."
+    },
+    {
+      "id": "s4",
+      "turkish": "Tom çok iyi sür yazabilir.",
+      "english": "Tom can write poetry very well."
+    },
+    {
+      "id": "s5",
+      "turkish": "Önümüzdeki hafta sana yardımcı olabilirim.",
+      "english": "I can help you with that next week."
+    },
+    {
+      "id": "s6",
+      "turkish": "Lisa Fransızca konuşamaz.",
+      "english": "Lisa can't speak French."
+    },
+    {
+      "id": "s7",
+      "turkish": "",
+      "english": "She can hear much better with her new hearing aids."
+    },
+    {
+      "id": "s8",
+      "turkish": "Özür dilerim. Sana yardım edemem. Nasıl yapılacağını bilmiyorum.",
+      "english": "I'm sorry. I can't help you. I don't know how to do it."
+    },
+    {
+      "id": "s9",
+      "turkish": "Evdeki kilitleri değiştirebilirim.",
+      "english": "I can change the locks in the house."
+    },
+    {
+      "id": "s10",
+      "turkish": "Kardeşim lavabolan, tuvaletleri veya duşları tamir edemez.",
+      "english": "My brother can't fix sinks, toilets, or showers."
+    },
+    {
+      "id": "s11",
+      "turkish": "Sağı kesip boyayabilir misin?",
+      "english": "Can you cut and color hair."
+    },
+    {
+      "id": "s12",
+      "turkish": "İnternet servisini evlere kurabilir mi?",
+      "english": "Can he install Internet service in houses?"
+    },
+    {
+      "id": "s13",
+      "turkish": "Nabız ve tansiyon dlçebilir.",
+      "english": "She can take a pulse and blood pressure."
+    },
+    {
+      "id": "s14",
+      "turkish": "Bir arabayı ayarlayabilirim.",
+      "english": "I can give a car a tune-up."
+    },
+    {
+      "id": "s15",
+      "turkish": "Seyahat planlarında tasarruf edebilirsin.",
+      "english": "You can save money on travel plans."
+    },
+    {
+      "id": "s16",
+      "turkish": "Düğünler için çiçek ayarlayamıyor mu?",
+      "english": "Can't she arrange flowers for weddings?"
+    },
+    {
+      "id": "s17",
+      "turkish": "İş yerinde kişisel telefon görüşmeleri yapamayız.",
+      "english": "We can't make personal phone calls at work."
+    },
+    {
+      "id": "s18",
+      "turkish": "Hey, kayboldum. Bana yardım eder misin?",
+      "english": "Hey I'm lost. Can you help me?"
+    },
+    {
+      "id": "s19",
+      "turkish": "Çok güzel bir sesin var. Bizim için şarkı sdyleyebilirsin!",
+      "english": "You have such a beautiful voice. You can sing for us!"
+    },
+    {
+      "id": "s20",
+      "turkish": "Testinde başarısız olduğuna inanamıyorum!",
+      "english": "I can't believe that you failed your test!"
+    },
+    {
+      "id": "s21",
+      "turkish": "Beş dil bildiğini biliyorum ama Arapça konuşabiliyor mu?",
+      "english": "I know he speaks five languages, but can he speak Arabic?"
+    },
+    {
+      "id": "s22",
+      "turkish": "İsteğe bagh olduğu için bu kitabı kendi zevkimiz için okuyabiliriz.",
+      "english": "We can read this book for our own pleasure because it is optional."
+    },
+    {
+      "id": "s23",
+      "turkish": "Şampiyonluk maçını kesinlikle kazanabiliriz.",
+      "english": "We can definitely win the championship game."
+    },
+    {
+      "id": "s24",
+      "turkish": "Kanepeyi kaldırmama yardım eder misin?",
+      "english": "Can you help me lift the couch?"
+    },
+    {
+      "id": "s25",
+      "turkish": "Ellie bisiklet sürebiliyor. Her gün okula bisikletle gider.",
+      "english": "Ellie can ride a bicycle. She rides it to school every day."
+    },
+    {
+      "id": "s26",
+      "turkish": "Çok yorgunum, bu yüzden oyun oynamak için parka gidemem.",
+      "english": "I'm very tired, so I can't go out to the park to play."
+    },
+    {
+      "id": "s27",
+      "turkish": "Seninle şirket raporu hakkında ne zaman konuşabilirim?",
+      "english": "When can I talk to you about the company report?"
+    },
+    {
+      "id": "s28",
+      "turkish": "Affedersin, şu anda seni duyamıyorum. Müzik çok yüksek.",
+      "english": "Excuse me, I can't hear you right now. The music is too loud."
+    },
+    {
+      "id": "s29",
+      "turkish": "Bir seferde kağ sosisli yiyebilirsin?",
+      "english": "How many hot dogs can you eat at one time?"
+    },
+    {
+      "id": "s30",
+      "turkish": "Okuma gözlüğüm olmadan okuyamıyorum. Nerede?",
+      "english": "I can't read without my reading glasses. Where are they?"
+    },
+    {
+      "id": "s31",
+      "turkish": "Harika, Çince dahil 5 dil konuşabiliyor.",
+      "english": "He's amazing, he can speak 5 languages including Chinese."
+    },
+    {
+      "id": "s32",
+      "turkish": "Yedi yaşında ama henüz okuyamıyor - ailesi ona fazladan ders alıyor.",
+      "english": "She's 7 years old but she can't read yet - her parents are getting her extra lessons."
+    },
+    {
+      "id": "s33",
+      "turkish": "Bu kutuyu kaldıramıyorum - çok ağır! Bana yardım eder misin?",
+      "english": "I can't lift this box - it's too heavy! Would you help me?"
+    },
+    {
+      "id": "s34",
+      "turkish": "Lucy her şeye rağmen buluşmamıza gelemiyor. Şu anda trafiğe sıkışmış durumda.",
+      "english": "Lucy can't make it to our meeting after all. She's stuck in traffic at the moment."
+    },
+    {
+      "id": "s35",
+      "turkish": "John çok iyi tenis oynayabilir. Kulübünün şampiyonu.",
+      "english": "John can play tennis really well. He's champion of his club."
+    },
+    {
+      "id": "s36",
+      "turkish": "Maalesef gerçekten şarkı söyleyemiyorum! Ailemde hiç kimse müzikal değil.",
+      "english": "Unfortunately, I really can't sing at all! No-one in my family is musical either."
+    },
+    {
+      "id": "s37",
+      "turkish": "Bu pencereyi açamyorum. Sanırım sıkışmış!",
+      "english": "I can't open this window. I think it's stuck!"
+    },
+    {
+      "id": "s38",
+      "turkish": "Gill piyano galamnyor. Hiç çalışmadı / calığmamış.",
+      "english": "Gill can't play the piano. She's never studied it."
+    },
+    {
+      "id": "s39",
+      "turkish": "Bu Jake olamaz. Bu imkansız. ispanya'ya gidecedini sdyledi.",
+      "english": "That can't be Jake. It's impossible. He said he was going to Spain."
+    },
+    {
+      "id": "s40",
+      "turkish": "Kız kardeşine isterse geceyi burada kalabileceğini sdyle.",
+      "english": "Tell your sister she can stay the night here if she wants to."
+    },
+    {
+      "id": "s41",
+      "turkish": "Brenda otuzun üzerinde olamaz. Benden bir yıl sonra mezun oldu ve ben sadece 25 yasındayım.",
+      "english": "Brenda can't be over thirty. She graduated a year after me and I'm only 25."
+    },
+    {
+      "id": "s42",
+      "turkish": "Bu John olamaz. Avustralya'ya seyahat edeceğini sdyledi.",
+      "english": "That can't be John. He said he was going to travel to Australia."
+    },
+    {
+      "id": "s43",
+      "turkish": "Bilet olmadan içeri giremezsin. Tüm koltuklar ayrılmıştır.",
+      "english": "You can't go in without a ticket. All seats are reserved."
+    },
+    {
+      "id": "s44",
+      "turkish": "",
+      "english": "At what age can you get a driving licence in your country?"
+    },
+    {
+      "id": "s45",
+      "turkish": "Park edilmeyen bir alana park edemezsin. Yasak.",
+      "english": "You can't park in a no-parking area. It's forbidden."
+    },
+    {
+      "id": "s46",
+      "turkish": "Pek iyi göremiyorum ama oradaki Claire olmalı. En azından Claire'e benziyor.",
+      "english": "I can't see very well but that must be Claire over there. It least, she looks like Claire."
+    },
+    {
+      "id": "s47",
+      "turkish": "Az önce harika bir kahvaltı yaptın. Artık aç olamazsın.",
+      "english": "You've just had a huge breakfast. You can't be hungry anymore."
+    },
+    {
+      "id": "s48",
+      "turkish": "Artık eve gidebilirsin. Bu e-postaları yazmayı bitirmene gerek yok. Yarına kadar bekleyebilirler.",
+      "english": "You can go home now. You needn't finish writing those emails. They can wait until tomorrow."
+    },
+    {
+      "id": "s49",
+      "turkish": "Bu Harry olamaz. Paris'e gideceğini sdyledi. O burada ne yapıyor?",
+      "english": "That can't be Harry. He said he was going to Paris. What's he doing here?"
+    },
+    {
+      "id": "s50",
+      "turkish": "Orada 5 yıl geçirdiği için akıcı italyanca konuşabiliyor.",
+      "english": "He can speak Italian fluently because he spent 5 years there."
+    },
+    {
+      "id": "s51",
+      "turkish": "Oradaki John olamaz. O, bu hafta Amerika'da.",
+      "english": "That can't be John over there. He is in America this week."
+    },
+    {
+      "id": "s52",
+      "turkish": "Paltolarınızı diğer odadaki yatağa bırakabilirsiniz.",
+      "english": "You can leave your coats on the bed in the other room."
+    },
+    {
+      "id": "s53",
+      "turkish": "Bu belgenin bir kopyasını oluşturabilirsin.",
+      "english": "You can make a copy of this document."
+    },
+    {
+      "id": "s54",
+      "turkish": "Tam zamanlı çalışıyor ve doktora için galisiyor. Bu kolay olamaz.",
+      "english": "He's working full-time and studying for his Ph.D. That can't be easy."
+    },
+    {
+      "id": "s55",
+      "turkish": "Az önce kocaman bir akşam yemeği yedin! Şimdiden aç olamazsın!",
+      "english": "You have just eaten a huge dinner! You can't be hungry again already!"
+    },
+    {
+      "id": "s56",
+      "turkish": "Çok sessiz konuşuyorsun. Seni duyamıyorum",
+      "english": "You are speaking very quietly. I can't hear you."
+    },
+    {
+      "id": "s57",
+      "turkish": "Mobilyaları taşımama yardım eder misin?",
+      "english": "Can you help me move the furniture?"
+    },
+    {
+      "id": "s58",
+      "turkish": "Balık yüzebilir ama uçamaz.",
+      "english": "A fish can swim, but it can't fly."
+    },
+    {
+      "id": "s59",
+      "turkish": "Sadece kantinde sigara içebilirsin, bu odada sigara içemezsin.",
+      "english": "You can only smoke in the canteen, you can't smoke in this room."
+    },
+    {
+      "id": "s60",
+      "turkish": "Ağım. - Merak etme, senin için bir sandviç yapabilirim.",
+      "english": "I'm hungry. - Don't worry, I can make a sandwich for you."
+    },
+    {
+      "id": "s61",
+      "turkish": "Tom harika bir futbolcu. Onu transfer edebilirler.",
+      "english": "Tom is a great footballer. They can transfer him."
+    },
+    {
+      "id": "s62",
+      "turkish": "Hala öğreniyor. Henüz ayakkabı bağlarım yapamtyor.",
+      "english": "He is still learning. He can't do his shoe laces up just yet."
+    },
+    {
+      "id": "s63",
+      "turkish": "Burada yaşadığın sürece tüm eşyalarımı kullanabilirsin.",
+      "english": "As long as you live here, you can use all my stuff."
+    },
+    {
+      "id": "s64",
+      "turkish": "Partiye bu gece katılabilirsin, çok geç değil. Lütfen saat 2'de evde ol.",
+      "english": "You can join the party tonight, not too late. Please be home at 2:00."
+    },
+    {
+      "id": "s65",
+      "turkish": "On yıldır Almanya'da yaşadığı için çok iyi Almanca konuşabiliyor.",
+      "english": "He has lived in Germany for 10 years so he can speak German very well."
+    },
+    {
+      "id": "s66",
+      "turkish": "Bana mutfaktan bir bardak su getirir misin?",
+      "english": "Can you get me a glass of water from the kitchen?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Kedim kağacak, lütfen kaptyı kapatır mısın?",
+      "english": "My cat will run out, can you please close the door?"
+    },
+    {
+      "id": "s68",
+      "turkish": "Bu yaz tatil için güneye gidebilir miyiz?",
+      "english": "Can we go south this summer for vacation?"
+    },
+    {
+      "id": "s69",
+      "turkish": "Erkek çocuk, babasından daha hizhi at sürebilir.",
+      "english": "The boy can ride a horse faster than his father can."
+    },
+    {
+      "id": "s70",
+      "turkish": "Her kıza gülümsediğin için basın belaya girebilir.",
+      "english": "You can get into trouble for smiling at every girl."
+    },
+    {
+      "id": "s71",
+      "turkish": "İstersen bütün kase tavuk çorbasım bitirebilirsin.",
+      "english": "You can finish the whole bowl of chicken soup if you like."
+    },
+    {
+      "id": "s72",
+      "turkish": "Parayı saymana yardımcı olabilir miyim?",
+      "english": "Can I help you to count the money?"
+    },
+    {
+      "id": "s73",
+      "turkish": "Hiç şarkı söylemiyor musun?",
+      "english": "Can you not sing at all?"
+    },
+    {
+      "id": "s74",
+      "turkish": "Yorgun olmasan bile kanepede uzanabilirsin.",
+      "english": "You can lie down on the couch even if you are not tired."
+    },
+    {
+      "id": "s75",
+      "turkish": "Erken gelirsen, benimle maça gidebilirsin.",
+      "english": "If you arrive early, you can catch a ride to the game with me."
+    },
+    {
+      "id": "s76",
+      "turkish": "Mike'a kibarca sorarsan, ödevinizde sana yardımcı olabilir.",
+      "english": "Mike can help you with your homework, if you ask him nicely."
+    },
+    {
+      "id": "s77",
+      "turkish": "Sinemaya gidersek bebeğe bakabilir misin?",
+      "english": "Can you look after the baby if we go to the cinema?"
+    },
+    {
+      "id": "s78",
+      "turkish": "Sınav için çalışmazsa bu gece dışarı çıkamaz.",
+      "english": "If she doesn't study for the exam, then she can't go out tonight."
+    },
+    {
+      "id": "s79",
+      "turkish": "İyi oynamazsanız futbol takım olamazsımz.",
+      "english": "You can't make the football team if you don't play well."
+    },
+    {
+      "id": "s80",
+      "turkish": "Bu resim açıkça sahtedir. Van Gogh olamaz.",
+      "english": "That painting is obviously a forgery. It can't be by Van Gogh."
+    },
+    {
+      "id": "s81",
+      "turkish": "Bu doğru olamaz! Cevaplar yanlış olmalı.",
+      "english": "That can't be right! The answers must be wrong."
+    },
+    {
+      "id": "s82",
+      "turkish": "Bu müzede flaş kullanarak fotoğraf çekemezsin.",
+      "english": "You can't take photos using a flash in this museum."
+    },
+    {
+      "id": "s83",
+      "turkish": "O şarkıdan nefret ediyorum! Üzerine farklı bir şey koyabilir miyim?",
+      "english": "I hate that song! Can! put something different on?"
+    },
+    {
+      "id": "s84",
+      "turkish": "Marty tanıdığım herkesten daha iyi gitar çalabiliyor.",
+      "english": "Marty can play the guitar better than anyone I know."
+    },
+    {
+      "id": "s85",
+      "turkish": "Babam araba süremez ama büyükannem yapabilir.",
+      "english": "My father can't drive but my grandmother can."
+    },
+    {
+      "id": "s86",
+      "turkish": "Teresa dans etmeyi pek sevemez. Onu diskoda gördüğümde neredeyse hiç dans etmiyor.",
+      "english": "Teresa can't like dancing very much. She hardly ever dances when I see her at the disco."
+    },
+    {
+      "id": "s87",
+      "turkish": "Bu hafta sonu Sara'nın evinde yatıya kalabilir.",
+      "english": "She can sleepover at Sara's house this weekend."
+    },
+    {
+      "id": "s88",
+      "turkish": "Bu kağıdı yazabilirsin; sadece kendine güvenmeye ihtiyacın var.",
+      "english": "You can write this paper; you just need to have the confidence."
+    },
+    {
+      "id": "s89",
+      "turkish": "Yüz metreyi ön saniyenin altında geçebilir.",
+      "english": "He can cover a hundred metres in under ten seconds."
+    },
+    {
+      "id": "s90",
+      "turkish": "Şimdi ayrılırsak, zamanında varabiliriz.",
+      "english": "We can arrive in time if we leave now."
+    },
+    {
+      "id": "s91",
+      "turkish": "Yüzebiliriz, ancak sörf yapamıyoruz - henüz!",
+      "english": "We can swim, but we can't surf - yet!"
+    },
+    {
+      "id": "s92",
+      "turkish": "Anne, arkadaşımın evine gidebilir miyim?",
+      "english": "Mom, can I go over to my friend's house?"
+    },
+    {
+      "id": "s93",
+      "turkish": "İşini bitirdikten sonra telefonunu kullanabilirsin.",
+      "english": "You can use your phone after you finish your work."
+    },
+    {
+      "id": "s94",
+      "turkish": "Sadece on iki yaşındalar! Üniversite öğrencisi olamazlar!",
+      "english": "They're only twelve years old! They can't be university students!"
+    },
+    {
+      "id": "s95",
+      "turkish": "Aslında, o kadar iyi değil. Okuyabiliyorum ama çok iyi konuşamıyorum.",
+      "english": "Actually, it's not that good. I can read but I can't speak very well."
+    },
+    {
+      "id": "s96",
+      "turkish": "Adam, bana bir iyilik yapar mısın?",
+      "english": "Adam, can you do me a favor?"
+    },
+    {
+      "id": "s97",
+      "turkish": "Her neyse, gerçekten önemli değil. Bir iş bulamazsam, muhtemelen okula geri döneceğim.",
+      "english": "Anyway, it really doesn't matter. If I can't find a job, I'll probably go back to school."
+    },
+    {
+      "id": "s98",
+      "turkish": "Telefonunu kullanabilir miyim? Benimkini arabada bıraktım ve yol tarifi almak için onları aramak istiyorum.",
+      "english": "Can I use your phone? I left mine in the car and I want to call them to get directions."
+    },
+    {
+      "id": "s99",
+      "turkish": "Yabancr bir dili anadil gibi konuşmayı gerçekten öğrenebilir miyiz?",
+      "english": "Can we really learn to speak a foreign language like a native?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Trenin ne zaman kalktığını sdyler misin?",
+      "english": "Can you please tell me what time the train leaves?"
+    }
+  ],
+  "modal-2": [
+    {
+      "id": "s1",
+      "turkish": "İçeri girebilir miyim?",
+      "english": "May I come in?"
+    },
+    {
+      "id": "s2",
+      "turkish": "Yarın işe gelmeyebilir, soğuk algınlığı var.",
+      "english": "He may not come to work tomorrow, he has a bad cold."
+    },
+    {
+      "id": "s3",
+      "turkish": "Zil çalmadan ayrılabilir miyim lütfen?",
+      "english": "May I leave before the bell rings, please?"
+    },
+    {
+      "id": "s4",
+      "turkish": "Bu akşam yemede çıkabiliriz. Bize katılmak ister misiniz?",
+      "english": "We may go out for dinner tonight. Do you want to join us?"
+    },
+    {
+      "id": "s5",
+      "turkish": "Louvre'u ziyaret edebilir. Zaten Paris'te.",
+      "english": "He may visit the Louvre. He's in Paris anyway."
+    },
+    {
+      "id": "s6",
+      "turkish": "Arabanızı buraya park edemezsiniz. Sadece otelin konukları için ayrılmştir.",
+      "english": "You may not park your car here. It's reserved for guests of the hotel only."
+    },
+    {
+      "id": "s7",
+      "turkish": "Gdkyüzünde çok fazla bulut var. Birkaç dakika içinde yağmur yağabilir!",
+      "english": "There are a lot of clouds in the sky. It may rain in a few minutes!"
+    },
+    {
+      "id": "s8",
+      "turkish": "Bu gece TV izleyebiliriz. Henüz karar vermedik.",
+      "english": "We may watch TV tonight. We haven't decided yet."
+    },
+    {
+      "id": "s9",
+      "turkish": "Hava raporuna göre bu öğleden sonra yağmur yağabilir.",
+      "english": "According to the weather report it may rain this afternoon."
+    },
+    {
+      "id": "s10",
+      "turkish": "Bu gece dışarı çıkabilirim, ama hiç sanmıyorum. Gereğinden fazla yorgun hissediyorum.",
+      "english": "I may go out tonight, but I don't think so. I feel too tired."
+    },
+    {
+      "id": "s11",
+      "turkish": "Kütüphanenin bu bdlumündeki kitapları ddung alabilirsiniz.",
+      "english": "You may borrow the books in this section of the library."
+    },
+    {
+      "id": "s12",
+      "turkish": "Eve giderken, biraz süt almamız gerekebilir.",
+      "english": "We may need to get some milk on the way home."
+    },
+    {
+      "id": "s13",
+      "turkish": "İlkbaharda biyoloji dersi alabilir.",
+      "english": "He may take a biology class in the spring."
+    },
+    {
+      "id": "s14",
+      "turkish": "Salatanın bir kısmım denemek isteyebilirsiniz.",
+      "english": "You may want to try on some of the salad."
+    },
+    {
+      "id": "s15",
+      "turkish": "Bisikletinizi yarın ödünç alabilir miyim?",
+      "english": "May I borrow your bicycle tomorrow?"
+    },
+    {
+      "id": "s16",
+      "turkish": "Efendim, bir öneride bulunabilir miyim?",
+      "english": "Sir, May I make a suggestion?"
+    },
+    {
+      "id": "s17",
+      "turkish": "Yarından emin değiliz ama sahile gidebiliriz.",
+      "english": "We aren't sure about tomorrow, but we may go to the beach."
+    },
+    {
+      "id": "s18",
+      "turkish": "Sizden bir sonraki dansı isteyebilir miyim?",
+      "english": "May I ask you for the next dance?"
+    },
+    {
+      "id": "s19",
+      "turkish": "Beni beklemeyin. Bu gece kasabada kalabilirim.",
+      "english": "Don't wait up for me. I may stay in town tonight."
+    },
+    {
+      "id": "s20",
+      "turkish": "Bitirdiğinizde, masadan ayrılabilirsiniz.",
+      "english": "When you have finished, you may leave the table."
+    },
+    {
+      "id": "s21",
+      "turkish": "İşimi bitirirsem, eve gidebilir miyim?",
+      "english": "If I finish my work may I go home?"
+    },
+    {
+      "id": "s22",
+      "turkish": "Yeterli zamanım olursa, işten sonra evinize gelebilirim.",
+      "english": "I may come to your house after work, if I have enough time."
+    },
+    {
+      "id": "s23",
+      "turkish": "Çok çalışmaya söz verirseniz, Claire çalışmanıza yardımcı olabilir.",
+      "english": "Claire may help you study if you promise to work hard."
+    },
+    {
+      "id": "s24",
+      "turkish": "Saat 23:00'e kadar sizi eve bırakacağıma olacağına söz verirsem, sizi yemeğe çıkarabilir miyim?",
+      "english": "May I take you out to dinner if I promise to have you home by 11 pm?"
+    },
+    {
+      "id": "s25",
+      "turkish": "Gökyüzii çok karanlık. Yakında yağmur yağabilir.",
+      "english": "The sky is so dark. It may rain soon."
+    },
+    {
+      "id": "s26",
+      "turkish": "Gökyüzii artık açık. Bu öğleden sonra yağmur yaŞmayabilir.",
+      "english": "The sky is clear now. It may not rain this afternoon."
+    },
+    {
+      "id": "s27",
+      "turkish": "Kazanamayabilirler. Diğer takım çok daha güçlii.",
+      "english": "They may not win. The other team is much stronger."
+    },
+    {
+      "id": "s28",
+      "turkish": "Depremler her an meydana gelebilir.",
+      "english": "Earthquakes may occur at any moment."
+    },
+    {
+      "id": "s29",
+      "turkish": "Çok fazla yemek hastalığa neden olabilir.",
+      "english": "Eating too much may lead to sickness."
+    },
+    {
+      "id": "s30",
+      "turkish": "Bu gece gelip bizi görebilir.",
+      "english": "He may come and see us tonight."
+    },
+    {
+      "id": "s31",
+      "turkish": "Bu ceketi beğendim. Deneyebilir miyim?",
+      "english": "I like this coat. May I try it on?"
+    },
+    {
+      "id": "s32",
+      "turkish": "Kabakülak olmasından korkuyorum.",
+      "english": "I'm afraid she may have the mumps."
+    },
+    {
+      "id": "s33",
+      "turkish": "Bu gece hava muhtemelen soğuyacağı için, fazladan bir battaniyeye ihtiyacınız olabilir.",
+      "english": "It's likely to get cold tonight, so you may need an extra blanket."
+    },
+    {
+      "id": "s34",
+      "turkish": "Sigorta kartınızı görebilir miyim lütfen?",
+      "english": "May I see your insurance card please?"
+    },
+    {
+      "id": "s35",
+      "turkish": "Tehlikenin farkında olmayabilir.",
+      "english": "She may not be aware of the danger."
+    },
+    {
+      "id": "s36",
+      "turkish": "Daha dikkatli oluncaya kadar, arabayı Gduncg alamazsımz!",
+      "english": "You may not borrow the car until you can be more careful with it!"
+    },
+    {
+      "id": "s37",
+      "turkish": "Bugün yağmur yağabilecedi için şemsiyenizi alın.",
+      "english": "Take your umbrella as it may rain today."
+    },
+    {
+      "id": "s38",
+      "turkish": "Hala iş başında! Korkanm gegc gelebilir.",
+      "english": "He is still at work! He may come late I am afraid."
+    },
+    {
+      "id": "s39",
+      "turkish": "Anne! Arkadaşlarım bu gece parti veriyor; gidebilir miyim lütfen?",
+      "english": "Mum! My friends are having a party tonight; may I go please?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Uçuşu geciktiği için geç kalmış olabilir.",
+      "english": "He may be late because his flight has been delayed."
+    },
+    {
+      "id": "s41",
+      "turkish": "Şu bulutlara bakın! Bir dakika içinde yağmur yağabilir.",
+      "english": "Look at those clouds! It may rain in a minute."
+    },
+    {
+      "id": "s42",
+      "turkish": "İyi cahişirsa, sınavlarım geçebilir.",
+      "english": "He may pass his exams, if he studies well."
+    },
+    {
+      "id": "s43",
+      "turkish": "Çok pratik olduğu için size yardımcı olabilir.",
+      "english": "He may help you as he's so practical."
+    },
+    {
+      "id": "s44",
+      "turkish": "Üvey kız kardeşi, ailesi arasında şnorkelli yüzme yapan ilk kişi olabilir.",
+      "english": "His stepsister may be the first person to do snorkelling among her family."
+    },
+    {
+      "id": "s45",
+      "turkish": "Tathilar, dişleriniz için tehlikeli olabilir.",
+      "english": "Sweets may be dangerous to your teeth."
+    },
+    {
+      "id": "s46",
+      "turkish": "Amcasının Glumunii anlattığı son kişi, kız kardeşi olabilir.",
+      "english": "Her sister may be the last person that she tells about her uncle's death."
+    },
+    {
+      "id": "s47",
+      "turkish": "Babam tabletimi tamir edebilir. işsiz.",
+      "english": "My father may fix my tablet. It is out of work."
+    },
+    {
+      "id": "s48",
+      "turkish": "Patenleriniz odanızda veya merdivenlerde olabilir.",
+      "english": "Your skates may be in your room or on the stairs."
+    },
+    {
+      "id": "s49",
+      "turkish": "Kapanış görevlerini tamamladığınızda, mağazayt kilitleyebilirsiniz.",
+      "english": "You may lock up the store once you have completed the closing out duties."
+    },
+    {
+      "id": "s50",
+      "turkish": "Çalışanlar, indirimlerini yalnızca normal fiyath ürünlerde kullanabilirler.",
+      "english": "Employees may use their discount on regular priced items only."
+    },
+    {
+      "id": "s51",
+      "turkish": "Müşteriler personel tuvaletini kullanabilirler.",
+      "english": "Customers may use the staff washroom."
+    },
+    {
+      "id": "s52",
+      "turkish": "Yemeğinizi bitirdikten sonra, masadan ayrılabilirsiniz.",
+      "english": "You may leave the table once you have finished your meal."
+    },
+    {
+      "id": "s53",
+      "turkish": "Yalnızca bir broşür alabilirsiniz.",
+      "english": "You may take only one brochure."
+    },
+    {
+      "id": "s54",
+      "turkish": "Sınavı bitirdiyseniz, odadan çıkabilirsiniz.",
+      "english": "If you have finished the exam, you may leave the room."
+    },
+    {
+      "id": "s55",
+      "turkish": "Arabanızı kapının Gnüne park edemezsiniz.",
+      "english": "You may not park your car in front of the gate."
+    },
+    {
+      "id": "s56",
+      "turkish": "Sürücüler 2 saatte bir mola vermezlerse, kendilerini yorgun hissedebilirler.",
+      "english": "Drivers may feel tired if they do not take a break every 2 hours."
+    },
+    {
+      "id": "s57",
+      "turkish": "Yetişkinler yatmadan Önce teknolojiyi kullamrlarsa, uyumayı zor bulabilirler.",
+      "english": "Adults may find it difficult to sleep if they use technology before going to bed."
+    },
+    {
+      "id": "s58",
+      "turkish": "Bu tabletler, doğru dozda alınmazlarsa ciddi yan etkilere neden olabilir.",
+      "english": "These tablets may produce serious side effects if not taken in the correct dosage."
+    },
+    {
+      "id": "s59",
+      "turkish": "Müşterimiz Gnerilerimize katılmayabilir.",
+      "english": "Our client may not agree with our suggestions."
+    },
+    {
+      "id": "s60",
+      "turkish": "Doğu Avrupa'da seyahat ediyor. Şimdiye Ukrayna'da olabilir.",
+      "english": "He's travelling in Eastern Europe. He may be in Ukraine by now."
+    },
+    {
+      "id": "s61",
+      "turkish": "Golf sahası çok yağmur yağdığı için kullanılmayabilir.",
+      "english": "The golf course may not be usable because it has rained a lot."
+    },
+    {
+      "id": "s62",
+      "turkish": "James bu maçı kazanmayabilir; rakibi ondan daha güçlii.",
+      "english": "James may not win this match; his opponent is stronger than him."
+    },
+    {
+      "id": "s63",
+      "turkish": "AntrenGr devre arasında kalecimizi değiştirebilir.",
+      "english": "The coach may change our goalkeeper at half-time."
+    },
+    {
+      "id": "s64",
+      "turkish": "Sert görünüyorlar. Onlara karşı rekabet edebilir misiniz?",
+      "english": "They look fierce. May you compete against them?"
+    },
+    {
+      "id": "s65",
+      "turkish": "Hakem, \"Mac1 iptal edemezsiniz - yasakliyorum!\" dedi.",
+      "english": "The referee said: \"You may not call off the match - I forbid it!\""
+    },
+    {
+      "id": "s66",
+      "turkish": "Bu gece maça gelemezseniz, biletinizi kullanabilir miyim?",
+      "english": "If you don't make it to the game tonight, may I use your ticket?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Alan bu gece gelmeyecek. Umarım yarn gelebilir.",
+      "english": "Alan isn't coming tonight. He may come tomorrow, I hope."
+    },
+    {
+      "id": "s68",
+      "turkish": "İsterseniz Pazar satın alabilirsiniz. Dükkanlar açık.",
+      "english": "You may buy it on Sunday if you want. The shops are open."
+    },
+    {
+      "id": "s69",
+      "turkish": "Önümüzdeki yıl ıınıversiteye gidebilirim ama hala emin değilim.",
+      "english": "I may go to college next year, but I'm still not sure."
+    },
+    {
+      "id": "s70",
+      "turkish": "Çalışmanın sonuçları bu duruma biraz ışık tutabilir.",
+      "english": "The results of the study may shed some light on this condition."
+    },
+    {
+      "id": "s71",
+      "turkish": "Çok fazla paray: hemen bulamazlarsa, şirket iflas edebilir!",
+      "english": "The company may go bankrupt if they don't find a lot of money quickly!"
+    },
+    {
+      "id": "s72",
+      "turkish": "Önümüzdeki hafta gramer sınavımız olabilir. Hadi çalışalım!",
+      "english": "We may have a grammar exam next week. Let's study!"
+    },
+    {
+      "id": "s73",
+      "turkish": "Ailem ve ben Önümüzdeki yaz Montreal'e seyahat edebiliriz.",
+      "english": "My family and I may travel to Montreal next summer."
+    },
+    {
+      "id": "s74",
+      "turkish": "Acele edin! Kapanmadan mağazaya gidelim. Altıdan sonra açılmayabilir.",
+      "english": "Hurry! Let's get to the store before it closes. It may not be open after six."
+    },
+    {
+      "id": "s75",
+      "turkish": "Kendimi iyi hissetmiyorum. Bir doktora görünebilirim.",
+      "english": "I don't feel well. I may see a doctor."
+    },
+    {
+      "id": "s76",
+      "turkish": "Bu CD çok pahalıdır. Ah canım, yeterince param olmayabilir!",
+      "english": "This CD is very expensive. Oh dear, I may not have enough money!"
+    },
+    {
+      "id": "s77",
+      "turkish": "Jane yorgun. Bu gece dışan çıkmayabilir.",
+      "english": "Jane's tired. She might not go out tonight."
+    },
+    {
+      "id": "s78",
+      "turkish": "Pete çok zekidir. Cevabt bilebilir.",
+      "english": "Pete is very clever. He may know the answer."
+    },
+    {
+      "id": "s79",
+      "turkish": "Kendimi hasta hissediyorum. Yarın okula gitmeyebilirim.",
+      "english": "I feel ill. I may not go to school tomorrow."
+    },
+    {
+      "id": "s80",
+      "turkish": "Şu bulutlara bakın! Sanınm yağmur yağabilir.",
+      "english": "Look at those clouds! I think it may rain."
+    },
+    {
+      "id": "s81",
+      "turkish": "Aç değilim. Öğle yemeği yemeyebilirim.",
+      "english": "I'm not hungry. I may not have any lunch."
+    },
+    {
+      "id": "s82",
+      "turkish": "Sarah ve Tom bu hafta sonu bizimle plaja gelmeyebilirler.",
+      "english": "Sarah and Tom may not come to the beach with us this weekend."
+    },
+    {
+      "id": "s83",
+      "turkish": "Kız kardeşim bir haftalığına Londra'ya gidiyor. Ona yeni kameramı Gdiing verebilirim.",
+      "english": "My sister is going to London for a week. I may lend her my new camera."
+    },
+    {
+      "id": "s84",
+      "turkish": "Gerçekten yorgunum, bu yüzden bu gece partiye gitmeyebilirim.",
+      "english": "I'm really tired, so I may not go to the party tonight."
+    },
+    {
+      "id": "s85",
+      "turkish": "Kuzenim Önümüzdeki dönem okulunuzda başlıyor. Aym sınıfta olabilirsiniz!",
+      "english": "My cousin is starting at your school next term. You may be in the same class!"
+    },
+    {
+      "id": "s86",
+      "turkish": "Jack yarın gidiyor ve o gitmedenonce, onu görmeyebiliriz.",
+      "english": "Jack's going away tomorrow, and we may not see him before he goes."
+    },
+    {
+      "id": "s87",
+      "turkish": "Sally, Michael'ın telefon numarasına sahip olmayabilir.",
+      "english": "Sally may not have Michael's phone number."
+    },
+    {
+      "id": "s88",
+      "turkish": "Küçük Nicky, Dünya Kupası'nı izlemek için geç saatlere kadar kalabilir.",
+      "english": "Little Nicky might stay up late to watch the World Cup."
+    },
+    {
+      "id": "s89",
+      "turkish": "Polisler, sorunun aciliyetini anlamayabilirler.",
+      "english": "The police may not understand the urgency of the problem."
+    },
+    {
+      "id": "s90",
+      "turkish": "Oturma odasında yemek yiyebilir miyim?",
+      "english": "May I eat in the living-room?"
+    },
+    {
+      "id": "s91",
+      "turkish": "Sandy geç kalabilir, ama onun dakik olduğundan emin değilim.",
+      "english": "Sandy may be late, but I am not sure as she very punctual."
+    },
+    {
+      "id": "s92",
+      "turkish": "Bir dilim kek daha alabilirsiniz.",
+      "english": "You may have another piece of cake."
+    },
+    {
+      "id": "s93",
+      "turkish": "Tuvalete gidebilir miyim?",
+      "english": "May I go to the restroom?"
+    },
+    {
+      "id": "s94",
+      "turkish": "Filmin ne zaman başladığını sorabilir miyim?",
+      "english": "May I ask when the movie starts?"
+    },
+    {
+      "id": "s95",
+      "turkish": "Bir iyilik isteyebilir miyim?",
+      "english": "May I ask for a favor?"
+    },
+    {
+      "id": "s96",
+      "turkish": "Çocuklar, oyuncak ayılarım okula getirebilirler.",
+      "english": "Children may bring their teddy bears to school."
+    },
+    {
+      "id": "s97",
+      "turkish": "Evinize çay içmeye gelebilir miyim?",
+      "english": "May I come to your house for tea?"
+    },
+    {
+      "id": "s98",
+      "turkish": "Lütfen bana defterimi getirir misiniz?",
+      "english": "May you please bring me my notebook?"
+    },
+    {
+      "id": "s99",
+      "turkish": "O çok iyi bir şef ve oğlumun doğum günü için pasta yapabilir.",
+      "english": "He's a very good chef and he may make a cake for my son's birthday."
+    },
+    {
+      "id": "s100",
+      "turkish": "Masanın üzerindeki sözlüğe ihtiyacım var. Onu benim iccin alabilir misiniz?",
+      "english": "I need the dictionary on the desk. May you get it for me?"
+    }
+  ],
+  "modal-3": [
+    {
+      "id": "s1",
+      "turkish": "Müşteri fiyatı kabul ederse, firmanız sipariş alabilir.",
+      "english": "If the customer accepts the price, your company might get the order."
+    },
+    {
+      "id": "s2",
+      "turkish": "Projeyi zamanında bitirmeyebilirler. Baş mühendis hasta.",
+      "english": "They might not finish the project on time. The head engineer is ill."
+    },
+    {
+      "id": "s3",
+      "turkish": "Çıkarken müze hediyelik eşya dükkanına uğramak isteyebilirsin.",
+      "english": "You might want to stop by the museum gift shop on your way out."
+    },
+    {
+      "id": "s4",
+      "turkish": "İyi bir değerlendirme aldım, bu yüzden zam alabilirim.",
+      "english": "I received a good evaluation, so I might get a raise."
+    },
+    {
+      "id": "s5",
+      "turkish": "Bir şemsiye al. Daha sonra yağmur yağabilir.",
+      "english": "Take an umbrella. It might rain later."
+    },
+    {
+      "id": "s6",
+      "turkish": "Projeyi düşünmek isteyebilirsin.",
+      "english": "You might want to think about the project."
+    },
+    {
+      "id": "s7",
+      "turkish": "Bir röportajda bu soruyu sormak istemeyebilirsin.",
+      "english": "You might not want to ask that question in an interview."
+    },
+    {
+      "id": "s8",
+      "turkish": "Görüşmeyi, trafiğin kötü olmadığı günün ortasına planlayabilirsin.",
+      "english": "You might schedule the interview for the middle of the day when traffic isn't as bad."
+    },
+    {
+      "id": "s9",
+      "turkish": "Pencereni geceleri açık bırakma. Birisi içeri girebilir.",
+      "english": "Don't leave your window open at night. Someone might climb in."
+    },
+    {
+      "id": "s10",
+      "turkish": "Kazanabiliriz, ancak iyi bir şansımız olduğunu sanmıyorum.",
+      "english": "We might win, but I don't think we have a good chance."
+    },
+    {
+      "id": "s11",
+      "turkish": "Bana daha sonra yardım etmeni isteyebilirim.",
+      "english": "I might ask you to help me later."
+    },
+    {
+      "id": "s12",
+      "turkish": "Telefonu ağmıyor. Henüz evde olmayabilir.",
+      "english": "He's not picking up the phone. He might not be at home yet."
+    },
+    {
+      "id": "s13",
+      "turkish": "Bir film izlemek için sinemaya gidebilirim ama emin değilim.",
+      "english": "I might go to the cinema to watch a movie, but I'm not sure."
+    },
+    {
+      "id": "s14",
+      "turkish": "O eski ahşap köprüden geçerken dikkatli olun. Çok güvenli olmayabilir.",
+      "english": "Be careful when you walk across that old wooden bridge. It might not be very safe."
+    },
+    {
+      "id": "s15",
+      "turkish": "Nerede olduğunu bilmiyorum. Garaja bir göz atın. Orada olabilir.",
+      "english": "I don't know where he is. Take a look in the garage. He might be there."
+    },
+    {
+      "id": "s16",
+      "turkish": "Bugün evi, şemsiye olmadan terk etmek o kadar da iyi bir fikir olmayabilir.",
+      "english": "Leaving the house today without an umbrella might not be such a good idea."
+    },
+    {
+      "id": "s17",
+      "turkish": "Henry'ye sorun. Cevabı biliyor olabilir ama emin değilim.",
+      "english": "Ask Henry. He might know the answer but I'm not sure."
+    },
+    {
+      "id": "s18",
+      "turkish": "Hava raporuna göre bugün yağmur yağabilir, ancak bundan pek emin değilim.",
+      "english": "According to the weather report it might rain today, but I'm not so sure about it."
+    },
+    {
+      "id": "s19",
+      "turkish": "Michelle festivale katılmak isteyebilir.",
+      "english": "Michelle might want to participate in the festival."
+    },
+    {
+      "id": "s20",
+      "turkish": "Haklı olabilirsin - ama emin olmak için kontrol edeceğim.",
+      "english": "You might be right - but I'm going to check to make sure."
+    },
+    {
+      "id": "s21",
+      "turkish": "Bu resmin orijinal olup olmadığından emin değiliz. Binlerce dolar değerinde olabilir.",
+      "english": "We're not sure if this painting is an original. It might be worth thousands of dollars."
+    },
+    {
+      "id": "s22",
+      "turkish": "Futbol maçına gitmeyebilirim. işime bagh.",
+      "english": "I might not go to the football game. It depends on my work."
+    },
+    {
+      "id": "s23",
+      "turkish": "Sıkı çabalamaya devam ederse, bir şansı olabilir.",
+      "english": "If she keeps trying hard, she might just have a chance."
+    },
+    {
+      "id": "s24",
+      "turkish": "Şimdi ayrılırsam, zamanında çalışabilirim.",
+      "english": "I might make it to work on time, if I leave now."
+    },
+    {
+      "id": "s25",
+      "turkish": "Ceket giymezsen, üşütebilirsin.",
+      "english": "You might catch a cold if you don't put on a jacket."
+    },
+    {
+      "id": "s26",
+      "turkish": "Bu maçı kazantrsak, ligi kazanma şansımız olabilir.",
+      "english": "If we win this game, we might have a chance of winning the league."
+    },
+    {
+      "id": "s27",
+      "turkish": "Yarın yapacak bir şeyim yok. Sinemaya gidebilirim.",
+      "english": "I don't have anything to do tomorrow. I might go to the cinema."
+    },
+    {
+      "id": "s28",
+      "turkish": "Diana çok yorgun. Akşam yemeğinde bize katılmayabilir.",
+      "english": "Diana is very tired. She might not join us for dinner."
+    },
+    {
+      "id": "s29",
+      "turkish": "Jane'in nerede olduğundan emin değilim. Ofiste olabilir.",
+      "english": "I'm not sure where Jane is. She might be at the office."
+    },
+    {
+      "id": "s30",
+      "turkish": "Operaya gidebilirler ama rock konserlerini tercih ederler.",
+      "english": "They might go to the opera, but they prefer rock concerts."
+    },
+    {
+      "id": "s31",
+      "turkish": "Taksiye binmemizi Gnerebilir miyim?",
+      "english": "Might I suggest we take the cab?"
+    },
+    {
+      "id": "s32",
+      "turkish": "Yağmur yağmasına rağmen, eve yürüyerek gidebilir.",
+      "english": "She might go home on foot even though it's raining."
+    },
+    {
+      "id": "s33",
+      "turkish": "Siyasete daha fazla ilgi gdsterebilirler.",
+      "english": "They might show more interest in politics."
+    },
+    {
+      "id": "s34",
+      "turkish": "Senden daha uzun olabilirler.",
+      "english": "They might be taller than you."
+    },
+    {
+      "id": "s35",
+      "turkish": "Bir an için araya girebilir miyim?",
+      "english": "Might I just interrupt for a moment?"
+    },
+    {
+      "id": "s36",
+      "turkish": "John, gamaşır makinesini tamir edemez; komşusuna sorabilir.",
+      "english": "John can't repair his washing-machine; he might ask his neighbour."
+    },
+    {
+      "id": "s37",
+      "turkish": "Çok yüksek sesle konuşuyorlar. Bebeği uyandırabilirler!",
+      "english": "They talk too loudly. They might wake the baby up!"
+    },
+    {
+      "id": "s38",
+      "turkish": "Tatlım! Evde olduğun için ııtıı yapabilirsin.",
+      "english": "Sweetheart! As you are at home, you might do the ironing."
+    },
+    {
+      "id": "s39",
+      "turkish": "Kulaklığını kullanabilir miyim lütfen? Benimki düzgün çalışmıyor.",
+      "english": "May I use your headset please? Mine is not working properly."
+    },
+    {
+      "id": "s40",
+      "turkish": "Onu eve giderken yapabilir, ama emin olamyorum.",
+      "english": "He might do it on his way home, but I can't be sure."
+    },
+    {
+      "id": "s41",
+      "turkish": "En azından bizimle gelip yeni komşumuzla tanışabilirsin.",
+      "english": "You might at least come with us and meet our new neighbour."
+    },
+    {
+      "id": "s42",
+      "turkish": "Büyüdüğümde doktor olabilirim ama şüpheliyim.",
+      "english": "I might become a doctor when I grow up, but I doubt it."
+    },
+    {
+      "id": "s43",
+      "turkish": "Cüzdanın oturma odasında olabilir.",
+      "english": "Your purse might be in the living room."
+    },
+    {
+      "id": "s44",
+      "turkish": "Ziyaretiniz sırasında botanık bahçelerini ziyaret edebilirsin.",
+      "english": "You might visit the botanical gardens during your visit."
+    },
+    {
+      "id": "s45",
+      "turkish": "Bu öğleden sonra Tate'deki sergiye gidebilirim.",
+      "english": "I might go to the exhibition at the Tate this afternoon."
+    },
+    {
+      "id": "s46",
+      "turkish": "Yeni yıla kadar yeni ofislere taşınmayabiliriz.",
+      "english": "We might not move into the new offices until the New Year."
+    },
+    {
+      "id": "s47",
+      "turkish": "Bizi söyledikleri kadar etkilemeyebilir.",
+      "english": "It might not affect us as badly as they say."
+    },
+    {
+      "id": "s48",
+      "turkish": "Bugün badminton için çok rüzgarlı olabilir.",
+      "english": "It might be too windy for badminton today."
+    },
+    {
+      "id": "s49",
+      "turkish": "Yarın akşam Gdul törenine katılabilirler.",
+      "english": "They might attend the awards ceremony tomorrow night."
+    },
+    {
+      "id": "s50",
+      "turkish": "Ben yokken size bir kartpostal gönderebilirim ... unutmazsam!",
+      "english": "I might send you a postcard while I'm away... if I remember!"
+    },
+    {
+      "id": "s51",
+      "turkish": "Buzdolabındaki o pastadan bir parga alabilirim.",
+      "english": "I might have a piece of that cake in the fridge."
+    },
+    {
+      "id": "s52",
+      "turkish": "Makine bu durumda çalışmayabilir.",
+      "english": "The machine might not work in this condition."
+    },
+    {
+      "id": "s53",
+      "turkish": "Sıcak bir ceket getirin; hava daha sonra soğuyabilir.",
+      "english": "Bring a warm jacket; it might get cold later on."
+    },
+    {
+      "id": "s54",
+      "turkish": "Projeyi bu haftaya kadar tamamlayabilirim.",
+      "english": "I might complete the project by this week."
+    },
+    {
+      "id": "s55",
+      "turkish": "Hükümet herkese sağlık hizmeti sağlayabilir.",
+      "english": "The government might provide health care for everybody."
+    },
+    {
+      "id": "s56",
+      "turkish": "Herkes yeryüzünün doğal kaynaklarım kurtarabilir.",
+      "english": "Everyone might save the natural resources of the earth."
+    },
+    {
+      "id": "s57",
+      "turkish": "Binada yangın alarm olabilir.",
+      "english": "The building might have a fire alarm."
+    },
+    {
+      "id": "s58",
+      "turkish": "Soruma hemen şimdi cevap verebilirsin.",
+      "english": "You might answer my question right now."
+    },
+    {
+      "id": "s59",
+      "turkish": "İki içip araba kullanma, aksi takdirde kaza yapabilirsin.",
+      "english": "Don't drink and drive, or you might have an accident."
+    },
+    {
+      "id": "s60",
+      "turkish": "Haklı olabilirsin ama yine de kontrol edeceğim.",
+      "english": "You might be right but I'm going to check anyway."
+    },
+    {
+      "id": "s61",
+      "turkish": "Sınav kolay olabilir. Asla bilemezsin.",
+      "english": "The exam might be easy. You never know."
+    },
+    {
+      "id": "s62",
+      "turkish": "Partiye gidebilirim ama henliz emin değilim.",
+      "english": "I might go to the party but I'm not sure yet."
+    },
+    {
+      "id": "s63",
+      "turkish": "Bitkilerin tıbbi kullanımlarım açıklayabilir.",
+      "english": "She might explain the medical uses of plants."
+    },
+    {
+      "id": "s64",
+      "turkish": "Bir roket gemisinin diyagramını gösterebilir.",
+      "english": "He might show a diagram of a rocket ship."
+    },
+    {
+      "id": "s65",
+      "turkish": "Acadia'yı ziyaret edenler park doğa bilimcilerinden doğa eğitimi alabilirler.",
+      "english": "Visitors to Acadia might receive nature instruction from the park naturalists."
+    },
+    {
+      "id": "s66",
+      "turkish": "Arkeoloji müzesinde vakit geçirmeyi tercih edebilirler.",
+      "english": "They might choose to spend time at the archeological museum."
+    },
+    {
+      "id": "s67",
+      "turkish": "Bu durumun mağdurlan bilingsiz olabilir.",
+      "english": "Victims of this condition might be unconscious."
+    },
+    {
+      "id": "s68",
+      "turkish": "Temel kompozisyondan, kurguya kadar her türlii yaztyı tartışabilirsiniz.",
+      "english": "You might discuss any kind of writing, from basic composition to fiction."
+    },
+    {
+      "id": "s69",
+      "turkish": "Kalp hastalığı, yaşam beklentisi oranlarını artırabilir.",
+      "english": "Heart disease might boost life expectancy rates."
+    },
+    {
+      "id": "s70",
+      "turkish": "Soru gibi görünse de 6. Kısım sorgulayıcı bir cümle değildir.",
+      "english": "Even though it might look like a question, Part 6 is not an interrogatory sentence."
+    },
+    {
+      "id": "s71",
+      "turkish": "Daha varlıklı ailelerden gelen öğrenciler daha güzel ayakkabılar ve aksesuarlar giyebilirler.",
+      "english": "Students from wealthier families might wear nicer shoes and accessories."
+    },
+    {
+      "id": "s72",
+      "turkish": "Disiplin sorunlarını artırabilirler.",
+      "english": "They might even increase disiplinary problems."
+    },
+    {
+      "id": "s73",
+      "turkish": "Geçim kaynakları - ve hatta yaşamları - bu bilgiye bağlı olabilir.",
+      "english": "Their livelihoods—and even their lives—might depend on that knowledge."
+    },
+    {
+      "id": "s74",
+      "turkish": "Önümüzde başka ıılkeler var ve savaşabiliriz.",
+      "english": "Other countrys are ahead of us and we might have a war."
+    },
+    {
+      "id": "s75",
+      "turkish": "Ofis personelinizin yetenekleri ve yetenekleri olabilir.",
+      "english": "Members of your office staff might have talents and abilities."
+    },
+    {
+      "id": "s76",
+      "turkish": "Fikir tamamen tuhaf bile olabilir.",
+      "english": "The idea might even be purely whimsical."
+    },
+    {
+      "id": "s77",
+      "turkish": "Yeşil gay, bazı virüsleri engeller ve insanlan kalp hastalıklarından koruyabilir.",
+      "english": "Green tea inhibits some viruses and might protect people from heart disease."
+    },
+    {
+      "id": "s78",
+      "turkish": "Bu organizmalar, büyük hayvanlardan mikroskobik bakterilere kadar çeşitlilik gösterebilir.",
+      "english": "These organisms might range from large animals to microscopic bacteria."
+    },
+    {
+      "id": "s79",
+      "turkish": "Nadir souk cepheler donmaya yakın koşullar yaratabilir.",
+      "english": "Rare cold fronts might create near freezing conditions."
+    },
+    {
+      "id": "s80",
+      "turkish": "Etkinlikler, ziyaretinizden daha fazla keyif almanıza yardımcı olabilir.",
+      "english": "Activities may help you to enjoy your visit even more."
+    },
+    {
+      "id": "s81",
+      "turkish": "Yolcular, otobüs güzergahı boyunca herhangi bir yerde durma talebinde bulunabilirler.",
+      "english": "Passengers might request a stop anywhere along the bus route."
+    },
+    {
+      "id": "s82",
+      "turkish": "Öğrenciler yalmızca belirlenen duraklarda binebilirler.",
+      "english": "Students might board only at designated stops."
+    },
+    {
+      "id": "s83",
+      "turkish": "Tom bu oyunu kazanabilir. Son zamanlarda çok iyi çalıyor.",
+      "english": "Tom might win this game. He's been playing very well recently."
+    },
+    {
+      "id": "s84",
+      "turkish": "Daha sonra çıkabiliriz. Emin değilim.",
+      "english": "We might go out later. I'm not sure."
+    },
+    {
+      "id": "s85",
+      "turkish": "Şirketin gelecek yıl daha fazla kişiyi işe alacağım dışuntiyor musun?",
+      "english": "Do you think the company might hire more people next year?"
+    },
+    {
+      "id": "s86",
+      "turkish": "Anahtarlarım nerede? Arabada olabilirler.",
+      "english": "Where are my keys? They might be in the car."
+    },
+    {
+      "id": "s87",
+      "turkish": "Japonca 6grenmek için bir aylığına Japonya'ya gidebilirim.",
+      "english": "I might go to Japan for a month to study Japanese."
+    },
+    {
+      "id": "s88",
+      "turkish": "Kapıdan geçerken, köpek havlayabilir.",
+      "english": "The dog might bark when we pass by the gate."
+    },
+    {
+      "id": "s89",
+      "turkish": "Çok sıcak yiyecekleri sevmeyebilirler.",
+      "english": "They might not like very hot food."
+    },
+    {
+      "id": "s90",
+      "turkish": "Bir motorun sesini duyabilirim.",
+      "english": "I might hear the noise of an engine."
+    },
+    {
+      "id": "s91",
+      "turkish": "Bir deste kart getirmek isteyebilirsin.",
+      "english": "You might want to bring a deck of cards."
+    },
+    {
+      "id": "s92",
+      "turkish": "Kilerde biraz un olabilir.",
+      "english": "I might have some flour in the pantry."
+    },
+    {
+      "id": "s93",
+      "turkish": "Bu akşam gelebilir ama yapacak işleri de vardı.",
+      "english": "She might come this evening, but she also had some work to do."
+    },
+    {
+      "id": "s94",
+      "turkish": "David, Jessica'yı maça davet edebilir. Ondan gerçekten hoşlandığım biliyorum.",
+      "english": "David might invite Jessica to the match. I know he really likes her."
+    },
+    {
+      "id": "s95",
+      "turkish": "Jack, tatili için Fransa'ya gidebilir. Sanırım bu yaz Fransızca çalışmak istiyor.",
+      "english": "Jack might go to France for his vacation. I think he wants to practice French this summer."
+    },
+    {
+      "id": "s96",
+      "turkish": "Fotoğraftaki yaşlı kadın Agnes teyze olabilir, ama emin değilim.",
+      "english": "That old woman in the photograph might be aunt Agnes, but I'm not sure."
+    },
+    {
+      "id": "s97",
+      "turkish": "Sınavı bitirdiğinizde sınıftan ayrılabilirsiniz.",
+      "english": "You might leave the classroom when you finish the exam."
+    },
+    {
+      "id": "s98",
+      "turkish": "Eldivenler için mutfağa gidip bak. Orada olabilirler.",
+      "english": "Go and look in the kitchen for your gloves. They might be in there."
+    },
+    {
+      "id": "s99",
+      "turkish": "Onun hakkında bunu sdylediğimizde yanihyor olabiliriz.",
+      "english": "We might be wrong when we say that about her."
+    },
+    {
+      "id": "s100",
+      "turkish": "İstersen, bizimle Madrid'e gelebilirsin.",
+      "english": "You might come with us to Madrid if you want to."
+    }
+  ],
+  "modal-4": [
+    {
+      "id": "s1",
+      "turkish": "Çok uğraştıktan sonra, kutuyu açabildik.",
+      "english": "After trying hard, we were able to open the box."
+    },
+    {
+      "id": "s2",
+      "turkish": "Mike karmaşık matematik denklemlerini çözebilir.",
+      "english": "Mike is able to solve complicated math equations."
+    },
+    {
+      "id": "s3",
+      "turkish": "Destek ekibi yaklaşık on dakika içinde size yardımcı edebilecek.",
+      "english": "The support team will be able to help you in about ten minutes."
+    },
+    {
+      "id": "s4",
+      "turkish": "Önümüzdeki yaz seni ziyaret edemeyeceğim.",
+      "english": "I won't be able to visit you next summer."
+    },
+    {
+      "id": "s5",
+      "turkish": "Hastanede onu ziyaret edemedim.",
+      "english": "I wasn't able to visit her in the hospital."
+    },
+    {
+      "id": "s6",
+      "turkish": "Müşteriyle henüz iletişime geçememiş / geçemedi.",
+      "english": "He hasn't been able to get in touch with the client yet."
+    },
+    {
+      "id": "s7",
+      "turkish": "Partiye zamanında varabildi, treni kaçırdıktan sonra bile, bu yüzden çok memnundu.",
+      "english": "He was able to arrive at the party on time, even after missing the train, so he was very pleased."
+    },
+    {
+      "id": "s8",
+      "turkish": "Evinizi yıllarca aradım, neyse ki sonunda bulabildim.",
+      "english": "I searched for your house for ages, luckily I was able to find it in the end."
+    },
+    {
+      "id": "s9",
+      "turkish": "Araba arızalandığında, problemi çözebildiğim için çok memnundum.",
+      "english": "When the car broke down I was really pleased because I was able to solve the problem."
+    },
+    {
+      "id": "s10",
+      "turkish": "Üzgünüm ama dnümüzdeki Cumartesi partinize gidemeyeceğiz.",
+      "english": "I'm sorry, but we won't be able to go to your party next Saturday."
+    },
+    {
+      "id": "s11",
+      "turkish": "Önümüzdeki Cuma konsere gidemeyecek. O çalışıyor.",
+      "english": "He won't be able to go to the concert next Friday. He is working."
+    },
+    {
+      "id": "s12",
+      "turkish": "Seni yarın görebileceğim.",
+      "english": "I'll be able to see you tomorrow."
+    },
+    {
+      "id": "s13",
+      "turkish": "Birkaçg saat sonra kapty açıp dışan çıkabildim.",
+      "english": "After a few hours, I was able to open the door and go out."
+    },
+    {
+      "id": "s14",
+      "turkish": "Matematiği hiç anlayamamışı / anlayamadım.",
+      "english": "I've never been able to understand maths."
+    },
+    {
+      "id": "s15",
+      "turkish": "Arabayı tamir edebildi ama çok zamanım aldı.",
+      "english": "He was able to repair the car but it took him a long time."
+    },
+    {
+      "id": "s16",
+      "turkish": "Kazadan sonra bir şekilde eve yürüyebildi.",
+      "english": "After the accident, he somehow was able to walk home."
+    },
+    {
+      "id": "s17",
+      "turkish": "Yangın hızla yayıldı ama herkes kağabildi.",
+      "english": "The fire spread quickly but everyone was able to escape."
+    },
+    {
+      "id": "s18",
+      "turkish": "Oğlan nehre dustii ama onu kurtarmayı başardık.",
+      "english": "The boy fell into the river but we were able to rescue him."
+    },
+    {
+      "id": "s19",
+      "turkish": "Size mümkün olan en iyi fiyatı sunabilir.",
+      "english": "He is able to offer you the best price possible."
+    },
+    {
+      "id": "s20",
+      "turkish": "Filmi görmek için içeri girebildik.",
+      "english": "We were able to get in to see the film."
+    },
+    {
+      "id": "s21",
+      "turkish": "Eksik belgeyi bulamamışlar / bulamadılar / bulamyorlar.",
+      "english": "They haven't been able to find the missing document."
+    },
+    {
+      "id": "s22",
+      "turkish": "Partiye gelip gelemeyeceğimi bilmiyorum.",
+      "english": "I'm not sure if I will be able to come to the party."
+    },
+    {
+      "id": "s23",
+      "turkish": "Ehliyetime sahip olduğumda, arabam ödünç alabilecek miyim?",
+      "english": "Will I be able to borrow your car when I have my driver's license?"
+    },
+    {
+      "id": "s24",
+      "turkish": "Dün kağ tane yumurta alabildin?",
+      "english": "How many eggs were you able to get yesterday?"
+    },
+    {
+      "id": "s25",
+      "turkish": "Sadece akıçt bir şekilde konuşabilmek istiyorum.",
+      "english": "I just want to be able to speak fluently."
+    },
+    {
+      "id": "s26",
+      "turkish": "Bu hapishaneden kaçgabilecekler.",
+      "english": "They'Il be able to escape from this prison."
+    },
+    {
+      "id": "s27",
+      "turkish": "Bunu kendi başına yapabileceksin.",
+      "english": "You' ll be able to do that by yourself."
+    },
+    {
+      "id": "s28",
+      "turkish": "Ehliyet sınavımı geçebileceğim.",
+      "english": "I'll be able to pass my driving test."
+    },
+    {
+      "id": "s29",
+      "turkish": "Bütün bunları satabildiler.",
+      "english": "They were able to sell all this stuff."
+    },
+    {
+      "id": "s30",
+      "turkish": "Böylesine süslii bir evde yağamayı karşılayamam.",
+      "english": "I am not able to afford to live in such a fancy house."
+    },
+    {
+      "id": "s31",
+      "turkish": "Pek çok ünlü insanla tamsabildi.",
+      "english": "He was able to meet so many famous people."
+    },
+    {
+      "id": "s32",
+      "turkish": "Boston'da konser verebildiler.",
+      "english": "They were able to give a concert in Boston."
+    },
+    {
+      "id": "s33",
+      "turkish": "Evişleri için daha az zaman harcayabildi / harcayabiliyordu.",
+      "english": "She was able to spend less time for household chores."
+    },
+    {
+      "id": "s34",
+      "turkish": "Korkanm yarın size yardım edemeyecediz.",
+      "english": "I'm afraid we won't be able to help you tomorrow."
+    },
+    {
+      "id": "s35",
+      "turkish": "Mary, nehri yüzerek geçebildi.",
+      "english": "Mary was able to swim across the river."
+    },
+    {
+      "id": "s36",
+      "turkish": "Sana çok borcu var, ancak muhtemelen geri Gdeyemeyeceksin.",
+      "english": "She owes you a lot of money, but you probably won't be able to pay it back."
+    },
+    {
+      "id": "s37",
+      "turkish": "Onunla telefonla iletişim kuramadı.",
+      "english": "She wasn't able to contact him by phone."
+    },
+    {
+      "id": "s38",
+      "turkish": "Biraz ispanyolca konuşabilirler / konuşabiliyorlar.",
+      "english": "They are able to speak Spanish a little."
+    },
+    {
+      "id": "s39",
+      "turkish": "Rapor yazabildi mi?",
+      "english": "Was she able to write a report?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Eve zamanında varamayacağız.",
+      "english": "We won't be able to arrive home in time."
+    },
+    {
+      "id": "s41",
+      "turkish": "Daha Önce bilgisayarda açabildiniz mi?",
+      "english": "Were you able to open it before on the computer?"
+    },
+    {
+      "id": "s42",
+      "turkish": "Yolculuğuna devam edebilecek mi?",
+      "english": "Will he be able to continue his journey?"
+    },
+    {
+      "id": "s43",
+      "turkish": "Testimi geçtikten sonra bir araba kiralayabileceğim.",
+      "english": "Once I've passed my test I'll be able to hire a car."
+    },
+    {
+      "id": "s44",
+      "turkish": "Neyse ki, araba denize düşmeden Önce kaptyi açabildi.",
+      "english": "Fortunately, he was able to open the door before the car fell into the sea."
+    },
+    {
+      "id": "s45",
+      "turkish": "Mükemmel bir oyuncuydu. Herhangi birini yenmeyi başardı / başarabiliyordu.",
+      "english": "She was an excellent player. She was able to beat anybody."
+    },
+    {
+      "id": "s46",
+      "turkish": "Arabayı çalıştırabilmeleri için yedek anahtarlan vardı.",
+      "english": "They had a spare key so they were able to start the car."
+    },
+    {
+      "id": "s47",
+      "turkish": "Beş yaşında çok iyi okuyabiliyordu.",
+      "english": "At five, she was able to read very well."
+    },
+    {
+      "id": "s48",
+      "turkish": "Sahnenin yanındaydım. Çok iyi görebildim ve duyabildim.",
+      "english": "I was near the stage. I was able to see and hear very well."
+    },
+    {
+      "id": "s49",
+      "turkish": "Anahtarlarımı unutmuştum, neyse ki oğlum uyanık olduğu için içeri girebildim.",
+      "english": "I had forgotten my keys, fortunately my son was awake so I was able to get in."
+    },
+    {
+      "id": "s50",
+      "turkish": "Polis çok şüpheliydi ama onları suğlu olmadığına ikna edebildi.",
+      "english": "The police were very suspicious but he was able to convince them that he was not guilty."
+    },
+    {
+      "id": "s51",
+      "turkish": "Tüm malzemelere sahip olursam bir pasta yapabilirim.",
+      "english": "I am able to make a cake if I have all the ingredients."
+    },
+    {
+      "id": "s52",
+      "turkish": "Oraya gidemezler. Çok yorgunlar.",
+      "english": "They aren't able to go there. They're too tired."
+    },
+    {
+      "id": "s53",
+      "turkish": "Matematiğini çalışgmazsan, alıştırmaları yapamazsın.",
+      "english": "If you don't study your mathematics, you aren't able to do the exercises."
+    },
+    {
+      "id": "s54",
+      "turkish": "Sdylediğine / sdylediklerine inanamazsın / inanamtyorsun.",
+      "english": "You aren't able to believe what he says."
+    },
+    {
+      "id": "s55",
+      "turkish": "Ben pencereyi kendisi değiştiremeyecek, o çok genç.",
+      "english": "Ben won't be able to change the window himself, he is too young."
+    },
+    {
+      "id": "s56",
+      "turkish": "Jim Amca onu tamir edebilecek, çok akıll.",
+      "english": "Uncle Jim will be able to repair it, he is very clever."
+    },
+    {
+      "id": "s57",
+      "turkish": "Kulübede çalışamayacak; o hasta.",
+      "english": "She won't be able to work in the shed; she's ill."
+    },
+    {
+      "id": "s58",
+      "turkish": "On gün yatakta kalamayacak.",
+      "english": "She won't be able to stay in bed for 10 days."
+    },
+    {
+      "id": "s59",
+      "turkish": "Sonunda arkadaşlarını yarın görebilecek. O mutlu.",
+      "english": "Tomorrow she will be able to see her friends at last. She is happy."
+    },
+    {
+      "id": "s60",
+      "turkish": "Henüz tüm kitapları okuyamamışız / okuyamadık. Ne utanç!",
+      "english": "We haven't been able to read all the books yet. What a shame!"
+    },
+    {
+      "id": "s61",
+      "turkish": "Parti için yemek hazırlayabilir. O iyi bir aşçı.",
+      "english": "He is able to prepare food for the party. He is a good cook."
+    },
+    {
+      "id": "s62",
+      "turkish": "Kardeşi iki yıldır kayak yapabiliyor. Şampiyon olacak!",
+      "english": "Her brother has been able to ski for two years now. He'll be a champion!"
+    },
+    {
+      "id": "s63",
+      "turkish": "Öğretmenimiz, dnümüzdeki hafta için tüm testleri düzeltemeyecek. Zamant kısıth.",
+      "english": "Our teacher won't be able to correct all the tests for next week. He's short of time."
+    },
+    {
+      "id": "s64",
+      "turkish": "Askerler düşgmanı göremediler ve yenildiler.",
+      "english": "Soldiers weren't able to see the enemy and were defeated."
+    },
+    {
+      "id": "s65",
+      "turkish": "George anahtarlarını henÜz bulamamış / bulamadı. Gerçekten kayıplar.",
+      "english": "George hasn't been able to find his keys yet. They are really lost."
+    },
+    {
+      "id": "s66",
+      "turkish": "Yarın ise gelemeyecek. O çok hasta.",
+      "english": "He won't be able to come to work tomorrow. He is too sick."
+    },
+    {
+      "id": "s67",
+      "turkish": "Önümüzdeki ay sizi daha sık ziyaret edebileceğiz. Sana söz veriyoruz.",
+      "english": "We will be able to visit you more often next month. We promise you."
+    },
+    {
+      "id": "s68",
+      "turkish": "Bu ay on proje tamamlayabilecek mi?",
+      "english": "Will he be able to complete ten projects this month?"
+    },
+    {
+      "id": "s69",
+      "turkish": "Geçen yıl, tekne okyanusta battı, ancak yüzüp kıytya ulaşabildi.",
+      "english": "Last year, the boat sank in the ocean, but he was able to swim and reach the shore."
+    },
+    {
+      "id": "s70",
+      "turkish": "Birleşmiş Milletler Teşkilatı henüz tüm dünyada barış yapamamış / yapamadı.",
+      "english": "The United Nation Organization hasn't been able to make peace all over the world yet."
+    },
+    {
+      "id": "s71",
+      "turkish": "Birkaç denemeden sonra, mahkum hapishaneden kaçabildi.",
+      "english": "After several tries, the prisoner was able to escape from prison."
+    },
+    {
+      "id": "s72",
+      "turkish": "Büyüdüğünde, harika bir şekilde piyano çalabileceğine eminim.",
+      "english": "I am sure she will be able to play the piano marvellously when she is older."
+    },
+    {
+      "id": "s73",
+      "turkish": "Son zamanlarda işime konsantre olamamışım / olamadım / olamıyorum. Ne olduğunu bilmiyorum.",
+      "english": "I haven't been able to concentrate recently at work. I don't know what it is."
+    },
+    {
+      "id": "s74",
+      "turkish": "Fırtınanın gelişine rağmen, futbol maçını bitirmeyi başarabildiler.",
+      "english": "Despite the arrival of the storm, they were able to finish the football match."
+    },
+    {
+      "id": "s75",
+      "turkish": "Çok gençken, ayak parmaklarıma dokunabiliyordum ama şimdi yapamıyorum!",
+      "english": "When I was very young, I was able to touch my toes, but I can't now!"
+    },
+    {
+      "id": "s76",
+      "turkish": "Bu kurs bittikten sonra, ingilizceyi çok iyi öğrenebilmeyi umuyorum.",
+      "english": "I hope to be able to learn English very well after this course finishes."
+    },
+    {
+      "id": "s77",
+      "turkish": "Tüm işini zamanında bitirebildi.",
+      "english": "He was able to finish all his work on time."
+    },
+    {
+      "id": "s78",
+      "turkish": "Hayalimdeki evi almak için yeterli para biriktirebildim.",
+      "english": "I was able to save enough money to buy my dream house."
+    },
+    {
+      "id": "s79",
+      "turkish": "Nihayet eğitimini tamamlamak için yurdışına gidebildi.",
+      "english": "He was able to go abroad to complete his education at last."
+    },
+    {
+      "id": "s80",
+      "turkish": "Nehir boyunca çok geniş olmasına ramen, yüzebildi.",
+      "english": "She was able to swim across the river although it was very wide."
+    },
+    {
+      "id": "s81",
+      "turkish": "Yoksul olmamıza rağmen, Gödeme yapabildik.",
+      "english": "We were able to pay although we were poor."
+    },
+    {
+      "id": "s82",
+      "turkish": "Kendini hasta hissetmesine rağmen, tüm evrak işlerini bitirebildi.",
+      "english": "Although he felt ill, he was able to finish all the paperwork."
+    },
+    {
+      "id": "s83",
+      "turkish": "O çantayı karşılayamam. Çok pahalı.",
+      "english": "I am not able to afford that bag. It's too expensive."
+    },
+    {
+      "id": "s84",
+      "turkish": "Çocuklar dün sinemaya kendi başlarına gidebildiler.",
+      "english": "The children were able to go to the cinema on their own yesterday."
+    },
+    {
+      "id": "s85",
+      "turkish": "Peter, oldukça geç olmasına rağmen, dün gece televizyonda bir konser izleyebildi.",
+      "english": "Peter was able to watch a concert on TV last night, although it was on quite late."
+    },
+    {
+      "id": "s86",
+      "turkish": "Dün öğretmeni koltuğumdan iyi görebildim / görebiliyordum.",
+      "english": "I was able to see the teacher well from my seat yesterday."
+    },
+    {
+      "id": "s87",
+      "turkish": "Dün öğretmenimi şaşırtamadım.",
+      "english": "I wasn't able to surprise my teacher yesterday."
+    },
+    {
+      "id": "s88",
+      "turkish": "Öğrenciler bugün ders kitaplarım alamtyorlar.",
+      "english": "The students aren't able to buy their textbooks today."
+    },
+    {
+      "id": "s89",
+      "turkish": "Müşteriyi onun saatiyle 16:00'da ararsan, ulaşabilecek misin?",
+      "english": "Will you be able to reach the customer if you call him at 4 pm his time?"
+    },
+    {
+      "id": "s90",
+      "turkish": "Arkadaşlarımız arabanın fiyatı konusunda anlağsabilirler mi?",
+      "english": "Are our friends able to agree on the price of the car?"
+    },
+    {
+      "id": "s91",
+      "turkish": "Hiç kardeşim kadar iyi lspanyolca konuşamamışım / konuşamadım / konuşamıyorum.",
+      "english": "I've never been able to speak Spanish as well as my brother."
+    },
+    {
+      "id": "s92",
+      "turkish": "Çin'de 2 yıl geçirdikten sonra, artık öldükçe akıcı bir şekilde konuşabiliyordum.",
+      "english": "After 2 years in China, I was able to speak quite fluently now."
+    },
+    {
+      "id": "s93",
+      "turkish": "Altı saatlik tırmanistan sonra, dain zirvesine ulaşabildik.",
+      "english": "After 6 hours climbing, we were able to reach the top of the mountain."
+    },
+    {
+      "id": "s94",
+      "turkish": "Dün clizdammı kaybettim ve her yerde onu aradım ama bulabildim.",
+      "english": "Yesterday I lost my wallet and I looked for it everywhere, but I was able to find it."
+    },
+    {
+      "id": "s95",
+      "turkish": "Sally evde değildi, ancak ofisinde onunla iletişime geçebildim.",
+      "english": "Sally wasn't at home, but I was able to contact her at her office."
+    },
+    {
+      "id": "s96",
+      "turkish": "Alex, masası bu kadar dağınıkken, ödevini yapamayacak.",
+      "english": "Alex will not be able to do his homework when his desk is in such a mess."
+    },
+    {
+      "id": "s97",
+      "turkish": "Belki Smith'ler gelecek yıl yeni bir ev inşa edebilirler.",
+      "english": "Maybe the Smiths will be able to build a new house next year."
+    },
+    {
+      "id": "s98",
+      "turkish": "Hırsız, banyo penceresinden içeri girmeyi başardı.",
+      "english": "The burglar was able to get in through the bathroom window."
+    },
+    {
+      "id": "s100",
+      "turkish": "Konuşmacı, hastalık nedeniyle, konferansa katılamadı.",
+      "english": "The speaker wasn't able to attend the conference due to illness."
+    }
+  ],
+  "modal-5": [
+    {
+      "id": "s1",
+      "turkish": "Kaleminizi kullanabilir miyim lütfen?",
+      "english": "Could I use your pen, please?"
+    },
+    {
+      "id": "s2",
+      "turkish": "Lütfen bana doktorun telefon numarasını verir misiniz?",
+      "english": "Could you please give me the doctor's telephone number?"
+    },
+    {
+      "id": "s3",
+      "turkish": "Çocukken ağaçlara tırmanabildim / tırmanabiliyordum.",
+      "english": "When I was a child, I could climb trees."
+    },
+    {
+      "id": "s4",
+      "turkish": "Fotokopi makinesini tamir edebilir misiniz lütfen?",
+      "english": "Could you please repair the copy machine?"
+    },
+    {
+      "id": "s5",
+      "turkish": "Çocukken, akıcı bir şekilde Arapça konuşabiliyordum.",
+      "english": "I could speak Arabic fluently when I was a child."
+    },
+    {
+      "id": "s6",
+      "turkish": "Dün gece hastalandığım için partiye gidemedim.",
+      "english": "I couldn't go to the party last night because I was sick."
+    },
+    {
+      "id": "s7",
+      "turkish": "Dün mağaza kapalı olduğu için alışverişe gidemediler / gidemiyorlardı.",
+      "english": "They couldn't go shopping yesterday because the store was closed."
+    },
+    {
+      "id": "s8",
+      "turkish": "Çoğu dinozor karada yirurdii, ancak bazıları uçabiliyor ve hatta yüzebiliyordu.",
+      "english": "Most dinosaurs walked on land, but some could fly or even swim."
+    },
+    {
+      "id": "s9",
+      "turkish": "Sadece on altı yaşımdayken, bir kamyon sürebiliyordum.",
+      "english": "I could drive a truck when I was only sixteen years old."
+    },
+    {
+      "id": "s10",
+      "turkish": "Douglas arabasını durduramadığı için ağaca çarptı.",
+      "english": "Douglas hit the tree because he couldn't stop his car."
+    },
+    {
+      "id": "s11",
+      "turkish": "On yaşındayken yüzebiliyor muydun?",
+      "english": "Could you swim when you were 10?"
+    },
+    {
+      "id": "s12",
+      "turkish": "Tren bir saat geciktiği için dün toplantıya zamanında gelemedik.",
+      "english": "We couldn't get to the meeting on time yesterday because the train was delayed by one hour."
+    },
+    {
+      "id": "s13",
+      "turkish": "34 yaşıma kadar araba süremedim, sonra kırsal bölgeye taşındım, bu yüzden 6grenmek zorunda kaldım.",
+      "english": "I couldn't drive a car until I was 34, then I moved to the countryside so I had to learn."
+    },
+    {
+      "id": "s14",
+      "turkish": "Cüzdanımı her yerde aradım ama hiçbir yerde bulamadım.",
+      "english": "I looked everywhere for my wallet but I couldn't find it anywhere."
+    },
+    {
+      "id": "s15",
+      "turkish": "James, Japonya'da yaşarken Japonca konuşabiliyordu ama şimdi çogünü unutmuş / unuttu.",
+      "english": "James could speak Japanese when he lived in Japan, but he's forgotten most of it now."
+    },
+    {
+      "id": "s16",
+      "turkish": "Ödev için okumamız gereken bölümü anlayamadım. Çok zordu.",
+      "english": "I couldn't understand the chapter we had to read for homework. It was so difficult."
+    },
+    {
+      "id": "s17",
+      "turkish": "Kitabı üç kez okudum ama anlayamadım.",
+      "english": "I read the book three times but I couldn't understand it."
+    },
+    {
+      "id": "s18",
+      "turkish": "Julian, sadece on yaşındayken mükemmel golf oynayabiliyordu.",
+      "english": "Julian could play excellent golf when he was only ten."
+    },
+    {
+      "id": "s19",
+      "turkish": "Biyukannem, geçen aya kadar bilgisayar kullanamıyordu.",
+      "english": "My grandmother couldn't use a computer until last month."
+    },
+    {
+      "id": "s20",
+      "turkish": "Gengken, çok hızl koşabiliyordum.",
+      "english": "When I was younger, I could run very fast."
+    },
+    {
+      "id": "s21",
+      "turkish": "Danny dört yaşındayken yüzebiliyordu. Şimdi kasabanın yüzme takımının bir parçası.",
+      "english": "Danny could swim when he was four. Now he's part of the town's swimming team."
+    },
+    {
+      "id": "s22",
+      "turkish": "Altı yaşımdayken keman çalabiliyordum ama o zamandan beri pratik yapmadığım için artık çalamıyorum.",
+      "english": "When I was six, I could play violin but I haven't practiced since then so I can't play anymore."
+    },
+    {
+      "id": "s23",
+      "turkish": "Gençken, nefes nefese kalmadan dağın tepesine tırmanabiliyordum.",
+      "english": "When I was younger I could climb to the top of the mountain without being out of breath."
+    },
+    {
+      "id": "s24",
+      "turkish": "İspanya'ya ilk gittiğimde, tek kelime ispanyolca konuşamıyordum.",
+      "english": "When I went to Spain for the first time, I couldn't speak a word of Spanish."
+    },
+    {
+      "id": "s25",
+      "turkish": "Bu ayakkabılan biraz ayakkabı tutkaltyla düzeltebilirsiniz.",
+      "english": "You could fix those shoes with some shoe glue."
+    },
+    {
+      "id": "s26",
+      "turkish": "Onun çevrimici olup olmadığını görebildin.",
+      "english": "You could see if she is available on-line."
+    },
+    {
+      "id": "s27",
+      "turkish": "İşi, beş dil bildiği için aldı.",
+      "english": "She got the job because she could speak five languages."
+    },
+    {
+      "id": "s28",
+      "turkish": "Yorgundum ama toplantı bitene kadar, ayrılamadım.",
+      "english": "I was tired but I couldn't leave until the meeting finished."
+    },
+    {
+      "id": "s29",
+      "turkish": "Etrafındaki gürültüye ramen, beni anlayabiliyordu.",
+      "english": "She could understand me in spite of the noise around."
+    },
+    {
+      "id": "s30",
+      "turkish": "Paris'ten döndüklerinde, mükemmel Fransızca konuşabiliyorlardı.",
+      "english": "When they came back from Paris, they could speak perfect French."
+    },
+    {
+      "id": "s31",
+      "turkish": "Birkaç dakika önce Atina'daki acentemizle temasa geçebildik.",
+      "english": "We could contact our agent in Athens a few minutes ago."
+    },
+    {
+      "id": "s32",
+      "turkish": "Büyükbabam çok zekiydi, dört dil konuşabiliyordu.",
+      "english": "My grandfather was very clever, he could speak four languages."
+    },
+    {
+      "id": "s33",
+      "turkish": "O kadar yorgundu ki gözlerini açık tutamadı.",
+      "english": "He was so tired he couldn't keep his eyes open."
+    },
+    {
+      "id": "s34",
+      "turkish": "Bana sdylemeden ev sahibini nasıl arayabildin?",
+      "english": "How could you call the owner without telling me?"
+    },
+    {
+      "id": "s35",
+      "turkish": "Üç yaşına gelene kadar, konuşamıyordu.",
+      "english": "She couldn't speak until she was three years old."
+    },
+    {
+      "id": "s36",
+      "turkish": "İki yaşında yürüyebiliyordu ama konuşamıyordu.",
+      "english": "At the age of two he could walk but he couldn't talk."
+    },
+    {
+      "id": "s37",
+      "turkish": "Kazanamadılar. Üç puan gerideler ve oyun ön saniye içinde biter.",
+      "english": "They couldn't win. They are three points behind and the game ends in ten seconds."
+    },
+    {
+      "id": "s38",
+      "turkish": "Yeterince almadıysan, ebeveynlerinden sana borç vermesini isteyebilirsin.",
+      "english": "You could ask your parents to lend you some money if you haven't got enough."
+    },
+    {
+      "id": "s39",
+      "turkish": "Yetenekli bir çocuktu ve henüz tığ yaşındayken okuyabiliyordu.",
+      "english": "She was a gifted child and could read when she was only three years old."
+    },
+    {
+      "id": "s40",
+      "turkish": "Einstein'ın dokuz yaşına kadar akıcı konuşamadığını biliyor muydun?",
+      "english": "Did you know that Einstein couldn ot speak fluently until he was nine?"
+    },
+    {
+      "id": "s41",
+      "turkish": "Üniversitedeyken, sonuçsuz bütün gece ayakta kalabiliyordum.",
+      "english": "When I was in college, I could stay up all night without consequence."
+    },
+    {
+      "id": "s42",
+      "turkish": "Dün gece gözlerimi açık tutamadım.",
+      "english": "Last night I could not keep my eyes open."
+    },
+    {
+      "id": "s43",
+      "turkish": "Tekrar daha yavaş sdyleyebilir misiniz?",
+      "english": "Could you say it again more slowly."
+    },
+    {
+      "id": "s44",
+      "turkish": "Daha yashi olmama rağmen, küçük kardeşimden daha hızlı koşabiliyordum!",
+      "english": "Although I was older, I could run faster than my younger brother!"
+    },
+    {
+      "id": "s45",
+      "turkish": "Akşam yemedine çıkabiliriz ya da sadece artıkları yiyebiliriz.",
+      "english": "We could go out for dinner, or we could just eat leftovers."
+    },
+    {
+      "id": "s46",
+      "turkish": "Önümüzdeki hafta arabanızı ödünç alabilir miyim?",
+      "english": "Could I borrow your car next week?"
+    },
+    {
+      "id": "s47",
+      "turkish": "Daha fazla pratik yaparsa, güzel şarkı sdyleyebilir.",
+      "english": "If she practiced more, she could sing beautifully."
+    },
+    {
+      "id": "s48",
+      "turkish": "Bugün biraz erken ayrılabilir miyim?",
+      "english": "Could I leave a little earlier today?"
+    },
+    {
+      "id": "s49",
+      "turkish": "Oraya daha hızlı ulaşmak için taksiye binebilirsin.",
+      "english": "You could take a taxi to get there faster."
+    },
+    {
+      "id": "s50",
+      "turkish": "Üç tane targınh ccorek alabilir miyim?",
+      "english": "Could I have three cinnamon donuts?"
+    },
+    {
+      "id": "s51",
+      "turkish": "Bir kutu bira daha alabilir miyim lütfen?",
+      "english": "Could I please have one more can of beer?"
+    },
+    {
+      "id": "s52",
+      "turkish": "Jüriye neler olduğunu anlatır mısınız?",
+      "english": "Could you describe to the jury what happened?"
+    },
+    {
+      "id": "s53",
+      "turkish": "Beni tren istasyonuna bırakabilir misiniz?",
+      "english": "Could you give me a lift to the train station?"
+    },
+    {
+      "id": "s54",
+      "turkish": "Hangi okuldan mezun olduğunuzu tekrar söyleyebilir misiniz?",
+      "english": "Could you please tell me again what school you graduated from?"
+    },
+    {
+      "id": "s55",
+      "turkish": "İyi İngilizce konuşabildiğini herkes biliyordu.",
+      "english": "Everybody knew she could speak English well."
+    },
+    {
+      "id": "s56",
+      "turkish": "Hasta olduğu için gelemedi.",
+      "english": "He couldn't come because he was sick."
+    },
+    {
+      "id": "s57",
+      "turkish": "Fikirlerini öğrencilere aktaramadı.",
+      "english": "He couldn't get his ideas across to the students."
+    },
+    {
+      "id": "s58",
+      "turkish": "Penceresinin dışındaki gürültü yüzünden uyuyamıyordu.",
+      "english": "He couldn't sleep because of the noise outside his window."
+    },
+    {
+      "id": "s59",
+      "turkish": "Çocuğun onu takip edebilmesi için yavaş yürudii.",
+      "english": "He walked slowly so the child could follow him."
+    },
+    {
+      "id": "s60",
+      "turkish": "O kadar kızgındı ki konuşamyordu.",
+      "english": "He was so angry, he couldn't speak."
+    },
+    {
+      "id": "s61",
+      "turkish": "Hoşgakal demeden kaprdan nasıl çıkabildin?",
+      "english": "How could you just walk out the door without saying goodbye?"
+    },
+    {
+      "id": "s62",
+      "turkish": "Yahoo'da aramaya çalıştım ama bulamadım.",
+      "english": "I tried to search for it on Yahoo but I couldn't find it."
+    },
+    {
+      "id": "s63",
+      "turkish": "Pasaportumu bulamayınca çok gerildim.",
+      "english": "I became very nervous when I couldn't locate my passport."
+    },
+    {
+      "id": "s64",
+      "turkish": "Açtya dayanamadım.",
+      "english": "I could hardly endure the pain."
+    },
+    {
+      "id": "s65",
+      "turkish": "Testte hiçbir soruya cevap veremedim.",
+      "english": "I couldn't answer any questions on the test."
+    },
+    {
+      "id": "s66",
+      "turkish": "Gözlerime inanamadım.",
+      "english": "I couldn't believe my eyes."
+    },
+    {
+      "id": "s67",
+      "turkish": "Seni arayamadım; telefon arızalıydı.",
+      "english": "I couldn't call you; the telephone was out of order."
+    },
+    {
+      "id": "s68",
+      "turkish": "Ondan kesin bir cevap alamadılar.",
+      "english": "They couldn't get a definite answer from him."
+    },
+    {
+      "id": "s69",
+      "turkish": "Yolda bir araba olduğu için garajımdan gikamadım.",
+      "english": "I couldn't get out of my garage because there was a car in the way."
+    },
+    {
+      "id": "s70",
+      "turkish": "Dışarıda gürültü olduğu için iyi yyuyamadım.",
+      "english": "I couldn't sleep well because it was noisy outside."
+    },
+    {
+      "id": "s71",
+      "turkish": "Sana neden kaslarını çattığını anlayamadın.",
+      "english": "You couldn't understand why she frowned at you."
+    },
+    {
+      "id": "s72",
+      "turkish": "Biraz daha bekler misiniz?",
+      "english": "Could you wait just a little bit longer?"
+    },
+    {
+      "id": "s73",
+      "turkish": "İyi bir koltuk bulabilmek için erken ayrıldım.",
+      "english": "I left early so I could get a good seat."
+    },
+    {
+      "id": "s74",
+      "turkish": "Etrafına baktı, ama orada kimseyi göremedi.",
+      "english": "He looked all around, but he could see nobody there."
+    },
+    {
+      "id": "s75",
+      "turkish": "Seni dözledim. Seni görmem gerek. Uğrayabilir miyim?",
+      "english": "I miss you. I need to see you. Could I come over?"
+    },
+    {
+      "id": "s76",
+      "turkish": "Yorgundum ama uyuyamadım.",
+      "english": "I was tired, but I couldn't sleep."
+    },
+    {
+      "id": "s77",
+      "turkish": "Ken, bunu tekrar deneyecek cesareti bulamadı.",
+      "english": "Ken couldn't have the courage to try it again."
+    },
+    {
+      "id": "s78",
+      "turkish": "Budapeşte'ye tatile gidebilir veya bir diziistii bilgisayar alabilirim.",
+      "english": "I could either go on holiday to Budapest or buy a laptop."
+    },
+    {
+      "id": "s79",
+      "turkish": "500 sayfalık bir kitabı bir günde bitiremedi!",
+      "english": "He couldn't finish a 500-page book in a single day!"
+    },
+    {
+      "id": "s80",
+      "turkish": "Bu projedeki yardımın için çok minnettarım. Bunu sensiz yapamazdım!",
+      "english": "I'm so thankful for your help with this project. I couldn't have done it without you!"
+    },
+    {
+      "id": "s81",
+      "turkish": "Kutuyu kaldıramadım. Benim için çok ağırdı.",
+      "english": "I couldn't lift the box. It was too heavy for me."
+    },
+    {
+      "id": "s82",
+      "turkish": "Sarah hasta olduğu için yemek yiyemiyordu.",
+      "english": "Sarah couldn't eat because she was ill."
+    },
+    {
+      "id": "s83",
+      "turkish": "Gençken gitar çalamıyordum: Benim için çok zordu!",
+      "english": "When I was young, I couldn't play the guitar: it was too difficult for me!"
+    },
+    {
+      "id": "s84",
+      "turkish": "Büyükannesi iki dil biliyordu: hem İngilizce hem de ispanyolca konuşabiliyordu.",
+      "english": "Her grandmother was bilingual: she could speak both English and Spanish."
+    },
+    {
+      "id": "s85",
+      "turkish": "Dün, Peter bu egzersizi tek başına yapamadı. Bu yüzden beni yardım için aradı.",
+      "english": "Yesterday, Peter couldn't do that exercise alone. So, he called me for help."
+    },
+    {
+      "id": "s86",
+      "turkish": "Annesi gençken, kayabiliyordu ama artık yapamnyor.",
+      "english": "When his mother was young, she could skate but she can't do it any longer."
+    },
+    {
+      "id": "s87",
+      "turkish": "Kaptyı ağamadık: içeriden kilitliydi!",
+      "english": "We couldn't open the door: it was locked from the inside!"
+    },
+    {
+      "id": "s88",
+      "turkish": "Mary'nin büyükbabası satranç oynayabiliyordu ve o en iyisiydi!",
+      "english": "Mary's grandfather could play chess and he was the best!"
+    },
+    {
+      "id": "s89",
+      "turkish": "Peter geçen Pazartesi tenis oynayamadı: kolunu kırmıştı!",
+      "english": "Peter couldn't play tennis last Monday: he had broken his arm!"
+    },
+    {
+      "id": "s90",
+      "turkish": "Ann gençken bir korku filmleri izleyemiyordu: Bu onun için çok korkutucuydu!",
+      "english": "When Ann was a teenager, she couldn't watch horror movies: it was too frightening for her!"
+    },
+    {
+      "id": "s91",
+      "turkish": "Geçen Pazar müzede fotoğraf çekemedik: yasaktı.",
+      "english": "Last Sunday, we couldn't take any photos in the museum: it was forbidden."
+    },
+    {
+      "id": "s92",
+      "turkish": "Mozart, 5 yasındayken piyano çalabiliyordu.",
+      "english": "Mozart could play the piano when he was 5."
+    },
+    {
+      "id": "s93",
+      "turkish": "1800 yılında insanlar işe gitmek için araba alamıyorlardı.",
+      "english": "In 1800, people couldn't take a car to go to work."
+    },
+    {
+      "id": "s94",
+      "turkish": "Gençken dans edebiliyorlardı ama şimdi çok yaşhlar.",
+      "english": "When they were young, they could dance but now they are too old."
+    },
+    {
+      "id": "s95",
+      "turkish": "Wayne Rooney, 3 yaşındayken futbol oynayabiliyordu. Genç yaşta çok yetenekliydi.",
+      "english": "Wayne Rooney could play football when he was 3 years old. He was very talented at a young age."
+    },
+    {
+      "id": "s96",
+      "turkish": "Benim zamanımda çocuklar, icat edilmedikleri için interneti veya bilgisayarı kullanamıyorlard.",
+      "english": "In my day, kids couldn't use the internet or a computer because they hadn't been invented."
+    },
+    {
+      "id": "s97",
+      "turkish": "Dün gece hastalandığım için partiye gidemedim.",
+      "english": "I couldn't go to the party last night because I was sick."
+    },
+    {
+      "id": "s98",
+      "turkish": "Dükkan kapalı olduğu için dün alışverişe gidemediler.",
+      "english": "They couldn't go shopping yesterday because the store was closed."
+    },
+    {
+      "id": "s99",
+      "turkish": "Hava güneşliydi, bu yüzden dışanda yemek yiyebildik.",
+      "english": "The weather was sunny, so we could eat outside."
+    },
+    {
+      "id": "s100",
+      "turkish": "O günlerde tatil yapabiliyorduk.",
+      "english": "In those days, we could take holidays."
+    }
+  ],
+  "modal-6": [
+    {
+      "id": "s2",
+      "turkish": "Bazen bana çiçek getirir / getirirdi / getirecekti.",
+      "english": "Sometimes he would bring me some flowers."
+    },
+    {
+      "id": "s3",
+      "turkish": "Ben çocukken, her yaz İskoçya'ya giderdik / gidecektik.",
+      "english": "When I was a child, we would go to Scotland every summer."
+    },
+    {
+      "id": "s4",
+      "turkish": "Gösteriye gider ama çok fazla ödevi var.",
+      "english": "She would go to the show, but she has too much homework."
+    },
+    {
+      "id": "s5",
+      "turkish": "Mike sunumu hakkında ne dışlındUğunuzui bilir / bilirdi / bilecekti.",
+      "english": "Mike would know what you think about his presentation."
+    },
+    {
+      "id": "s6",
+      "turkish": "Kabalığından dolayı dzur diledi ama onu affetmezdi / affetmeyecekti.",
+      "english": "He apologized for his rudeness, but she wouldn't forgive him."
+    },
+    {
+      "id": "s7",
+      "turkish": "Treni kaçırmamak için aceleyle istasyona gelirdi / gelecekti.",
+      "english": "He hurried to the station so he wouldn't miss the train."
+    },
+    {
+      "id": "s8",
+      "turkish": "Plan çok paraya mal olurdu / olacaktı.",
+      "english": "The plan would cost a lot of money."
+    },
+    {
+      "id": "s9",
+      "turkish": "Çocukken, her sabah balık tutmaya giderdik / gidecektik.",
+      "english": "We would go fishing every morning when I was a child."
+    },
+    {
+      "id": "s10",
+      "turkish": "Çocuklar genellikle pasta yapmama yardım ederlerdi / edeceklerdi. Hala bazen yapıyorlar.",
+      "english": "The children would often help me to make a cake. They still do sometimes."
+    },
+    {
+      "id": "s11",
+      "turkish": "Bu kirli nehre herhangi bir miktar para için dalmam / dalmazdım / dalmayacaktım.",
+      "english": "I wouldn't dive in this polluted river for any amount of money."
+    },
+    {
+      "id": "s12",
+      "turkish": "Sen yazmaya ve konuşmaya devam ederken, kelimeler doğal olarak gelir / gelirdi / gelecekti.",
+      "english": "Words would just come naturally as you continued to write and speak."
+    },
+    {
+      "id": "s13",
+      "turkish": "Böyle bir mağdura ne tavsiye edersiniz / tavsiye ederdiniz / tavsiye edecektiniz?",
+      "english": "What advice would you give to such a victim?"
+    },
+    {
+      "id": "s14",
+      "turkish": "Farklı bir şey yapar mısınız / yapar mıydınız / yapacak mıydınız?",
+      "english": "Would you do something differently?"
+    },
+    {
+      "id": "s15",
+      "turkish": "Bir peyzaj mimarı bu koşullar altında tavsiye eder / tavsiye ederdi / tavsiye edecekti.",
+      "english": "A landscaper would recommend under these conditions."
+    },
+    {
+      "id": "s16",
+      "turkish": "Cümlenin gramer ağısından yanlış olmasına neden olur / neden olurdu / neden olacaktı.",
+      "english": "It would make the sentence grammatically incorrect."
+    },
+    {
+      "id": "s17",
+      "turkish": "Fikirlerin sırasını bozar / bozardı / bozacaktı.",
+      "english": "It would disorder the sequence of ideas."
+    },
+    {
+      "id": "s18",
+      "turkish": "Üniformalar herkesin ayn kıyafetleri giymesini gerektirir / gerektirirdi / gerektirecekti.",
+      "english": "Uniforms would require everyone to wear the same outfits."
+    },
+    {
+      "id": "s19",
+      "turkish": "Onlan bir okul gezisine götürmek daha da iyi olur / olurdu / olacaktı.",
+      "english": "It would be even better to take them on a field trip."
+    },
+    {
+      "id": "s20",
+      "turkish": "Teknolojik ilerlememiz olmaz / olmazdı / olmayacaktı.",
+      "english": "We would have no technilogical advances."
+    },
+    {
+      "id": "s21",
+      "turkish": "Beni misafir olarak getirmeyi düşünür müsün düşünür müydün / düşünecek miydin?",
+      "english": "Would you consider bringing me as your guest?"
+    },
+    {
+      "id": "s22",
+      "turkish": "Otobüs, Crossland'ın dar ana caddesinde sarsılır / sarsılırdı / sarsılacaktı.",
+      "english": "The bus would jolt down the narrow main street of Crossland."
+    },
+    {
+      "id": "s23",
+      "turkish": "Korkung bir gece geçirdik. Bebek uyumaz / uyumazdı / uyumayacaktı.",
+      "english": "We had a terrible night. The baby wouldn't go to sleep."
+    },
+    {
+      "id": "s24",
+      "turkish": "Babam bana arabayı Gduncg vermez / vermezdi / vermeyecekti, bu yüzden trene binmek zorunda kaldık.",
+      "english": "Dad wouldn't lend me the car, so we had to take the train."
+    },
+    {
+      "id": "s25",
+      "turkish": "Her sabah erken kalkarlar / kalkarlardı / kalkacaklardı ve hızlı bir kahvaltı yaparlar / yaparlardı / yapacaklardı.",
+      "english": "They'd get up early every morning and have a quick breakfast."
+    },
+    {
+      "id": "s26",
+      "turkish": "Sahile giden yol boyunca koşar / koşardı / koşacaktı.",
+      "english": "He'd run across the road to the beach."
+    },
+    {
+      "id": "s27",
+      "turkish": "Yağmur yağar / yağardı / yağacaktı, ben de şemsiyemi getirdim.",
+      "english": "It would rain so I brought my umbrella."
+    },
+    {
+      "id": "s28",
+      "turkish": "Vergileri artırmazlar / artırmazlardı / artırmayacaklardı.",
+      "english": "They wouldn't increase taxes."
+    },
+    {
+      "id": "s29",
+      "turkish": "Hafta içi her gün saat 18:00'de babam işten eve gelir / gelirdi / gelecekti ve tv izler / izlerdi / izleyecekti.",
+      "english": "Every weekday my father would come home from work at 6 pm and watch TV."
+    },
+    {
+      "id": "s30",
+      "turkish": "Her yaz deniz kenarına gideriz / giderdik / gidecektik.",
+      "english": "Every summer we'd go to the seaside."
+    },
+    {
+      "id": "s31",
+      "turkish": "Bazen gecenin bir yarısı beni arar / arardı / arayacaktı.",
+      "english": "Sometimes she'd phone me in the middle of the night."
+    },
+    {
+      "id": "s32",
+      "turkish": "Her zaman tartışırız / tartışırdık / tartışacaktık. Asla anlağamayız.",
+      "english": "We would always argue. We could never agree."
+    },
+    {
+      "id": "s33",
+      "turkish": "Bir kahve almam için bana iki dolar borç verir misin / verir miydin / verecek miydin lütfen?",
+      "english": "Would you lend me two dollars to buy a coffee please?"
+    },
+    {
+      "id": "s34",
+      "turkish": "Babam her akşam bize şarkı sdyler / sdylerdi / sdyleyecekti.",
+      "english": "Dad would sing to us every evening."
+    },
+    {
+      "id": "s35",
+      "turkish": "Onun yerine ne yapmamuizi Gnerirsin / Gnerirdiniz / Gnerecektiniz?",
+      "english": "What would you suggest we do instead?"
+    },
+    {
+      "id": "s36",
+      "turkish": "Bu yaz seyahat etmek için iyi bir yer neresi olur / olurdu / olacaktı?",
+      "english": "Where would be a good place to travel this summer?"
+    },
+    {
+      "id": "s37",
+      "turkish": "Kardeşim bana neden yalan söyler / sdylerdi / söyleyecekti?",
+      "english": "Why would my brother lie to me?"
+    },
+    {
+      "id": "s38",
+      "turkish": "Bunu bilmenizi neden beklerler / beklerlerdi / bekleyeceklerdi?",
+      "english": "Why would they expect you to know that?"
+    },
+    {
+      "id": "s39",
+      "turkish": "Neden senden bir şey saklamaya çalışırım / çalışırdım / galisacaktım?",
+      "english": "Why would I try to hide anything from you?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Başarmaya bu kadar yaklaştığımızda, neden şimdi pes ederiz / pes ederdik / pes edecektik?",
+      "english": "Why would we give up now, when we've come so close to succeeding?"
+    },
+    {
+      "id": "s41",
+      "turkish": "Paramz konusunda daha dikkatli olmanız akıllıca olur / olurdu / olacaktı.",
+      "english": "You would be wise to be more careful with your money."
+    },
+    {
+      "id": "s42",
+      "turkish": "Yeni mezunlann erken bir tasarruf hesabı ağçmalar akıllıca olur / olurdu / olacaktı.",
+      "english": "Recent graduates would be smart to set up a savings account."
+    },
+    {
+      "id": "s43",
+      "turkish": "Materyali en kısa zamanda gönderir misin / gönderir miydin / gsnderecek miydin lütfen?",
+      "english": "Would you send the material as soon as possible please?"
+    },
+    {
+      "id": "s44",
+      "turkish": "Biraz lahana salatası yer misin / yer miydin / yiyecek miydin?",
+      "english": "Would you eat some coleslaw?"
+    },
+    {
+      "id": "s45",
+      "turkish": "Ödevini şimdi teslim eder misin / teslim eder miydin / teslim edecek miydin?",
+      "english": "Would you turn in your assignment now?"
+    },
+    {
+      "id": "s46",
+      "turkish": "Bu insanlar kumara izin verirler / izin verirlerdi / izin vereceklerdi.",
+      "english": "Those people would allow gambling."
+    },
+    {
+      "id": "s47",
+      "turkish": "Bu hatayı asla tekrar etmem / tekrar etmezdim / tekrar etmeyecektim.",
+      "english": "I would never repeat this mistake."
+    },
+    {
+      "id": "s48",
+      "turkish": "Kariyerinde çok başarih olur / olurdu / olacaktı.",
+      "english": "She would be very successful in her career."
+    },
+    {
+      "id": "s49",
+      "turkish": "Çoğu insan muhtemelen sizinle aym fikirde olur / olurdu / olacaktı.",
+      "english": "Most people would probably agree with you."
+    },
+    {
+      "id": "s50",
+      "turkish": "Piyasa güçleri, buğdayın maliyetini ulaşılamayacak kadar zorlar / zorlardı / zorlayacaktt.",
+      "english": "Market forces would push the cost of wheat beyond reach."
+    },
+    {
+      "id": "s51",
+      "turkish": "Daha büyük göçuklar bazen daha küçük çocuklara dgretirler / Öğretirlerdi / 6greteceklerdi.",
+      "english": "Older children would sometimes teach younger children."
+    },
+    {
+      "id": "s52",
+      "turkish": "Dört yıldan fazla sürer / sürerdi / sürecekti.",
+      "english": "It would last for more than four years."
+    },
+    {
+      "id": "s53",
+      "turkish": "Çocuklar bir nükleer saldırı durumunda ne yapacaklarım bilirler / bilirlerdi / bileceklerdi.",
+      "english": "Children would know what to do in the case of a nuclear attack."
+    },
+    {
+      "id": "s54",
+      "turkish": "Milenyumun başında bilgisayarlar düzgün çalışmaz / galığmazı / çalışmayacakt.",
+      "english": "Computers would not work properly at the turn of the millenium."
+    },
+    {
+      "id": "s55",
+      "turkish": "İnsanlar onu babasıyla kanstırmazlar / kanstırmazlardı / karıştırmayacaklardh.",
+      "english": "People would not confuse him with his dad."
+    },
+    {
+      "id": "s56",
+      "turkish": "Harç ticretini ödemek için yazın çalışması gerekir / gerekirdi / gerekeecekti.",
+      "english": "She would need to work in the summer in order to pay her tuition."
+    },
+    {
+      "id": "s57",
+      "turkish": "Bu koşullar altında insanlar yaşamla nasıl başa çıkarlar / çıkarlardı / çıkacaklardı?",
+      "english": "How would people cope with life under those circumstances?"
+    },
+    {
+      "id": "s58",
+      "turkish": "Piyano çalmayı 6grenirken her akşam pratik yaparım / yapardım / yapacaktım.",
+      "english": "When I was learning to play the piano, I would practise every evening."
+    },
+    {
+      "id": "s59",
+      "turkish": "Michael üniversitede gece geç saatlere kadar okur / okurdu / okuyacaktı.",
+      "english": "At university, Michael would study until late at night."
+    },
+    {
+      "id": "s60",
+      "turkish": "Gençken baharatlı yiyecekler yemezlerdi / yemeyeceklerdi.",
+      "english": "They wouldn't eat spicy food when they were young."
+    },
+    {
+      "id": "s61",
+      "turkish": "Araba almadan önce, işe nasıl giderdin / gidecektin?",
+      "english": "Before you bought a car, how would you travel to work?"
+    },
+    {
+      "id": "s62",
+      "turkish": "Erken cevap için minnettar oluruz / olurduk / olacaktık.",
+      "english": "We would be grateful for an early reply."
+    },
+    {
+      "id": "s63",
+      "turkish": "Gençken, babam gibi davranmaya çalışırdım / calığacaktım.",
+      "english": "I would try to act like my father when I was young."
+    },
+    {
+      "id": "s64",
+      "turkish": "Havuzda çalışırsam, bronzlaşırım / bronzlaşırdım / bronzlaşacaktım.",
+      "english": "I would get a tan if I worked at the pool."
+    },
+    {
+      "id": "s65",
+      "turkish": "Köpeğim ve ben, o gençken, yurtiyuse çıkardık / çıkacaktık.",
+      "english": "My dog and I would go for walks when she was younger."
+    },
+    {
+      "id": "s66",
+      "turkish": "Yeterli param olursa, yeni ayakkabılar alırım / alırdım / alacaktım.",
+      "english": "I would buy new shoes if I had enough money."
+    },
+    {
+      "id": "s67",
+      "turkish": "Altıncı sınıftayken, genellikle teneffüste tekme topu oynardık / oynayacaktık.",
+      "english": "When we were in sixth grade, we would) usually play kick ball at recess."
+    },
+    {
+      "id": "s68",
+      "turkish": "Büyükannem bahçeyle ilgilenmeye bayılır / bayılırdı / bayılacaktı.",
+      "english": "My grandma would love gardening."
+    },
+    {
+      "id": "s69",
+      "turkish": "Kardeşim ödevime yardım etmez / yardım etmezdi / yardım etmeyecekti - şimdi yardım ediyor!",
+      "english": "My brother wouldn't help me with my homework -now he does!"
+    },
+    {
+      "id": "s70",
+      "turkish": "Kız kardeşim o gruptaki baş şarkıcıyı tanır / tanırdı / tantyacaktı.",
+      "english": "My sister would know the lead singer in that band."
+    },
+    {
+      "id": "s71",
+      "turkish": "Sınavdan Önceki gün, okuldayken, endişelenir miydin / endişelencek miydin?",
+      "english": "Would you get anxious the day before an exam when you were at school?"
+    },
+    {
+      "id": "s72",
+      "turkish": "Jonathan hiç çocuk istemezdi / istemeyecekti, sonra kanısıyla tanıştı ve dört çocuğu oldu!",
+      "english": "Jonathan wouldn't want any children, then he met his wife and they had four!"
+    },
+    {
+      "id": "s73",
+      "turkish": "Sorunu çözmeye çalışır / galişirdi / cahşacaktı.",
+      "english": "He would try and solve the problem."
+    },
+    {
+      "id": "s74",
+      "turkish": "Antik Roma'da insanlar dağlara giderlerdi / gideceklerdi ve kar toplarlardı / toplayacaklardı.",
+      "english": "In ancient Rome, people would go into the mountains and collect snow."
+    },
+    {
+      "id": "s75",
+      "turkish": "Soğutma olmadan Önce, insanlar yiyecekleri soğuk tutmak için buz kullanırlardı / kullanacaklardı.",
+      "english": "Before there was refrigeration, people would use ice to keep food cool."
+    },
+    {
+      "id": "s76",
+      "turkish": "Suyu ısıtmak için ateş yakar / yakardı / yakacaktı.",
+      "english": "She would build a fire to heat water."
+    },
+    {
+      "id": "s77",
+      "turkish": "Dedem çocukken, her gece radyo dinlerdi / dinleyecekti.",
+      "english": "When my grandfather was a child, he would listen to the radio every night."
+    },
+    {
+      "id": "s78",
+      "turkish": "Eskiden insanlar gamaşırları elde yıkarlardı / yıkayacaklardı. Kurumast için onları dışarnya asarlardı / aşacaklardı.",
+      "english": "In the old days, people would wash clothes by hand. They would hang them outside to dry."
+    },
+    {
+      "id": "s79",
+      "turkish": "Akşam şarkı sdyler / sdylerdik / söyleyecektik, oyun oynarız / oyun oynardık / oyun oynayacaktık.",
+      "english": "We would sing songs or play games in the evening."
+    },
+    {
+      "id": "s80",
+      "turkish": "Belgelerini revize ettiklerinde her şeyi tekrar kopyalarlar / kopyalarlardı / kopyalayacaklardı.",
+      "english": "They would copy everything again when they revised their papers."
+    },
+    {
+      "id": "s81",
+      "turkish": "Annemle babam telefonu elimden almakla tehdit ediyordu ama asla yapmazlardı / yapmayacaklardı.",
+      "english": "My parents would threaten to take the phone away, but they never did."
+    },
+    {
+      "id": "s82",
+      "turkish": "Sınava hazırlanmanıza yardımcı olmaktan memnuniyet duyanm / duyardım / duyacaktım.",
+      "english": "I would be happy to help you with preparation for your exam."
+    },
+    {
+      "id": "s83",
+      "turkish": "İnternetten önce, insanlar birbirlerine mektup gönderirlerdi / göndereceklerdi.",
+      "english": "Before internet people would send letters to each other."
+    },
+    {
+      "id": "s84",
+      "turkish": "Okuldayken, evimizdeki herkesten Önce kalkardım / kalkacaktım.",
+      "english": "When I was at school I would get up before everyone else in our house."
+    },
+    {
+      "id": "s85",
+      "turkish": "Romanım için fikirler yazmak için kafelerde oturup saatler geçiririm / geçirirdim / geçirecektim.",
+      "english": "I would spend hours sitting at coffee shops writing ideas for my novel."
+    },
+    {
+      "id": "s86",
+      "turkish": "Cumaları öğle yemeğinden sonra uzun bir yürüyüş yaparız / yapardık / yapacaktık.",
+      "english": "On Fridays, we would take a long walk after lunch."
+    },
+    {
+      "id": "s87",
+      "turkish": "O günü hep boş geçirdiğim için, her Pazartesi bakkaliye alışverişi yapardım / yapacaktım.",
+      "english": "Since I always had that day free, I would shop for groceries every Monday."
+    },
+    {
+      "id": "s88",
+      "turkish": "Her zaman acelemiz olduğu için Cumaları çay için durmazdık / durmayacaktık.",
+      "english": "Since we were always in a hurry, we wouldn't stop for tea on Fridays."
+    },
+    {
+      "id": "s89",
+      "turkish": "Sık sık 6öğle yemeğine kalır mısınız / kalır mıydımız / kalacak mıydımız?",
+      "english": "Would you often stay for lunch?"
+    },
+    {
+      "id": "s90",
+      "turkish": "Nancy her gün yürüyüşe çıkar / gikardı ama şimdi yeterli zamanı yok.",
+      "english": "Nancy would go for a jog every day, but now she doesn't have enough time."
+    },
+    {
+      "id": "s91",
+      "turkish": "Tom böyle bir şey yapar / yapardı / yapacaktı, değil mi? Bu onun için çok tipik!",
+      "english": "Tom would do something like that, wouldn't he? It's so typical of him!"
+    },
+    {
+      "id": "s92",
+      "turkish": "Çocuğum olmadan Önce, gece geç saatlere kadar ayakta kalırdım / kalacaktım.",
+      "english": "Before I had a child, I would stay up late at night."
+    },
+    {
+      "id": "s93",
+      "turkish": "Ünlü Hollywood tabelasının fotoğraflarını çeker ve arkadaşlarıma gönderirim / gönderirdim / gönderecektim.",
+      "english": "I would take photos of the famous Hollywood sign and send them to my friends."
+    },
+    {
+      "id": "s94",
+      "turkish": "Plajda hafta sonu tatilimde yağmur yağar / yağardı. Her zaman şanssanssızımdır!",
+      "english": "It would rain during my weekend vacation at the beach. I always have such bad luck!"
+    },
+    {
+      "id": "s95",
+      "turkish": "Final sınavına 20 dakika geç kalır / geç kalırdı / geç kalacaktı.",
+      "english": "He would be 20 minutes late for the final exam."
+    },
+    {
+      "id": "s96",
+      "turkish": "En Üst rafa çıkıp o kitabı benim için alır mısın / alır mıydın / alacak mıydın?",
+      "english": "Would you reach up to the top shelf and get that book for me?"
+    },
+    {
+      "id": "s97",
+      "turkish": "O otelde kalmayı tavsiye etmem / tavsiye etmezdim / tavsiye etmeyecektim.",
+      "english": "I wouldn't advise staying in that hotel."
+    },
+    {
+      "id": "s98",
+      "turkish": "Ne olduğunu kimseye anlatmaz / anlatmazdı / anlatmayacaktı.",
+      "english": "He wouldn't tell anybody what happened."
+    },
+    {
+      "id": "s99",
+      "turkish": "Bu haklar, aslında öğrencinin uzun vadeli menfaatlerinde olmaz / olmazdı / olmayacaktı.",
+      "english": "These rights would not actually be in the long-term benefits of the student."
+    },
+    {
+      "id": "s100",
+      "turkish": "İdeal dünyamız onlar için nasıl olur / olurdu / olacaktı?",
+      "english": "What would your ideal world be like for them?"
+    }
+  ],
+  "modal-7": [
+    {
+      "id": "s1",
+      "turkish": "Motosikletini sürerken, bir kask takman gerek.",
+      "english": "You should wear a helmet while riding your motorbike."
+    },
+    {
+      "id": "s2",
+      "turkish": "Geg oldu, Sanınm eve gitmem gerek.",
+      "english": "It's late, I think I should go home."
+    },
+    {
+      "id": "s3",
+      "turkish": "Gdndermeden önce, bu belgeyi kontrol etmen gerek.",
+      "english": "You should check that document before you send it out."
+    },
+    {
+      "id": "s4",
+      "turkish": "Dış hekiminin dışlerini yılda en az bir kez temizlemesi gerek.",
+      "english": "The dentist should clean your teeth at least once a year."
+    },
+    {
+      "id": "s5",
+      "turkish": "Ayaklarını masaya koymaman gerek. Bu nazik değil.",
+      "english": "You shouldn't put your feet on the table. It's not polite."
+    },
+    {
+      "id": "s6",
+      "turkish": "Çok fazla şeker yememen gerek. Senin için kötüler.",
+      "english": "You shouldn't eat so many sweets. They are bad for you."
+    },
+    {
+      "id": "s7",
+      "turkish": "Yatmadan Önce, dişlerinizi firgcalaman gerek.",
+      "english": "You should brush your teeth before you go to bed."
+    },
+    {
+      "id": "s8",
+      "turkish": "Negatif insanları dinlememen gerek.",
+      "english": "I shouldn't listen to negative people."
+    },
+    {
+      "id": "s9",
+      "turkish": "Tony'nin bir iş görüşmesi var. Zamanında varması gerek.",
+      "english": "Tony has a job interview. He should arrive on time."
+    },
+    {
+      "id": "s10",
+      "turkish": "Matematikte çok iyisin. Bence muhasebe okumain gerek.",
+      "english": "You are very good at math. I think you should study accounting."
+    },
+    {
+      "id": "s11",
+      "turkish": "İşinden mutlu değilsin. Başka bir fırsat araman gerek.",
+      "english": "You aren't happy at your job. You should look for another opportunity."
+    },
+    {
+      "id": "s12",
+      "turkish": "Oldukça hasta görünüyor. Bence doktora gitmesi gerek.",
+      "english": "She looks pretty sick. I think she should go to a doctor."
+    },
+    {
+      "id": "s13",
+      "turkish": "Çok fazla sigara içmemen gerek. Sağlığın için koti.",
+      "english": "You shouldn't smoke so much. It's bad for your health."
+    },
+    {
+      "id": "s14",
+      "turkish": "Yerde küçük nesneler bırakmaman gerek.",
+      "english": "You shouldn't leave small objects on the floor."
+    },
+    {
+      "id": "s15",
+      "turkish": "Mesajı kime iletmem gerek?",
+      "english": "Who should I pass the message to?"
+    },
+    {
+      "id": "s16",
+      "turkish": "Herhangi bir sorun yaşarsam, ne yapmam gerek?",
+      "english": "What should I do if I have any problems?"
+    },
+    {
+      "id": "s17",
+      "turkish": "Yamin üzerine sıcak şu koymaman gerek.",
+      "english": "You shouldn't put hot water on a burn."
+    },
+    {
+      "id": "s18",
+      "turkish": "Küçük çocukların şiddet içerikli TV programları izlememeleri gerek.",
+      "english": "Young children shouldn't watch violent TV shows."
+    },
+    {
+      "id": "s19",
+      "turkish": "İş aramadan önce, kendini değerlendirmelisin.",
+      "english": "You should assess yourself before you look for a job."
+    },
+    {
+      "id": "s20",
+      "turkish": "Özgeçmişini yazarken, daha dikkatli olman gerek.",
+      "english": "You should be more careful when you write your résumé."
+    },
+    {
+      "id": "s21",
+      "turkish": "Gerçekten bir kariyer danışmanından tavsiye alman gerek.",
+      "english": "You should really get advice from a career advisor."
+    },
+    {
+      "id": "s22",
+      "turkish": "Başka bir iş bulmadan önce, işini gerğçekten bırakmaman gerek.",
+      "english": "You really shouldn't quit your job before you've found another one."
+    },
+    {
+      "id": "s23",
+      "turkish": "Trafik raporunu gerççekten kontrol etmen gerek.",
+      "english": "You should really check the traffic report."
+    },
+    {
+      "id": "s24",
+      "turkish": "Belki de röportajda o pantolonu giymemen gerek.",
+      "english": "Perhaps he shouldn't wear those pants to the interview."
+    },
+    {
+      "id": "s25",
+      "turkish": "Komşumun mahalledeki insanlarla konuşması gerek.",
+      "english": "My neighbor should speak to the people in the neighborhood."
+    },
+    {
+      "id": "s26",
+      "turkish": "Arkadaşımın geceleri daha fazla uyuması gerek.",
+      "english": "My friend should get more sleep at night."
+    },
+    {
+      "id": "s27",
+      "turkish": "Kasiyerin doğru parayı vermesi gerek.",
+      "english": "The cashier should give the correct change."
+    },
+    {
+      "id": "s28",
+      "turkish": "Sımf arkadaşlarımın daha çok çalışması gerek.",
+      "english": "My classmates should study harder."
+    },
+    {
+      "id": "s29",
+      "turkish": "Bay Roberts'in sabah gazetesini okuması gerek.",
+      "english": "Mr. Roberts should read the morning paper."
+    },
+    {
+      "id": "s30",
+      "turkish": "Her gece iki saat çalışman gerek.",
+      "english": "You should study two hours a night."
+    },
+    {
+      "id": "s31",
+      "turkish": "Her gece sekiz saat uyuman gerek.",
+      "english": "You should get eight hours of sleep every night."
+    },
+    {
+      "id": "s32",
+      "turkish": "Dersten sonra, öğretmenlerinden yardım istemen gerek.",
+      "english": "You should ask your teachers for help after class."
+    },
+    {
+      "id": "s33",
+      "turkish": "Ders sırasında sizinle konuşmaya çalışan arkadaşları görmezden gelmen gerek.",
+      "english": "You should ignore friends who try to talk to you during class."
+    },
+    {
+      "id": "s34",
+      "turkish": "Sınıfta ana dilini konuşmaman gerek.",
+      "english": "You shouldn't speak your native language in class."
+    },
+    {
+      "id": "s35",
+      "turkish": "Okula geç kalmaman gerek.",
+      "english": "You shouldn't be late for school."
+    },
+    {
+      "id": "s36",
+      "turkish": "Öğretmenin sözünii kesmemen gerek.",
+      "english": "You shouldn't interrupt the teacher."
+    },
+    {
+      "id": "s37",
+      "turkish": "Sımfta sakız çiğnememen gerek.",
+      "english": "You shouldn't chew gum in class."
+    },
+    {
+      "id": "s38",
+      "turkish": "Sinf arkadaşlarınızla dalga geçmemen gerek.",
+      "english": "You shouldn't tease your classmates."
+    },
+    {
+      "id": "s39",
+      "turkish": "Ders sırasında yemek yememen gerek.",
+      "english": "You shouldn't eat during the lesson."
+    },
+    {
+      "id": "s40",
+      "turkish": "Sınıfta arkadaşlarınıza mesaj atmaman gerek.",
+      "english": "You shouldn't text your friends in class."
+    },
+    {
+      "id": "s41",
+      "turkish": "Çalışmanız gerektiğinde, hayal kurmaman gerek.",
+      "english": "You shouldn't daydream when you're supposed to be working."
+    },
+    {
+      "id": "s42",
+      "turkish": "Doktorun randevusunu iptal etmesi mi gerek?",
+      "english": "Should she cancel her doctor's appointment?"
+    },
+    {
+      "id": "s43",
+      "turkish": "Hayatı bu kadar ciddiye almaman gerek. Biraz sakinleş.",
+      "english": "You shouldn't take life so seriously. Relax a bit."
+    },
+    {
+      "id": "s44",
+      "turkish": "Karton kutulardaki portakal suyunun hiçbir faydası yoktur. Kendin yapman gerek.",
+      "english": "Orange juice in cartons has no goodness in it at all. You should make it yourself."
+    },
+    {
+      "id": "s45",
+      "turkish": "Hava durumu tahmini bu hafta sonunun iyi olacağım sdylüyor. Pikniğe gitmemiz gerek.",
+      "english": "The weather forecast says this weekend will be fine. We should go on a picnic."
+    },
+    {
+      "id": "s46",
+      "turkish": "Eleonora'dan yıllardır haber almadım. Ona bir yiiziik vermem gerek.",
+      "english": "I haven't heard from Eleonora for ages. I should give her a ring."
+    },
+    {
+      "id": "s47",
+      "turkish": "Kilo vermek istiyorsan, makarna, patates, beyaz ekmek veya beyaz pıring yememen gerek.",
+      "english": "\\f you want to lose weight, you shouldn't eat pasta, potatoes, white bread or white rice."
+    },
+    {
+      "id": "s48",
+      "turkish": "Kocam akşam yemeii hazırlıyor. iyi bir asc değil, bu yüzden dzel bir şey beklememen gerek.",
+      "english": "My husband is preparing dinner. He's not a good cook so you shouldn't expect anything special."
+    },
+    {
+      "id": "s49",
+      "turkish": "Bence daha çok rahatlaman gerek. Son zamanlarda çok çalıştyorsun.",
+      "english": "I think you should relax more. You have been working too much lately."
+    },
+    {
+      "id": "s50",
+      "turkish": "Tavsiyemi dinlemen ve doktora gitmen gerek. Beklersen, soğuk algınhin düzelmeyecek.",
+      "english": "You should take my advice and go to the doctor. Your cold is not going to get better if you wait."
+    },
+    {
+      "id": "s51",
+      "turkish": "Bugün daha fazla antreman yapmaman gerek. Çok yorgun görünüyorsun. Bir ara ver!",
+      "english": "You shouldn't do any more training today. You look so tired. Take a break!"
+    },
+    {
+      "id": "s52",
+      "turkish": "Kayak yapmaya giderken, daima uygun kıyafetler giymen gerek.",
+      "english": "You should always wear suitable clothes when you go skiing."
+    },
+    {
+      "id": "s53",
+      "turkish": "Hasta hissetmeye başladığında, doktora gitmesi gerek.",
+      "english": "He should go to the doctor when he starts feeling ill."
+    },
+    {
+      "id": "s54",
+      "turkish": "Bu hafta sonu bir piyango bileti alman gerek. 3 milyon dolara kadar kazanabilirsin.",
+      "english": "You should buy a lottery ticket this weekend. You might win up to 3 million dollars."
+    },
+    {
+      "id": "s55",
+      "turkish": "Geçmek için yeterince iyi notun olsa bile, testi ciddiye alman gerek.",
+      "english": "You should take the test seriously, even if you already have enough good grades to pass."
+    },
+    {
+      "id": "s56",
+      "turkish": "Öğrencilerin, grip olduklarında evde kalmaları gerek.",
+      "english": "Students should stay home if they have the flu."
+    },
+    {
+      "id": "s57",
+      "turkish": "Dışarı çıkmadan Önce, odam temizlemen gerek.",
+      "english": "You should clean up your room before you go outside."
+    },
+    {
+      "id": "s58",
+      "turkish": "Bence o pantolonla mavi gömleğini giymen gerek.",
+      "english": "I think you should wear your blue shirt with those pants."
+    },
+    {
+      "id": "s59",
+      "turkish": "Baba, çok sigara içmemen gerek, bu senin için kötü.",
+      "english": "Dad, you shouldn't smoke so much, it's bad for you."
+    },
+    {
+      "id": "s60",
+      "turkish": "Bence trene binmen gerek, otobüsten daha hızlı.",
+      "english": "I think you should take the train, it's faster than the bus."
+    },
+    {
+      "id": "s61",
+      "turkish": "Olanları öğretmeninize anlatmanız gerektiğini düşüntiyor musunuz?",
+      "english": "Do you think you should tell your teacher what happened?"
+    },
+    {
+      "id": "s62",
+      "turkish": "İnsanlara zarar vermemen veya bir şeyler çalmaman gerek.",
+      "english": "You shouldn't hurt people or steal things."
+    },
+    {
+      "id": "s63",
+      "turkish": "TV izliyorum ama tezim Üzerinde çalışmam gerek.",
+      "english": "I'm watching TV but I should work on my thesis."
+    },
+    {
+      "id": "s64",
+      "turkish": "Çocukların ateşle asla oynamamaları gerek",
+      "english": "Children should never play with fire."
+    },
+    {
+      "id": "s65",
+      "turkish": "Her yemekten sonra, yürüyüş yapman gerek.",
+      "english": "You should take a walk after each meal."
+    },
+    {
+      "id": "s66",
+      "turkish": "İşini korumak istiyorsan, aptalca bir şey söylememen gerek.",
+      "english": "You shouldn't say anything stupid if you want to keep your job."
+    },
+    {
+      "id": "s67",
+      "turkish": "Hayatta hedeflerinin olması gerek.",
+      "english": "You should have goals in life."
+    },
+    {
+      "id": "s68",
+      "turkish": "Pauline'i görürsen, ona karşı nazik olman gerek!",
+      "english": "If you see Pauline, you should be polite to her!"
+    },
+    {
+      "id": "s69",
+      "turkish": "ABD'de çalışmak istiyorsan, iyi İngilizce konuşman gerek.",
+      "english": "If you want to work in the USA you should speak good English."
+    },
+    {
+      "id": "s70",
+      "turkish": "Çok yağmur yağıyor, çocukların eve gelmeleri gerek.",
+      "english": "It's raining hard, the children ought to come indoors."
+    },
+    {
+      "id": "s71",
+      "turkish": "Bu kazakta delikler var, yenisini almam gerek.",
+      "english": "This pullover has got holes in it, I should get a new one."
+    },
+    {
+      "id": "s72",
+      "turkish": "Mektubun yarın ulaşması gerek. Ekspres teslimatla gönderdiler.",
+      "english": "The letter should arrive tomorrow. They sent it by express delivery."
+    },
+    {
+      "id": "s73",
+      "turkish": "Bir benzin istasyonunda sigara iğçmemen gerek. Bir patılamaya neden olabilirsin.",
+      "english": "You shouldn't smoke at a petrol station. You can could cause an explosion."
+    },
+    {
+      "id": "s74",
+      "turkish": "Bir sorunun varsa, amirinle konuşman gerek.",
+      "english": "You should talk to your supervisor if you have a problem."
+    },
+    {
+      "id": "s75",
+      "turkish": "Bu raporu Cuma'ya kadar bitirmem gerek.",
+      "english": "I should finish this report by Friday."
+    },
+    {
+      "id": "s76",
+      "turkish": "O yeni restoranı denememiz gerek. iyi değerlendirmeleri var.",
+      "english": "We should try that new restaurant. It's got good reviews."
+    },
+    {
+      "id": "s77",
+      "turkish": "Bags ağnn varsa, ağrı kesici alman gerek.",
+      "english": "You should take a painkiller if you have a headache."
+    },
+    {
+      "id": "s78",
+      "turkish": "Ebeveynlerin çocuklanyla kaliteli zaman geçirmeleri gerek.",
+      "english": "Parents should spend quality time with their children."
+    },
+    {
+      "id": "s79",
+      "turkish": "İkinci kata mı gelmem gerekiyor yoksa birinci kata mı gelmek istersin?",
+      "english": "Should I come to the second floor or do you want to come to the first floor?"
+    },
+    {
+      "id": "s80",
+      "turkish": "Bence biraz dinlenmesi gerek.",
+      "english": "I think he should rest for a while."
+    },
+    {
+      "id": "s81",
+      "turkish": "Web sitemiz için içerik oluşturmaya zaman ayırmamız gerek.",
+      "english": "We should spend our time creating content for our website."
+    },
+    {
+      "id": "s82",
+      "turkish": "Çocuklar için Noel hediyeleri almaya başlamamız gerek.",
+      "english": "We should start getting Christmas gifts for the children."
+    },
+    {
+      "id": "s83",
+      "turkish": "Bence ona güller vermen gerek.",
+      "english": "I think you should give her roses."
+    },
+    {
+      "id": "s84",
+      "turkish": "Hıçkırıklar' durdurmak için ne yapmam gerek?",
+      "english": "What should I do to stop hiccups?"
+    },
+    {
+      "id": "s85",
+      "turkish": "Köpeğimi köpek maması ile beslemeyi ne zaman bırakmam gerek?",
+      "english": "When should I stop feeding my dog with puppy food?"
+    },
+    {
+      "id": "s86",
+      "turkish": "Çamaşırlarımı nereye koymam gerek?",
+      "english": "Where should I put my laundry?"
+    },
+    {
+      "id": "s87",
+      "turkish": "Araba kullanırken, dikkatli olman gerek.",
+      "english": "You should be careful when you drive a car"
+    },
+    {
+      "id": "s88",
+      "turkish": "Bir ara buraya gelip beni ziyaret etmen gerek.",
+      "english": "You should come out here and visit me sometime."
+    },
+    {
+      "id": "s89",
+      "turkish": "Belirtiler kötüleşirse, bir doktora damşman gerek.",
+      "english": "You should consult a doctor if the symptoms get worse."
+    },
+    {
+      "id": "s90",
+      "turkish": "Satın almadan Önce, arabayı iyice incelemen gerek.",
+      "english": "You should inspect the car well before you buy it."
+    },
+    {
+      "id": "s91",
+      "turkish": "Kararını yakında vermen gerek. Seçim Snumuzdeki ay yapılacak.",
+      "english": "You should make up your mind soon. The election is next month."
+    },
+    {
+      "id": "s92",
+      "turkish": "Her gün kelimeleri gözden geçirmek için biraz zaman ayırman gerek.",
+      "english": "You should spend a little time each day reviewing vocabulary."
+    },
+    {
+      "id": "s93",
+      "turkish": "Şikayet etmeye daha az, ııretken bir şey yapmaya daha çok zaman ayırman gerek.",
+      "english": "You should spend less time complaining and more time doing something productive."
+    },
+    {
+      "id": "s94",
+      "turkish": "Bu resimleri albümünüze yapıştırman gerek.",
+      "english": "You should stick those pictures in your album."
+    },
+    {
+      "id": "s95",
+      "turkish": "Bu fırsattan yararlanman gerek.",
+      "english": "You should take advantage of this opportunity."
+    },
+    {
+      "id": "s96",
+      "turkish": "Bu sabah yanına bir şemsiye alman gerek.",
+      "english": "You should take an umbrella with you this morning."
+    },
+    {
+      "id": "s97",
+      "turkish": "Sanınm onu şimdi aramam gerek.",
+      "english": "I think I should give her a call now."
+    },
+    {
+      "id": "s98",
+      "turkish": "Satın almayı hemen onaylamaları mı gerek?",
+      "english": "Should they confirm the purchasing immediately?"
+    },
+    {
+      "id": "s99",
+      "turkish": "Bu şirketin kurallarına uymaları gerekmez mi?",
+      "english": "Shouldn't they obey the rules of this company?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Arkadaşımın yeni bir işe başvurması gerek.",
+      "english": "My friend should apply for a new job."
+    }
+  ],
+  "modal-8": [
+    {
+      "id": "s1",
+      "turkish": "Kış gelmeden, arabanı servise götürmen gerek.",
+      "english": "You ought to take your car to the car service before the winter."
+    },
+    {
+      "id": "s2",
+      "turkish": "Ron'un tavrını geliştirmesi gerek. Yapmazsa, onu kovabilirler.",
+      "english": "Ron ought to improve his attitude. If he doesn't, they might fire him."
+    },
+    {
+      "id": "s3",
+      "turkish": "Biraz kılo vermek istiyorsan, sağlık beslenmen gerek.",
+      "english": "You ought to eat healthy if you want to lose some weight."
+    },
+    {
+      "id": "s4",
+      "turkish": "Gerçeği, öğretmene sdylemem gerek.",
+      "english": "I ought to tell the truth to the teacher."
+    },
+    {
+      "id": "s5",
+      "turkish": "Ödevini bitirmeden, TV izlememen gerek.",
+      "english": "You ought not to watch TV before finishing your homework."
+    },
+    {
+      "id": "s6",
+      "turkish": "Bence farklı bir iş araması gerek.",
+      "english": "I think he ought to look for a different job."
+    },
+    {
+      "id": "s7",
+      "turkish": "Her gece bir bölüm okuman gerek.",
+      "english": "You ought to read a chapter a night."
+    },
+    {
+      "id": "s8",
+      "turkish": "Ödevini okuldan hemen sonra yapman gerek.",
+      "english": "You ought to do your homework right after school."
+    },
+    {
+      "id": "s9",
+      "turkish": "Bu talimatlara uymak zor. Her şeyi daha iyi açıklamalan gerek.",
+      "english": "These instructions are difficult to follow. They ought to explain things better."
+    },
+    {
+      "id": "s10",
+      "turkish": "Soğuk algınhğin kötüleşiyor ve burnun akıyor. Doktora görünmen gerek.",
+      "english": "Your cold is getting worse and you have a runny nose. You ought to see the doctor."
+    },
+    {
+      "id": "s11",
+      "turkish": "Bu kitaplan kursum için almam gerek ama hiç param yok.",
+      "english": "I ought to buy these books for my course but I haven't got any money."
+    },
+    {
+      "id": "s12",
+      "turkish": "Kendini hasta hissedersen, bir doktora görünmen gerek.",
+      "english": "You ought to see a doctor if you feel ill."
+    },
+    {
+      "id": "s13",
+      "turkish": "J havalarda dikkatlice sürmen gerek.",
+      "english": "You ought to drive carefully in bad weather."
+    },
+    {
+      "id": "s14",
+      "turkish": "Odadan çıkarken, 13181 kapatman gerek.",
+      "english": "You ought to switch off the light when you leave the room."
+    },
+    {
+      "id": "s15",
+      "turkish": "Pastayı yapmaya başlamadan Önce, tüm malzemeleri kontrol etmen gerek.",
+      "english": "You ought to check all the ingredients before you start making the cake."
+    },
+    {
+      "id": "s16",
+      "turkish": "Bob'un, araba kullanırken, daha dikkatli olması gerek: yayalar için gerçek bir tehlike.",
+      "english": "Bob ought to be more careful when he is driving: he is a real danger to pedestrians."
+    },
+    {
+      "id": "s17",
+      "turkish": "Yashilara saygılı olman gerek.",
+      "english": "You ought to be respectful of the elderly."
+    },
+    {
+      "id": "s18",
+      "turkish": "Restoranda akşam yemeği yemek istiyorsan, önceden masa ayırtmanız gerek.",
+      "english": "If you want to have dinner at the restaurant, you ought to book a table in advance."
+    },
+    {
+      "id": "s19",
+      "turkish": "Arkadaşın hastaysa, onu ziyaret etmen gerek.",
+      "english": "You ought to visit your friend if he's sick."
+    },
+    {
+      "id": "s20",
+      "turkish": "Sebze yemek istemediğini biliyorum, ama yapman gerek.",
+      "english": "I know you don't want to eat vegetables, but you ought to."
+    },
+    {
+      "id": "s21",
+      "turkish": "Oraya gitmem gerek ama sensiz gitmeyeceğim.",
+      "english": "I ought to go there, but I won't go without you."
+    },
+    {
+      "id": "s22",
+      "turkish": "Öğretmeninizden izin istemen gerek.",
+      "english": "You ought to ask for your teacher's permission."
+    },
+    {
+      "id": "s23",
+      "turkish": "Ondan tavsiye istemen gerek.",
+      "english": "You ought to ask him for advice."
+    },
+    {
+      "id": "s24",
+      "turkish": "Hisse senedi değerinin artması gerek.",
+      "english": "His stock ought to increase in value."
+    },
+    {
+      "id": "s25",
+      "turkish": "Hikümetin işsizlere yardım etmesi gerek.",
+      "english": "The government ought to help the unemployed people."
+    },
+    {
+      "id": "s26",
+      "turkish": "Fast food yememen gerek, aksi takdirde kilo alırsın.",
+      "english": "You ought not to eat fast food, otherwise you'll gain weight."
+    },
+    {
+      "id": "s27",
+      "turkish": "Mektubun üst kısmını imzalamaman gerek.",
+      "english": "You ought not to sign at the top of the letter."
+    },
+    {
+      "id": "s28",
+      "turkish": "Yorgun görünüyorsun. Dinlenmen gerek.",
+      "english": "You look tired. You better ought to take a rest."
+    },
+    {
+      "id": "s29",
+      "turkish": "Bir odadan her çıktığında, 13181 kapatman gerek.",
+      "english": "You ought to switch off the light whenever you leave a room."
+    },
+    {
+      "id": "s30",
+      "turkish": "Mark'ın terfi alması gerek. Onu hakediyor.",
+      "english": "Mark ought to get the promotion. He deserves it."
+    },
+    {
+      "id": "s31",
+      "turkish": "Bu çorbayı denemen gerek - çok lezzetli!",
+      "english": "You ought to try this soup - it's delicious!"
+    },
+    {
+      "id": "s32",
+      "turkish": "Başkası satın almadan Önce o ev hakkında bir karar vermesi gerek.",
+      "english": "She ought to make a decision about that house before someone else buys it."
+    },
+    {
+      "id": "s33",
+      "turkish": "Toplantıya başlamamuiz gerek, vakit geç oluyor.",
+      "english": "We ought to start the meeting, it's getting late."
+    },
+    {
+      "id": "s34",
+      "turkish": "Bisikletlerini kasksiz sürmemelidirler.",
+      "english": "They oughtn't ride their bicycles without helmets."
+    },
+    {
+      "id": "s35",
+      "turkish": "Biraz daha çalışması gerek. İyi gidiyor ama daha iyisini yapabilir.",
+      "english": "He ought to study a bit more. He's doing ok but he can do better."
+    },
+    {
+      "id": "s36",
+      "turkish": "Bu kadar çok kahve içmeyi bırakman gerek.",
+      "english": "You ought to stop drinking so much coffee."
+    },
+    {
+      "id": "s37",
+      "turkish": "Ne zaman ayrılmamız gerek?",
+      "english": "What time ought we to leave?"
+    },
+    {
+      "id": "s38",
+      "turkish": "Yoğun trafikten kağınmak için öğleden sonra 4'te gitmemiz gerektiğini diisiiniiyorum.",
+      "english": "I think we ought to go at 4 pm to avoid the rush-hour traffic."
+    },
+    {
+      "id": "s39",
+      "turkish": "Bu eğitime katılmamuz gerek.",
+      "english": "We ought to participate in this training."
+    },
+    {
+      "id": "s40",
+      "turkish": "Bir an önce eve gitmen gerek. Hava kararıyor.",
+      "english": "You ought to go home as soon as possible. It's getting dark."
+    },
+    {
+      "id": "s41",
+      "turkish": "Her yemekten sonra dış ipi kullanman ve dişlerini firgcalaman gerek.",
+      "english": "You ought to floss and brush your teeth after every meal."
+    },
+    {
+      "id": "s42",
+      "turkish": "İgmeyi bırakman gerek.",
+      "english": "You ought to stop drinking."
+    },
+    {
+      "id": "s43",
+      "turkish": "Büyüklerimize saygı duymamız gerek.",
+      "english": "We ought to respect our elders."
+    },
+    {
+      "id": "s44",
+      "turkish": "Bu hisse senedinin değerinde artması gerek.",
+      "english": "This stock ought to increase in value."
+    },
+    {
+      "id": "s45",
+      "turkish": "Öğrencilerin öğretmenlerine saygı duymaları gerek.",
+      "english": "The students ought to respect their teacher."
+    },
+    {
+      "id": "s46",
+      "turkish": "Sınav sırasında her öğrencinin kendi i-kartını taşıması gerek.",
+      "english": "Every student ought to carry his or her i-card during the examination."
+    },
+    {
+      "id": "s47",
+      "turkish": "Kızlarla dalga geğmek, sınavlarda kopyalamak gibi kötü alışkanuklardan uzak durman gerek.",
+      "english": "You ought to keep away from bad habits like teasing girls, copying in exams etc."
+    },
+    {
+      "id": "s48",
+      "turkish": "Jane oldukça bitkin görünüyor. Biraz dinlenmesi gerek.",
+      "english": "Jane seems to be quite exhausted. She ought to take some rest."
+    },
+    {
+      "id": "s49",
+      "turkish": "Bu günlerde yaptığınız şey vahşi bir kaz avı. Kendi projene konsantre olmayı tercih etmen gerek.",
+      "english": "What you are doing these days is a wild goose chase. You ought to rather concentrate on your own project."
+    },
+    {
+      "id": "s50",
+      "turkish": "Sanınm, salondaki çekmecede olmalı.",
+      "english": "I think, it ought to be in the drawer at the drawing room."
+    },
+    {
+      "id": "s51",
+      "turkish": "Önümüzdeki günlerde borsa kurlarının yükselmeye devam etmesi gerek.",
+      "english": "The stock exchange rates ought to go on rising in coming few days."
+    },
+    {
+      "id": "s52",
+      "turkish": "Ülkenin her vatandaşının Anayasasına saygı göstermesi ve uyması gerek.",
+      "english": "Every citizen of the country ought to respect and obey its Constitution."
+    },
+    {
+      "id": "s53",
+      "turkish": "Kendine inantyorsan, kesinlikle yapman gerek.",
+      "english": "If you believe in yourself, you ought to definitely do it."
+    },
+    {
+      "id": "s54",
+      "turkish": "Nicky, lobide Yönetmeni beklemen gerek.",
+      "english": "Nicky, you ought to wait for the Director in the lobby."
+    },
+    {
+      "id": "s55",
+      "turkish": "Karmaşık matematıdı bile bir anda çözmesi gerek.",
+      "english": "He ought to solve even complex mathematics in a jiffy."
+    },
+    {
+      "id": "s56",
+      "turkish": "Bu akşam akşam yemeğinde ne yemem gerek?",
+      "english": "What ought I to have for dinner tonight?"
+    },
+    {
+      "id": "s57",
+      "turkish": "Onlan Gnlemek için daha çok çgalışmamız gerek.",
+      "english": "We ought to work harder to prevent them."
+    },
+    {
+      "id": "s58",
+      "turkish": "Ştireci hızlandırmaya yardımcı olmalar gerek.",
+      "english": "They ought to help speed up the process."
+    },
+    {
+      "id": "s59",
+      "turkish": "Liselerin, güneş erken mi başlaması gerek?",
+      "english": "Ought high schools to start the day earlier?"
+    },
+    {
+      "id": "s60",
+      "turkish": "Evliliğin aşka dayanması gerek.",
+      "english": "Marriage ought to be based on love."
+    },
+    {
+      "id": "s61",
+      "turkish": "Çok çeşitli kurslar almam ve sıkı bir galisma programını takip etmem gerek.",
+      "english": "I ought to take a wide variety of courses and follow a strict study schedule."
+    },
+    {
+      "id": "s62",
+      "turkish": "Rekabeti ne kadar vurgulamamız gerek?",
+      "english": "How much we to emphasize competition?"
+    },
+    {
+      "id": "s63",
+      "turkish": "Öğrencilerin, çalışmalarını orijinal ile karşılaştırmalan gerek.",
+      "english": "Students ought to compare their work with the orginal."
+    },
+    {
+      "id": "s64",
+      "turkish": "Bunun nasıl kullanılacağım öğrenmen gerek.",
+      "english": "You ought to learn how to use it."
+    },
+    {
+      "id": "s65",
+      "turkish": "Bir kişiyi çok iyi tanımadığın sürece asla eleştirmemen gerek.",
+      "english": "You ought never to criticize someone unless you know the person very well."
+    },
+    {
+      "id": "s66",
+      "turkish": "İkinci dilinde bir fıkra anlatmak istediğinde, her zaman dikkatli olman gerek.",
+      "english": "You ought always to be careful when you want to tell a joke in your second language."
+    },
+    {
+      "id": "s67",
+      "turkish": "Gdozden geçirmen gerekirse diye, notlarını saklaman gerek.",
+      "english": "You ought to keep your notes in case you need to review them."
+    },
+    {
+      "id": "s68",
+      "turkish": "Bu sdylenecek korkung bir şey. Kendinden utanman gerek!",
+      "english": "That's a terrible thing to say. You ought to be ashamed of yourself!"
+    },
+    {
+      "id": "s69",
+      "turkish": "Sınav için çok çalışıyor, bu yüzden geğmesi gerekiyor.",
+      "english": "She's been studying hard for the exam, so she ought to pass."
+    },
+    {
+      "id": "s70",
+      "turkish": "Hepimizin diğer insanlara karşı bir görevi var ve onların haklarım ve 6zgürlüklerini korumamız gerek.",
+      "english": "We all have a duty to other people, and we ought to protect their rights and freedoms."
+    },
+    {
+      "id": "s71",
+      "turkish": "Yabancı bir ıılkede yastyorsan, dil 6grenmeye çalışman gerek.",
+      "english": "If you live in foreign country, you ought to try to learn language."
+    },
+    {
+      "id": "s72",
+      "turkish": "Zenginlerin daha yüksek vergiler ödemesi gerektiğini düşünüyor musun?",
+      "english": "Do you think the rich ought to pay higher taxes?"
+    },
+    {
+      "id": "s73",
+      "turkish": "Arabadayken bunu takman gerek.",
+      "english": "You ought to wear this when you're in a car."
+    },
+    {
+      "id": "s74",
+      "turkish": "Seni sabah mı öğleden sonra m aramam gerek?",
+      "english": "When ought I to call you, morning or afternoon?"
+    },
+    {
+      "id": "s75",
+      "turkish": "Aracında yedek lastiğin olması gerek.",
+      "english": "Your car ought to have a spare tire."
+    },
+    {
+      "id": "s76",
+      "turkish": "Çalınması ihtimaline karşı, bisikletinizi kaydettirmen gerek.",
+      "english": "You ought to register your bike in case it is stolen."
+    },
+    {
+      "id": "s77",
+      "turkish": "Araban çalınırsa, polise haber vermen gerek.",
+      "english": "You ought to inform the police if your car is stolen."
+    },
+    {
+      "id": "s78",
+      "turkish": "Suçla ilgili herhangi bir bilgin varsa, polise söylemen gerek.",
+      "english": "You ought to tell the police if you have any information about the crime."
+    },
+    {
+      "id": "s79",
+      "turkish": "Mektubu bugün onlara gönderdim, bu yüzden Pazartesi'ye kadar almaları gerekiyor.",
+      "english": "I sent the letter to them today, so they ought to receive it by Monday."
+    },
+    {
+      "id": "s80",
+      "turkish": "Eğer şimdi ayrılırsak, en geç öğle vakti varmamuz gerek.",
+      "english": "If we leave now, we ought to arrive no later than lunchtime."
+    },
+    {
+      "id": "s81",
+      "turkish": "Işıkları açık mı bırakmam yoksa kapatmam mı gerek?",
+      "english": "Ought I to leave the lights on or turn them off?"
+    },
+    {
+      "id": "s82",
+      "turkish": "Bence Tom'un önerisine uymamız gerek.",
+      "english": "I think we ought to follow Tom's suggestion."
+    },
+    {
+      "id": "s83",
+      "turkish": "Şehir merkezinde daha fazla parka sahip olmaları gerekir.",
+      "english": "They ought to have more parks in the city centre."
+    },
+    {
+      "id": "s84",
+      "turkish": "Her gün bol bol meyve ve sebze yememiz gerek.",
+      "english": "We ought to eat lots of fruit and vegetables every day."
+    },
+    {
+      "id": "s85",
+      "turkish": "Konserin yaklaşık iki saat sürmesi gerek, bu yüzden 68leden sonra 12'de evde olacağız.",
+      "english": "The concert ought to only take about two hours so we'll be home by 12 pm."
+    },
+    {
+      "id": "s86",
+      "turkish": "Bu hafta sonu sinemada bazı iyi filmlerin olması gerek.",
+      "english": "There ought to be some good films at the cinema this weekend."
+    },
+    {
+      "id": "s87",
+      "turkish": "Burada daha fazla sokak lambası olması gerek.",
+      "english": "There ought to be more street lights here."
+    },
+    {
+      "id": "s88",
+      "turkish": "Köpeğimi daha çok gezdirmem gerekiyor. O çok şişman.",
+      "english": "I really ought to walk my dog more. He's so fat."
+    },
+    {
+      "id": "s89",
+      "turkish": "Temel ilaçların parasını ddemememiz gerek.",
+      "english": "We ought not to have to pay for basic medicines."
+    },
+    {
+      "id": "s90",
+      "turkish": "Bunlan ona söylememem gerek.",
+      "english": "I ought not to say those things to her."
+    },
+    {
+      "id": "s91",
+      "turkish": "Gelecek nesillerin yararına böyle bir fedakarlık yapmamız gerekiyor mu?",
+      "english": "Ought we to make such a sacrifice for the benefit of future generations?"
+    },
+    {
+      "id": "s92",
+      "turkish": "Bunu yetkili birisine bildirmem gerekir mi?",
+      "english": "Ought I to report it to someone in authority?"
+    },
+    {
+      "id": "s93",
+      "turkish": "Bel dlcumii küçültmek için daha az yemem gerek.",
+      "english": "I ought to eat less to reduce my waistline."
+    },
+    {
+      "id": "s94",
+      "turkish": "Yakalayabilirsek, evcil hayvanımızın olması gerek.",
+      "english": "It ought to be our pet if we can catch it."
+    },
+    {
+      "id": "s95",
+      "turkish": "Kotii Öksürüğü konusunda bir şeyler yapması gerekiyor.",
+      "english": "She ought to do something about her bad cough."
+    },
+    {
+      "id": "s96",
+      "turkish": "Diğerleri bizi beklerken, şimdi gitmemiz gerek.",
+      "english": "We ought to leave now as the others are waiting for us."
+    },
+    {
+      "id": "s97",
+      "turkish": "Bunu yaptığınız için kendinden utanman gerek.",
+      "english": "You ought to be ashamed of yourself for doing this."
+    },
+    {
+      "id": "s98",
+      "turkish": "Eğer trafik sıkışıklığı içinde kalmazlarsa, anne babanın kısa süre içinde eve gelmesi gerek.",
+      "english": "Your parents ought to arrive home shortly if they are not stuck in a traffic jam."
+    },
+    {
+      "id": "s99",
+      "turkish": "Yanlış bir şey yapmadıysan, patronundan bu kadar korkmaman gerek.",
+      "english": "If you have not done anything wrong, you ought not to be so afraid of your boss."
+    },
+    {
+      "id": "s100",
+      "turkish": "Çorbama çok fazla tuz eklememem gerek.",
+      "english": "You ought not to add so much salt to my soup."
+    }
+  ]
+}

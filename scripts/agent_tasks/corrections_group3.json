@@ -1,0 +1,1923 @@
+{
+  "total_corrections": 274,
+  "corrections": [
+    {
+      "set": "modal-1",
+      "id": "s2",
+      "old_turkish": "Bu binada sigara içemezsin. Yasadisı.",
+      "new_turkish": "Bu binada sigara içemezsin. Yasadışı.",
+      "english": "You can't smoke in this building. It is illegal."
+    },
+    {
+      "set": "modal-1",
+      "id": "s4",
+      "old_turkish": "Tom çok iyi sür yazabilir.",
+      "new_turkish": "Tom çok iyi şiir yazabilir.",
+      "english": "Tom can write poetry very well."
+    },
+    {
+      "set": "modal-1",
+      "id": "s7",
+      "old_turkish": "",
+      "new_turkish": "Yeni işitme cihazlarıyla çok daha iyi işitiyor.",
+      "english": "She can hear much better with her new hearing aids."
+    },
+    {
+      "set": "modal-1",
+      "id": "s10",
+      "old_turkish": "Kardeşim lavabolan, tuvaletleri veya duşları tamir edemez.",
+      "new_turkish": "Kardeşim lavaboları, tuvaletleri veya duşları tamir edemez.",
+      "english": "My brother can't fix sinks, toilets, or showers."
+    },
+    {
+      "set": "modal-1",
+      "id": "s11",
+      "old_turkish": "Sağı kesip boyayabilir misin?",
+      "new_turkish": "Saçı kesip boyayabilir misin?",
+      "english": "Can you cut and color hair."
+    },
+    {
+      "set": "modal-1",
+      "id": "s13",
+      "old_turkish": "Nabız ve tansiyon dlçebilir.",
+      "new_turkish": "Nabız ve tansiyon ölçebilir.",
+      "english": "She can take a pulse and blood pressure."
+    },
+    {
+      "set": "modal-1",
+      "id": "s19",
+      "old_turkish": "Çok güzel bir sesin var. Bizim için şarkı sdyleyebilirsin!",
+      "new_turkish": "Çok güzel bir sesin var. Bizim için şarkı söyleyebilirsin!",
+      "english": "You have such a beautiful voice. You can sing for us!"
+    },
+    {
+      "set": "modal-1",
+      "id": "s22",
+      "old_turkish": "İsteğe bagh olduğu için bu kitabı kendi zevkimiz için okuyabiliriz.",
+      "new_turkish": "İsteğe bağlı olduğu için bu kitabı kendi zevkimiz için okuyabiliriz.",
+      "english": "We can read this book for our own pleasure because it is optional."
+    },
+    {
+      "set": "modal-1",
+      "id": "s29",
+      "old_turkish": "Bir seferde kağ sosisli yiyebilirsin?",
+      "new_turkish": "Bir seferde kaç sosisli yiyebilirsin?",
+      "english": "How many hot dogs can you eat at one time?"
+    },
+    {
+      "set": "modal-1",
+      "id": "s37",
+      "old_turkish": "Bu pencereyi açamyorum. Sanırım sıkışmış!",
+      "new_turkish": "Bu pencereyi açamıyorum. Sanırım sıkışmış!",
+      "english": "I can't open this window. I think it's stuck!"
+    },
+    {
+      "set": "modal-1",
+      "id": "s38",
+      "old_turkish": "Gill piyano galamnyor. Hiç çalışmadı / calığmamış.",
+      "new_turkish": "Gill piyano çalamıyor. Hiç çalışmadı / çalışmamış.",
+      "english": "Gill can't play the piano. She's never studied it."
+    },
+    {
+      "set": "modal-1",
+      "id": "s39",
+      "old_turkish": "Bu Jake olamaz. Bu imkansız. ispanya'ya gidecedini sdyledi.",
+      "new_turkish": "Bu Jake olamaz. Bu imkansız. İspanya'ya gideceğini söyledi.",
+      "english": "That can't be Jake. It's impossible. He said he was going to Spain."
+    },
+    {
+      "set": "modal-1",
+      "id": "s40",
+      "old_turkish": "Kız kardeşine isterse geceyi burada kalabileceğini sdyle.",
+      "new_turkish": "Kız kardeşine isterse geceyi burada kalabileceğini söyle.",
+      "english": "Tell your sister she can stay the night here if she wants to."
+    },
+    {
+      "set": "modal-1",
+      "id": "s41",
+      "old_turkish": "Brenda otuzun üzerinde olamaz. Benden bir yıl sonra mezun oldu ve ben sadece 25 yasındayım.",
+      "new_turkish": "Brenda otuzun üzerinde olamaz. Benden bir yıl sonra mezun oldu ve ben sadece 25 yaşındayım.",
+      "english": "Brenda can't be over thirty. She graduated a year after me and I'm only 25."
+    },
+    {
+      "set": "modal-1",
+      "id": "s42",
+      "old_turkish": "Bu John olamaz. Avustralya'ya seyahat edeceğini sdyledi.",
+      "new_turkish": "Bu John olamaz. Avustralya'ya seyahat edeceğini söyledi.",
+      "english": "That can't be John. He said he was going to travel to Australia."
+    },
+    {
+      "set": "modal-1",
+      "id": "s44",
+      "old_turkish": "",
+      "new_turkish": "Ülkende kaç yaşında ehliyet alabilirsin?",
+      "english": "At what age can you get a driving licence in your country?"
+    },
+    {
+      "set": "modal-1",
+      "id": "s49",
+      "old_turkish": "Bu Harry olamaz. Paris'e gideceğini sdyledi. O burada ne yapıyor?",
+      "new_turkish": "Bu Harry olamaz. Paris'e gideceğini söyledi. O burada ne yapıyor?",
+      "english": "That can't be Harry. He said he was going to Paris. What's he doing here?"
+    },
+    {
+      "set": "modal-1",
+      "id": "s50",
+      "old_turkish": "Orada 5 yıl geçirdiği için akıcı italyanca konuşabiliyor.",
+      "new_turkish": "Orada 5 yıl geçirdiği için akıcı İtalyanca konuşabiliyor.",
+      "english": "He can speak Italian fluently because he spent 5 years there."
+    },
+    {
+      "set": "modal-1",
+      "id": "s54",
+      "old_turkish": "Tam zamanlı çalışıyor ve doktora için galisiyor. Bu kolay olamaz.",
+      "new_turkish": "Tam zamanlı çalışıyor ve doktora için çalışıyor. Bu kolay olamaz.",
+      "english": "He's working full-time and studying for his Ph.D. That can't be easy."
+    },
+    {
+      "set": "modal-1",
+      "id": "s56",
+      "old_turkish": "Çok sessiz konuşuyorsun. Seni duyamıyorum",
+      "new_turkish": "Çok sessiz konuşuyorsun. Seni duyamıyorum.",
+      "english": "You are speaking very quietly. I can't hear you."
+    },
+    {
+      "set": "modal-1",
+      "id": "s60",
+      "old_turkish": "Ağım. - Merak etme, senin için bir sandviç yapabilirim.",
+      "new_turkish": "Açım. - Merak etme, senin için bir sandviç yapabilirim.",
+      "english": "I'm hungry. - Don't worry, I can make a sandwich for you."
+    },
+    {
+      "set": "modal-1",
+      "id": "s62",
+      "old_turkish": "Hala öğreniyor. Henüz ayakkabı bağlarım yapamtyor.",
+      "new_turkish": "Hala öğreniyor. Henüz ayakkabı bağlarını yapamıyor.",
+      "english": "He is still learning. He can't do his shoe laces up just yet."
+    },
+    {
+      "set": "modal-1",
+      "id": "s67",
+      "old_turkish": "Kedim kağacak, lütfen kaptyı kapatır mısın?",
+      "new_turkish": "Kedim kaçacak, lütfen kapıyı kapatır mısın?",
+      "english": "My cat will run out, can you please close the door?"
+    },
+    {
+      "set": "modal-1",
+      "id": "s69",
+      "old_turkish": "Erkek çocuk, babasından daha hizhi at sürebilir.",
+      "new_turkish": "Erkek çocuk, babasından daha hızlı at sürebilir.",
+      "english": "The boy can ride a horse faster than his father can."
+    },
+    {
+      "set": "modal-1",
+      "id": "s70",
+      "old_turkish": "Her kıza gülümsediğin için basın belaya girebilir.",
+      "new_turkish": "Her kıza gülümsediğin için başın belaya girebilir.",
+      "english": "You can get into trouble for smiling at every girl."
+    },
+    {
+      "set": "modal-1",
+      "id": "s71",
+      "old_turkish": "İstersen bütün kase tavuk çorbasım bitirebilirsin.",
+      "new_turkish": "İstersen bütün kase tavuk çorbasını bitirebilirsin.",
+      "english": "You can finish the whole bowl of chicken soup if you like."
+    },
+    {
+      "set": "modal-1",
+      "id": "s79",
+      "old_turkish": "İyi oynamazsanız futbol takım olamazsımz.",
+      "new_turkish": "İyi oynamazsanız futbol takımı olamazsınız.",
+      "english": "You can't make the football team if you don't play well."
+    },
+    {
+      "set": "modal-1",
+      "id": "s89",
+      "old_turkish": "Yüz metreyi ön saniyenin altında geçebilir.",
+      "new_turkish": "Yüz metreyi on saniyenin altında geçebilir.",
+      "english": "He can cover a hundred metres in under ten seconds."
+    },
+    {
+      "set": "modal-1",
+      "id": "s99",
+      "old_turkish": "Yabancr bir dili anadil gibi konuşmayı gerçekten öğrenebilir miyiz?",
+      "new_turkish": "Yabancı bir dili anadil gibi konuşmayı gerçekten öğrenebilir miyiz?",
+      "english": "Can we really learn to speak a foreign language like a native?"
+    },
+    {
+      "set": "modal-1",
+      "id": "s100",
+      "old_turkish": "Trenin ne zaman kalktığını sdyler misin?",
+      "new_turkish": "Trenin ne zaman kalktığını söyler misin?",
+      "english": "Can you please tell me what time the train leaves?"
+    },
+    {
+      "set": "modal-2",
+      "id": "s4",
+      "old_turkish": "Bu akşam yemede çıkabiliriz. Bize katılmak ister misiniz?",
+      "new_turkish": "Bu akşam yemeğe çıkabiliriz. Bize katılmak ister misiniz?",
+      "english": "We may go out for dinner tonight. Do you want to join us?"
+    },
+    {
+      "set": "modal-2",
+      "id": "s6",
+      "old_turkish": "Arabanızı buraya park edemezsiniz. Sadece otelin konukları için ayrılmştir.",
+      "new_turkish": "Arabanızı buraya park edemezsiniz. Sadece otelin konukları için ayrılmıştır.",
+      "english": "You may not park your car here. It's reserved for guests of the hotel only."
+    },
+    {
+      "set": "modal-2",
+      "id": "s7",
+      "old_turkish": "Gdkyüzünde çok fazla bulut var. Birkaç dakika içinde yağmur yağabilir!",
+      "new_turkish": "Gökyüzünde çok fazla bulut var. Birkaç dakika içinde yağmur yağabilir!",
+      "english": "There are a lot of clouds in the sky. It may rain in a few minutes!"
+    },
+    {
+      "set": "modal-2",
+      "id": "s11",
+      "old_turkish": "Kütüphanenin bu bdlumündeki kitapları ddung alabilirsiniz.",
+      "new_turkish": "Kütüphanenin bu bölümündeki kitapları ödünç alabilirsiniz.",
+      "english": "You may borrow the books in this section of the library."
+    },
+    {
+      "set": "modal-2",
+      "id": "s14",
+      "old_turkish": "Salatanın bir kısmım denemek isteyebilirsiniz.",
+      "new_turkish": "Salatanın bir kısmını denemek isteyebilirsiniz.",
+      "english": "You may want to try on some of the salad."
+    },
+    {
+      "set": "modal-2",
+      "id": "s25",
+      "old_turkish": "Gökyüzii çok karanlık. Yakında yağmur yağabilir.",
+      "new_turkish": "Gökyüzü çok karanlık. Yakında yağmur yağabilir.",
+      "english": "The sky is so dark. It may rain soon."
+    },
+    {
+      "set": "modal-2",
+      "id": "s26",
+      "old_turkish": "Gökyüzii artık açık. Bu öğleden sonra yağmur yaŞmayabilir.",
+      "new_turkish": "Gökyüzü artık açık. Bu öğleden sonra yağmur yağmayabilir.",
+      "english": "The sky is clear now. It may not rain this afternoon."
+    },
+    {
+      "set": "modal-2",
+      "id": "s27",
+      "old_turkish": "Kazanamayabilirler. Diğer takım çok daha güçlii.",
+      "new_turkish": "Kazanamayabilirler. Diğer takım çok daha güçlü.",
+      "english": "They may not win. The other team is much stronger."
+    },
+    {
+      "set": "modal-2",
+      "id": "s36",
+      "old_turkish": "Daha dikkatli oluncaya kadar, arabayı Gduncg alamazsımz!",
+      "new_turkish": "Daha dikkatli oluncaya kadar, arabayı ödünç alamazsınız!",
+      "english": "You may not borrow the car until you can be more careful with it!"
+    },
+    {
+      "set": "modal-2",
+      "id": "s37",
+      "old_turkish": "Bugün yağmur yağabilecedi için şemsiyenizi alın.",
+      "new_turkish": "Bugün yağmur yağabileceği için şemsiyenizi alın.",
+      "english": "Take your umbrella as it may rain today."
+    },
+    {
+      "set": "modal-2",
+      "id": "s38",
+      "old_turkish": "Hala iş başında! Korkanm gegc gelebilir.",
+      "new_turkish": "Hala iş başında! Korkarım geç gelebilir.",
+      "english": "He is still at work! He may come late I am afraid."
+    },
+    {
+      "set": "modal-2",
+      "id": "s42",
+      "old_turkish": "İyi cahişirsa, sınavlarım geçebilir.",
+      "new_turkish": "İyi çalışırsa, sınavlarını geçebilir.",
+      "english": "He may pass his exams, if he studies well."
+    },
+    {
+      "set": "modal-2",
+      "id": "s45",
+      "old_turkish": "Tathilar, dişleriniz için tehlikeli olabilir.",
+      "new_turkish": "Tatlılar, dişleriniz için tehlikeli olabilir.",
+      "english": "Sweets may be dangerous to your teeth."
+    },
+    {
+      "set": "modal-2",
+      "id": "s46",
+      "old_turkish": "Amcasının Glumunii anlattığı son kişi, kız kardeşi olabilir.",
+      "new_turkish": "Amcasının ölümünü anlattığı son kişi, kız kardeşi olabilir.",
+      "english": "Her sister may be the last person that she tells about her uncle's death."
+    },
+    {
+      "set": "modal-2",
+      "id": "s49",
+      "old_turkish": "Kapanış görevlerini tamamladığınızda, mağazayt kilitleyebilirsiniz.",
+      "new_turkish": "Kapanış görevlerini tamamladığınızda, mağazayı kilitleyebilirsiniz.",
+      "english": "You may lock up the store once you have completed the closing out duties."
+    },
+    {
+      "set": "modal-2",
+      "id": "s50",
+      "old_turkish": "Çalışanlar, indirimlerini yalnızca normal fiyath ürünlerde kullanabilirler.",
+      "new_turkish": "Çalışanlar, indirimlerini yalnızca normal fiyatlı ürünlerde kullanabilirler.",
+      "english": "Employees may use their discount on regular priced items only."
+    },
+    {
+      "set": "modal-2",
+      "id": "s55",
+      "old_turkish": "Arabanızı kapının Gnüne park edemezsiniz.",
+      "new_turkish": "Arabanızı kapının önüne park edemezsiniz.",
+      "english": "You may not park your car in front of the gate."
+    },
+    {
+      "set": "modal-2",
+      "id": "s57",
+      "old_turkish": "Yetişkinler yatmadan Önce teknolojiyi kullamrlarsa, uyumayı zor bulabilirler.",
+      "new_turkish": "Yetişkinler yatmadan önce teknolojiyi kullanırlarsa, uyumayı zor bulabilirler.",
+      "english": "Adults may find it difficult to sleep if they use technology before going to bed."
+    },
+    {
+      "set": "modal-2",
+      "id": "s59",
+      "old_turkish": "Müşterimiz Gnerilerimize katılmayabilir.",
+      "new_turkish": "Müşterimiz önerilerimize katılmayabilir.",
+      "english": "Our client may not agree with our suggestions."
+    },
+    {
+      "set": "modal-2",
+      "id": "s62",
+      "old_turkish": "James bu maçı kazanmayabilir; rakibi ondan daha güçlii.",
+      "new_turkish": "James bu maçı kazanmayabilir; rakibi ondan daha güçlü.",
+      "english": "James may not win this match; his opponent is stronger than him."
+    },
+    {
+      "set": "modal-2",
+      "id": "s63",
+      "old_turkish": "AntrenGr devre arasında kalecimizi değiştirebilir.",
+      "new_turkish": "Antrenör devre arasında kalecimizi değiştirebilir.",
+      "english": "The coach may change our goalkeeper at half-time."
+    },
+    {
+      "set": "modal-2",
+      "id": "s65",
+      "old_turkish": "Hakem, \"Mac1 iptal edemezsiniz - yasakliyorum!\" dedi.",
+      "new_turkish": "Hakem, \"Maçı iptal edemezsiniz - yasaklıyorum!\" dedi.",
+      "english": "The referee said: \"You may not call off the match - I forbid it!\""
+    },
+    {
+      "set": "modal-2",
+      "id": "s67",
+      "old_turkish": "Alan bu gece gelmeyecek. Umarım yarn gelebilir.",
+      "new_turkish": "Alan bu gece gelmeyecek. Umarım yarın gelebilir.",
+      "english": "Alan isn't coming tonight. He may come tomorrow, I hope."
+    },
+    {
+      "set": "modal-2",
+      "id": "s69",
+      "old_turkish": "Önümüzdeki yıl ıınıversiteye gidebilirim ama hala emin değilim.",
+      "new_turkish": "Önümüzdeki yıl üniversiteye gidebilirim ama hala emin değilim.",
+      "english": "I may go to college next year, but I'm still not sure."
+    },
+    {
+      "set": "modal-2",
+      "id": "s71",
+      "old_turkish": "Çok fazla paray: hemen bulamazlarsa, şirket iflas edebilir!",
+      "new_turkish": "Çok fazla parayı hemen bulamazlarsa, şirket iflas edebilir!",
+      "english": "The company may go bankrupt if they don't find a lot of money quickly!"
+    },
+    {
+      "set": "modal-2",
+      "id": "s73",
+      "old_turkish": "Ailem ve ben Önümüzdeki yaz Montreal'e seyahat edebiliriz.",
+      "new_turkish": "Ailem ve ben önümüzdeki yaz Montreal'e seyahat edebiliriz.",
+      "english": "My family and I may travel to Montreal next summer."
+    },
+    {
+      "set": "modal-2",
+      "id": "s77",
+      "old_turkish": "Jane yorgun. Bu gece dışan çıkmayabilir.",
+      "new_turkish": "Jane yorgun. Bu gece dışarı çıkmayabilir.",
+      "english": "Jane's tired. She might not go out tonight."
+    },
+    {
+      "set": "modal-2",
+      "id": "s78",
+      "old_turkish": "Pete çok zekidir. Cevabt bilebilir.",
+      "new_turkish": "Pete çok zekidir. Cevabı bilebilir.",
+      "english": "Pete is very clever. He may know the answer."
+    },
+    {
+      "set": "modal-2",
+      "id": "s80",
+      "old_turkish": "Şu bulutlara bakın! Sanınm yağmur yağabilir.",
+      "new_turkish": "Şu bulutlara bakın! Sanırım yağmur yağabilir.",
+      "english": "Look at those clouds! I think it may rain."
+    },
+    {
+      "set": "modal-2",
+      "id": "s83",
+      "old_turkish": "Kız kardeşim bir haftalığına Londra'ya gidiyor. Ona yeni kameramı Gdiing verebilirim.",
+      "new_turkish": "Kız kardeşim bir haftalığına Londra'ya gidiyor. Ona yeni kameramı ödünç verebilirim.",
+      "english": "My sister is going to London for a week. I may lend her my new camera."
+    },
+    {
+      "set": "modal-2",
+      "id": "s85",
+      "old_turkish": "Kuzenim Önümüzdeki dönem okulunuzda başlıyor. Aym sınıfta olabilirsiniz!",
+      "new_turkish": "Kuzenim önümüzdeki dönem okulunuzda başlıyor. Aynı sınıfta olabilirsiniz!",
+      "english": "My cousin is starting at your school next term. You may be in the same class!"
+    },
+    {
+      "set": "modal-2",
+      "id": "s86",
+      "old_turkish": "Jack yarın gidiyor ve o gitmedenonce, onu görmeyebiliriz.",
+      "new_turkish": "Jack yarın gidiyor ve o gitmeden önce, onu görmeyebiliriz.",
+      "english": "Jack's going away tomorrow, and we may not see him before he goes."
+    },
+    {
+      "set": "modal-2",
+      "id": "s96",
+      "old_turkish": "Çocuklar, oyuncak ayılarım okula getirebilirler.",
+      "new_turkish": "Çocuklar, oyuncak ayılarını okula getirebilirler.",
+      "english": "Children may bring their teddy bears to school."
+    },
+    {
+      "set": "modal-2",
+      "id": "s100",
+      "old_turkish": "Masanın üzerindeki sözlüğe ihtiyacım var. Onu benim iccin alabilir misiniz?",
+      "new_turkish": "Masanın üzerindeki sözlüğe ihtiyacım var. Onu benim için alabilir misiniz?",
+      "english": "I need the dictionary on the desk. May you get it for me?"
+    },
+    {
+      "set": "modal-3",
+      "id": "s12",
+      "old_turkish": "Telefonu ağmıyor. Henüz evde olmayabilir.",
+      "new_turkish": "Telefonu açmıyor. Henüz evde olmayabilir.",
+      "english": "He's not picking up the phone. He might not be at home yet."
+    },
+    {
+      "set": "modal-3",
+      "id": "s22",
+      "old_turkish": "Futbol maçına gitmeyebilirim. işime bagh.",
+      "new_turkish": "Futbol maçına gitmeyebilirim. İşime bağlı.",
+      "english": "I might not go to the football game. It depends on my work."
+    },
+    {
+      "set": "modal-3",
+      "id": "s26",
+      "old_turkish": "Bu maçı kazantrsak, ligi kazanma şansımız olabilir.",
+      "new_turkish": "Bu maçı kazanırsak, ligi kazanma şansımız olabilir.",
+      "english": "If we win this game, we might have a chance of winning the league."
+    },
+    {
+      "set": "modal-3",
+      "id": "s31",
+      "old_turkish": "Taksiye binmemizi Gnerebilir miyim?",
+      "new_turkish": "Taksiye binmemizi önerebilir miyim?",
+      "english": "Might I suggest we take the cab?"
+    },
+    {
+      "set": "modal-3",
+      "id": "s33",
+      "old_turkish": "Siyasete daha fazla ilgi gdsterebilirler.",
+      "new_turkish": "Siyasete daha fazla ilgi gösterebilirler.",
+      "english": "They might show more interest in politics."
+    },
+    {
+      "set": "modal-3",
+      "id": "s36",
+      "old_turkish": "John, gamaşır makinesini tamir edemez; komşusuna sorabilir.",
+      "new_turkish": "John, çamaşır makinesini tamir edemez; komşusuna sorabilir.",
+      "english": "John can't repair his washing-machine; he might ask his neighbour."
+    },
+    {
+      "set": "modal-3",
+      "id": "s38",
+      "old_turkish": "Tatlım! Evde olduğun için ııtıı yapabilirsin.",
+      "new_turkish": "Tatlım! Evde olduğun için ütü yapabilirsin.",
+      "english": "Sweetheart! As you are at home, you might do the ironing."
+    },
+    {
+      "set": "modal-3",
+      "id": "s40",
+      "old_turkish": "Onu eve giderken yapabilir, ama emin olamyorum.",
+      "new_turkish": "Onu eve giderken yapabilir, ama emin olamıyorum.",
+      "english": "He might do it on his way home, but I can't be sure."
+    },
+    {
+      "set": "modal-3",
+      "id": "s44",
+      "old_turkish": "Ziyaretiniz sırasında botanık bahçelerini ziyaret edebilirsin.",
+      "new_turkish": "Ziyaretiniz sırasında botanik bahçelerini ziyaret edebilirsin.",
+      "english": "You might visit the botanical gardens during your visit."
+    },
+    {
+      "set": "modal-3",
+      "id": "s49",
+      "old_turkish": "Yarın akşam Gdul törenine katılabilirler.",
+      "new_turkish": "Yarın akşam ödül törenine katılabilirler.",
+      "english": "They might attend the awards ceremony tomorrow night."
+    },
+    {
+      "set": "modal-3",
+      "id": "s51",
+      "old_turkish": "Buzdolabındaki o pastadan bir parga alabilirim.",
+      "new_turkish": "Buzdolabındaki o pastadan bir parça alabilirim.",
+      "english": "I might have a piece of that cake in the fridge."
+    },
+    {
+      "set": "modal-3",
+      "id": "s56",
+      "old_turkish": "Herkes yeryüzünün doğal kaynaklarım kurtarabilir.",
+      "new_turkish": "Herkes yeryüzünün doğal kaynaklarını kurtarabilir.",
+      "english": "Everyone might save the natural resources of the earth."
+    },
+    {
+      "set": "modal-3",
+      "id": "s57",
+      "old_turkish": "Binada yangın alarm olabilir.",
+      "new_turkish": "Binada yangın alarmı olabilir.",
+      "english": "The building might have a fire alarm."
+    },
+    {
+      "set": "modal-3",
+      "id": "s59",
+      "old_turkish": "İki içip araba kullanma, aksi takdirde kaza yapabilirsin.",
+      "new_turkish": "İçki içip araba kullanma, aksi takdirde kaza yapabilirsin.",
+      "english": "Don't drink and drive, or you might have an accident."
+    },
+    {
+      "set": "modal-3",
+      "id": "s62",
+      "old_turkish": "Partiye gidebilirim ama henliz emin değilim.",
+      "new_turkish": "Partiye gidebilirim ama henüz emin değilim.",
+      "english": "I might go to the party but I'm not sure yet."
+    },
+    {
+      "set": "modal-3",
+      "id": "s63",
+      "old_turkish": "Bitkilerin tıbbi kullanımlarım açıklayabilir.",
+      "new_turkish": "Bitkilerin tıbbi kullanımlarını açıklayabilir.",
+      "english": "She might explain the medical uses of plants."
+    },
+    {
+      "set": "modal-3",
+      "id": "s67",
+      "old_turkish": "Bu durumun mağdurlan bilingsiz olabilir.",
+      "new_turkish": "Bu durumun mağdurları bilinçsiz olabilir.",
+      "english": "Victims of this condition might be unconscious."
+    },
+    {
+      "set": "modal-3",
+      "id": "s68",
+      "old_turkish": "Temel kompozisyondan, kurguya kadar her türlii yaztyı tartışabilirsiniz.",
+      "new_turkish": "Temel kompozisyondan, kurguya kadar her türlü yazıyı tartışabilirsiniz.",
+      "english": "You might discuss any kind of writing, from basic composition to fiction."
+    },
+    {
+      "set": "modal-3",
+      "id": "s74",
+      "old_turkish": "Önümüzde başka ıılkeler var ve savaşabiliriz.",
+      "new_turkish": "Önümüzde başka ülkeler var ve savaşabiliriz.",
+      "english": "Other countrys are ahead of us and we might have a war."
+    },
+    {
+      "set": "modal-3",
+      "id": "s77",
+      "old_turkish": "Yeşil gay, bazı virüsleri engeller ve insanlan kalp hastalıklarından koruyabilir.",
+      "new_turkish": "Yeşil çay, bazı virüsleri engeller ve insanları kalp hastalıklarından koruyabilir.",
+      "english": "Green tea inhibits some viruses and might protect people from heart disease."
+    },
+    {
+      "set": "modal-3",
+      "id": "s79",
+      "old_turkish": "Nadir souk cepheler donmaya yakın koşullar yaratabilir.",
+      "new_turkish": "Nadir soğuk cepheler donmaya yakın koşullar yaratabilir.",
+      "english": "Rare cold fronts might create near freezing conditions."
+    },
+    {
+      "set": "modal-3",
+      "id": "s82",
+      "old_turkish": "Öğrenciler yalmızca belirlenen duraklarda binebilirler.",
+      "new_turkish": "Öğrenciler yalnızca belirlenen duraklarda binebilirler.",
+      "english": "Students might board only at designated stops."
+    },
+    {
+      "set": "modal-3",
+      "id": "s85",
+      "old_turkish": "Şirketin gelecek yıl daha fazla kişiyi işe alacağım dışuntiyor musun?",
+      "new_turkish": "Şirketin gelecek yıl daha fazla kişiyi işe alacağını düşünüyor musun?",
+      "english": "Do you think the company might hire more people next year?"
+    },
+    {
+      "set": "modal-3",
+      "id": "s87",
+      "old_turkish": "Japonca 6grenmek için bir aylığına Japonya'ya gidebilirim.",
+      "new_turkish": "Japonca öğrenmek için bir aylığına Japonya'ya gidebilirim.",
+      "english": "I might go to Japan for a month to study Japanese."
+    },
+    {
+      "set": "modal-3",
+      "id": "s94",
+      "old_turkish": "David, Jessica'yı maça davet edebilir. Ondan gerçekten hoşlandığım biliyorum.",
+      "new_turkish": "David, Jessica'yı maça davet edebilir. Ondan gerçekten hoşlandığını biliyorum.",
+      "english": "David might invite Jessica to the match. I know he really likes her."
+    },
+    {
+      "set": "modal-3",
+      "id": "s99",
+      "old_turkish": "Onun hakkında bunu sdylediğimizde yanihyor olabiliriz.",
+      "new_turkish": "Onun hakkında bunu söylediğimizde yanılıyor olabiliriz.",
+      "english": "We might be wrong when we say that about her."
+    },
+    {
+      "set": "modal-4",
+      "id": "s10",
+      "old_turkish": "Üzgünüm ama dnümüzdeki Cumartesi partinize gidemeyeceğiz.",
+      "new_turkish": "Üzgünüm ama önümüzdeki Cumartesi partinize gidemeyeceğiz.",
+      "english": "I'm sorry, but we won't be able to go to your party next Saturday."
+    },
+    {
+      "set": "modal-4",
+      "id": "s13",
+      "old_turkish": "Birkaçg saat sonra kapty açıp dışan çıkabildim.",
+      "new_turkish": "Birkaç saat sonra kapıyı açıp dışarı çıkabildim.",
+      "english": "After a few hours, I was able to open the door and go out."
+    },
+    {
+      "set": "modal-4",
+      "id": "s14",
+      "old_turkish": "Matematiği hiç anlayamamışı / anlayamadım.",
+      "new_turkish": "Matematiği hiç anlayamamışım / anlayamadım.",
+      "english": "I've never been able to understand maths."
+    },
+    {
+      "set": "modal-4",
+      "id": "s15",
+      "old_turkish": "Arabayı tamir edebildi ama çok zamanım aldı.",
+      "new_turkish": "Arabayı tamir edebildi ama çok zamanını aldı.",
+      "english": "He was able to repair the car but it took him a long time."
+    },
+    {
+      "set": "modal-4",
+      "id": "s17",
+      "old_turkish": "Yangın hızla yayıldı ama herkes kağabildi.",
+      "new_turkish": "Yangın hızla yayıldı ama herkes kaçabildi.",
+      "english": "The fire spread quickly but everyone was able to escape."
+    },
+    {
+      "set": "modal-4",
+      "id": "s18",
+      "old_turkish": "Oğlan nehre dustii ama onu kurtarmayı başardık.",
+      "new_turkish": "Oğlan nehre düştü ama onu kurtarmayı başardık.",
+      "english": "The boy fell into the river but we were able to rescue him."
+    },
+    {
+      "set": "modal-4",
+      "id": "s21",
+      "old_turkish": "Eksik belgeyi bulamamışlar / bulamadılar / bulamyorlar.",
+      "new_turkish": "Eksik belgeyi bulamamışlar / bulamadılar / bulamıyorlar.",
+      "english": "They haven't been able to find the missing document."
+    },
+    {
+      "set": "modal-4",
+      "id": "s23",
+      "old_turkish": "Ehliyetime sahip olduğumda, arabam ödünç alabilecek miyim?",
+      "new_turkish": "Ehliyetime sahip olduğumda, arabanı ödünç alabilecek miyim?",
+      "english": "Will I be able to borrow your car when I have my driver's license?"
+    },
+    {
+      "set": "modal-4",
+      "id": "s24",
+      "old_turkish": "Dün kağ tane yumurta alabildin?",
+      "new_turkish": "Dün kaç tane yumurta alabildin?",
+      "english": "How many eggs were you able to get yesterday?"
+    },
+    {
+      "set": "modal-4",
+      "id": "s25",
+      "old_turkish": "Sadece akıçt bir şekilde konuşabilmek istiyorum.",
+      "new_turkish": "Sadece akıcı bir şekilde konuşabilmek istiyorum.",
+      "english": "I just want to be able to speak fluently."
+    },
+    {
+      "set": "modal-4",
+      "id": "s26",
+      "old_turkish": "Bu hapishaneden kaçgabilecekler.",
+      "new_turkish": "Bu hapishaneden kaçabilecekler.",
+      "english": "They'Il be able to escape from this prison."
+    },
+    {
+      "set": "modal-4",
+      "id": "s30",
+      "old_turkish": "Böylesine süslii bir evde yağamayı karşılayamam.",
+      "new_turkish": "Böylesine süslü bir evde yaşamayı karşılayamam.",
+      "english": "I am not able to afford to live in such a fancy house."
+    },
+    {
+      "set": "modal-4",
+      "id": "s31",
+      "old_turkish": "Pek çok ünlü insanla tamsabildi.",
+      "new_turkish": "Pek çok ünlü insanla tanışabildi.",
+      "english": "He was able to meet so many famous people."
+    },
+    {
+      "set": "modal-4",
+      "id": "s34",
+      "old_turkish": "Korkanm yarın size yardım edemeyecediz.",
+      "new_turkish": "Korkarım yarın size yardım edemeyeceğiz.",
+      "english": "I'm afraid we won't be able to help you tomorrow."
+    },
+    {
+      "set": "modal-4",
+      "id": "s36",
+      "old_turkish": "Sana çok borcu var, ancak muhtemelen geri Gdeyemeyeceksin.",
+      "new_turkish": "Sana çok borcu var, ancak muhtemelen geri ödeyemeyeceksin.",
+      "english": "She owes you a lot of money, but you probably won't be able to pay it back."
+    },
+    {
+      "set": "modal-4",
+      "id": "s38",
+      "old_turkish": "Biraz ispanyolca konuşabilirler / konuşabiliyorlar.",
+      "new_turkish": "Biraz İspanyolca konuşabilirler / konuşabiliyorlar.",
+      "english": "They are able to speak Spanish a little."
+    },
+    {
+      "set": "modal-4",
+      "id": "s41",
+      "old_turkish": "Daha Önce bilgisayarda açabildiniz mi?",
+      "new_turkish": "Daha önce bilgisayarda açabildiniz mi?",
+      "english": "Were you able to open it before on the computer?"
+    },
+    {
+      "set": "modal-4",
+      "id": "s44",
+      "old_turkish": "Neyse ki, araba denize düşmeden Önce kaptyi açabildi.",
+      "new_turkish": "Neyse ki, araba denize düşmeden önce kapıyı açabildi.",
+      "english": "Fortunately, he was able to open the door before the car fell into the sea."
+    },
+    {
+      "set": "modal-4",
+      "id": "s46",
+      "old_turkish": "Arabayı çalıştırabilmeleri için yedek anahtarlan vardı.",
+      "new_turkish": "Arabayı çalıştırabilmeleri için yedek anahtarları vardı.",
+      "english": "They had a spare key so they were able to start the car."
+    },
+    {
+      "set": "modal-4",
+      "id": "s50",
+      "old_turkish": "Polis çok şüpheliydi ama onları suğlu olmadığına ikna edebildi.",
+      "new_turkish": "Polis çok şüpheliydi ama onları suçlu olmadığına ikna edebildi.",
+      "english": "The police were very suspicious but he was able to convince them that he was not guilty."
+    },
+    {
+      "set": "modal-4",
+      "id": "s53",
+      "old_turkish": "Matematiğini çalışgmazsan, alıştırmaları yapamazsın.",
+      "new_turkish": "Matematiğini çalışmazsan, alıştırmaları yapamazsın.",
+      "english": "If you don't study your mathematics, you aren't able to do the exercises."
+    },
+    {
+      "set": "modal-4",
+      "id": "s54",
+      "old_turkish": "Sdylediğine / sdylediklerine inanamazsın / inanamtyorsun.",
+      "new_turkish": "Söylediğine / söylediklerine inanamazsın / inanamıyorsun.",
+      "english": "You aren't able to believe what he says."
+    },
+    {
+      "set": "modal-4",
+      "id": "s56",
+      "old_turkish": "Jim Amca onu tamir edebilecek, çok akıll.",
+      "new_turkish": "Jim Amca onu tamir edebilecek, çok akıllı.",
+      "english": "Uncle Jim will be able to repair it, he is very clever."
+    },
+    {
+      "set": "modal-4",
+      "id": "s63",
+      "old_turkish": "Öğretmenimiz, dnümüzdeki hafta için tüm testleri düzeltemeyecek. Zamant kısıth.",
+      "new_turkish": "Öğretmenimiz, önümüzdeki hafta için tüm testleri düzeltemeyecek. Zamanı kısıtlı.",
+      "english": "Our teacher won't be able to correct all the tests for next week. He's short of time."
+    },
+    {
+      "set": "modal-4",
+      "id": "s64",
+      "old_turkish": "Askerler düşgmanı göremediler ve yenildiler.",
+      "new_turkish": "Askerler düşmanı göremediler ve yenildiler.",
+      "english": "Soldiers weren't able to see the enemy and were defeated."
+    },
+    {
+      "set": "modal-4",
+      "id": "s65",
+      "old_turkish": "George anahtarlarını henÜz bulamamış / bulamadı. Gerçekten kayıplar.",
+      "new_turkish": "George anahtarlarını henüz bulamamış / bulamadı. Gerçekten kayıplar.",
+      "english": "George hasn't been able to find his keys yet. They are really lost."
+    },
+    {
+      "set": "modal-4",
+      "id": "s66",
+      "old_turkish": "Yarın ise gelemeyecek. O çok hasta.",
+      "new_turkish": "Yarın işe gelemeyecek. O çok hasta.",
+      "english": "He won't be able to come to work tomorrow. He is too sick."
+    },
+    {
+      "set": "modal-4",
+      "id": "s69",
+      "old_turkish": "Geçen yıl, tekne okyanusta battı, ancak yüzüp kıytya ulaşabildi.",
+      "new_turkish": "Geçen yıl, tekne okyanusta battı, ancak yüzüp kıyıya ulaşabildi.",
+      "english": "Last year, the boat sank in the ocean, but he was able to swim and reach the shore."
+    },
+    {
+      "set": "modal-4",
+      "id": "s76",
+      "old_turkish": "Bu kurs bittikten sonra, ingilizceyi çok iyi öğrenebilmeyi umuyorum.",
+      "new_turkish": "Bu kurs bittikten sonra, İngilizceyi çok iyi öğrenebilmeyi umuyorum.",
+      "english": "I hope to be able to learn English very well after this course finishes."
+    },
+    {
+      "set": "modal-4",
+      "id": "s79",
+      "old_turkish": "Nihayet eğitimini tamamlamak için yurdışına gidebildi.",
+      "new_turkish": "Nihayet eğitimini tamamlamak için yurtdışına gidebildi.",
+      "english": "He was able to go abroad to complete his education at last."
+    },
+    {
+      "set": "modal-4",
+      "id": "s80",
+      "old_turkish": "Nehir boyunca çok geniş olmasına ramen, yüzebildi.",
+      "new_turkish": "Nehir boyunca çok geniş olmasına rağmen, yüzebildi.",
+      "english": "She was able to swim across the river although it was very wide."
+    },
+    {
+      "set": "modal-4",
+      "id": "s81",
+      "old_turkish": "Yoksul olmamıza rağmen, Gödeme yapabildik.",
+      "new_turkish": "Yoksul olmamıza rağmen, ödeme yapabildik.",
+      "english": "We were able to pay although we were poor."
+    },
+    {
+      "set": "modal-4",
+      "id": "s88",
+      "old_turkish": "Öğrenciler bugün ders kitaplarım alamtyorlar.",
+      "new_turkish": "Öğrenciler bugün ders kitaplarını alamıyorlar.",
+      "english": "The students aren't able to buy their textbooks today."
+    },
+    {
+      "set": "modal-4",
+      "id": "s90",
+      "old_turkish": "Arkadaşlarımız arabanın fiyatı konusunda anlağsabilirler mi?",
+      "new_turkish": "Arkadaşlarımız arabanın fiyatı konusunda anlaşabilirler mi?",
+      "english": "Are our friends able to agree on the price of the car?"
+    },
+    {
+      "set": "modal-4",
+      "id": "s91",
+      "old_turkish": "Hiç kardeşim kadar iyi lspanyolca konuşamamışım / konuşamadım / konuşamıyorum.",
+      "new_turkish": "Hiç kardeşim kadar iyi İspanyolca konuşamamışım / konuşamadım / konuşamıyorum.",
+      "english": "I've never been able to speak Spanish as well as my brother."
+    },
+    {
+      "set": "modal-4",
+      "id": "s92",
+      "old_turkish": "Çin'de 2 yıl geçirdikten sonra, artık öldükçe akıcı bir şekilde konuşabiliyordum.",
+      "new_turkish": "Çin'de 2 yıl geçirdikten sonra, artık oldukça akıcı bir şekilde konuşabiliyordum.",
+      "english": "After 2 years in China, I was able to speak quite fluently now."
+    },
+    {
+      "set": "modal-4",
+      "id": "s93",
+      "old_turkish": "Altı saatlik tırmanistan sonra, dain zirvesine ulaşabildik.",
+      "new_turkish": "Altı saatlik tırmanıştan sonra, dağın zirvesine ulaşabildik.",
+      "english": "After 6 hours climbing, we were able to reach the top of the mountain."
+    },
+    {
+      "set": "modal-4",
+      "id": "s94",
+      "old_turkish": "Dün clizdammı kaybettim ve her yerde onu aradım ama bulabildim.",
+      "new_turkish": "Dün cüzdanımı kaybettim ve her yerde onu aradım ama bulabildim.",
+      "english": "Yesterday I lost my wallet and I looked for it everywhere, but I was able to find it."
+    },
+    {
+      "set": "modal-5",
+      "id": "s8",
+      "old_turkish": "Çoğu dinozor karada yirurdii, ancak bazıları uçabiliyor ve hatta yüzebiliyordu.",
+      "new_turkish": "Çoğu dinozor karada yürürdü, ancak bazıları uçabiliyor ve hatta yüzebiliyordu.",
+      "english": "Most dinosaurs walked on land, but some could fly or even swim."
+    },
+    {
+      "set": "modal-5",
+      "id": "s13",
+      "old_turkish": "34 yaşıma kadar araba süremedim, sonra kırsal bölgeye taşındım, bu yüzden 6grenmek zorunda kaldım.",
+      "new_turkish": "34 yaşıma kadar araba süremedim, sonra kırsal bölgeye taşındım, bu yüzden öğrenmek zorunda kaldım.",
+      "english": "I couldn't drive a car until I was 34, then I moved to the countryside so I had to learn."
+    },
+    {
+      "set": "modal-5",
+      "id": "s15",
+      "old_turkish": "James, Japonya'da yaşarken Japonca konuşabiliyordu ama şimdi çogünü unutmuş / unuttu.",
+      "new_turkish": "James, Japonya'da yaşarken Japonca konuşabiliyordu ama şimdi çoğunu unutmuş / unuttu.",
+      "english": "James could speak Japanese when he lived in Japan, but he's forgotten most of it now."
+    },
+    {
+      "set": "modal-5",
+      "id": "s19",
+      "old_turkish": "Biyukannem, geçen aya kadar bilgisayar kullanamıyordu.",
+      "new_turkish": "Büyükannem, geçen aya kadar bilgisayar kullanamıyordu.",
+      "english": "My grandmother couldn't use a computer until last month."
+    },
+    {
+      "set": "modal-5",
+      "id": "s20",
+      "old_turkish": "Gengken, çok hızl koşabiliyordum.",
+      "new_turkish": "Gençken, çok hızlı koşabiliyordum.",
+      "english": "When I was younger, I could run very fast."
+    },
+    {
+      "set": "modal-5",
+      "id": "s24",
+      "old_turkish": "İspanya'ya ilk gittiğimde, tek kelime ispanyolca konuşamıyordum.",
+      "new_turkish": "İspanya'ya ilk gittiğimde, tek kelime İspanyolca konuşamıyordum.",
+      "english": "When I went to Spain for the first time, I couldn't speak a word of Spanish."
+    },
+    {
+      "set": "modal-5",
+      "id": "s25",
+      "old_turkish": "Bu ayakkabılan biraz ayakkabı tutkaltyla düzeltebilirsiniz.",
+      "new_turkish": "Bu ayakkabıları biraz ayakkabı tutkalıyla düzeltebilirsiniz.",
+      "english": "You could fix those shoes with some shoe glue."
+    },
+    {
+      "set": "modal-5",
+      "id": "s26",
+      "old_turkish": "Onun çevrimici olup olmadığını görebildin.",
+      "new_turkish": "Onun çevrimiçi olup olmadığını görebildin.",
+      "english": "You could see if she is available on-line."
+    },
+    {
+      "set": "modal-5",
+      "id": "s29",
+      "old_turkish": "Etrafındaki gürültüye ramen, beni anlayabiliyordu.",
+      "new_turkish": "Etrafındaki gürültüye rağmen, beni anlayabiliyordu.",
+      "english": "She could understand me in spite of the noise around."
+    },
+    {
+      "set": "modal-5",
+      "id": "s34",
+      "old_turkish": "Bana sdylemeden ev sahibini nasıl arayabildin?",
+      "new_turkish": "Bana söylemeden ev sahibini nasıl arayabildin?",
+      "english": "How could you call the owner without telling me?"
+    },
+    {
+      "set": "modal-5",
+      "id": "s37",
+      "old_turkish": "Kazanamadılar. Üç puan gerideler ve oyun ön saniye içinde biter.",
+      "new_turkish": "Kazanamadılar. Üç puan gerideler ve oyun on saniye içinde biter.",
+      "english": "They couldn't win. They are three points behind and the game ends in ten seconds."
+    },
+    {
+      "set": "modal-5",
+      "id": "s39",
+      "old_turkish": "Yetenekli bir çocuktu ve henüz tığ yaşındayken okuyabiliyordu.",
+      "new_turkish": "Yetenekli bir çocuktu ve henüz üç yaşındayken okuyabiliyordu.",
+      "english": "She was a gifted child and could read when she was only three years old."
+    },
+    {
+      "set": "modal-5",
+      "id": "s43",
+      "old_turkish": "Tekrar daha yavaş sdyleyebilir misiniz?",
+      "new_turkish": "Tekrar daha yavaş söyleyebilir misiniz?",
+      "english": "Could you say it again more slowly."
+    },
+    {
+      "set": "modal-5",
+      "id": "s44",
+      "old_turkish": "Daha yashi olmama rağmen, küçük kardeşimden daha hızlı koşabiliyordum!",
+      "new_turkish": "Daha yaşlı olmama rağmen, küçük kardeşimden daha hızlı koşabiliyordum!",
+      "english": "Although I was older, I could run faster than my younger brother!"
+    },
+    {
+      "set": "modal-5",
+      "id": "s45",
+      "old_turkish": "Akşam yemedine çıkabiliriz ya da sadece artıkları yiyebiliriz.",
+      "new_turkish": "Akşam yemeğine çıkabiliriz ya da sadece artıkları yiyebiliriz.",
+      "english": "We could go out for dinner, or we could just eat leftovers."
+    },
+    {
+      "set": "modal-5",
+      "id": "s47",
+      "old_turkish": "Daha fazla pratik yaparsa, güzel şarkı sdyleyebilir.",
+      "new_turkish": "Daha fazla pratik yaparsa, güzel şarkı söyleyebilir.",
+      "english": "If she practiced more, she could sing beautifully."
+    },
+    {
+      "set": "modal-5",
+      "id": "s50",
+      "old_turkish": "Üç tane targınh ccorek alabilir miyim?",
+      "new_turkish": "Üç tane tarçınlı çörek alabilir miyim?",
+      "english": "Could I have three cinnamon donuts?"
+    },
+    {
+      "set": "modal-5",
+      "id": "s59",
+      "old_turkish": "Çocuğun onu takip edebilmesi için yavaş yürudii.",
+      "new_turkish": "Çocuğun onu takip edebilmesi için yavaş yürüdü.",
+      "english": "He walked slowly so the child could follow him."
+    },
+    {
+      "set": "modal-5",
+      "id": "s60",
+      "old_turkish": "O kadar kızgındı ki konuşamyordu.",
+      "new_turkish": "O kadar kızgındı ki konuşamıyordu.",
+      "english": "He was so angry, he couldn't speak."
+    },
+    {
+      "set": "modal-5",
+      "id": "s61",
+      "old_turkish": "Hoşgakal demeden kaprdan nasıl çıkabildin?",
+      "new_turkish": "Hoşça kal demeden kapıdan nasıl çıkabildin?",
+      "english": "How could you just walk out the door without saying goodbye?"
+    },
+    {
+      "set": "modal-5",
+      "id": "s64",
+      "old_turkish": "Açtya dayanamadım.",
+      "new_turkish": "Acıya dayanamadım.",
+      "english": "I could hardly endure the pain."
+    },
+    {
+      "set": "modal-5",
+      "id": "s69",
+      "old_turkish": "Yolda bir araba olduğu için garajımdan gikamadım.",
+      "new_turkish": "Yolda bir araba olduğu için garajımdan çıkamadım.",
+      "english": "I couldn't get out of my garage because there was a car in the way."
+    },
+    {
+      "set": "modal-5",
+      "id": "s70",
+      "old_turkish": "Dışarıda gürültü olduğu için iyi yyuyamadım.",
+      "new_turkish": "Dışarıda gürültü olduğu için iyi uyuyamadım.",
+      "english": "I couldn't sleep well because it was noisy outside."
+    },
+    {
+      "set": "modal-5",
+      "id": "s71",
+      "old_turkish": "Sana neden kaslarını çattığını anlayamadın.",
+      "new_turkish": "Sana neden kaşlarını çattığını anlayamadın.",
+      "english": "You couldn't understand why she frowned at you."
+    },
+    {
+      "set": "modal-5",
+      "id": "s75",
+      "old_turkish": "Seni dözledim. Seni görmem gerek. Uğrayabilir miyim?",
+      "new_turkish": "Seni özledim. Seni görmem gerek. Uğrayabilir miyim?",
+      "english": "I miss you. I need to see you. Could I come over?"
+    },
+    {
+      "set": "modal-5",
+      "id": "s78",
+      "old_turkish": "Budapeşte'ye tatile gidebilir veya bir diziistii bilgisayar alabilirim.",
+      "new_turkish": "Budapeşte'ye tatile gidebilir veya bir dizüstü bilgisayar alabilirim.",
+      "english": "I could either go on holiday to Budapest or buy a laptop."
+    },
+    {
+      "set": "modal-5",
+      "id": "s84",
+      "old_turkish": "Büyükannesi iki dil biliyordu: hem İngilizce hem de ispanyolca konuşabiliyordu.",
+      "new_turkish": "Büyükannesi iki dil biliyordu: hem İngilizce hem de İspanyolca konuşabiliyordu.",
+      "english": "Her grandmother was bilingual: she could speak both English and Spanish."
+    },
+    {
+      "set": "modal-5",
+      "id": "s86",
+      "old_turkish": "Annesi gençken, kayabiliyordu ama artık yapamnyor.",
+      "new_turkish": "Annesi gençken, kayabiliyordu ama artık yapamıyor.",
+      "english": "When his mother was young, she could skate but she can't do it any longer."
+    },
+    {
+      "set": "modal-5",
+      "id": "s87",
+      "old_turkish": "Kaptyı ağamadık: içeriden kilitliydi!",
+      "new_turkish": "Kapıyı açamadık: içeriden kilitliydi!",
+      "english": "We couldn't open the door: it was locked from the inside!"
+    },
+    {
+      "set": "modal-5",
+      "id": "s92",
+      "old_turkish": "Mozart, 5 yasındayken piyano çalabiliyordu.",
+      "new_turkish": "Mozart, 5 yaşındayken piyano çalabiliyordu.",
+      "english": "Mozart could play the piano when he was 5."
+    },
+    {
+      "set": "modal-5",
+      "id": "s94",
+      "old_turkish": "Gençken dans edebiliyorlardı ama şimdi çok yaşhlar.",
+      "new_turkish": "Gençken dans edebiliyorlardı ama şimdi çok yaşlılar.",
+      "english": "When they were young, they could dance but now they are too old."
+    },
+    {
+      "set": "modal-5",
+      "id": "s96",
+      "old_turkish": "Benim zamanımda çocuklar, icat edilmedikleri için interneti veya bilgisayarı kullanamıyorlard.",
+      "new_turkish": "Benim zamanımda çocuklar, icat edilmedikleri için interneti veya bilgisayarı kullanamıyorlardı.",
+      "english": "In my day, kids couldn't use the internet or a computer because they hadn't been invented."
+    },
+    {
+      "set": "modal-5",
+      "id": "s99",
+      "old_turkish": "Hava güneşliydi, bu yüzden dışanda yemek yiyebildik.",
+      "new_turkish": "Hava güneşliydi, bu yüzden dışarıda yemek yiyebildik.",
+      "english": "The weather was sunny, so we could eat outside."
+    },
+    {
+      "set": "modal-6",
+      "id": "s5",
+      "old_turkish": "Mike sunumu hakkında ne dışlındUğunuzui bilir / bilirdi / bilecekti.",
+      "new_turkish": "Mike sunumu hakkında ne düşündüğünüzü bilir / bilirdi / bilecekti.",
+      "english": "Mike would know what you think about his presentation."
+    },
+    {
+      "set": "modal-6",
+      "id": "s6",
+      "old_turkish": "Kabalığından dolayı dzur diledi ama onu affetmezdi / affetmeyecekti.",
+      "new_turkish": "Kabalığından dolayı özür diledi ama onu affetmezdi / affetmeyecekti.",
+      "english": "He apologized for his rudeness, but she wouldn't forgive him."
+    },
+    {
+      "set": "modal-6",
+      "id": "s16",
+      "old_turkish": "Cümlenin gramer ağısından yanlış olmasına neden olur / neden olurdu / neden olacaktı.",
+      "new_turkish": "Cümlenin gramer açısından yanlış olmasına neden olur / neden olurdu / neden olacaktı.",
+      "english": "It would make the sentence grammatically incorrect."
+    },
+    {
+      "set": "modal-6",
+      "id": "s18",
+      "old_turkish": "Üniformalar herkesin ayn kıyafetleri giymesini gerektirir / gerektirirdi / gerektirecekti.",
+      "new_turkish": "Üniformalar herkesin aynı kıyafetleri giymesini gerektirir / gerektirirdi / gerektirecekti.",
+      "english": "Uniforms would require everyone to wear the same outfits."
+    },
+    {
+      "set": "modal-6",
+      "id": "s19",
+      "old_turkish": "Onlan bir okul gezisine götürmek daha da iyi olur / olurdu / olacaktı.",
+      "new_turkish": "Onları bir okul gezisine götürmek daha da iyi olur / olurdu / olacaktı.",
+      "english": "It would be even better to take them on a field trip."
+    },
+    {
+      "set": "modal-6",
+      "id": "s21",
+      "old_turkish": "Beni misafir olarak getirmeyi düşünür müsün düşünür müydün / düşünecek miydin?",
+      "new_turkish": "Beni misafir olarak getirmeyi düşünür müsün / düşünür müydün / düşünecek miydin?",
+      "english": "Would you consider bringing me as your guest?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s23",
+      "old_turkish": "Korkung bir gece geçirdik. Bebek uyumaz / uyumazdı / uyumayacaktı.",
+      "new_turkish": "Korkunç bir gece geçirdik. Bebek uyumaz / uyumazdı / uyumayacaktı.",
+      "english": "We had a terrible night. The baby wouldn't go to sleep."
+    },
+    {
+      "set": "modal-6",
+      "id": "s24",
+      "old_turkish": "Babam bana arabayı Gduncg vermez / vermezdi / vermeyecekti, bu yüzden trene binmek zorunda kaldık.",
+      "new_turkish": "Babam bana arabayı ödünç vermez / vermezdi / vermeyecekti, bu yüzden trene binmek zorunda kaldık.",
+      "english": "Dad wouldn't lend me the car, so we had to take the train."
+    },
+    {
+      "set": "modal-6",
+      "id": "s32",
+      "old_turkish": "Her zaman tartışırız / tartışırdık / tartışacaktık. Asla anlağamayız.",
+      "new_turkish": "Her zaman tartışırız / tartışırdık / tartışacaktık. Asla anlaşamayız.",
+      "english": "We would always argue. We could never agree."
+    },
+    {
+      "set": "modal-6",
+      "id": "s34",
+      "old_turkish": "Babam her akşam bize şarkı sdyler / sdylerdi / sdyleyecekti.",
+      "new_turkish": "Babam her akşam bize şarkı söyler / söylerdi / söyleyecekti.",
+      "english": "Dad would sing to us every evening."
+    },
+    {
+      "set": "modal-6",
+      "id": "s35",
+      "old_turkish": "Onun yerine ne yapmamuizi Gnerirsin / Gnerirdiniz / Gnerecektiniz?",
+      "new_turkish": "Onun yerine ne yapmamızı önerirsiniz / önerirdiniz / önerecektiniz?",
+      "english": "What would you suggest we do instead?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s37",
+      "old_turkish": "Kardeşim bana neden yalan söyler / sdylerdi / söyleyecekti?",
+      "new_turkish": "Kardeşim bana neden yalan söyler / söylerdi / söyleyecekti?",
+      "english": "Why would my brother lie to me?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s39",
+      "old_turkish": "Neden senden bir şey saklamaya çalışırım / çalışırdım / galisacaktım?",
+      "new_turkish": "Neden senden bir şey saklamaya çalışırım / çalışırdım / çalışacaktım?",
+      "english": "Why would I try to hide anything from you?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s41",
+      "old_turkish": "Paramz konusunda daha dikkatli olmanız akıllıca olur / olurdu / olacaktı.",
+      "new_turkish": "Paranız konusunda daha dikkatli olmanız akıllıca olur / olurdu / olacaktı.",
+      "english": "You would be wise to be more careful with your money."
+    },
+    {
+      "set": "modal-6",
+      "id": "s42",
+      "old_turkish": "Yeni mezunlann erken bir tasarruf hesabı ağçmalar akıllıca olur / olurdu / olacaktı.",
+      "new_turkish": "Yeni mezunların erken bir tasarruf hesabı açmaları akıllıca olur / olurdu / olacaktı.",
+      "english": "Recent graduates would be smart to set up a savings account."
+    },
+    {
+      "set": "modal-6",
+      "id": "s43",
+      "old_turkish": "Materyali en kısa zamanda gönderir misin / gönderir miydin / gsnderecek miydin lütfen?",
+      "new_turkish": "Materyali en kısa zamanda gönderir misin / gönderir miydin / gönderecek miydin lütfen?",
+      "english": "Would you send the material as soon as possible please?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s48",
+      "old_turkish": "Kariyerinde çok başarih olur / olurdu / olacaktı.",
+      "new_turkish": "Kariyerinde çok başarılı olur / olurdu / olacaktı.",
+      "english": "She would be very successful in her career."
+    },
+    {
+      "set": "modal-6",
+      "id": "s49",
+      "old_turkish": "Çoğu insan muhtemelen sizinle aym fikirde olur / olurdu / olacaktı.",
+      "new_turkish": "Çoğu insan muhtemelen sizinle aynı fikirde olur / olurdu / olacaktı.",
+      "english": "Most people would probably agree with you."
+    },
+    {
+      "set": "modal-6",
+      "id": "s50",
+      "old_turkish": "Piyasa güçleri, buğdayın maliyetini ulaşılamayacak kadar zorlar / zorlardı / zorlayacaktt.",
+      "new_turkish": "Piyasa güçleri, buğdayın maliyetini ulaşılamayacak kadar zorlar / zorlardı / zorlayacaktı.",
+      "english": "Market forces would push the cost of wheat beyond reach."
+    },
+    {
+      "set": "modal-6",
+      "id": "s51",
+      "old_turkish": "Daha büyük göçuklar bazen daha küçük çocuklara dgretirler / Öğretirlerdi / 6greteceklerdi.",
+      "new_turkish": "Daha büyük çocuklar bazen daha küçük çocuklara öğretirler / öğretirlerdi / öğreteceklerdi.",
+      "english": "Older children would sometimes teach younger children."
+    },
+    {
+      "set": "modal-6",
+      "id": "s53",
+      "old_turkish": "Çocuklar bir nükleer saldırı durumunda ne yapacaklarım bilirler / bilirlerdi / bileceklerdi.",
+      "new_turkish": "Çocuklar bir nükleer saldırı durumunda ne yapacaklarını bilirler / bilirlerdi / bileceklerdi.",
+      "english": "Children would know what to do in the case of a nuclear attack."
+    },
+    {
+      "set": "modal-6",
+      "id": "s54",
+      "old_turkish": "Milenyumun başında bilgisayarlar düzgün çalışmaz / galığmazı / çalışmayacakt.",
+      "new_turkish": "Milenyumun başında bilgisayarlar düzgün çalışmaz / çalışmazdı / çalışmayacaktı.",
+      "english": "Computers would not work properly at the turn of the millenium."
+    },
+    {
+      "set": "modal-6",
+      "id": "s55",
+      "old_turkish": "İnsanlar onu babasıyla kanstırmazlar / kanstırmazlardı / karıştırmayacaklardh.",
+      "new_turkish": "İnsanlar onu babasıyla karıştırmazlar / karıştırmazlardı / karıştırmayacaklardı.",
+      "english": "People would not confuse him with his dad."
+    },
+    {
+      "set": "modal-6",
+      "id": "s56",
+      "old_turkish": "Harç ticretini ödemek için yazın çalışması gerekir / gerekirdi / gerekeecekti.",
+      "new_turkish": "Harç ücretini ödemek için yazın çalışması gerekir / gerekirdi / gerekecekti.",
+      "english": "She would need to work in the summer in order to pay her tuition."
+    },
+    {
+      "set": "modal-6",
+      "id": "s58",
+      "old_turkish": "Piyano çalmayı 6grenirken her akşam pratik yaparım / yapardım / yapacaktım.",
+      "new_turkish": "Piyano çalmayı öğrenirken her akşam pratik yaparım / yapardım / yapacaktım.",
+      "english": "When I was learning to play the piano, I would practise every evening."
+    },
+    {
+      "set": "modal-6",
+      "id": "s63",
+      "old_turkish": "Gençken, babam gibi davranmaya çalışırdım / calığacaktım.",
+      "new_turkish": "Gençken, babam gibi davranmaya çalışırdım / çalışacaktım.",
+      "english": "I would try to act like my father when I was young."
+    },
+    {
+      "set": "modal-6",
+      "id": "s65",
+      "old_turkish": "Köpeğim ve ben, o gençken, yurtiyuse çıkardık / çıkacaktık.",
+      "new_turkish": "Köpeğim ve ben, o gençken, yürüyüşe çıkardık / çıkacaktık.",
+      "english": "My dog and I would go for walks when she was younger."
+    },
+    {
+      "set": "modal-6",
+      "id": "s70",
+      "old_turkish": "Kız kardeşim o gruptaki baş şarkıcıyı tanır / tanırdı / tantyacaktı.",
+      "new_turkish": "Kız kardeşim o gruptaki baş şarkıcıyı tanır / tanırdı / tanıyacaktı.",
+      "english": "My sister would know the lead singer in that band."
+    },
+    {
+      "set": "modal-6",
+      "id": "s71",
+      "old_turkish": "Sınavdan Önceki gün, okuldayken, endişelenir miydin / endişelencek miydin?",
+      "new_turkish": "Sınavdan önceki gün, okuldayken, endişelenir miydin / endişelenecek miydin?",
+      "english": "Would you get anxious the day before an exam when you were at school?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s72",
+      "old_turkish": "Jonathan hiç çocuk istemezdi / istemeyecekti, sonra kanısıyla tanıştı ve dört çocuğu oldu!",
+      "new_turkish": "Jonathan hiç çocuk istemezdi / istemeyecekti, sonra karısıyla tanıştı ve dört çocuğu oldu!",
+      "english": "Jonathan wouldn't want any children, then he met his wife and they had four!"
+    },
+    {
+      "set": "modal-6",
+      "id": "s73",
+      "old_turkish": "Sorunu çözmeye çalışır / galişirdi / cahşacaktı.",
+      "new_turkish": "Sorunu çözmeye çalışır / çalışırdı / çalışacaktı.",
+      "english": "He would try and solve the problem."
+    },
+    {
+      "set": "modal-6",
+      "id": "s78",
+      "old_turkish": "Eskiden insanlar gamaşırları elde yıkarlardı / yıkayacaklardı. Kurumast için onları dışarnya asarlardı / aşacaklardı.",
+      "new_turkish": "Eskiden insanlar çamaşırları elde yıkarlardı / yıkayacaklardı. Kuruması için onları dışarıya asarlardı / asacaklardı.",
+      "english": "In the old days, people would wash clothes by hand. They would hang them outside to dry."
+    },
+    {
+      "set": "modal-6",
+      "id": "s79",
+      "old_turkish": "Akşam şarkı sdyler / sdylerdik / söyleyecektik, oyun oynarız / oyun oynardık / oyun oynayacaktık.",
+      "new_turkish": "Akşam şarkı söyler / söylerdik / söyleyecektik, oyun oynarız / oyun oynardık / oyun oynayacaktık.",
+      "english": "We would sing songs or play games in the evening."
+    },
+    {
+      "set": "modal-6",
+      "id": "s82",
+      "old_turkish": "Sınava hazırlanmanıza yardımcı olmaktan memnuniyet duyanm / duyardım / duyacaktım.",
+      "new_turkish": "Sınava hazırlanmanıza yardımcı olmaktan memnuniyet duyarım / duyardım / duyacaktım.",
+      "english": "I would be happy to help you with preparation for your exam."
+    },
+    {
+      "set": "modal-6",
+      "id": "s84",
+      "old_turkish": "Okuldayken, evimizdeki herkesten Önce kalkardım / kalkacaktım.",
+      "new_turkish": "Okuldayken, evimizdeki herkesten önce kalkardım / kalkacaktım.",
+      "english": "When I was at school I would get up before everyone else in our house."
+    },
+    {
+      "set": "modal-6",
+      "id": "s89",
+      "old_turkish": "Sık sık 6öğle yemeğine kalır mısınız / kalır mıydımız / kalacak mıydımız?",
+      "new_turkish": "Sık sık öğle yemeğine kalır mısınız / kalır mıydınız / kalacak mıydınız?",
+      "english": "Would you often stay for lunch?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s90",
+      "old_turkish": "Nancy her gün yürüyüşe çıkar / gikardı ama şimdi yeterli zamanı yok.",
+      "new_turkish": "Nancy her gün yürüyüşe çıkar / çıkardı ama şimdi yeterli zamanı yok.",
+      "english": "Nancy would go for a jog every day, but now she doesn't have enough time."
+    },
+    {
+      "set": "modal-6",
+      "id": "s92",
+      "old_turkish": "Çocuğum olmadan Önce, gece geç saatlere kadar ayakta kalırdım / kalacaktım.",
+      "new_turkish": "Çocuğum olmadan önce, gece geç saatlere kadar ayakta kalırdım / kalacaktım.",
+      "english": "Before I had a child, I would stay up late at night."
+    },
+    {
+      "set": "modal-6",
+      "id": "s94",
+      "old_turkish": "Plajda hafta sonu tatilimde yağmur yağar / yağardı. Her zaman şanssanssızımdır!",
+      "new_turkish": "Plajda hafta sonu tatilimde yağmur yağar / yağardı. Her zaman şanssızımdır!",
+      "english": "It would rain during my weekend vacation at the beach. I always have such bad luck!"
+    },
+    {
+      "set": "modal-6",
+      "id": "s96",
+      "old_turkish": "En Üst rafa çıkıp o kitabı benim için alır mısın / alır mıydın / alacak mıydın?",
+      "new_turkish": "En üst rafa çıkıp o kitabı benim için alır mısın / alır mıydın / alacak mıydın?",
+      "english": "Would you reach up to the top shelf and get that book for me?"
+    },
+    {
+      "set": "modal-6",
+      "id": "s100",
+      "old_turkish": "İdeal dünyamız onlar için nasıl olur / olurdu / olacaktı?",
+      "new_turkish": "İdeal dünyanız onlar için nasıl olur / olurdu / olacaktı?",
+      "english": "What would your ideal world be like for them?"
+    },
+    {
+      "set": "modal-7",
+      "id": "s2",
+      "old_turkish": "Geg oldu, Sanınm eve gitmem gerek.",
+      "new_turkish": "Geç oldu, Sanırım eve gitmem gerek.",
+      "english": "It's late, I think I should go home."
+    },
+    {
+      "set": "modal-7",
+      "id": "s3",
+      "old_turkish": "Gdndermeden önce, bu belgeyi kontrol etmen gerek.",
+      "new_turkish": "Göndermeden önce, bu belgeyi kontrol etmen gerek.",
+      "english": "You should check that document before you send it out."
+    },
+    {
+      "set": "modal-7",
+      "id": "s4",
+      "old_turkish": "Dış hekiminin dışlerini yılda en az bir kez temizlemesi gerek.",
+      "new_turkish": "Diş hekiminin dişlerini yılda en az bir kez temizlemesi gerek.",
+      "english": "The dentist should clean your teeth at least once a year."
+    },
+    {
+      "set": "modal-7",
+      "id": "s7",
+      "old_turkish": "Yatmadan Önce, dişlerinizi firgcalaman gerek.",
+      "new_turkish": "Yatmadan önce, dişlerinizi fırçalaman gerek.",
+      "english": "You should brush your teeth before you go to bed."
+    },
+    {
+      "set": "modal-7",
+      "id": "s10",
+      "old_turkish": "Matematikte çok iyisin. Bence muhasebe okumain gerek.",
+      "new_turkish": "Matematikte çok iyisin. Bence muhasebe okuman gerek.",
+      "english": "You are very good at math. I think you should study accounting."
+    },
+    {
+      "set": "modal-7",
+      "id": "s13",
+      "old_turkish": "Çok fazla sigara içmemen gerek. Sağlığın için koti.",
+      "new_turkish": "Çok fazla sigara içmemen gerek. Sağlığın için kötü.",
+      "english": "You shouldn't smoke so much. It's bad for your health."
+    },
+    {
+      "set": "modal-7",
+      "id": "s17",
+      "old_turkish": "Yamin üzerine sıcak şu koymaman gerek.",
+      "new_turkish": "Yanığın üzerine sıcak su koymaman gerek.",
+      "english": "You shouldn't put hot water on a burn."
+    },
+    {
+      "set": "modal-7",
+      "id": "s22",
+      "old_turkish": "Başka bir iş bulmadan önce, işini gerğçekten bırakmaman gerek.",
+      "new_turkish": "Başka bir iş bulmadan önce, işini gerçekten bırakmaman gerek.",
+      "english": "You really shouldn't quit your job before you've found another one."
+    },
+    {
+      "set": "modal-7",
+      "id": "s23",
+      "old_turkish": "Trafik raporunu gerççekten kontrol etmen gerek.",
+      "new_turkish": "Trafik raporunu gerçekten kontrol etmen gerek.",
+      "english": "You should really check the traffic report."
+    },
+    {
+      "set": "modal-7",
+      "id": "s28",
+      "old_turkish": "Sımf arkadaşlarımın daha çok çalışması gerek.",
+      "new_turkish": "Sınıf arkadaşlarımın daha çok çalışması gerek.",
+      "english": "My classmates should study harder."
+    },
+    {
+      "set": "modal-7",
+      "id": "s36",
+      "old_turkish": "Öğretmenin sözünii kesmemen gerek.",
+      "new_turkish": "Öğretmenin sözünü kesmemen gerek.",
+      "english": "You shouldn't interrupt the teacher."
+    },
+    {
+      "set": "modal-7",
+      "id": "s37",
+      "old_turkish": "Sımfta sakız çiğnememen gerek.",
+      "new_turkish": "Sınıfta sakız çiğnememen gerek.",
+      "english": "You shouldn't chew gum in class."
+    },
+    {
+      "set": "modal-7",
+      "id": "s38",
+      "old_turkish": "Sinf arkadaşlarınızla dalga geçmemen gerek.",
+      "new_turkish": "Sınıf arkadaşlarınızla dalga geçmemen gerek.",
+      "english": "You shouldn't tease your classmates."
+    },
+    {
+      "set": "modal-7",
+      "id": "s45",
+      "old_turkish": "Hava durumu tahmini bu hafta sonunun iyi olacağım sdylüyor. Pikniğe gitmemiz gerek.",
+      "new_turkish": "Hava durumu tahmini bu hafta sonunun iyi olacağını söylüyor. Pikniğe gitmemiz gerek.",
+      "english": "The weather forecast says this weekend will be fine. We should go on a picnic."
+    },
+    {
+      "set": "modal-7",
+      "id": "s46",
+      "old_turkish": "Eleonora'dan yıllardır haber almadım. Ona bir yiiziik vermem gerek.",
+      "new_turkish": "Eleonora'dan yıllardır haber almadım. Ona bir yüzük vermem gerek.",
+      "english": "I haven't heard from Eleonora for ages. I should give her a ring."
+    },
+    {
+      "set": "modal-7",
+      "id": "s47",
+      "old_turkish": "Kilo vermek istiyorsan, makarna, patates, beyaz ekmek veya beyaz pıring yememen gerek.",
+      "new_turkish": "Kilo vermek istiyorsan, makarna, patates, beyaz ekmek veya beyaz pirinç yememen gerek.",
+      "english": "\\f you want to lose weight, you shouldn't eat pasta, potatoes, white bread or white rice."
+    },
+    {
+      "set": "modal-7",
+      "id": "s48",
+      "old_turkish": "Kocam akşam yemeii hazırlıyor. iyi bir asc değil, bu yüzden dzel bir şey beklememen gerek.",
+      "new_turkish": "Kocam akşam yemeği hazırlıyor. İyi bir aşçı değil, bu yüzden özel bir şey beklememen gerek.",
+      "english": "My husband is preparing dinner. He's not a good cook so you shouldn't expect anything special."
+    },
+    {
+      "set": "modal-7",
+      "id": "s49",
+      "old_turkish": "Bence daha çok rahatlaman gerek. Son zamanlarda çok çalıştyorsun.",
+      "new_turkish": "Bence daha çok rahatlaman gerek. Son zamanlarda çok çalışıyorsun.",
+      "english": "I think you should relax more. You have been working too much lately."
+    },
+    {
+      "set": "modal-7",
+      "id": "s50",
+      "old_turkish": "Tavsiyemi dinlemen ve doktora gitmen gerek. Beklersen, soğuk algınhin düzelmeyecek.",
+      "new_turkish": "Tavsiyemi dinlemen ve doktora gitmen gerek. Beklersen, soğuk algınlığın düzelmeyecek.",
+      "english": "You should take my advice and go to the doctor. Your cold is not going to get better if you wait."
+    },
+    {
+      "set": "modal-7",
+      "id": "s57",
+      "old_turkish": "Dışarı çıkmadan Önce, odam temizlemen gerek.",
+      "new_turkish": "Dışarı çıkmadan önce, odanı temizlemen gerek.",
+      "english": "You should clean up your room before you go outside."
+    },
+    {
+      "set": "modal-7",
+      "id": "s61",
+      "old_turkish": "Olanları öğretmeninize anlatmanız gerektiğini düşüntiyor musunuz?",
+      "new_turkish": "Olanları öğretmeninize anlatmanız gerektiğini düşünüyor musunuz?",
+      "english": "Do you think you should tell your teacher what happened?"
+    },
+    {
+      "set": "modal-7",
+      "id": "s63",
+      "old_turkish": "TV izliyorum ama tezim Üzerinde çalışmam gerek.",
+      "new_turkish": "TV izliyorum ama tezim üzerinde çalışmam gerek.",
+      "english": "I'm watching TV but I should work on my thesis."
+    },
+    {
+      "set": "modal-7",
+      "id": "s64",
+      "old_turkish": "Çocukların ateşle asla oynamamaları gerek",
+      "new_turkish": "Çocukların ateşle asla oynamamaları gerek.",
+      "english": "Children should never play with fire."
+    },
+    {
+      "set": "modal-7",
+      "id": "s73",
+      "old_turkish": "Bir benzin istasyonunda sigara iğçmemen gerek. Bir patılamaya neden olabilirsin.",
+      "new_turkish": "Bir benzin istasyonunda sigara içmemen gerek. Bir patlamaya neden olabilirsin.",
+      "english": "You shouldn't smoke at a petrol station. You can could cause an explosion."
+    },
+    {
+      "set": "modal-7",
+      "id": "s77",
+      "old_turkish": "Bags ağnn varsa, ağrı kesici alman gerek.",
+      "new_turkish": "Baş ağrın varsa, ağrı kesici alman gerek.",
+      "english": "You should take a painkiller if you have a headache."
+    },
+    {
+      "set": "modal-7",
+      "id": "s78",
+      "old_turkish": "Ebeveynlerin çocuklanyla kaliteli zaman geçirmeleri gerek.",
+      "new_turkish": "Ebeveynlerin çocuklarıyla kaliteli zaman geçirmeleri gerek.",
+      "english": "Parents should spend quality time with their children."
+    },
+    {
+      "set": "modal-7",
+      "id": "s84",
+      "old_turkish": "Hıçkırıklar' durdurmak için ne yapmam gerek?",
+      "new_turkish": "Hıçkırıkları durdurmak için ne yapmam gerek?",
+      "english": "What should I do to stop hiccups?"
+    },
+    {
+      "set": "modal-7",
+      "id": "s89",
+      "old_turkish": "Belirtiler kötüleşirse, bir doktora damşman gerek.",
+      "new_turkish": "Belirtiler kötüleşirse, bir doktora danışman gerek.",
+      "english": "You should consult a doctor if the symptoms get worse."
+    },
+    {
+      "set": "modal-7",
+      "id": "s90",
+      "old_turkish": "Satın almadan Önce, arabayı iyice incelemen gerek.",
+      "new_turkish": "Satın almadan önce, arabayı iyice incelemen gerek.",
+      "english": "You should inspect the car well before you buy it."
+    },
+    {
+      "set": "modal-7",
+      "id": "s91",
+      "old_turkish": "Kararını yakında vermen gerek. Seçim Snumuzdeki ay yapılacak.",
+      "new_turkish": "Kararını yakında vermen gerek. Seçim önümüzdeki ay yapılacak.",
+      "english": "You should make up your mind soon. The election is next month."
+    },
+    {
+      "set": "modal-7",
+      "id": "s93",
+      "old_turkish": "Şikayet etmeye daha az, ııretken bir şey yapmaya daha çok zaman ayırman gerek.",
+      "new_turkish": "Şikayet etmeye daha az, üretken bir şey yapmaya daha çok zaman ayırman gerek.",
+      "english": "You should spend less time complaining and more time doing something productive."
+    },
+    {
+      "set": "modal-7",
+      "id": "s97",
+      "old_turkish": "Sanınm onu şimdi aramam gerek.",
+      "new_turkish": "Sanırım onu şimdi aramam gerek.",
+      "english": "I think I should give her a call now."
+    },
+    {
+      "set": "modal-8",
+      "id": "s3",
+      "old_turkish": "Biraz kılo vermek istiyorsan, sağlık beslenmen gerek.",
+      "new_turkish": "Biraz kilo vermek istiyorsan, sağlıklı beslenmen gerek.",
+      "english": "You ought to eat healthy if you want to lose some weight."
+    },
+    {
+      "set": "modal-8",
+      "id": "s4",
+      "old_turkish": "Gerçeği, öğretmene sdylemem gerek.",
+      "new_turkish": "Gerçeği, öğretmene söylemem gerek.",
+      "english": "I ought to tell the truth to the teacher."
+    },
+    {
+      "set": "modal-8",
+      "id": "s9",
+      "old_turkish": "Bu talimatlara uymak zor. Her şeyi daha iyi açıklamalan gerek.",
+      "new_turkish": "Bu talimatlara uymak zor. Her şeyi daha iyi açıklamaları gerek.",
+      "english": "These instructions are difficult to follow. They ought to explain things better."
+    },
+    {
+      "set": "modal-8",
+      "id": "s10",
+      "old_turkish": "Soğuk algınhğin kötüleşiyor ve burnun akıyor. Doktora görünmen gerek.",
+      "new_turkish": "Soğuk algınlığın kötüleşiyor ve burnun akıyor. Doktora görünmen gerek.",
+      "english": "Your cold is getting worse and you have a runny nose. You ought to see the doctor."
+    },
+    {
+      "set": "modal-8",
+      "id": "s11",
+      "old_turkish": "Bu kitaplan kursum için almam gerek ama hiç param yok.",
+      "new_turkish": "Bu kitapları kursum için almam gerek ama hiç param yok.",
+      "english": "I ought to buy these books for my course but I haven't got any money."
+    },
+    {
+      "set": "modal-8",
+      "id": "s13",
+      "old_turkish": "J havalarda dikkatlice sürmen gerek.",
+      "new_turkish": "Kötü havalarda dikkatlice sürmen gerek.",
+      "english": "You ought to drive carefully in bad weather."
+    },
+    {
+      "set": "modal-8",
+      "id": "s14",
+      "old_turkish": "Odadan çıkarken, 13181 kapatman gerek.",
+      "new_turkish": "Odadan çıkarken, ışığı kapatman gerek.",
+      "english": "You ought to switch off the light when you leave the room."
+    },
+    {
+      "set": "modal-8",
+      "id": "s15",
+      "old_turkish": "Pastayı yapmaya başlamadan Önce, tüm malzemeleri kontrol etmen gerek.",
+      "new_turkish": "Pastayı yapmaya başlamadan önce, tüm malzemeleri kontrol etmen gerek.",
+      "english": "You ought to check all the ingredients before you start making the cake."
+    },
+    {
+      "set": "modal-8",
+      "id": "s17",
+      "old_turkish": "Yashilara saygılı olman gerek.",
+      "new_turkish": "Yaşlılara saygılı olman gerek.",
+      "english": "You ought to be respectful of the elderly."
+    },
+    {
+      "set": "modal-8",
+      "id": "s25",
+      "old_turkish": "Hikümetin işsizlere yardım etmesi gerek.",
+      "new_turkish": "Hükümetin işsizlere yardım etmesi gerek.",
+      "english": "The government ought to help the unemployed people."
+    },
+    {
+      "set": "modal-8",
+      "id": "s29",
+      "old_turkish": "Bir odadan her çıktığında, 13181 kapatman gerek.",
+      "new_turkish": "Bir odadan her çıktığında, ışığı kapatman gerek.",
+      "english": "You ought to switch off the light whenever you leave a room."
+    },
+    {
+      "set": "modal-8",
+      "id": "s32",
+      "old_turkish": "Başkası satın almadan Önce o ev hakkında bir karar vermesi gerek.",
+      "new_turkish": "Başkası satın almadan önce o ev hakkında bir karar vermesi gerek.",
+      "english": "She ought to make a decision about that house before someone else buys it."
+    },
+    {
+      "set": "modal-8",
+      "id": "s33",
+      "old_turkish": "Toplantıya başlamamuiz gerek, vakit geç oluyor.",
+      "new_turkish": "Toplantıya başlamamız gerek, vakit geç oluyor.",
+      "english": "We ought to start the meeting, it's getting late."
+    },
+    {
+      "set": "modal-8",
+      "id": "s34",
+      "old_turkish": "Bisikletlerini kasksiz sürmemelidirler.",
+      "new_turkish": "Bisikletlerini kasksız sürmemelidirler.",
+      "english": "They oughtn't ride their bicycles without helmets."
+    },
+    {
+      "set": "modal-8",
+      "id": "s38",
+      "old_turkish": "Yoğun trafikten kağınmak için öğleden sonra 4'te gitmemiz gerektiğini diisiiniiyorum.",
+      "new_turkish": "Yoğun trafikten kaçınmak için öğleden sonra 4'te gitmemiz gerektiğini düşünüyorum.",
+      "english": "I think we ought to go at 4 pm to avoid the rush-hour traffic."
+    },
+    {
+      "set": "modal-8",
+      "id": "s39",
+      "old_turkish": "Bu eğitime katılmamuz gerek.",
+      "new_turkish": "Bu eğitime katılmamız gerek.",
+      "english": "We ought to participate in this training."
+    },
+    {
+      "set": "modal-8",
+      "id": "s41",
+      "old_turkish": "Her yemekten sonra dış ipi kullanman ve dişlerini firgcalaman gerek.",
+      "new_turkish": "Her yemekten sonra diş ipi kullanman ve dişlerini fırçalaman gerek.",
+      "english": "You ought to floss and brush your teeth after every meal."
+    },
+    {
+      "set": "modal-8",
+      "id": "s42",
+      "old_turkish": "İgmeyi bırakman gerek.",
+      "new_turkish": "İçmeyi bırakman gerek.",
+      "english": "You ought to stop drinking."
+    },
+    {
+      "set": "modal-8",
+      "id": "s47",
+      "old_turkish": "Kızlarla dalga geğmek, sınavlarda kopyalamak gibi kötü alışkanuklardan uzak durman gerek.",
+      "new_turkish": "Kızlarla dalga geçmek, sınavlarda kopyalamak gibi kötü alışkanlıklardan uzak durman gerek.",
+      "english": "You ought to keep away from bad habits like teasing girls, copying in exams etc."
+    },
+    {
+      "set": "modal-8",
+      "id": "s50",
+      "old_turkish": "Sanınm, salondaki çekmecede olmalı.",
+      "new_turkish": "Sanırım, salondaki çekmecede olmalı.",
+      "english": "I think, it ought to be in the drawer at the drawing room."
+    },
+    {
+      "set": "modal-8",
+      "id": "s53",
+      "old_turkish": "Kendine inantyorsan, kesinlikle yapman gerek.",
+      "new_turkish": "Kendine inanıyorsan, kesinlikle yapman gerek.",
+      "english": "If you believe in yourself, you ought to definitely do it."
+    },
+    {
+      "set": "modal-8",
+      "id": "s55",
+      "old_turkish": "Karmaşık matematıdı bile bir anda çözmesi gerek.",
+      "new_turkish": "Karmaşık matematiği bile bir anda çözmesi gerek.",
+      "english": "He ought to solve even complex mathematics in a jiffy."
+    },
+    {
+      "set": "modal-8",
+      "id": "s57",
+      "old_turkish": "Onlan Gnlemek için daha çok çgalışmamız gerek.",
+      "new_turkish": "Onları önlemek için daha çok çalışmamız gerek.",
+      "english": "We ought to work harder to prevent them."
+    },
+    {
+      "set": "modal-8",
+      "id": "s58",
+      "old_turkish": "Ştireci hızlandırmaya yardımcı olmalar gerek.",
+      "new_turkish": "Süreci hızlandırmaya yardımcı olmaları gerek.",
+      "english": "They ought to help speed up the process."
+    },
+    {
+      "set": "modal-8",
+      "id": "s59",
+      "old_turkish": "Liselerin, güneş erken mi başlaması gerek?",
+      "new_turkish": "Liselerin, güne erken mi başlaması gerek?",
+      "english": "Ought high schools to start the day earlier?"
+    },
+    {
+      "set": "modal-8",
+      "id": "s61",
+      "old_turkish": "Çok çeşitli kurslar almam ve sıkı bir galisma programını takip etmem gerek.",
+      "new_turkish": "Çok çeşitli kurslar almam ve sıkı bir çalışma programını takip etmem gerek.",
+      "english": "I ought to take a wide variety of courses and follow a strict study schedule."
+    },
+    {
+      "set": "modal-8",
+      "id": "s63",
+      "old_turkish": "Öğrencilerin, çalışmalarını orijinal ile karşılaştırmalan gerek.",
+      "new_turkish": "Öğrencilerin, çalışmalarını orijinal ile karşılaştırmaları gerek.",
+      "english": "Students ought to compare their work with the orginal."
+    },
+    {
+      "set": "modal-8",
+      "id": "s64",
+      "old_turkish": "Bunun nasıl kullanılacağım öğrenmen gerek.",
+      "new_turkish": "Bunun nasıl kullanılacağını öğrenmen gerek.",
+      "english": "You ought to learn how to use it."
+    },
+    {
+      "set": "modal-8",
+      "id": "s67",
+      "old_turkish": "Gdozden geçirmen gerekirse diye, notlarını saklaman gerek.",
+      "new_turkish": "Gözden geçirmen gerekirse diye, notlarını saklaman gerek.",
+      "english": "You ought to keep your notes in case you need to review them."
+    },
+    {
+      "set": "modal-8",
+      "id": "s68",
+      "old_turkish": "Bu sdylenecek korkung bir şey. Kendinden utanman gerek!",
+      "new_turkish": "Bu söylenecek korkunç bir şey. Kendinden utanman gerek!",
+      "english": "That's a terrible thing to say. You ought to be ashamed of yourself!"
+    },
+    {
+      "set": "modal-8",
+      "id": "s69",
+      "old_turkish": "Sınav için çok çalışıyor, bu yüzden geğmesi gerekiyor.",
+      "new_turkish": "Sınav için çok çalışıyor, bu yüzden geçmesi gerekiyor.",
+      "english": "She's been studying hard for the exam, so she ought to pass."
+    },
+    {
+      "set": "modal-8",
+      "id": "s70",
+      "old_turkish": "Hepimizin diğer insanlara karşı bir görevi var ve onların haklarım ve 6zgürlüklerini korumamız gerek.",
+      "new_turkish": "Hepimizin diğer insanlara karşı bir görevi var ve onların haklarını ve özgürlüklerini korumamız gerek.",
+      "english": "We all have a duty to other people, and we ought to protect their rights and freedoms."
+    },
+    {
+      "set": "modal-8",
+      "id": "s71",
+      "old_turkish": "Yabancı bir ıılkede yastyorsan, dil 6grenmeye çalışman gerek.",
+      "new_turkish": "Yabancı bir ülkede yaşıyorsan, dil öğrenmeye çalışman gerek.",
+      "english": "If you live in foreign country, you ought to try to learn language."
+    },
+    {
+      "set": "modal-8",
+      "id": "s74",
+      "old_turkish": "Seni sabah mı öğleden sonra m aramam gerek?",
+      "new_turkish": "Seni sabah mı öğleden sonra mı aramam gerek?",
+      "english": "When ought I to call you, morning or afternoon?"
+    },
+    {
+      "set": "modal-8",
+      "id": "s80",
+      "old_turkish": "Eğer şimdi ayrılırsak, en geç öğle vakti varmamuz gerek.",
+      "new_turkish": "Eğer şimdi ayrılırsak, en geç öğle vakti varmamız gerek.",
+      "english": "If we leave now, we ought to arrive no later than lunchtime."
+    },
+    {
+      "set": "modal-8",
+      "id": "s85",
+      "old_turkish": "Konserin yaklaşık iki saat sürmesi gerek, bu yüzden 68leden sonra 12'de evde olacağız.",
+      "new_turkish": "Konserin yaklaşık iki saat sürmesi gerek, bu yüzden öğleden sonra 12'de evde olacağız.",
+      "english": "The concert ought to only take about two hours so we'll be home by 12 pm."
+    },
+    {
+      "set": "modal-8",
+      "id": "s89",
+      "old_turkish": "Temel ilaçların parasını ddemememiz gerek.",
+      "new_turkish": "Temel ilaçların parasını ödemememiz gerek.",
+      "english": "We ought not to have to pay for basic medicines."
+    },
+    {
+      "set": "modal-8",
+      "id": "s90",
+      "old_turkish": "Bunlan ona söylememem gerek.",
+      "new_turkish": "Bunları ona söylememem gerek.",
+      "english": "I ought not to say those things to her."
+    },
+    {
+      "set": "modal-8",
+      "id": "s93",
+      "old_turkish": "Bel dlcumii küçültmek için daha az yemem gerek.",
+      "new_turkish": "Bel ölçümü küçültmek için daha az yemem gerek.",
+      "english": "I ought to eat less to reduce my waistline."
+    },
+    {
+      "set": "modal-8",
+      "id": "s95",
+      "old_turkish": "Kotii Öksürüğü konusunda bir şeyler yapması gerekiyor.",
+      "new_turkish": "Kötü öksürüğü konusunda bir şeyler yapması gerekiyor.",
+      "english": "She ought to do something about her bad cough."
+    }
+  ]
+}

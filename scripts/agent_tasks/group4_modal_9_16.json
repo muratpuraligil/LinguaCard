@@ -1,0 +1,4018 @@
+{
+  "modal-9": [
+    {
+      "id": "s1",
+      "turkish": "Kütüphanede yüksek sesle konuşmamalısın.",
+      "english": "You must not talk loudly in the library."
+    },
+    {
+      "id": "s2",
+      "turkish": "Okul önünde araba kullanırken, yavaşlamalhyiz.",
+      "english": "We must slow down while driving in front of a school."
+    },
+    {
+      "id": "s3",
+      "turkish": "Bu şarabi denemelisin. Bu mükemmel.",
+      "english": "You must try this wine. It's excellent."
+    },
+    {
+      "id": "s4",
+      "turkish": "Müşterilerle nazikge konuşmalısın.",
+      "english": "You must speak politely to the customers."
+    },
+    {
+      "id": "s5",
+      "turkish": "Anna'ya yarın geceki partiden bahsetmemelisin. Bu bir şiirpriz!",
+      "english": "You mustn't tell Anna about the party tomorrow night. It's a surprise!"
+    },
+    {
+      "id": "s6",
+      "turkish": "Bir köpek, rehber köpek olabilmek için 6zel eğitim almalı.",
+      "english": "A dog must get special training in order to be a guide dog."
+    },
+    {
+      "id": "s7",
+      "turkish": "Burada sigara iğçmemelisin. Dumansız bir bina.",
+      "english": "You mustn't smoke here. It's a smoke-free building."
+    },
+    {
+      "id": "s8",
+      "turkish": "Projeyi bu haftaya kadar tamamlamalıyım.",
+      "english": "I must complete the project by this week."
+    },
+    {
+      "id": "s9",
+      "turkish": "Hükümet herkese sağlık hizmeti sa3lamalı.",
+      "english": "The government must provide health care for everybody."
+    },
+    {
+      "id": "s10",
+      "turkish": "Herkes yeryüzünün doğal kaynaklarım korumah.",
+      "english": "Everyone must save the natural resources of the earth."
+    },
+    {
+      "id": "s11",
+      "turkish": "Binada yangın alarm bulunmah.",
+      "english": "The building must have a fire alarm."
+    },
+    {
+      "id": "s12",
+      "turkish": "Soruma hemen cevap vermelisin.",
+      "english": "You must answer my question right now."
+    },
+    {
+      "id": "s13",
+      "turkish": "Şirketimizde tüm çalışanlar yaka kartı takmalı.",
+      "english": "At our company all employees must wear name tags."
+    },
+    {
+      "id": "s14",
+      "turkish": "Çalışma 7:30'da başlar. Geç kalmamalısın.",
+      "english": "Work begins at 7:30. You must not arrive late."
+    },
+    {
+      "id": "s15",
+      "turkish": "Çalışanlar şirket ürünlerini eve götürmemeliler.",
+      "english": "Employees must not take home company products."
+    },
+    {
+      "id": "s16",
+      "turkish": "Bu çok pahahi görünüyor. Bir servete mal olmuş olmalı!",
+      "english": "That looks very expensive. It must have cost a fortune!"
+    },
+    {
+      "id": "s17",
+      "turkish": "Burası bir hastane. Sigara içmemelisin.",
+      "english": "It's a hospital. You mustn't smoke."
+    },
+    {
+      "id": "s18",
+      "turkish": "Oraya kendi başınıza gitmemelisin. Bu son derece tehlikeli.",
+      "english": "You mustn't go there on your own. It's extremely dangerous."
+    },
+    {
+      "id": "s19",
+      "turkish": "Pasaportunu hatırlamalısın. Aksi takdirde uçağa binmene izin vermezler.",
+      "english": "You must remember your passport. Otherwise they won't let you on the plane."
+    },
+    {
+      "id": "s20",
+      "turkish": "Aptal çocuk! Kibritle oynamamalısın!",
+      "english": "Stupid boy! You mustn't play with matches!"
+    },
+    {
+      "id": "s21",
+      "turkish": "Yolları bakmadan geçmemelisin. Tehlikeli.",
+      "english": "You mustn't cross the roads without looking. It's dangerous."
+    },
+    {
+      "id": "s22",
+      "turkish": "Sınavlar gelecek hafta. Daha çok calığmalıyım.",
+      "english": "The exams are next week. I must work harder."
+    },
+    {
+      "id": "s23",
+      "turkish": "Öğrenciler öğretmeni dinlemeliler, yoksa anlamazlar.",
+      "english": "Students must listen to the teacher or they won't understand."
+    },
+    {
+      "id": "s24",
+      "turkish": "Kırmızı sık yanarken, karşıdan karşıya geçmemelisin.",
+      "english": "You mustn't cross the road when the red light is showing."
+    },
+    {
+      "id": "s25",
+      "turkish": "Şimdi ayrılmahyiz, yoksa uçağı kaçıracağız.",
+      "english": "We must leave now or we' Il miss the plane."
+    },
+    {
+      "id": "s26",
+      "turkish": "Üzgünüm, şimdi gitmeliyim. Geç kalmak istemiyorum.",
+      "english": "Sorry, I must go now. I don't want to be late."
+    },
+    {
+      "id": "s27",
+      "turkish": "Bu kitabı okumalısın. Bu gerçekten iyi.",
+      "english": "You must read this book. It's really good."
+    },
+    {
+      "id": "s28",
+      "turkish": "Hayvanları beslememeliyiz. Yasak.",
+      "english": "We mustn't feed the animals. It's forbidden."
+    },
+    {
+      "id": "s29",
+      "turkish": "Çok geç olmadan biletleri ayırtmaltyiz.",
+      "english": "We must book the tickets before it's too late."
+    },
+    {
+      "id": "s30",
+      "turkish": "Britanya'da sol taraftan şiirmelisin.",
+      "english": "In Britain you must drive on the left."
+    },
+    {
+      "id": "s31",
+      "turkish": "Doğum gününii tekrar unutmamalısın.",
+      "english": "You mustn't forget his birthday again."
+    },
+    {
+      "id": "s32",
+      "turkish": "Halka açık yerlerde sigara iğçmemelisin.",
+      "english": "You mustn't smoke on public places."
+    },
+    {
+      "id": "s33",
+      "turkish": "Ugakta bilgisayar kullanmamalısın.",
+      "english": "You mustn't use a computer on the plane."
+    },
+    {
+      "id": "s34",
+      "turkish": "Uzun seyahatinden sonra bitkin olmalısın. içeri gel ve bir içki al.",
+      "english": "You must be exhausted after your long trip. Come in and have a drink."
+    },
+    {
+      "id": "s35",
+      "turkish": "Cüzdammı arabada aramalıyım.",
+      "english": "I must look for my wallet in the car."
+    },
+    {
+      "id": "s36",
+      "turkish": "Müdürün ofisine izinsiz girmemelisin.",
+      "english": "You mustn't step into the headmaster's office without permission."
+    },
+    {
+      "id": "s37",
+      "turkish": "Paris'e gittiğinde, Eyfel Kulesi ve Louvre'u görmelisin.",
+      "english": "You must see the Eiffel Tower and the Louvre when you go to Paris."
+    },
+    {
+      "id": "s38",
+      "turkish": "Kalkış ve iniş sırasında tüm yolcular emniyet kemerlerini takmalılar.",
+      "english": "All passengers must put on their seatbelts during take-off and landing."
+    },
+    {
+      "id": "s39",
+      "turkish": "Öğretmen olmak istiyorsan, bir öğretmen eğitim ıınıversitesine gitmelisin.",
+      "english": "If you want to be a teacher, you must attend a teacher's training college."
+    },
+    {
+      "id": "s40",
+      "turkish": "Görüyorum ki ödevini henüz bitirmemişsin. O halde çok zor olmalı.",
+      "english": "I see you haven't finished your homework yet. It must be very difficult, then."
+    },
+    {
+      "id": "s41",
+      "turkish": "Fırına dokunmamahsin. Hava çok sıcak ve kendine zarar verebilirsin.",
+      "english": "You mustn't touch the oven. It's very hot and you might hurt yourself."
+    },
+    {
+      "id": "s42",
+      "turkish": "Polisler, şüpheliyi polis arabasına bindirmeliler.",
+      "english": "The police must put the suspect into the police car."
+    },
+    {
+      "id": "s43",
+      "turkish": "Öğrenciler sınavın çeşitli bölümleri arasında dışarı çıkmamalılar. Okul kurallarına aykırı.",
+      "english": "Pupils must not go out between the various parts of the exam. It's against the school rules."
+    },
+    {
+      "id": "s44",
+      "turkish": "Sınavı geğmek istiyorsa, daha çok çalışmalı.",
+      "english": "She must study harder if she wants to pass the exam."
+    },
+    {
+      "id": "s45",
+      "turkish": "Yorgunum. Bu gece erken yatmalıyım.",
+      "english": "I'm tired. I must go to bed early tonight."
+    },
+    {
+      "id": "s46",
+      "turkish": "Yolcular, görev başındayken, sürücüyle konuşmamalılar.",
+      "english": "Passengers mustn't speak to the driver when he's on duty."
+    },
+    {
+      "id": "s47",
+      "turkish": "Otobüs şimdiye kadar burada olmalı. Program Öyle diyor.",
+      "english": "The bus must be here by now. That's what the schedule says."
+    },
+    {
+      "id": "s48",
+      "turkish": "O köpeğe dokunmamalısın. Tehlikeli görünüyor!",
+      "english": "You mustn't touch that dog. It looks dangerous!"
+    },
+    {
+      "id": "s49",
+      "turkish": "Şirket patronu, birkaç spor otomobile sahipse, son derece zengin olmalı.",
+      "english": "The company boss must be extremely rich if he owns several sports cars."
+    },
+    {
+      "id": "s50",
+      "turkish": "Annem bana göndermem için 6nemli bir mektup verdi, bu yüzden onu göndermeyi unutmamalıyım.",
+      "english": "My mother gave me an important letter to post, so I mustn't forget to post it."
+    },
+    {
+      "id": "s51",
+      "turkish": "Bu mücevher çok değerli. Ona dikkatle bakmalı ve onu kaybetmemelisin.",
+      "english": "This jewellery is very valuable. You must look after it carefully and mustn't lose it."
+    },
+    {
+      "id": "s52",
+      "turkish": "Çok susamış olmalısın. Sana hemen içecek bir şeyler getireceğim.",
+      "english": "You must be very thirsty. I'll bring you something to drink right away."
+    },
+    {
+      "id": "s53",
+      "turkish": "Halka açık yerlerde veya restoranlarda sigara iğçmemelisin. Bu kanuna aykırt.",
+      "english": "You mustn't smoke in public places or restaurants. It's against the law."
+    },
+    {
+      "id": "s54",
+      "turkish": "O yeni belgeseli gerçekten görmelisin. O fantastik.",
+      "english": "You really must see that new documentary. It's fantastic."
+    },
+    {
+      "id": "s55",
+      "turkish": "Yaramazlık yaptığın için 30 cümle yazmalısın.",
+      "english": "You must write 30 sentences because you have misbehaved."
+    },
+    {
+      "id": "s56",
+      "turkish": "John, bu kadar hızl konuşmamalısın. Seni kimse anlayamaz!",
+      "english": "John, you mustn't speak so quickly. Nobody can understand you!"
+    },
+    {
+      "id": "s57",
+      "turkish": "Bu kadar kötü bir Gksüri",
+      "english": "If you've got such a bad cough, you mustn't smoke."
+    },
+    {
+      "id": "s58",
+      "turkish": "Bu kadar gürültü yapmamalısın. Bebek yan odada uyuyor.",
+      "english": "You mustn't make so much noise. The baby is sleeping in the next room."
+    },
+    {
+      "id": "s59",
+      "turkish": "Mali yardım başvurusunda bulunmak için bir başvuru formu doldurmalısın.",
+      "english": "To apply for financial aid, you must fill out an application form."
+    },
+    {
+      "id": "s60",
+      "turkish": "Küçük kardeşine karşı nazik olmalısın.",
+      "english": "You must be nice to your little brother."
+    },
+    {
+      "id": "s61",
+      "turkish": "Kaliforniya'da araba kullanmak için bir kasko sigortanız olmalı.",
+      "english": "You must have an automobile insurance to drive a car in California."
+    },
+    {
+      "id": "s62",
+      "turkish": "Kutlama için bir etkinlik organize etmeli.",
+      "english": "He must organize an event for the celabration."
+    },
+    {
+      "id": "s63",
+      "turkish": "Her hafta sonu kamp yapmaya gitmeli.",
+      "english": "She must go camping every weekend."
+    },
+    {
+      "id": "s64",
+      "turkish": "Raporu üzerinde çok çalıştı, ardından yanlışlıkla dosyayı bilgisayarından sildi. Üzgün olmal.",
+      "english": "He worked hard on his report, then accidentally deleted the file from his computer. He must be upset."
+    },
+    {
+      "id": "s65",
+      "turkish": "Araba sürerken, uykuya dalmamalısın.",
+      "english": "You mustn't fall asleep when you are driving."
+    },
+    {
+      "id": "s66",
+      "turkish": "İlağları, göçukların alabileceği yerlere bırakmamalısın.",
+      "english": "You mustn't leave medicines in places where children can get hold of them."
+    },
+    {
+      "id": "s67",
+      "turkish": "Ateşi var, bugün dışarı çıkmamah, yatakta kalmalı.",
+      "english": "She's got temperature, she mustn't go out today, she must stay in bed."
+    },
+    {
+      "id": "s68",
+      "turkish": "Evet, fulleri smavdan Önce 6grenmelisin.",
+      "english": "Yes, you must learn the verbs before the exam."
+    },
+    {
+      "id": "s69",
+      "turkish": "Mary ağlamaya devam ediyor, bir sorunu olmalı.",
+      "english": "Mary keeps crying, she must have a problem."
+    },
+    {
+      "id": "s70",
+      "turkish": "Sütcii süte şu koymamalı.",
+      "english": "The milkman mustn't put water in the milk."
+    },
+    {
+      "id": "s71",
+      "turkish": "Ödevini tamamlamalı.",
+      "english": "She must complete her homework."
+    },
+    {
+      "id": "s72",
+      "turkish": "Bir şemsiye almalyim. Benimki kırık.",
+      "english": "I must buy an umbrella. Mine is broken."
+    },
+    {
+      "id": "s73",
+      "turkish": "Fazla zamanım yok. Acele etmeliyiz!",
+      "english": "We haven't got much time. We must hurry!"
+    },
+    {
+      "id": "s74",
+      "turkish": "Projemi Cuma'ya kadar bitirmeliyim. Öğleden sonra 4'te teslim etmeliyim.",
+      "english": "I must finish my project by Friday. I have to hand it in at 4 pm."
+    },
+    {
+      "id": "s75",
+      "turkish": "Bunun için kendini suçlamamalısın.",
+      "english": "You mustn't blame yourself for this."
+    },
+    {
+      "id": "s76",
+      "turkish": "Öğrenciler, ödevlerini zamanında teslim etmeliler.",
+      "english": "Students must hand in their homework on time."
+    },
+    {
+      "id": "s77",
+      "turkish": "Brezilya'yı ziyaret edersen, gelip benimle kalmalısın.",
+      "english": "If you visit Brazil, you must come stay with me."
+    },
+    {
+      "id": "s78",
+      "turkish": "Mary seni ararsa, bana sdylemelisin.",
+      "english": "If Mary phones you, you must tell me."
+    },
+    {
+      "id": "s79",
+      "turkish": "Bizimle gelmek istiyorsa, zamanında gelmeli.",
+      "english": "She must be on time, if she wants to come with us."
+    },
+    {
+      "id": "s80",
+      "turkish": "İstemiyorsan, partiye gitmemelisin.",
+      "english": "You mustn't go to the party if you don't want to."
+    },
+    {
+      "id": "s81",
+      "turkish": "Kinlmamışsa, onarmaya çalışmamah.",
+      "english": "She mustn't try fix it if it's not broken."
+    },
+    {
+      "id": "s82",
+      "turkish": "Ann yann bir konuşma yapacak, bu yüzden bu gece erken yatmalı.",
+      "english": "Ann is going to give a speech tomorrow so she must go to bed early tonight."
+    },
+    {
+      "id": "s83",
+      "turkish": "Tüm konserin tadını çıkarmak için zamanında varmaltyiz.",
+      "english": "We must arrive on time in order to enjoy the whole concert."
+    },
+    {
+      "id": "s84",
+      "turkish": "Çocuklar iyi alışkanlıklar 6grenmeliler.",
+      "english": "Children must learn good habits."
+    },
+    {
+      "id": "s85",
+      "turkish": "Şirketlerimiz verimliliklerini artırmal.",
+      "english": "Our companies must increase their productivity."
+    },
+    {
+      "id": "s86",
+      "turkish": "Gerçekten sigarayı bırakmalısın.",
+      "english": "You really must stop smoking."
+    },
+    {
+      "id": "s87",
+      "turkish": "O çocuk \"tesekkiir ederim\" demeyi 6grenmeli.",
+      "english": "That child must learn to say ‘thank-you'."
+    },
+    {
+      "id": "s88",
+      "turkish": "Çocuklarına bakmalı.",
+      "english": "He must take care of his children."
+    },
+    {
+      "id": "s89",
+      "turkish": "Yollarını onarmalı.",
+      "english": "She must mend her ways."
+    },
+    {
+      "id": "s90",
+      "turkish": "Ondan özür dilemelisin.",
+      "english": "You must apologize to her."
+    },
+    {
+      "id": "s91",
+      "turkish": "Soruna bir çözüm bulmalılar.",
+      "english": "They must find a solution to the problem."
+    },
+    {
+      "id": "s92",
+      "turkish": "Mimkun olduğu kadar çabuk bir iş bulmah.",
+      "english": "He must find a job as sson as possible."
+    },
+    {
+      "id": "s93",
+      "turkish": "Birisine hediye olarak saat vermemelisin.",
+      "english": "You mustn't give someone a clock as a present."
+    },
+    {
+      "id": "s94",
+      "turkish": "Köpeği beslemeyi unutmamalısın.",
+      "english": "You must remember to feed the dog."
+    },
+    {
+      "id": "s95",
+      "turkish": "Komşularımızla 6öğle yemeğini unutmamalısın!",
+      "english": "You mustn't forget the lunch with our neighbours!"
+    },
+    {
+      "id": "s96",
+      "turkish": "Derhal bir doktora görünmelisin!",
+      "english": "You must see a doctor at once!"
+    },
+    {
+      "id": "s97",
+      "turkish": "O tabağa dokunmamalısın, çok sıcak.",
+      "english": "You mustn't touch that plate, it's too hot."
+    },
+    {
+      "id": "s98",
+      "turkish": "Seksen yasin üzerinde olmalı, 1940'ta doğdu.",
+      "english": "He must be over eighty, he was born in 1940."
+    },
+    {
+      "id": "s99",
+      "turkish": "Trafik ışıklan kırmızıya döndüğünde, durmah.",
+      "english": "He must stop when the traffic lights turn red."
+    },
+    {
+      "id": "s100",
+      "turkish": "Çok yorgun olmalı. Bütün gün çalışıyor.",
+      "english": "He must be very tired. He has been working all day long."
+    }
+  ],
+  "modal-10": [
+    {
+      "id": "s1",
+      "turkish": "Projemi yarına kadar teslim etmek zorundayım.",
+      "english": "I have to submit my project by tomorrow."
+    },
+    {
+      "id": "s2",
+      "turkish": "Antonio sabah altıda kalkmak zorunda değil.",
+      "english": "Antonio doesn't have to get up at six in the morning."
+    },
+    {
+      "id": "s3",
+      "turkish": "Bu öğleden sonra doktora gitmek zorundayım.",
+      "english": "I have to go to the doctor this afternoon."
+    },
+    {
+      "id": "s4",
+      "turkish": "Cumartesi öğleden sonra çalışmak zorunda olacak mısın?",
+      "english": "Will you have to work on Saturday afternoon?"
+    },
+    {
+      "id": "s5",
+      "turkish": "Patricia otobüs için uzun süre beklemek zorunda deildi.",
+      "english": "Patricia didn't have to wait long for the bus."
+    },
+    {
+      "id": "s6",
+      "turkish": "Bu kadar çok çalışmak zorunda değilsin.",
+      "english": "You don't have to work so hard."
+    },
+    {
+      "id": "s7",
+      "turkish": "Şehir müzesini ziyaret etmek zorundasın, çok ilginç.",
+      "english": "You have to visit the city museum, it is very interesting."
+    },
+    {
+      "id": "s8",
+      "turkish": "İngilizce'deki yardımc' fiilleri anlamak zorunda mısın?",
+      "english": "Do you have to understand modal verbs in English?"
+    },
+    {
+      "id": "s9",
+      "turkish": "Yarın erken kalkmak zorunda olmayacaoim.",
+      "english": "Tomorrow, I won't have to get up early."
+    },
+    {
+      "id": "s10",
+      "turkish": "Bakıcı yarın gelmek zorunda değil, çocuklara bakmak için evde kalacağım.",
+      "english": "The babysitter doesn't have to come tomorrow, I'll stay home to take care of the children."
+    },
+    {
+      "id": "s11",
+      "turkish": "Kitapları yarın getirmek zorunda dedilsin.",
+      "english": "You don't have to bring the books tomorrow."
+    },
+    {
+      "id": "s12",
+      "turkish": "Elisabeth 10 Mart'a kadar vize başvurusunda bulunmak zorunda.",
+      "english": "Elisabeth has to apply for her visa by March 10th."
+    },
+    {
+      "id": "s13",
+      "turkish": "Proje nedeniyle dün gece geç saatlere kadar calığşmak zorunda kaldım.",
+      "english": "I had to work late last night because of the project."
+    },
+    {
+      "id": "s14",
+      "turkish": "Şehirdeyken, bizi ziyaret etmek zorundasın.",
+      "english": "You have to visit us while you're in town."
+    },
+    {
+      "id": "s15",
+      "turkish": "Arabayı park etmek zorunda değilsin. Otel valesi bunu senin için yapacak.",
+      "english": "You don't have to park the car. The hotel valet will do it for you."
+    },
+    {
+      "id": "s16",
+      "turkish": "Tim'in bugün okula gitmek zorunda değil. Tatil.",
+      "english": "Tim doesn't have to go to school today. It's a holiday."
+    },
+    {
+      "id": "s17",
+      "turkish": "Bağırmak zorunda değildin. Herkes seni duyabiliyordu.",
+      "english": "You didn't have to shout. Everyone could hear you."
+    },
+    {
+      "id": "s18",
+      "turkish": "Shira havaalanına arabayla gitmek zorunda değil. Taksiyle gidiyor.",
+      "english": "Shira doesn't have to drive to the airport. She's going by taxi."
+    },
+    {
+      "id": "s19",
+      "turkish": "Tına, Pazartesi derslerine kaydolmak zorunda, aksi takdirde derslere giremez.",
+      "english": "Tina has to register for her classes on Monday, otherwise she won't get a place in them."
+    },
+    {
+      "id": "s20",
+      "turkish": "Bu faksı göndermek zorunda değilsin. Ben zaten gönderdim.",
+      "english": "You don't have to send that fax. I've already sent it."
+    },
+    {
+      "id": "s21",
+      "turkish": "Jeremy yarın erken kalkmak zorunda değil. Yarın tatil.",
+      "english": "Jeremy doesn't have to get up early tomorrow. Tomorrow is holiday."
+    },
+    {
+      "id": "s22",
+      "turkish": "Teklifi bugün bitirmek zorunda değilsin. Yarın onu bitirebilirsin.",
+      "english": "You don't have to finish the proposal today. You can finish it tomorrow."
+    },
+    {
+      "id": "s23",
+      "turkish": "Bir hemşire, her hastaya baktıktan sonra ellerini yıkamak zorunda.",
+      "english": "A nurse has to wash her hands after caring for each patient."
+    },
+    {
+      "id": "s24",
+      "turkish": "Cuma gündelik kıyafet günüdür. Takım elbise giymek zorunda dediliz.",
+      "english": "Friday is casual dress day. We don't have to wear suits."
+    },
+    {
+      "id": "s25",
+      "turkish": "İngilizceyi akıcı bir şekilde konuşmayı dgrenmek istiyorsan, çok calığmak zorundasın.",
+      "english": "If you want to learn to speak English fluently, you have to work hard."
+    },
+    {
+      "id": "s26",
+      "turkish": "Sorun defil. istemiyorsan Muriel'in di",
+      "english": "It's alright. You don't have to come to Muriel's wedding if you don't want to."
+    },
+    {
+      "id": "s27",
+      "turkish": "Canın istemiyorsa, konuşmak zorunda değilsin.",
+      "english": "You don't have to speak if you don't feel like it."
+    },
+    {
+      "id": "s28",
+      "turkish": "Şemsiyeni unutmak zorunda değilsin. Yağmur yağacak.",
+      "english": "You don't have to forget your umbrella. It's going to rain."
+    },
+    {
+      "id": "s29",
+      "turkish": "Askerler emirlere uymak zorundalar.",
+      "english": "Soldiers have to obey orders."
+    },
+    {
+      "id": "s30",
+      "turkish": "Mağaza asistanları halkla ilgilenmek zorundalar.",
+      "english": "Shop assistants have to deal with the public."
+    },
+    {
+      "id": "s31",
+      "turkish": "İstemiyorsan, bize katılmak zorunda değilsin.",
+      "english": "You don't have to join with us if you don't want to."
+    },
+    {
+      "id": "s32",
+      "turkish": "Otobüs için uzun süre beklemek zorunda kaldığım için bu sabah geç kaldım.",
+      "english": "I was late this morning because I had to wait a long time for the bus."
+    },
+    {
+      "id": "s33",
+      "turkish": "İspanya'da öğretmenlerin ııniforma giymek zorunda deiilller.",
+      "english": "In Spain, teachers don't have to wear uniforms."
+    },
+    {
+      "id": "s34",
+      "turkish": "Odana yiyecek götürmek zorunda değilsin.",
+      "english": "You don't have to take food in your room."
+    },
+    {
+      "id": "s35",
+      "turkish": "Yangın durumunda, asansör kullanmak zorunda dedilsin.",
+      "english": "You don't have to use the elevators in case of fire."
+    },
+    {
+      "id": "s36",
+      "turkish": "Çok iyi göremediğim için gözlük takmak zorundayım.",
+      "english": "I have to wear glasses because I can't see very well."
+    },
+    {
+      "id": "s37",
+      "turkish": "Bugün alışverişe çıkmak zorunda dedilsin. Hiçbir şeye ihtiyacımız yok.",
+      "english": "You don't have go shopping today. We don't need anything."
+    },
+    {
+      "id": "s38",
+      "turkish": "Bir futbol takımındaki her oyuncunun bir numarası olmak zorunda.",
+      "english": "Every player in a football team has to have a number."
+    },
+    {
+      "id": "s39",
+      "turkish": "Doktorlar bazen hafta sonları çalışmak zorundalar.",
+      "english": "Doctors sometimes have to work at the weekend."
+    },
+    {
+      "id": "s40",
+      "turkish": "Günümüzde ispanya'da dgrenciler okulda Latince 6grenmek zorunda değiller.",
+      "english": "Nowadays in Spain pupils don't have to learn Latin at school."
+    },
+    {
+      "id": "s41",
+      "turkish": "Karımın bugün işe gitmek zorunda değil. Tatil.",
+      "english": "My wife doesn't have to go to work today. It's a holiday."
+    },
+    {
+      "id": "s42",
+      "turkish": "Bunu tek başına yapmak zorunda dedğilsin. Sana yardım edebilirim.",
+      "english": "You don't have to do this by yourself. I can help you."
+    },
+    {
+      "id": "s43",
+      "turkish": "Kütüphanede sessiz olmak zorundayız.",
+      "english": "We have to be quiet in the library."
+    },
+    {
+      "id": "s44",
+      "turkish": "Benimle dişçiye gelmek zorunda değil.",
+      "english": "She doesn't have to come to the dentist's with me."
+    },
+    {
+      "id": "s45",
+      "turkish": "Bir restoranda faturay: Gdemek zorundasın ama her şeyi yemek zorunda değilsin.",
+      "english": "At arrestaurant you have to pay the bill but you don't have to eat everything."
+    },
+    {
+      "id": "s46",
+      "turkish": "Okulumuzda ııniforma giymek zorundayız.",
+      "english": "At our school we have to wear a uniform."
+    },
+    {
+      "id": "s47",
+      "turkish": "Merkezi ısıtmayı açmak zorunda değilsin. Otomatik.",
+      "english": "You don't have turn on the central heating. It's automatic."
+    },
+    {
+      "id": "s48",
+      "turkish": "Henüz ise başvurmak zorunda değilsin. Bunu bu hafta daha sonra yapabilirsin.",
+      "english": "You don't have to apply for the job yet. You can do it later this week."
+    },
+    {
+      "id": "s49",
+      "turkish": "Senden emir almak zorunda değilim. Benim patronum değilsin!",
+      "english": "I don't have to take orders from you. You're not my boss!"
+    },
+    {
+      "id": "s50",
+      "turkish": "Benimle gelmek zorunda değilsin. Kendi başıma idare edebilirim.",
+      "english": "You don't have to come with me. I can manage on my own."
+    },
+    {
+      "id": "s51",
+      "turkish": "ABD'de genç erkekler orduya katılmak zorunda değiller. Gönüllüdür.",
+      "english": "In the US, young men don't have to join the army. It's voluntary."
+    },
+    {
+      "id": "s52",
+      "turkish": "Havaalanına taksiyle gitmek zorunda kalacaoiz, aksi takdirde uçağımızı kaçırabiliriz.",
+      "english": "We will have to take a taxi to the airport, otherwise we might miss our plane."
+    },
+    {
+      "id": "s53",
+      "turkish": "Kendini hasta hissetti ve daha Önce ofisi terk etmek zorunda kaldı.",
+      "english": "She felt ill and had to leave the office earlier."
+    },
+    {
+      "id": "s54",
+      "turkish": "300 satır yazmak zorunda dedilsin. 30 yeter.",
+      "english": "You don't have to write 300 lines. 30 will be enough."
+    },
+    {
+      "id": "s55",
+      "turkish": "Lütfen, dzur dilerim ama gerçekten şimdi gitmek zorundayım.",
+      "english": "Please, excuse me but I really have to go now."
+    },
+    {
+      "id": "s56",
+      "turkish": "Çok calığşmak zorunda çünkü bekar bir ebeveyn ve çok az parası var.",
+      "english": "She has to work hard because she's a single parent and has little money."
+    },
+    {
+      "id": "s57",
+      "turkish": "Şimdi gitmek zorunda değilsin. Tren bir saat sonra kalkıyor, yani hala biraz zamanın var.",
+      "english": "You don't have to go now. The train leaves in an hour, so you've still got some time left."
+    },
+    {
+      "id": "s58",
+      "turkish": "Fransızca konuşmak zorunda dedilsin. ingilizceyi oldukça iyi konuşabiliyorsun.",
+      "english": "You don't have to speak French. You can speak English quite well."
+    },
+    {
+      "id": "s59",
+      "turkish": "Stadyuma girdiğinde, yanında bir kimlik kartı almak zorundasın. Aksi takdirde içeri giremezsin.",
+      "english": "You have to take an ID card with you if you enter the stadium. Otherwise you won't get in."
+    },
+    {
+      "id": "s60",
+      "turkish": "Geg saatlere kadar çalışmak zorunda kaldığım için eve on birde geldim.",
+      "english": "I arrived home at eleven p.m. because I had to work late."
+    },
+    {
+      "id": "s61",
+      "turkish": "Kasabaya gidersen, biraz alışveriş yapmak zorunda kalacaksın.",
+      "english": "If you go to town, you'll have to do some shopping."
+    },
+    {
+      "id": "s62",
+      "turkish": "Biraz tereyağı almak zorundayım. Onsuz ekmeği sevmem.",
+      "english": "I have to buy some butter. I don't like bread without it."
+    },
+    {
+      "id": "s63",
+      "turkish": "Acele etmek zorunda değiliz. Film altrya kadar başlamaz.",
+      "english": "We don't have to hurry. The film doesn't start until six."
+    },
+    {
+      "id": "s64",
+      "turkish": "Yarın bir test için düzensiz fulleri öğrenmek zorundayım.",
+      "english": "I have to learn the irregular verbs for a test tomorrow."
+    },
+    {
+      "id": "s65",
+      "turkish": "Kardeşini yanına almak zorunda kaldh.",
+      "english": "She had to take her brother along with her."
+    },
+    {
+      "id": "s66",
+      "turkish": "Daha dakik olmak zorundalar.",
+      "english": "They have to be more punctual."
+    },
+    {
+      "id": "s67",
+      "turkish": "Kazanın sorumluluğunu almak zorunda.",
+      "english": "He has to take responsibility for the accident."
+    },
+    {
+      "id": "s68",
+      "turkish": "Babama arabasını tamir etmesine yardım etmek zorundaydım.",
+      "english": "I had to help my father repair his car."
+    },
+    {
+      "id": "s69",
+      "turkish": "Bunu yarına ertelemek zorunda kalacağız.",
+      "english": "We will have to put this off until tomorrow."
+    },
+    {
+      "id": "s70",
+      "turkish": "Sessizlik içinde acı çekmek zorunda kalman gerekmiyor.",
+      "english": "You shouldn't have to suffer in silence."
+    },
+    {
+      "id": "s71",
+      "turkish": "İstemiyorsan, soruyu cevaplamak zorunda değilsin.",
+      "english": "You don't have to answer the question if you don't want to."
+    },
+    {
+      "id": "s72",
+      "turkish": "Tüm alışverişi yapmak zorunda değildi.",
+      "english": "He didn't have to do all the shopping."
+    },
+    {
+      "id": "s73",
+      "turkish": "Yeni ayakkabılar almak zorundayım. Bunlar çok eskiyor.",
+      "english": "I have to buy some new shoes. These ones are getting very old."
+    },
+    {
+      "id": "s74",
+      "turkish": "Büyükanne çocukken, ailesi için yemek yapmak zorundaydı.",
+      "english": "Grandma had to cook for her family when she was a child."
+    },
+    {
+      "id": "s75",
+      "turkish": "Bu çok harika bir kitap. Okumak zorundasın.",
+      "english": "This is such a wonderful book. You have to read it."
+    },
+    {
+      "id": "s76",
+      "turkish": "Şam'ın bu hafta sonu ev işlerinde annesine yardım etmek zorunda olacak.",
+      "english": "Sam will have to help his mum with the housework this weekend."
+    },
+    {
+      "id": "s77",
+      "turkish": "Yönergeler, Hong Kong'daki sosyal sorunlan incelemek zorunda olduğumuzu sGyliiyor.",
+      "english": "The guidelines say we have to examine social problems in Hong Kong."
+    },
+    {
+      "id": "s78",
+      "turkish": "Lütfen ona okulda iyi sonuçlar almak zorunda olduğunu sdyle!",
+      "english": "Please, tell her that she has to get good results at school!"
+    },
+    {
+      "id": "s79",
+      "turkish": "Yarın Pazar! Yani okula gitmek zorunda değilim.",
+      "english": "Tomorrow is Sunday! So I don't have to go to school!"
+    },
+    {
+      "id": "s80",
+      "turkish": "Hastasın. Bugün ofise gitmek zorunda değilsin.",
+      "english": "You are ill. You don't have to go to office today."
+    },
+    {
+      "id": "s81",
+      "turkish": "Yarın sabah 8'de okulda olmak zorndayım, sınavım var!",
+      "english": "I have to be at school tomorrow at 8 a.m. I have an exam!"
+    },
+    {
+      "id": "s82",
+      "turkish": "Kendimi çok hasta hissettiğim için bir doktora görünmek zorunda kaldım.",
+      "english": "I had to see a doctor, because I felt very sick."
+    },
+    {
+      "id": "s83",
+      "turkish": "Pencereyi kırmak zorunda kaldım! Anahtarımı kaybettim!",
+      "english": "I had to break the window! I lost my key!"
+    },
+    {
+      "id": "s84",
+      "turkish": "Müdür burada değil, acil iş için Paris'e gitmek zorunda kaldı.",
+      "english": "The manager isn't here, he's had to go to Paris on urgent business."
+    },
+    {
+      "id": "s85",
+      "turkish": "Yarın, Başkan Meclis'i açmak zorunda kalacak.",
+      "english": "Tomorrow the President will have to open the Parliament."
+    },
+    {
+      "id": "s86",
+      "turkish": "Sese dayanamadığı için hareket etmek zorunda.",
+      "english": "She has to move because she can't stand the noise."
+    },
+    {
+      "id": "s87",
+      "turkish": "Bir patlamayı Gnlemek için bu fünyeyi çok yavaş çıkarmak zorundayım.",
+      "english": "I have to take out this detonator very slowly, to avoid an explosion."
+    },
+    {
+      "id": "s88",
+      "turkish": "Oh çok naziksin! Bunu yapmak zorunda değildin!",
+      "english": "Oh you're so kind! You didn't have to do it as well as that!"
+    },
+    {
+      "id": "s89",
+      "turkish": "Kardeşim Londra'da değilse, New York'ta olmak zorunda.",
+      "english": "If my brother's not in London, he has to be in New York."
+    },
+    {
+      "id": "s90",
+      "turkish": "Bütün doğru cevaplan aldım, kazananlardan biri olmak zorundayım!",
+      "english": "I've got all the right answers, I must be one of the winners!"
+    },
+    {
+      "id": "s91",
+      "turkish": "Eğer doğru hatırlıyorsam, burada olmak zorunda.",
+      "english": "If Iremember correctly, it has to be here."
+    },
+    {
+      "id": "s92",
+      "turkish": "Sally Üniversiteye gitmek istediği için tüm sınavlarım' geçmek zorunda.",
+      "english": "Sally has to pass all her exams because she wants to go to university."
+    },
+    {
+      "id": "s93",
+      "turkish": "Biletleri yakında ayırtmak zorundasın, aksi takdirde tükenecek!",
+      "english": "You have to book the tickets soon, otherwise they'Il be sold out!"
+    },
+    {
+      "id": "s94",
+      "turkish": "Jimmy herhangi bir sınava tekrar girmek zorunda değil; hepsini geçti.",
+      "english": "Jimmy doesn't have to retake any exams; he passed them all."
+    },
+    {
+      "id": "s95",
+      "turkish": "Taksi kullanıyorsa, kravat takmak zorunda değil.",
+      "english": "He doesn't have to wear a tie if he drives a taxi."
+    },
+    {
+      "id": "s96",
+      "turkish": "Öyle samyorum, ama kuralları bana tekrar açıklamak zorunda kalacaksın.",
+      "english": "I think so, but you're going to have to explain the rules to me again."
+    },
+    {
+      "id": "s97",
+      "turkish": "Önümüzdeki hafta her gün fazla mesai yapmak zorunda olacağım.",
+      "english": "I'll have to work overtime every day next week."
+    },
+    {
+      "id": "s98",
+      "turkish": "Kontrol edeyim. Bir saniye sürecek çünkü bilgisayarımı başlatmak zorundayım.",
+      "english": "Let me check. It's going to take a second because I have to start up my computer."
+    },
+    {
+      "id": "s99",
+      "turkish": "Mike bugün annesinin arabasını yıkamak zorunda değil.",
+      "english": "Mike doesn't have to wash his mother's car today."
+    },
+    {
+      "id": "s100",
+      "turkish": "Kayınvalidem geliyor, bu yüzden erken kalkıp evi temizlemek zorundayım.",
+      "english": "My mother-in-law is coming over so I have to get up early and clean the house."
+    }
+  ],
+  "modal-11": [
+    {
+      "id": "s1",
+      "turkish": "İşe dönsem iyi olur yoksa patronum bana kızacak.",
+      "english": "I had better get back to work or my boss will be angry with me."
+    },
+    {
+      "id": "s2",
+      "turkish": "Havaalanına beşte varsak iyi olur yoksa uçağı kaçırabiliriz.",
+      "english": "We had better get to the airport by five or else we may miss the flight."
+    },
+    {
+      "id": "s3",
+      "turkish": "Harç ücretini ödemeyi unutmasan iyi olur.",
+      "english": "You had better not forget to pay your tuition."
+    },
+    {
+      "id": "s4",
+      "turkish": "Yeni bir işe girmeden Önce değişiklik yapsanız iyi olur.",
+      "english": "You had better make changes before you take a new job."
+    },
+    {
+      "id": "s5",
+      "turkish": "Bu projeyi bitirseniz iyi olur, yoksa işinizi kaybedebilirsiniz!",
+      "english": "You had better finish this project, or you might lose your job!"
+    },
+    {
+      "id": "s6",
+      "turkish": "Mevcut işinizi korumaya gerçekten çalışsanız iyi olur.",
+      "english": "You really had better try to keep your current job."
+    },
+    {
+      "id": "s7",
+      "turkish": "Patrondan özür dilemelisin. Yapmazsanız, muhtemelen işinizi kaybedersiniz.",
+      "english": "You had better apologize to the boss. If you do not, you will probably lose your job."
+    },
+    {
+      "id": "s8",
+      "turkish": "Ders sırasında konsantre olsanız iyi olur.",
+      "english": "You had better concentrate during class."
+    },
+    {
+      "id": "s9",
+      "turkish": "Final sınavlarından Önce çalışsan iyi olur.",
+      "english": "You had better study before your final exams."
+    },
+    {
+      "id": "s10",
+      "turkish": "Alt katta hareket eden biri var. Polisi bir an Önce aramamuz iyi olur.",
+      "english": "There's someone moving about downstairs. We had better call the police, quickly."
+    },
+    {
+      "id": "s11",
+      "turkish": "Tekrar geç kalmasa iyi olur yoksa başı belaya girer.",
+      "english": "He had better not be late again or he'll be in trouble."
+    },
+    {
+      "id": "s12",
+      "turkish": "Kahretsin. Döküyor. Taksiye binsek iyi olur yoksa sırılsıklam oluruz.",
+      "english": "Damn. It is pouring down. We had better get a taxi or we'll get soaked."
+    },
+    {
+      "id": "s13",
+      "turkish": "Zaten bir kadeh şarap içtiniz. Araba kullanmasan iyi olur. izin ver.",
+      "english": "You have already drunken a glass of wine. You had better not drive. Let me."
+    },
+    {
+      "id": "s14",
+      "turkish": "Verginizi ödeseniz iyi olur. Yarın son gün.",
+      "english": "You had better pay your tax. Tomorrow is the last day."
+    },
+    {
+      "id": "s15",
+      "turkish": "Dikkatli sürsen iyi olur, çok fazla trafik var.",
+      "english": "You had better drive carefully there is a lot of traffic."
+    },
+    {
+      "id": "s16",
+      "turkish": "Bir ara dinlensen iyi olur. Uyuyacaksın",
+      "english": "You had better rest for sometime. You are going to sleep."
+    },
+    {
+      "id": "s17",
+      "turkish": "Yetmiş yaşın üzerindeyseniz sağlıklı beslenseniz iyi olur.",
+      "english": "You had better eat healthy food if you are over seventy."
+    },
+    {
+      "id": "s18",
+      "turkish": "Odayı temizlesek iyi olur. Orada cam pargaları var.",
+      "english": "We had better clean the room. There are pieces of glasses there."
+    },
+    {
+      "id": "s19",
+      "turkish": "Ellerini yıkasan iyi olur canım. Pek çok şeye dokundun.",
+      "english": "You had better wash your hands dear. You have touched lots of things."
+    },
+    {
+      "id": "s20",
+      "turkish": "Şemsiyeni yanına alsan iyi olur. Yağmur yağıyor.",
+      "english": "You had better take your umbrella with you. It is raining."
+    },
+    {
+      "id": "s21",
+      "turkish": "Yalan söylemesen iyi olur. Gerçeği biliyor.",
+      "english": "You had better not tell lies. He knows the truth."
+    },
+    {
+      "id": "s22",
+      "turkish": "Öğretmen geliyor gürültü yapmasanız iyi olur.",
+      "english": "You had better not make noise the teacher is coming."
+    },
+    {
+      "id": "s23",
+      "turkish": "O yaşlı adama yardım etsen iyi olur. Karşıdan karşıya geçemez.",
+      "english": "You had better help that old man. He can't cross the street."
+    },
+    {
+      "id": "s24",
+      "turkish": "Paradan tasarruf etsen iyi olur yoksa o bisikleti alamazsın.",
+      "english": "You had better save money or you can't buy that bicycle."
+    },
+    {
+      "id": "s25",
+      "turkish": "Bu turistlerle İngilizce pratik yapsan iyi edersin. Bu bir fırsattır.",
+      "english": "You had better practice English with those tourists. It is an opportunity."
+    },
+    {
+      "id": "s26",
+      "turkish": "Bu tır soruları çözmek için çok kitap okumanz iyi olur.",
+      "english": "We had better read a lot of books to solve these kind of questions."
+    },
+    {
+      "id": "s27",
+      "turkish": "Onlara nazik davransak iyi olur, yoksa bize kızarlar.",
+      "english": "We had better be kind to them or they will get angry to us."
+    },
+    {
+      "id": "s28",
+      "turkish": "Bu öğrenciler daha iyi eğitim almıştı. Yarın sınavları var.",
+      "english": "Those students had better study. They have an exam tomorrow."
+    },
+    {
+      "id": "s29",
+      "turkish": "Yatakta kalsan iyi olur. Ateşin yüksek.",
+      "english": "You had better stay in bed. Your temperature is high."
+    },
+    {
+      "id": "s30",
+      "turkish": "Geg yatmasak iyi olur. Yarın önemli bir toplantımız var.",
+      "english": "We had better not go to bed late. We have an important meeting tomorrow."
+    },
+    {
+      "id": "s31",
+      "turkish": "Hastaneye gitsem iyi olur. Başım ağrıyor.",
+      "english": "I had better go to the hospital. I have a headache."
+    },
+    {
+      "id": "s32",
+      "turkish": "Emniyet kemerinizi taksanız iyi olur. Orada bir kontrol noktası var.",
+      "english": "You had better wear your seat belt. There is a control point over there."
+    },
+    {
+      "id": "s33",
+      "turkish": "Öğrenciler notlarını gözden geçirseler iyi olur. Yarın sözlü sınavlan var.",
+      "english": "The students had better revise their notes. They have an oral exam tomorrow."
+    },
+    {
+      "id": "s34",
+      "turkish": "Şemsiyeni yanına alsan iyi olur. Bugün yağmurlu.",
+      "english": "You had better take your umbrella with you. It is rainy today."
+    },
+    {
+      "id": "s35",
+      "turkish": "Oraya gitmek için taksiye binsek iyi olur, yoksa geç kalacağız.",
+      "english": "We had better take a taxi to go there otherwise we will be late."
+    },
+    {
+      "id": "s36",
+      "turkish": "Bu öğleden sonra bankaya gitsem iyi olur. Hiç param yok.",
+      "english": "I had better go to the bank this afternoon. I don't have any money."
+    },
+    {
+      "id": "s37",
+      "turkish": "Onu birkaç dakikalığına yalnız bıraksak iyi olur.",
+      "english": "We had better leave her alone for a few minutes."
+    },
+    {
+      "id": "s38",
+      "turkish": "Ne kadara mal olacağını önceden sorsanız iyi olur.",
+      "english": "You had better ask him in advance how much it will cost."
+    },
+    {
+      "id": "s39",
+      "turkish": "Sigarayı bıraksa iyi olur.",
+      "english": "She had better stop smoking."
+    },
+    {
+      "id": "s40",
+      "turkish": "Onlan uyarsan iyi olur.",
+      "english": "You had better warn them."
+    },
+    {
+      "id": "s41",
+      "turkish": "Erken ayrılsak iyi olur yoksa trenimize yetişemeyeceğiz.",
+      "english": "We had better leave early or we won't catch our train."
+    },
+    {
+      "id": "s42",
+      "turkish": "Sınavım geçmek istiyorsan daha çok çalışsan iyi olur.",
+      "english": "You had better work more if you want to pass your exam."
+    },
+    {
+      "id": "s43",
+      "turkish": "Doktora gönderse iyi olur.",
+      "english": "She had better send for the doctor."
+    },
+    {
+      "id": "s44",
+      "turkish": "Onu dinlese iyi olur.",
+      "english": "He had better listen to her."
+    },
+    {
+      "id": "s45",
+      "turkish": "Daha dikkatli sürsen iyi olur.",
+      "english": "You had better drive more carefully."
+    },
+    {
+      "id": "s46",
+      "turkish": "Doğruyu sdylese iyi olur.",
+      "english": "He had better tell the truth."
+    },
+    {
+      "id": "s47",
+      "turkish": "David tatillerden dönse iyi olur.",
+      "english": "David had better come back from holidays."
+    },
+    {
+      "id": "s48",
+      "turkish": "Sarah biraz kestirse iyi olur.",
+      "english": "Sarah had better take a nap."
+    },
+    {
+      "id": "s49",
+      "turkish": "Bu kitapları en kısa zamanda kütüphaneye iade etsen iyi olur, yoksa ceza alırsın.",
+      "english": "You had better return those books to the library soon or you'll get a fine."
+    },
+    {
+      "id": "s50",
+      "turkish": "Bir daha geç kalmasa iyi olur, yoksa çuvalı alacak.",
+      "english": "She had better not arrive late again or she'll get the sack."
+    },
+    {
+      "id": "s51",
+      "turkish": "Elektrik faturanızı bugün ödeseniz iyi olur yoksa keserler.",
+      "english": "You had better pay your electricity bill today or they'll cut you off."
+    },
+    {
+      "id": "s52",
+      "turkish": "Bu resmi bir olay, o yüzden kot pantolon giymesen iyi olur.",
+      "english": "It's a formal occasion so you had better not wear jeans."
+    },
+    {
+      "id": "s53",
+      "turkish": "Bu restoran oldukça popüler. Bir masa ayırtsak iyi olur.",
+      "english": "That restaurant is hugely popular. We had better book a table."
+    },
+    {
+      "id": "s54",
+      "turkish": "Treni kaçırmasan iyi olur yoksa röportajına geç kalacaksın.",
+      "english": "You had better not miss the train or you'll be late for your interview."
+    },
+    {
+      "id": "s55",
+      "turkish": "Bir palto giyseniz iyi olur. Dışarısı dönüyor.",
+      "english": "You had better put on a coat. It's freezing outside."
+    },
+    {
+      "id": "s56",
+      "turkish": "David'e bir taksi çağırsak iyi olur. Araba şiirmeye uygun durumda değil.",
+      "english": "We had better call David a taxi. He's not in a fit state to drive."
+    },
+    {
+      "id": "s57",
+      "turkish": "",
+      "english": "You had better invite the whole family to the wedding or they will be offended."
+    },
+    {
+      "id": "s58",
+      "turkish": "Ödevime şimdi başlasam iyi olur, yoksa partiden önce bitirmem.",
+      "english": "I had better start my homework now or I won't finish it before the party."
+    },
+    {
+      "id": "s59",
+      "turkish": "Bir taksiye ihtiyacın vardı. Birkaç dakika sonra senin için bir taksi durdu.",
+      "english": "We'd better go now or we'll be late."
+    },
+    {
+      "id": "s60",
+      "turkish": "Biraz nakit bulsak iyi olur, çek almazlar.",
+      "english": "We'd better get some cash, they don't take cheques."
+    },
+    {
+      "id": "s61",
+      "turkish": "Daha fazla para harcamasam iyi olur, yoksa param kalmaz.",
+      "english": "I'd better not spend any more money, or I won't have any left."
+    },
+    {
+      "id": "s62",
+      "turkish": "Onu beklesem iyi olur, fazla uzun sürmez.",
+      "english": "I'd better wait for him, he won't be long."
+    },
+    {
+      "id": "s63",
+      "turkish": "Biletleri şimdi ayırsak iyi olur, yarın hiç kalmayacak.",
+      "english": "We'd better book the tickets now, there won't be any left tomorrow."
+    },
+    {
+      "id": "s64",
+      "turkish": "Annen geri dönmeden toparlansan iyi olur.",
+      "english": "You'd better tidy up before your mother comes back."
+    },
+    {
+      "id": "s65",
+      "turkish": "Bunu atmasan iyi olur, faydal olabilir.",
+      "english": "You'd better not throw that, it might be useful."
+    },
+    {
+      "id": "s66",
+      "turkish": "Başlasa iyi olur, aksi takdirde bitiremeyecektir.",
+      "english": "She'd better get started, otherwise she won't get it finished."
+    },
+    {
+      "id": "s67",
+      "turkish": "Ödevini teslim etsen iyi olur, yoksa ceza alırsın.",
+      "english": "You'd better hand in your homework or you'll get a punishment."
+    },
+    {
+      "id": "s68",
+      "turkish": "Bir çocuk bakıcısı bulsak iyi olur yoksa dışan çıkamayız.",
+      "english": "We'd better find a babysitter or we can't go out."
+    },
+    {
+      "id": "s69",
+      "turkish": "Geg oldu. Partiyi şimdi terk etsek iyi olur.",
+      "english": "It is late. We'd better leave the party now."
+    },
+    {
+      "id": "s70",
+      "turkish": "Babanız uyuyor. Çok sessiz olsan iyi olur.",
+      "english": "Your father is sleeping. You'd better be very quiet."
+    },
+    {
+      "id": "s71",
+      "turkish": "Kızınız gittikçe şişmanlıyor. O kadar çok yemese iyi olur.",
+      "english": "Your daughter is getting fatter and fatter. She'd better not eat so much."
+    },
+    {
+      "id": "s72",
+      "turkish": "Ödevimi henüz yapmadım. Şimdi yapsam iyi olur.",
+      "english": "I haven't done my homework yet. I'd better do it now."
+    },
+    {
+      "id": "s73",
+      "turkish": "Çok yorgunsunuz. Bu kadar çalışmasan iyi olur.",
+      "english": "You are very tired. You'd better not work so much."
+    },
+    {
+      "id": "s74",
+      "turkish": "Sağı çok uzundur. Saçım kestirse iyi olur.",
+      "english": "His hair is very long. He'd better get a haircut."
+    },
+    {
+      "id": "s75",
+      "turkish": "Hava soğuk. Sıcak giysiler olmadan dışan çıkmasan iyi olur.",
+      "english": "The weather is frigid. You'd better not go out without warm clothes."
+    },
+    {
+      "id": "s76",
+      "turkish": "Anneni arayıp bu gece burada kalacağını söyleşen iyi olur.",
+      "english": "You'd better call your mother and say that you will stay here tonight."
+    },
+    {
+      "id": "s77",
+      "turkish": "Yarın erken kalkmalıyım. Artık geç kalmasam iyi olur.",
+      "english": "I should get up early tomorrow. I'd better not stay up late now."
+    },
+    {
+      "id": "s78",
+      "turkish": "Sol bacağım ağnyor. - Çok fazla yürümesen iyi olur.",
+      "english": "I keep getting pain in my left leg. - You'd better not walk very much."
+    },
+    {
+      "id": "s79",
+      "turkish": "Otobüsün geç geleceğini düşünüyorum. Taksiye binsem iyi olur.",
+      "english": "I think the bus will come late. I'd better take a taxi."
+    },
+    {
+      "id": "s80",
+      "turkish": "Ateşin var, paltonu çıkarsan iyi olur!",
+      "english": "You have a fever, you had better take off your coat!"
+    },
+    {
+      "id": "s81",
+      "turkish": "Kız kardeşine bağırmasan iyi olur yoksa seni cezalandırınm!",
+      "english": "You'd better not shout at your sister or I'll punish you!"
+    },
+    {
+      "id": "s82",
+      "turkish": "Günaydın canım! Kalksan iyi olur. Geç kalacaksın!",
+      "english": "Good morning, dear! You'd better get up. You will be late!"
+    },
+    {
+      "id": "s83",
+      "turkish": "Banyoya gitsen iyi olur.",
+      "english": "You'd better go to the bathroom."
+    },
+    {
+      "id": "s84",
+      "turkish": "Hayır canım, sadece yeşil çay içsen iyi olur.",
+      "english": "No, dear, you'd better drink only green tea."
+    },
+    {
+      "id": "s85",
+      "turkish": "Canım, yağmur yağtyor, yürümesen iyi olur.",
+      "english": "Oh, dear, it's raining, you'd better not walk."
+    },
+    {
+      "id": "s86",
+      "turkish": "Bana bir öpücük verip gitseniz iyi olur.",
+      "english": "You'd better give me a kiss and leave."
+    },
+    {
+      "id": "s87",
+      "turkish": "Mark sigarayı bıraksa iyi olur. Ona bak!",
+      "english": "Mark had better stop smoking. Look at him!"
+    },
+    {
+      "id": "s88",
+      "turkish": "Kocam arayıp geç kalacağım söylemesen daha iyi olur mu?",
+      "english": "Had you better not call your husband and tell him you'll be late?"
+    },
+    {
+      "id": "s89",
+      "turkish": "Betty dikkatli sürse iyi olur, şimdiden iki arabaya çarptı.",
+      "english": "Betty had better drive carefully, she has already crashed two cars."
+    },
+    {
+      "id": "s90",
+      "turkish": "Ona gerçeği söylesem mi yoksa bir süre beklesem mi?",
+      "english": "Had I better tell him the truth or wait for a while?"
+    },
+    {
+      "id": "s91",
+      "turkish": "Hadi Susie, eğer saat 5 trenine yetişmek istiyorsak acele etsen iyi olur.",
+      "english": "Come on Susie, you'd better hurry if we want to catch the 5 o'clock train."
+    },
+    {
+      "id": "s92",
+      "turkish": "Ah canım! Bu çikolatalar güzel görünüyor ... Ama hiç almasam iyi olur ... Diyet yapıyorum!",
+      "english": "Oh dear! These chocolates look good... But I'd better not take any... I'm ona diet!"
+    },
+    {
+      "id": "s93",
+      "turkish": "Ağlamayı bıraksan iyi olur! Değilse gözlerin kırmızı olacak ve altında torbalar olacak ...",
+      "english": "You'd better stop crying! If not, your eyes will be red and you'll have bags under them..."
+    },
+    {
+      "id": "s94",
+      "turkish": "Yavaşlaşan iyi olur ... Bizi takip eden bir polis arabası var ...",
+      "english": "You'd better slow down... There's a police car following us..."
+    },
+    {
+      "id": "s95",
+      "turkish": "Şimdi eve gitse iyi olur ... Geldiğini söylemek için annesine mesaj atacağım.",
+      "english": "She'd better go home now... I'll text her mom to say she's on her way."
+    },
+    {
+      "id": "s96",
+      "turkish": "Bu çok önemli bir sırdır. Kimseye söylemesen iyi olur.",
+      "english": "It is a very important secret. You had better not tell anybody."
+    },
+    {
+      "id": "s97",
+      "turkish": "Bir şemsiye alsan iyi olur. Yağmur yağacak.",
+      "english": "You had better take an umbrella. It's going to rain."
+    },
+    {
+      "id": "s98",
+      "turkish": "Kimse senden hoşlanmıyor, bu yüzden partimize gelmesen iyi olur.",
+      "english": "Nobody likes you so you had better not come to our party."
+    },
+    {
+      "id": "s99",
+      "turkish": "Daha fazla bira içmesen iyi olur. Hasta olacaksın.",
+      "english": "You had better not drink more beer. You'll be sick."
+    },
+    {
+      "id": "s100",
+      "turkish": "Susy zayıf ve solgun görünüyor. Bir doktora danışsa iyi olur.",
+      "english": "Susy is weak and looks pale. She had better consult a doctor."
+    }
+  ],
+  "modal-12": [
+    {
+      "id": "s1",
+      "turkish": "Bir kitap almak için odasına uğramam lazım.",
+      "english": "I need to drop by his room to pick up a book."
+    },
+    {
+      "id": "s2",
+      "turkish": "Uyanık kalmak için birkaç fincan kahve içmem lazımdı.",
+      "english": "I needed to drink a few cups of coffee in order to stay awake."
+    },
+    {
+      "id": "s3",
+      "turkish": "Şam'ın kızını okuldan almaması lazım. Eve otobiişle gidiyor.",
+      "english": "Sam doesn't need to pick his daughter up from school. She's taking the bus home."
+    },
+    {
+      "id": "s4",
+      "turkish": "Bu akşam bahçeyi sulamana ihtiyacın yok. Bu gece yağmur yağacak.",
+      "english": "You don't need to water the garden this evening. It's going to rain tonight."
+    },
+    {
+      "id": "s5",
+      "turkish": "Ulusal Sağlık Hizmeti hastanelerinde tıbbi bakım için Ödeme yapmaya ihtiyaç duymazsın.",
+      "english": "You don't need to pay for medical care in National Health Service hospitals."
+    },
+    {
+      "id": "s6",
+      "turkish": "Dondurucuda çok et var. Satın almana ihtiyacın yok.",
+      "english": "There is a lot of meat in the freezer. You don't need buy any."
+    },
+    {
+      "id": "s7",
+      "turkish": "Daha fazla yiyecek almaya ihtiyacım yoktu. Zaten yeterince sahiptik.",
+      "english": "I didn't need to buy more groceries. We already had enough."
+    },
+    {
+      "id": "s8",
+      "turkish": "Bu hafta sonu alışverişe gitmeye ihtiyacın yok. Evde her şeyimiz var.",
+      "english": "You don't need to go shopping this weekend. We've got everything at home."
+    },
+    {
+      "id": "s9",
+      "turkish": "Bitkileri sulamaya ihtiyacı yok. Babası zaten yaptı.",
+      "english": "She doesn't need to water the plants. Her dad has already done it."
+    },
+    {
+      "id": "s10",
+      "turkish": "Beni havaalanına götürmeye ihtiyacın yok. Otobüse binebilirim.",
+      "english": "You don't need to drive me to the airport. I can take the bus."
+    },
+    {
+      "id": "s11",
+      "turkish": "Yiyecek satın almaya ihtiyaç duymazsın. Buzdolabı dolu.",
+      "english": "You don't need to buy any food. The fridge is full."
+    },
+    {
+      "id": "s12",
+      "turkish": "Yabancı bir ülkede ikamet eden biri olarak vergi Ödemen mi lazım?",
+      "english": "Do you need to pay taxes as a resident of a foreign country?"
+    },
+    {
+      "id": "s13",
+      "turkish": "Törende Üniforma giymesi mi lazım? Gereksiz.",
+      "english": "Does he need to wear a uniform at the ceremony? It's not necessary."
+    },
+    {
+      "id": "s14",
+      "turkish": "Judith'in Cumartesileri okula gitmemesi lazım.",
+      "english": "Judith doesn't need to go to school on Saturdays."
+    },
+    {
+      "id": "s15",
+      "turkish": "Kediyi günde en az iki kez beslemen lazım.",
+      "english": "You need to feed the cat at least twice a day."
+    },
+    {
+      "id": "s16",
+      "turkish": "Bu kadar erken kalkmamam lazım ama güneşli bir gün ve pek çok şey planlıyorum.",
+      "english": "I don't need to get up so early, but it is a sunny day and I am planning a lot of things."
+    },
+    {
+      "id": "s17",
+      "turkish": "Jack durumu açıklamaya ihtiyaç duymadı. Herkes ne olduğunu biliyordu.",
+      "english": "Jack didn't need to explain the situation. Everyone knew what was happening."
+    },
+    {
+      "id": "s18",
+      "turkish": "Dışarısı oldukça sıcak olduğundan palto giymeye ihtiyaç duymazsın.",
+      "english": "It's quite warm outside so you don't need to put on a coat."
+    },
+    {
+      "id": "s19",
+      "turkish": "Köpeği beslemeye ihtiyaç duymuyor, aç değil.",
+      "english": "He doesn't need to feed the dog, it isn't hungry."
+    },
+    {
+      "id": "s20",
+      "turkish": "Artık beklememen lazım, şimdi gidebilirsin.",
+      "english": "You don't need to wait any longer, you can go now."
+    },
+    {
+      "id": "s21",
+      "turkish": "O kadar hızlı sürmemesi lazım, geç kalmadık.",
+      "english": "She doesn't need to drive so fast, we're not late."
+    },
+    {
+      "id": "s22",
+      "turkish": "Bağırmamalan lazım, sizi duyabiliyorum.",
+      "english": "They don't need to shout, I can hear you."
+    },
+    {
+      "id": "s23",
+      "turkish": "Şemsiye getirmeye ihtiyacın yok, yağmur yağmayacak.",
+      "english": "You don't need to bring an umbrella, it isn't going to rain."
+    },
+    {
+      "id": "s24",
+      "turkish": "Masa mı rezerve etmemiz lazım? Restoran hiç dolu değil.",
+      "english": "Do we need to reserve a table? The restaurant is never full."
+    },
+    {
+      "id": "s25",
+      "turkish": "Daha çok çalışman lazım yoksa sınavlarını geçemezsin.",
+      "english": "You need to study harder or you will not pass your exams."
+    },
+    {
+      "id": "s26",
+      "turkish": "Henüz erken olduğu için acele etmememiz lazım.",
+      "english": "We don't need to hurry as it is still early."
+    },
+    {
+      "id": "s27",
+      "turkish": "Onun hatası olmadığı için özür dilememesi lazım.",
+      "english": "He doesn't need to apologize because it's not his fault."
+    },
+    {
+      "id": "s28",
+      "turkish": "Sorunu şimdi mi tartışmamız lazım?",
+      "english": "Do we need to discuss the problem now?"
+    },
+    {
+      "id": "s29",
+      "turkish": "Şunların adreslerini yazması lazım.",
+      "english": "He needs to write down the addresses of those."
+    },
+    {
+      "id": "s30",
+      "turkish": "Televizyon izlemeye çok zaman harcamamam lazım.",
+      "english": "I don't need to spend a lot of time watching television."
+    },
+    {
+      "id": "s31",
+      "turkish": "İlerlemek istiyorsa, daha çok calığması lazım.",
+      "english": "He needs to work harder if he wants to make progress."
+    },
+    {
+      "id": "s32",
+      "turkish": "Sue'nun biraz para Gdiing alması lazımdı. Jerry'ye sormaya çalıştı ama onun da parası yoktu.",
+      "english": "Sue needed to borrow some money. She tried to ask Jerry, but he was short of money, too."
+    },
+    {
+      "id": "s33",
+      "turkish": "Çok sessiz bir yerde çalışması lazım.",
+      "english": "She needs to work in a very quiet place."
+    },
+    {
+      "id": "s34",
+      "turkish": "Yardıma ihtiyacın varsa, neden Dave'e sormuyorsun?",
+      "english": "If you need help, why don't you ask Dave?"
+    },
+    {
+      "id": "s35",
+      "turkish": "Bu şişeyi açmak için bir şeye ihtiyacım var.",
+      "english": "I need something to open this bottle."
+    },
+    {
+      "id": "s36",
+      "turkish": "Teklifin hakkında düşünmek için birkaç güneş ihtiyacım var.",
+      "english": "I need a few days to th in k about your proposal."
+    },
+    {
+      "id": "s37",
+      "turkish": "Bu iş için çok fazla deneyime ihtiyacın var.",
+      "english": "You need a lot of experience for this job."
+    },
+    {
+      "id": "s38",
+      "turkish": "Karar vermek için daha fazla zamana ihtiyacımız olacak.",
+      "english": "We'll need more time to make a decision."
+    },
+    {
+      "id": "s39",
+      "turkish": "Seni bu kadar geç aradığım için üzgünüm ama sana bir şey sormam lazım.",
+      "english": "I'm sorry to call you so late, but I need to ask you something."
+    },
+    {
+      "id": "s40",
+      "turkish": "Benzine ihtiyacımız var. Umarım yakında benzin istasyonuna geliriz.",
+      "english": "We need gas. I hope we come to gas station soon."
+    },
+    {
+      "id": "s41",
+      "turkish": "Yürüyüşe çıkıyorum. Biraz temiz havaya ihtiyacım var.",
+      "english": "I'm going out for a walk. I need some fresh air."
+    },
+    {
+      "id": "s42",
+      "turkish": "Üzerine yazmak için birkaç kağıda ihtiyacım var.",
+      "english": "I need some paper to write on."
+    },
+    {
+      "id": "s43",
+      "turkish": "Daha fazla bilgiye ihtiyacın olursa, bana bildir.",
+      "english": "Let me know if you need more information."
+    },
+    {
+      "id": "s44",
+      "turkish": "Bazı Ülkeleri ziyaret etmek için vize alman lazım, ancak hepsine değil.",
+      "english": "You need to get visa to visit some countries, but not all of them."
+    },
+    {
+      "id": "s45",
+      "turkish": "Ne kadar uykuya ihtiyacın var?",
+      "english": "How much sleep do you need?"
+    },
+    {
+      "id": "s46",
+      "turkish": "On dolardan fazlasına ihtiyacım var. On dolar yeterli değil.",
+      "english": "I need more than ten dollars. Ten dollars isn't enough."
+    },
+    {
+      "id": "s47",
+      "turkish": "Biri size saldırırsa, savunabilmemiz lazım.",
+      "english": "If somebody attacks you, you need to be able to defence."
+    },
+    {
+      "id": "s48",
+      "turkish": "Projeyi bitirmek için acele etmememiz lazım. Bol vaktimiz var.",
+      "english": "There's no need to hurry to finish the project. We've got plenty of time."
+    },
+    {
+      "id": "s49",
+      "turkish": "Henüz bir karar vermedim. Düşünmek için biraz zamana ihtiyacım var.",
+      "english": "I heven't made a decision yet. I need little time to think."
+    },
+    {
+      "id": "s50",
+      "turkish": "Dünyayı dolaşmak için çok paraya ihtiyacın var.",
+      "english": "You need much money to travel around the world."
+    },
+    {
+      "id": "s51",
+      "turkish": "Bu gömlek benim için çok büyük. Daha küçük bir bedene ihtiyacım var.",
+      "english": "This shirt is too big for me. I need a smaller size."
+    },
+    {
+      "id": "s52",
+      "turkish": "Seninle bir şey konuşmam lazım.",
+      "english": "I need to talk to you about something."
+    },
+    {
+      "id": "s53",
+      "turkish": "Mary sizinle iletişime geçmeye ihtiyaç duyacak, bu yüzden ona telefon numaranı vereceksin.",
+      "english": "Mary will need to contact you, so you give her your phone number."
+    },
+    {
+      "id": "s54",
+      "turkish": "Yurtdışındayken tıbbi tedaviye ihtiyacım vardı.",
+      "english": "I needed medical treatment when I was abroad."
+    },
+    {
+      "id": "s55",
+      "turkish": "Biraz daha fazla denemen lazım, yoksa sınavı geçemezsin.",
+      "english": "You need to try a little harder, or you won't pass the exam."
+    },
+    {
+      "id": "s56",
+      "turkish": "Giysilerini değiştirmene ihtiyacın yok. Öldüğün gibi dışarı çıkabilirsin.",
+      "english": "You don't need to change your clothes. You can go out as you are."
+    },
+    {
+      "id": "s57",
+      "turkish": "Mark çok yorgun görünüyor. iyi dinlenmeye ihtiyacı varmış gibi görünüyor.",
+      "english": "Mark looks very tired. He looks as if he needs a good rest."
+    },
+    {
+      "id": "s58",
+      "turkish": "",
+      "english": "I need a change. I think I'll go away for a few days."
+    },
+    {
+      "id": "s59",
+      "turkish": "Şimdi gitsek iyi olur, yoksa geç kalacağız.",
+      "english": "You needed a taxi. After a few minutes a taxi stopped for you."
+    },
+    {
+      "id": "s60",
+      "turkish": "İşi yapacak daha fazla insana ihtiyacımız var.",
+      "english": "We need more people to do the work."
+    },
+    {
+      "id": "s61",
+      "turkish": "Biraz yalnızım. Birisiyle konuşmaya ihtiyacım var.",
+      "english": "I'ma little lonely. I need somebody to talk to."
+    },
+    {
+      "id": "s62",
+      "turkish": "Alan 85 yaşında ve yalnız yaşıyor. Onunla ilgilenecek birine ihtiyacı var.",
+      "english": "Alan is 85 and lives alone. He needs somebody to care for him."
+    },
+    {
+      "id": "s63",
+      "turkish": "Tüm seyahat ayarlamalartyla ben ilgileneceğim - hiçbir şey yapmanıza gerek yok.",
+      "english": "I'll take care of all the travel arrangements - you don't need to do anything."
+    },
+    {
+      "id": "s64",
+      "turkish": "Muma ihtiyacımız yok. Patlatabilirsin.",
+      "english": "We don't need the candle. You can blow it out."
+    },
+    {
+      "id": "s65",
+      "turkish": "Öğretmenlerin iş için takım elbise giymesine gerek yoktur, ancak kıyafetleri düzgün ve temiz olmalıdır.",
+      "english": "Teachers don't need to wear suits for work, but their clothes must be neat and clean."
+    },
+    {
+      "id": "s66",
+      "turkish": "Ders kitabı satın almanıza gerek yok, öğretmeniniz size bir ders kitabı verecek.",
+      "english": "You don't need to buy a coursebook, your teacher will give you one."
+    },
+    {
+      "id": "s67",
+      "turkish": "Okul kantininde öğle yemeği yemenize gerek yok. Bazı öğrenciler öğle yemedi için eve gitmeyi tercih ediyor.",
+      "english": "You don't need to eat lunch in the school canteen. Some students prefer to go home for lunch."
+    },
+    {
+      "id": "s68",
+      "turkish": "Ütü yapmanıza gerek yoktur. Sonra yapacağım.",
+      "english": "You don't need to do the ironing. I'll do it later."
+    },
+    {
+      "id": "s69",
+      "turkish": "Ne yapıp ne yapamayacağımı bana söyleme. Senden herhangi bir tavsiyeye ihtiyacım yok.",
+      "english": "Don't tell me what I can and can't do. I don't need any advice from you."
+    },
+    {
+      "id": "s70",
+      "turkish": "Bugün mağazaya gitmenize gerek yok. Buzdolabında bol miktarda yiyecek var.",
+      "english": "You don't need to go to the store today. There is plenty of food in the fridge."
+    },
+    {
+      "id": "s71",
+      "turkish": "Bu ıılke çok soğuk. Sanırım daha sıcak bir cekete ihtiyacın olacak.",
+      "english": "It's very cold in this country. I think you'll need a warmer coat."
+    },
+    {
+      "id": "s72",
+      "turkish": "Bataklıkların yakınında yürümek istediğinizde botlarınızı yanınıza almanız gerekiyor mu?",
+      "english": "Do you need to take your boots when you want to walk near swamps?"
+    },
+    {
+      "id": "s73",
+      "turkish": "Londra'y ziyaret etmek istiyorsam bu uçağa binmeme gerek yok.",
+      "english": "I do not need to take this plane if I want to visit London."
+    },
+    {
+      "id": "s74",
+      "turkish": "Artık arabamzi bana ödünç vermenize gerek yok.",
+      "english": "You do not need to lend me your car anymore."
+    },
+    {
+      "id": "s75",
+      "turkish": "Tom Önümüzdeki ay Kanada'ya uçuyor. Ayrılmadan önce çok sıcak giysiler alması gerekiyor.",
+      "english": "Tom is flying to Canada next month. He needs to get very warm clothes before he leaves."
+    },
+    {
+      "id": "s76",
+      "turkish": "Paris'teyken neyi ziyaret etmesi gerekiyor?",
+      "english": "What does he need to visit when he is in Paris?"
+    },
+    {
+      "id": "s77",
+      "turkish": "Bu arabayı seviyorum ama nakit ödemem gerekiyor mu?",
+      "english": "I love this car but do I need to pay it cash?"
+    },
+    {
+      "id": "s78",
+      "turkish": "Hemen kes şunu! Tüm bu şekerleri almanıza gerek yok.",
+      "english": "Stop it now! You don't need to buy all these candies."
+    },
+    {
+      "id": "s79",
+      "turkish": "Ayakkabılarınızı çıkarmanıza gerek yok.",
+      "english": "You don't need to take your shoes off."
+    },
+    {
+      "id": "s80",
+      "turkish": "Bulaşık yıkamanıza gerek yok; bulaşık makinemiz var.",
+      "english": "You don't need to do the washing up; we have a dishwasher."
+    },
+    {
+      "id": "s81",
+      "turkish": "Bana yardım etmenize gerek yok. Yemeği kendim hazırlayabilirim.",
+      "english": "You don't need to help me. I can prepare the meal on my own."
+    },
+    {
+      "id": "s82",
+      "turkish": "Bu akşam bahçeyi sulamana gerek yok. Bu gece yağmur yağacak.",
+      "english": "You don't need to water the garden this evening. It's going to rain tonight."
+    },
+    {
+      "id": "s83",
+      "turkish": "Bağırmanıza gerek yok. Bu güzel bir replik. Seni çok iyi duyabiliyorum",
+      "english": "You don't need to shout. It's a good line. I can hear you perfectly."
+    },
+    {
+      "id": "s84",
+      "turkish": "Bu golf sopasına girmek için zengin olmanıza gerek yok. Sadece bir engele ihtiyacın var.",
+      "english": "You don't need to be rich to get into this golf club. You just need a handicap."
+    },
+    {
+      "id": "s85",
+      "turkish": "Hafta boyunca herhangi bir sınavı olmadığı için John'un hafta sonu çalışmasına gerek yoktu.",
+      "english": "John didn't need to study over the weekend because he didn't have any exams during the week."
+    },
+    {
+      "id": "s86",
+      "turkish": "Konsere ceketimi götürmeme gerek yoktu çünkü çok sıcak olacağım biliyordum.",
+      "english": "I didn't need to take my jacket to the concert because I knew it would be so warm."
+    },
+    {
+      "id": "s87",
+      "turkish": "Daha sık egzersiz yapmanız gerekir. Kilo alryorsun.",
+      "english": "You need to exercise more often. You're putting on weight."
+    },
+    {
+      "id": "s88",
+      "turkish": "İstemiyorsanız kravat takmanıza gerek yoktur.",
+      "english": "You don't need to wear a tie if you don't want to."
+    },
+    {
+      "id": "s89",
+      "turkish": "Önümüzdeki hafta Seattle'a gitmesi gerekiyor.",
+      "english": "She needs to go to Seattle next week."
+    },
+    {
+      "id": "s90",
+      "turkish": "Yarın erken kalkmanız gerekiyor mu?",
+      "english": "Do you need to get up early tomorrow?"
+    },
+    {
+      "id": "s91",
+      "turkish": "Son zamanlarda çok meşgul olduğum için çocuklarımla daha fazla zaman geçirmem gerekiyor.",
+      "english": "I need to spend more time with my children because I've been so busy lately."
+    },
+    {
+      "id": "s92",
+      "turkish": "Bu ay yeni işler kurmaya odaklanmalıyız.",
+      "english": "We need to focus on getting new business this month."
+    },
+    {
+      "id": "s93",
+      "turkish": "Unutalım gitsin. Kimsenin bilmesine gerek yok.",
+      "english": "Let's forget about it. No one needs to know about it."
+    },
+    {
+      "id": "s94",
+      "turkish": "Bu konuya fazla zaman harcamamıza gerek yok. Sınavda olmayacak.",
+      "english": "We don't need to spend much time on this topic. It's not going to be in the exam."
+    },
+    {
+      "id": "s95",
+      "turkish": "Kitap almam gerekmiyordu. Hepsi kütüphanedeydi.",
+      "english": "I didn't need to buy any books. They were all in the library."
+    },
+    {
+      "id": "s96",
+      "turkish": "Uyanık kalmak için birkaç fincan kahve içmem gerekecek.",
+      "english": "I will need to drink a few cups of coffee in order to stay awake."
+    },
+    {
+      "id": "s97",
+      "turkish": "Karar vermen için bolca vaktin var. Şimdi karar vermenize gerek yok.",
+      "english": "There's plenty of time for you to make up your mind. You don't need to decide now."
+    },
+    {
+      "id": "s98",
+      "turkish": "Yaz aylarında daha sık içmemiz gerekir.",
+      "english": "In summer we need to drink more often."
+    },
+    {
+      "id": "s99",
+      "turkish": "Not almanıza gerek yok. Bir özet alacaksınız.",
+      "english": "You don't need to take notes. You'll get a summary."
+    },
+    {
+      "id": "s100",
+      "turkish": "Bunu onunla yapmam gerekir mi?",
+      "english": "Do I need to do this with him?"
+    }
+  ],
+  "modal-13": [
+    {
+      "id": "s1",
+      "turkish": "Ceketinizi alayım mı? Burası soğuk.",
+      "english": "Shall I get your jacket? It's cold in here."
+    },
+    {
+      "id": "s2",
+      "turkish": "Bize bir şişe şarap ısmarlayayım mı?",
+      "english": "Shall I order us a bottle of wine?"
+    },
+    {
+      "id": "s3",
+      "turkish": "Yiyecekleri çok yakında getirecek.",
+      "english": "He shall bring the food very soon."
+    },
+    {
+      "id": "s4",
+      "turkish": "Sizi soyadımız veya adınızla arayayım mı?",
+      "english": "Shall I call you with your last or first name?"
+    },
+    {
+      "id": "s5",
+      "turkish": "Yürüyüşe gikalım, olur mu?",
+      "english": "Let's go for a walk, shall we?"
+    },
+    {
+      "id": "s6",
+      "turkish": "Başka bir yere gidelim mi?",
+      "english": "Shall we go somewhere else?"
+    },
+    {
+      "id": "s7",
+      "turkish": "Ne izleyeceğiz?",
+      "english": "What shall we watch?"
+    },
+    {
+      "id": "s8",
+      "turkish": "Kalmalı mıyız yoksa dışarn çıkalım mı?",
+      "english": "Shall we stay or go out?"
+    },
+    {
+      "id": "s9",
+      "turkish": "Dans edelim mi?",
+      "english": "Shall we dance?"
+    },
+    {
+      "id": "s10",
+      "turkish": "Onunla tanışırsam telefon numarasını alayım mı?",
+      "english": "Shall I get his phone number if I meet him?"
+    },
+    {
+      "id": "s11",
+      "turkish": "Sivilcelerimden kurtulmak için ne yapmalıyım?",
+      "english": "What shall I do to get rid of my acne?"
+    },
+    {
+      "id": "s12",
+      "turkish": "İçeri girmeyeceğiz!",
+      "english": "We shall not get in!"
+    },
+    {
+      "id": "s13",
+      "turkish": "Parasim ben ddeyeceğim.",
+      "english": "I shall pay for it."
+    },
+    {
+      "id": "s14",
+      "turkish": "Paranızı yakında geri alacağız.",
+      "english": "We shall get your money back soon."
+    },
+    {
+      "id": "s15",
+      "turkish": "Yasalara uyacağız.",
+      "english": "We shall abide by the law."
+    },
+    {
+      "id": "s16",
+      "turkish": "Nereden geldiğimi asla unutmayacağım.",
+      "english": "I shall never forget where I came from."
+    },
+    {
+      "id": "s17",
+      "turkish": "Yemeğe başlayalım mı?",
+      "english": "Shall we begin dinner?"
+    },
+    {
+      "id": "s18",
+      "turkish": "Oturma odasına geçelim mi?",
+      "english": "Shall we move into the living room?"
+    },
+    {
+      "id": "s19",
+      "turkish": "Sizin için her şeyle ilgileneceğim.",
+      "english": "I shall take care of everything for you."
+    },
+    {
+      "id": "s20",
+      "turkish": "Seyahat ayarlamalarım yapacağım. Endişelenmenize gerek yok.",
+      "english": "I shall make the travel arrangements. There's no need to worry."
+    },
+    {
+      "id": "s21",
+      "turkish": "Zulmün üstesinden geleceğiz.",
+      "english": "We shall overcome oppression."
+    },
+    {
+      "id": "s22",
+      "turkish": "Orada olmayacaoim. Önceden bir yükümlülüğüm var.",
+      "english": "I shall not be there. I have a previous obligation."
+    },
+    {
+      "id": "s23",
+      "turkish": "Seni asla unutmayacağım.",
+      "english": "I shall never forget you."
+    },
+    {
+      "id": "s24",
+      "turkish": "Özgürlük mücadelesinden asla vazgeğmeyeceğim.",
+      "english": "I shall never give up the fight for freedom."
+    },
+    {
+      "id": "s25",
+      "turkish": "Yaşlandığımda yazar olacağım.",
+      "english": "I shall be a writer when I get older."
+    },
+    {
+      "id": "s26",
+      "turkish": "Saat 10'a kadar hazır olalım mı?",
+      "english": "Shall we be ready by ten?"
+    },
+    {
+      "id": "s27",
+      "turkish": "Şimdi ne yapmalıyız? Kaybolduk.",
+      "english": "What shall we do now? We are lost."
+    },
+    {
+      "id": "s28",
+      "turkish": "Seni bekleyeyim mi? Bana sdyle.",
+      "english": "Shall I wait for you? Tell me."
+    },
+    {
+      "id": "s29",
+      "turkish": "Onlan beklemeden kahvaltı yapalım mı?",
+      "english": "Shall we have breakfast without waiting for them?"
+    },
+    {
+      "id": "s30",
+      "turkish": "Daha fazla bilgi edindiğimde sizinle tekrar iletişime gegeceğim.",
+      "english": "I shall contact you again when I have further information."
+    },
+    {
+      "id": "s31",
+      "turkish": "Vietnam'daki tatili asla unutmayacağız.",
+      "english": "We shall never forget the holiday in Vietnam."
+    },
+    {
+      "id": "s32",
+      "turkish": "Louisa ve Jill'i partiye davet edeyim mi?",
+      "english": "Shall I invite Louisa and Jill to the party?"
+    },
+    {
+      "id": "s33",
+      "turkish": "Çocuklar için biraz domuz pastırması ve yumurta yapayım mı?",
+      "english": "Shall I make some bacon and eggs for kids?"
+    },
+    {
+      "id": "s34",
+      "turkish": "Yarın bu saatlerde orada olacağız.",
+      "english": "We shall be there by this time tomorrow."
+    },
+    {
+      "id": "s35",
+      "turkish": "Bu hafta sonu hepimiz sahilde toplanacağız.",
+      "english": "We shall all gather on the beach this weekend."
+    },
+    {
+      "id": "s36",
+      "turkish": "Amcamla vejetaryen bir yemek yiyeceğiz.",
+      "english": "We shall be having a vegetarian meal with the uncle."
+    },
+    {
+      "id": "s37",
+      "turkish": "Burada yemek yiyelim mi? Hadi burada yemek yiyelim mi?",
+      "english": "Shall we dine here? Let's dine here, shall we?"
+    },
+    {
+      "id": "s38",
+      "turkish": "Bu yapbozu bu geceye kadar tamamlayacağız.",
+      "english": "We shall get this jigsaw puzzle done completely by tonight."
+    },
+    {
+      "id": "s39",
+      "turkish": "Oraya kadar birlikte yürüyeceğiz.",
+      "english": "We shall walk all the way there together."
+    },
+    {
+      "id": "s40",
+      "turkish": "Daha büyüğünü alalım mı?",
+      "english": "Shall we get a bigger one?"
+    },
+    {
+      "id": "s41",
+      "turkish": "Oturmalan için kalkacaklar mı?",
+      "english": "Shall get up for them to sit?"
+    },
+    {
+      "id": "s42",
+      "turkish": "Dışarıda m içeride mi yemek yiyelim?",
+      "english": "Shall we dine outside or inside?"
+    },
+    {
+      "id": "s43",
+      "turkish": "Büyükannemizi tekrar ne zaman ziyaret edeceğiz?",
+      "english": "When shall we visit grandma again?"
+    },
+    {
+      "id": "s44",
+      "turkish": "Öğle yemedi yapayım mı?",
+      "english": "Shall I make some lunch?"
+    },
+    {
+      "id": "s45",
+      "turkish": "Çantalarınızı taşımanıza yardımcı olalım mı?",
+      "english": "Shall we help you with your bags?"
+    },
+    {
+      "id": "s46",
+      "turkish": "Seni nereye bırakayım? Ofisinizin dışında mı?",
+      "english": "Where shall I drop you off? Outside your office?"
+    },
+    {
+      "id": "s47",
+      "turkish": "Siz yokken bitkilerinizi sulayayım mı?",
+      "english": "Shall I water your plants while you're away?"
+    },
+    {
+      "id": "s48",
+      "turkish": "Parka daha sonra gidecek miyiz?",
+      "english": "Shall we go to the park later?"
+    },
+    {
+      "id": "s49",
+      "turkish": "Yiyecek bir şeyler yiyelim mi?",
+      "english": "Shall we have something to eat?"
+    },
+    {
+      "id": "s50",
+      "turkish": "Partiye kimi davet edeceğiz?",
+      "english": "Who shall we invite to the party?"
+    },
+    {
+      "id": "s51",
+      "turkish": "Filmi izledikten sonra ne yapmalıyız?",
+      "english": "What shall we do after we've watched the film?"
+    },
+    {
+      "id": "s52",
+      "turkish": "Bu zor anın üstesinden geleceğiz.",
+      "english": "We shall overcome this difficult moment."
+    },
+    {
+      "id": "s53",
+      "turkish": "Sorunu çözmek için elimizden gelen her şeyi yapacauz.",
+      "english": "We shall do everything we can to solve the problem."
+    },
+    {
+      "id": "s54",
+      "turkish": "O bavulu sizin için taşryayım mı? Ağır görünüyor!",
+      "english": "Shall I carry that suitcase for you? It looks heavy!"
+    },
+    {
+      "id": "s55",
+      "turkish": "Bunu bir gün arayalım ve yarın proje üzerinde çalışmaya devam edelim mi?",
+      "english": "Shall we call it a day and continue working on the project tomorrow?"
+    },
+    {
+      "id": "s56",
+      "turkish": "Bayan Johnson'a gerçeği söyleyelim mi? Biz yapmazsak birileri ona söylemek zorunda.",
+      "english": "Shall we just tell Ms. Johnson the truth? Someone is bound to tell her if we don't."
+    },
+    {
+      "id": "s57",
+      "turkish": "Size bir fincan gay veya bir kase tavuk çorbası gibi içecek sıcak bir şeyler ısmarlayayım mı?",
+      "english": "Shall I get you something warm to drink, like a cup of tea or a bowl of chicken soup?"
+    },
+    {
+      "id": "s58",
+      "turkish": "Sunumun sonunda ise alımla ilgili bir soru soracağım.",
+      "english": "I shall ask a question on recruitment at the end of the presentation."
+    },
+    {
+      "id": "s59",
+      "turkish": "Toplantı sırasında iskoç akşamyla konuşmah myim?",
+      "english": "Shall I talk in a Scottish accent during the meeting?"
+    },
+    {
+      "id": "s60",
+      "turkish": "Ne hakkında konuşalım?",
+      "english": "What shall we talk about?"
+    },
+    {
+      "id": "s61",
+      "turkish": "Konuyu midi ile tartışmayacağız.",
+      "english": "We shall not discuss the matter with the Principal."
+    },
+    {
+      "id": "s62",
+      "turkish": "Kardeşinizi Üniversiteden alayım mı?",
+      "english": "Shall I pick your brother up from college?"
+    },
+    {
+      "id": "s63",
+      "turkish": "Kotii davramslarınız için sizi cezalandırayım mı?",
+      "english": "Shall I punish you for your misbehavior?"
+    },
+    {
+      "id": "s64",
+      "turkish": "Koğumuz izin verene kadar ayrılmayacak mıyız?",
+      "english": "Shall we not leave by the time our coach lets us?"
+    },
+    {
+      "id": "s65",
+      "turkish": "Size bundan daha fazlaşım anlatacağım.",
+      "english": "I shall tell you more about this."
+    },
+    {
+      "id": "s66",
+      "turkish": "Toplantıya ne zaman başlayacağız?",
+      "english": "What time shall we begin the meeting?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Kahvaltıda krep pişireyim mi?",
+      "english": "Shall I cook some pancakes for breakfast?"
+    },
+    {
+      "id": "s68",
+      "turkish": "Yakında orada olacağım.",
+      "english": "I shall be there soon."
+    },
+    {
+      "id": "s69",
+      "turkish": "Öğleden Önce varmayacauz.",
+      "english": "We shall not arrive before noon."
+    },
+    {
+      "id": "s70",
+      "turkish": "Doğum günü için ne yapmaltyiz?",
+      "english": "What shall we do for her birthday?"
+    },
+    {
+      "id": "s71",
+      "turkish": "Otobüse mi binelim yoksa araba mı kullanalım?",
+      "english": "Shall we take the bus or drive?"
+    },
+    {
+      "id": "s72",
+      "turkish": "Soğuk. Pencereyi kapatayım mı?",
+      "english": "It's cold. Shall I close the window?"
+    },
+    {
+      "id": "s73",
+      "turkish": "Tavsiyesini dinleyeyim mi?",
+      "english": "Shall I listen to his advice?"
+    },
+    {
+      "id": "s74",
+      "turkish": "Size bir parça kek göndereyim mi?",
+      "english": "Shall I send you a piece of cake?"
+    },
+    {
+      "id": "s75",
+      "turkish": "Seni dışarıda bekleyeyim mi? Burası çok sıcak!",
+      "english": "Shall I wait for you outside? It's too hot here!"
+    },
+    {
+      "id": "s76",
+      "turkish": "Yorgun olduğunu görüyorum. Senin için hoovering yapacağım.",
+      "english": "I see you are tired. I shall do the hoovering for you."
+    },
+    {
+      "id": "s77",
+      "turkish": "Ben çıkıyorum. Anahtarları sana bırakayım mı?",
+      "english": "I am going out. Shall I leave the keys for you?"
+    },
+    {
+      "id": "s78",
+      "turkish": "Giysileriniz kirli! Yıkamayı hemen şimdi yapacağım!",
+      "english": "Your clothes are dirty! I shall do the washing right now!"
+    },
+    {
+      "id": "s79",
+      "turkish": "Alışveriş yapacağım. Sebze alayım mı?",
+      "english": "I am going to do the shopping. Shall I buy any vegetables?"
+    },
+    {
+      "id": "s80",
+      "turkish": "Susadınız! Sana bir bardak su getireyim mi?",
+      "english": "You're thirsty! Shall I get you a glass of water?"
+    },
+    {
+      "id": "s81",
+      "turkish": "Odanız dağınık. Yataklan ben yapayım mı?",
+      "english": "Your room is untidy. Shall I make the beds?"
+    },
+    {
+      "id": "s82",
+      "turkish": "Dikkatimizi kilit sorulara yoğunlaştırmaya çalışacağız.",
+      "english": "We shall try to focus attention on key questions."
+    },
+    {
+      "id": "s83",
+      "turkish": "Okuyucunun hepsini hayal etmesine izin vermeli miyim?",
+      "english": "Shall I let the reader imagine them all?"
+    },
+    {
+      "id": "s84",
+      "turkish": "Her departman kıdem listesinin bir kopyasım alacağız.",
+      "english": "We shall receive a copy of every departmental seniority list."
+    },
+    {
+      "id": "s85",
+      "turkish": "Esas olarak soruyla ilgileneceğiz.",
+      "english": "We shall concern ourselves mainly with the question."
+    },
+    {
+      "id": "s86",
+      "turkish": "Birkaç gün içinde sizi ziyaret edeceğim ve şampanyayı memnuniyetle getireceğim.",
+      "english": "In a few days I shall visit you, and I shall bring the champagne with pleasure."
+    },
+    {
+      "id": "s87",
+      "turkish": "Gidip bu adam arayacağım ve sonra geri döneceğim.",
+      "english": "I'm going to go call this guy and then I shall return."
+    },
+    {
+      "id": "s88",
+      "turkish": "Sağımı arkadan ayırmalı mim?",
+      "english": "Shall I part my hair behind?"
+    },
+    {
+      "id": "s89",
+      "turkish": "Tüm detayları doldurmalı mıyım?",
+      "english": "Shall I fill in all the details?"
+    },
+    {
+      "id": "s90",
+      "turkish": "Kabalığım için dzur dilerim.",
+      "english": "I shall apologize for my rudeness."
+    },
+    {
+      "id": "s91",
+      "turkish": "Kendi yetki alan içindeki herkese hak ve özgürlükleri glivence altına alacağız.",
+      "english": "We shall secure to everyone within their jurisdiction the rights and freedoms."
+    },
+    {
+      "id": "s92",
+      "turkish": "Hangi yöne gideceğiz?",
+      "english": "Which way shall we go?"
+    },
+    {
+      "id": "s93",
+      "turkish": "Herkese yardım etmekten mutluluk duyarım.",
+      "english": "I shall be happy to help everyone."
+    },
+    {
+      "id": "s94",
+      "turkish": "Yarın size postalayacağım.",
+      "english": "I shall post it to you tomorrow."
+    },
+    {
+      "id": "s95",
+      "turkish": "Kişisel mallara verilen zararlardan sorumlu olmayacağız.",
+      "english": "We shall not be responsible for damage to personal property."
+    },
+    {
+      "id": "s96",
+      "turkish": "Ofise geleyim mi?",
+      "english": "Shall I come round to the office?"
+    },
+    {
+      "id": "s97",
+      "turkish": "Bence başka bir otel rezervasyonu yapmaltyiz.",
+      "english": "In my opinion, we shall book another hotel."
+    },
+    {
+      "id": "s98",
+      "turkish": "Size kitabı göndereyim mi?",
+      "english": "Shall I send you the book?"
+    },
+    {
+      "id": "s99",
+      "turkish": "Bu hafta sonu ne yapacağız?",
+      "english": "What shall we do this weekend?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Nasıl bilebilirim?",
+      "english": "How shall I know it?"
+    }
+  ],
+  "modal-14": [
+    {
+      "id": "s1",
+      "turkish": "Dışarı çıkıp bir restoranda akşam yemeği yemektense evde kalmayı tercih ederim.",
+      "english": "I'd prefer to stay at home rather than go out and eat dinner at a restaurant."
+    },
+    {
+      "id": "s2",
+      "turkish": "Günaydın! Yatağımda kalmayı tercih ederim.",
+      "english": "Good morning! I'd prefer to stay in my bed."
+    },
+    {
+      "id": "s3",
+      "turkish": "Buğtın kahvaltıda ekmek, tereyağı ve bal yemeyi tercih ederim.",
+      "english": "Today, at breakfast, I'd rather eat bread, butter and honey."
+    },
+    {
+      "id": "s4",
+      "turkish": "Çok şişmanım, iki galeta ve bir elma yemeyi tercih ederim.",
+      "english": "I am too fat, I'd prefer eat two rusks and an apple."
+    },
+    {
+      "id": "s5",
+      "turkish": "Biraz krema ile kahve içmeyi tercih ederim.",
+      "english": "I\"d rather drink coffee with some cream."
+    },
+    {
+      "id": "s6",
+      "turkish": "Karım olmadan uzaklara tatile gitmeyi tercih ederim! Harika olurdu!",
+      "english": "I'd prefer to go on holiday far away without my wife! It would be great!"
+    },
+    {
+      "id": "s7",
+      "turkish": "Peter'in bekar olmayı tercih edeceğini diisiiniiyoruz!",
+      "english": "We think, Peter would rather be single!"
+    },
+    {
+      "id": "s8",
+      "turkish": "Yürüyüşe çıkmak istemiyorum. Dinlenmeyi tercih ederim.",
+      "english": "I don't want to go for a walk. I'd prefer to have a rest."
+    },
+    {
+      "id": "s9",
+      "turkish": "Peter dağlara tırmanmaktansa sahilde yatmayı tercih eder.",
+      "english": "Peter would rather lie on the beach than climb mountains."
+    },
+    {
+      "id": "s10",
+      "turkish": "Çocuklarınız köpek mi yoksa kedi mi tercih ederdi? Elbette bir kedi, daha sessiz.",
+      "english": "Would your children prefer to have a dog or a cat? A cat of course, it is quieter."
+    },
+    {
+      "id": "s11",
+      "turkish": "Hesabı sorma zaman. önce kahve içmemeyi mi tercih edersiniz?",
+      "english": "It's time to ask for the bill. Would you rather not have coffee first?"
+    },
+    {
+      "id": "s12",
+      "turkish": "Anne, banyodan önce akşam yemedi yemeyi tercih ederim ... Aghktan dluyorum.",
+      "english": "Mom, I'd prefer to have dinner before taking my bath... I'm starving."
+    },
+    {
+      "id": "s13",
+      "turkish": "Sabah mı yoksa öğleden sonra ise gelmeyi mi tercih edersiniz?",
+      "english": "Would you rather come to work in the morning, or in the afternoon?"
+    },
+    {
+      "id": "s14",
+      "turkish": "Gerçekten, bebeğe sizin bakmanızı tercih ederim ... Bakıcı fikrini sevmiyorum ...",
+      "english": "Really, I'd prefer to you looked after the baby yourself... I don't like the idea of sitters..."
+    },
+    {
+      "id": "s15",
+      "turkish": "Bu yıl deniz kenarında bir tatil yapmaktansa dağlarda tatil yapmayı tercih ederim.",
+      "english": "I'd rather have a holiday in the mountains than at the seaside this year."
+    },
+    {
+      "id": "s16",
+      "turkish": "Evet, Peter, havuza gitmeyi tercih ettiğini biliyorum, ama hava çok soğuk.",
+      "english": "Yes, Peter, I know you'd prefer to go to the swimming pool, but it is so cold."
+    },
+    {
+      "id": "s17",
+      "turkish": "Sinemaya gitmektense evde olmayı mı tercih edersiniz?",
+      "english": "Would you rather be at home than go to the movies?"
+    },
+    {
+      "id": "s18",
+      "turkish": "Ev işlerini yapmaktansa en sevdiğiniz konuyu incelemeyi tercih eder miydiniz?",
+      "english": "Would you prefer to study your favorite subject rather than do household chores?"
+    },
+    {
+      "id": "s19",
+      "turkish": "Köpeği gezdirmektense oyun izlemeyi mi tercih edersiniz?",
+      "english": "Would you rather watch a game than walk the dog?"
+    },
+    {
+      "id": "s20",
+      "turkish": "İnternette gezinmek yerine kitap okumayı mı tercih edersiniz?",
+      "english": "Would you prefer to read a book rather than surf the net?"
+    },
+    {
+      "id": "s21",
+      "turkish": "Whatsapp mesajı yerine mektup almayı mı tercih edersiniz?",
+      "english": "Would you rather receive a letter than a whatsapp message?"
+    },
+    {
+      "id": "s22",
+      "turkish": "Gelecekten ziyade geçmişi ziyaret etmeyi tercih eder miydiniz?",
+      "english": "Would you prefer to visit the past rather than the future?"
+    },
+    {
+      "id": "s23",
+      "turkish": "Güzel bir bisiklet yerine sık bir arabaya sahip olmayı mı tercih edersiniz?",
+      "english": "Would you rather have a fancy car than a nice bike?"
+    },
+    {
+      "id": "s24",
+      "turkish": "Gerçekten sevdiğiniz Ünlü biriyle tanışmaktansa piyangoyu kazanmayı mı tercih edersiniz?",
+      "english": "Would you prefer to win the lottery rather than meet someone famous you really like?"
+    },
+    {
+      "id": "s25",
+      "turkish": "Çiftlik yerine şatoda yaşamayı m tercih edersiniz?",
+      "english": "Would you rather live in a castle than in a farm?"
+    },
+    {
+      "id": "s26",
+      "turkish": "Ormanda kaybolmaktansa bir adada kaybolmayı mı tercih edersiniz?",
+      "english": "Would you prefer to be lost in an island rather than in a jungle?"
+    },
+    {
+      "id": "s27",
+      "turkish": "Şarkı söylemek yerine bir enstrüman çalmayı mı tercih edersiniz?",
+      "english": "Would you rather play an instrument than sing?"
+    },
+    {
+      "id": "s28",
+      "turkish": "Araba kullanmak yerine yemek pişirmeyi tercih eder miydiniz?",
+      "english": "Would you prefer to cook rather than drive?"
+    },
+    {
+      "id": "s29",
+      "turkish": "Başkalarına yardım etmektense hayallerinizin gerçekleşmesini mi tercih edersiniz?",
+      "english": "Would you rather have your dreams come true than help others?"
+    },
+    {
+      "id": "s30",
+      "turkish": "Dünyayı: dolaşmaktansa kendi ıılkenizi dolaşmayı tercih eder miydiniz?",
+      "english": "Would you prefer to go on a travel around your country rather than around the world?"
+    },
+    {
+      "id": "s31",
+      "turkish": "Sebze yerine makarna yemeyi mi tercih edersiniz?",
+      "english": "Would you rather eat pasta than vegetables?"
+    },
+    {
+      "id": "s32",
+      "turkish": "İtalya yerine Paris'e gitmeyi tercih eder miydiniz?",
+      "english": "Would you prefer to go to Paris rather than Italy?"
+    },
+    {
+      "id": "s33",
+      "turkish": "Güneşli bir gün yerine karl bir günde olmayı mı tercih edersiniz?",
+      "english": "Would you rather be in a snowy day than in a sunny day?"
+    },
+    {
+      "id": "s34",
+      "turkish": "Radyo dinlemektense televizyon izlemeyi mi tercih edersiniz?",
+      "english": "Would you prefer to watch tv rather than listen to the radio?"
+    },
+    {
+      "id": "s35",
+      "turkish": "Çay yerine kahve içmeyi mi tercih edersiniz?",
+      "english": "Would you rather drink coffee than tea?"
+    },
+    {
+      "id": "s36",
+      "turkish": "Pasta yerine kurabiye yemeyi tercih eder miydiniz?",
+      "english": "Would you prefer to have cookies rather than a cake?"
+    },
+    {
+      "id": "s37",
+      "turkish": "Sınavlardan önce Adam çalışmayı tercih ederim.",
+      "english": "'d rather Adam study before the exams."
+    },
+    {
+      "id": "s38",
+      "turkish": "Az önce söylediklerimi tekrar etmemeyi tercih ederim.",
+      "english": "I'd prefer not to repeat what I've just said."
+    },
+    {
+      "id": "s39",
+      "turkish": "Geçen yıl deniz kenarında tatil geçirmeyi tercih etmem.",
+      "english": "I'd rather not spend holidays at the seaside last year."
+    },
+    {
+      "id": "s40",
+      "turkish": "Doğru davranmayı tercih ederdi.",
+      "english": "She'd prefer to behave correctly."
+    },
+    {
+      "id": "s41",
+      "turkish": "Bana verdiğin hediyeler için çok fazla para harcamamayı tercih ederim.",
+      "english": "I'd rather not spend so much money on presents you gave me."
+    },
+    {
+      "id": "s42",
+      "turkish": "Yarınki partiye çocuk getirmemeyi tercih ederiz.",
+      "english": "We'd prefer not to bring children at tomorrow's party."
+    },
+    {
+      "id": "s43",
+      "turkish": "Onu geçen hafta sonu alışveriş merkezinde başka bir kızla görmeyi tercih etmezdi.",
+      "english": "He'd rather not see him with another girl in the shopping mall last weekend."
+    },
+    {
+      "id": "s44",
+      "turkish": "Misafirler gelmeden evi temizlemeyi tercih ederiz.",
+      "english": "We'd prefer to clean the house before the guests arrive."
+    },
+    {
+      "id": "s45",
+      "turkish": "Onunla oynamaktansa seninle oynamayı tercih ederim.",
+      "english": "I'd rather play with you than with him."
+    },
+    {
+      "id": "s46",
+      "turkish": "Çocuklarla oynarken silah taşımamayı tercih ederim.",
+      "english": "I'd prefer not to carry the gun when you play with kids."
+    },
+    {
+      "id": "s47",
+      "turkish": "Bahçede çiçek tarhları yerine bir yüzme havuzunu tercih ederim.",
+      "english": "\\'d rather have a swimming pool in the garden than flowerbeds."
+    },
+    {
+      "id": "s48",
+      "turkish": "Dün gece kocastyla tartışmamayı tercih ederdi.",
+      "english": "She'd prefer not to have a row with her husband last night."
+    },
+    {
+      "id": "s49",
+      "turkish": "Birbirimizle kavga etmemeyi tercih ederim.",
+      "english": "I'd rather not fight with each other."
+    },
+    {
+      "id": "s50",
+      "turkish": "Artık kaza yapmamayt tercih ederim.",
+      "english": "I'd prefer not to cause an accident anymore."
+    },
+    {
+      "id": "s51",
+      "turkish": "Kız kardeşim bu gece sinemaya gitmeyi tercih ediyor.",
+      "english": "My sister would rather go to the movie tonight."
+    },
+    {
+      "id": "s52",
+      "turkish": "Kız kardeşim onunla aym odayı paylaşmamayı tercih ederim.",
+      "english": "My sister I would prefer to not to share a room with her."
+    },
+    {
+      "id": "s53",
+      "turkish": "Geceleri gürültü yapmamayı tercih ederim.",
+      "english": "I'd rather not make a noise at night."
+    },
+    {
+      "id": "s54",
+      "turkish": "Sorunla daha Önce başa çıkmayı tercih ederim.",
+      "english": "I'd prefer to cope with the problem earlier."
+    },
+    {
+      "id": "s55",
+      "turkish": "Ne olduğunu anlamayı tercih ederiz.",
+      "english": "We'd rather understand what happened."
+    },
+    {
+      "id": "s56",
+      "turkish": "Birkaçç gün önce gördüklerimi görmemeyi tercih ederim.",
+      "english": "I'd prefer not to see what I saw some days ago."
+    },
+    {
+      "id": "s57",
+      "turkish": "Pencereyi çalmamayı tercih ederim.",
+      "english": "I'd rather not knock on the window."
+    },
+    {
+      "id": "s58",
+      "turkish": "Öğle yemesini içeride yemeyi tercih ederlerdi ama ben bahçede dışarıda yemeyi tercih ederim.",
+      "english": "They'd prefer to have lunch inside, but I prefer to eat outside in the garden."
+    },
+    {
+      "id": "s59",
+      "turkish": "Telefonda konuşmaktansa onunla yüz yüze konuşmayı tercih ederim.",
+      "english": "I'd rather speak to him in person than discuss things over the phone."
+    },
+    {
+      "id": "s60",
+      "turkish": "Şarkıcı olmaktansa şarkı yazarı olmayı tercih ederdiniz?",
+      "english": "Which would you prefer to be, a songwriter than a singer?"
+    },
+    {
+      "id": "s61",
+      "turkish": "Bir günlüğüne uçabilmeyi mi yoksa görünmez olmayı mı tercih ederdiniz?",
+      "english": "Would you rather be able to fly or to become invisible for a day?"
+    },
+    {
+      "id": "s62",
+      "turkish": "Tatillere Kuzey Kutup Dairesi yerine Sahra Coline gitmeyi tercih eder miydiniz?",
+      "english": "Would you prefer to go on holidays to the Sahara Desert rather than to the Arctic Circle?"
+    },
+    {
+      "id": "s63",
+      "turkish": "Bir taksi şoförü olmaktansa yars arabast sürücüsii, otobüs şoförti, jokey olmayı mı tercih edersiniz?",
+      "english": "Would you rather be a racing-car driver, a bus driver, a jockey than a taxi driver?"
+    },
+    {
+      "id": "s64",
+      "turkish": "Hangisini tercih ederdin, futbolcu mu yoksa futbol menajeri mi?",
+      "english": "Which would you prefer to be, a footballer or a football manager?"
+    },
+    {
+      "id": "s65",
+      "turkish": "Onbeş kilo kaybetmektense kazanmayı mı tercih edersiniz?",
+      "english": "Would you rather gain than lose15 kilos?"
+    },
+    {
+      "id": "s66",
+      "turkish": "Hafta sonunu Londra, Paris veya Roma'da nerede geçirmeyi tercih edersiniz?",
+      "english": "Where would you prefer to spend the weekend, in London, Paris or Rome?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Evcil hayvan için Grumçeğe sahip olmaktansa bir maymun, yılan, yunus tercih eder miydiniz?",
+      "english": "Would you rather have a monkey, a snake, a dolphin than a spider for a pet?"
+    },
+    {
+      "id": "s68",
+      "turkish": "Ressam olmaktansa müzisyen olmayı tercih eder miydiniz?",
+      "english": "Would you prefer to be a musician than a painter?"
+    },
+    {
+      "id": "s69",
+      "turkish": "Hangisini tercih edersiniz, tıp, sanat, dil veya bilim?",
+      "english": "Which would you rather study, medicine, art, languages or science?"
+    },
+    {
+      "id": "s70",
+      "turkish": "Eğlenceli bir yere gitmeyi tercih ederim, hatta belki biraz canlı müzikle.",
+      "english": "I would prefer to go somewhere fun, maybe even with some live music."
+    },
+    {
+      "id": "s71",
+      "turkish": "Dışarı çıkmaktansa evde kalıp akşam yemeği pişirmeyi mi tercih edersiniz?",
+      "english": "Would you rather stay home and cook dinner than go out?"
+    },
+    {
+      "id": "s72",
+      "turkish": "Salı yerine Pazartesi buluşmayı tercih ederler.",
+      "english": "They would prefer to meet on Monday rather than Tuesday."
+    },
+    {
+      "id": "s73",
+      "turkish": "Tenis oynamaktansa Yoga dersi almayı tercih ediyor.",
+      "english": "He would rather take a Yoga class than play tennis."
+    },
+    {
+      "id": "s74",
+      "turkish": "Bir İtalyan restoranına mı yoksa bir Japon restoranına mı gitmeyi tercih edersiniz?",
+      "english": "Would you prefer to go to an Italian or a Japanese restaurant?"
+    },
+    {
+      "id": "s75",
+      "turkish": "Dennis parasını alışveriş merkezinde harcamayı tercih eder.",
+      "english": "Dennis would rather spend his money at the mall."
+    },
+    {
+      "id": "s76",
+      "turkish": "Çip yerine sürmeyi tercih ederim.",
+      "english": "I would prefer to drive rather than the jeep."
+    },
+    {
+      "id": "s77",
+      "turkish": "Akşam yemefine tatlı yerine salata getirmeyi mi tercih edersiniz?",
+      "english": "Would you rather bring a salad than dessert to the dinner party?"
+    },
+    {
+      "id": "s78",
+      "turkish": "Farklı bir otelde kalmayı tercih ederim.",
+      "english": "I'd prefer to stay at a different hotel."
+    },
+    {
+      "id": "s79",
+      "turkish": "Daha yavaş bir şarkı söylemeyi tercih ederiz.",
+      "english": "We would rather sing a slower song."
+    },
+    {
+      "id": "s80",
+      "turkish": "Farklı bir sarktyla dans etmeyi tercih eder miydi?",
+      "english": "Would he prefer to dance to a different song?"
+    },
+    {
+      "id": "s81",
+      "turkish": "Başka bir şarkı duymayı tercih ediyor.",
+      "english": "She'd rather hear another song."
+    },
+    {
+      "id": "s82",
+      "turkish": "Eskisini onarmaktansa yeni bir ev yapmayı tercih ederler.",
+      "english": "They would prefer to build a new house rather than repair the old one."
+    },
+    {
+      "id": "s83",
+      "turkish": "Bir zombi olmaktansa vampir olmayı tercih ederim.",
+      "english": "I would rather be a vampire than a zombie."
+    },
+    {
+      "id": "s84",
+      "turkish": "Kotii haber olsa bile gerçeği söylemeyi tercih ederim.",
+      "english": "I'd prefer to tell the truth, even if it's bad news."
+    },
+    {
+      "id": "s85",
+      "turkish": "Kelime bilgisi yerine dilbilgisi çalşmayı tercih ederim.",
+      "english": "I'd rather study grammar than vocabulary."
+    },
+    {
+      "id": "s86",
+      "turkish": "Sorunlarım hakkında konuşmamayt tercih ederim.",
+      "english": "I'd prefer not to talk about my problems."
+    },
+    {
+      "id": "s87",
+      "turkish": "Yeni işlemcili olanı tercih ederim.",
+      "english": "I'd rather have the one with the new processor."
+    },
+    {
+      "id": "s88",
+      "turkish": "Elli yıl sağlıklı yağamaktansa 100 yıl sağlıksız yaşamayı tercih ederim.",
+      "english": "I'd prefer to live unhealthy 100 years rather than live healthy 50 years."
+    },
+    {
+      "id": "s89",
+      "turkish": "Ata binmektense tenis oynamayı tercih ediyor.",
+      "english": "She would rather play tennis than go horseback riding."
+    },
+    {
+      "id": "s90",
+      "turkish": "Bu akşam yemek pişirmek yerine dışarıda yemek yemeyi tercih eder miydiniz?",
+      "english": "Would you prefer to eat dinner out rather than cook dinner tonight?"
+    },
+    {
+      "id": "s91",
+      "turkish": "Ormanda yürümek yerine denizde yüzmeyi tercih ediyor.",
+      "english": "She'd rather swim in the sea than walk in the jungle."
+    },
+    {
+      "id": "s92",
+      "turkish": "Plaj tatiline gitmek yerine bu yıl kayağa gitmeyi tercih ederim.",
+      "english": "I'd prefer to go skiing this year rather than go on a beach holiday."
+    },
+    {
+      "id": "s93",
+      "turkish": "Televizyon seyretmektense kitap okumayı tercih ederim. TV'de iyi bir şey yok.",
+      "english": "I would rather read a book than watch TV. There is nothing good on TV."
+    },
+    {
+      "id": "s94",
+      "turkish": "Hayalinizdeki işi mi yoksa gerçek aşkı bulmayı mı tercih edersiniz?",
+      "english": "Would you prefer to have your dream job or find your true love?"
+    },
+    {
+      "id": "s95",
+      "turkish": "İnsanların zihinlerini okuyabilmeyi mi yoksa iki insanı aşık etmeyi mi tercih edersiniz?",
+      "english": "Would you rather have the ability to read people's minds or make two people fall in love?"
+    },
+    {
+      "id": "s96",
+      "turkish": "Şu altında nefes almayı mı yoksa uçmayı mı tercih edersiniz?",
+      "english": "Would you prefer to be able to breathe underwater or fly?"
+    },
+    {
+      "id": "s97",
+      "turkish": "Bol enerjiye veya paraya sahip olmayı mı tercih edersiniz?",
+      "english": "Would you rather have lots of energy or money?"
+    },
+    {
+      "id": "s98",
+      "turkish": "Parlak bir bilim adam m yoksa dünyaca ıınlıı bir ressam mı olmayı tercih edersiniz?",
+      "english": "Would you prefer to be a brillant scientist or a world famous painter?"
+    },
+    {
+      "id": "s99",
+      "turkish": "Dünyanın en hızlı insam olmaktansa en güçlii kişi ol may tercih eder miydiniz?",
+      "english": "Would you rather be the strongest person than the fastestest person in the world?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Netflix'e ömür boyu aboneliğine mi veya Starbucks'a sınırsız hediye kartına sahip olmayı mı tercih edersiniz?",
+      "english": "Would you prefer to have a lifetime subscription to Netflix or an unlimited gift card to Starbucks?"
+    }
+  ],
+  "modal-15": [
+    {
+      "id": "s1",
+      "turkish": "Bu hafta sonu seninle sinemaya gitmek istiyorum. Ne dersin?",
+      "english": "I would like to go to the cinema with you this weekend. How about it?"
+    },
+    {
+      "id": "s2",
+      "turkish": "Dükkandan bir şey ister misiniz?",
+      "english": "Would you like anything from the shop?"
+    },
+    {
+      "id": "s3",
+      "turkish": "Andrew, oyun oynamak ister misin?",
+      "english": "Andrew, would you like to play a game?"
+    },
+    {
+      "id": "s4",
+      "turkish": "Gönüllüler sabah vardiyasında çalışmak istiyor.",
+      "english": "The volunteers would like to work the morning shift."
+    },
+    {
+      "id": "s5",
+      "turkish": "Kahvenizle birlikte bisküvi ister misiniz?",
+      "english": "Would you like a biscuit with your coffee?"
+    },
+    {
+      "id": "s6",
+      "turkish": "Ellie için sipariş verebilir misiniz? Margarita pizzasını istiyor, lütfen.",
+      "english": "Can you order for Ellie? She'd like the Margarita pizza, please."
+    },
+    {
+      "id": "s7",
+      "turkish": "Bunu tekrar dinlemek ister misiniz?",
+      "english": "Would you like to listen to that again?"
+    },
+    {
+      "id": "s8",
+      "turkish": "Yarın için bir dönüş bileti almak istiyorum.",
+      "english": "I'd like to get a return ticket for tomorrow."
+    },
+    {
+      "id": "s9",
+      "turkish": "Futbolu izlemek isterim ama dışarı çıkmam gerekiyor.",
+      "english": "I'd like to watch the football but I have to go out."
+    },
+    {
+      "id": "s10",
+      "turkish": "Bununla başka bir şey ister misiniz?",
+      "english": "Would you like anything else with that?"
+    },
+    {
+      "id": "s11",
+      "turkish": "Birkaç pul isteyiniz lütfen.",
+      "english": "Would like some stamps, please."
+    },
+    {
+      "id": "s12",
+      "turkish": "Bir avroyu pound ile değiştirmek istiyor.",
+      "english": "She would like to exchange some euros for pounds."
+    },
+    {
+      "id": "s13",
+      "turkish": "89 numaralı otobüs için 2 bilet istiyorlar.",
+      "english": "They would like 2 tickets for bus 89."
+    },
+    {
+      "id": "s14",
+      "turkish": "Bir sayfa daha okumak ister misiniz?",
+      "english": "Would you like to read one more page?"
+    },
+    {
+      "id": "s15",
+      "turkish": "Jenny ve ben evilenmek istiyoruz.",
+      "english": "Jenny and I would like to get married."
+    },
+    {
+      "id": "s16",
+      "turkish": "Ünlü birini görmek isterim.",
+      "english": "I would like to see someone famous."
+    },
+    {
+      "id": "s17",
+      "turkish": "Bob yeni arkadaşlar edinmek istiyor.",
+      "english": "Bob would like to have new friends."
+    },
+    {
+      "id": "s18",
+      "turkish": "O büyük yemekten sonra tatl istemiyorum.",
+      "english": "I would like not any dessert after that big meal."
+    },
+    {
+      "id": "s19",
+      "turkish": "Başkasına aşık olmak isterim.",
+      "english": "I would like to fall in love with someone else."
+    },
+    {
+      "id": "s20",
+      "turkish": "Ekibimize katılacak çalışkan bir insan bulmak istiyoruz.",
+      "english": "We would like to find a hardworking person to join our team."
+    },
+    {
+      "id": "s21",
+      "turkish": "Bu kitabı ödünç almak istiyorum.",
+      "english": "I'd like to borrow this book."
+    },
+    {
+      "id": "s22",
+      "turkish": "Yelkene gitmek ister misiniz?",
+      "english": "Would you like to go sailing?"
+    },
+    {
+      "id": "s23",
+      "turkish": "Isabell'e kolay bir soru sormak ister misiniz?",
+      "english": "Would you like to ask an easy question to Isabell?"
+    },
+    {
+      "id": "s24",
+      "turkish": "Bu dergilerden kağ tane istersiniz?",
+      "english": "How many of these magazines would you like?"
+    },
+    {
+      "id": "s25",
+      "turkish": "Her cumartesi uzun bir bisiklete binerdim.",
+      "english": "Every Saturday I would go on a long bike ride."
+    },
+    {
+      "id": "s26",
+      "turkish": "Babam her gece yatmadan önce harika hikayeler okumak istiyor.",
+      "english": "My dad would like to read amazing stories every night at bedtime."
+    },
+    {
+      "id": "s27",
+      "turkish": "Takımda olmak ister misiniz?",
+      "english": "Would you like to be in the team?"
+    },
+    {
+      "id": "s28",
+      "turkish": "Bu rakamları kontrol etmek ister misiniz?",
+      "english": "Would you like to check these figures?"
+    },
+    {
+      "id": "s29",
+      "turkish": "Günü bizimle geçirmek ister misiniz?",
+      "english": "Would you like to spend the day with us?"
+    },
+    {
+      "id": "s30",
+      "turkish": "Yürüyüşe çıkmak ister misiniz?",
+      "english": "Would you like to go for a walk?"
+    },
+    {
+      "id": "s31",
+      "turkish": "Kızın ailesi dışarıda bu kadar geç kalmasına izin vermek istemiyor.",
+      "english": "The girl's parents would like not to let her stay out so late."
+    },
+    {
+      "id": "s32",
+      "turkish": "Bir parça çikolata ister misiniz?",
+      "english": "Would you like a piece of chocolate?"
+    },
+    {
+      "id": "s33",
+      "turkish": "Bir ara yemeğe gelmek ister misin?",
+      "english": "Would you like to come for a meal some time?"
+    },
+    {
+      "id": "s34",
+      "turkish": "Böylesine korkung koşullara tahammül etmemek isterim.",
+      "english": "I wouldn like not to tolerate such terrible conditions."
+    },
+    {
+      "id": "s35",
+      "turkish": "Gösteride olmak istiyoruz.",
+      "english": "We would like to be in the show."
+    },
+    {
+      "id": "s36",
+      "turkish": "Öğle yemeğinde bana katılmak ister misiniz?",
+      "english": "Would you like to join me for lunch?"
+    },
+    {
+      "id": "s37",
+      "turkish": "Uzun bir bisiklet yolculuğuna gikmak istiyorum.",
+      "english": "I would like to go on a long bike ride."
+    },
+    {
+      "id": "s38",
+      "turkish": "Bu makaleyi onaylamak ister mi?",
+      "english": "Would he like approve this article?"
+    },
+    {
+      "id": "s39",
+      "turkish": "İngilizce öğretmeni olmak ister mi?",
+      "english": "Would she like to be an English teacher?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Spor yapmak istiyorlar.",
+      "english": "They would like to go in for sport."
+    },
+    {
+      "id": "s41",
+      "turkish": "Herkese hoş geldiniz demek istiyorum ve burada olduğunuz için çok teşekkür ederim.",
+      "english": "I'd like to welcome everyone and thank you very much for being here."
+    },
+    {
+      "id": "s42",
+      "turkish": "Yeni bir köpek almak istiyorlar.",
+      "english": "They'd like to get a new dog."
+    },
+    {
+      "id": "s43",
+      "turkish": "Profesyonel bir fotoğrafçı olmak istiyor.",
+      "english": "She'd like to become a professional photographer."
+    },
+    {
+      "id": "s44",
+      "turkish": "Altıncı soruya cevap vermek ister misiniz?",
+      "english": "Would you like to answer question 6?"
+    },
+    {
+      "id": "s45",
+      "turkish": "Önümüzdeki yaz ispanya'ya seyahat etmek istiyorum ama yeterli param yok.",
+      "english": "I would like to travel to Spain next summer, but I don't have enough money."
+    },
+    {
+      "id": "s46",
+      "turkish": "Yüzde yüz öğrenci katılımını görmek ister misiniz?",
+      "english": "Would you like to see 100% student engagement?"
+    },
+    {
+      "id": "s47",
+      "turkish": "Hangi yemekleri sipariş etmek istersiniz?",
+      "english": "What dishes would you like to order?"
+    },
+    {
+      "id": "s48",
+      "turkish": "Yemek yapmak ister misiniz?",
+      "english": "Would you like to make the food?"
+    },
+    {
+      "id": "s49",
+      "turkish": "Şehrimize geldiğinde o şarkıcıyı konserde görmek isterim.",
+      "english": "I would like to see that singer in concert when he comes to our city."
+    },
+    {
+      "id": "s50",
+      "turkish": "Onu görmeye benimle gelmek ister misiniz? Sanırım haziran ayında burada sahne alacak.",
+      "english": "Would you like to come with me to see him? I think he is performing here in June."
+    },
+    {
+      "id": "s51",
+      "turkish": "Bir heavy metal konserine gitmek istemiyorum. Bu tür müzikleri gerçekten sevmiyorum!",
+      "english": "I would like not to go to a heavy metal concert. I really dislike that kind of music!"
+    },
+    {
+      "id": "s52",
+      "turkish": "Birini bir spor etkinliğine davet etmek ister misiniz?",
+      "english": "Would you like to invite someone to go to a sports event."
+    },
+    {
+      "id": "s53",
+      "turkish": "Bir ara benim evime gelmek ister misin?",
+      "english": "Would you like to come round to my place some time?"
+    },
+    {
+      "id": "s54",
+      "turkish": "Arkadaşım bu soruya cevap vermek istiyor.",
+      "english": "My friend would like to answer that question."
+    },
+    {
+      "id": "s55",
+      "turkish": "Susan ve Tom bir yemek pişirme yarışmasına katılmak istiyor.",
+      "english": "Susan and Tom would like to compete in a cooking contest."
+    },
+    {
+      "id": "s56",
+      "turkish": "Kendimi açıklamak isterim.",
+      "english": "I would like to explain myself."
+    },
+    {
+      "id": "s57",
+      "turkish": "Sizi davet etmek istiyorlar.",
+      "english": "They would like to invite you over."
+    },
+    {
+      "id": "s58",
+      "turkish": "Pratik yapmak istiyor.",
+      "english": "She would like to practice."
+    },
+    {
+      "id": "s59",
+      "turkish": "Ölüm doktor olmak istiyor.",
+      "english": "My son would like to become a doctor."
+    },
+    {
+      "id": "s60",
+      "turkish": "Sizi daha sık görmek istiyor.",
+      "english": "He would like to see you more often."
+    },
+    {
+      "id": "s61",
+      "turkish": "Kardeşim ve ben size teşekkür etmek istiyoruz.",
+      "english": "My brother and I would like to thank you."
+    },
+    {
+      "id": "s62",
+      "turkish": "Hayvanlar hakkında bilgi edinmek isterler mi?",
+      "english": "Would they like to learn about animals?"
+    },
+    {
+      "id": "s63",
+      "turkish": "Başkanla kim tanışmak ister?",
+      "english": "Who would like to meet the President?"
+    },
+    {
+      "id": "s64",
+      "turkish": "Neden yeni bir daire bulmak istiyor?",
+      "english": "Why would she like to find a new apartment?"
+    },
+    {
+      "id": "s65",
+      "turkish": "Ailem tatilde dinlenmek istiyor.",
+      "english": "My parents would like to relax on vacation."
+    },
+    {
+      "id": "s66",
+      "turkish": "Aileme sürpriz yapmak isterim.",
+      "english": "I would like to surprise my parents."
+    },
+    {
+      "id": "s67",
+      "turkish": "Arabamı yıkamak istiyorum.",
+      "english": "I would like to wash my car."
+    },
+    {
+      "id": "s68",
+      "turkish": "Bir çocuğu evlat edinmek istiyorlar.",
+      "english": "They would like to adopt a child."
+    },
+    {
+      "id": "s69",
+      "turkish": "Bu projeyle patronunu etkilemek istiyor.",
+      "english": "He would like to impress his boss with this project."
+    },
+    {
+      "id": "s70",
+      "turkish": "Sizinle bir film izlemek istiyorum.",
+      "english": "I would like to watch a movie with you."
+    },
+    {
+      "id": "s71",
+      "turkish": "İkinci evi satın almak için daha fazla para biriktirmek istiyorlar.",
+      "english": "They would like to save more money to buy the second house."
+    },
+    {
+      "id": "s72",
+      "turkish": "Bir tarih kitabı okumak istiyorum.",
+      "english": "I would like to read a history book."
+    },
+    {
+      "id": "s73",
+      "turkish": "Tüm dgrenciler yeni şeyler öğrenmek ister.",
+      "english": "All students would like to learn new things."
+    },
+    {
+      "id": "s74",
+      "turkish": "İşi kabul etmek ister mi?",
+      "english": "Would he like to accept the job?"
+    },
+    {
+      "id": "s75",
+      "turkish": "Derecemi tamamlamak istiyorum.",
+      "english": "I would like to complete my degree."
+    },
+    {
+      "id": "s76",
+      "turkish": "Kotii alışkanlıklarımı değiştirmek istiyor.",
+      "english": "She would like to change my bad habits."
+    },
+    {
+      "id": "s77",
+      "turkish": "Spor salonundaki üyeliğinizi uzatmak ister misiniz?",
+      "english": "Would you like to to extend your membership at the gym?"
+    },
+    {
+      "id": "s78",
+      "turkish": "Bir satrang kulübii kurmak istiyorum.",
+      "english": "I would like to form a chess club."
+    },
+    {
+      "id": "s79",
+      "turkish": "Sorumluluklarını devretmek istiyor.",
+      "english": "She would like to hand over her responsibilities."
+    },
+    {
+      "id": "s80",
+      "turkish": "Taşınmanıza yardım etmek isterim.",
+      "english": "I would like to help you move."
+    },
+    {
+      "id": "s81",
+      "turkish": "İş için ne zaman görüşme yapmak istersiniz?",
+      "english": "When would you like to interview for the job?"
+    },
+    {
+      "id": "s82",
+      "turkish": "İş yükümii artırmak ister miyim?",
+      "english": "Would I like to increase my work load?"
+    },
+    {
+      "id": "s83",
+      "turkish": "Bir mağaza işletmek istemezler mi?",
+      "english": "Would they like not to manage a store?"
+    },
+    {
+      "id": "s84",
+      "turkish": "O gümüş kolyeyi beğenecek.",
+      "english": "She'd like that silver necklace."
+    },
+    {
+      "id": "s85",
+      "turkish": "Nakit Gdemek istiyor.",
+      "english": "He'd like to pay cash."
+    },
+    {
+      "id": "s86",
+      "turkish": "Bir çift deri eldiven istiyoruz.",
+      "english": "We'd like a pair of leather gloves."
+    },
+    {
+      "id": "s87",
+      "turkish": "Bu ayakkabıların başka bir renk olmasınt isterler.",
+      "english": "They'd like these shoes in another colour."
+    },
+    {
+      "id": "s88",
+      "turkish": "Duygularınızı incitmek istemiyorum.",
+      "english": "I would like not to hurt your feelings."
+    },
+    {
+      "id": "s89",
+      "turkish": "Sizi bu kadar geç aramak istemiyorlar.",
+      "english": "They would like not to call you so late."
+    },
+    {
+      "id": "s90",
+      "turkish": "Arkadaşı olanlar hakkında yalan söylememek istemektedir.",
+      "english": "Her friend would like not to lie about what happened."
+    },
+    {
+      "id": "s91",
+      "turkish": "Seni utandırmamak istiyor.",
+      "english": "She would like not to to embarrass you."
+    },
+    {
+      "id": "s92",
+      "turkish": "Yakın arkadaşlarım bu kadar geç kalmak istemiyorlar.",
+      "english": "My close friends would like not to stay out so late."
+    },
+    {
+      "id": "s93",
+      "turkish": "Bunları söylememek isterim.",
+      "english": "I would like not to say those things."
+    },
+    {
+      "id": "s94",
+      "turkish": "Sizi dışarıda bırakmak istemiyor.",
+      "english": "He would like not to leave you out."
+    },
+    {
+      "id": "s95",
+      "turkish": "Kevin kafanızı karıştırmamak ister.",
+      "english": "Kevin would like not to make you confused."
+    },
+    {
+      "id": "s96",
+      "turkish": "Sorun çıkarmamak isterim.",
+      "english": "I would like not to cause trouble."
+    },
+    {
+      "id": "s97",
+      "turkish": "Bunu denemek ister misiniz?",
+      "english": "Would you like to try this on?"
+    },
+    {
+      "id": "s98",
+      "turkish": "Kredi kartınızdan çekim yapmak ister misiniz?",
+      "english": "Would you like to charge your credit card?"
+    },
+    {
+      "id": "s99",
+      "turkish": "Bir veya iki yumurta ister mi?",
+      "english": "Would he like one or two eggs?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Ne sipariş etmek istersiniz?",
+      "english": "What would you like to order?"
+    }
+  ],
+  "modal-16": [
+    {
+      "id": "s1",
+      "turkish": "Eskiden güzel şekilli bir vücuda sahipti. (Artık değil)",
+      "english": ""
+    },
+    {
+      "id": "s2",
+      "turkish": "Kız kardeşler daha küçükken mini etek giyerlerdi.",
+      "english": "When the sisters were younger, they used to wear the miniskirt."
+    },
+    {
+      "id": "s3",
+      "turkish": "Bir dışı aslan tarafından kötü bir şekilde yaralanıncaya kadar aslanları eğitirdi.",
+      "english": "He used to train lions until he was badly mauled by a lioness."
+    },
+    {
+      "id": "s4",
+      "turkish": "Çocukken, yabanı mantarlan toplamak için ormana giderdik.",
+      "english": "When we were children, we used to go into the woods to pick wild mushrooms."
+    },
+    {
+      "id": "s5",
+      "turkish": "Büyükannem gençken parlak kırmızı ruj sürüyordu.",
+      "english": "My grandmother used to put on bright red lipstick when she was younger."
+    },
+    {
+      "id": "s6",
+      "turkish": "Kıyılmış kereviz sapı ile hindi çorbası pişirirdi.",
+      "english": "He used to cook turkey soup with a chopped-up stalk of celery."
+    },
+    {
+      "id": "s7",
+      "turkish": "İnsanlar güneşle yatarlardı. Şimdi neredeyse hiç kimse o kadar erken yatmyor.",
+      "english": "People used to go to bed with the sun. Now almost no one goes to bed that early."
+    },
+    {
+      "id": "s8",
+      "turkish": "Bugünlerde neredeyse herkesin bir cep telefonu var. insanlar sabit hatlara güvenirlerdi.",
+      "english": "Almost everyone has a mobile phone these days. People used to depend on landlines."
+    },
+    {
+      "id": "s9",
+      "turkish": "Günümüzün sanayileşmiş toplumlarında aileler eskiden olduğundan daha küçüktür.",
+      "english": "In industrialized societies today, families are smaller than they used to be."
+    },
+    {
+      "id": "s10",
+      "turkish": "Evime TV seyretmek için gelirdi.",
+      "english": "He used to come at my home to watch the TV."
+    },
+    {
+      "id": "s11",
+      "turkish": "Kıyafetlerimi denerdi.",
+      "english": "She used to try my outfits."
+    },
+    {
+      "id": "s12",
+      "turkish": "Komşulartyla tartışırlardı.",
+      "english": "They used to quarrel with their neighbor."
+    },
+    {
+      "id": "s13",
+      "turkish": "Kolej günlerimde flit calyordum.",
+      "english": "I used to play the flute in my college days."
+    },
+    {
+      "id": "s14",
+      "turkish": "Gençken çok yüzerdim.",
+      "english": "I used to swim a lot when I was younger."
+    },
+    {
+      "id": "s15",
+      "turkish": "John sebze yemiyordu ama şimdi onları yiyor.",
+      "english": "John didn't use to eat vegetables, but now he eats them."
+    },
+    {
+      "id": "s16",
+      "turkish": "O bina eskiden sinemaydı ama kapalı.",
+      "english": "That building used to be a cinema, but it's closed down."
+    },
+    {
+      "id": "s17",
+      "turkish": "Matematik derslerini sevmezdik - öğretmenimiz korkunçtu!",
+      "english": "We didn't use to like maths lessons - our teacher was horrible!"
+    },
+    {
+      "id": "s18",
+      "turkish": "Calığşmaktan zevk almak için kullanmadım, ama şimdi seviyorum.",
+      "english": "I didn't use to enjoy studying, but I do now."
+    },
+    {
+      "id": "s19",
+      "turkish": "Ondan hoşlanırdin ... Evet, ama şimdi ondan nefret ediyorum!",
+      "english": "You used to like him... Yes, but now I hate him!"
+    },
+    {
+      "id": "s20",
+      "turkish": "Savaştan önce Londra'da yaşıyordu, ardından New York'a taşındı.",
+      "english": "She used to live in London before the war, then she moved to New York."
+    },
+    {
+      "id": "s21",
+      "turkish": "Çocukken her sabah balık tutmaya gittiğimizi hatırlyorum.",
+      "english": "I remember we used to go fishing every morning when I was a child."
+    },
+    {
+      "id": "s22",
+      "turkish": "Bileğini kırana kadar çok iyi bir tenisçiydi.",
+      "english": "He used to be a very good tennis player, until he broke his ankle."
+    },
+    {
+      "id": "s23",
+      "turkish": "Büyükbabam bu nehirde yüzerdi. Maalesef artık yasak.",
+      "english": "My grandfather used to swim in this river. Unfortunately, now it's forbidden."
+    },
+    {
+      "id": "s24",
+      "turkish": "Annem fazla kahve içmezdi. Ama şimdi ona bağımlı hale geldi.",
+      "english": "My mother didn't use to drink much coffee. But now she has become addicted to it."
+    },
+    {
+      "id": "s25",
+      "turkish": "Sting, ıınlıı bir şarkıcı olmadan önce bir öğretmendi.",
+      "english": "Sting used to be a teacher before he became a famous singer."
+    },
+    {
+      "id": "s26",
+      "turkish": "Bu karmaşanın ortasında nasıl çalıştın?",
+      "english": "How did you use to work in the middle of that mess?"
+    },
+    {
+      "id": "s27",
+      "turkish": "Siz yatmadan önce size hikayeler anlatırdık.",
+      "english": "We used to tell you stories before you went to bed."
+    },
+    {
+      "id": "s28",
+      "turkish": "Mary okula yürürdii ama şimdi otobüse biniyor.",
+      "english": "Mary used to walk to school but now she takes the bus."
+    },
+    {
+      "id": "s29",
+      "turkish": "Gençken sigara içmezdim.",
+      "english": "I didn' t use to smoke when I was young."
+    },
+    {
+      "id": "s30",
+      "turkish": "Çocukken pul topluyordum.",
+      "english": "When I was a child, I used to collect stamps."
+    },
+    {
+      "id": "s31",
+      "turkish": "O günlerde köyde fırın vardı.",
+      "english": "There used to be a bakery in the village in those days."
+    },
+    {
+      "id": "s32",
+      "turkish": "Gengken her cumartesi fast food'da 6öğle yemeği yiyorlardı.",
+      "english": "They used to have lunch in a fast food every Saturday when they were teenagers."
+    },
+    {
+      "id": "s33",
+      "turkish": "O günlerde süt içerlerdi.",
+      "english": "In those days, they used to drink milk."
+    },
+    {
+      "id": "s34",
+      "turkish": "Bayan Wilson gençken günde dört saat kitap okurdu.",
+      "english": "Mrs Wilson used to read four hours a day when she was young."
+    },
+    {
+      "id": "s35",
+      "turkish": "Güzel kıyafetler giymezdi ve son zamanlarda oldukça havalı görünüyordu.",
+      "english": "He didn't use to wear nice clothes and recently he's been looking quite cool."
+    },
+    {
+      "id": "s36",
+      "turkish": "Peki, Londra'ya gitmek için başka ne kullandın?",
+      "english": "So what else did you use to go to London for?"
+    },
+    {
+      "id": "s37",
+      "turkish": "İnsanlar televizyon icat edilmeden önce ne yaptyorlardı?",
+      "english": "What did people use to do before television was invented?"
+    },
+    {
+      "id": "s38",
+      "turkish": "İnsanlar araba olmadan önce nasıl seyahat ediyorlardı?",
+      "english": "How did people use to travel before there were cars?"
+    },
+    {
+      "id": "s39",
+      "turkish": "İnsanlar elektrik lambaları olmadan Önceki geceleri nasıl görürlerdi?",
+      "english": "How did people use to see at night before there were electric lights?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Çocukken oynamak için hangi oyunlar kullandınız?",
+      "english": "What games did you use to play as a child?"
+    },
+    {
+      "id": "s41",
+      "turkish": "Büyükbabanız hangi ise sahipti?",
+      "english": "What job did your grandfather use to have?"
+    },
+    {
+      "id": "s42",
+      "turkish": "On yıl Önce sahip olmak için hangi hobiniz vardı?",
+      "english": "What hobby did you use to have ten years ago?"
+    },
+    {
+      "id": "s43",
+      "turkish": "Çoğu insan ne kadar zaman önce hayvanları yemek için aviamaktaydı?",
+      "english": "How long ago did most people use to hunt animals for food?"
+    },
+    {
+      "id": "s44",
+      "turkish": "İnsanlar kameralar icat edilmeden önce ne yaptyorlardı?",
+      "english": "What did people use to do before cameras were invented?"
+    },
+    {
+      "id": "s45",
+      "turkish": "Neden insanlar yüzlerce yıl önce daha kısa yaşamlara sahipti?",
+      "english": "Why did people use to have shorter lives hundreds of years ago?"
+    },
+    {
+      "id": "s46",
+      "turkish": "On yıl Önce neye benziyordunuz?",
+      "english": "What did you use to look like ten years ago?"
+    },
+    {
+      "id": "s47",
+      "turkish": "Çocukken nerede yaşıyordun?",
+      "english": "Where did you use to live when you were a child?"
+    },
+    {
+      "id": "s48",
+      "turkish": "Çocukken oynamak için hangi oyunları kullandın?",
+      "english": "What games did you use to play when you were a child?"
+    },
+    {
+      "id": "s49",
+      "turkish": "On yıl önce hangi hobilere sahip olurdunuz?",
+      "english": "What hobbies did you use to have ten years ago?"
+    },
+    {
+      "id": "s50",
+      "turkish": "Çocukken sahip olduğun en sevdiğin oyuncak nedir?",
+      "english": "What favorite toy did you use to have when you were a kid?"
+    },
+    {
+      "id": "s51",
+      "turkish": "İnsanlar para olmadan önce bir şeyler satın almak için nasıl kullandılar?",
+      "english": "How did people use to buy things before there was money?"
+    },
+    {
+      "id": "s52",
+      "turkish": "İnsanlar televizyon icat edilmeden önce ne yaptyorlardı?",
+      "english": "What did people use to do before television was invented?"
+    },
+    {
+      "id": "s53",
+      "turkish": "İnsanlar araba olmadan önce nasıl seyahat ediyorlardı?",
+      "english": "How did people use to travel before there were cars?"
+    },
+    {
+      "id": "s54",
+      "turkish": "İnsanlar 100 yıl Önce boş zamanlarnda ne yaptyorlardı?",
+      "english": "What did people use to do in their free time 100 years ago?"
+    },
+    {
+      "id": "s55",
+      "turkish": "İnsanlar kamera olmadan önce ne yapıyorlardı?",
+      "english": "What did people use to do before there were cameras?"
+    },
+    {
+      "id": "s56",
+      "turkish": "İnsanlar cep telefonu olmadan önce ne yaptyorlard?",
+      "english": "What did people use to do before there were cell phones?"
+    },
+    {
+      "id": "s57",
+      "turkish": "İnsanlar elektrik lambaları olmadan önce ne yaptyorlardı?",
+      "english": "What did people use to do before there were electric lights?"
+    },
+    {
+      "id": "s58",
+      "turkish": "İnsanlar saatler olmadan önce ne yaptyorlardı?",
+      "english": "What did people use to do before there were clocks?"
+    },
+    {
+      "id": "s59",
+      "turkish": "İnsanlar bilgisayar olmadan önce ne yaptyorlardı?",
+      "english": "What did people use to do before there were computers?"
+    },
+    {
+      "id": "s60",
+      "turkish": "Çoğu insan ne kadar zaman Önce ateşte yemek pişiriyordu?",
+      "english": "How long ago did most people use to cook with fire?"
+    },
+    {
+      "id": "s61",
+      "turkish": "Cou insan ne kadar zaman önce yiyecek avlamak için kullandı?",
+      "english": "How long ago did most people use to hunt for food?"
+    },
+    {
+      "id": "s62",
+      "turkish": "Eskiden oldukça zayıftı, ancak son aylarda çok fazla kilo aldı.",
+      "english": "She used to be quite slim, but she has put on so much weight in the last months."
+    },
+    {
+      "id": "s63",
+      "turkish": "Eskiden bir top modeldim. Medyanın çok ilgisini ccekerdim.",
+      "english": "I used to be a top model. I used to have a lot of media attention."
+    },
+    {
+      "id": "s64",
+      "turkish": "Mary çocukken tatillerini deniz kenarında yaparmış.",
+      "english": "When she was a child, Mary used to have her holidays at the seaside."
+    },
+    {
+      "id": "s65",
+      "turkish": "O günlerde o sokakta bir sinema vardı.",
+      "english": "There used to be a cinema in that street in those days."
+    },
+    {
+      "id": "s66",
+      "turkish": "Büyükanne ve büyükbabalarımız geç saatlere kadar ayakta kalmazlardı.",
+      "english": "Our grandparents didn't use to stay up late."
+    },
+    {
+      "id": "s67",
+      "turkish": "Jenny'nin arkadaşları o korkunç kazadan sonra alkol içmedi.",
+      "english": "Jenny's friends didn't use to drink alcohol after that awful accident"
+    },
+    {
+      "id": "s68",
+      "turkish": "Kendi CD'lerini getirir miydi?",
+      "english": "Did he use to bring his own CD's?"
+    },
+    {
+      "id": "s69",
+      "turkish": "Teyzem et satın almak (hiç almamak) için kullanmazdı.",
+      "english": "My aunt didn't use to buy (never bought) meat."
+    },
+    {
+      "id": "s70",
+      "turkish": "Eskiden vejeteryan mıydı?",
+      "english": "Did she use to be a vegetarian?"
+    },
+    {
+      "id": "s71",
+      "turkish": "O adam üniversitede Matematik ve Fizik dersi veriyordu. Artık yapmıyor.",
+      "english": "That man used to teach Maths and Physics at the University. He no longer does."
+    },
+    {
+      "id": "s72",
+      "turkish": "Gürütülii bir odada çalışmaktan nefret ederdim. Şimdi umursamıyorum.",
+      "english": "I used to hate working in a noisy room. I don't mind now."
+    },
+    {
+      "id": "s73",
+      "turkish": "Küçükken bahçecilikle ilgilenir miydin?",
+      "english": "Did you use to be interested in gardening when you were younger?"
+    },
+    {
+      "id": "s74",
+      "turkish": "Terry, diplomat olarak irlanda'da yaşarken çok bira içiyordu.",
+      "english": "Terry used to drink a lot of beer when he lived in Ireland as a diplomat."
+    },
+    {
+      "id": "s75",
+      "turkish": "Eskiden sigara içiyordu, ama şimdi artık yapmtyor.",
+      "english": "He used to smoke cigarettes, but now he doesn't do it anymore."
+    },
+    {
+      "id": "s76",
+      "turkish": "Annem ve ben akşamları dizi izlerdik.",
+      "english": "Mum and I used to watch TV series in the evenings."
+    },
+    {
+      "id": "s77",
+      "turkish": "Bay Davis, ıınlıı bir restoranda aşçı olarak çalışıyordu.",
+      "english": "Mr. Davis used to work as a cook in a famous restaurant."
+    },
+    {
+      "id": "s78",
+      "turkish": "Jamie ve Theo her sabah kosuya giderlerdi.",
+      "english": "Jamie and Theo used to go jogging every morning."
+    },
+    {
+      "id": "s79",
+      "turkish": "Ella ve Dylan cumartesi günleri bir Fransız restoranına giderlerdi.",
+      "english": "Ella and Dylan used to go to a French restaurant on Saturdays."
+    },
+    {
+      "id": "s80",
+      "turkish": "Benjamin büyük bir şirkette çalışıyordu",
+      "english": "Benjamin used to work in a big company"
+    },
+    {
+      "id": "s81",
+      "turkish": "Layla okulda ip athyordu.",
+      "english": "Layla used to skip rope at school."
+    },
+    {
+      "id": "s82",
+      "turkish": "Alice hafta sonları doğa ile iç iğe fotoğraflar çekerdi.",
+      "english": "Alice use to take photographs in the nature at weekends."
+    },
+    {
+      "id": "s83",
+      "turkish": "Bay Gibson, çiftliğinde sebze yetiştiriyordu.",
+      "english": "Mr. Gibson used to grow vegetables on his farm."
+    },
+    {
+      "id": "s84",
+      "turkish": "Cameron okul beyzbol takımında oynardı.",
+      "english": "Cameron used to play in the school baseball team."
+    },
+    {
+      "id": "s85",
+      "turkish": "Rosie ve Sofia bir kafeye gider ve sohbet ederdi.",
+      "english": "Rosie and Sofia used to go to a cafe and chat."
+    },
+    {
+      "id": "s86",
+      "turkish": "Toby tatillerde büyükannesini ziyaret ederdi.",
+      "english": "Toby used to visit his grandmother on holidays."
+    },
+    {
+      "id": "s87",
+      "turkish": "Isaac, Amy ve Katie her sabah okul otobüsünii beklerlerdi.",
+      "english": "Isaac, Amy and Katie used wait for the school bus every morning."
+    },
+    {
+      "id": "s88",
+      "turkish": "Edward öğleden sonraları paten kayardı.",
+      "english": "Edward used to roller-skate in the afternoons."
+    },
+    {
+      "id": "s89",
+      "turkish": "Emilia ve Martha güzel resimler yaparlardı.",
+      "english": "Emilia and Martha used to paint nice pictures."
+    },
+    {
+      "id": "s90",
+      "turkish": "Blake ve Kian yürüyüşe gikarlardı.",
+      "english": "Blake and Kian used to go hiking."
+    },
+    {
+      "id": "s91",
+      "turkish": "Tommy okuldan sonra bisikletine binerdi.",
+      "english": "Tommy used to ride his bicycle after school."
+    },
+    {
+      "id": "s92",
+      "turkish": "Bobby arkadaşlar ile balığa giderdi.",
+      "english": "Bobby used to go fishing with his friends."
+    },
+    {
+      "id": "s93",
+      "turkish": "Georgia her akşam keman çalıyordu.",
+      "english": "Georgia used to play the violin every evening."
+    },
+    {
+      "id": "s94",
+      "turkish": "Jenson her sabah 5 km koşardı.",
+      "english": "Jenson used to run 5km every morning."
+    },
+    {
+      "id": "s95",
+      "turkish": "Louie ressam olarak çalışıyordu.",
+      "english": "Louie used to work as a painter."
+    },
+    {
+      "id": "s96",
+      "turkish": "Ashton her öğleden sonra kısa bir hikaye okurdu.",
+      "english": "Ashton used to read a short story every afternoon."
+    },
+    {
+      "id": "s97",
+      "turkish": "Kız elbisesini elde yıkardı ama şimdi tam otomatik gamaşır makinesinde yıkıyor.",
+      "english": "The girl used to wash her dress by hand but now she washes them in her full automatic washing-machine."
+    },
+    {
+      "id": "s98",
+      "turkish": "Terry iyi bisiklete binmezdi.",
+      "english": "Terry didn't use to ride a bicycle well."
+    },
+    {
+      "id": "s99",
+      "turkish": "Kuzen Peter dağlara tırmanmak için kullanmazdı.",
+      "english": "Cousin Peter didn't use to climb mountains."
+    },
+    {
+      "id": "s100",
+      "turkish": "Nathan Amca uçurtma uğurmazdı.",
+      "english": "Uncle Nathan didn't use to fly a kite."
+    }
+  ]
+}

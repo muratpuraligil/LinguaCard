@@ -1,0 +1,1475 @@
+{
+  "total_corrections": 210,
+  "corrections": [
+    {
+      "set": "aux-1",
+      "id": "s8",
+      "old_turkish": "Yeterince uzun dedilsin.",
+      "new_turkish": "Yeterince uzun değilsin.",
+      "english": "You aren't tall enough."
+    },
+    {
+      "set": "aux-1",
+      "id": "s34",
+      "old_turkish": "",
+      "new_turkish": "Çantanız ne renk?",
+      "english": "What colour is your bag?"
+    },
+    {
+      "set": "aux-1",
+      "id": "s35",
+      "old_turkish": "Ağ misiniz?",
+      "new_turkish": "Aç mısınız?",
+      "english": "Are you hungry?"
+    },
+    {
+      "set": "aux-1",
+      "id": "s41",
+      "old_turkish": "Bunlar sizin anahtarlarımz mi?",
+      "new_turkish": "Bunlar sizin anahtarlarınız mı?",
+      "english": "Are these your keys?"
+    },
+    {
+      "set": "aux-1",
+      "id": "s54",
+      "old_turkish": "Uçaklar yavaş değil. Hizhilar.",
+      "new_turkish": "Uçaklar yavaş değil. Hızlılar.",
+      "english": "Airplanes aren't slow. They are fast."
+    },
+    {
+      "set": "aux-1",
+      "id": "s57",
+      "old_turkish": "Dave ve Adrian kardeş deiller.",
+      "new_turkish": "Dave ve Adrian kardeş değiller.",
+      "english": "Dave and Adrian aren't sisters."
+    },
+    {
+      "set": "aux-1",
+      "id": "s58",
+      "old_turkish": "Almanya, İngiltere ve ispanya şehir değildir.",
+      "new_turkish": "Almanya, İngiltere ve İspanya şehir değildir.",
+      "english": "Germany, England, and Spain aren't cities."
+    },
+    {
+      "set": "aux-1",
+      "id": "s82",
+      "old_turkish": "Ugaklar hızlıdır.",
+      "new_turkish": "Uçaklar hızlıdır.",
+      "english": "Planes are fast."
+    },
+    {
+      "set": "aux-1",
+      "id": "s90",
+      "old_turkish": "Öğretmenter okuldalar.",
+      "new_turkish": "Öğretmenler okuldalar.",
+      "english": "The teachers are in the school."
+    },
+    {
+      "set": "aux-1",
+      "id": "s91",
+      "old_turkish": "Ugaklar havaalanında.",
+      "new_turkish": "Uçaklar havaalanında.",
+      "english": "The planes are at the airport."
+    },
+    {
+      "set": "aux-1",
+      "id": "s93",
+      "old_turkish": "Bunlar tehlikeli hayvantar.",
+      "new_turkish": "Bunlar tehlikeli hayvanlar.",
+      "english": "Those are dangerous animals."
+    },
+    {
+      "set": "aux-1",
+      "id": "s97",
+      "old_turkish": "Bu, İngilizce mi yoksa Fransızca szluk mii?",
+      "new_turkish": "Bu, İngilizce mi yoksa Fransızca sözlük mü?",
+      "english": "Is it an English or French dictionary?"
+    },
+    {
+      "set": "aux-1",
+      "id": "s98",
+      "old_turkish": "Bir spor araba mt yoksa klasik bir araba mı?",
+      "new_turkish": "Bir spor araba mı yoksa klasik bir araba mı?",
+      "english": "Is it a sports car or a classic car?"
+    },
+    {
+      "set": "aux-2",
+      "id": "s3",
+      "old_turkish": "Kız kardeşim geçen yıl ıınıversite öğrencisiydi.",
+      "new_turkish": "Kız kardeşim geçen yıl üniversite öğrencisiydi.",
+      "english": "My sister was a college student last year."
+    },
+    {
+      "set": "aux-2",
+      "id": "s6",
+      "old_turkish": "Laura ve Susan gergin mıydiler?",
+      "new_turkish": "Laura ve Susan gergin miydiler?",
+      "english": "Were Laura and Susan nervous?"
+    },
+    {
+      "set": "aux-2",
+      "id": "s9",
+      "old_turkish": "Birçok dinozor gerçgekten çok büyüktii.",
+      "new_turkish": "Birçok dinozor gerçekten çok büyüktü.",
+      "english": "Many dinosaurs were really huge."
+    },
+    {
+      "set": "aux-2",
+      "id": "s14",
+      "old_turkish": "Sımf arkadaşlarım sınıftaydı.",
+      "new_turkish": "Sınıf arkadaşlarım sınıftaydı.",
+      "english": "My classmates were in class."
+    },
+    {
+      "set": "aux-2",
+      "id": "s20",
+      "old_turkish": "Mutlu dedildik.",
+      "new_turkish": "Mutlu değildik.",
+      "english": "We weren't happy."
+    },
+    {
+      "set": "aux-2",
+      "id": "s27",
+      "old_turkish": "Kedi dün ağtı.",
+      "new_turkish": "Kedi dün açtı.",
+      "english": "The cat was hungry yesterday."
+    },
+    {
+      "set": "aux-2",
+      "id": "s31",
+      "old_turkish": "Bir saat Önce dışarıda bir adam vardı.",
+      "new_turkish": "Bir saat önce dışarıda bir adam vardı.",
+      "english": "There was a man outside an hour ago."
+    },
+    {
+      "set": "aux-2",
+      "id": "s41",
+      "old_turkish": "Ailem beş dakika Önce mutfaktaydı.",
+      "new_turkish": "Ailem beş dakika önce mutfaktaydı.",
+      "english": "My parents were in the kitchen five minutes ago."
+    },
+    {
+      "set": "aux-2",
+      "id": "s46",
+      "old_turkish": "İki yıl Önce sekreterdi.",
+      "new_turkish": "İki yıl önce sekreterdi.",
+      "english": "She was a secretary two years ago."
+    },
+    {
+      "set": "aux-2",
+      "id": "s47",
+      "old_turkish": "Dün gece ıızgün dedildiler.",
+      "new_turkish": "Dün gece üzgün değildiler.",
+      "english": "They weren't sad last night."
+    },
+    {
+      "set": "aux-2",
+      "id": "s48",
+      "old_turkish": "1989'da Londra'daydh.",
+      "new_turkish": "1989'da Londra'daydı.",
+      "english": "He was in London in 1989."
+    },
+    {
+      "set": "aux-2",
+      "id": "s57",
+      "old_turkish": "Tına ve Jim çok başarılıydılar.",
+      "new_turkish": "Tina ve Jim çok başarılıydılar.",
+      "english": "Tina and Jim were very successful."
+    },
+    {
+      "set": "aux-2",
+      "id": "s67",
+      "old_turkish": "İşgiler fabrika dışındaydh.",
+      "new_turkish": "İşçiler fabrika dışındaydı.",
+      "english": "The workers were outside the factory."
+    },
+    {
+      "set": "aux-2",
+      "id": "s71",
+      "old_turkish": "O, Başbakand.",
+      "new_turkish": "O, Başbakandı.",
+      "english": "He was the Prime Minister."
+    },
+    {
+      "set": "aux-2",
+      "id": "s77",
+      "old_turkish": "Toplantı Çarşamba günüydii.",
+      "new_turkish": "Toplantı Çarşamba günüydü.",
+      "english": "The meeting was on Wednesday."
+    },
+    {
+      "set": "aux-2",
+      "id": "s80",
+      "old_turkish": "Din gece sinemadaydım.",
+      "new_turkish": "Dün gece sinemadaydım.",
+      "english": "I was at the cinema last night."
+    },
+    {
+      "set": "aux-2",
+      "id": "s89",
+      "old_turkish": "Görüşmeye gegc kaldılar.",
+      "new_turkish": "Görüşmeye geç kaldılar.",
+      "english": "They were late for the interview."
+    },
+    {
+      "set": "aux-2",
+      "id": "s94",
+      "old_turkish": "O zamanlar karım deildi.",
+      "new_turkish": "O zamanlar karım değildi.",
+      "english": "She wasn't my wife at the time."
+    },
+    {
+      "set": "aux-2",
+      "id": "s98",
+      "old_turkish": "Kotii durumda dedillerdi.",
+      "new_turkish": "Kötü durumda değillerdi.",
+      "english": "They weren't in a bad situation."
+    },
+    {
+      "set": "aux-3",
+      "id": "s10",
+      "old_turkish": "Köpek tığ saattir masanın altında.",
+      "new_turkish": "Köpek üç saattir masanın altında.",
+      "english": "The dog has been under the table for three hours."
+    },
+    {
+      "set": "aux-3",
+      "id": "s14",
+      "old_turkish": "",
+      "new_turkish": "Sabahtan beri evde değil.",
+      "english": "She hasn't been at home since morning."
+    },
+    {
+      "set": "aux-3",
+      "id": "s15",
+      "old_turkish": "Uğ yıldır Londra'dayım.",
+      "new_turkish": "Üç yıldır Londra'dayım.",
+      "english": "I've been in London for three years."
+    },
+    {
+      "set": "aux-3",
+      "id": "s20",
+      "old_turkish": "Yılık plan, beş gündür yöneticinin masasında.",
+      "new_turkish": "Yıllık plan, beş gündür yöneticinin masasında.",
+      "english": "The annual plan has been on manager's table for five days."
+    },
+    {
+      "set": "aux-3",
+      "id": "s27",
+      "old_turkish": "Son maçtan beri ıızgünler.",
+      "new_turkish": "Son maçtan beri üzgünler.",
+      "english": "They have been sad since last match."
+    },
+    {
+      "set": "aux-3",
+      "id": "s30",
+      "old_turkish": "Kink telefon iki haftadır çekmecede.",
+      "new_turkish": "Kırık telefon iki haftadır çekmecede.",
+      "english": "The broken phone has been in the drawer for two weeks."
+    },
+    {
+      "set": "aux-3",
+      "id": "s40",
+      "old_turkish": "Fiyat listesi tic gündür dosyada.",
+      "new_turkish": "Fiyat listesi üç gündür dosyada.",
+      "english": "The list of price has been in the file for three days."
+    },
+    {
+      "set": "aux-3",
+      "id": "s52",
+      "old_turkish": "Ugak bileti saat ikiden beri yanında değil.",
+      "new_turkish": "Uçak bileti saat ikiden beri yanında değil.",
+      "english": "The flight ticket hasn't been with him since two o'clock."
+    },
+    {
+      "set": "aux-3",
+      "id": "s57",
+      "old_turkish": "Öğretmen üç saattir sınıfta Gğrencileriyle birlikte.",
+      "new_turkish": "Öğretmen üç saattir sınıfta öğrencileriyle birlikte.",
+      "english": "The teacher has been with her students in the class for three hours."
+    },
+    {
+      "set": "aux-3",
+      "id": "s59",
+      "old_turkish": "Kız kardeşimin arkadaşı ön dakikadır arabada değil.",
+      "new_turkish": "Kız kardeşimin arkadaşı on dakikadır arabada değil.",
+      "english": "My sister's friend hasn't been in the car for ten minutes."
+    },
+    {
+      "set": "aux-3",
+      "id": "s60",
+      "old_turkish": "Sözlük dakikadır masanın tizerinde değil.",
+      "new_turkish": "Sözlük dakikalardır masanın üzerinde değil.",
+      "english": "The dictionary hasn't been on the desk for minutes."
+    },
+    {
+      "set": "aux-3",
+      "id": "s63",
+      "old_turkish": "Kahvaltı ön dakikadır hazır.",
+      "new_turkish": "Kahvaltı on dakikadır hazır.",
+      "english": "Breakfast has been ready for ten minutes."
+    },
+    {
+      "set": "aux-3",
+      "id": "s78",
+      "old_turkish": "Kinlan bardaklar geçen haftadan beri çöp kutusunda.",
+      "new_turkish": "Kırılan bardaklar geçen haftadan beri çöp kutusunda.",
+      "english": "The broken glasses have been in the rubbish box since last week."
+    },
+    {
+      "set": "aux-3",
+      "id": "s83",
+      "old_turkish": "Askerler sabahtan beri mevzudeler.",
+      "new_turkish": "Askerler sabahtan beri mevzideler.",
+      "english": "Soldiers have been in the pit since morning."
+    },
+    {
+      "set": "aux-3",
+      "id": "s84",
+      "old_turkish": "Kız kardeşi çocukluğundan beri utangacc.",
+      "new_turkish": "Kız kardeşi çocukluğundan beri utangaç.",
+      "english": "His sister has been shy since her childhood."
+    },
+    {
+      "set": "aux-3",
+      "id": "s97",
+      "old_turkish": "Bilgisayardaki klasdrler dünden beri sunum için hazır.",
+      "new_turkish": "Bilgisayardaki klasörler dünden beri sunum için hazır.",
+      "english": "The folders on the computer have been ready for the presentation since yesterday."
+    },
+    {
+      "set": "aux-4",
+      "id": "s7",
+      "old_turkish": "Bilgisayar şirketleri ön yıldan fazla bir süredir New York'taydı.",
+      "new_turkish": "Bilgisayar şirketleri on yıldan fazla bir süredir New York'taydı.",
+      "english": "Their computer company had been in New York for more than ten years."
+    },
+    {
+      "set": "aux-4",
+      "id": "s9",
+      "old_turkish": "İtfaiye erleri ön dakikadır yanan binanın önündeydiler.",
+      "new_turkish": "İtfaiye erleri on dakikadır yanan binanın önündeydiler.",
+      "english": "Firefighters had been in front of the burning building for ten minutes."
+    },
+    {
+      "set": "aux-4",
+      "id": "s16",
+      "old_turkish": "Evlenmeden önce, yedi yıldır hızlı bir ressamdi.",
+      "new_turkish": "Evlenmeden önce, yedi yıldır hızlı bir ressamdı.",
+      "english": "He had been a fast painter for seven years before he married."
+    },
+    {
+      "set": "aux-4",
+      "id": "s29",
+      "old_turkish": "Baba olmadan önce, tehlikeli sürücüydüler.",
+      "new_turkish": "Baba olmadan önce, tehlikeli sürücülerdi.",
+      "english": "They had been dangerous drivers before they became fathers."
+    },
+    {
+      "set": "aux-4",
+      "id": "s56",
+      "old_turkish": "Müdür öğrenciler uyarana kadar, onlar tembellerdi.",
+      "new_turkish": "Müdür öğrencileri uyarana kadar, onlar tembellerdi.",
+      "english": "The students had been lazy by the time the principal warned them."
+    },
+    {
+      "set": "aux-4",
+      "id": "s76",
+      "old_turkish": "Yüzüğü banyoda bulduğumuzda, yüzük iki saattir kayıp miydi?",
+      "new_turkish": "Yüzüğü banyoda bulduğumuzda, yüzük iki saattir kayıp mıydı?",
+      "english": "Had her ring been lost for two hours when we found it in the bathroom?"
+    },
+    {
+      "set": "aux-4",
+      "id": "s90",
+      "old_turkish": "Giysilerini çamaşır makinesine koymadan önce, çok kirliydi.",
+      "new_turkish": "Giysilerini çamaşır makinesine koymadan önce, çok kirlilerdi.",
+      "english": "His clothes had been very dirty before he put them into washing machine."
+    },
+    {
+      "set": "aux-5",
+      "id": "s5",
+      "old_turkish": "Cuma akşamr yine isviçre'de olacak.",
+      "new_turkish": "Cuma akşamı yine İsviçre'de olacak.",
+      "english": "On Friday evening, he will still be in Switzerland."
+    },
+    {
+      "set": "aux-5",
+      "id": "s6",
+      "old_turkish": "Cumartesi isviçre'de olmayacak. Fransa'da olacak.",
+      "new_turkish": "Cumartesi İsviçre'de olmayacak. Fransa'da olacak.",
+      "english": "On Saturday, he won't be in Switzerland. He'll be in France."
+    },
+    {
+      "set": "aux-5",
+      "id": "s9",
+      "old_turkish": "ÖnÜmlizdeki hafta bu vakitlerde nerede olacak?",
+      "new_turkish": "Önümüzdeki hafta bu vakitlerde nerede olacak?",
+      "english": "Where will he be at this time next week?"
+    },
+    {
+      "set": "aux-5",
+      "id": "s18",
+      "old_turkish": "Sanınm, arkadaşımın milli takımda olacak.",
+      "new_turkish": "Sanırım, arkadaşım milli takımda olacak.",
+      "english": "I think my friend will be in the national team."
+    },
+    {
+      "set": "aux-5",
+      "id": "s24",
+      "old_turkish": "Bugün saat kaçta evde olacamız?",
+      "new_turkish": "Bugün saat kaçta evde olacağız?",
+      "english": "What time will we be at home today?"
+    },
+    {
+      "set": "aux-5",
+      "id": "s27",
+      "old_turkish": "Başarih olacaklar mı?",
+      "new_turkish": "Başarılı olacaklar mı?",
+      "english": "Will they be successful?"
+    },
+    {
+      "set": "aux-5",
+      "id": "s28",
+      "old_turkish": "ÖSretmen kızgın olacak mı?",
+      "new_turkish": "Öğretmen kızgın olacak mı?",
+      "english": "Will the teacher be angry?"
+    },
+    {
+      "set": "aux-5",
+      "id": "s30",
+      "old_turkish": "Gelecekte tinlii olacak mı?",
+      "new_turkish": "Gelecekte ünlü olacak mı?",
+      "english": "Will she be famous in the future?"
+    },
+    {
+      "set": "aux-5",
+      "id": "s33",
+      "old_turkish": "Korkanm, bu oldukça imkansız olacak.",
+      "new_turkish": "Korkarım, bu oldukça imkansız olacak.",
+      "english": "I am afraid, it will be quite impossible."
+    },
+    {
+      "set": "aux-5",
+      "id": "s38",
+      "old_turkish": "Tamirci Garsamba burada olacak.",
+      "new_turkish": "Tamirci Çarşamba burada olacak.",
+      "english": "The repairman will be here on Wednesday."
+    },
+    {
+      "set": "aux-5",
+      "id": "s52",
+      "old_turkish": "Kız kardeşim yeterince güçlii olmayacak.",
+      "new_turkish": "Kız kardeşim yeterince güçlü olmayacak.",
+      "english": "My sister won't be strong enough."
+    },
+    {
+      "set": "aux-5",
+      "id": "s55",
+      "old_turkish": "Çocuklar yarın Gğleden sonra okulda olacak mı?",
+      "new_turkish": "Çocuklar yarın öğleden sonra okulda olacak mı?",
+      "english": "Will children be at school tomorrow afternoon?"
+    },
+    {
+      "set": "aux-5",
+      "id": "s57",
+      "old_turkish": "Sorular daha kolay olacak nm?",
+      "new_turkish": "Sorular daha kolay olacak mı?",
+      "english": "Will questions be easier?"
+    },
+    {
+      "set": "aux-5",
+      "id": "s59",
+      "old_turkish": "Öğrenciler banka dnünde olacaklar.",
+      "new_turkish": "Öğrenciler banka önünde olacaklar.",
+      "english": "Students will be in front of the bank."
+    },
+    {
+      "set": "aux-5",
+      "id": "s65",
+      "old_turkish": "Anna akşam yemeii hazırlamak için mutfakta olacak.",
+      "new_turkish": "Anna akşam yemeği hazırlamak için mutfakta olacak.",
+      "english": "Anna will be in the kitchen to make dinner."
+    },
+    {
+      "set": "aux-5",
+      "id": "s67",
+      "old_turkish": "Yarın karh olacak.",
+      "new_turkish": "Yarın karlı olacak.",
+      "english": "It will be snowy tomorrow."
+    },
+    {
+      "set": "aux-5",
+      "id": "s88",
+      "old_turkish": "Yatırımı yeni enerji sektdrunde olacak.",
+      "new_turkish": "Yatırımı yeni enerji sektöründe olacak.",
+      "english": "His investment will be on the new energy sector."
+    },
+    {
+      "set": "aux-5",
+      "id": "s89",
+      "old_turkish": "Kararlar çok katı olacaktı.",
+      "new_turkish": "Kararlar çok katı olacak.",
+      "english": "Decisions will be very rigid."
+    },
+    {
+      "set": "aux-5",
+      "id": "s91",
+      "old_turkish": "Tüm tiyeler seminerde hazır olacaklar.",
+      "new_turkish": "Tüm üyeler seminerde hazır olacaklar.",
+      "english": "All members will be ready at the seminar."
+    },
+    {
+      "set": "aux-5",
+      "id": "s92",
+      "old_turkish": "Kurabiyeler ön beş dakika içinde hazır olacak.",
+      "new_turkish": "Kurabiyeler on beş dakika içinde hazır olacak.",
+      "english": "Cookies will be ready within fifteen minutes."
+    },
+    {
+      "set": "aux-5",
+      "id": "s96",
+      "old_turkish": "Anahtar gece masasının üstüne olacak.",
+      "new_turkish": "Anahtar gece masasının üstünde olacak.",
+      "english": "The key will be on the night table."
+    },
+    {
+      "set": "aux-6",
+      "id": "s8",
+      "old_turkish": "Genellikle hep birlikte şarkı sdyleriz.",
+      "new_turkish": "Genellikle hep birlikte şarkı söyleriz.",
+      "english": "We generally sing songs all together."
+    },
+    {
+      "set": "aux-6",
+      "id": "s13",
+      "old_turkish": "Yaz aylarında burada yağmur yaŞmaz.",
+      "new_turkish": "Yaz aylarında burada yağmur yağmaz.",
+      "english": "It doesn't rain here in summer."
+    },
+    {
+      "set": "aux-6",
+      "id": "s22",
+      "old_turkish": "George dişlerini günde iki kez firgalar.",
+      "new_turkish": "George dişlerini günde iki kez fırçalar.",
+      "english": "George brushes his teeth twice a day."
+    },
+    {
+      "set": "aux-6",
+      "id": "s29",
+      "old_turkish": "Matematik 6gretmez.",
+      "new_turkish": "Matematik öğretmez.",
+      "english": "He doesn't teach math."
+    },
+    {
+      "set": "aux-6",
+      "id": "s32",
+      "old_turkish": "Annem asla yalan sodylemez.",
+      "new_turkish": "Annem asla yalan söylemez.",
+      "english": "My mother never lies."
+    },
+    {
+      "set": "aux-6",
+      "id": "s39",
+      "old_turkish": "Kızım gamaşır yıkar.",
+      "new_turkish": "Kızım çamaşır yıkar.",
+      "english": "My daughter does the laundry."
+    },
+    {
+      "set": "aux-6",
+      "id": "s40",
+      "old_turkish": "Kardeşim çöpii gikanr.",
+      "new_turkish": "Kardeşim çöpü çıkarır.",
+      "english": "My brother takes out the trash."
+    },
+    {
+      "set": "aux-6",
+      "id": "s41",
+      "old_turkish": "Kurs Önümüzdeki Pazar başlar.",
+      "new_turkish": "Kurs önümüzdeki Pazar başlar.",
+      "english": "The course starts next Sunday."
+    },
+    {
+      "set": "aux-6",
+      "id": "s51",
+      "old_turkish": "Dış hekimi olmak ister. (istiyor)",
+      "new_turkish": "Diş hekimi olmak ister. (istiyor)",
+      "english": "She wants to be a dentist."
+    },
+    {
+      "set": "aux-6",
+      "id": "s54",
+      "old_turkish": "Antarla dolu bir ar kovam var. / Arılarla dolu bir arı kovanına sahip.",
+      "new_turkish": "Arılarla dolu bir arı kovanı var. / Arılarla dolu bir arı kovanına sahip.",
+      "english": "She has a beehive full of bees."
+    },
+    {
+      "set": "aux-6",
+      "id": "s63",
+      "old_turkish": "Erkek arkadaşım bu sarktyi çok sever. (seviyor)",
+      "new_turkish": "Erkek arkadaşım bu şarkıyı çok sever. (seviyor)",
+      "english": "My boyfriend loves this song."
+    },
+    {
+      "set": "aux-6",
+      "id": "s67",
+      "old_turkish": "İngiltere Kraliçesi Buckingham Sarayr'nda yaşar.",
+      "new_turkish": "İngiltere Kraliçesi Buckingham Sarayı'nda yaşar.",
+      "english": "The Queen of England lives in Buckingham Palace."
+    },
+    {
+      "set": "aux-6",
+      "id": "s73",
+      "old_turkish": "Yeni evcil hayvanlarım severim. (seviyorum)",
+      "new_turkish": "Yeni evcil hayvanlarımı severim. (seviyorum)",
+      "english": "I love my new pets."
+    },
+    {
+      "set": "aux-6",
+      "id": "s75",
+      "old_turkish": "Babam hafta sonları asla calığşmaz.",
+      "new_turkish": "Babam hafta sonları asla çalışmaz.",
+      "english": "My dad never works on the weekends."
+    },
+    {
+      "set": "aux-6",
+      "id": "s76",
+      "old_turkish": "Kimya 6gretmez.",
+      "new_turkish": "Kimya öğretmez.",
+      "english": "She doesn't teach chemistry."
+    },
+    {
+      "set": "aux-6",
+      "id": "s80",
+      "old_turkish": "Mary yemek yapmay! sever. (seviyor)",
+      "new_turkish": "Mary yemek yapmayı sever. (seviyor)",
+      "english": "Mary enjoys cooking."
+    },
+    {
+      "set": "aux-6",
+      "id": "s81",
+      "old_turkish": "Müz sevmez. (sevmiyor)",
+      "new_turkish": "Muz sevmez. (sevmiyor)",
+      "english": "She doesn't like bananas."
+    },
+    {
+      "set": "aux-6",
+      "id": "s89",
+      "old_turkish": "Kahve içger mi?",
+      "new_turkish": "Kahve içer mi?",
+      "english": "Does she drink coffee?"
+    },
+    {
+      "set": "aux-7",
+      "id": "s2",
+      "old_turkish": "Greg dün çok iyi oynadh.",
+      "new_turkish": "Greg dün çok iyi oynadı.",
+      "english": "Greg played so well yesterday."
+    },
+    {
+      "set": "aux-7",
+      "id": "s7",
+      "old_turkish": "Amcam ıığ yıl Önce sigarayı bıraktı.",
+      "new_turkish": "Amcam üç yıl önce sigarayı bıraktı.",
+      "english": "My uncle stopped smoking three years ago."
+    },
+    {
+      "set": "aux-7",
+      "id": "s8",
+      "old_turkish": "Küçük bebek bir saat Önce çok ağladı.",
+      "new_turkish": "Küçük bebek bir saat önce çok ağladı.",
+      "english": "The little baby cried a lot an hour ago."
+    },
+    {
+      "set": "aux-7",
+      "id": "s12",
+      "old_turkish": "Sınavlarım geçtin.",
+      "new_turkish": "Sınavlarını geçtin.",
+      "english": "You passed your exams."
+    },
+    {
+      "set": "aux-7",
+      "id": "s13",
+      "old_turkish": "Ciğekleri suladım.",
+      "new_turkish": "Çiçekleri suladım.",
+      "english": "I watered the flowers."
+    },
+    {
+      "set": "aux-7",
+      "id": "s22",
+      "old_turkish": "Kız kardeşim geccen yıl iki kitap yazdı.",
+      "new_turkish": "Kız kardeşim geçen yıl iki kitap yazdı.",
+      "english": "My sister wrote two books last year."
+    },
+    {
+      "set": "aux-7",
+      "id": "s24",
+      "old_turkish": "Her şeyi anladı. (antiyordu)",
+      "new_turkish": "Her şeyi anladı. (anlıyordu)",
+      "english": "He understood everything."
+    },
+    {
+      "set": "aux-7",
+      "id": "s30",
+      "old_turkish": "İki saat önce düş aldım.",
+      "new_turkish": "İki saat önce duş aldım.",
+      "english": "I took a shower two hours ago."
+    },
+    {
+      "set": "aux-7",
+      "id": "s31",
+      "old_turkish": "Dün annemin en sevdiği vazoyu kırdin.",
+      "new_turkish": "Dün annemin en sevdiği vazoyu kırdın.",
+      "english": "You broke my mother's favorite vase yesterday."
+    },
+    {
+      "set": "aux-7",
+      "id": "s35",
+      "old_turkish": "Bana ikinci sorunun cevabım söyledi.",
+      "new_turkish": "Bana ikinci sorunun cevabını söyledi.",
+      "english": "He told me the answer of the second question."
+    },
+    {
+      "set": "aux-7",
+      "id": "s37",
+      "old_turkish": "Şam pek konuşmadı.",
+      "new_turkish": "Sam pek konuşmadı.",
+      "english": "Sam didn't talk much."
+    },
+    {
+      "set": "aux-7",
+      "id": "s41",
+      "old_turkish": "Sınav için yeterince caliğmadı.",
+      "new_turkish": "Sınav için yeterince çalışmadı.",
+      "english": "She didn't study enough for the exam."
+    },
+    {
+      "set": "aux-7",
+      "id": "s43",
+      "old_turkish": "Yemekleri beğenmediler. (beŞenmiyorlardı)",
+      "new_turkish": "Yemekleri beğenmediler. (beğenmiyorlardı)",
+      "english": "They didn't like the meals."
+    },
+    {
+      "set": "aux-7",
+      "id": "s50",
+      "old_turkish": "Bay Daniels beni havaalanına gö",
+      "new_turkish": "Bay Daniels beni havaalanına götürdü.",
+      "english": "Mr. Daniels took me to the airport."
+    },
+    {
+      "set": "aux-7",
+      "id": "s53",
+      "old_turkish": "Duin kaçta kalktı?",
+      "new_turkish": "Dün kaçta kalktı?",
+      "english": "What time did he get up yesterday?"
+    },
+    {
+      "set": "aux-7",
+      "id": "s58",
+      "old_turkish": "",
+      "new_turkish": "Amcam öldüğünde 300 sterlin aldım.",
+      "english": "I received £300 when my uncle died."
+    },
+    {
+      "set": "aux-7",
+      "id": "s62",
+      "old_turkish": "Duin gazeteyi okudu.",
+      "new_turkish": "Dün gazeteyi okudu.",
+      "english": "She read the newspaper yesterday."
+    },
+    {
+      "set": "aux-7",
+      "id": "s65",
+      "old_turkish": "Seni aradı m?",
+      "new_turkish": "Seni aradı mı?",
+      "english": "Did he call you?"
+    },
+    {
+      "set": "aux-7",
+      "id": "s66",
+      "old_turkish": "Bir şey mi unuttum? (unutuyirdum?)",
+      "new_turkish": "Bir şey mi unuttum? (unutuyordum?)",
+      "english": "Did I forget something?"
+    },
+    {
+      "set": "aux-7",
+      "id": "s68",
+      "old_turkish": "Düş aldı.",
+      "new_turkish": "Duş aldı.",
+      "english": "He had a shower."
+    },
+    {
+      "set": "aux-7",
+      "id": "s75",
+      "old_turkish": "Aile bize yiyecek ve içgecek verdi.",
+      "new_turkish": "Aile bize yiyecek ve içecek verdi.",
+      "english": "The family gave us some food and drink."
+    },
+    {
+      "set": "aux-7",
+      "id": "s76",
+      "old_turkish": "Çete, şehir merkezindeki iki banka soydu.",
+      "new_turkish": "Çete, şehir merkezindeki iki bankayı soydu.",
+      "english": "The gang robbed two banks in the town centre."
+    },
+    {
+      "set": "aux-7",
+      "id": "s77",
+      "old_turkish": "Yemeğinizi beğendin mi? (beğeniyor muydun?) Hayır, beğenmedim (beğenmiyordum).",
+      "new_turkish": "Yemeğini beğendin mi? (beğeniyor muydun?) Hayır, beğenmedim (beğenmiyordum).",
+      "english": "Did you like your meal? No, I didn't."
+    },
+    {
+      "set": "aux-7",
+      "id": "s80",
+      "old_turkish": "Kız kardeşime doğum günü için bir sür yazdım.",
+      "new_turkish": "Kız kardeşime doğum günü için bir şiir yazdım.",
+      "english": "I wrote a poem for my sister for her birthday."
+    },
+    {
+      "set": "aux-7",
+      "id": "s87",
+      "old_turkish": "Partide kiminle tanıştıniz?",
+      "new_turkish": "Partide kiminle tanıştınız?",
+      "english": "Who did you meet at the party?"
+    },
+    {
+      "set": "aux-7",
+      "id": "s99",
+      "old_turkish": "İşinize ne zaman başlaçınız?",
+      "new_turkish": "İşinize ne zaman başladınız?",
+      "english": "When did you start your job?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s2",
+      "old_turkish": "",
+      "new_turkish": "Seni son gördüğümden beri büyümüşsün / büyüdün (büyümüşsündür).",
+      "english": "You have grown since the last time I saw you."
+    },
+    {
+      "set": "aux-8",
+      "id": "s3",
+      "old_turkish": "Suyu iğçmedi / iğçmemiş(tir).",
+      "new_turkish": "Suyu içmedi / içmemiş(tir).",
+      "english": "It hasn't drunk the water."
+    },
+    {
+      "set": "aux-8",
+      "id": "s5",
+      "old_turkish": "Emekli olduğumuzdan beri hiç posta almadık / almamışız(dir).",
+      "new_turkish": "Emekli olduğumuzdan beri hiç posta almadık / almamışız(dır).",
+      "english": "We haven't received any mail since we were retired."
+    },
+    {
+      "set": "aux-8",
+      "id": "s7",
+      "old_turkish": "Piyano çaldılar mı / çalmışlar mı? Hayır, Galmadılar / çalmamışlar (dir).",
+      "new_turkish": "Piyano çaldılar mı / çalmışlar mı? Hayır, çalmadılar / çalmamışlar(dır).",
+      "english": "Have they played the piano? No, they haven't."
+    },
+    {
+      "set": "aux-8",
+      "id": "s8",
+      "old_turkish": "Michael' liseden beri tanıyorum / tanıdım / tanımışım(dır).",
+      "new_turkish": "Michael'ı liseden beri tanıyorum / tanıdım / tanımışım(dır).",
+      "english": "I have known Michael since high school."
+    },
+    {
+      "set": "aux-8",
+      "id": "s11",
+      "old_turkish": "Yeni bir araba aldılar / alrmslar(dır).",
+      "new_turkish": "Yeni bir araba aldılar / almışlar(dır).",
+      "english": "They have bought a new car."
+    },
+    {
+      "set": "aux-8",
+      "id": "s20",
+      "old_turkish": "Cüzdanım nerede bıraktım / bırakmsim(dir)?",
+      "new_turkish": "Cüzdanımı nerede bıraktım / bırakmışım(dır)?",
+      "english": "Where have I left my wallet?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s22",
+      "old_turkish": "Bu pizzalar hiç yemedi / yememiş(tir).",
+      "new_turkish": "Bu pizzaları hiç yemedi / yememiş(tir).",
+      "english": "He has never eaten these pizzas."
+    },
+    {
+      "set": "aux-8",
+      "id": "s23",
+      "old_turkish": "Ordu o şehre iki kez saldırd / saldırmış(tır).",
+      "new_turkish": "Ordu o şehre iki kez saldırdı / saldırmış(tır).",
+      "english": "The army has attacked that city two times."
+    },
+    {
+      "set": "aux-8",
+      "id": "s24",
+      "old_turkish": "Konserde Madonna'y dinledin / dinlemişsin(dir).",
+      "new_turkish": "Konserde Madonna'yı dinledin / dinlemişsin(dir).",
+      "english": "You have listened to Madonna in the concert."
+    },
+    {
+      "set": "aux-8",
+      "id": "s26",
+      "old_turkish": "Bir otelde kaldın mı / kalms misin(dir)?",
+      "new_turkish": "Bir otelde kaldın mı / kalmış mısın(dır)?",
+      "english": "Have you ever stayed in a hotel?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s27",
+      "old_turkish": "Neden böyle sdyledi / söylemiş(tir)?",
+      "new_turkish": "Neden böyle söyledi / söylemiş(tir)?",
+      "english": "Why has she said like that?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s31",
+      "old_turkish": "Hatırlayabildiğimden beri pek çok arabaları oldu / ölmüş(tur).",
+      "new_turkish": "Hatırlayabildiğimden beri pek çok arabaları oldu / olmuş(tur).",
+      "english": "They have had many cars since I can remember."
+    },
+    {
+      "set": "aux-8",
+      "id": "s32",
+      "old_turkish": "Babasım ikna ettim / etmişim(dir).",
+      "new_turkish": "Babasını ikna ettim / etmişim(dir).",
+      "english": "I have convinced her father."
+    },
+    {
+      "set": "aux-8",
+      "id": "s34",
+      "old_turkish": "Bu şehirde ne kadar süredir yaşadın / yaşamışsın(dir)?",
+      "new_turkish": "Bu şehirde ne kadar süredir yaşadın / yaşamışsın(dır)?",
+      "english": "How long have you lived in this city?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s35",
+      "old_turkish": "Saat 9'dan beri havuzda kaldılar / kalrmslar(dır).",
+      "new_turkish": "Saat 9'dan beri havuzda kaldılar / kalmışlar(dır).",
+      "english": "They have stayed in the pool since 9 o'clock."
+    },
+    {
+      "set": "aux-8",
+      "id": "s36",
+      "old_turkish": "Hiç basketbol oynadın mı / oynamış mısın(dir)?",
+      "new_turkish": "Hiç basketbol oynadın mı / oynamış mısın(dır)?",
+      "english": "Have you ever played basketball?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s37",
+      "old_turkish": "Michael'la hiç tanıştın mı / tamışmış mısın(dir)?",
+      "new_turkish": "Michael'la hiç tanıştın mı / tanışmış mısın(dır)?",
+      "english": "Have you ever met Michael?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s38",
+      "old_turkish": "Bebek cami (bardağı) kırdı / kırmış(tır).",
+      "new_turkish": "Bebek camı (bardağı) kırdı / kırmış(tır).",
+      "english": "The baby has broken the glass."
+    },
+    {
+      "set": "aux-8",
+      "id": "s39",
+      "old_turkish": "Bu yere daha Önce gittin mi / gitmiş misin(dir)?",
+      "new_turkish": "Bu yere daha önce gittin mi / gitmiş misin(dir)?",
+      "english": "Have you been to this place before?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s41",
+      "old_turkish": "Dizüstii bilgisayar satın aldılar / satın almışlar(dır).",
+      "new_turkish": "Dizüstü bilgisayar satın aldılar / satın almışlar(dır).",
+      "english": "They have bought laptops."
+    },
+    {
+      "set": "aux-8",
+      "id": "s43",
+      "old_turkish": "Kahvaltımızı çoktan yaptık / yapmışız(dir).",
+      "new_turkish": "Kahvaltımızı çoktan yaptık / yapmışız(dır).",
+      "english": "We've already had our breakfast."
+    },
+    {
+      "set": "aux-8",
+      "id": "s44",
+      "old_turkish": "Şansa ve Çerseı birbirlerini ilkokuldan beri tamyorlar / tanıdılar / tanışmışlar(dır).",
+      "new_turkish": "Sansa ve Cersei birbirlerini ilkokuldan beri tanıyorlar / tanıdılar / tanımışlar(dır).",
+      "english": "Sansa and Cersei have known each other since they were at primary school."
+    },
+    {
+      "set": "aux-8",
+      "id": "s47",
+      "old_turkish": "Müz henüz kahverengiye dönmedi / dönmemiş(tir).",
+      "new_turkish": "Muz henüz kahverengiye dönmedi / dönmemiş(tir).",
+      "english": "The banana has not turned brown yet."
+    },
+    {
+      "set": "aux-8",
+      "id": "s48",
+      "old_turkish": "Babam uzun süredir Austin'de çalıştı / çalışmış(tir).",
+      "new_turkish": "Babam uzun süredir Austin'de çalıştı / çalışmış(tır).",
+      "english": "My father has worked in Austin for a long time."
+    },
+    {
+      "set": "aux-8",
+      "id": "s51",
+      "old_turkish": "İki yithğina mühendis olarak galistim / çalışmışım(dır).",
+      "new_turkish": "İki yıllığına mühendis olarak çalıştım / çalışmışım(dır).",
+      "english": "I have worked as a engineer for two years."
+    },
+    {
+      "set": "aux-8",
+      "id": "s52",
+      "old_turkish": "Kardeşim daha Önce araba kullandı / kullanmış(tır).",
+      "new_turkish": "Kardeşim daha önce araba kullandı / kullanmış(tır).",
+      "english": "My brother has driven a car before."
+    },
+    {
+      "set": "aux-8",
+      "id": "s55",
+      "old_turkish": "Aslanı gördün mii / görmüş musun(dur)?",
+      "new_turkish": "Aslanı gördün mü / görmüş müsün(dür)?",
+      "english": "Have you seen the lion?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s61",
+      "old_turkish": "Oğlum arkadaşım bekledi / beklemiş(tir).",
+      "new_turkish": "Oğlum arkadaşını bekledi / beklemiş(tir).",
+      "english": "My son has waited for his friend."
+    },
+    {
+      "set": "aux-8",
+      "id": "s63",
+      "old_turkish": "Öğle yemesi yedim / yemişim(dir).",
+      "new_turkish": "Öğle yemeği yedim / yemişim(dir).",
+      "english": "I have eaten lunch."
+    },
+    {
+      "set": "aux-8",
+      "id": "s68",
+      "old_turkish": "Asla yeni bir şey icat etmeye çalışmadık / çalışmamışız(dir).",
+      "new_turkish": "Asla yeni bir şey icat etmeye çalışmadık / çalışmamışız(dır).",
+      "english": "We have never tried to invent something new."
+    },
+    {
+      "set": "aux-8",
+      "id": "s72",
+      "old_turkish": "Kardeşlerim hiç ispanya'ya gitmediler / gitmemişler(dir).",
+      "new_turkish": "Kardeşlerim hiç İspanya'ya gitmediler / gitmemişler(dir).",
+      "english": "My brothers haven't ever gone to Spain."
+    },
+    {
+      "set": "aux-8",
+      "id": "s74",
+      "old_turkish": "Bu tatil şimdiye kadar beş sınav ve altı test oldum / ölmüşüm(dür).",
+      "new_turkish": "Bu tatil şimdiye kadar beş sınav ve altı test oldum / olmuşum(dur).",
+      "english": "I have had five quizzes and six tests so far this holiday."
+    },
+    {
+      "set": "aux-8",
+      "id": "s75",
+      "old_turkish": "Ödevinizi yeni mi bitirdin / bitirmişsin(dir)?",
+      "new_turkish": "Ödevini yeni mi bitirdin / bitirmişsin(dir)?",
+      "english": "Have you just finished homework?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s78",
+      "old_turkish": "Bunu bana daha Önce kimse sdylemedi / şööylememiş(tir).",
+      "new_turkish": "Bunu bana daha önce kimse söylemedi / söylememiş(tir).",
+      "english": "Nobody has ever said that to me before."
+    },
+    {
+      "set": "aux-8",
+      "id": "s79",
+      "old_turkish": "Dört kez Çin'e gittim / gitmişim(tır).",
+      "new_turkish": "Dört kez Çin'e gittim / gitmişim(dir).",
+      "english": "I have gone to China four times."
+    },
+    {
+      "set": "aux-8",
+      "id": "s82",
+      "old_turkish": "O filmi çoktan gördüm / görmUstim(dur).",
+      "new_turkish": "O filmi çoktan gördüm / görmüşüm(dür).",
+      "english": "I have seen that movie already."
+    },
+    {
+      "set": "aux-8",
+      "id": "s83",
+      "old_turkish": "Ödevini yaptın mı / yapmış mısın(dir)?",
+      "new_turkish": "Ödevini yaptın mı / yapmış mısın(dır)?",
+      "english": "Have you done your homework?"
+    },
+    {
+      "set": "aux-8",
+      "id": "s85",
+      "old_turkish": "Futbol takımlan bu sezon çok gol attı / atmış(tır).",
+      "new_turkish": "Futbol takımları bu sezon çok gol attı / atmış(tır).",
+      "english": "Football teams have scored a lot of goals this season."
+    },
+    {
+      "set": "aux-8",
+      "id": "s86",
+      "old_turkish": "Hiç ıınlıı birini görmedim / görmemişim(dir).",
+      "new_turkish": "Hiç ünlü birini görmedim / görmemişim(dir).",
+      "english": "I have never seen a famous person."
+    },
+    {
+      "set": "aux-8",
+      "id": "s87",
+      "old_turkish": "Bugün müşterilerimizden dördünii ziyaret ettim / ziyaret etmişim (dir).",
+      "new_turkish": "Bugün müşterilerimizden dördünü ziyaret ettim / ziyaret etmişim(dir).",
+      "english": "I've visited four of our clients today."
+    },
+    {
+      "set": "aux-8",
+      "id": "s88",
+      "old_turkish": "Gömlekleri zaten iitüledim / ııtülemişim(dir).",
+      "new_turkish": "Gömlekleri zaten ütüledim / ütülemişim(dir).",
+      "english": "I have already ironed the shirts."
+    },
+    {
+      "set": "aux-8",
+      "id": "s93",
+      "old_turkish": "Az önce bir gol attı / atrms(tır).",
+      "new_turkish": "Az önce bir gol attı / atmış(tır).",
+      "english": "He has just scored a goal."
+    },
+    {
+      "set": "aux-8",
+      "id": "s95",
+      "old_turkish": "Doktorlar birçok hastalığa gare buldular / bulmuşlar(dır).",
+      "new_turkish": "Doktorlar birçok hastalığa çare buldular / bulmuşlar(dır).",
+      "english": "Doctors have found a cure for many diseases."
+    },
+    {
+      "set": "aux-9",
+      "id": "s1",
+      "old_turkish": "Mary gitmeden Önce Tony'nin adresini bana vermişti.",
+      "new_turkish": "Mary gitmeden önce Tony'nin adresini bana vermişti.",
+      "english": "Mary had given me Tony's address before she left."
+    },
+    {
+      "set": "aux-9",
+      "id": "s5",
+      "old_turkish": "Oyunu bitirdikten sonra, düş aldılar.",
+      "new_turkish": "Oyunu bitirdikten sonra, duş aldılar.",
+      "english": "They took a shower after they had finished the game."
+    },
+    {
+      "set": "aux-9",
+      "id": "s6",
+      "old_turkish": "Alan 68le yemeğini yedikten sonra, televizyon izledi.",
+      "new_turkish": "Alan öğle yemeğini yedikten sonra, televizyon izledi.",
+      "english": "Alan watched TV after he had had lunch."
+    },
+    {
+      "set": "aux-9",
+      "id": "s7",
+      "old_turkish": "David Amca, arkadaşı ona gitmesini Gnerdikten sonra, doktora gitti.",
+      "new_turkish": "David Amca, arkadaşı ona gitmesini önerdikten sonra, doktora gitti.",
+      "english": "Uncle David went to the doctor after his friend had suggested him to go."
+    },
+    {
+      "set": "aux-9",
+      "id": "s10",
+      "old_turkish": "Eve gitmeden Önce iki Big Maç yemiştik.",
+      "new_turkish": "Eve gitmeden önce iki Big Mac yemiştik.",
+      "english": "We had eaten two Big Macs before we went home."
+    },
+    {
+      "set": "aux-9",
+      "id": "s15",
+      "old_turkish": "Mutfağ1 boyadığında, dinlenmeye karar verdi.",
+      "new_turkish": "Mutfağı boyadığında, dinlenmeye karar verdi.",
+      "english": "When he had painted the kitchen, he decided to have a rest."
+    },
+    {
+      "set": "aux-9",
+      "id": "s16",
+      "old_turkish": "Kotii haber aldığ için, bütün gece ayakta kaldı.",
+      "new_turkish": "Kötü haber aldığı için, bütün gece ayakta kaldı.",
+      "english": "She stayed up all night because she had received bad news."
+    },
+    {
+      "set": "aux-9",
+      "id": "s19",
+      "old_turkish": "Roma'ya taşınmadan önce italyanca 6grenmiştin.",
+      "new_turkish": "Roma'ya taşınmadan önce İtalyanca öğrenmiştin.",
+      "english": "You had studied Italian before you moved to Rome."
+    },
+    {
+      "set": "aux-9",
+      "id": "s20",
+      "old_turkish": "Şirketini 2008'den Önce kurmuştu.",
+      "new_turkish": "Şirketini 2008'den önce kurmuştu.",
+      "english": "She had established her company before 2008."
+    },
+    {
+      "set": "aux-9",
+      "id": "s23",
+      "old_turkish": "Saat sekizden Önce uykuya dalmıştım.",
+      "new_turkish": "Saat sekizden önce uykuya dalmıştım.",
+      "english": "I had fallen asleep before eight o'clock."
+    },
+    {
+      "set": "aux-9",
+      "id": "s24",
+      "old_turkish": "Adaya gitmeden Önce hiç bu kadar güzel bir gün batım görmemiştim.",
+      "new_turkish": "Adaya gitmeden önce hiç bu kadar güzel bir gün batımı görmemiştim.",
+      "english": "I had never seen such a beautiful sunset before I went to the island."
+    },
+    {
+      "set": "aux-9",
+      "id": "s26",
+      "old_turkish": "Cüzdanım kaybettiğim için, nakit param yoktu.",
+      "new_turkish": "Cüzdanımı kaybettiğim için, nakit param yoktu.",
+      "english": "I did not have any cash because I had lost my purse."
+    },
+    {
+      "set": "aux-9",
+      "id": "s29",
+      "old_turkish": "Annem bize mesaj attığında evi yeni ararmstik.",
+      "new_turkish": "Annem bize mesaj attığında evi yeni aramıştık.",
+      "english": "We had just called home when my mom texted us"
+    },
+    {
+      "set": "aux-9",
+      "id": "s32",
+      "old_turkish": "Evden ayrılmadan Önce, tıraş olmuştu.",
+      "new_turkish": "Evden ayrılmadan önce, tıraş olmuştu.",
+      "english": "Before he left home, he had had a shave."
+    },
+    {
+      "set": "aux-9",
+      "id": "s33",
+      "old_turkish": "Polis 9:15'te geldiğinde, soyguncular saat 9:10'da kağmışlardı.",
+      "new_turkish": "Polis 9:15'te geldiğinde, soyguncular saat 9:10'da kaçmışlardı.",
+      "english": "When the policeman arrived at 9:15, the robbers had run away at 9:10."
+    },
+    {
+      "set": "aux-9",
+      "id": "s37",
+      "old_turkish": "İstasyona 11:05'te arcığımızda, tren 11:00'de kalkmiştı.",
+      "new_turkish": "İstasyona 11:05'te vardığımızda, tren 11:00'de kalkmıştı.",
+      "english": "The train had left at 11:00 by the time we got to the station at 11:05."
+    },
+    {
+      "set": "aux-9",
+      "id": "s39",
+      "old_turkish": "Öğrenci, diyaloğu yazmadan Önce, onu ezberlemişti.",
+      "new_turkish": "Öğrenci, diyaloğu yazmadan önce, onu ezberlemişti.",
+      "english": "Before the student wrote the dialogue, he had memorized it."
+    },
+    {
+      "set": "aux-9",
+      "id": "s40",
+      "old_turkish": "Dış hekimi dışı çektikten sonra, adam bunun yanlış dış olduğunu söyledi.",
+      "new_turkish": "Diş hekimi dişi çektikten sonra, adam bunun yanlış diş olduğunu söyledi.",
+      "english": "After the dentist had pulled out the tooth, the man said it was the wrong tooth."
+    },
+    {
+      "set": "aux-9",
+      "id": "s41",
+      "old_turkish": "Ders bittiğinde, herkes zilden Önce yazmayı bırakmıştı.",
+      "new_turkish": "Ders bittiğinde, herkes zilden önce yazmayı bırakmıştı.",
+      "english": "Everybody had stopped writing before the bell when the lesson finished."
+    },
+    {
+      "set": "aux-9",
+      "id": "s42",
+      "old_turkish": "Kap görevlisi kapıyı ağar açmaz, herkes içeri koştu.",
+      "new_turkish": "Kapı görevlisi kapıyı açar açmaz, herkes içeri koştu.",
+      "english": "As soon as the door keeper had opened the door, everybody rushed in."
+    },
+    {
+      "set": "aux-9",
+      "id": "s43",
+      "old_turkish": "Polis hırsızia konuştuğunda, her şeyi grendiler.",
+      "new_turkish": "Polis hırsızla konuştuğunda, her şeyi öğrendiler.",
+      "english": "When the policeman had talked to the burglar, they found out everything."
+    },
+    {
+      "set": "aux-9",
+      "id": "s46",
+      "old_turkish": "Sürucii, polis memuru durmasını emrettiği için durdu.",
+      "new_turkish": "Sürücü, polis memuru durmasını emrettiği için durdu.",
+      "english": "The driver stopped because he policeman had ordered him to stop."
+    },
+    {
+      "set": "aux-9",
+      "id": "s47",
+      "old_turkish": "Askerliğimi bitirdikten sonra, bir gazete için calhşmaya başladım.",
+      "new_turkish": "Askerliğimi bitirdikten sonra, bir gazete için çalışmaya başladım.",
+      "english": "I started to work for a newspaper after I finished military service."
+    },
+    {
+      "set": "aux-9",
+      "id": "s52",
+      "old_turkish": "Ofleden sonra malları göndermeden Önce sabah müdürle görüşmuştıı.",
+      "new_turkish": "Öğleden sonra malları göndermeden önce sabah müdürle görüşmüştü.",
+      "english": "He had talked to the manager in the morning before he sent the goods in the afternoon."
+    },
+    {
+      "set": "aux-9",
+      "id": "s57",
+      "old_turkish": "Öle yemezi yemeden önce, ellerini yıkammstt.",
+      "new_turkish": "Öğle yemeği yemeden önce, ellerini yıkamıştı.",
+      "english": "She had washed her hands before she had lunch."
+    },
+    {
+      "set": "aux-9",
+      "id": "s63",
+      "old_turkish": "Ugak kalkmadan önce, emniyet kemerimi takmıştım.",
+      "new_turkish": "Uçak kalkmadan önce, emniyet kemerimi takmıştım.",
+      "english": "I had fastened my seat belt before the plane took off."
+    },
+    {
+      "set": "aux-9",
+      "id": "s68",
+      "old_turkish": "Akşam yemedimizi yedikten hemen sonra, dışarı çıktık.",
+      "new_turkish": "Akşam yemeğimizi yedikten hemen sonra, dışarı çıktık.",
+      "english": "We went out as soon as we had had dinner."
+    },
+    {
+      "set": "aux-9",
+      "id": "s69",
+      "old_turkish": "Suudi Arabistan'a gidene kadar, hiç deve grmemiştim.",
+      "new_turkish": "Suudi Arabistan'a gidene kadar, hiç deve görmemiştim.",
+      "english": "I had never seen a camel until I went to Saudi Arabia."
+    },
+    {
+      "set": "aux-9",
+      "id": "s70",
+      "old_turkish": "Arabamt sattıktan sonra, bir ev satın aldım.",
+      "new_turkish": "Arabamı sattıktan sonra, bir ev satın aldım.",
+      "english": "I bought a house after I had sold my car."
+    },
+    {
+      "set": "aux-9",
+      "id": "s75",
+      "old_turkish": "Hiçbir şey yapmadığ halde, onu hapse attılar.",
+      "new_turkish": "Hiçbir şey yapmadığı halde, onu hapse attılar.",
+      "english": "They put him to prison though he hadn't done anything."
+    },
+    {
+      "set": "aux-9",
+      "id": "s76",
+      "old_turkish": "Polis, iki kişiyi Öldürdüğü için onu tutukladı.",
+      "new_turkish": "Polis, iki kişiyi öldürdüğü için onu tutukladı.",
+      "english": "The police arrested him because he had killed two people."
+    },
+    {
+      "set": "aux-9",
+      "id": "s79",
+      "old_turkish": "Yash adam tüm mal varhğini sattıktan sonra, başka bir ıılkeye taşındı.",
+      "new_turkish": "Yaşlı adam tüm mal varlığını sattıktan sonra, başka bir ülkeye taşındı.",
+      "english": "After the old man had sold all his property, he moved to another country."
+    },
+    {
+      "set": "aux-9",
+      "id": "s80",
+      "old_turkish": "Neden ondan, Paris'ten aynımadan önce, bekleyip tekrar diisiinmesini istememişti.",
+      "new_turkish": "Neden ondan, Paris'ten ayrılmadan önce, bekleyip tekrar düşünmesini istememişti?",
+      "english": "Why hadn't he asked her to wait and think again before she left Paris."
+    },
+    {
+      "set": "aux-9",
+      "id": "s81",
+      "old_turkish": "Komutan \"ates\" deyince askerler cilginca ates etmeye basladilar.",
+      "new_turkish": "Komutan \"ateş\" deyince askerler çılgınca ateş etmeye başladılar.",
+      "english": "Once the commander had said “fire”, the soldiers started to fire crazily."
+    },
+    {
+      "set": "aux-9",
+      "id": "s83",
+      "old_turkish": "Adam, oğlu başarısız olduğunda çok hayal kinkliğina uğramıştı.",
+      "new_turkish": "Adam, oğlu başarısız olduğunda çok hayal kırıklığına uğramıştı.",
+      "english": "The man was very disappointed when his son had failed."
+    },
+    {
+      "set": "aux-9",
+      "id": "s85",
+      "old_turkish": "Ankara'ya taşınmadan Önce, Bursa'da yaşamışlardı.",
+      "new_turkish": "Ankara'ya taşınmadan önce, Bursa'da yaşamışlardı.",
+      "english": "Before they moved to Ankara, they had lived in Bursa."
+    },
+    {
+      "set": "aux-9",
+      "id": "s86",
+      "old_turkish": "Ders bitmeden Önce, herkes uyuyakalmistı.",
+      "new_turkish": "Ders bitmeden önce, herkes uyuyakalmıştı.",
+      "english": "Everybody had fallen asleep before the lecture finished."
+    },
+    {
+      "set": "aux-9",
+      "id": "s89",
+      "old_turkish": "Kahvaltılarım bitirdikten sonra, okula gittiler.",
+      "new_turkish": "Kahvaltılarını bitirdikten sonra, okula gittiler.",
+      "english": "After they had finished their breakfast, they left for school."
+    },
+    {
+      "set": "aux-9",
+      "id": "s90",
+      "old_turkish": "Biz dönmeden Önce, kardeşim tüm türtayı yemişti.",
+      "new_turkish": "Biz dönmeden önce, kardeşim tüm turtayı yemişti.",
+      "english": "My brother had eaten all the pie before we got back."
+    },
+    {
+      "set": "aux-9",
+      "id": "s91",
+      "old_turkish": "Akşam yemeuni bitirdikten sonra, çay icctiler.",
+      "new_turkish": "Akşam yemeğini bitirdikten sonra, çay içtiler.",
+      "english": "They drank tea after they had finished dinner."
+    },
+    {
+      "set": "aux-9",
+      "id": "s92",
+      "old_turkish": "Arabaş1 bozulduğu için, işe otobüsle gitmek zorunda kaldı.",
+      "new_turkish": "Arabası bozulduğu için, işe otobüsle gitmek zorunda kaldı.",
+      "english": "He had to go to work by bus because his car had broken down."
+    },
+    {
+      "set": "aux-9",
+      "id": "s96",
+      "old_turkish": "Toplantı bitmeden Önce, odadan ayrılmışlardı.",
+      "new_turkish": "Toplantı bitmeden önce, odadan ayrılmışlardı.",
+      "english": "They had left the room before the meeting finished."
+    },
+    {
+      "set": "aux-9",
+      "id": "s97",
+      "old_turkish": "Londra'ya gitmeden önce, yeni bir fotoğraf makinesi satın alrmstim.",
+      "new_turkish": "Londra'ya gitmeden önce, yeni bir fotoğraf makinesi satın almıştım.",
+      "english": "I had bought a new camera before I went to London."
+    },
+    {
+      "set": "aux-9",
+      "id": "s98",
+      "old_turkish": "Telefon çaldığında, ışıklan henüz kapatmıştım.",
+      "new_turkish": "Telefon çaldığında, ışıkları henüz kapatmıştım.",
+      "english": "I had just turned off the lights when the telephone rang."
+    },
+    {
+      "set": "aux-9",
+      "id": "s99",
+      "old_turkish": "Evlenmeden önce, onu uzun süredir tantyor muydu?",
+      "new_turkish": "Evlenmeden önce, onu uzun süredir tanıyor muydu?",
+      "english": "Had he known her for a long time before they got married?"
+    },
+    {
+      "set": "aux-9",
+      "id": "s100",
+      "old_turkish": "Babam arabayı temizledikten sonra, ciğekleri suladı.",
+      "new_turkish": "Babam arabayı temizledikten sonra, çiçekleri suladı.",
+      "english": "My father watered the flowers after he had cleaned the car."
+    }
+  ]
+}

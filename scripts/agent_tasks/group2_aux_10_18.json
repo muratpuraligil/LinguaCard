@@ -1,0 +1,4515 @@
+{
+  "aux-10": [
+    {
+      "id": "s1",
+      "turkish": "Ödevimi yarın yapacağım.",
+      "english": "I will do my homework tomorrow."
+    },
+    {
+      "id": "s2",
+      "turkish": "Şey, sanırım Önümüzdeki hafta işe gitmek için otobüse bineceğiz.",
+      "english": "Well, I guess we will ride the bus to work next week."
+    },
+    {
+      "id": "s3",
+      "turkish": "Akşam yemeğinde dana rosto yiyecek.",
+      "english": "He will eat roast beef for dinner."
+    },
+    {
+      "id": "s4",
+      "turkish": "Jane Pazartesi işinden ayrılmayacak.",
+      "english": "Jane will not quit her job on Monday."
+    },
+    {
+      "id": "s5",
+      "turkish": "Sanınm bu gece James ile bir film izleyeceğim.",
+      "english": "I think I will watch a movie with James tonight."
+    },
+    {
+      "id": "s6",
+      "turkish": "Jane ne zaman araba sürecek?",
+      "english": "When will Jane drive?"
+    },
+    {
+      "id": "s7",
+      "turkish": "Kız kardeşim muhtemelen bu yaz kampa gidecek.",
+      "english": "My sister will probably go to camp this summer."
+    },
+    {
+      "id": "s8",
+      "turkish": "Önümüzdeki yıl emlak fiyatlarının yeniden yükseleceğini tahmin ediyorum.",
+      "english": "I suppose real estate prices will go up again next year."
+    },
+    {
+      "id": "s9",
+      "turkish": "Muhtemelen cevabt bilecek.",
+      "english": "She will probably know the answer."
+    },
+    {
+      "id": "s10",
+      "turkish": "Tüm mağazalarımız Önümüzdeki Pazartesi saat 10.00'da açılacak.",
+      "english": "All our stores will open next Monday at 10.00 a.m."
+    },
+    {
+      "id": "s11",
+      "turkish": "Barcelona harika bir futbol takım. Bence Barcelona maçı kazanacak.",
+      "english": "Barcelona is a great football team. I think Barcelona will win the match."
+    },
+    {
+      "id": "s12",
+      "turkish": "Jenny kötü bir",
+      "english": "Jenny is a bad driver. She won't pass the driving test."
+    },
+    {
+      "id": "s13",
+      "turkish": "Sanınm Tony konsere gidecek. Müziği seviyor.",
+      "english": "I think Tony will go to concert. He loves music."
+    },
+    {
+      "id": "s14",
+      "turkish": "Bu hafta sonu plaja gideceğiz. Güzel zaman geçireceğiz.",
+      "english": "We will go to the beach this weekend. We will have a great time."
+    },
+    {
+      "id": "s15",
+      "turkish": "Emma partiye gelmeyecek. Korkung bir baş ağrısı var. Evde kalacak.",
+      "english": "Emma won't come to the party. She has a terrible headache. She will stay at home."
+    },
+    {
+      "id": "s16",
+      "turkish": "Çok yorgunum. Bu akşam dışan çıkmayacağım.",
+      "english": "I am very tired. I won't go out this evening."
+    },
+    {
+      "id": "s17",
+      "turkish": "Tim tembel bir öğrencidir. Düzenli cahşmnyor. Sınavı geçmeyecek.",
+      "english": "Tim is a lazy student. He doesn't study regularly. He won't pass the exam."
+    },
+    {
+      "id": "s18",
+      "turkish": "Tony dakik değil. Zamanında gelmeyecek.",
+      "english": "Tony is not punctual. He won't come on time."
+    },
+    {
+      "id": "s19",
+      "turkish": "Bu akşam televizyonda ne izleyeceksin?",
+      "english": "What will you watch on TV this evening?"
+    },
+    {
+      "id": "s20",
+      "turkish": "Parti ne zaman başlayacak?",
+      "english": "What time will the party start?"
+    },
+    {
+      "id": "s21",
+      "turkish": "Bu yaz tatil için nereye gideceksin?",
+      "english": "Where will you go for holiday this summer?"
+    },
+    {
+      "id": "s22",
+      "turkish": "Stislii elbise partisinde ne giyeceksin?",
+      "english": "What will you wear at fancy dress party?"
+    },
+    {
+      "id": "s23",
+      "turkish": "Partiye kağ kişi gelecek?",
+      "english": "How many people will come to party?"
+    },
+    {
+      "id": "s24",
+      "turkish": "Bu kitap hayatınızı değiştirecek.",
+      "english": "This book will change your life."
+    },
+    {
+      "id": "s25",
+      "turkish": "Sınav sonuçlarımızı Ağustos'ta öğreneceğiz.",
+      "english": "We'll know our exam results in August."
+    },
+    {
+      "id": "s26",
+      "turkish": "En yakın sinemaya yaklaşık on mil yürüyecekler.",
+      "english": "They will walk nearly ten miles to the nearest cinema."
+    },
+    {
+      "id": "s27",
+      "turkish": "Yarın beni yine sevecek misin?",
+      "english": "Will you still love me tomorrow?"
+    },
+    {
+      "id": "s28",
+      "turkish": "Jim bunu sizin için tercüme edecek.",
+      "english": "Jim will translate it for you."
+    },
+    {
+      "id": "s29",
+      "turkish": "Kartpostal alacağım.",
+      "english": "I'll buy some postcards."
+    },
+    {
+      "id": "s30",
+      "turkish": "Güney İngiltere bu gece bulutlu ve rüzgarlı kalacak.",
+      "english": "Southern England will stay cloudy and windy tonight."
+    },
+    {
+      "id": "s31",
+      "turkish": "Doktor gecenin bu saatinde gelmeyecek.",
+      "english": "The doctor won't come at this time of night."
+    },
+    {
+      "id": "s32",
+      "turkish": "Bu sağmalığa katlanmayacağım.",
+      "english": "I won't put up with this nonsense."
+    },
+    {
+      "id": "s33",
+      "turkish": "Sonraki hafta görüşeceğiz.",
+      "english": "I'll see you the week after."
+    },
+    {
+      "id": "s34",
+      "turkish": "Kaptyi sizin için açık tutacağım.",
+      "english": "I'll hold the door open for you."
+    },
+    {
+      "id": "s35",
+      "turkish": "Sanınm bir kahve için vaktimiz olacak.",
+      "english": "I think we'll have time for a coffee."
+    },
+    {
+      "id": "s36",
+      "turkish": "Çalışma yaklaşık altı ay sürecekt.",
+      "english": "The work will take about six months."
+    },
+    {
+      "id": "s37",
+      "turkish": "Yolumu kaybedeceğim.",
+      "english": "I'll lose my way."
+    },
+    {
+      "id": "s38",
+      "turkish": "Onu nasıl tanıyacağım?",
+      "english": "How will I recognize him?"
+    },
+    {
+      "id": "s39",
+      "turkish": "Kraliçe geldiğinde kalabalık neşelenecek.",
+      "english": "The crowd will cheer when the Queen arrives."
+    },
+    {
+      "id": "s40",
+      "turkish": "İskoçya maçı kazanacak.",
+      "english": "Scotland will win the game."
+    },
+    {
+      "id": "s41",
+      "turkish": "Bu oyuncular iyi bir takım oluşturacaklar.",
+      "english": "These players will make a good team."
+    },
+    {
+      "id": "s42",
+      "turkish": "Hikaye onu gerçekten güldürecek.",
+      "english": "The story will really make him laugh."
+    },
+    {
+      "id": "s43",
+      "turkish": "İnsanlar her yere çöp bırakacak.",
+      "english": "People will leave litter everywhere."
+    },
+    {
+      "id": "s44",
+      "turkish": "Formilii hatırlamayacak.",
+      "english": "He won't remember the formula."
+    },
+    {
+      "id": "s45",
+      "turkish": "Muhtemelen sonucu yakında öğreneceğiz.",
+      "english": "We'll probably know the result soon."
+    },
+    {
+      "id": "s46",
+      "turkish": "Bir gün insanlar güneş sistemi paket turuna çıkacak.",
+      "english": "One day people will go on a package tour of the solar system."
+    },
+    {
+      "id": "s47",
+      "turkish": "Jane okuldan eve gelecek ve arkadaşlarım arayacak.",
+      "english": "Jane will come home from school and ring up the friends."
+    },
+    {
+      "id": "s48",
+      "turkish": "Programda bir konuşma yapacağım.",
+      "english": "I will give a speech in the program."
+    },
+    {
+      "id": "s49",
+      "turkish": "Robert ıınıversiteye gidecek.",
+      "english": "Robert will be going to the varsity."
+    },
+    {
+      "id": "s50",
+      "turkish": "Tom yarın saat beşte o yere ulaşacak.",
+      "english": "Tom will reach that place at five o'clock tomorrow."
+    },
+    {
+      "id": "s51",
+      "turkish": "Programda modern şarkılar sdyleyeceğim.",
+      "english": "I will sing modern songs in the program."
+    },
+    {
+      "id": "s52",
+      "turkish": "Projeyi yapmanıza yardımcı olacağım.",
+      "english": "I will help you to do the project."
+    },
+    {
+      "id": "s53",
+      "turkish": "Alice bu durumda size yardımcı olacaktır.",
+      "english": "Alice will assist you in this case."
+    },
+    {
+      "id": "s54",
+      "turkish": "Ev işimizi yapacağız.",
+      "english": "We will do our housework."
+    },
+    {
+      "id": "s55",
+      "turkish": "Robin yerimize gelecek.",
+      "english": "Robin will come to our place."
+    },
+    {
+      "id": "s56",
+      "turkish": "Alana programda country şarkılan sdyleyecek.",
+      "english": "Alana will sing country songs in the program."
+    },
+    {
+      "id": "s57",
+      "turkish": "Bob bir sür yazacak.",
+      "english": "Bob will write a poem."
+    },
+    {
+      "id": "s58",
+      "turkish": "Görevi Ben yapacak.",
+      "english": "Ben will do the assignment."
+    },
+    {
+      "id": "s59",
+      "turkish": "Henry, Mart'ta italya'ya seyahat edecek.",
+      "english": "Henry will travel to Italy in March."
+    },
+    {
+      "id": "s60",
+      "turkish": "Akşam seninle buluşacağım.",
+      "english": "I will meet with you in the evening."
+    },
+    {
+      "id": "s61",
+      "turkish": "Bu Cuma bir film izleyeceğiz.",
+      "english": "We will watch a movie this Friday."
+    },
+    {
+      "id": "s62",
+      "turkish": "Patrick, siz eve varmadan önce yemedi pişirecek.",
+      "english": "Patrick will cook the meal before you reach home."
+    },
+    {
+      "id": "s63",
+      "turkish": "Dona tathyi hazırlayacak.",
+      "english": "Dona will prepare the dessert."
+    },
+    {
+      "id": "s64",
+      "turkish": "Evlerinde bir parti düzenleyecekler.",
+      "english": "They will arrange a party at their home."
+    },
+    {
+      "id": "s65",
+      "turkish": "Tom bunu duyduktan sonra ıızülecek.",
+      "english": "Tom will get upset after hearing this."
+    },
+    {
+      "id": "s66",
+      "turkish": "Kevin buraya gelmeden önce kuzeniyle buluşacak.",
+      "english": "Kevin will go to meet with his cousin before he comes here."
+    },
+    {
+      "id": "s67",
+      "turkish": "Oyunda Hamlet rolünii oynayacağım.",
+      "english": "I will perform the role of Hamlet in the play."
+    },
+    {
+      "id": "s68",
+      "turkish": "Ayrılma zamanı geldiğinde ağlayacağım.",
+      "english": "I will cry when it's time to leave."
+    },
+    {
+      "id": "s69",
+      "turkish": "Aileen ilk romanını bu Ekim ayında tamamlayacak.",
+      "english": "Aileen will complete her first novel this October."
+    },
+    {
+      "id": "s70",
+      "turkish": "Kanye West, Başkan adayı olacak.",
+      "english": "Kanye West will run for President."
+    },
+    {
+      "id": "s71",
+      "turkish": "Türtalart pişirecekler.",
+      "english": "They will bake the pies."
+    },
+    {
+      "id": "s72",
+      "turkish": "Akşam varacağız.",
+      "english": "We will arrive in the evening."
+    },
+    {
+      "id": "s73",
+      "turkish": "Bilgileri aldığımda size göndereceğim.",
+      "english": "I will send you the information when I get it."
+    },
+    {
+      "id": "s74",
+      "turkish": "E-postayı tercüme edeceğim, böylece Bay Smith'in okuyabilir",
+      "english": "I will translate the email, so Mr. Smith can read it."
+    },
+    {
+      "id": "s75",
+      "turkish": "Bu ağır masayı taşımama yardım (edecek) eder misin?",
+      "english": "Will you help me move this heavy table?"
+    },
+    {
+      "id": "s76",
+      "turkish": "Akşam yemeği yapacak mısın?",
+      "english": "Will you make dinner?"
+    },
+    {
+      "id": "s77",
+      "turkish": "Ödevini senin için yapmayacağım.",
+      "english": "I will not do your homework for you."
+    },
+    {
+      "id": "s78",
+      "turkish": "Bütün ev işlerini kendim yapmayacağım!",
+      "english": "I won't do all the housework myself!"
+    },
+    {
+      "id": "s79",
+      "turkish": "Geldiğimde seni arayacağım.",
+      "english": "I will call you when I arrive."
+    },
+    {
+      "id": "s80",
+      "turkish": "Herkes ucuz sağlık sigortasına erişecek.",
+      "english": "Everyone will access to inexpensive health insurance."
+    },
+    {
+      "id": "s81",
+      "turkish": "Ona sürpriz partiden bahsetmeyeceğime söz veriyorum.",
+      "english": "I promise I will not tell him about the surprise party."
+    },
+    {
+      "id": "s82",
+      "turkish": "Merak etmeyin, onlara haber vereceğim.",
+      "english": "Don't worry, I'll inform them."
+    },
+    {
+      "id": "s83",
+      "turkish": "Sırrını kimseye söylemeyeceğim.",
+      "english": "I won't tell anyone your secret."
+    },
+    {
+      "id": "s84",
+      "turkish": "Mektubu en yakın arkadaşlarına yazacaklar.",
+      "english": "They will write the letter to their best friend."
+    },
+    {
+      "id": "s85",
+      "turkish": "Dükkam kapatacak.",
+      "english": "He will close the shop."
+    },
+    {
+      "id": "s86",
+      "turkish": "Hafta sonu arkadaşını görecek.",
+      "english": "She will see her friend at the weekend."
+    },
+    {
+      "id": "s87",
+      "turkish": "Otogara gittiğimde gazete okuyacağım.",
+      "english": "I will read the newspaper when I go to bus station."
+    },
+    {
+      "id": "s88",
+      "turkish": "Yarın, güneş saat 6:00'da doğacak.",
+      "english": "Tomorrow, the sun will rise at 6:00 am."
+    },
+    {
+      "id": "s89",
+      "turkish": "Başka bir ıılkeye taşındığında seni özleyeceğim.",
+      "english": "I will miss you when you move to another country."
+    },
+    {
+      "id": "s90",
+      "turkish": "Mark arabamı tamir edecek.",
+      "english": "Mark will fix my car."
+    },
+    {
+      "id": "s91",
+      "turkish": "Tiyatroya gitmeyeceğim.",
+      "english": "I won't go to the theater."
+    },
+    {
+      "id": "s92",
+      "turkish": "Yarın, babam yeni bir işe başvuracak.",
+      "english": "Tomorrow, my father will apply for a new job."
+    },
+    {
+      "id": "s93",
+      "turkish": "Sorular bir daha tekrar etmeyeceğiz.",
+      "english": "We won't repeat the questions again."
+    },
+    {
+      "id": "s94",
+      "turkish": "Bu portakal suyuyla daha iyi hissedeceksin.",
+      "english": "You'll feel better with this orange juice."
+    },
+    {
+      "id": "s95",
+      "turkish": "Korkarım beni hatırlamayacaksın.",
+      "english": "I am afraid you won't remember me."
+    },
+    {
+      "id": "s96",
+      "turkish": "Acıtacak mı?",
+      "english": "Will it hurt?"
+    },
+    {
+      "id": "s97",
+      "turkish": "Çay yapacağım.",
+      "english": "I will make a tea."
+    },
+    {
+      "id": "s98",
+      "turkish": "En iyi arkadaşlar ile tamışacak.",
+      "english": "She will meet with her best friends."
+    },
+    {
+      "id": "s99",
+      "turkish": "Dışarıda kalacak.",
+      "english": "It will stay in the outside."
+    },
+    {
+      "id": "s100",
+      "turkish": "Muhtemelen kazanacağız.",
+      "english": "We will probably win."
+    }
+  ],
+  "aux-11": [
+    {
+      "id": "s1",
+      "turkish": "Yüki bizimle filme gelecek.",
+      "english": "Yuki is going to come to the movie with us."
+    },
+    {
+      "id": "s2",
+      "turkish": "Ailemiz Alaska'ya taşınacak.",
+      "english": "Our family is going to move to Alaska."
+    },
+    {
+      "id": "s3",
+      "turkish": "Bu hafta sonu Pazartesi ispanyolca sınavına çalışacağız.",
+      "english": "This weekend we are going to study for the Spanish test on Monday."
+    },
+    {
+      "id": "s4",
+      "turkish": "Dört mil koşacaklar.",
+      "english": "They are going to to run four miles."
+    },
+    {
+      "id": "s5",
+      "turkish": "Yarın akşam New York'a gidecekler.",
+      "english": "They are going to drive to New York tomorrow evening."
+    },
+    {
+      "id": "s6",
+      "turkish": "Bu öğleden sonra futbol oynayacağım, bu yüzden partiye gelemem.",
+      "english": "I am going to play football this afternoon so I can't make it to the party."
+    },
+    {
+      "id": "s7",
+      "turkish": "John ile yarın saat 5.30'da havaalanında buluşacağım.",
+      "english": "1am going to meet John at the airport tomorrow at 5.30."
+    },
+    {
+      "id": "s8",
+      "turkish": "Tatilimizi gelecek yıl Fransa'da geçirecediz.",
+      "english": "We are going to spend our holidays in France next year."
+    },
+    {
+      "id": "s9",
+      "turkish": "Kendi işimi kuracağım.",
+      "english": "I'm going to start my own business."
+    },
+    {
+      "id": "s10",
+      "turkish": "Hayatım boyunca burada yaşamayacağım.",
+      "english": "I'm not going to live here all my life."
+    },
+    {
+      "id": "s11",
+      "turkish": "Buraya eski apartman daireleri inşa edecekler.",
+      "english": "They're going to build some old people's flats here."
+    },
+    {
+      "id": "s12",
+      "turkish": "Biraz yürüyüş yapacaoim.",
+      "english": "I'm going to do some walking."
+    },
+    {
+      "id": "s13",
+      "turkish": "O an beni sokacak,",
+      "english": "That bee is going to sting me,"
+    },
+    {
+      "id": "s14",
+      "turkish": "Çocuklar yarın futbol oynamayacaklar,",
+      "english": "The kids aren't going to play soccer tomorrow,"
+    },
+    {
+      "id": "s15",
+      "turkish": "Dan siparişi müşteriye devredecek.",
+      "english": "Dan's going to take the order over to the customer."
+    },
+    {
+      "id": "s16",
+      "turkish": "Kızlar \"Amazing Grace\" sarkisim sdyleyecek.",
+      "english": "The girls are going to sing ‘Amazing Grace'."
+    },
+    {
+      "id": "s17",
+      "turkish": "Bu gece odasını temizleyecek.",
+      "english": "He is going to clean up his room tonight."
+    },
+    {
+      "id": "s18",
+      "turkish": "Evi satın almayacaklar.",
+      "english": "They aren't going to buy the house."
+    },
+    {
+      "id": "s19",
+      "turkish": "Teddy ve Şam bir daha o restoranda yemek yemeyecekler.",
+      "english": "Teddy and Sam aren't going to eat at that restaurant again."
+    },
+    {
+      "id": "s20",
+      "turkish": "Kararım konusunda kendimi kötü hissedecek miyim?",
+      "english": "Am I going to feel bad about my decision?"
+    },
+    {
+      "id": "s21",
+      "turkish": "Bu gece filmi izleyecek mi?",
+      "english": "Is he going to watch the film tonight?"
+    },
+    {
+      "id": "s22",
+      "turkish": "Yarın yarışa katılacak mişimiz?",
+      "english": "Are you going to participate in the race tomorrow?"
+    },
+    {
+      "id": "s23",
+      "turkish": "Neden o arabayı almayacaksın?",
+      "english": "Why aren't you going to buy that car?"
+    },
+    {
+      "id": "s24",
+      "turkish": "O işi bitireceksiniz.",
+      "english": "You are going to finish that work."
+    },
+    {
+      "id": "s25",
+      "turkish": "Tatilini Hawaii'de geçirmeyecek.",
+      "english": "She is not going to spend her vacation in Hawaii."
+    },
+    {
+      "id": "s26",
+      "turkish": "Michelle Önümüzdeki yıl tıp fakültesine başlayacak.",
+      "english": "Michelle is going to begin medical school next year."
+    },
+    {
+      "id": "s27",
+      "turkish": "Alaska'ya kadar gidecekler.",
+      "english": "They are going to drive all the way to Alaska."
+    },
+    {
+      "id": "s28",
+      "turkish": "Partiye kimi davet edeceksiniz?",
+      "english": "Who are you going to invite to the party?"
+    },
+    {
+      "id": "s29",
+      "turkish": "John'un doğum giinii pastasını kim yapacak?",
+      "english": "Who is going to make John's birthday cake?"
+    },
+    {
+      "id": "s30",
+      "turkish": "Önümüzdeki yıl ne yapacaksın?",
+      "english": "What are you going to do next year?"
+    },
+    {
+      "id": "s31",
+      "turkish": "Ekonomi hızla toparlanacak.",
+      "english": "The economy is going to recover quickly."
+    },
+    {
+      "id": "s32",
+      "turkish": "Bir spor salonuna katılacağım.",
+      "english": "I'm going to join a gym."
+    },
+    {
+      "id": "s33",
+      "turkish": "Daha fazla kitap okuyacağım.",
+      "english": "I'm going to read more books."
+    },
+    {
+      "id": "s34",
+      "turkish": "Bu yıl borcumdan kurtulacağım.",
+      "english": "I'm going to get out of debt this year."
+    },
+    {
+      "id": "s35",
+      "turkish": "Bazı gönüllii işler yapmaya başlayacağım.",
+      "english": "I'm going to start doing some volunteer work."
+    },
+    {
+      "id": "s36",
+      "turkish": "Jen, hedefine ulaşmadan pes etmeyecek.",
+      "english": "Jen is not going to quit before she reaches her goal."
+    },
+    {
+      "id": "s37",
+      "turkish": "Buradan ne zaman ayrılacak?",
+      "english": "When is he going to leave here?"
+    },
+    {
+      "id": "s38",
+      "turkish": "Ödevini ne zaman yapacaksın?",
+      "english": "When are you going to do your homework?"
+    },
+    {
+      "id": "s39",
+      "turkish": "Bu akşam neyi tamir edecek?",
+      "english": "What is he going to mend this evening?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Ne zaman öğrenime başlayacaklar?",
+      "english": "When are they going to start studying?"
+    },
+    {
+      "id": "s41",
+      "turkish": "Gömlekleri neden ııtüleyecek?",
+      "english": "Why is she going to iron the shirts?"
+    },
+    {
+      "id": "s42",
+      "turkish": "Telefon faturasını nasıl Gdeyeceksiniz?",
+      "english": "How are you going to pay the telephone bill?"
+    },
+    {
+      "id": "s43",
+      "turkish": "Hediyeleri onlar segcmeyecek mi?",
+      "english": "Aren't they going to choose the presents?"
+    },
+    {
+      "id": "s44",
+      "turkish": "Yıkamayı o yapmayacak mı?",
+      "english": "Isn't she going to do the washing?"
+    },
+    {
+      "id": "s45",
+      "turkish": "Onunla konuşacak mısın?",
+      "english": "Are you going to talk to him?"
+    },
+    {
+      "id": "s46",
+      "turkish": "Siteye kim bir blok yaşlılar dairesi inşa edecek?",
+      "english": "Who are going to build a block of old people's flats on the site?"
+    },
+    {
+      "id": "s47",
+      "turkish": "Sinema yakında kapanacak.",
+      "english": "The cinema is going to close soon."
+    },
+    {
+      "id": "s48",
+      "turkish": "Bay Düdley çalışmaya devam edecek.",
+      "english": "Mr Dudley is going to continue working."
+    },
+    {
+      "id": "s49",
+      "turkish": "Bu çıt yakında yıkılacak.",
+      "english": "This fence is going tofall down soon."
+    },
+    {
+      "id": "s50",
+      "turkish": "Kendi işimi kuracağım.",
+      "english": "I'm going to start my own business."
+    },
+    {
+      "id": "s51",
+      "turkish": "Hayatım boyunca burada yaşamayacağım.",
+      "english": "I'm not going to live here all my life."
+    },
+    {
+      "id": "s52",
+      "turkish": "Hafta sonu arkadaşlarımızı ziyaret edecediz.",
+      "english": "We're going to visitfriends at the weekend."
+    },
+    {
+      "id": "s53",
+      "turkish": "Bir gün güneş soğuyacak.",
+      "english": "One day the sun is going to cool down."
+    },
+    {
+      "id": "s54",
+      "turkish": "Yağmur yağacak. Şu bulutlara bak.",
+      "english": "It's going to rain. Look at those clouds."
+    },
+    {
+      "id": "s55",
+      "turkish": "Yardım! Düşeceğim!",
+      "english": "Help! I'm going to fall!"
+    },
+    {
+      "id": "s56",
+      "turkish": "Biraz yürüyüş yapacağım.",
+      "english": "I'm going to do some walking."
+    },
+    {
+      "id": "s57",
+      "turkish": "Bay Smith emekli olduğunda deniz kenarına taşınacak.",
+      "english": "Mr. Smith is going to move to the seaside when he retires."
+    },
+    {
+      "id": "s58",
+      "turkish": "Frank Tip okuyacak.",
+      "english": "Frank is going to study Medicine."
+    },
+    {
+      "id": "s60",
+      "turkish": "Geldiklerinde nerede kalacaklar?",
+      "english": "Where are they going to stay when they come?"
+    },
+    {
+      "id": "s61",
+      "turkish": "Sonuçta yeni evi satın almayacak.",
+      "english": "She isn't going to buy the new house afterall."
+    },
+    {
+      "id": "s62",
+      "turkish": "Dikkatli olun! O bulaşıklan düşüreceksin!",
+      "english": "Be careful! You're going to drop those dishes!"
+    },
+    {
+      "id": "s63",
+      "turkish": "İndiğimizde arkadaşlarımla yemek yiyeceğim.",
+      "english": "I am going to dine with friends when we land."
+    },
+    {
+      "id": "s64",
+      "turkish": "Daha sonra yiyecek bir şeyler alacağım.",
+      "english": "I'm going to get something to eat later."
+    },
+    {
+      "id": "s65",
+      "turkish": "Bu harika takımı ne zaman giyeceksin?",
+      "english": "When are you going to wear that great suit?"
+    },
+    {
+      "id": "s66",
+      "turkish": "Partiye bisikletle gidecek misiniz?",
+      "english": "Are you going to cycle to the party?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Doğum gününü kutlayacak mı?",
+      "english": "Is she going to celebrate her birthday?"
+    },
+    {
+      "id": "s68",
+      "turkish": "Sabah saat 8'de ofise gidiyoruz.",
+      "english": "We are going to the office at 8 o'clock in the morning."
+    },
+    {
+      "id": "s69",
+      "turkish": "Daha çok çalışmazsam bu sınavda başarısız olacağım.",
+      "english": "I am going to fail this exam if I do not study harder."
+    },
+    {
+      "id": "s70",
+      "turkish": "Mevcut belediye başkanı seçimleri kazanacak, oyların çoğuna sahip.",
+      "english": "The current mayor is going to win the elections, he has most of the votes."
+    },
+    {
+      "id": "s71",
+      "turkish": "Gerçekten üşüyorum. Isıtmayı ağacağım.",
+      "english": "1am really cold. I am going to turn the heating on."
+    },
+    {
+      "id": "s72",
+      "turkish": "Bu gece için yiyeceğimiz kalmadı. Alışverişe gidiyorum.",
+      "english": "We have no food left for tonight. I am going to go for shopping."
+    },
+    {
+      "id": "s73",
+      "turkish": "Aym hikayeyi anlatmayacaklar.",
+      "english": "They aren't going to tell the same story."
+    },
+    {
+      "id": "s74",
+      "turkish": "Yarın sana ödevlerinde yardım edecek.",
+      "english": "She is going to help you tomorrow with your homework."
+    },
+    {
+      "id": "s75",
+      "turkish": "Kız kardeşimle sinemaya gideceğim.",
+      "english": "I am going to go to the cinema with my sister."
+    },
+    {
+      "id": "s76",
+      "turkish": "Değişim döneminiz için nereye gideceksiniz?",
+      "english": "Where are you going to go for your exchange semester?"
+    },
+    {
+      "id": "s77",
+      "turkish": "Havaalanına geldiniz mi? Seni eve bırakacağım.",
+      "english": "Have you arrived at the airport? I am going to give you a lift home."
+    },
+    {
+      "id": "s78",
+      "turkish": "Neden bu gece spor salonuna gitmiyor?",
+      "english": "Why is he not going to the gym tonight?"
+    },
+    {
+      "id": "s79",
+      "turkish": "Önümüzdeki on yıl içinde çocuklarım olacak.",
+      "english": "I'm going to have children within the next ten years."
+    },
+    {
+      "id": "s80",
+      "turkish": "Bir hafta tatil yapmayacak mısın?",
+      "english": "Aren't you going to get a week off?"
+    },
+    {
+      "id": "s81",
+      "turkish": "Bayan Lucky kasabada bir arkadaşıyla buluşacak.",
+      "english": "Mrs Lucky is going to meet a friend in town."
+    },
+    {
+      "id": "s82",
+      "turkish": "1.000$ kazandım. Yeni bir TV alacağım.",
+      "english": "I have won $I,000. I am going to buy a new TV."
+    },
+    {
+      "id": "s83",
+      "turkish": "Yarın annemi görmeyeceoiz.",
+      "english": "We're not going to see my mother tomorrow."
+    },
+    {
+      "id": "s84",
+      "turkish": "Ne zaman tatile çıkacaksınız?",
+      "english": "When are you going to go on holiday?"
+    },
+    {
+      "id": "s85",
+      "turkish": "Yarın yatak odasını boyayacağız.",
+      "english": "We're going to paint the bedroom tomorrow."
+    },
+    {
+      "id": "s86",
+      "turkish": "Annemi Nisan ayında göreceğim.",
+      "english": "I am going to see my mother in April."
+    },
+    {
+      "id": "s87",
+      "turkish": "Çok fazla taşıyorsun. Senin için kaptyı ağacağım.",
+      "english": "You're carrying too much. I am going to open the door for you."
+    },
+    {
+      "id": "s88",
+      "turkish": "Dersimize başlamadan önce, bir inceleme yapacağız.",
+      "english": "Before we start our lesson, we are going to have a review."
+    },
+    {
+      "id": "s89",
+      "turkish": "Yarın seni gördüğümde, sana yeni kitabım göstereceğim.",
+      "english": "When I see you tomorrow, I am going to show you my new book."
+    },
+    {
+      "id": "s90",
+      "turkish": "Biraz kestirdikten sonra çok daha iyi hissedeceksiniz.",
+      "english": "After you take a nap, you are going to feel a lot better."
+    },
+    {
+      "id": "s91",
+      "turkish": "Sigaraları açıldığında köşe bakkaldan alacağım.",
+      "english": "I am going to buy the cigarettes from the corner shop when it opens."
+    },
+    {
+      "id": "s92",
+      "turkish": "Otobüs gelene kadar barınakta bekleyeceğiz.",
+      "english": "We are going to wait in the shelter until the bus comes."
+    },
+    {
+      "id": "s93",
+      "turkish": "Uğ yıl içinde farklı bir ıılkede yaşayacağım.",
+      "english": "In three years I am going to live in a different country."
+    },
+    {
+      "id": "s94",
+      "turkish": "Çocuklarımızı yanınızda Fransa'ya gotiirecek misiniz?",
+      "english": "Are you going to take your children with you to France?"
+    },
+    {
+      "id": "s95",
+      "turkish": "Kardeşim okuldan sonra bizi alacak.",
+      "english": "My brother is going to pick us up after school."
+    },
+    {
+      "id": "s96",
+      "turkish": "Garson birazdan yiyecekleri getirecek.",
+      "english": "The waiter is going to bring the food in a moment."
+    },
+    {
+      "id": "s97",
+      "turkish": "Markete gidip marketleri alacağım.",
+      "english": "I am going to go to the store and pick up the groceries."
+    },
+    {
+      "id": "s98",
+      "turkish": "Köpeği bloğun etrafında birkaç kez gezdirecediz.",
+      "english": "We are going to walk the dog around the block a few times."
+    },
+    {
+      "id": "s99",
+      "turkish": "Yarın arabasını tamir etmeyecekler mi?",
+      "english": "Aren't they going to fix her car tomorrow?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Doktor hastalarını muayene etmeyecek mi?",
+      "english": "Isn't the doctor going to examine his patients?"
+    }
+  ],
+  "aux-12": [
+    {
+      "id": "s1",
+      "turkish": "Bu mektubu aldığında, ben gitmiş olacağım.",
+      "english": "By the time you get this letter, I will have left."
+    },
+    {
+      "id": "s2",
+      "turkish": "Öğle yemesine kadar gelmiş olacak.",
+      "english": "She will have arrived by lunch."
+    },
+    {
+      "id": "s3",
+      "turkish": "Akşam 7'ye kadar bize katılmış olmayacaklar mı?",
+      "english": "Won't they have joined us by 7 pm?"
+    },
+    {
+      "id": "s4",
+      "turkish": "Jane, 30 yasına geldiğinde, dünyayı dolaşmış olacak.",
+      "english": "Jane will have traveled the world by the time she turns 30."
+    },
+    {
+      "id": "s5",
+      "turkish": "Eve döndüğünde, çoktan akşam yemeoi yemiş olacağım, ama tath için dışart çıkabiliriz!",
+      "english": "When you get home I will have eaten dinner already, but we can go out for dessert!"
+    },
+    {
+      "id": "s6",
+      "turkish": "New York'a taşındıklarında, 10 eyalette yaşamış olacaklar.",
+      "english": "They will have lived in 10 states once they move to New York."
+    },
+    {
+      "id": "s7",
+      "turkish": "Sınava çoktan girmiş olacak böylece çalışmasına gerek kalmayacak.",
+      "english": "He will have taken the exam already, so he won't need to study more."
+    },
+    {
+      "id": "s8",
+      "turkish": "Jack, bu metni Türkçeye ccevirmiş olacak.",
+      "english": "Jack will have translated this text into Turkish."
+    },
+    {
+      "id": "s9",
+      "turkish": "Buraya geldiğinde, doğum günü hediyesini vermiş olacağım.",
+      "english": "When she gets here, I will have given her birthday present."
+    },
+    {
+      "id": "s10",
+      "turkish": "Yarışmanın sonucunu beklemiş olacaklar.",
+      "english": "They will have waited for the result of the competition."
+    },
+    {
+      "id": "s11",
+      "turkish": "Yazarın makalesini eleştirmiş olacak.",
+      "english": "He will have critisized the article of the author."
+    },
+    {
+      "id": "s12",
+      "turkish": "Görevi Pazartesi'ye kadar tamamlamış olacağım.",
+      "english": "I will have completed the assignment by Monday."
+    },
+    {
+      "id": "s13",
+      "turkish": "Babası gelmeden Önce, evi temizlemiş olacak.",
+      "english": "She will have cleaned the house before her father comes."
+    },
+    {
+      "id": "s14",
+      "turkish": "Alex ihaleyi yarına kadar ibraz etmiş olacak.",
+      "english": "Alex will have submitted the tender by tomorrow."
+    },
+    {
+      "id": "s15",
+      "turkish": "Ben onu görmeye gitmeden önce, orayı terk etmiş olacak.",
+      "english": "Before I go to see her, she will have left the place."
+    },
+    {
+      "id": "s16",
+      "turkish": "Köprü yapımını Ocak'a kadar bitirmiş olacaklar.",
+      "english": "They will have finished making the bridge by January."
+    },
+    {
+      "id": "s17",
+      "turkish": "Kitabı yarın bitirmiş olacağım.",
+      "english": "I will have finished the book by tomorrow."
+    },
+    {
+      "id": "s18",
+      "turkish": "Angela yıl sonuna kadar yeni bir iş bulmuş olacak.",
+      "english": "Angela will have found a new job by the end of the year."
+    },
+    {
+      "id": "s19",
+      "turkish": "Projeyi Önümüzdeki Pazartesi bitirmiş olacağız.",
+      "english": "We will have finished the project by next Monday."
+    },
+    {
+      "id": "s20",
+      "turkish": "Sinemaya gittiğimizde, film çoktan başlamış olacak.",
+      "english": "By the time we get to the cinema, the film will have already started."
+    },
+    {
+      "id": "s21",
+      "turkish": "Bu bölümün sonunda, size tüm zamanlar 6gretmiş olacağım.",
+      "english": "I will have taught you all the tenses by the end of this chapter."
+    },
+    {
+      "id": "s22",
+      "turkish": "Öğrenci bu yılın sonuna kadar derslerin yarışım kaçırmış olacak.",
+      "english": "The student will have missed half of the classes by the end of this year."
+    },
+    {
+      "id": "s23",
+      "turkish": "Dönem sonunda tüm kitapları okumuş olacak.",
+      "english": "She will have read all the books by the end of the semester."
+    },
+    {
+      "id": "s24",
+      "turkish": "Bir aydır birbirlerini görmemiş olacaklar.",
+      "english": "They will not have seen each other for a month."
+    },
+    {
+      "id": "s25",
+      "turkish": "O zamana kadar büyükannemi ziyaret etmiş olacağım.",
+      "english": "I will have visited my grandma by then."
+    },
+    {
+      "id": "s26",
+      "turkish": "Bu sonbaharda iki yıl boyunca yeni evlerinde yaşamış olacaklar.",
+      "english": "They will have lived at their new home for two years this fall."
+    },
+    {
+      "id": "s27",
+      "turkish": "O filmi zaten izlemiş olacağız.",
+      "english": "We will have seen that movie already."
+    },
+    {
+      "id": "s28",
+      "turkish": "Bu hafta sonu kutlamalarından sonra çok para harcamış olacağım.",
+      "english": "I will have spent a lot of money after this weekend's festivities."
+    },
+    {
+      "id": "s29",
+      "turkish": "Sen vardığınızda, bir otel bulmuş olacağım.",
+      "english": "By the time you arrive, I will have found a hotel."
+    },
+    {
+      "id": "s30",
+      "turkish": "Bu akşam bulaşıkları yıkmış olacazim.",
+      "english": "By this evening, I will have done the dishes."
+    },
+    {
+      "id": "s31",
+      "turkish": "Öğretmenin Pazartesi sabahına kadar ödevimizi notlandıracağımı düşünüyor musun?",
+      "english": "Do you think the teacher will have marked our homework by Monday morning?"
+    },
+    {
+      "id": "s32",
+      "turkish": "Bu yılın sonunda yurtdışında altı farklı ıılkeye seyahat etmiş olacaksın.",
+      "english": "By the end of this year abroad, you will have travelled to six different countries."
+    },
+    {
+      "id": "s33",
+      "turkish": "Buraya geldiğinde, ödevimi bitirmiş olacağım.",
+      "english": "When you get here, I will have finished my homework."
+    },
+    {
+      "id": "s34",
+      "turkish": "Son sınavımı geçtikten sonra, her sertifika düzeyini tamamlamış olacağım.",
+      "english": "Once I pass my last exam, I will have completed every level of certification."
+    },
+    {
+      "id": "s35",
+      "turkish": "Akşam yemefğine kadar ders kitabımda iki bölüm daha okumuş olacağım.",
+      "english": "I will have read two more chapters in my textbook by dinner."
+    },
+    {
+      "id": "s36",
+      "turkish": "Buğtın çerezlerinizin geri kalanım satmayı bitirdiğinde, satışlarda 20 dolar kazanmış olacaksın.",
+      "english": "You will have made $20 in sales when you finish selling the rest of your cookies today."
+    },
+    {
+      "id": "s37",
+      "turkish": "Bunu okuduğunda, gitmiş olacağım.",
+      "english": "By the time you read this, I will have left."
+    },
+    {
+      "id": "s38",
+      "turkish": "Önümüzdeki hafta bu saatlerde raporunu bitirmiş olacaksın.",
+      "english": "You will have finished your report by this time next week."
+    },
+    {
+      "id": "s39",
+      "turkish": "Saat 17:00'de gelmiş olmayacaklar mı?",
+      "english": "Won't they have arrived by 5:00?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Seni aldığımda, yemek yemiş olacak mısın?",
+      "english": "Will you have eaten when I pick you up?"
+    },
+    {
+      "id": "s41",
+      "turkish": "Vardığında, muhtemelen ise başlamış olacağım.",
+      "english": "When you arrive, I will probably have started the job."
+    },
+    {
+      "id": "s42",
+      "turkish": "Biz oraya vardığımızda, akşam yemedi yemiş olacaklar.",
+      "english": "They will have had dinner by the time we get there."
+    },
+    {
+      "id": "s43",
+      "turkish": "Bir yıl içinde, daha ciddi bir işe başlamış olacak.",
+      "english": "In a year's time he will have taken to some more serious sort of job."
+    },
+    {
+      "id": "s44",
+      "turkish": "Bu ayın sonuna kadar, işinin çoğunu yapmış olacaksın.",
+      "english": "You will have done a lot of your work by the end of this month."
+    },
+    {
+      "id": "s45",
+      "turkish": "Kasım'a kadar bütün yapraklar düşmüş olacak.",
+      "english": "By November all the leaves will have fallen."
+    },
+    {
+      "id": "s46",
+      "turkish": "Acele etmezse, o gelmeden gitmiş olmayacaklar.",
+      "english": "If he doesn't hurry, they won't have left before he comes."
+    },
+    {
+      "id": "s47",
+      "turkish": "Eminim yarın tüm bu kuralları unutmuş olacaksın.",
+      "english": "I am sure that tomorrow you will have forgotten all these rules."
+    },
+    {
+      "id": "s48",
+      "turkish": "Çabuk ol! Sen onu kurtarmadan önce, çocuk boğulmuş olacak.",
+      "english": "Be quick! The child will have drowned before you rescue it."
+    },
+    {
+      "id": "s49",
+      "turkish": "Edatların kullanımım öğrenmeden Önce, yaşlanmış olacak.",
+      "english": "She will have grown old before she learns the use of prepositions."
+    },
+    {
+      "id": "s50",
+      "turkish": "Havacı, bu ayın sonundan Önce, bin milden fazla uçmuş olacak.",
+      "english": "The airman will have flown more than a thousand miles, before the end of this month."
+    },
+    {
+      "id": "s51",
+      "turkish": "Beni saat dokuzdan sonra ararsan, doktorla konuşmuş olacağım.",
+      "english": "If you ring me up after nine o'clock, I will have spoken to the doctor."
+    },
+    {
+      "id": "s52",
+      "turkish": "Sinin geğmeden önce, yirmi mil daha yol almış olacağız.",
+      "english": "We will have travelled twenty miles more before we cross the frontier."
+    },
+    {
+      "id": "s53",
+      "turkish": "Eminim yeni yolu Nisan'dan Önce tamamlamış olacaklar.",
+      "english": "I am sure they will have completed the new road before April."
+    },
+    {
+      "id": "s54",
+      "turkish": "Tamara, Haziran'a kadar Lisans Derecesini tamamlamış olacak.",
+      "english": "Tamara will have completed her Bachelor's Degree by June."
+    },
+    {
+      "id": "s55",
+      "turkish": "Sheila, Eylül'de okula başladığında, burs kazanmış olacak.",
+      "english": "Sheila will have gotten the scholarship by the time she starts school in September."
+    },
+    {
+      "id": "s56",
+      "turkish": "Önümüzdeki aya kadar, umarım toplum merkezini görmüş olacaklar.",
+      "english": "By this time next month, I hope they will have seen the community center."
+    },
+    {
+      "id": "s57",
+      "turkish": "Uçağın kalktığında, mesajı almış olacak mı?",
+      "english": "Will he have received the message by the time your flight takes off?"
+    },
+    {
+      "id": "s58",
+      "turkish": "Sen sabah kalkana kadar, Dana gece vardiyasım bitirmiş olmayacak.",
+      "english": "Dana won't have finished the night shift by the time you get up in the morning."
+    },
+    {
+      "id": "s59",
+      "turkish": "Uçağa bindiğimizde, bagajları çoktan yüklemiş olacaklar.",
+      "english": "By the time we get on the plane, they will already have loaded the luggage."
+    },
+    {
+      "id": "s60",
+      "turkish": "2025'e kadar, umarım araştırmacılar kansere bir gare bulmuş olacaklar.",
+      "english": "By 2025, I hope researchers will have found a cure for cancer."
+    },
+    {
+      "id": "s61",
+      "turkish": "Beni yarın ön birde ara. Toplantı bitmiş olacadından daha fazlaşım 6greneceğim.",
+      "english": "Call me tomorrow at eleven. I'll know more because the meeting will have finished."
+    },
+    {
+      "id": "s62",
+      "turkish": "Önümüzdeki yıl onu beş yıldır tanımış olacağım ve onun yeterince güvenilir olduğunu düşünüyorum.",
+      "english": "By next year I will have known him for five years and I think he is reliable enough."
+    },
+    {
+      "id": "s63",
+      "turkish": "Umarım Önümüzdeki hafta bu saatlerde ehliyet sınavım geçmiş olacağım ve sonunda bir araba alabileceğim.",
+      "english": "Hopefully, by this time next week I will have passed my driving test and I'll finally be able to get a car."
+    },
+    {
+      "id": "s64",
+      "turkish": "Ben geri dönmeden önce, kişilerin listesini tamamlamış olacak mısın?",
+      "english": "Will you have completed the list of people before I get back so that we can discuss it?"
+    },
+    {
+      "id": "s65",
+      "turkish": "Konferansa geç kalacağını biliyor ama gelmeden önce sona ermeyeceğini umuyor.",
+      "english": "He knows he'll be late for the conference but he hopes it will not have ended before he arrives."
+    },
+    {
+      "id": "s66",
+      "turkish": "Analistler, yeni Ürün satışa çıktığında şirketin 10 milyon doların izerinde harcama yapmış olacağını sdylüyorlar.",
+      "english": "Analysts say that by the time the new product goes on sale the company will have spent over $10 million."
+    },
+    {
+      "id": "s67",
+      "turkish": "Önümüzdeki haftaya kadar tüm raporları yazmış olmayacağım.",
+      "english": "I won't have written all the reports by next week."
+    },
+    {
+      "id": "s68",
+      "turkish": "Biz geldiğimizde, çocuklar yatmış olacaklar.",
+      "english": "By the time we arrive, the kids will have gone to bed."
+    },
+    {
+      "id": "s69",
+      "turkish": "Bir saat içinde bitirmiş olacağım ve sonra bir film izleyebiliriz.",
+      "english": "I'll have finished in an hour and then we can watch a film."
+    },
+    {
+      "id": "s70",
+      "turkish": "Üç yıl içinde ıınıversiteden mezun olmuş olacağım.",
+      "english": "In three years' time, I'll have graduated from university."
+    },
+    {
+      "id": "s71",
+      "turkish": "Çocuklar, anneleri gelmeden Önce, tüm pastayı yemiş olacaklar.",
+      "english": "The children will have eaten all the cake before their mother comes."
+    },
+    {
+      "id": "s72",
+      "turkish": "Yangın, itfaiye gelmeden tüm binayı yok etmiş olacak.",
+      "english": "The fire will have destroyed the whole building before the firemen arrive."
+    },
+    {
+      "id": "s73",
+      "turkish": "Hasta, onlar hastaneye ulaşmadan önce, dlmuş olacak.",
+      "english": "The patient will have died before they reach the hospital."
+    },
+    {
+      "id": "s74",
+      "turkish": "Sen onun yerine varmadan Önce, o gitmiş olacak.",
+      "english": "He will have left before you reach his place."
+    },
+    {
+      "id": "s75",
+      "turkish": "Bu şehirden ayrılmadan önce, tüm borçlarımızı geri Gdemiş olacağız.",
+      "english": "We will have paid back all our debts before we leave this city."
+    },
+    {
+      "id": "s76",
+      "turkish": "İki hafta içinde sınava girmiş olacağız.",
+      "english": "In a fortnight's time we will have taken our exam."
+    },
+    {
+      "id": "s77",
+      "turkish": "Yarın akşama kadar, valizimi toparlamış olacağım.",
+      "english": "I will have packed my suitcase by tomorrow evening."
+    },
+    {
+      "id": "s78",
+      "turkish": "Yarın bu saatlere kadar, enjeksiyonlarımızı yaptırmış olacağız.",
+      "english": "By this time tomorrow, we will have had our injections."
+    },
+    {
+      "id": "s79",
+      "turkish": "Önümüzdeki yaz burada olacağım ama Tom gitmiş olacak.",
+      "english": "I'll still be here next summer but Tom will have left."
+    },
+    {
+      "id": "s80",
+      "turkish": "Bu işi yirmi dakika içginde bitirmiş olacağım.",
+      "english": "I will have finished this job in twenty minutes."
+    },
+    {
+      "id": "s81",
+      "turkish": "Önümüzdeki kış o tarlaya dört ev inşa etmiş olacaklar.",
+      "english": "By next winter they will have built four houses in that field."
+    },
+    {
+      "id": "s82",
+      "turkish": "Hindistan'a vardığımızda, diinyanin her yerine yelken açmış olacağız.",
+      "english": "When we reach India, we will have sailed all round the world."
+    },
+    {
+      "id": "s83",
+      "turkish": "Gittiği hızda, yirmi bir yaşına kadar bütün parasını harçamts olacaktır.",
+      "english": "At the rate he is going, he will have spent all his money by the time he is twenty-one."
+    },
+    {
+      "id": "s84",
+      "turkish": "Önümüzdeki yıl bu zamana kadar 250 dolar biriktirmiş olacağım.",
+      "english": "By this time next year, I will have saved 250 dollars."
+    },
+    {
+      "id": "s85",
+      "turkish": "Üniversite kursumun sonunda 1,200 derse gitmiş olacağım.",
+      "english": "By the end of my university course I will have attended I,200 lectures."
+    },
+    {
+      "id": "s86",
+      "turkish": "Bu haftanın sonunda, hastalığım bana 1000 dolara mal olmuş olacak.",
+      "english": "By the end of this week my illnesswill have cost me 1000 dollars."
+    },
+    {
+      "id": "s87",
+      "turkish": "Okuldan ayrıldığında, ailesi eğitimi için 25,000 dolar harcamış olacak.",
+      "english": "By the time that he leaves school his parents will have spent 25,000 dollars on his education."
+    },
+    {
+      "id": "s88",
+      "turkish": "Dönemin sonunda, on iki cildin hepsini okumuş olacağım.",
+      "english": "By the end of the term I will have read all twelve volumes."
+    },
+    {
+      "id": "s89",
+      "turkish": "Geri döndüğünde, tüm ev işlerini bitirmiş olacağım.",
+      "english": "When you come back I will have finised all the housework."
+    },
+    {
+      "id": "s90",
+      "turkish": "Polis bu zamana kadar hırsızlığı duymuş olacaktı.",
+      "english": "The police will have heard of the theft by this time."
+    },
+    {
+      "id": "s91",
+      "turkish": "Yıl sonuna kadar bütün bu şarabi iğmiş olacağız.",
+      "english": "We will have drunk all that wine by the end of the year."
+    },
+    {
+      "id": "s92",
+      "turkish": "Crewe'ye ulaştığımızda, yolculuğun yarısını yapmış olacağız.",
+      "english": "When we reach Crewe, we will have done half of the journey."
+    },
+    {
+      "id": "s93",
+      "turkish": "Bu hızla, tüm şarap kadehlerini ay sonuna kadar kırmış olacaksın.",
+      "english": "At this rate, you will have broken all the wine glasses by the end of the month."
+    },
+    {
+      "id": "s94",
+      "turkish": "Bu gdsteriden sonra, Hamlet'i yirmi iki kez görmiis olacadım.",
+      "english": "After this performance, I will have seen Hamlet twenty-two times."
+    },
+    {
+      "id": "s95",
+      "turkish": "Grev lideri, \"Gece yarisina kadar 500 adam greve cikmis olmayacak\" dedi.",
+      "english": "The strike leader said, ‘By midnight 500 men won't have come out on strike.'"
+    },
+    {
+      "id": "s96",
+      "turkish": "Şu anki oranında, ayın sonuna kadar bu kömürün tamamım yakmış olacaksın.",
+      "english": "At your present rate, you will have burnt all that coal by the end of the month."
+    },
+    {
+      "id": "s97",
+      "turkish": "Ay sonuna kadar, 5,000 kişi bu sergiyi görmüş olacak.",
+      "english": "By the end of the month, 5,000 people will have seen this exhibition."
+    },
+    {
+      "id": "s98",
+      "turkish": "Önümüzdeki Nisan'a kadar, 3,000 dolar gelir vergisi ödemiş olacağım.",
+      "english": "By next April I will have paid 3,000 dollars in income tax."
+    },
+    {
+      "id": "s99",
+      "turkish": "Oraya vardığında, konuşmalarını bitirmiş olacaklar.",
+      "english": "By the time you get there, they will have finished their speeches."
+    },
+    {
+      "id": "s100",
+      "turkish": "Hazine sorumlusu, 'Yıl sonuna kadar. tüm borçlarımızı ödemiş olacağız. \"",
+      "english": "The treasurer said, ‘By the end of the year, we will have paid off all our debts.'"
+    }
+  ],
+  "aux-13": [
+    {
+      "id": "s1",
+      "turkish": "Odaları temizliyorlar.",
+      "english": "They are cleaning the rooms."
+    },
+    {
+      "id": "s2",
+      "turkish": "Mary pencereleri yıktyor.",
+      "english": "Mary is washing the windows."
+    },
+    {
+      "id": "s3",
+      "turkish": "Masaların tozunu alıyor.",
+      "english": "She's dusting the tables."
+    },
+    {
+      "id": "s4",
+      "turkish": "Duvarlar boyuyorlar.",
+      "english": "They're painting the walls."
+    },
+    {
+      "id": "s5",
+      "turkish": "Anne bulaşıkları yıkıyor.",
+      "english": "The mother is washing the dishes."
+    },
+    {
+      "id": "s6",
+      "turkish": "Kız halıları süpürüyor.",
+      "english": "The girl is sweeping the carpets."
+    },
+    {
+      "id": "s7",
+      "turkish": "Oğlan sandalyeleri taşıyor.",
+      "english": "The boy is carrying the chairs."
+    },
+    {
+      "id": "s8",
+      "turkish": "Adam televizyonu tamir ediyor.",
+      "english": "The man is repairing the TV."
+    },
+    {
+      "id": "s9",
+      "turkish": "Biri bizi takip ediyor.",
+      "english": "Somebody is following us."
+    },
+    {
+      "id": "s10",
+      "turkish": "Yeni bir aşma kGprii inşa ediyorlar.",
+      "english": "They are building a new suspension bridge."
+    },
+    {
+      "id": "s11",
+      "turkish": "Kamyon arabayı çekiyor.",
+      "english": "The lorry is towing the car."
+    },
+    {
+      "id": "s12",
+      "turkish": "Bu öğleden sonra malları gönderiyorlar.",
+      "english": "They are sending the goods this afternoon."
+    },
+    {
+      "id": "s13",
+      "turkish": "Öğretmen yeni kelimeleri açıklıyor.",
+      "english": "The teacher is explaining the new words."
+    },
+    {
+      "id": "s14",
+      "turkish": "Müdür belgeleri şimdi imzalıyor.",
+      "english": "The director is signing the documents now."
+    },
+    {
+      "id": "s15",
+      "turkish": "Şu anda yolu asfaltlamtyorlar.",
+      "english": "They are not paving the way now."
+    },
+    {
+      "id": "s16",
+      "turkish": "Artık ona kimse bakmnyor.",
+      "english": "Nobody is looking after him now."
+    },
+    {
+      "id": "s17",
+      "turkish": "Raporlar şimdi mi yaztyorlar?",
+      "english": "Are they typing the reports now?"
+    },
+    {
+      "id": "s18",
+      "turkish": "Hala onlara yardım ediyor mu?",
+      "english": "Is he still helping them?"
+    },
+    {
+      "id": "s19",
+      "turkish": "Ne getiriyorlar?",
+      "english": "What are they bringing?"
+    },
+    {
+      "id": "s20",
+      "turkish": "Yemek yapıyor.",
+      "english": "She is cooking."
+    },
+    {
+      "id": "s21",
+      "turkish": "Trafiği polis yönlendiriyor.",
+      "english": "The policeman is directing the traffic."
+    },
+    {
+      "id": "s22",
+      "turkish": "Bir hikaye okuyorum.",
+      "english": "I am reading a story."
+    },
+    {
+      "id": "s23",
+      "turkish": "Çay içiyoruz.",
+      "english": "We are drinking tea."
+    },
+    {
+      "id": "s24",
+      "turkish": "Bazı soruları yanıtlıyor.",
+      "english": "He is answering some questions."
+    },
+    {
+      "id": "s25",
+      "turkish": "Postacı mektupları teslim ediyor.",
+      "english": "The postman is delivering the letters."
+    },
+    {
+      "id": "s26",
+      "turkish": "Daktilocu bir şeyler yazıyor.",
+      "english": "The typist is typing something."
+    },
+    {
+      "id": "s27",
+      "turkish": "Öğretmen tahtaya bir cümle yaztyor.",
+      "english": "The teacher is writing a sentence on the board."
+    },
+    {
+      "id": "s28",
+      "turkish": "Valizleri tastyorlar.",
+      "english": "They are carrying the suitcases."
+    },
+    {
+      "id": "s29",
+      "turkish": "TV izliyor.",
+      "english": "She is watching TV."
+    },
+    {
+      "id": "s30",
+      "turkish": "Güneş parlör.",
+      "english": "The sun is shining."
+    },
+    {
+      "id": "s31",
+      "turkish": "Radyoyu dinliyorum.",
+      "english": "I. am listening to the radio."
+    },
+    {
+      "id": "s32",
+      "turkish": "Okuyorlar.",
+      "english": "They are studying."
+    },
+    {
+      "id": "s33",
+      "turkish": "Köpek havliyor.",
+      "english": "The dog is barking."
+    },
+    {
+      "id": "s34",
+      "turkish": "Rehber, turistleri Sultanahmet Camii'ne gotiiriiyor.",
+      "english": "The guide is taking the tourists to the Blue Mosque."
+    },
+    {
+      "id": "s35",
+      "turkish": "Ayakkabılarını cilalıyor.",
+      "english": "He is polishing his shoes."
+    },
+    {
+      "id": "s36",
+      "turkish": "Futbol oynuyorlar.",
+      "english": "They are playing football."
+    },
+    {
+      "id": "s37",
+      "turkish": "Sekreter telefona cevap veriyor.",
+      "english": "The secretary is answering the telephone."
+    },
+    {
+      "id": "s38",
+      "turkish": "Ellerini yıkıyor.",
+      "english": "He is washing his hands."
+    },
+    {
+      "id": "s39",
+      "turkish": "Otobüs bekliyoruz.",
+      "english": "We are waiting for a bus."
+    },
+    {
+      "id": "s40",
+      "turkish": "Anahtar tamir ediyor.",
+      "english": "He is repairing the switch."
+    },
+    {
+      "id": "s41",
+      "turkish": "Çok çalıştyorlar.",
+      "english": "They are working hard."
+    },
+    {
+      "id": "s42",
+      "turkish": "Telefonda konuşuyor.",
+      "english": "She is talking on the phone."
+    },
+    {
+      "id": "s43",
+      "turkish": "Öğrenciler öğretmeni mi dinliyor yoksa kitaplarını mı okuyorlar?",
+      "english": "Are the students listening to the teacher or reading their books?"
+    },
+    {
+      "id": "s44",
+      "turkish": "Masaları veya sandalyeleri taşıyorlar mı?",
+      "english": "Are they carrying the tables or the chairs?"
+    },
+    {
+      "id": "s45",
+      "turkish": "Çay mı kahve mi içiyorlar?",
+      "english": "Are they drinking tea or coffee?"
+    },
+    {
+      "id": "s46",
+      "turkish": "Konuşuyorlar mı yoksa düşünüyorlar mı?",
+      "english": "Are they talking or thinking?"
+    },
+    {
+      "id": "s47",
+      "turkish": "Otobüs mii yoksa minibüs mii bekliyorlar?",
+      "english": "Are they waiting for a bus or a mini-bus?"
+    },
+    {
+      "id": "s48",
+      "turkish": "TV mi izliyorlar yoksa uyuyorlar mı?",
+      "english": "Are they watching TV or sleeping?"
+    },
+    {
+      "id": "s49",
+      "turkish": "Bir gazete mi yoksa dergi mi satın alıyorsun?",
+      "english": "Are you buying a newspaper or a magazine?"
+    },
+    {
+      "id": "s50",
+      "turkish": "Kapıy mi yoksa pencereyi mi kapatıyorsun?",
+      "english": "Are you closing the door or the window?"
+    },
+    {
+      "id": "s51",
+      "turkish": "Elma m yoksa portakal mi yiyorsun?",
+      "english": "Are you eating an apple or an orange?"
+    },
+    {
+      "id": "s52",
+      "turkish": "Dolma kalemini mi yoksa kurşun kalemini mi arıyorsun?",
+      "english": "Are you looking for your pen or your pencil?"
+    },
+    {
+      "id": "s53",
+      "turkish": "Kitaplarını mı yoksa defterlerini mi ağıyorsun?",
+      "english": "Are you opening your books or your notebooks?"
+    },
+    {
+      "id": "s54",
+      "turkish": "Basketbol mu yoksa voleybol mu oynuyorsunuz?",
+      "english": "Are you playing basketball or volleyball?"
+    },
+    {
+      "id": "s55",
+      "turkish": "Kitap m yoksa gazete mi okuyorsunuz?",
+      "english": "Are you reading a book or a newspaper?"
+    },
+    {
+      "id": "s56",
+      "turkish": "Ahmet Öğle mi artyorsun akşam yemedi mi yiyor?",
+      "english": "Is Ahmet having lunch or dinner?"
+    },
+    {
+      "id": "s57",
+      "turkish": "Betty dans mı ediyor yoksa şarkı mı sdylüyor?",
+      "english": "Is Betty dancing or singing?"
+    },
+    {
+      "id": "s58",
+      "turkish": "Bob Arapga mt yoksa Türkçe mi 6greniyor?",
+      "english": "Is Bob learning Arabic or Turkish?"
+    },
+    {
+      "id": "s59",
+      "turkish": "Hasan radyo mu dinliyor yoksa ders mi çalışıyor?",
+      "english": "Is Hasan listening to the radio or studying?"
+    },
+    {
+      "id": "s60",
+      "turkish": "Mary yemek mi yoksa gay mı yapıyor?",
+      "english": "Is Mary cooking or making tea?"
+    },
+    {
+      "id": "s61",
+      "turkish": "Osman mektup mu yazıyor yoksa ödevini mi yapıyor?",
+      "english": "Is Osman writing a letter or doing his homework?"
+    },
+    {
+      "id": "s62",
+      "turkish": "Resim mi çiziyor yoksa bir şeyler mi yazıyor?",
+      "english": "Is she drawing a picture or writing something?"
+    },
+    {
+      "id": "s63",
+      "turkish": "Gülüyor mu yoksa gülümsüyor mu?",
+      "english": "Is she laughing or smiling?"
+    },
+    {
+      "id": "s64",
+      "turkish": "Köpek havliyor mu arıyorsun bir şeyler mi yiyor?",
+      "english": "Is the dog barking or eating something?"
+    },
+    {
+      "id": "s65",
+      "turkish": "At ot mu yiyor yoksa şu mu içiyor?",
+      "english": "Is the horse eating grass or drinking water?"
+    },
+    {
+      "id": "s66",
+      "turkish": "Polis oturuyor mu yoksa ayakta mı duruyor?",
+      "english": "Is the policeman sitting or standing?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Bir şeyler yapıyor.",
+      "english": "He is doing something."
+    },
+    {
+      "id": "s68",
+      "turkish": "Bir şey içiyor.",
+      "english": "He is drinking something."
+    },
+    {
+      "id": "s69",
+      "turkish": "Bir şeye baktyor.",
+      "english": "He is looking at something."
+    },
+    {
+      "id": "s70",
+      "turkish": "Birini artyor.",
+      "english": "He is phoning somebody."
+    },
+    {
+      "id": "s71",
+      "turkish": "Kitapları bir yere gö",
+      "english": "He is taking the books somewhere."
+    },
+    {
+      "id": "s72",
+      "turkish": "Birini bekliyor.",
+      "english": "He is waiting for somebody."
+    },
+    {
+      "id": "s73",
+      "turkish": "Bir şey arlyorum.",
+      "english": "I am looking for something."
+    },
+    {
+      "id": "s74",
+      "turkish": "Bir şey satın alyor.",
+      "english": "She is buying something."
+    },
+    {
+      "id": "s75",
+      "turkish": "Bir şeyler pişiriyor.",
+      "english": "She is cooking something."
+    },
+    {
+      "id": "s76",
+      "turkish": "Bir şeyler yiyor.",
+      "english": "She is eating something."
+    },
+    {
+      "id": "s77",
+      "turkish": "Bir yere gidiyor.",
+      "english": "She is going somewhere."
+    },
+    {
+      "id": "s78",
+      "turkish": "Bir yerde kalyor.",
+      "english": "She is staying somewhere."
+    },
+    {
+      "id": "s79",
+      "turkish": "Birkaç insan kapının yanında duruyor.",
+      "english": "Some people are standing by the door."
+    },
+    {
+      "id": "s80",
+      "turkish": "Biri bizi takip ediyor.",
+      "english": "Somebody is following us."
+    },
+    {
+      "id": "s81",
+      "turkish": "Biri öğretmene yardım ediyor.",
+      "english": "Somebody is helping the teacher."
+    },
+    {
+      "id": "s82",
+      "turkish": "Bir şey hareket ediyor.",
+      "english": "Something is moving."
+    },
+    {
+      "id": "s83",
+      "turkish": "Polis birini takip ediyor.",
+      "english": "The police are following somebody."
+    },
+    {
+      "id": "s84",
+      "turkish": "Bir şey tastyorlar.",
+      "english": "They are carrying something."
+    },
+    {
+      "id": "s85",
+      "turkish": "Bir yerden geliyorlar.",
+      "english": "They are coming from somewhere."
+    },
+    {
+      "id": "s86",
+      "turkish": "Bir şeyler yapıyorlar.",
+      "english": "They are doing something."
+    },
+    {
+      "id": "s87",
+      "turkish": "Birine yardım ediyorlar.",
+      "english": "They are helping somebody."
+    },
+    {
+      "id": "s88",
+      "turkish": "Bir şey okuyorlar.",
+      "english": "They are reading something."
+    },
+    {
+      "id": "s89",
+      "turkish": "Biriyle konuşuyoruz.",
+      "english": "We are talking to somebody."
+    },
+    {
+      "id": "s90",
+      "turkish": "Anneniz yemek mi pişiriyor yoksa bulaşıkları mı yıkıyor?",
+      "english": "Is your mother cooking or washing the dishes?"
+    },
+    {
+      "id": "s91",
+      "turkish": "Doktor reçete mi yazıyor yoksa hastayı mi muayene ediyor?",
+      "english": "Is the doctor writing a prescription or examining a patient?"
+    },
+    {
+      "id": "s92",
+      "turkish": "OBretmen soru mu soruyor yoksa cümle mi yazıyor?",
+      "english": "Is the teacher asking a question or writing a sentence?"
+    },
+    {
+      "id": "s93",
+      "turkish": "Sekreter yazıyor mu yoksa telefonda mı konuşuyor?",
+      "english": "Is the secretary typing or talking on the telephone?"
+    },
+    {
+      "id": "s94",
+      "turkish": "Ahmet arabasını mı yıkıyor yoksa arabasını mi boyuyor?",
+      "english": "Is Ahmet washing his car or painting his car?"
+    },
+    {
+      "id": "s95",
+      "turkish": "Kardeşiniz Fransızca mı yoksa İngilizce mi 6greniyor?",
+      "english": "Is your brother learning French or English?"
+    },
+    {
+      "id": "s96",
+      "turkish": "Öğrenciler okuyorlar mu yoksa yazıyorlar mu?",
+      "english": "Are the students reading or writing?"
+    },
+    {
+      "id": "s97",
+      "turkish": "Osman yüzüyor mu yoksa koşuyor mu?",
+      "english": "Is Osman swimming or running?"
+    },
+    {
+      "id": "s98",
+      "turkish": "Paul ve Bill çalışıyorlar mı yoksa dinleniyorlar mı?",
+      "english": "Are Paul and Bill working or having a rest?"
+    },
+    {
+      "id": "s99",
+      "turkish": "Çocuklar uyuyorlar mı yoksa kahvaltı mı ediyorlar?",
+      "english": "Are the children sleeping or having breakfast?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Taksi şoförii araba mı kullanıyor yoksa müşteri mi bekliyor?",
+      "english": "Is the taxi driver driving or waiting for a customer?"
+    }
+  ],
+  "aux-14": [
+    {
+      "id": "s1",
+      "turkish": "Arabayt yıkıyordu.",
+      "english": "He was washing the car."
+    },
+    {
+      "id": "s2",
+      "turkish": "Kadın halıların üzerinde geziniyordu.",
+      "english": "The woman was hovering the carpets."
+    },
+    {
+      "id": "s3",
+      "turkish": "Yolu asfaltliyorlardh.",
+      "english": "They were paving the road."
+    },
+    {
+      "id": "s4",
+      "turkish": "Valizleri topluyordu.",
+      "english": "She was packing the suitcases."
+    },
+    {
+      "id": "s5",
+      "turkish": "Erkek göçuklar inekleri şaŞıyorlardı.",
+      "english": "The boys were milking the cows."
+    },
+    {
+      "id": "s6",
+      "turkish": "Erkekler toprağı işliyorlardı.",
+      "english": "The men were cultivating the land."
+    },
+    {
+      "id": "s7",
+      "turkish": "Köprüyi tamir ediyorlardı.",
+      "english": "They were repairing the bridge."
+    },
+    {
+      "id": "s8",
+      "turkish": "Oraya gittiğimde, gazeteyi basıyorlardı.",
+      "english": "When I went there, they were printing the newspaper."
+    },
+    {
+      "id": "s9",
+      "turkish": "Zil çaldığında, soruları yanıtlıyorduk.",
+      "english": "When the bell rang, we were answering the questions."
+    },
+    {
+      "id": "s10",
+      "turkish": "Polis, hırsızı karakola götürüyordu.",
+      "english": "The policeman was taking the thief to the police station."
+    },
+    {
+      "id": "s11",
+      "turkish": "Müfettiş geldiğinde, adam sorguluyorlardı.",
+      "english": "When the inspector came, they were questioning the man."
+    },
+    {
+      "id": "s12",
+      "turkish": "Dün duvarlar boyuyorlardı.",
+      "english": "They were painting the walls yesterday."
+    },
+    {
+      "id": "s13",
+      "turkish": "Onları gördüğümde, eski evi yıkıyorlardı.",
+      "english": "They were pulling down the old house when I saw them."
+    },
+    {
+      "id": "s14",
+      "turkish": "Yağmur başladığında, malları sevk ediyorlardı.",
+      "english": "They were shipping the goods when it started to rain."
+    },
+    {
+      "id": "s15",
+      "turkish": "Onlar çalışırken, birileri taşlar atıyordu.",
+      "english": "Somebody was throwing stones while they were working."
+    },
+    {
+      "id": "s16",
+      "turkish": "Siz buraya gelirken, herhangi biri sizi takip ediyor muydu?",
+      "english": "Was anybody following you while you were coming here?"
+    },
+    {
+      "id": "s17",
+      "turkish": "Siz vardığınızda, onlar işi yapıyor muydu?",
+      "english": "Were they doing the work when you arrived?"
+    },
+    {
+      "id": "s18",
+      "turkish": "Trafiği durdurmuyorlardı.",
+      "english": "They weren't holding up the traffic."
+    },
+    {
+      "id": "s19",
+      "turkish": "Kimse talimatlara uymuyordu.",
+      "english": "Nobody was following the instructions."
+    },
+    {
+      "id": "s20",
+      "turkish": "Kumaşı nasıl boyuyorlardı?",
+      "english": "How were they dyeing the cloth?"
+    },
+    {
+      "id": "s21",
+      "turkish": "Arabaları nereye götürüyorlardı?",
+      "english": "Where were they taking the cars?"
+    },
+    {
+      "id": "s22",
+      "turkish": "Ben geldiğimde, arabayı tamir etmiyorlardı.",
+      "english": "They weren't fixing the car when I arrived."
+    },
+    {
+      "id": "s23",
+      "turkish": "Biletleri kim satıyordu?",
+      "english": "Who was selling the tickets?"
+    },
+    {
+      "id": "s24",
+      "turkish": "Ona yardım etmiyorlardı.",
+      "english": "They weren't helping him."
+    },
+    {
+      "id": "s25",
+      "turkish": "Alice paten yaparken, kendine zarar verdi.",
+      "english": "Alice hurt herself while she was skating."
+    },
+    {
+      "id": "s26",
+      "turkish": "İşten eve yürürken, komşumla karşılaştım.",
+      "english": "I met my neighbor while I was walking home from work."
+    },
+    {
+      "id": "s27",
+      "turkish": "Sally, Park St.'de bisikletine binerken, bir arkadaşım gördii.",
+      "english": "Sally saw a friend while she was riding her bicycle along Park St."
+    },
+    {
+      "id": "s28",
+      "turkish": "Petrus okurken, uyuyakaldı.",
+      "english": "Peter fell asleep while he was studying."
+    },
+    {
+      "id": "s29",
+      "turkish": "Bob, birlikte dans ederlerken, Jane'in ayaklarına bastı.",
+      "english": "Bob stepped on Jane's feet while they were dancing together."
+    },
+    {
+      "id": "s30",
+      "turkish": "Tıraş olurken, kendimi kestim.",
+      "english": "I cut myself while I was shaving."
+    },
+    {
+      "id": "s31",
+      "turkish": "Bay ve Bayan Brown kurabiye pişirirlerken, kendilerini yaktılar.",
+      "english": "Mr. and Mrs. Brown burned themselves while they were baking cookies."
+    },
+    {
+      "id": "s32",
+      "turkish": "Tommy bir arkadaşının evinde uyurken, bir kabus gördii.",
+      "english": "Tommy had a nightmare while he was sleeping at a friend's house."
+    },
+    {
+      "id": "s33",
+      "turkish": "Biz vardığımızda, uyuyordu.",
+      "english": "He was sleeping when we arrived."
+    },
+    {
+      "id": "s34",
+      "turkish": "İçeri girdiğinde, bir rapor yazıyordum.",
+      "english": "When you came in, I was writing a report."
+    },
+    {
+      "id": "s35",
+      "turkish": "Kaza olduğunda, tartışıyorlardı.",
+      "english": "They were discussing when the accident happened."
+    },
+    {
+      "id": "s36",
+      "turkish": "",
+      "english": "When the lights went out, I was mending my radio."
+    },
+    {
+      "id": "s37",
+      "turkish": "Araba bana çarptığında, karşıdan karşıya geçiyordum.",
+      "english": "I was crossing the street when the car hit me."
+    },
+    {
+      "id": "s38",
+      "turkish": "Babam, biz televizyon izlerken, gazete okuyordu.",
+      "english": "My father was reading the newspaper while we were watching TV."
+    },
+    {
+      "id": "s39",
+      "turkish": "Selma okurken, Mehmet oynuyordu.",
+      "english": "While Selma was studying, Mehmet was playing."
+    },
+    {
+      "id": "s40",
+      "turkish": "Saat 9'da hala uyuyordu.",
+      "english": "He was still sleeping at 9 o'clock."
+    },
+    {
+      "id": "s41",
+      "turkish": "Telefon çaldığında, kahvaltı yapıyordum.",
+      "english": "I was having breakfast when the telephone rang."
+    },
+    {
+      "id": "s42",
+      "turkish": "Yağmur başladığında, tenis oynuyorlardı.",
+      "english": "They were playing tennis when the rain started."
+    },
+    {
+      "id": "s43",
+      "turkish": "Siz dışandayken, havadan bahsediyorduk.",
+      "english": "When you were outside, we were talking about the weather."
+    },
+    {
+      "id": "s44",
+      "turkish": "Öğretmen içeri girdiğinde, çok gürültü yapıyorduk.",
+      "english": "When the teacher came in, we were making a lot of noise."
+    },
+    {
+      "id": "s45",
+      "turkish": "Kadın bulaşıkları yıkarken, adam odayı süpürüyordu.",
+      "english": "The man was sweeping the room while the woman was washing the dishes."
+    },
+    {
+      "id": "s46",
+      "turkish": "Yağmur başladığında, ne yapıyordunuz?",
+      "english": "What were you doing when it started to rain?"
+    },
+    {
+      "id": "s47",
+      "turkish": "",
+      "english": "I wasn't doing anything when the teacher came."
+    },
+    {
+      "id": "s48",
+      "turkish": "Arabası bozulduğunda, arabayla Bolu'ya gidiyordu.",
+      "english": "He was driving to Bolu when his car broke down."
+    },
+    {
+      "id": "s49",
+      "turkish": "Avukat konuşurken, hakim ne yapıyordu?",
+      "english": "What was the judge doing while the lawyer was speaking?"
+    },
+    {
+      "id": "s50",
+      "turkish": "Eve gelirken, eski bir arkadaşla karşılaştım.",
+      "english": "As I was coming home, I met an old friend."
+    },
+    {
+      "id": "s51",
+      "turkish": "Araba çocuğa çarptığında, yola bakıyor muydun?",
+      "english": "Were you looking at the road when the car hit the boy?"
+    },
+    {
+      "id": "s52",
+      "turkish": "Postacı, tam ben evden çıkarken, geldi.",
+      "english": "The postman came just as I was leaving home."
+    },
+    {
+      "id": "s53",
+      "turkish": "Okula yürürken, onu gördüm.",
+      "english": "I saw her while I was walking to school."
+    },
+    {
+      "id": "s54",
+      "turkish": "Dün gece saat dokuzda bir kitap okuyordum.",
+      "english": "At nine o'clock last night I was reading a book."
+    },
+    {
+      "id": "s55",
+      "turkish": "Onu göre",
+      "english": "When I saw him, he was eating fish and chips."
+    },
+    {
+      "id": "s56",
+      "turkish": "Babam geldiğinde, sigara içiyordum.",
+      "english": "When my father came in, I was smoking a cigarette."
+    },
+    {
+      "id": "s57",
+      "turkish": "Tren hareket ettiğinde, trene biniyordu.",
+      "english": "He was getting on the train when the train moved."
+    },
+    {
+      "id": "s58",
+      "turkish": "Adam merdivenlerden yukarı çıkarken, ışıklar sondii.",
+      "english": "As the man was walking up the stairs, the lights went out."
+    },
+    {
+      "id": "s59",
+      "turkish": "Savaş başladığında, Avusturya'da yaşıyorlardı.",
+      "english": "When the war began, they were living in Austria."
+    },
+    {
+      "id": "s60",
+      "turkish": "Kardeşimi gördüğümde, metnini düzenliyordu.",
+      "english": "When I saw my brother, he was editing his text."
+    },
+    {
+      "id": "s61",
+      "turkish": "Otobüsten inerken, yere düştüm.",
+      "english": "I fell down as I was getting off the bus."
+    },
+    {
+      "id": "s62",
+      "turkish": "Onunla ilk tanıştığımda, kocaman garip bir şapka takıyordu.",
+      "english": "He was wearing a big strange hat when I first met him."
+    },
+    {
+      "id": "s63",
+      "turkish": "Ben duvarları boyarken, O kapıları ve pencereleri boyuyordu.",
+      "english": "He was painting the doors and the windows while I was painting the walls."
+    },
+    {
+      "id": "s64",
+      "turkish": "Tam ahizeyi kaldırırken, telefon çaldı.",
+      "english": "Just as I was picking up the receiver, the telephone rang."
+    },
+    {
+      "id": "s65",
+      "turkish": "Almanya'dayken, bir kömür madeninde çalışıyordum.",
+      "english": "When I was in Germany, I was working in a coal mine."
+    },
+    {
+      "id": "s66",
+      "turkish": "Öğretmen konuşurken, O dinliyor muydu?",
+      "english": "Was he listening while the teacher was talking?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Fırtına çıktığında, bahçeyi suluyordum.",
+      "english": "When the storm broke, I was watering the garden."
+    },
+    {
+      "id": "s68",
+      "turkish": "Dün seni gördüğümde, ne yapıyordun?",
+      "english": "What were you doing when I saw you yesterday?"
+    },
+    {
+      "id": "s69",
+      "turkish": "Geldiklerinde, misil misil uyuyordu.",
+      "english": "He was sleeping soundly when they arrived."
+    },
+    {
+      "id": "s70",
+      "turkish": "Sen TV izlerken, ben ödevimi yapıyordum.",
+      "english": "While you were watching TV, I was doing my homework."
+    },
+    {
+      "id": "s71",
+      "turkish": "O konuşurken, ben kitabı okumayt bitirdim.",
+      "english": "While he was talking, I finished reading the book."
+    },
+    {
+      "id": "s72",
+      "turkish": "Sürucii, polisi görünce, telefonla konuşuyordu.",
+      "english": "When the driver saw the policeman, he was talking on the phone."
+    },
+    {
+      "id": "s73",
+      "turkish": "Köpek havlamaya başladığında, rüya görüyordum.",
+      "english": "I was dreaming when the dog started to bark."
+    },
+    {
+      "id": "s74",
+      "turkish": "Onlar kahvaltı ederken, O yataktaydı.",
+      "english": "He was in bed while they were having breakfast."
+    },
+    {
+      "id": "s75",
+      "turkish": "Ankara'ya giderken, lastiğimiz patladı.",
+      "english": "We had a flat tire while we were driving to Ankara."
+    },
+    {
+      "id": "s76",
+      "turkish": "Dün gece seni gördüğümde, nereye gidiyordun?",
+      "english": "Where were you going when I saw you last night?"
+    },
+    {
+      "id": "s77",
+      "turkish": "Evden çıktığımda, yağmur yağıyordu.",
+      "english": "It was raining when I left home."
+    },
+    {
+      "id": "s78",
+      "turkish": "Sen aradığında, uyuyordum.",
+      "english": "When you called, I was sleeping."
+    },
+    {
+      "id": "s79",
+      "turkish": "Patlamayı duyduğumda, radyoyu dinliyordum.",
+      "english": "I was listening to the radio when I heard the explosion."
+    },
+    {
+      "id": "s80",
+      "turkish": "Uçak inerken, dustii.",
+      "english": "The plane crashed while it was landing."
+    },
+    {
+      "id": "s81",
+      "turkish": "Yakın arkadaşlarımla evde kalıyordum.",
+      "english": "I was staying at home with my close friends."
+    },
+    {
+      "id": "s82",
+      "turkish": "Fred her gün sınıfa gelmiyordu.",
+      "english": "Fred wasn't coming to class every day."
+    },
+    {
+      "id": "s83",
+      "turkish": "Televizyonda en sevdiği dizi filmini izliyordu.",
+      "english": "She was watching her favorite series film on TV."
+    },
+    {
+      "id": "s84",
+      "turkish": "Arkadaşımı otobüs durağında bekliyordum.",
+      "english": "I was waiting for my friend at the bus stop."
+    },
+    {
+      "id": "s85",
+      "turkish": "Jane restoranın önünde duruyordu.",
+      "english": "Jane was standing in front of the restaurant."
+    },
+    {
+      "id": "s86",
+      "turkish": "Kar yağmaya başladığında, etrafta dolaşıyorduk.",
+      "english": "When it started to snow, we were walking around."
+    },
+    {
+      "id": "s87",
+      "turkish": "Öğrenciler korkung bir gürültü duyduklarında, kütüphanede ders çalıştyorlardı.",
+      "english": "Students were studying in the library when they heard an awful noise."
+    },
+    {
+      "id": "s88",
+      "turkish": "Mary ve ben alışveriş merkezinde alışveriş yapıyorduk.",
+      "english": "Mary and I were doing shopping at mall."
+    },
+    {
+      "id": "s89",
+      "turkish": "Yorumlar gözden geçiriyordum.",
+      "english": "I was reviewing the comments."
+    },
+    {
+      "id": "s90",
+      "turkish": "Tatilimiz için bir oda ayırtyordum.",
+      "english": "I was booking a room for our holiday."
+    },
+    {
+      "id": "s91",
+      "turkish": "Kocam gece yarısından önce eve gelmiyordu.",
+      "english": "My husband wasn't coming home before midnight."
+    },
+    {
+      "id": "s92",
+      "turkish": "Çocuklar resim çiziyorlard.",
+      "english": "The children were drawing pictures."
+    },
+    {
+      "id": "s93",
+      "turkish": "Proje hakkında düşünüyorlardı.",
+      "english": "They were thinking about the project."
+    },
+    {
+      "id": "s94",
+      "turkish": "Mary ile dans ediyordu.",
+      "english": "He was dance) with Mary."
+    },
+    {
+      "id": "s95",
+      "turkish": "Okula otobüsle gidiyordu.",
+      "english": "She was taking the bus to school."
+    },
+    {
+      "id": "s96",
+      "turkish": "Kocası çocuklara bağırmıyordu.",
+      "english": "Her husband wasn't shouting at the children."
+    },
+    {
+      "id": "s97",
+      "turkish": "Sınav kağıtlarındaki hataları düzeltiyorduk.",
+      "english": "We were correcting our mistakes on the exam papers."
+    },
+    {
+      "id": "s98",
+      "turkish": "Kardeşim masraflan hesaphyordu.",
+      "english": "My brother was calculating the expenses."
+    },
+    {
+      "id": "s99",
+      "turkish": "Karısı misafirleri için yemek mi pişiriyordu?",
+      "english": "Was his wife cooking for her guests?"
+    },
+    {
+      "id": "s100",
+      "turkish": "O sırada koltukta dinleniyor muydunuz?",
+      "english": "Were you resting on arm-chair at that time?"
+    }
+  ],
+  "aux-15": [
+    {
+      "id": "s1",
+      "turkish": "",
+      "english": "She has been working here for five years."
+    },
+    {
+      "id": "s2",
+      "turkish": "Uğ saattir Matematik çalışıyorum.",
+      "english": "I have been studying Maths for three hours."
+    },
+    {
+      "id": "s3",
+      "turkish": "On dakikadır herkese bağıryorsun.",
+      "english": "You have been shouting at everybody for ten minutes."
+    },
+    {
+      "id": "s4",
+      "turkish": "Altı aydır Londra'da yaşıyoruz.",
+      "english": "We have been living in London for six months."
+    },
+    {
+      "id": "s5",
+      "turkish": "Beş yaşından beri futbol oynuyor.",
+      "english": "He has been playing football since he was five years old."
+    },
+    {
+      "id": "s6",
+      "turkish": "İki yıldır İngilizce 6greniyorlar.",
+      "english": "They have been learning English for two years."
+    },
+    {
+      "id": "s7",
+      "turkish": "Sabahtan beri yemek pişiriyorum.",
+      "english": "I have been cooking since morning."
+    },
+    {
+      "id": "s8",
+      "turkish": "Yıllardır her hafta sonu sinemaya gidiyor.",
+      "english": "She has been going to the cinema every weekend for years."
+    },
+    {
+      "id": "s9",
+      "turkish": "On dakikadır yağmurda dolaşıyorlar.",
+      "english": "They have been walking around in rain for ten minutes."
+    },
+    {
+      "id": "s10",
+      "turkish": "On iki saattir uyuyorsun.",
+      "english": "You have been sleeping for twelve hours."
+    },
+    {
+      "id": "s11",
+      "turkish": "Geçen haftadan beri çalışmıyorum.",
+      "english": "I haven't been working since last week."
+    },
+    {
+      "id": "s12",
+      "turkish": "Geçen Perşembe'den beri iyi yemiyorsun.",
+      "english": "You haven't been eating well since last Thursday."
+    },
+    {
+      "id": "s13",
+      "turkish": "Bir aydır yeterince egzersiz yapmıyoruz.",
+      "english": "We haven't been exercising enough for a month."
+    },
+    {
+      "id": "s14",
+      "turkish": "Yarım saattir ebeveynlerini dinlemiyor.",
+      "english": "She hasn't been listening to his parents for half an hour."
+    },
+    {
+      "id": "s15",
+      "turkish": "Çok uzun zamandır burada yaşamtyorlar.",
+      "english": "They haven't been living here for very long time."
+    },
+    {
+      "id": "s16",
+      "turkish": "Beş yıldır burada kar yağmıyor.",
+      "english": "It hasn't been snowing in here for five years."
+    },
+    {
+      "id": "s17",
+      "turkish": "Beş yıldır futbol oynamtyor.",
+      "english": "He hasn't been playing football for five years."
+    },
+    {
+      "id": "s18",
+      "turkish": "Dünden beri yeterince şu içmiyoruz.",
+      "english": "We haven't been drinking enough water since yesterday."
+    },
+    {
+      "id": "s19",
+      "turkish": "İki gündür uyumuyorum.",
+      "english": "I haven't been sleeping for two days."
+    },
+    {
+      "id": "s20",
+      "turkish": "Geçen aydan beri TV izlemiyorlar.",
+      "english": "They haven't been watching TV much since last month."
+    },
+    {
+      "id": "s21",
+      "turkish": "Baban geçen dönemden beri İngilizce ödevini yapmaya yardım ediyor mu?",
+      "english": "Has your father helping you do your English homework since last term?"
+    },
+    {
+      "id": "s22",
+      "turkish": "İki saattir pasta yapmayı mi Gğreniyorsun?",
+      "english": "Have you been learning how to make a cake for two hours?"
+    },
+    {
+      "id": "s23",
+      "turkish": "İngilizce öğretmenin ders başladığından beri size mi bağınyor?",
+      "english": "Has your English teacher been shouting at you since the lesson started?"
+    },
+    {
+      "id": "s24",
+      "turkish": "İngilizce öğretmenleriniz geçen Çarşamba'dan beri piknik mi düzenliyorlar?",
+      "english": "Have your English teachers been organizing a picnic since last Wednesday?"
+    },
+    {
+      "id": "s25",
+      "turkish": "Babanız sizi yıllardır tiyatroya götürüyor mu?",
+      "english": "Has your father been taking you to the theatre for years?"
+    },
+    {
+      "id": "s26",
+      "turkish": "Tanıştığınızdan beri sıra arkadaşın seni kızdırıyor mu?",
+      "english": "Has your deskmate been making you get angry since you met?"
+    },
+    {
+      "id": "s27",
+      "turkish": "Baban yıllardır doğum gününde hediye alıyor mu?",
+      "english": "Has your father been buying presents on your birthday for years?"
+    },
+    {
+      "id": "s28",
+      "turkish": "Onunla iki saattir mi konuşuyorsun?",
+      "english": "Have you been talking to her for two hours?"
+    },
+    {
+      "id": "s29",
+      "turkish": "Baban yedi yıldır aynı şirkette mi çalıştyor?",
+      "english": "Has your father been working at the same company for seven years?"
+    },
+    {
+      "id": "s30",
+      "turkish": "Kardeşin altı aydır proje üzerinde mi çalıştyor?",
+      "english": "Has your brother working on the project for six months?"
+    },
+    {
+      "id": "s31",
+      "turkish": "Nasıl araba kullanılacağım mı öğrenmeye çalsiyorsun?",
+      "english": "Have you been trying to learn how to drive a car?"
+    },
+    {
+      "id": "s32",
+      "turkish": "İngilizce öğretmenin geen aydan beri gramer mi dgretiyor?",
+      "english": "Has your English teacher been teaching grammar since last month?"
+    },
+    {
+      "id": "s33",
+      "turkish": "Satıcıyla ön dakikadır pazarlık m yapıyor?",
+      "english": "Has he been bargaining with the seller for ten minutes?"
+    },
+    {
+      "id": "s34",
+      "turkish": "Annen yarım saattir sana \"mayonezli kizarmis balik\" mi pisiriyor?",
+      "english": "Has your mother cooking \"fried fish with mayonnaise\" for you for half an hour?"
+    },
+    {
+      "id": "s35",
+      "turkish": "İngilizce öğretmenleriniz okul başladığından beri çok dev veriyorlar mı?",
+      "english": "Have your English teachers been giving a lot of homework since the school began?"
+    },
+    {
+      "id": "s36",
+      "turkish": "On beş dakikadır kafesinde bir aslan mı izliyorlar?",
+      "english": "Have they been watching a lion in its cage for fifteen minutes?"
+    },
+    {
+      "id": "s37",
+      "turkish": "Çocukluğundan beri para kazanıyor musun?",
+      "english": "Have you been making money since your childhood?"
+    },
+    {
+      "id": "s38",
+      "turkish": "Baban yıllardır sigara kullanryor mu?",
+      "english": "Has your father been smoking for years?"
+    },
+    {
+      "id": "s39",
+      "turkish": "Sıra arkadaşın Eylül'den beri malzemelerini mi kullanıyor?",
+      "english": "Has your deskmate been using your tools since September?"
+    },
+    {
+      "id": "s40",
+      "turkish": "Yıllardır İngilizce sınavlardan en iyi puanları alyor musun?",
+      "english": "Have you been getting the best points from the quizzes in English for years?"
+    },
+    {
+      "id": "s41",
+      "turkish": "Pandemi ortaya çıktığından beri baban maske takıyor mu?",
+      "english": "Has your father been wearing a mask since the pandemia came out?"
+    },
+    {
+      "id": "s42",
+      "turkish": "On beş yaşından beri tehlikeli bir şeyler mi yapmaya çalıştyorsun?",
+      "english": "Have you been trying to do something dangerous since you were fifteen years old?"
+    },
+    {
+      "id": "s43",
+      "turkish": "Doğduğumdan beri Roma'da yaşıyorum.",
+      "english": "I have been living in Rome since I was born."
+    },
+    {
+      "id": "s44",
+      "turkish": "Üvey babası 1988'den beri çalışmıyor.",
+      "english": "His step father hasn't been working since 1988."
+    },
+    {
+      "id": "s45",
+      "turkish": "Geçen yıldan beri bana yazmıyor.",
+      "english": "She hasn't been writing to me since last year."
+    },
+    {
+      "id": "s46",
+      "turkish": "İki yılchr o fabrikada calığmyorum.",
+      "english": "I haven't been working in that factory for two years."
+    },
+    {
+      "id": "s47",
+      "turkish": "Geçen Şubat'tan beri bizi ziyaret etmiyorlar.",
+      "english": "They haven't been visiting us since last February."
+    },
+    {
+      "id": "s48",
+      "turkish": "Yaşadığınız yerde üç yıldır kar yağmıyor mu?",
+      "english": "Hasn't it been snowing in your town for three years?"
+    },
+    {
+      "id": "s49",
+      "turkish": "Babam geçen yıldan beri gay içmiyor.",
+      "english": "My father hasn't been drinking tea since last year."
+    },
+    {
+      "id": "s50",
+      "turkish": "Geçen aydan beri bu önemli proje üzerinde çalışıyor.",
+      "english": "He has been working on this important project since last month."
+    },
+    {
+      "id": "s51",
+      "turkish": "Uzun zamandır Fransızca öğreniyorum.",
+      "english": "I have been studying French for a long time."
+    },
+    {
+      "id": "s52",
+      "turkish": "Yıllardır o arabayı kullanmıyor.",
+      "english": "He hasn't been driving that car for ages."
+    },
+    {
+      "id": "s53",
+      "turkish": "Bu kravatı bir yılı aşkın süredir takıyorum.",
+      "english": "I have been wearing this tie for over a year."
+    },
+    {
+      "id": "s54",
+      "turkish": "İki yıldır öğretmen olarak galisiyor.",
+      "english": "She has been working as a teacher for two years."
+    },
+    {
+      "id": "s55",
+      "turkish": "İki haftadır futbol oynamyorlar.",
+      "english": "They haven't been playing football for a fortnight."
+    },
+    {
+      "id": "s56",
+      "turkish": "Yarım saattir sınıfta gürültü yapmıyoruz.",
+      "english": "We haven't been making a noise in the classroom for half an hour."
+    },
+    {
+      "id": "s57",
+      "turkish": "Yarım saattir makyaj yapıyor.",
+      "english": "She has been making up for half an hour."
+    },
+    {
+      "id": "s58",
+      "turkish": "Onunla saat üçten beri çalışryorum.",
+      "english": "I have been studying with him since three o'clock."
+    },
+    {
+      "id": "s59",
+      "turkish": "Dünden beri hiçbir şey yemiyorum.",
+      "english": "I haven't been eating anything since yesterday."
+    },
+    {
+      "id": "s60",
+      "turkish": "Geçen Çarşamba' dan beri evimize hiç kimse gelmedi.",
+      "english": "Nobody has been coming to our house since last Wednesday."
+    },
+    {
+      "id": "s61",
+      "turkish": "Bu firmayı tic yıldır mı yönetiyor?",
+      "english": "Has he been running this firm for three years?"
+    },
+    {
+      "id": "s62",
+      "turkish": "Geçen haftadan beri seni aramıyor mu?",
+      "english": "Hasn't she been calling you since last week?"
+    },
+    {
+      "id": "s63",
+      "turkish": "Çocukluğumdan beri sırlarımı onunla paylaşıyorum.",
+      "english": "I have been sharing my secrets with him since my childhood."
+    },
+    {
+      "id": "s64",
+      "turkish": "Öldüğünden beri mirastan mı bahsediyorlar?",
+      "english": "Have they been talking about the inheritance since he died?"
+    },
+    {
+      "id": "s65",
+      "turkish": "Us yıldır aym şeyleri tartışıyor.",
+      "english": "He has been discussing the same things for three years."
+    },
+    {
+      "id": "s66",
+      "turkish": "İki haftadır benimle konuşmuyor.",
+      "english": "She hasn't been talking to me for two weeks."
+    },
+    {
+      "id": "s67",
+      "turkish": "1970'den beri bu sokakta yaşıyorlar.",
+      "english": "They have been living in this street since 1970."
+    },
+    {
+      "id": "s68",
+      "turkish": "Geçen aydan beri masrafları hesaplamıyorum.",
+      "english": "I haven't been calculating the expenses since last month."
+    },
+    {
+      "id": "s69",
+      "turkish": "İki saattir onları bekliyoruz.",
+      "english": "We have been waiting for them for two hours."
+    },
+    {
+      "id": "s70",
+      "turkish": "Teklifi iki gündür değerlendiriyorum.",
+      "english": "I have been evaluating the offer for two days."
+    },
+    {
+      "id": "s71",
+      "turkish": "Salı gününden beri aynı kötü giyiyor.",
+      "english": "He has been wearing the same jeans since Tuesday."
+    },
+    {
+      "id": "s72",
+      "turkish": "Paul iki aydır çok çalışıyor.",
+      "english": "Paul's been working hard for two months."
+    },
+    {
+      "id": "s73",
+      "turkish": "Sabahtan beri ne yapıyorsun?",
+      "english": "What have you been doing since morning?"
+    },
+    {
+      "id": "s74",
+      "turkish": "Geldiğinden beri Amanda ile konuşuyorum.",
+      "english": "I've been talking to Amanda since she came."
+    },
+    {
+      "id": "s75",
+      "turkish": "Onu saatlerdir nerede aryorsun?",
+      "english": "Where have you been looking for her for hours?"
+    },
+    {
+      "id": "s76",
+      "turkish": "Ne zamandhr İngilizce öğreniyorsun?",
+      "english": "How long have you been learning English?"
+    },
+    {
+      "id": "s77",
+      "turkish": "Ben saat üçten beri TV izliyor.",
+      "english": "Ben's been watching TV since three o'clock."
+    },
+    {
+      "id": "s78",
+      "turkish": "Son yarım saattir onu ikna ediyorum.",
+      "english": "I've been convincing him for the last half hour."
+    },
+    {
+      "id": "s79",
+      "turkish": "Chris dünden beri kendini iyi hissetmiyor.",
+      "english": "Chris hasn't been feeling well since yesterday."
+    },
+    {
+      "id": "s80",
+      "turkish": "Maria iki yıldır İngilizce dgreniyor.",
+      "english": "Maria has been learning English for two years."
+    },
+    {
+      "id": "s81",
+      "turkish": "Beni aradıZından beri bisikletimi tamir ediyorum.",
+      "english": "I've been repairing my bike since you called me."
+    },
+    {
+      "id": "s82",
+      "turkish": "Joe, son iki yıldır gök fazla yemek yiyor.",
+      "english": "Joe has been eating too much for last two years."
+    },
+    {
+      "id": "s83",
+      "turkish": "Son görüşmemizden beri ne yapıyorsun?",
+      "english": "What have you been doing since we last met?"
+    },
+    {
+      "id": "s84",
+      "turkish": "Ne zamandır bu kitabı okuyorsun?",
+      "english": "How long have you been reading that book?"
+    },
+    {
+      "id": "s85",
+      "turkish": "Sabahtan beri e-posta yazıyor.",
+      "english": "She's been writing e-mails since morning."
+    },
+    {
+      "id": "s86",
+      "turkish": "Saat 2'den beri tenis oynuyorlar.",
+      "english": "They've been playing tennis since 2 o'clock."
+    },
+    {
+      "id": "s87",
+      "turkish": "Uzun zamandır Arapga 6greniyorum.",
+      "english": "I have been learning Arabic for a long time."
+    },
+    {
+      "id": "s88",
+      "turkish": "Öğle yemeğinden beri yağmur yağtyor.",
+      "english": "It's been raining since lunchtime."
+    },
+    {
+      "id": "s89",
+      "turkish": "Paul on yıldır Brezilya'da yastyor.",
+      "english": "Paul has been living in Brazil for ten years."
+    },
+    {
+      "id": "s90",
+      "turkish": "Bir saattir burada oturuyoruz.",
+      "english": "We've been sitting here for an hour."
+    },
+    {
+      "id": "s91",
+      "turkish": "Kevin haftalardır iş anör.",
+      "english": "Kevin has been looking for a job for weeks."
+    },
+    {
+      "id": "s92",
+      "turkish": "Yıllardır partilere katılmıyorum.",
+      "english": "I haven't been joining the parties forages."
+    },
+    {
+      "id": "s93",
+      "turkish": "Dünden beri belgeleri dosyalamıyorum.",
+      "english": "I haven't been filing the documents since yesterday."
+    },
+    {
+      "id": "s94",
+      "turkish": "Jane saatlerdir mezuniyetini kutluyor.",
+      "english": "Jane's been celebrating her graduation for hours."
+    },
+    {
+      "id": "s95",
+      "turkish": "Buraya geldiğimizden beri kar yağmıyor.",
+      "english": "It hasn't been snowing since we came here."
+    },
+    {
+      "id": "s96",
+      "turkish": "Saatlerdir onun düğünti hakkında konuşuyoruz.",
+      "english": "We have been talking about her wedding for hours."
+    },
+    {
+      "id": "s97",
+      "turkish": "O adam geçen yıldan beri şirketten çalıyor.",
+      "english": "That man has been stealing from the company since last year."
+    },
+    {
+      "id": "s98",
+      "turkish": "Buraya geldiğimden beri birçok yeni arkadaş ediniyorum.",
+      "english": "I have been making a lot of new friends since I came here."
+    },
+    {
+      "id": "s99",
+      "turkish": "Bir saatten fazladır size ulaşmaya çalışıyorum.",
+      "english": "I have been trying to reach you for over an hour."
+    },
+    {
+      "id": "s100",
+      "turkish": "Sabahtan beri abur cubur yiyorsun.",
+      "english": "You have been eating junky food since morning."
+    }
+  ],
+  "aux-16": [
+    {
+      "id": "s1",
+      "turkish": "İlk konserlerini verene kadar, altı aydır ders alıyorlardh.",
+      "english": "They had been taking lessons for six months before they performed their first concert."
+    },
+    {
+      "id": "s2",
+      "turkish": "Temmuz ayında tatile çıkmayı planlıyorduk, ancak Ağustos'ta daha iyi bir kiralık yer bulduk.",
+      "english": "We had been planning to go on vacation in July, but we found a better rental in August."
+    },
+    {
+      "id": "s3",
+      "turkish": "Fransa'da bir ıınıversiteye gitmeye karar vermeden Önce, uzun süredir Fransızca 6greniyor muydun?",
+      "english": "Had you been studying French a long time before you decided to attend a university in France?"
+    },
+    {
+      "id": "s4",
+      "turkish": "Taksi gelmeden Önce, ne zamandır onu bekliyordun?",
+      "english": "How long had you been waiting for the taxi before it arrived?"
+    },
+    {
+      "id": "s5",
+      "turkish": "Jane anahtarım bulduğunda, kapty beş dakikadır ağçmaya çalışıyorduk.",
+      "english": "We had been trying to open the door for five minutes when Jane found her key."
+    },
+    {
+      "id": "s6",
+      "turkish": "Birkaç saattir çok yağmur yağıyordu ve sokaklar çok ıslaktı.",
+      "english": "It had been raining hard for several hours and the streets were very wet."
+    },
+    {
+      "id": "s7",
+      "turkish": "İçeri girdiğinde, arkadaşları, polisi aramayı düşünüyorlardh.",
+      "english": "Her friends had been thinking of calling the police when she walked in."
+    },
+    {
+      "id": "s8",
+      "turkish": "Yeni teknemi almadan önce, en yeni modelleri görmek için her gün tekne şovuna gidiyordum.",
+      "english": "Before I bought my new boat, I had been going to the boat show every day to see the newest models."
+    },
+    {
+      "id": "s9",
+      "turkish": "Gösteri başlamadan önce, Whitney ile konuşuyordun.",
+      "english": "You had been talking to Whitney before the show began."
+    },
+    {
+      "id": "s10",
+      "turkish": "Benzin fiyatı yükselmeden önce, elektrikli bir araba almayı düşüntiyorduk.",
+      "english": "We had been thinking about buying an electric car even before the price of gas went up."
+    },
+    {
+      "id": "s11",
+      "turkish": "Kapanmadan önce, yirmi yıldır o parkurda araba yarısı yapıyorlardı.",
+      "english": "They had been racing cars at that track for twenty years before it closed."
+    },
+    {
+      "id": "s12",
+      "turkish": "Kaza olmadan Önce, bütün öğleden sonra çok hızlı araba kullantyordu.",
+      "english": "He had been driving too fast all afternoon before the accident happened."
+    },
+    {
+      "id": "s13",
+      "turkish": "Ölmeden önce, sığınağa yıllardır gizli bağışlar yapıyordu.",
+      "english": "Before she died, she had been making secret donations to the shelter for years."
+    },
+    {
+      "id": "s14",
+      "turkish": "Bir şaraphane açmaya karar vermeden önce, on iki yıldır ıızum yetiştiriyorduk.",
+      "english": "We had been growing grapes for twelve years before we decided to open a winery."
+    },
+    {
+      "id": "s15",
+      "turkish": "Koç, Tony'yi bandajlayana kadar, Tony'nin dizi ağrıyordu.",
+      "english": "Tony's knee had been aching until the coach bandaged it."
+    },
+    {
+      "id": "s16",
+      "turkish": "Sea, kendisine yardım etmesi için bir muhasebeci bulmadan Önce iyi mali kayıt tutmuyordu.",
+      "english": "Sean hadn't been keeping good financial records before he got an accountant to help him."
+    },
+    {
+      "id": "s17",
+      "turkish": "Kurabiye dükkanının sahibi, bina yanmadan önce iki fırın daha eklemeyi planlıyordu.",
+      "english": "The owner of the cookie shop had been planning to add two more ovens before the building burned."
+    },
+    {
+      "id": "s18",
+      "turkish": "Eyaletin kuzey kısmına taşınmaya karar vermeden önce, Florida Keys'de yaşıyordum.",
+      "english": "I had been living in the Florida Keys before I decided to move to the northern part of the state."
+    },
+    {
+      "id": "s19",
+      "turkish": "Kuşlar şeftalileri yemeden Önce, onlar ağaçlarda asılı duruyordu.",
+      "english": "The peaches had been hanging on the trees for long before the birds ate them."
+    },
+    {
+      "id": "s20",
+      "turkish": "Gol, 1902'den beri şehre şu salıyordu.",
+      "english": "The lake had been supplying water for the town since 1902."
+    },
+    {
+      "id": "s21",
+      "turkish": "Crystal, boyası bitmeden Önce, duvarları boyuyordu.",
+      "english": "Crystal had been painting the walls before she ran out of paint."
+    },
+    {
+      "id": "s22",
+      "turkish": "Koloninin bağımsız çiftğileri, İngiliz yönetimi ve vergilendirilmesinden oturii kendilerini kırgın hissediyorlardı.",
+      "english": "The colony's independent farmers had been feeling resentful about English rule and taxation."
+    },
+    {
+      "id": "s23",
+      "turkish": "Bayan Esposito, Vincent gelip en sevdiği yemekleri isteyene kadar çok fazla yemek yapmıyordu.",
+      "english": "Mrs. Esposito hadn't been cooking very much until Vincent arrived and asked for his favorite dishes."
+    },
+    {
+      "id": "s24",
+      "turkish": "Nigel bir kardeşliğe katılana kadar, her Cumartesi babasım arıyordu.",
+      "english": "Until Nigel joined a fraternity, he had been calling his father every Saturday."
+    },
+    {
+      "id": "s25",
+      "turkish": "At bacağını kırmadan Önce, genellikle her ay iki yarığ koşuyordu.",
+      "english": "Before the horse broke his leg, he had usually been running two races each month."
+    },
+    {
+      "id": "s26",
+      "turkish": "Yeni kuyuyu kazmadan önce, köylüler kilometrelerce şu taşıyorlardı.",
+      "english": "The villagers had been carrying water for miles before they dug the new well."
+    },
+    {
+      "id": "s27",
+      "turkish": "Jimnastik takımı saat dokuzda hala sıkı çalıştyordu.",
+      "english": "The gymnastics team had still been practicing hard at nine o'clock p.m."
+    },
+    {
+      "id": "s28",
+      "turkish": "Bayan Stein saat altıda uyandığında, kocası bir saattir inekleri sağıyordu.",
+      "english": "When Mrs.Stein awoke at six o'clock, her husband had been milking the cows for an hour."
+    },
+    {
+      "id": "s29",
+      "turkish": "O, kediye bir tırmalama tahtası almadan önce, kedi her zaman mobilyalarda delikler çiziyordu.",
+      "english": "The cat had always been scratching holes in the furniture before he bought him a scratching board."
+    },
+    {
+      "id": "s30",
+      "turkish": "Natalie, sahilde mücevher yapmak için küçük deniz kabukları buluyordu.",
+      "english": "Natalie had often been finding small shells make jewelry on the beach."
+    },
+    {
+      "id": "s31",
+      "turkish": "Dadı çocukları kütüphaneye götürmeden Önce, onlar nadiren kitap okuyorlardı.",
+      "english": "The children had seldom been reading books before the nanny began taking them to the library."
+    },
+    {
+      "id": "s32",
+      "turkish": "Trina, ailesi dağlara taşınmadan önce hiç kayak yapmıyordu.",
+      "english": "Trina had never been skiing before her family moved to the mountains."
+    },
+    {
+      "id": "s33",
+      "turkish": "Jane mutlu bir şekilde bir erkek bebek için oda hazırlıyordu ama bebek bir kızdı.",
+      "english": "Jane had happily been preparing a room for a baby boy but the baby was a girl."
+    },
+    {
+      "id": "s34",
+      "turkish": "Posta taşıyıcımız emekli olmadan Önce, 30 yılı aşkın süredir postalarımızı sadakatle getiriyordu.",
+      "english": "Our mail carrier had faithfully been bringing our mail for over 30 years before he retired."
+    },
+    {
+      "id": "s35",
+      "turkish": "Köpek o yaz her gece tsrarla havuyordu.",
+      "english": "The dog had persistently been barking each night that summer."
+    },
+    {
+      "id": "s36",
+      "turkish": "Daha çok yapraklı yeşil sebzeler yemeye çalışıyordu.",
+      "english": "She had been trying to eat more leafy green vegetables."
+    },
+    {
+      "id": "s37",
+      "turkish": "Annem mutfağa girdiğinde, karton kutudan süt içiyordu.",
+      "english": "He had been drinking milk out the carton when Mom walked into the kitchen."
+    },
+    {
+      "id": "s38",
+      "turkish": "Terfi aldığımda, beş yıldır şirkette çalışıyordum.",
+      "english": "I had been working at the company for five years when I got the promotion."
+    },
+    {
+      "id": "s39",
+      "turkish": "Martha bacağını kırmadan önce, günde üç mil yürüyordu.",
+      "english": "Martha had been walking three miles a day before she broke her leg."
+    },
+    {
+      "id": "s40",
+      "turkish": "Program 1945'ten beri iyi işliyordu.",
+      "english": "The program had been working well since 1945."
+    },
+    {
+      "id": "s41",
+      "turkish": "Cathy, yerel orkestra ile solo yaptunda, 35 yıldır piyano çalıyordu.",
+      "english": "Cathy had been playing the piano for 35 years when did a solo with the local orchestra."
+    },
+    {
+      "id": "s42",
+      "turkish": "Balkona çıkmadan Önce, penceresine beş dakikadır taş atıyordu.",
+      "english": "He had been throwing rocks at her window for five minutes before she came out on the balcony."
+    },
+    {
+      "id": "s43",
+      "turkish": "Ben, Rachel eve geldiğinde, üç saattir çalışıyordu.",
+      "english": "Ben had been working for three hours when Rachel came home."
+    },
+    {
+      "id": "s44",
+      "turkish": "Şam bir şemsiye bulduğunda, on dakikadır yağmur yağıyordu.",
+      "english": "By the time Sam found an umbrella, it had been raining for ten minutes."
+    },
+    {
+      "id": "s45",
+      "turkish": "Takılıp düş' imde, köpekleri besliyordum.",
+      "english": "I had been feeding the dogs when I tripped and fell."
+    },
+    {
+      "id": "s46",
+      "turkish": "Sen onu bulduğunda, o saatlerdir içiyor muydu?",
+      "english": "Had he been drinking for hours when you found him?"
+    },
+    {
+      "id": "s47",
+      "turkish": "Müdür, Jim'i kovmadan Önce, şikayet ediyor muydu?",
+      "english": "Had the manager been complaining about Jim before she fired him?"
+    },
+    {
+      "id": "s48",
+      "turkish": "O zamandan önce saatlerce kar yağmıyor muydu?",
+      "english": "Hadn't the snow been falling for hours before then?"
+    },
+    {
+      "id": "s49",
+      "turkish": "Parmaçım kestiğinde, ne yapıyordun?",
+      "english": "What had you been doing when you cut your finger?"
+    },
+    {
+      "id": "s50",
+      "turkish": "Güç kesildiğinde, hangi faks mesajım göndermeye çalışıyordun?",
+      "english": "Which fax message had you been trying to send when the power went off?"
+    },
+    {
+      "id": "s51",
+      "turkish": "Bir alıçt bulmadan Önce, arabamı altı aydır satmaya çalışıyordum.",
+      "english": "I‘d been trying to sell my car for six months before I found a buyer."
+    },
+    {
+      "id": "s52",
+      "turkish": "Sheila kilo vermeye başladığında, uzun süredir diyet yapmıyordu.",
+      "english": "Sheila had not been dieting for long when she began to lose weight."
+    },
+    {
+      "id": "s53",
+      "turkish": "Yangın, itfaiyeciler gelmeden önce, ne kadar zamandır yantyordu?",
+      "english": "How long had the fire been burning before the firefighters arrived?"
+    },
+    {
+      "id": "s54",
+      "turkish": "Mark kapryi çaldığında, Louise saatlerdir pratik yapıyordu.",
+      "english": "Louise had been practising for hours when Mark knocked on the door."
+    },
+    {
+      "id": "s55",
+      "turkish": "James'le tanıştığında, bir yıldır o şirkette çalışıyordu.",
+      "english": "She had been working at that company for a year when she met James."
+    },
+    {
+      "id": "s56",
+      "turkish": "Sonunda evi bulduğumda, saatlerdir yürüyordum.",
+      "english": "I'd been walking for hours when I finally found the house."
+    },
+    {
+      "id": "s57",
+      "turkish": "Ayrılmak zorunda olduğumuzda, üç aydır Berlin'de yaşıyorduk.",
+      "english": "We'd been living in Berlin for three months when we had to leave."
+    },
+    {
+      "id": "s58",
+      "turkish": "Nihayet New York'a varmadan Önce, sekiz saattir uçuyorlardı.",
+      "english": "They had been flying for eight hours before they finally reached New York."
+    },
+    {
+      "id": "s59",
+      "turkish": "İşler nihayet başlamadan Önce, birkaç yıldır mücadele ediyorduk.",
+      "english": "We had been struggling for several years before the business finally took off."
+    },
+    {
+      "id": "s60",
+      "turkish": "Bütün gün yemek yiyor olduğu için aç değildi.",
+      "english": "He wasn't hungry because had had been eating all day long."
+    },
+    {
+      "id": "s61",
+      "turkish": "Bütün gece parti yapıyordu, bu yüzden sınıfta uyuyakaldı.",
+      "english": "He had been partying all night, so he fell asleep in class."
+    },
+    {
+      "id": "s62",
+      "turkish": "O gelmeden önc,e bir saatten fazla süredir orada oturuyordun.",
+      "english": "You had been sitting there for more than an hour before he arrived."
+    },
+    {
+      "id": "s63",
+      "turkish": "Janet'i kovduklarında, Janet neredeyse bir yıldır orada çalışıyordu.",
+      "english": "Janet had been working there for almost a year when they fired her."
+    },
+    {
+      "id": "s64",
+      "turkish": "Dışarıda sıcakta çalışıyor olduğumuz için susuzduk.",
+      "english": "We were thirsty because we had been working out outside in the heat."
+    },
+    {
+      "id": "s65",
+      "turkish": "Luke, günde üç kez pizza yiyor olduğu için kilo aldı.",
+      "english": "Luke gained weight because he had been eating pizza three times a day."
+    },
+    {
+      "id": "s66",
+      "turkish": "George haftalardır evini boyuyordu ama sonunda pes etti.",
+      "english": "George had been painting his house for weeks, but he finally gave up."
+    },
+    {
+      "id": "s67",
+      "turkish": "Çalışıyordum ve zihnimi temizlemek için bir gezintiye çıkmaya karar verdim.",
+      "english": "I had been studying and decided to take a stroll to clear my mind."
+    },
+    {
+      "id": "s68",
+      "turkish": "Saatlerdir arabayı temizliyorduk, bu yüzden durduk ve bir şeyler içtik.",
+      "english": "We had been cleaning the car for hours, so we stopped and had a drink."
+    },
+    {
+      "id": "s69",
+      "turkish": "Motorda bir ses duyduğumda, yaklaşık bir saattir araba kullanıyordum.",
+      "english": "I had been driving for about an hour when I heard a noise in the engine."
+    },
+    {
+      "id": "s70",
+      "turkish": "Deprem olduğunda, Tokyo'da İngilizce öğretiyordum.",
+      "english": "I had been teaching English in Tokyo when the earthquake hit."
+    },
+    {
+      "id": "s71",
+      "turkish": "Washington, D.C.'deki işe girmeden Önce, New York'ta yaşıyorlardı.",
+      "english": "They'd been living in New York before she got the job in Washington, D.C."
+    },
+    {
+      "id": "s72",
+      "turkish": "Annesinin hastalığını duyduğunda, Avrupa'yı dolastyordu.",
+      "english": "She had been traveling around Europe when she heard about her mother's illness."
+    },
+    {
+      "id": "s73",
+      "turkish": "Emekli olduğumda, hayatımın yarısından fazlaşım çiftlikte çalışryordum.",
+      "english": "I had been working on the ranch for more than half my life when I retired."
+    },
+    {
+      "id": "s74",
+      "turkish": "Ülkeye taşındığında, dört yıldır Japonca çalışıyordu.",
+      "english": "She had been studying Japanese for four years by the time she moved to the country."
+    },
+    {
+      "id": "s75",
+      "turkish": "Öğretmen geri geldiğinde, yarım saattir okuyorduk.",
+      "english": "When the teacher came back, we had been reading for half an hour."
+    },
+    {
+      "id": "s76",
+      "turkish": "Yaklaşık bir saattir koşuyor olduğu için, çok terliydi.",
+      "english": "She was very sweaty because she had been running for nearly an hour."
+    },
+    {
+      "id": "s77",
+      "turkish": "Bütün hafta çok galisryor olduğum için, göçuklarla oynayacak enerjim yoktu.",
+      "english": "I didn't have any energy to play with the kids because I had been working so hard all the week."
+    },
+    {
+      "id": "s78",
+      "turkish": "Bu işe girmeden Önce, roman yazmıyor muydun?",
+      "english": "Hadn't you been writing a novel before you got this job?"
+    },
+    {
+      "id": "s79",
+      "turkish": "O sırada kendini iyi hissetmiyor muydu?",
+      "english": "Had he not been feeling well at the time?"
+    },
+    {
+      "id": "s80",
+      "turkish": "Bol paran vardı, öyleyse neden faturalarım Gdemiyordun?",
+      "english": "You had plenty of money, so why hadn't you been paying your bills?"
+    },
+    {
+      "id": "s81",
+      "turkish": "Amerika Birleşik Devletleri'ne gitmeden önce, bir yıldır bankada çalışıyordu.",
+      "english": "He had been working at the bank for a year before he left for the United States."
+    },
+    {
+      "id": "s82",
+      "turkish": "Öğretmen geldiğinde, birkaç dakikadır koşuyorlar mıydı?",
+      "english": "Had they been running for several minutes when the teacher came?"
+    },
+    {
+      "id": "s83",
+      "turkish": "Saat 3'ten beri İngilizce mi 68reniyordun?",
+      "english": "Had you been studying English since 3 o'clock?"
+    },
+    {
+      "id": "s84",
+      "turkish": "Sarah bizi aramadan Önce, 40 dakikadır onu mu bekliyorduk?",
+      "english": "Had we been waiting for Sarah for 40 minutes before she called us?"
+    },
+    {
+      "id": "s85",
+      "turkish": "Kızı bütün gün herhangi bir şey yiyor muydu?",
+      "english": "Had her daughter been eating anything all day?"
+    },
+    {
+      "id": "s86",
+      "turkish": "Bütün gün galisryor muydu?",
+      "english": "Had she been working all day?"
+    },
+    {
+      "id": "s87",
+      "turkish": "Sen onu rahatsız edene kadar, kitap okuyor muydu?",
+      "english": "Had he been reading a book before you bothered him?"
+    },
+    {
+      "id": "s88",
+      "turkish": "Evime geldiğinde, herhangi bir yemek pişiriyor muydu?",
+      "english": "Had he been cooking any meal when she came to his home?"
+    },
+    {
+      "id": "s89",
+      "turkish": "Annen seni uyarana kadar, bütün gün İngilizce mi çalışryordun?",
+      "english": "Had you been studying English all day before your mother warned you?"
+    },
+    {
+      "id": "s90",
+      "turkish": "Oyuncu sabahtan beri çalışıyor muydu?",
+      "english": "Had the actor been working since morning?"
+    },
+    {
+      "id": "s91",
+      "turkish": "Zil çaldığında Göğretmen onlara bir video mi gösteriyordu?",
+      "english": "Had the teacher been showing them a video when the bell rang?"
+    },
+    {
+      "id": "s92",
+      "turkish": "Kocası eve geldiğinde, kadın saatlerdir evi temizliyordu.",
+      "english": "When her husband came home, the woman had been cleaning the house for hours."
+    },
+    {
+      "id": "s93",
+      "turkish": "Yer karla kaplıydı. Birkaç saattir yoğun kar yağtyordu.",
+      "english": "The ground was covered with snow. It had been snowing heavy for several hours."
+    },
+    {
+      "id": "s94",
+      "turkish": "Çocukluktan beri birlikte çalışıyorlardı.",
+      "english": "They had been working together since childhood."
+    },
+    {
+      "id": "s95",
+      "turkish": "Thomas bütün gün telefonu tamir etmeye çalıştyordu.",
+      "english": "Thomas had been trying to repair the phone the whole day."
+    },
+    {
+      "id": "s96",
+      "turkish": "Bütün gün galistyorduk, bu yüzden yorgunduk.",
+      "english": "We had been studying all day so we tired."
+    },
+    {
+      "id": "s97",
+      "turkish": "Eve döndüğümde, Helen dört saattir ayn müziği dinliyordu.",
+      "english": "Helen had been listening the same music for four hours when I came back home."
+    },
+    {
+      "id": "s98",
+      "turkish": "Daniel uyumadan önce, saatlerdir televizyon izliyordu.",
+      "english": "Daniel had been watching TV for hours before he slept."
+    },
+    {
+      "id": "s99",
+      "turkish": "Bütün öğleden sonra sahilde yürüyordun.",
+      "english": "You had been walking all afternoon on the beach."
+    },
+    {
+      "id": "s100",
+      "turkish": "Bütün gün çalışmıyordu, bu yüzden enerjikti.",
+      "english": "She hadn't been working all day so she was energetic."
+    }
+  ],
+  "aux-17": [
+    {
+      "id": "s1",
+      "turkish": "Allen önümüzdeki hafta bilim fuarına katılıyor olacak mı?",
+      "english": "Will Allen be participating in the science fair next week?"
+    },
+    {
+      "id": "s2",
+      "turkish": "Ben şehirdeyken, annenizi ziyaret ediyor olmayacak mısınız?",
+      "english": "Won't you be visiting your mother when I'm in town?"
+    },
+    {
+      "id": "s3",
+      "turkish": "Önümüzdeki hafta törende yüksek lisans derecesini alyor olacak.",
+      "english": "He will be receiving his M.A. degree at the ceremony next week."
+    },
+    {
+      "id": "s4",
+      "turkish": "Ron bugün sizi ziyaret ediyor olacak mı?",
+      "english": "Will Ron be visiting you today?"
+    },
+    {
+      "id": "s5",
+      "turkish": "Tim şu kızlar sessizce oturuyor olacaklar.",
+      "english": "All those girls will be sitting quietly."
+    },
+    {
+      "id": "s6",
+      "turkish": "Önümüzdeki hafta bizi görmeye geliyor olacaklar.",
+      "english": "They'll be coming to see us next week."
+    },
+    {
+      "id": "s7",
+      "turkish": "Yarın ise arabayla gidiyor olacağım.",
+      "english": "I'll be driving to work tomorrow."
+    },
+    {
+      "id": "s8",
+      "turkish": "Öğleden sonra, toplantıda yabancılarla konuşuyor olacağım.",
+      "english": "In the afternoon, I'll be talking to the foreigners at the meeting."
+    },
+    {
+      "id": "s9",
+      "turkish": "Ekim'e kadar bir profesyonel gibi yüzüyor olacağım.",
+      "english": "By October, I will be swimming like a pro."
+    },
+    {
+      "id": "s10",
+      "turkish": "Toplantıya geiyor olacak.",
+      "english": "He will be coming to the meeting."
+    },
+    {
+      "id": "s11",
+      "turkish": "Jane ise arabayla gidiyor olacak.",
+      "english": "Jane will be driving to work."
+    },
+    {
+      "id": "s12",
+      "turkish": "",
+      "english": "I will be eating a cheeseburgers until the day I die."
+    },
+    {
+      "id": "s13",
+      "turkish": "Yarısı 18:00 de yapıyor olacaklar.",
+      "english": "They will be running the race at 6 pm."
+    },
+    {
+      "id": "s14",
+      "turkish": "Siz vardığınızda, kdpekler yüksek sesle havliyor olacak.",
+      "english": "The dogs will be barking loudly when you arrive."
+    },
+    {
+      "id": "s15",
+      "turkish": "Michael bu Cumartesi bir maraton koşuyor olacak.",
+      "english": "Michael will be running a marathon this Saturday."
+    },
+    {
+      "id": "s16",
+      "turkish": "Eric, yarışta Michael'a karşı yarışıyor olacak.",
+      "english": "Eric will be competing against Michael in the race."
+    },
+    {
+      "id": "s17",
+      "turkish": "Yarın sabah 6:00 civarında uyuyor olacağım.",
+      "english": "I will be sleeping at around 6.00 AM tomorrow."
+    },
+    {
+      "id": "s18",
+      "turkish": "Yarın bu saatte oynuyor olacaklar.",
+      "english": "They will be playing at this time tomorrow."
+    },
+    {
+      "id": "s19",
+      "turkish": "Eve geldiğimde, televizyon izliyor olacak.",
+      "english": "She will be watching TV when I come home."
+    },
+    {
+      "id": "s20",
+      "turkish": "Sen film izlerken, ben ofiste çalışıyor olacağım.",
+      "english": "I will be working in the office while you watch a movie."
+    },
+    {
+      "id": "s21",
+      "turkish": "Farklı konularda makaleler yazıyor olacağım.",
+      "english": "I will be writing articles on different topics."
+    },
+    {
+      "id": "s22",
+      "turkish": "Robert çeşitli türlerde kitaplar okuyor olacak.",
+      "english": "Robert will be reading various kinds of books."
+    },
+    {
+      "id": "s23",
+      "turkish": "0 sahada futbol oynuyor olacaklar.",
+      "english": "They will be playing football in that field."
+    },
+    {
+      "id": "s24",
+      "turkish": "April bu kahve dükkanında kahve içiyor olacak.",
+      "english": "April will be having coffee in this coffee shop."
+    },
+    {
+      "id": "s25",
+      "turkish": "Bob kütüphaneye gidiyor olacak.",
+      "english": "Bob will be going to the library."
+    },
+    {
+      "id": "s26",
+      "turkish": "Bu Pazartesi o markette alışveriş yapıyor olacağız.",
+      "english": "We will be shopping in that market this Monday."
+    },
+    {
+      "id": "s27",
+      "turkish": "Bu yeni sinema salonunda bir film izliyor olacağız.",
+      "english": "We will be watching a movie in this new movie theatre."
+    },
+    {
+      "id": "s28",
+      "turkish": "Yarın masrafları hesaplıyor olacaksın.",
+      "english": "You will be calculating the expenses tomorrow."
+    },
+    {
+      "id": "s29",
+      "turkish": "Farklı türden şarkılar söyleyeceğim, dzellikle modern.",
+      "english": "I will be singing different kinds of songs, especially modern."
+    },
+    {
+      "id": "s30",
+      "turkish": "Cuma ıınıversitemin bir programına katılıyor olacağım.",
+      "english": "I will be attending a program of my varsity on Friday."
+    },
+    {
+      "id": "s31",
+      "turkish": "Jeff, Mart'ta dünyayı dolaşıyor olacak.",
+      "english": "Jeff will be traveling around the world in March."
+    },
+    {
+      "id": "s32",
+      "turkish": "Perşembe o sahada hokey oynuyor olacaklar.",
+      "english": "They will be playing hockey in that field on Thursday."
+    },
+    {
+      "id": "s33",
+      "turkish": "Şair, program için romantik bir sür yazıyor olacak.",
+      "english": "The poet will be writing a romantic poem for the program."
+    },
+    {
+      "id": "s34",
+      "turkish": "Sdz yazan, film için gerçekçi bir şarkı yazıyor olacak.",
+      "english": "The lyricist will be writing a realistic song for the film."
+    },
+    {
+      "id": "s35",
+      "turkish": "Metallica'nın konserine gidiyor olacak mısın?",
+      "english": "Will you be going to the concert of Metallica?"
+    },
+    {
+      "id": "s36",
+      "turkish": "Yoğun programım nedeniyle programa katılmıyor olacağım.",
+      "english": "I will not be attending the program because of my busy schedule."
+    },
+    {
+      "id": "s37",
+      "turkish": "Robin toplantıda bize katılıyor olacak.",
+      "english": "Robin will be joining us at the meeting."
+    },
+    {
+      "id": "s38",
+      "turkish": "Görevi yapmast için ona yardım ediyor olacağım.",
+      "english": "I will be helping him to do the task."
+    },
+    {
+      "id": "s39",
+      "turkish": "Mizikal dramanın tadım çıkarıyor olacağız.",
+      "english": "We will be going to enjoy the musical drama."
+    },
+    {
+      "id": "s40",
+      "turkish": "Program için gerekli tüm malzemeleri düzenliyor olacağım.",
+      "english": "I will be arranging all the necessary materials for the program."
+    },
+    {
+      "id": "s41",
+      "turkish": "Önümüzdeki hafta bu saatlerde maç başhyor olacak.",
+      "english": "This time next week, the match will be starting."
+    },
+    {
+      "id": "s42",
+      "turkish": "Bir saat içinde aynhyor olacağız.",
+      "english": "In one hour, we will be leaving"
+    },
+    {
+      "id": "s43",
+      "turkish": "Önümüzdeki ay üniversitede bir konuşma yapıyor olacağım.",
+      "english": "Next month, I will be giving a speech at the university."
+    },
+    {
+      "id": "s44",
+      "turkish": "",
+      "english": "We'll be having a party next Friday."
+    },
+    {
+      "id": "s45",
+      "turkish": "Önümüzdeki yıl ispanya'da yastyor olacak.",
+      "english": "He will be living in Spain next year."
+    },
+    {
+      "id": "s46",
+      "turkish": "Bu gece maçı izliyor olacaklar.",
+      "english": "They will be watching the game tonight."
+    },
+    {
+      "id": "s47",
+      "turkish": "Yarın birlikte eve yürüyor olacağız.",
+      "english": "We will be walking home together tomorrow."
+    },
+    {
+      "id": "s48",
+      "turkish": "Önümüzdeki hafta büyükannemi ziyaret ediyor olacağım.",
+      "english": "I will be visiting my grandma next week."
+    },
+    {
+      "id": "s49",
+      "turkish": "Yarın bu saatlerde yeni şirkette çalışıyor olacağım.",
+      "english": "This time tomorrow, I will be working at the new company."
+    },
+    {
+      "id": "s50",
+      "turkish": "Önümüzdeki yıl Afrika'da yaşıyor olacak.",
+      "english": "Next year, he will be living in Africa."
+    },
+    {
+      "id": "s51",
+      "turkish": "Önümüzdeki ay bir maraton koşuyor olacağız.",
+      "english": "Next month we will be running a marathon."
+    },
+    {
+      "id": "s52",
+      "turkish": "Yarın bu saatlerde çalışmıyor olacağım.",
+      "english": "By this time tomorrow, I will not be working."
+    },
+    {
+      "id": "s53",
+      "turkish": "Bir yıl sonra artık şarkı söylemiyor olacak.",
+      "english": "In one year, he will not be singing anymore."
+    },
+    {
+      "id": "s54",
+      "turkish": "Önümüzdeki ay artık okula yürümüyor olacaklar.",
+      "english": "Next month, they will not be walking to school anymore."
+    },
+    {
+      "id": "s55",
+      "turkish": "Önümüzdeki yıl hayalindeki şirkette mi çalışıyor olacaksın?",
+      "english": "Will you be working at the company of your dreams next year?"
+    },
+    {
+      "id": "s56",
+      "turkish": "Önümüzdeki ay seyahat ediyor olacak mı?",
+      "english": "Will he be travelling next month?"
+    },
+    {
+      "id": "s57",
+      "turkish": "İki yıl sonra her gün okula bisikletle mi gidiyor olacağız?",
+      "english": "Will we be cycling to school every day in two years?"
+    },
+    {
+      "id": "s58",
+      "turkish": "Babaları geldiğinde, dışarıda oynuyor olacaklar.",
+      "english": "They will be playing outside when their father arrives."
+    },
+    {
+      "id": "s59",
+      "turkish": "Araba sürüyor olacağımdan telefonuma cevap vermeyeceğim.",
+      "english": "I won't answer my phone because I'Il be driving."
+    },
+    {
+      "id": "s60",
+      "turkish": "Trenden indiğinizde bilet makinesinin yanında sizi bekliyor olacağım.",
+      "english": "When you get off the train, I will be waiting for you by the ticket machine."
+    },
+    {
+      "id": "s61",
+      "turkish": "Önümüzdeki hafta bu sefer isviğre'de kayak yapıyor olacazim!",
+      "english": "This time next week I will be skiing in Switzerland!"
+    },
+    {
+      "id": "s62",
+      "turkish": "Yeni komediyi gördÜğünizde, çok gillliyor olacaksınız.",
+      "english": "You will be laughing so hard when you see the new comedy."
+    },
+    {
+      "id": "s63",
+      "turkish": "Otelimizde kağ gün kalıyor olacaksımz?",
+      "english": "How many days will you be staying at our hotel?"
+    },
+    {
+      "id": "s64",
+      "turkish": "Sadece bir hafta içinde, okyanus kenarında oturup sahilde buzlu çay yudumluyor olacağız.",
+      "english": "In just a week, we'll be sitting by the ocean and sipping iced tea on the beach."
+    },
+    {
+      "id": "s65",
+      "turkish": "Bu yaz hala dondurma dükkanında çalıştyor olacağım.",
+      "english": "This summer, I'll still be working at the ice cream shop."
+    },
+    {
+      "id": "s66",
+      "turkish": "Bir düşün, Önümüzdeki Pazartesi yeni işinde çalışıyor olacaksın.",
+      "english": "Just think, next Monday you will be working at your new job."
+    },
+    {
+      "id": "s67",
+      "turkish": "Noel'e kadar bir profesyonel gibi kayak yapıyor olacağım.",
+      "english": "By Christmas, I will be skiing like a pro."
+    },
+    {
+      "id": "s68",
+      "turkish": "Önümüzdeki hafta bu zamanlarda, Balı'de giinesleniyor olacağım.",
+      "english": "This time next week, I will be sun bathing in Bali."
+    },
+    {
+      "id": "s69",
+      "turkish": "Toplantıya geliyor olacak, dyle tahmin ediyorum.",
+      "english": "He'll be coming to the meeting, I expect so."
+    },
+    {
+      "id": "s70",
+      "turkish": "Sanınm güneşin alnında çalıştıktan sonra, susuyor olacaksın.",
+      "english": "I guess you' ll be feeling thirsty after working in the sun."
+    },
+    {
+      "id": "s71",
+      "turkish": "",
+      "english": "You' II be missing the sunshine once you're back in England."
+    },
+    {
+      "id": "s72",
+      "turkish": "Arkadaşını bu gece bara getiriyor olacak mısın?",
+      "english": "Will you be bringing your friend to the pub tonight?"
+    },
+    {
+      "id": "s73",
+      "turkish": "Jim bizimle mi geliyor olacak?",
+      "english": "Will Jim be coming with us?"
+    },
+    {
+      "id": "s74",
+      "turkish": "Bu gece partiye mi gidiyor olacak?",
+      "english": "Will she be going to the party tonight?"
+    },
+    {
+      "id": "s75",
+      "turkish": "Bu odada uyuyacak mıyım?",
+      "english": "Will I be sleeping in this room?"
+    },
+    {
+      "id": "s76",
+      "turkish": "Önümüzdeki hafta konferansta Jim ile görüşeceğim.",
+      "english": "l'll be seeing Jim at the conference next week."
+    },
+    {
+      "id": "s77",
+      "turkish": "Avustralya'dayken, arkadaşlarının yanında kalıyor olacak.",
+      "english": "When he is in Australia, he will be staying with his friends."
+    },
+    {
+      "id": "s78",
+      "turkish": "Bu akşam Jane ile yemek yiyiyor olacağım böylece ona anlatabilirim.",
+      "english": "V'll be eating with Jane this evening so I can tell her."
+    },
+    {
+      "id": "s79",
+      "turkish": "Bir saat sonra hala giysilerimi ııtuluyor olacağım.",
+      "english": "In an hour, I'll still be ironing my clothes."
+    },
+    {
+      "id": "s80",
+      "turkish": "Yarın, hala soğuk çılgınlığı gekiyor olacak.",
+      "english": "Tomorrow, he' Il still be suffering from his cold."
+    },
+    {
+      "id": "s81",
+      "turkish": "Önümüzdeki yıl yine de altı beden mi giyiyor olacak?",
+      "english": "Next year will she still be wearing a size six?"
+    },
+    {
+      "id": "s82",
+      "turkish": "Hisse fiyatlan sabahlar hala düşüyor olmayacak mı?",
+      "english": "Won't stock prices still be falling in the morning?"
+    },
+    {
+      "id": "s83",
+      "turkish": "Ne yazık ki, deniz seviyeleri 20 yıl sonra yÜkselmeye devam ediyor olacak.",
+      "english": "Unfortunately, sea levels will still be rising in 20 years."
+    },
+    {
+      "id": "s84",
+      "turkish": "Yarın bu saatte New York'a uçuyor olacağız.",
+      "english": "At this time tomorrow, we will be flying to New York."
+    },
+    {
+      "id": "s85",
+      "turkish": "Bebek saat dokuzda uyuyor olacak.",
+      "english": "At nine o'clock, the baby will be sleeping."
+    },
+    {
+      "id": "s86",
+      "turkish": "Lilly ve Neil, Kaliforniya'ya gidiyorlar. Yarın bu saatlerde sörf yapıyor olacaklar.",
+      "english": "Lilly and Neil are on their way to California. They will be surfing this time tomorrow."
+    },
+    {
+      "id": "s87",
+      "turkish": "Cuma saat yedide arkadaşımın düğününde bir konuşma yapıyor olacağım.",
+      "english": "I will be giving a speech at my friend's wedding on Friday at seven."
+    },
+    {
+      "id": "s88",
+      "turkish": "Eve geldiğimde, muhtemelen TV izliyor olacaksın.",
+      "english": "You will probably be watching TV when I get home."
+    },
+    {
+      "id": "s89",
+      "turkish": "Bütün gece dans ediyor olmayacaklar.",
+      "english": "They will not be dancing all night."
+    },
+    {
+      "id": "s90",
+      "turkish": "Geciktik, artık bizi bekliyor olmayacak.",
+      "english": "We are late, he will not be waiting for us anymore."
+    },
+    {
+      "id": "s91",
+      "turkish": "Gece yarısına kadar ders çalışıyor olmayacak.",
+      "english": "She will not be studying until midnight."
+    },
+    {
+      "id": "s92",
+      "turkish": "Artık sizin için her şeyi hazırhyor olmayacağım.",
+      "english": "I will not be preparing everything for you any longer."
+    },
+    {
+      "id": "s93",
+      "turkish": "KG",
+      "english": "With your bad work ethic, you will probably not be working for this company anymore next year."
+    },
+    {
+      "id": "s94",
+      "turkish": "Yarın akşam ne yapıyor olacaksın?",
+      "english": "What will you be doing tomorrow evening?"
+    },
+    {
+      "id": "s95",
+      "turkish": "Partide kağ kişi bira içiyor olacak?",
+      "english": "How many people will be drinking beer at the party?"
+    },
+    {
+      "id": "s96",
+      "turkish": "Jane sahnede piyano mu çaltyor olacak?",
+      "english": "Will Jane be playing the piano at the performance?"
+    },
+    {
+      "id": "s97",
+      "turkish": "Basın bildirisiyle kim ilgileniyor olacak?",
+      "english": "Who will be dealing with the press release?"
+    },
+    {
+      "id": "s98",
+      "turkish": "Dublin'deyken nerede kalıyor olacaksın?",
+      "english": "Where will you be staying when you're in Dublin?"
+    },
+    {
+      "id": "s99",
+      "turkish": "Bangkok'a vardığımda, muhtemelen yağmur yağtyor olacak.",
+      "english": "It will probably be raining when I reach Bangkok."
+    },
+    {
+      "id": "s100",
+      "turkish": "Ona telefon ettiğinde, uyuyor olacak.",
+      "english": "She will be sleeping when you telephone her."
+    }
+  ],
+  "aux-18": [
+    {
+      "id": "s1",
+      "turkish": "Sen gelmeden önce, farklı konularda makaleler yatyor olacağım.",
+      "english": "I will have been written articles on different topics before you come."
+    },
+    {
+      "id": "s2",
+      "turkish": "Robert bu konuda çeşitli kitaplar okuyor olacak.",
+      "english": "Robert will have been reading various kinds of books on this topic."
+    },
+    {
+      "id": "s3",
+      "turkish": "Sen ulaşmadan Öncei onlar o sahada futbol oynuyor olacaklar.",
+      "english": "They will have been playing football in that field before you reach."
+    },
+    {
+      "id": "s4",
+      "turkish": "April buraya gelmeden Önce, kafede dedikodu yapıyor olacak.",
+      "english": "April will have been gossiping in the coffee shop before she comes here."
+    },
+    {
+      "id": "s5",
+      "turkish": "Bob sınıfa gelmeden önce, kütüphanede çalıştyor olacak.",
+      "english": "Bob will have been studying in the library before he comes to the class."
+    },
+    {
+      "id": "s6",
+      "turkish": "Sen eve gelmeden önce, o markette alışveriş yapıyor olacağız.",
+      "english": "We will have been shopping in that market before you come home."
+    },
+    {
+      "id": "s7",
+      "turkish": "O gelmeden Önce, Cineplex'te bir film izliyor olacağız.",
+      "english": "We will have been watching a movie in the Cineplex before he comes."
+    },
+    {
+      "id": "s8",
+      "turkish": "Annen seni aramdan Önce, ev işi yapıyor olacaksın.",
+      "english": "You will have been doing housework before your calls you."
+    },
+    {
+      "id": "s9",
+      "turkish": "Sen bize katılmadan Önce, farklı türden şarkılar sdylüyor olacağım.",
+      "english": "I will have been singing different kinds of songs before you join us."
+    },
+    {
+      "id": "s10",
+      "turkish": "Buraya gelmeden Önce, programa katılıyor olacağım.",
+      "english": "I will have been attending the program before I come here."
+    },
+    {
+      "id": "s11",
+      "turkish": "Jeff, Bangladeş'e gelmeden Önce diinyayı dolastyor olacak.",
+      "english": "Jeff will have been traveling around the world before he comes to Bangladesh."
+    },
+    {
+      "id": "s12",
+      "turkish": "Sen işini bitirmeden önce, o sahada hokey oynuyor olacaklar.",
+      "english": "They will have been playing hockey in that field before you finish you work."
+    },
+    {
+      "id": "s13",
+      "turkish": "Şair, program başlamadan Önce romantik bir sür yazryor olacak.",
+      "english": "The poet will have been writing a romantic poem before the program starts."
+    },
+    {
+      "id": "s14",
+      "turkish": "Söz yazart, film için gerçekğı bir şarkı yazıyor olacak.",
+      "english": "The lyricist will have been writing a realistic song for the film."
+    },
+    {
+      "id": "s15",
+      "turkish": "Ben seninle konuşmadan Önce, konsere gidiyor olacak msin?",
+      "english": "Will you have been going to the concert before I talk to you?"
+    },
+    {
+      "id": "s16",
+      "turkish": "Bu makaleyi okumadan Önce, toplantıya katilyor olmayacağım.",
+      "english": "I will not have been attending the meeting before I read this article."
+    },
+    {
+      "id": "s17",
+      "turkish": "Sen sunumu tamamlamadan Ğçe, Robin toplantıda bize katıltyor olacak.",
+      "english": "Robin will have been joining us at the meeting before you complete the presentation."
+    },
+    {
+      "id": "s18",
+      "turkish": "Ders başlamadan Önce, görevini yerine getirmesine yardım ediyor olacağım.",
+      "english": "I will have been helping him to do the task before the class starts."
+    },
+    {
+      "id": "s19",
+      "turkish": "Yarışma başlamadan önce, müzikal dramanın tadını çıkanyor olacağız.",
+      "english": "We will have been enjoying the musical drama before the game show starts."
+    },
+    {
+      "id": "s20",
+      "turkish": "Program başlamadan önce, gerekli tüm malzemeleri düzenliyor olacağım.",
+      "english": "I will have been arranging all the necessary materials before the program starts."
+    },
+    {
+      "id": "s21",
+      "turkish": "On yıldır Mümbai'de yastyor olacaklar.",
+      "english": "They will have been living in Mumbai for 10 years."
+    },
+    {
+      "id": "s22",
+      "turkish": "Mayıs'tan beri alışverişine başlıyor olacaksın.",
+      "english": "You will have been starting your shopping since May."
+    },
+    {
+      "id": "s23",
+      "turkish": "Önümüzdeki yıl bu şirkette bir yıldır çalsiyor olacağım.",
+      "english": "Next year, I will have been working at this company for one year."
+    },
+    {
+      "id": "s24",
+      "turkish": "Üç saattir yürüyor olacağım.",
+      "english": "I will have been walking for three hours."
+    },
+    {
+      "id": "s25",
+      "turkish": "Jane on iki saattir çalışıyor olacak, bu yüzden yemek yapmak isteyeceğini sanmıyorum.",
+      "english": "Jane will have been working for twelve hours, so I don't think she will want to cook."
+    },
+    {
+      "id": "s26",
+      "turkish": "Bitkileri her gün suluyor olacağım; umanm Glmezler.",
+      "english": "I will have been watering the plants every day; I hope they won't die."
+    },
+    {
+      "id": "s27",
+      "turkish": "Bu Mart'ta on yıldır o evde yaşıyor olacaklar.",
+      "english": "They will have been living in that house for ten years this March."
+    },
+    {
+      "id": "s28",
+      "turkish": "Ofleden beri araba kullanıyor olacak, bu yüzden dinlenmeye ihtiyacı olacak.",
+      "english": "He will have been driving since noon, so he will need a rest."
+    },
+    {
+      "id": "s29",
+      "turkish": "Saat altıya kadar beş saattir çalışıyor olacaklar.",
+      "english": "They will have been studying for five hours by six o'clock."
+    },
+    {
+      "id": "s30",
+      "turkish": "Mary bitirene kadar beş saattir golf oynuyor olacak.",
+      "english": "Mary will have been playing golf for five hours by the time she finishes."
+    },
+    {
+      "id": "s31",
+      "turkish": "İki yıldır orada yaşıyor olacak.",
+      "english": "She will have been living there for 2 years."
+    },
+    {
+      "id": "s32",
+      "turkish": "Beş yıldır burada çalışıyor olacağım.",
+      "english": "I will have been working here for 5 years."
+    },
+    {
+      "id": "s33",
+      "turkish": "Bütün gün çalışıyor olacak.",
+      "english": "He will have been studying all day."
+    },
+    {
+      "id": "s34",
+      "turkish": "Bir saatten fazla bir süredir bekliyor olacak.",
+      "english": "She will have been waiting for over an hour."
+    },
+    {
+      "id": "s35",
+      "turkish": "Yarım saattir koşuyor olacaklar.",
+      "english": "They will have been running half an hour."
+    },
+    {
+      "id": "s36",
+      "turkish": "Otobüs nihayet geldiğinde, uzun zamandır bekliyor olacağız.",
+      "english": "We will have been waiting for a long time when the bus finally comes."
+    },
+    {
+      "id": "s37",
+      "turkish": "Küçük kız kardeşim, film bittiğinde, bir saattir sessizce oturuyor olacak.",
+      "english": "My little sister will have been sitting quietly for an hour when the movie finishes."
+    },
+    {
+      "id": "s38",
+      "turkish": "Geldiğinde bütün gün temizlik yapıyor olacağım, bu yüzden dışarı çıkamayacak kadar yorgun olacağım.",
+      "english": "I will have been cleaning all day when you arrive, so I'Il be too tired to go out."
+    },
+    {
+      "id": "s39",
+      "turkish": "2030 yılına kadar bu şirketin müdürii olarak otuz yıldır çalışıyor olacak.",
+      "english": "By 2030, he will have been working as the director of this company for thirty years."
+    },
+    {
+      "id": "s40",
+      "turkish": "Mart'ta evlendiklerinde, altı yıldır birlikte yaşıyor olacaklar.",
+      "english": "When they get married in March, they will have been living together for six years."
+    },
+    {
+      "id": "s41",
+      "turkish": "",
+      "english": "By the time we get home, they will have been playing football for 30 minutes."
+    },
+    {
+      "id": "s42",
+      "turkish": "Haziran sonunda, bir yıldır öğretmenlik yapıyor olacağım.",
+      "english": "By the end of June, I will have been teaching for one whole year."
+    },
+    {
+      "id": "s43",
+      "turkish": "Gece yarısı, beş saattir aralıksız dans ediyor olacağız!",
+      "english": "At midnight, we will have been dancing for five hours straight!"
+    },
+    {
+      "id": "s44",
+      "turkish": "Önümüzdeki haftaya kadar üç yıldır piyano dersleri alıyor olacağım.",
+      "english": "By next week, I will have been taking piano lessons for three years."
+    },
+    {
+      "id": "s45",
+      "turkish": "Büyükannemin evine vardığımızda, sekiz saattir arabaya sürüyor olacağız.",
+      "english": "We will have been driving for eight hours when we reach my grandma's house."
+    },
+    {
+      "id": "s46",
+      "turkish": "Saat altrya kadar burada üç saattir bekliyor olacağım.",
+      "english": "I will have been waiting here for three hours by six o'clock."
+    },
+    {
+      "id": "s47",
+      "turkish": "2022'ye kadar, on altı yıldır Londra'da yastyor olacak.",
+      "english": "By 2022, he will have been living in London for sixteen years."
+    },
+    {
+      "id": "s48",
+      "turkish": "Bu kursu bitirdiğimde, iki aydır İngilizce dgreniyor olacadım.",
+      "english": "When I finish this course, I will have been learning English for two months."
+    },
+    {
+      "id": "s49",
+      "turkish": "Önümüzdeki yıl burada dört yıldır çalışıyor olacak.",
+      "english": "Next year, she will have been working here for four years."
+    },
+    {
+      "id": "s50",
+      "turkish": "6:00'da geldiğimde, uzun süredir pratik yapıyor olmayacak mısın?",
+      "english": "When I come at 6:00, will you have been practising long?"
+    },
+    {
+      "id": "s51",
+      "turkish": "Başkan Yardımcısı döndüğünde, üç haftadır denizasın seyahat ediyor olacak.",
+      "english": "The Vice President will have been traveling overseas for three weeks when he returns."
+    },
+    {
+      "id": "s52",
+      "turkish": "Temmuz'a kadar Gina yeni işini bir yıldır yönetiyor olacak.",
+      "english": "By July, Gina will have been running her new business for a year."
+    },
+    {
+      "id": "s53",
+      "turkish": "Bu bahar, ikizler iki yıldır aşgilik okuluna gidiyor olacaklar.",
+      "english": "This spring, the twins will have been attending culinary school for two years."
+    },
+    {
+      "id": "s54",
+      "turkish": "2022 yılına kadar, şehrimiz kasırgadan on yıldır ıstırap çekiyor olacak.",
+      "english": "By 2022, our city will have been suffering from the hurricane for ten years."
+    },
+    {
+      "id": "s55",
+      "turkish": "Mobilya mağazası Önümüzdeki hafta kapandığında, 1910'dan beri iş yapıyor olacak.",
+      "english": "When the furniture store closes next week, it will have been doing business since 1910."
+    },
+    {
+      "id": "s56",
+      "turkish": "Yarın sabaha kadar, dört gündür hiç durmadan kar yağyor olacak!",
+      "english": "By tomorrow morning, it will have been snowing for four days without stopping!"
+    },
+    {
+      "id": "s57",
+      "turkish": "Jane Teyze, biz kalktığımızda yaklaşık bir saattir kahvaltı yapıyor olacak.",
+      "english": "Aunt Jane will have been cooking breakfast for about an hour when we get up."
+    },
+    {
+      "id": "s58",
+      "turkish": "Yıl sonu itibariyle şirketimiz, on yılı aşkın süredir satışlarda pazarda lider konumda oluyor olacak.",
+      "english": "As of the end of the year, our company will have been leading the market in sales for over a decade."
+    },
+    {
+      "id": "s59",
+      "turkish": "Bay Ramirez emekli olduğunda, 34 yıldır öğretmenlik yapıyor olacak.",
+      "english": "When Mr. Ramirez retires, he will have been teaching for 34 years."
+    },
+    {
+      "id": "s60",
+      "turkish": "Gelinin arkadaşları resepsiyon başlamadan Önce, ziyafet salonunu dekore ediyor olacaklar.",
+      "english": "Friends of the bride will have been decorating the banquet hall before the reception begins."
+    },
+    {
+      "id": "s61",
+      "turkish": "Topluluğumuzun katılımı son 20 yılda yılda yüzde 10 artıyor olacak.",
+      "english": "Our community's attendance will have been increasing by 10 percent per year for the past 20 years."
+    },
+    {
+      "id": "s62",
+      "turkish": "Arpginin bir molaya ihtiyacı var. Bu parçadan sonra iki saattir Uist liste çalıyor olacak.",
+      "english": "The harpist needs a break. After this piece, she will have been playing for two hours straight."
+    },
+    {
+      "id": "s63",
+      "turkish": "İnsanoğlu, 2039 yılına kadar yaklaşık 600 yıldır makine ile kitap basıyor olacak.",
+      "english": "Mankind will have been printing books by machine for around 600 years by the year 2039."
+    },
+    {
+      "id": "s64",
+      "turkish": "Saat beşte ne kadar süredir çalıştyo olacaksın?",
+      "english": "How long will you have been working by five o'clock?"
+    },
+    {
+      "id": "s65",
+      "turkish": "Uçağımz geldiğinde, uzun süre bekliyor olacak mısın?",
+      "english": "Will you have been waiting long when our plane arrives?"
+    },
+    {
+      "id": "s66",
+      "turkish": "Bruce Columbia'ya ulaştığında, kaç mil yol alıyor olacak?",
+      "english": "How many miles will Bruce have been driving when he reaches Columbia?"
+    },
+    {
+      "id": "s67",
+      "turkish": "Pastay! saat ikiye kadar yeterince uzun süre pişiriyor olacak mı?",
+      "english": "Will she have been baking the cake long enough by two o'clock?"
+    },
+    {
+      "id": "s68",
+      "turkish": "Seni 6:00'da uyandınrsam, yeterince uzun süre uyuyor olacak mısın?",
+      "english": "Will you have been sleeping long enough if I wake you at 6:00 a.m.?"
+    },
+    {
+      "id": "s69",
+      "turkish": "AVM'den çıkana kadar ne kadar süredir alışveriş yapıyor olacağız?",
+      "english": "How long will we have been shopping by the time we leave the mall?"
+    },
+    {
+      "id": "s70",
+      "turkish": "Bayan Grant, yeni işine başladığında bu şirkette kağ yıldır ccalışıyor olacak?",
+      "english": "How many years will Mrs. Grant have been working for this company when she starts her new job?"
+    },
+    {
+      "id": "s71",
+      "turkish": "Polis, itfaiye aracı oraya varmadan önce, yolu açıyor olacak mı?",
+      "english": "Will the police have been clear the road for the fire truck before it gets there?"
+    },
+    {
+      "id": "s72",
+      "turkish": "Eve gittiğimizde, çorba çok uzun süre kaynıyor olacak mı?",
+      "english": "Will the soup have been boiling too long when we get home?"
+    },
+    {
+      "id": "s73",
+      "turkish": "Janet bitiş çizgisini geçtiğinde, ne kadar süredir koşuyor olacak?",
+      "english": "How long will Janet have been running when she crosses the finish line?"
+    },
+    {
+      "id": "s74",
+      "turkish": "Profesör Evans bugün aynı dersi verdiğinde, kağ yartyıl aym dersi veriyor olacak?",
+      "english": "How many semesters will Professor Evans have been giving this same lecture when he gives it today?"
+    },
+    {
+      "id": "s75",
+      "turkish": "Kurtarma ekibi, yarına kadar bir haftadır yürüyüşçülere ulaşmaya çalıştyor olacak mı?",
+      "english": "Will the rescue crew have been trying to reach the hikers for a week by tomorrow?"
+    },
+    {
+      "id": "s76",
+      "turkish": "Erma, bitirdiğinde, o elbiseyi kağ saattir dikiyor olacak?",
+      "english": "How many hours will Erma have been sewing that dress when she finishes?"
+    },
+    {
+      "id": "s77",
+      "turkish": "Bu Noel'e kadar, koro ile beş yıldır mı şarkı sdyliiyor olacaksın?",
+      "english": "Will you have been singing with the choir for five years by this Christmas?"
+    },
+    {
+      "id": "s78",
+      "turkish": "Bu yıl elli yaşına geldiğinde, 45 yıldır bisiklete biniyor olacak.",
+      "english": "When he turns fifty years old this year, he will have been riding a bicycle for 45 years."
+    },
+    {
+      "id": "s79",
+      "turkish": "Yirmi dört yıldır şirkette çalışıyor olacak.",
+      "english": "He will have been working for the company for 24 years."
+    },
+    {
+      "id": "s80",
+      "turkish": "Yaşlandığımızda, daha iyi durumda olacağız çünkü yıllardır bisikletlerimizde egzersiz yapıyor olacağız.",
+      "english": "When we get older, we will be in better shape because we will have been exercising on our bikes for years."
+    },
+    {
+      "id": "s81",
+      "turkish": "Mezun olduğu zaman yedi yıldır okuyor olacak.",
+      "english": "By the time she graduates, she will have been studying for 7 years."
+    },
+    {
+      "id": "s82",
+      "turkish": "Akşam 7'ye kadar, bu proje üzerinde sekiz saattir çalışıyor olacağım.",
+      "english": "By 7 pm, I will have been working on this project for eight hours straight."
+    },
+    {
+      "id": "s83",
+      "turkish": "Önümüzdeki yıl bu zamana kadar, yirmi yıldır Japonya'da yaşıyor olacaklar.",
+      "english": "By this time next year, they will have been living in Japan for two decades."
+    },
+    {
+      "id": "s84",
+      "turkish": "Bütün hafta sonu çalışıyor olacağım, bu yüzden Pazar gecesi enerjik olmayacağım.",
+      "english": "I will have been working all weekend so I won't be energetic on Sunday night."
+    },
+    {
+      "id": "s85",
+      "turkish": "Nihayet sınav sonuçlanmızı aldığınızda, ne kadar süredir bekliyor olacaksınız?",
+      "english": "How long will you have been waiting when you finally get your exam results?"
+    },
+    {
+      "id": "s86",
+      "turkish": "Julie fazla yiyor olmayacak, bu yüzden geldiğinde iyi bir yemek yediğinden emin olmamız gerekecek.",
+      "english": "Julie won't have been eating much, so we'll need to make sure she has a good meal when she arrives."
+    },
+    {
+      "id": "s87",
+      "turkish": "Nihayet taşındığında, ne kadar zamandır eve taşınmay planlıyor olacak?",
+      "english": "How long will she have been planning) to move house when she finally moves?"
+    },
+    {
+      "id": "s88",
+      "turkish": "Biz oraya vardığımızda, uzun süredir mi bekliyor olacak?",
+      "english": "Will she have been waiting long by the time we get there?"
+    },
+    {
+      "id": "s89",
+      "turkish": "Sonunda durduğunda, on saattir bilgisayar oyunları mı oynuyor olacak?",
+      "english": "Will he have been playing computer games for ten hours when he finally stops?"
+    },
+    {
+      "id": "s90",
+      "turkish": "Bütün gün ders çalışıyor olacaklar, bu yüzden akşam dışan çıkmak isteyecekler.",
+      "english": "They will have been studying all day, so they'll want to go out in the evening."
+    },
+    {
+      "id": "s91",
+      "turkish": "O geldiğinde, onlar uzun süredir otelde kalmyor olacaklar.",
+      "english": "They won't have been staying in the hotel for long when she arrives."
+    },
+    {
+      "id": "s92",
+      "turkish": "Seninle karşılaştığımda, yurliyor olmayacağım.",
+      "english": "I won't have been walking when I meet you."
+    },
+    {
+      "id": "s93",
+      "turkish": "Squash oynuyor olacak, bu yüzden giyinmeyecek.",
+      "english": "She will have been playing squash, so she won't be dressed up."
+    },
+    {
+      "id": "s94",
+      "turkish": "Önümüzdeki Şah dört aydır evlere bakıyor olacağız.",
+      "english": "We will have been looking at houses for four months next Tuesday."
+    },
+    {
+      "id": "s95",
+      "turkish": "Müfettiş geldiğinde, bu projeyi uzun süredir yapmıyor olacağız.",
+      "english": "We won't have been doing this project for long when the inspector arrives."
+    },
+    {
+      "id": "s96",
+      "turkish": "Bittiğinde, bu projede ne kadar süredir çalışıyor olacaksın?",
+      "english": "How long will you have been working this project when it is finished?"
+    },
+    {
+      "id": "s97",
+      "turkish": "Seni gördüğümde, kıyafet altyor olacak mısın?",
+      "english": "Will you have been buying clothes when I see you?"
+    },
+    {
+      "id": "s98",
+      "turkish": "O fazla iş yapmıyor olacak, bu yüzden yeni bir projeye başlamaktan mutlu olacak.",
+      "english": "He won't have been doing much work, so he'll be happy to start a new project."
+    },
+    {
+      "id": "s99",
+      "turkish": "Yeni yatak odası hazır olduğunda, çocuklar ne kadar süredir oturma odasında uyuyor olacaklar?",
+      "english": "How long will children have been sleeping in the living room when their new bedroom is ready?"
+    },
+    {
+      "id": "s100",
+      "turkish": "Yansmaya girdiğinde, ne kadar süredir antrenman yapıyor olacak?",
+      "english": "How long will he have been training when he enters the competition?"
+    }
+  ]
+}
