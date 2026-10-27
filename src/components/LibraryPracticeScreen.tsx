@@ -43,7 +43,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
 
   useEffect(() => {
     // Recalculate heights for all textareas when wrong filters toggle
-    setTimeout(() => {
+    const resizeTimer = setTimeout(() => {
       Object.values(inputRefs.current).forEach(el => {
         if (el) {
           el.style.height = 'auto';
@@ -51,6 +51,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         }
       });
     }, 120);
+    return () => clearTimeout(resizeTimer);
   }, [showOnlyWrong]);
 
   useEffect(() => {
@@ -79,7 +80,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       setWrongInputs({});
     }
 
-    setTimeout(() => {
+    const initTimer = setTimeout(() => {
       // Resize all textareas on mount/direction change
       Object.values(inputRefs.current).forEach(el => {
         if (el) {
@@ -97,6 +98,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         }
       }
     }, 300);
+    return () => clearTimeout(initTimer);
   }, [set, direction]);
 
   useEffect(() => {
@@ -119,6 +121,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       setShowFinishedModal(true);
       const duration = 3000;
       const end = Date.now() + duration;
+      let animId: number;
 
       const frame = () => {
           confetti({
@@ -137,10 +140,13 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
           });
 
           if (Date.now() < end) {
-              requestAnimationFrame(frame);
+              animId = requestAnimationFrame(frame);
           }
       };
-      frame();
+      animId = requestAnimationFrame(frame);
+      return () => {
+        if (animId) cancelAnimationFrame(animId);
+      };
     }
   }, [isAllCompleted, showFinishedModal]);
 
@@ -278,7 +284,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
       }, session?.user?.id);
       setSelectedWord(null);
     } catch (e) {
-      console.error(e);
+      console.error("[LibraryPracticeScreen] Failed to add word:", e);
     } finally {
       setIsAddingWord(false);
     }

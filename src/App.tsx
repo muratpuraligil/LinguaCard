@@ -466,7 +466,7 @@ export default function App() {
         showToast("Zaten demo kelimeleriniz var veya eklenemedi.", "warning");
       }
     } catch (e) {
-      console.error(e);
+      console.error("[App] Error loading demo data:", e);
       showToast("Demo verileri yüklenirken hata oluştu.", "error");
     }
   };

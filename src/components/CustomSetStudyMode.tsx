@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Word, LanguageDirection, LanguageLocale } from '../types';
 import { ArrowLeft, Volume2, CheckCircle2, XCircle, Eraser, Languages, Eye, Trophy, RotateCcw, Info, Plus, Home, ArrowUp, RefreshCw, BookOpen, Zap } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
@@ -85,6 +85,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
     const [showResetConfirm, setShowResetConfirm] = useState(false);
     const [confirmRevealId, setConfirmRevealId] = useState<string | null>(null);
     const [showScrollTop, setShowScrollTop] = useState(false);
+    const focusTimerRef = useRef<NodeJS.Timeout | number | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -94,6 +95,9 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.speechSynthesis.cancel();
+            if (focusTimerRef.current) {
+                clearTimeout(focusTimerRef.current);
+            }
         };
     }, []);
 
@@ -187,12 +191,16 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
             const targetLang = direction === LanguageDirection.TR_EN ? LanguageLocale.EN : LanguageLocale.TR;
             speak(targetText, targetLang);
 
-            setTimeout(() => {
+            if (focusTimerRef.current) {
+                clearTimeout(focusTimerRef.current);
+            }
+            focusTimerRef.current = setTimeout(() => {
                 const nextInputId = `study-input-${currentIndex + 1}`;
                 const nextElement = document.getElementById(nextInputId);
                 if (nextElement) {
                     nextElement.focus();
                 }
+                focusTimerRef.current = null;
             }, 100);
         }
     };
@@ -301,7 +309,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
             showToast(`"${english}" kelimesi listeye eklendi!`, 'success');
             setSelectionToAdd(null);
         } catch (e) {
-            console.error(e);
+            console.error("[CustomSetStudyMode] Error adding word:", e);
             showToast('Bir hata oluştu.', 'error');
         } finally {
             setIsAddingWord(false);

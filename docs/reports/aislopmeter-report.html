@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Slop Meter · https://muratpuraligil.github.io/LinguaCard/</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+/* Direction: a lab instrument read-out. Pale glass, slate ink, a fuchsin stain for slop, methylene blue for information. */
+:root{--bg:#edf1f0;--surface:#f9fbfa;--ink:#14232b;--muted:#566870;--line:#cbd7d5;--stain:#ad2357;--blue:#1f4e8c;--good:#2a7653;--warn:#a96a12;
+--display:'Familjen Grotesk','Helvetica Neue',Arial,sans-serif;--text:'Source Serif 4',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1517;--surface:#152024;--ink:#e2eae8;--muted:#93a5a7;--line:#27393d;--stain:#ef6390;--blue:#88b3ea;--good:#5cc493;--warn:#e2aa4c;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--text)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+a{color:var(--blue)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:max(18px,env(safe-area-inset-left))}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+header .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding-block:14px}
+.brand{display:flex;gap:10px;align-items:center;font:700 20px/1 var(--display);letter-spacing:.01em}
+.brand svg{width:26px;height:26px}
+.brand small{display:block;font:500 12px/1.3 var(--display);color:var(--muted);letter-spacing:0}
+.target{font:500 13px/1.4 var(--mono);color:var(--muted);overflow-wrap:anywhere;max-width:520px}
+nav.tabs{display:flex;gap:4px;border:1px solid var(--line);border-radius:8px;padding:3px;background:var(--bg)}
+nav.tabs button{font:600 15px/1 var(--display);border:0;background:none;color:var(--muted);padding:10px 16px;border-radius:6px;cursor:pointer}
+nav.tabs button[aria-selected=true]{background:var(--surface);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+main{padding-block:32px 64px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:22px;margin-bottom:6px}
+h3{font-size:19px}
+h4{font:600 12px/1.3 var(--display);text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:16px 0 6px}
+.lead{color:var(--muted);margin:0 0 16px;max-width:60ch}
+.hero{display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;align-items:center}
+.dial{width:220px;height:220px}
+.dial .track{fill:none;stroke:var(--line);stroke-width:10}
+.dial .arc{fill:none;stroke-width:10;stroke-linecap:round}
+.dial .ticks line{stroke:var(--muted);stroke-width:1.5}
+.dial .cross{stroke:var(--line);stroke-width:1.5}
+.dial .num{font:700 58px var(--display);fill:var(--ink)}
+.tone-good .arc{stroke:var(--good)} .tone-warn .arc{stroke:var(--warn)} .tone-bad .arc{stroke:var(--stain)}
+.band{font:700 34px/1.1 var(--display)}
+.band small{font:500 16px var(--display);color:var(--muted);margin-left:8px}
+.bandtext{font-size:19px;margin:8px 0 0;max-width:46ch}
+.delta{display:inline-block;margin-top:12px;font:600 14px/1 var(--mono);padding:6px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.delta.down{color:var(--good)} .delta.up{color:var(--stain)}
+.meta{margin-top:14px;font:13px/1.5 var(--mono);color:var(--muted)}
+.block{margin-top:44px}
+.cats{display:grid;gap:10px;max-width:640px}
+.cat{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr) 64px;gap:14px;align-items:center;font:500 15px var(--display)}
+.bar{display:block;height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--stain);border-radius:5px}
+.cat.info .bar i{background:var(--muted)}
+.cval{font:600 15px var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.cval small{color:var(--muted);font-weight:400}
+.finding{border-top:1px solid var(--line)}
+.finding:last-child{border-bottom:1px solid var(--line)}
+.finding>summary{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:baseline;padding:14px 4px;cursor:pointer;list-style:none}
+.finding>summary::-webkit-details-marker{display:none}
+.finding[open]>summary{padding-bottom:4px}
+.pts{font:600 15px var(--mono);font-variant-numeric:tabular-nums}
+.pts.tone-high{color:var(--stain)} .pts.tone-medium{color:var(--warn)} .pts.tone-low{color:var(--muted)}
+.ftitle{font:600 17px/1.3 var(--display)}
+.chips{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:4px;font:500 12.5px var(--display);color:var(--muted)}
+.fbody{padding:0 4px 18px 82px;max-width:78ch}
+.fbody p{margin:6px 0}
+.fdo{display:block;margin-top:5px;font-size:15.5px;line-height:1.4;color:var(--ink);max-width:70ch}
+.fdo b{color:var(--good);font-family:var(--display)}
+.todo-box{border-left:3px solid var(--good);background:var(--surface);border-radius:0 8px 8px 0;padding:4px 18px 14px;margin-top:8px}
+.todo-box h4:first-child{margin-top:12px}
+.steps{margin:4px 0 8px;padding-left:22px}
+.steps li{margin:6px 0;padding-left:4px}
+.steps li::marker{font:700 14px var(--display);color:var(--good)}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.ex>div{border:1px solid var(--line);border-radius:6px;padding:8px 12px;background:var(--bg)}
+.ex span{font:600 11.5px var(--display);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.ex p{margin:4px 0 0;font-size:15px}
+.ex .was{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--stain)}
+p.ex{display:block;color:var(--muted)}
+.donewhen{font-size:15px;color:var(--muted)}
+.donewhen b{color:var(--ink);font-family:var(--display)}
+.btn.small{font-size:14px;padding:9px 13px}
+details.why-box{margin-top:12px}
+details.why-box>summary{cursor:pointer;color:var(--blue);font:500 14px var(--display);padding:4px 0}
+.where .steps{margin-top:8px}
+.where .row{margin-top:8px}
+nav.tabs button small{font:600 12px var(--mono);color:var(--muted);margin-left:4px}
+.pages{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:0}
+.page{border-top:1px solid var(--line)}
+.pages>li:last-child .page{border-bottom:1px solid var(--line)}
+.page>summary{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(80px,200px);gap:16px;align-items:center;padding:12px 4px;cursor:pointer;list-style:none}
+.page>summary::-webkit-details-marker{display:none}
+.pscore{font:700 24px/1 var(--display);font-variant-numeric:tabular-nums;text-align:right}
+.pscore.tone-good{color:var(--good)} .pscore.tone-warn{color:var(--warn)} .pscore.tone-bad{color:var(--stain)}
+.ppath code{font-size:15px;color:var(--ink);overflow-wrap:anywhere}
+.ppath small{display:block;font:500 12.5px var(--display);color:var(--muted);margin-top:3px}
+.pagebody{padding:0 4px 16px 72px}
+.pagebody .finding:first-of-type{border-top:0}
+.pagelist a{text-decoration:none}
+ul.ev,ul.locs{margin:0;padding:0;list-style:none}
+ul.ev li{font:13.5px/1.5 var(--mono);padding:3px 0;color:var(--ink);overflow-wrap:anywhere}
+ul.locs li{font-size:14px;padding:2px 0;overflow-wrap:anywhere}
+ul.locs li code{color:var(--blue)}
+ul.locs li span{color:var(--muted)}
+.plain{padding-left:18px;margin:6px 0}
+.plain li{margin:4px 0}
+.good{color:var(--good)} .bad{color:var(--stain)}
+.hist{list-style:none;padding:0;margin:0;display:grid;gap:8px;max-width:520px}
+.hist li{display:grid;grid-template-columns:48px minmax(0,1fr) 40px;gap:12px;align-items:center}
+/* plan */
+.goal{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
+.goal p{margin:0 0 14px;font-size:18px;max-width:60ch}
+.scale{position:relative;height:44px;margin:8px 0 4px}
+.scale .rail{position:absolute;left:0;right:0;top:18px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--good) 0 20%,var(--warn) 20% 60%,var(--stain) 60%);opacity:.35}
+.scale .mark{position:absolute;top:0;transform:translateX(-50%);text-align:center;font:600 12px/1.2 var(--mono)}
+.scale .mark i{display:block;width:2px;height:16px;margin:2px auto 0;background:currentColor}
+.scale .now{color:var(--stain);top:0}.scale .est{color:var(--good)}.scale .tgt{color:var(--ink)}
+.calm{color:var(--muted);margin:14px 0 0;font-size:16px}
+.nums{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 22px;margin-bottom:12px}
+.nums div{display:flex;flex-direction:column}
+.nums span{font:500 12px/1.3 var(--display);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.nums b{font:700 46px/1 var(--display);font-variant-numeric:tabular-nums}
+.nums b.now{color:var(--stain)} .nums b.est{color:var(--good)}
+.nums .to{font:500 30px/1 var(--display);color:var(--muted);padding-bottom:6px}
+.nums .tgtbox{margin-left:auto;padding-left:20px;border-left:1px solid var(--line)}
+.start{margin-top:26px;padding:20px 24px;border:2px solid var(--good);border-radius:10px;background:var(--surface)}
+.phases{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px}
+.phase>details{border-top:1px solid var(--line);padding-top:14px}
+.phase>details>summary{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:center;cursor:pointer;list-style:none}
+.phase>details>summary::-webkit-details-marker{display:none}
+.ptitle{display:block;font:700 19px/1.2 var(--display)}
+.pbody{padding:6px 0 6px 60px}
+.pnum{font:700 20px/40px var(--display);width:40px;height:40px;text-align:center;border-radius:50%;border:2px solid var(--ink)}
+details.more{margin-top:8px}
+details.more>summary{cursor:pointer;color:var(--blue);font:500 14px var(--display);padding:6px 0}
+.why{color:var(--muted);margin:4px 0 8px;max-width:66ch}
+.pmeta{display:flex;flex-wrap:wrap;gap:4px 16px;font:500 13px var(--mono);color:var(--muted);margin-top:3px}
+.todo{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.todo>li{padding:8px 0;border-bottom:1px dashed var(--line)}
+.todo label{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;cursor:pointer}
+.todo input{width:18px;height:18px;margin-top:3px;accent-color:var(--good)}
+.todo b{font:600 16px var(--display)}
+.todo em{display:block;font-style:normal;color:var(--muted);font-size:15px}
+.todo input:checked+span{opacity:.5;text-decoration:line-through;text-decoration-color:var(--muted)}
+.where{margin:6px 0 0 34px;font-size:14px}
+.where summary{cursor:pointer;color:var(--blue);font:500 13px var(--display)}
+.method{margin:12px 0 0;padding-left:18px;color:var(--ink);font-size:15px}
+.method li{margin:5px 0}
+.hint{color:var(--muted);font-size:15px;margin:6px 0 10px}
+.qs{margin:0;padding-left:20px;display:grid;gap:12px}
+.qs label{display:block;font-size:15.5px;margin-bottom:4px}
+.qs textarea{width:100%;font:15px/1.4 var(--text);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;resize:vertical}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px}
+.btn{font:600 15px var(--display);background:var(--ink);color:var(--bg);border:0;border-radius:6px;padding:11px 16px;cursor:pointer}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.status{font:13px var(--mono);color:var(--good)}
+details.rules{margin-top:32px;border-top:1px solid var(--line);padding-top:12px}
+details.rules summary{cursor:pointer;font:600 16px var(--display)}
+.progress{font:600 14px var(--mono);color:var(--muted)}
+footer{border-top:1px solid var(--line);color:var(--muted);font:13px var(--mono)}
+footer .wrap{padding-block:18px 32px}
+[hidden]{display:none!important}
+@media (max-width:760px){.page>summary{grid-template-columns:44px minmax(0,1fr)}.page>summary .bar{display:none}.pagebody{padding-left:0}.ex{grid-template-columns:1fr}.pbody{padding-left:0}.nums .tgtbox{margin-left:0}.hero{grid-template-columns:1fr;gap:16px;justify-items:start}.dial{width:180px;height:180px}.fbody{padding-left:4px}.cat{grid-template-columns:minmax(0,1fr) 64px}.cat .bar{grid-column:1/-1;grid-row:2}}
+@media (prefers-reduced-motion:no-preference){.dial .arc{transition:stroke-dasharray .8s ease-out}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 18a10 10 0 0 1 20 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M13 8v2M6 11l1.4 1.4M20 11l-1.4 1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M13 18l5-6" stroke="var(--stain)" stroke-width="2.2" stroke-linecap="round"/><circle cx="13" cy="18" r="2.2" fill="var(--stain)"/></svg><div>AI Slop Meter<small>Slop'u ölç, sonra temizle.</small></div></div>
+  <div class="target">https://muratpuraligil.github.io/LinguaCard/</div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="t-report" aria-controls="report" aria-selected="true">Rapor</button>
+    <button role="tab" id="t-plan" aria-controls="plan" aria-selected="false">Yapılacaklar</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<section id="report" role="tabpanel" aria-labelledby="t-report">
+  <div class="hero">
+    <svg class="dial tone-good" viewBox="0 0 220 220" role="img" aria-label="17/100">
+  <g class="ticks"><line x1="110" y1="13" x2="110" y2="6"/><line x1="140.90169943749476" y1="14.89434837048465" x2="142.13776741499453" y2="11.090122305304035"/><line x1="168.77852522924732" y1="29.09830056250526" x2="171.1296662384172" y2="25.862232585005472"/><line x1="190.90169943749476" y1="51.221474770752685" x2="194.13776741499453" y2="48.87033376158279"/><line x1="205.10565162951536" y1="79.09830056250526" x2="208.90987769469598" y2="77.86223258500547"/><line x1="207" y1="110" x2="214" y2="110"/><line x1="205.10565162951536" y1="140.90169943749473" x2="208.90987769469598" y2="142.13776741499453"/><line x1="190.90169943749476" y1="168.77852522924732" x2="194.13776741499453" y2="171.1296662384172"/><line x1="168.77852522924732" y1="190.90169943749476" x2="171.1296662384172" y2="194.13776741499453"/><line x1="140.90169943749476" y1="205.10565162951536" x2="142.13776741499453" y2="208.90987769469598"/><line x1="110" y1="207" x2="110" y2="214"/><line x1="79.09830056250522" y1="205.10565162951534" x2="77.86223258500543" y2="208.90987769469595"/><line x1="51.2214747707527" y1="190.90169943749476" x2="48.870333761582806" y2="194.13776741499453"/><line x1="29.098300562505273" y1="168.77852522924732" x2="25.862232585005472" y2="171.1296662384172"/><line x1="14.89434837048465" y1="140.90169943749476" x2="11.090122305304035" y2="142.13776741499453"/><line x1="13" y1="110.00000000000001" x2="6" y2="110.00000000000001"/><line x1="14.894348370484636" y1="79.09830056250527" x2="11.090122305304021" y2="77.86223258500547"/><line x1="29.09830056250526" y1="51.2214747707527" x2="25.862232585005472" y2="48.870333761582806"/><line x1="51.22147477075268" y1="29.098300562505273" x2="48.870333761582785" y2="25.862232585005472"/><line x1="79.09830056250524" y1="14.89434837048465" x2="77.86223258500544" y2="11.090122305304035"/></g>
+  <line class="cross" x1="110" y1="30" x2="110" y2="62"/><line class="cross" x1="110" y1="158" x2="110" y2="190"/>
+  <line class="cross" x1="30" y1="110" x2="62" y2="110"/><line class="cross" x1="158" y1="110" x2="190" y2="110"/>
+  <circle class="track" cx="110" cy="110" r="84"/>
+  <circle class="arc" cx="110" cy="110" r="84" stroke-dasharray="89.7238861865245 527.7875658030853" transform="rotate(-90 110 110)"/>
+  <text class="num" x="110" y="120" text-anchor="middle">17</text>
+</svg>
+    <div>
+      <div class="band">Temiz<small>17 / 100</small></div>
+      <p class="bandtext">Kayda değer slop işareti yok.</p>
+      
+      <div class="meta">18 kelime · sayfa dili: tr · Tarama no s1</div>
+    </div>
+  </div>
+
+  <section class="block"><h2>Skor nereden geliyor</h2><div class="cats"><div class="cat"><span class="cname">İçerik özü</span><span class="bar"><i style="width:0%"></i></span><span class="cval">0<small>/30</small></span></div><div class="cat"><span class="cname">Dil kalıpları</span><span class="bar"><i style="width:0%"></i></span><span class="cval">0<small>/22</small></span></div><div class="cat"><span class="cname">Şablon tasarım</span><span class="bar"><i style="width:44%"></i></span><span class="cval">12.4<small>/28</small></span></div><div class="cat"><span class="cname">Özensiz detaylar</span><span class="bar"><i style="width:30%"></i></span><span class="cval">4.5<small>/15</small></span></div><div class="cat info"><span class="cname">Üretici izleri</span><span class="bar"><i style="width:0%"></i></span><span class="cval">0<small>/5</small></span></div></div></section>
+
+  <section class="block">
+    <h2>Bulunanlar <span class="progress">(7)</span></h2>
+    <p class="lead">Etkisi en yüksek olan en üstte. Her madde ne yapman gerektiğini söylüyor; adımlar, tam konumlar ve yapay zekâna verebileceğin prompt için aç.</p>
+    <details class="finding" open>
+  <summary>
+    <span class="pts tone-medium">+4</span>
+    <span class="ft"><span class="ftitle">Mor-indigo gradyan</span>
+      <span class="fdo"><b>→</b> Paleti konunun kendisinden türetin (malzemesi, mekânı, dönemi) ve tek bir vurgu rengini az kullanın. Gradyanı yalnızca bir şeyi tasvir ediyorsa kullanın. Gradyanın sadece rengini değiştirmek çözüm değil.</span>
+      <span class="chips"><span>Şablon tasarım</span><span>yeniden tasarım</span></span></span>
+  </summary>
+  <div class="fbody">
+    <div class="todo-box">
+      <h4>Ne yapmalısın</h4>
+      <ol class="steps"><li>Mor/çivit gradyanı logonuzdan, ürününüzden ya da mekânınızdan alınmış tek, düz bir marka rengiyle değiştirin.</li><li>O rengi tek bir iş için kullanın (ana buton ya da linkler), arka planları sade bırakın.</li><li>Tüm palet için yapay zekânıza tasarım rehberini verin: slop_guide → design.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Renklere bakan biri sektörünüzü tahmin edebiliyor.</p>
+      
+      
+      <div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="purple-gradient|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+    </div>
+    <details class="why-box"><summary>Neden sayıldı</summary><p>1 mor/menekşe/indigo gradyan. AI ile üretilen arayüzlerin en bilinen varsayılanı.</p><h4>Kanıt</h4><ul class="ev"><li>to-indigo-600</li></ul></details>
+  </div>
+</details><details class="finding" open>
+  <summary>
+    <span class="pts tone-medium">+3</span>
+    <span class="ft"><span class="ftitle">JavaScript çalışana kadar boş</span>
+      <span class="fdo"><b>→</b> Herkese açık sayfaları önceden ya da sunucuda oluşturun (Vite SSG, Next.js static export, Astro) ya da en azından başlığı, açıklamayı ve ana metni HTML&#39;e koyun.</span>
+      <span class="chips"><span>Özensiz detaylar</span><span>değiştirme</span></span></span>
+  </summary>
+  <div class="fbody">
+    <div class="todo-box">
+      <h4>Ne yapmalısın</h4>
+      <ol class="steps"><li>Sayfaya JavaScript kapalıyken (ya da &quot;Kaynağı görüntüle&quot; ile) bakın: boşsa arama motorları da boş görüyor.</li><li>Herkese açık sayfaları önceden oluşturun (vite-plugin-ssg ya da react-snap, Next.js static export ya da Astro&#39;ya taşıyın).</li><li>En azından index.html içine gerçek başlık, açıklama, ana başlık ve metni koyun.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> &quot;Kaynağı görüntüle&quot; sayfanın kelimelerini gösteriyor.</p>
+      
+      
+      <div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="client-shell|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+    </div>
+    <details class="why-box"><summary>Neden sayıldı</summary><p>Sunucu boş bir &lt;div id=&quot;root&quot;&gt; ve bir script paketi gönderiyor; her kelime JavaScript çalıştıktan sonra beliriyor. Arama motorları, link önizlemeleri ve yavaş telefonlar boş sayfa görüyor. Çoğu AI aracı da böyle yayınlıyor.</p><h4>Kanıt</h4><ul class="ev"><li>&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</li></ul></details>
+  </div>
+</details><details class="finding">
+  <summary>
+    <span class="pts tone-medium">+2.5</span>
+    <span class="ft"><span class="ftitle">Sebepsiz yere varsayılan karanlık</span>
+      <span class="fdo"><b>→</b> prefers-color-scheme ayarını izleyin ya da koyu temayı yalnızca konu gerektiriyorsa seçin (gece, film, kod). Koyu kalacaksa 3-4 yüzey seviyesi ve 7:1 kontrastlı gövde metni kullanın.</span>
+      <span class="chips"><span>Şablon tasarım</span><span>yeniden tasarım</span></span></span>
+  </summary>
+  <div class="fbody">
+    <div class="todo-box">
+      <h4>Ne yapmalısın</h4>
+      <ol class="steps"><li>Açık tema ekleyin ve ziyaretçinin sistem ayarını izleyin (prefers-color-scheme).</li><li>Koyu temayı yalnızca konuya uyuyorsa koruyun (gece kulübü, kod aracı gibi).</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfa gün ışığında rahat okunuyor.</p>
+      
+      
+      <div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="perma-dark|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+    </div>
+    <details class="why-box"><summary>Neden sayıldı</summary><p>Sayfa ziyaretçinin ayarından bağımsız olarak siyaha yakın açılıyor. AI ile yapılmış sitelerin en yaygın görünümlerinden; tema düğmesi ilk izlenimi değiştirmiyor.</p><h4>Kanıt</h4><ul class="ev"><li>background: #000000</li></ul></details>
+  </div>
+</details><details class="finding">
+  <summary>
+    <span class="pts tone-low">+2.4</span>
+    <span class="ft"><span class="ftitle">Parlama, bulanıklık ve cam efekti</span>
+      <span class="fdo"><b>→</b> Efektleri kaldırın. Derinliği düzen, ölçek farkı ve gerçek görsellerle kurun.</span>
+      <span class="chips"><span>Şablon tasarım</span><span>yeniden tasarım</span></span></span>
+  </summary>
+  <div class="fbody">
+    <div class="todo-box">
+      <h4>Ne yapmalısın</h4>
+      <ol class="steps"><li>Parlamaları, bulanık lekeleri ve buzlu cam panelleri kaldırın.</li><li>Bölümleri boşluk, ince bir çizgi ya da sade bir arka plan değişimiyle ayırın.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfada hiçbir şey parlamıyor.</p>
+      
+      
+      <div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="glow-glass|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+    </div>
+    <details class="why-box"><summary>Neden sayıldı</summary><p>Arka plan parlamaları, bulanık lekeler, yanıp sönen rozetler ve buzlu cam kartlar.</p><h4>Kanıt</h4><ul class="ev"><li>blur-[120px]</li><li>shadow-blue-600/20</li><li>shadow-blue-900/20</li></ul></details>
+  </div>
+</details><details class="finding">
+  <summary>
+    <span class="pts tone-low">+2</span>
+    <span class="ft"><span class="ftitle">Tailwind&#39;in varsayılan renkleri</span>
+      <span class="fdo"><b>→</b> Konudan (bir fotoğraf, ürün, mekân) 4-6 renk türetin, onlara isim verin ve sadece onları kullanın.</span>
+      <span class="chips"><span>Şablon tasarım</span><span>yeniden tasarım</span></span></span>
+  </summary>
+  <div class="fbody">
+    <div class="todo-box">
+      <h4>Ne yapmalısın</h4>
+      <ol class="steps"><li>Konunuzdaki gerçek bir şeyden 4-6 renk seçin (ürün fotoğrafı, logonuz, mekân).</li><li>Bunları bir kez isimli değişkenler olarak tanımlayın (--ink, --paper, --accent…) ve listelenen Tailwind renklerini değiştirin.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfadaki hiçbir renk doğrudan Tailwind&#39;in varsayılan paletinden gelmiyor.</p>
+      
+      
+      <div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="default-palette|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+    </div>
+    <details class="why-box"><summary>Neden sayıldı</summary><p>Tailwind&#39;in varsayılan paletinden doğrudan alınmış 5 renk (slate, purple-500, blue-500…) ve 10 varsayılan renk sınıfı. Binlerce site tam olarak bu değerleri paylaşıyor.</p><h4>Kanıt</h4><ul class="ev"><li>#1e293b</li><li>#e5e7eb</li><li>#9ca3af</li><li>#2563eb</li><li>#4f46e5</li></ul></details>
+  </div>
+</details><details class="finding">
+  <summary>
+    <span class="pts tone-low">+1.5</span>
+    <span class="ft"><span class="ftitle">Varsayılan &quot;güvenli&quot; yazı tipi</span>
+      <span class="fdo"><b>→</b> Konunun dünyasına ait yazı tipleri seçin ve nedenini yazın. Bir başlık fontunu bir metin fontuyla eşleştirin ya da tek bir değişken aileyi uç kalınlıklarda kullanın (200 ve 900). Inter uygulama içinde iyidir, açılış sayfasının sesi olarak değil.</span>
+      <span class="chips"><span>Şablon tasarım</span><span>yeniden tasarım</span></span></span>
+  </summary>
+  <div class="fbody">
+    <div class="todo-box">
+      <h4>Ne yapmalısın</h4>
+      <ol class="steps"><li>Inter/Poppins/Roboto yerine konunuza uyan bir font eşleşmesi seçin (tasarım rehberinde öneriler var).</li><li>Başlıklar için bir, metin için bir font kullanın; temada bir kez tanımlayın.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Başlık fontu varsayılan değil, seçilmiş görünüyor.</p>
+      
+      
+      <div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="default-font|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+    </div>
+    <details class="why-box"><summary>Neden sayıldı</summary><p>Plus Jakarta Sans: AI araçlarının hep aynı yere çıktığı yazı tiplerinden.</p><h4>Kanıt</h4><ul class="ev"><li>Plus Jakarta Sans</li></ul></details>
+  </div>
+</details><details class="finding">
+  <summary>
+    <span class="pts tone-low">+1.5</span>
+    <span class="ft"><span class="ftitle">Klavye odağı görünmüyor</span>
+      <span class="fdo"><b>→</b> Marka renginde görünür bir odak halkası ekleyin (focus-visible:ring-2 ya da :focus-visible kuralı).</span>
+      <span class="chips"><span>Özensiz detaylar</span><span>hızlı düzeltme</span></span></span>
+  </summary>
+  <div class="fbody">
+    <div class="todo-box">
+      <h4>Ne yapmalısın</h4>
+      <ol class="steps"><li>outline:none / focus:outline-none kullanımını kaldırın ya da görünür bir :focus-visible stiliyle değiştirin.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfada Tab ile gezerken nerede olduğunuz görünüyor.</p>
+      
+      
+      <div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="focus-removed|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+    </div>
+    <details class="why-box"><summary>Neden sayıldı</summary><p>Kenar çizgileri kaldırılmış, yerine focus-visible stili konmamış.</p><h4>Kanıt</h4><ul class="ev"><li>outline-none ×2</li></ul></details>
+  </div>
+</details>
+    
+  </section>
+
+  
+  
+  <section class="block"><h2>AI arama hazırlığı: 4/10</h2><p class="lead">ChatGPT, Claude, Perplexity ve Gemini bu sayfayı okuyabiliyor, arkasında kimin olduğunu anlayıp alıntılayabiliyor mu? Ayrı bir puan: slop skorunu değiştirmez.</p><ul class="plain"><li><span class="bad mono">✗</span> <b>Yapısal veri (JSON-LD)</b>: yok<br><span class="hint">Kim olduğunuzu söyleyen bir JSON-LD bloğu ekleyin (Organization, LocalBusiness ya da Person); yazılarda yazar ve tarihli Article.</span></li><li><span class="bad mono">✗</span> <b>JavaScript olmadan okunabiliyor</b>: sunucu boş bir JavaScript kabuğu gönderiyor<br><span class="hint">AI tarayıcılarının çoğu JavaScript çalıştırmaz. Sayfayı önceden ya da sunucuda render edin ki metin HTML&#39;in içinde olsun.</span></li><li><span class="good mono">✓</span> <b>Başlık ve açıklama</b>: başlık var, açıklama var</li><li><span class="good mono">✓</span> <b>Link önizlemesi (Open Graph)</b>: var</li><li><span class="bad mono">✗</span> <b>Asıl adres (canonical)</b>: yok<br><span class="hint">Sayfanın tek asıl adresiyle &lt;link rel=&quot;canonical&quot;&gt; ekleyin.</span></li><li><span class="good mono">✓</span> <b>Tek ana başlık</b>: 1 &lt;h1&gt;</li><li><span class="bad mono">✗</span> <b>Alıntılanabilir paragraflar</b>: 20+ kelimelik 0 paragraf<br><span class="hint">Sayfanın ana sorusunu tam cümlelerden oluşan düz paragraflarla cevaplayın. Yalnızca başlık ve buton, bir AI&#39;ın alıntılayacağı bir şey bırakmaz.</span></li><li><span class="good mono">✓</span> <b>AI tarayıcılarına izin var</b>: robots.txt yok, hepsine izin var</li><li><span class="bad mono">✗</span> <b>llms.txt</b>: yok<br><span class="hint">/llms.txt ekleyin: sitenin kısa bir Markdown özeti ve önemli sayfalarına linkler (llmstxt.org).</span></li><li><span class="bad mono">✗</span> <b>Site haritası</b>: yok<br><span class="hint">/sitemap.xml yayınlayın ve robots.txt&#39;te belirtin.</span></li></ul></section>
+  
+  
+</section>
+
+<section id="plan" role="tabpanel" aria-labelledby="t-plan" hidden>
+  <div class="goal">
+    <div class="nums"><div><span>Şu an</span><b class="now">17</b></div><div class="to">→</div><div><span>Plan sonrası</span><b class="est">~0</b></div><div class="tgtbox"><span>Hedef</span><b>20</b></div></div>
+    <p class="calm">Hepsini bir kerede yapmak zorunda değilsiniz. 1. adımla ve hızlı kazanımlarla başlayın; her adım kendi başına iş görür ve herhangi birinden sonra yeniden tarayabilirsiniz.</p>
+    <div class="row"><span class="progress" id="progress"></span></div>
+  </div>
+  <section class="start"><h2>Buradan başla</h2><p class="hint">Üç hızlı düzeltme, yaklaşık 5 dakika, yaklaşık −2 puan. Bugün başka bir şey yapmanıza gerek yok.</p><ul class="todo"><li><label><input type="checkbox" data-id="focus-removed|"><span><b>Klavye odağı görünmüyor</b> <em>Marka renginde görünür bir odak halkası ekleyin (focus-visible:ring-2 ya da :focus-visible kuralı).</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>outline:none / focus:outline-none kullanımını kaldırın ya da görünür bir :focus-visible stiliyle değiştirin.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfada Tab ile gezerken nerede olduğunuz görünüyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="focus-removed|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li></ul></section>
+  <ol class="phases"><li class="phase"><details open><summary><span class="pnum">1</span><span class="phead"><span class="ptitle">Önce gerçek bilgileri toplayın</span><span class="pmeta"><span>yaklaşık 10 dk</span></span></span></summary><div class="pbody"><p class="why">Genel geçer metin, özgül bilgi hiç verilmediği için var. Hiçbir şeyi yeniden yazmadan önce sahibine sorun; boşlukları kendisi dolduran bir yapay zekâ sadece yeni slop üretir.</p><p class="hint">Bildiklerinizi yazın, gerisini boş bırakın: yapay zekâ boşlukları uydurmaz, [yer tutucu] bırakır ya da iddiayı siler.</p><ol class="qs"><li><label for="q0">Tek cümleyle: bu kimin için ve başka yerde bulamayacağı neyi alıyor?</label><textarea id="q0" data-q="Tek cümleyle: bu kimin için ve başka yerde bulamayacağı neyi alıyor?" rows="1" placeholder="Cevabınız…"></textarea></li><li><label for="q1">Müşteriler sizi tavsiye ederken gerçekte ne diyor? Pazarlama dili değil, onların kelimeleri.</label><textarea id="q1" data-q="Müşteriler sizi tavsiye ederken gerçekte ne diyor? Pazarlama dili değil, onların kelimeleri." rows="1" placeholder="Cevabınız…"></textarea></li><li><label for="q2">Arkasında durabileceğiniz rakamlı üç somut bilgi verin (kazanılan süre, fiyat, yıl, hacim, cevap süresi) ve her rakamın nereden geldiğini.</label><textarea id="q2" data-q="Arkasında durabileceğiniz rakamlı üç somut bilgi verin (kazanılan süre, fiyat, yıl, hacim, cevap süresi) ve her rakamın nereden geldiğini." rows="1" placeholder="Cevabınız…"></textarea></li><li><label for="q3">Arkasında kim var? Gösterebileceğimiz isimler ve roller, ziyaretçinin bir insana nasıl ulaşabileceği.</label><textarea id="q3" data-q="Arkasında kim var? Gösterebileceğimiz isimler ve roller, ziyaretçinin bir insana nasıl ulaşabileceği." rows="1" placeholder="Cevabınız…"></textarea></li><li><label for="q4">Olduğu gibi kalması gereken ne var (logo, renkler, ton, bölümler)?</label><textarea id="q4" data-q="Olduğu gibi kalması gereken ne var (logo, renkler, ton, bölümler)?" rows="1" placeholder="Cevabınız…"></textarea></li><li><label for="q5">Gerçekten sana ait bir renk var mı (logo, kanal görseli, ürün)? Yeni palet ondan başlayacak.</label><textarea id="q5" data-q="Gerçekten sana ait bir renk var mı (logo, kanal görseli, ürün)? Yeni palet ondan başlayacak." rows="1" placeholder="Cevabınız…"></textarea></li></ol><details class="more"><summary>2 soru daha (isteğe bağlı)</summary><ol class="qs" start="7"><li><label for="q6">Koyu tema bilinçli bir tercih mi, yoksa sayfa açık açılıp ziyaretçinin ayarını mı izlesin?</label><textarea id="q6" data-q="Koyu tema bilinçli bir tercih mi, yoksa sayfa açık açılıp ziyaretçinin ayarını mı izlesin?" rows="1" placeholder="Cevabınız…"></textarea></li><li><label for="q7">Görünümünü sevdiğin 2-3 site, marka ya da mekân hangisi; bu site hangi üç kelimeyle hissettirmeli?</label><textarea id="q7" data-q="Görünümünü sevdiğin 2-3 site, marka ya da mekân hangisi; bu site hangi üç kelimeyle hissettirmeli?" rows="1" placeholder="Cevabınız…"></textarea></li></ol></details><div class="row"><button type="button" class="btn" data-copy="answers">Cevaplarımı kopyala</button><span class="status" aria-live="polite"></span></div></div></details></li><li class="phase"><details open><summary><span class="pnum">2</span><span class="phead"><span class="ptitle">Özensiz detayları temizleyin</span><span class="pmeta"><span>yaklaşık 18 dk</span><span>−5 puan</span><span>2 madde</span></span></span></summary><div class="pbody"><p class="why">En bariz &quot;kimse kontrol etmemiş&quot; işaretlerini kaldıran hızlı, mekanik düzeltmeler.</p><ul class="todo"><li><label><input type="checkbox" data-id="client-shell|"><span><b>JavaScript çalışana kadar boş</b> <em>Herkese açık sayfaları önceden ya da sunucuda oluşturun (Vite SSG, Next.js static export, Astro) ya da en azından başlığı, açıklamayı ve ana metni HTML&#39;e koyun.</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>Sayfaya JavaScript kapalıyken (ya da &quot;Kaynağı görüntüle&quot; ile) bakın: boşsa arama motorları da boş görüyor.</li><li>Herkese açık sayfaları önceden oluşturun (vite-plugin-ssg ya da react-snap, Next.js static export ya da Astro&#39;ya taşıyın).</li><li>En azından index.html içine gerçek başlık, açıklama, ana başlık ve metni koyun.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> &quot;Kaynağı görüntüle&quot; sayfanın kelimelerini gösteriyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="client-shell|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li><li><label><input type="checkbox" data-id="focus-removed|"><span><b>Klavye odağı görünmüyor</b> <em>Marka renginde görünür bir odak halkası ekleyin (focus-visible:ring-2 ya da :focus-visible kuralı).</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>outline:none / focus:outline-none kullanımını kaldırın ya da görünür bir :focus-visible stiliyle değiştirin.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfada Tab ile gezerken nerede olduğunuz görünüyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="focus-removed|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li></ul></div></details></li><li class="phase"><details><summary><span class="pnum">3</span><span class="phead"><span class="ptitle">Şablon görünümünü geride bırakın</span><span class="pmeta"><span>yaklaşık 150 dk</span><span>−12 puan</span><span>5 madde</span></span></span></summary><div class="pbody"><p class="why">Görsel varsayılanlar, ziyaretçi tek kelime okumadan sayfanın üretildiğini söyler.</p><ul class="todo"><li><label><input type="checkbox" data-id="purple-gradient|"><span><b>Mor-indigo gradyan</b> <em>Paleti konunun kendisinden türetin (malzemesi, mekânı, dönemi) ve tek bir vurgu rengini az kullanın. Gradyanı yalnızca bir şeyi tasvir ediyorsa kullanın. Gradyanın sadece rengini değiştirmek çözüm değil.</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>Mor/çivit gradyanı logonuzdan, ürününüzden ya da mekânınızdan alınmış tek, düz bir marka rengiyle değiştirin.</li><li>O rengi tek bir iş için kullanın (ana buton ya da linkler), arka planları sade bırakın.</li><li>Tüm palet için yapay zekânıza tasarım rehberini verin: slop_guide → design.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Renklere bakan biri sektörünüzü tahmin edebiliyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="purple-gradient|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li><li><label><input type="checkbox" data-id="perma-dark|"><span><b>Sebepsiz yere varsayılan karanlık</b> <em>prefers-color-scheme ayarını izleyin ya da koyu temayı yalnızca konu gerektiriyorsa seçin (gece, film, kod). Koyu kalacaksa 3-4 yüzey seviyesi ve 7:1 kontrastlı gövde metni kullanın.</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>Açık tema ekleyin ve ziyaretçinin sistem ayarını izleyin (prefers-color-scheme).</li><li>Koyu temayı yalnızca konuya uyuyorsa koruyun (gece kulübü, kod aracı gibi).</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfa gün ışığında rahat okunuyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="perma-dark|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li><li><label><input type="checkbox" data-id="glow-glass|"><span><b>Parlama, bulanıklık ve cam efekti</b> <em>Efektleri kaldırın. Derinliği düzen, ölçek farkı ve gerçek görsellerle kurun.</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>Parlamaları, bulanık lekeleri ve buzlu cam panelleri kaldırın.</li><li>Bölümleri boşluk, ince bir çizgi ya da sade bir arka plan değişimiyle ayırın.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfada hiçbir şey parlamıyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="glow-glass|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li><li><label><input type="checkbox" data-id="default-palette|"><span><b>Tailwind&#39;in varsayılan renkleri</b> <em>Konudan (bir fotoğraf, ürün, mekân) 4-6 renk türetin, onlara isim verin ve sadece onları kullanın.</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>Konunuzdaki gerçek bir şeyden 4-6 renk seçin (ürün fotoğrafı, logonuz, mekân).</li><li>Bunları bir kez isimli değişkenler olarak tanımlayın (--ink, --paper, --accent…) ve listelenen Tailwind renklerini değiştirin.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Sayfadaki hiçbir renk doğrudan Tailwind&#39;in varsayılan paletinden gelmiyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="default-palette|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li><li><label><input type="checkbox" data-id="default-font|"><span><b>Varsayılan &quot;güvenli&quot; yazı tipi</b> <em>Konunun dünyasına ait yazı tipleri seçin ve nedenini yazın. Bir başlık fontunu bir metin fontuyla eşleştirin ya da tek bir değişken aileyi uç kalınlıklarda kullanın (200 ve 900). Inter uygulama içinde iyidir, açılış sayfasının sesi olarak değil.</em></span></label><details class="where"><summary>Nasıl yapılır</summary><ol class="steps"><li>Inter/Poppins/Roboto yerine konunuza uyan bir font eşleşmesi seçin (tasarım rehberinde öneriler var).</li><li>Başlıklar için bir, metin için bir font kullanın; temada bir kez tanımlayın.</li></ol><p class="donewhen"><b>Bitti sayılır:</b> Başlık fontu varsayılan değil, seçilmiş görünüyor.</p><div class="row"><button type="button" class="btn small" data-copy="fix" data-fid="default-font|">Yapay zekân için prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div></details></li></ul><details class="more"><summary>Nasıl yapılır</summary><ul class="method"><li>Konunun kendi dünyasını tek satırda adlandırın: malzemeleri, mekânı, dönemi, aletleri, müşterilerin kullandığı kelimeler. Her görsel karar bu satırdan çıkmalı.</li><li>Palet: vurguya doğru hafif renklendirilmiş 1 zemin nötrü, 1 mürekkep rengi, konudan alınmış 1 vurgu (bir malzeme, ürün ya da tabela rengi), yüzeyin %10&#39;undan azında. Kontrastı kontrol edin (metin için 4.5:1).</li><li>Yazı: karakterli bir başlık fontuyla sakin bir metin fontunu eşleştirin; kimliği tek başına Inter/Space Grotesk/Poppins&#39;e bırakmayın. Tek bir yazı ölçeği belirleyip ona uyun.</li></ul></details></div></details></li><li class="phase"><details><summary><span class="pnum">4</span><span class="phead"><span class="ptitle">Sayfanın arkasında kim olduğunu gösterin</span><span class="pmeta"><span>yaklaşık 15 dk</span></span></span></summary><div class="pbody"><p class="why">Gerçek isimler, ulaşılabilir iletişim ve doğrulanabilir detaylar en güçlü anti-slop işaretidir ve skoru düşürür.</p><ul class="todo"><li><label><input type="checkbox" data-id="trust-person"><span>Arkasındaki insanları ekleyin: isim, rol, fotoğraf, deneyimlerine dair kısa bir satır.</span></label></li><li><label><input type="checkbox" data-id="trust-email"><span>Doğrudan iletişim ekleyin: gerçek bir e-posta ya da bir insana ulaşan iletişim sayfası.</span></label></li><li><label><input type="checkbox" data-id="trust-address"><span>Adresi ya da faaliyet gösterdiğiniz şehri gösterin.</span></label></li></ul></div></details></li><li class="phase"><details><summary><span class="pnum">5</span><span class="phead"><span class="ptitle">AI aramada okunur hale getirin</span><span class="pmeta"><span>yaklaşık 30 dk</span></span></span></summary><div class="pbody"><p class="why">ChatGPT, Claude, Perplexity ve Gemini soruları okuyabildikleri, kime ait olduğunu anlayabildikleri ve alıntılayabildikleri sayfalarla cevaplar. Slop skorunu değiştirmez; AI arama hazırlığı puanını yükseltir.</p><ul class="todo"><li><label><input type="checkbox" data-id="aeo-structured-data"><span><b>Yapısal veri (JSON-LD)</b> <em>Kim olduğunuzu söyleyen bir JSON-LD bloğu ekleyin (Organization, LocalBusiness ya da Person); yazılarda yazar ve tarihli Article.</em></span></label></li><li><label><input type="checkbox" data-id="aeo-readable-without-js"><span><b>JavaScript olmadan okunabiliyor</b> <em>AI tarayıcılarının çoğu JavaScript çalıştırmaz. Sayfayı önceden ya da sunucuda render edin ki metin HTML&#39;in içinde olsun.</em></span></label></li><li><label><input type="checkbox" data-id="aeo-canonical"><span><b>Asıl adres (canonical)</b> <em>Sayfanın tek asıl adresiyle &lt;link rel=&quot;canonical&quot;&gt; ekleyin.</em></span></label></li><li><label><input type="checkbox" data-id="aeo-citable-text"><span><b>Alıntılanabilir paragraflar</b> <em>Sayfanın ana sorusunu tam cümlelerden oluşan düz paragraflarla cevaplayın. Yalnızca başlık ve buton, bir AI&#39;ın alıntılayacağı bir şey bırakmaz.</em></span></label></li><li><label><input type="checkbox" data-id="aeo-llms-txt"><span><b>llms.txt</b> <em>/llms.txt ekleyin: sitenin kısa bir Markdown özeti ve önemli sayfalarına linkler (llmstxt.org).</em></span></label></li><li><label><input type="checkbox" data-id="aeo-sitemap"><span><b>Site haritası</b> <em>/sitemap.xml yayınlayın ve robots.txt&#39;te belirtin.</em></span></label></li></ul></div></details></li><li class="phase"><details><summary><span class="pnum">6</span><span class="phead"><span class="ptitle">Yeniden ölçün</span><span class="pmeta"><span>yaklaşık 2 dk</span></span></span></summary><div class="pbody"><p class="why">Aynı hedefi yeniden tarayın; AI Slop Meter önce/sonra tablosunu ve açık kalan bulguları gösterir.</p><p class="hint">Değişikliklerden sonra yeniden tarayın: <code>npx aislopmeter https://muratpuraligil.github.io/LinguaCard/</code></p></div></details></li></ol>
+  
+  <details class="rules"><summary>Yapay zekânın düzeltirken uyduğu kurallar</summary><ul class="method"><li>Tasarım sahibinin kararıdır. Tasarım aşamasından önce birbirinden belirgin şekilde farklı 2-3 yön önerin (palet, yazı tipi, düzen; her biri için bu konuya neden uyduğunu anlatan bir cümle), sahibinin birini seçmesini bekleyin ve yalnızca onu uygulayın. Her site kendi konusundan çıkan kendi yönünü alır; başka bir sitenin görünümünü asla tekrar kullanmayın.</li><li>Asla bilgi, rakam, isim, alıntı, fiyat, müşteri ya da ödül uydurmayın. Eksik bilgi için [yer tutucu] bırakıp sorun ya da iddiayı silin.</li><li>Bir klişeyi eş anlamlısıyla değiştirmeyin (&quot;kusursuz&quot; → &quot;pürüzsüz&quot;). Yerine bir bilgi koyun ya da silin.</li><li>Bir AI varsayılan görünümünü başkasıyla değiştirmeyin: mor gradyan → krem + serif + kiremit ya da siyah + tek neon vurgu aynı hamledir.</li><li>Sahibinin korumak istediklerine dokunmayın. Her seferinde bir aşamayı değiştirin ve her aşamadan sonra yeniden tarayın.</li><li>Tarayıcı için değil okuyucu için yazın: amaç bir dedektörü atlatmak değil, daha faydalı ve özgül bir sayfa.</li></ul></details>
+  <div class="row" style="margin-top:28px"><button type="button" class="btn ghost" data-copy="prompt">Planın tamamını prompt olarak kopyala</button><span class="status" aria-live="polite"></span></div>
+  <p class="hint">Claude, Cursor, Lovable ya da sitenizi düzenleyebilen herhangi bir yapay zekâya yapıştırın.</p>
+  <textarea id="prompt-text" hidden readonly>Bu siteyi/projeyi &quot;AI slop&quot; görünümünden kurtar: https://muratpuraligil.github.io/LinguaCard/
+AI Slop Meter skoru 17/100. Hedef 20 ve altı.
+
+Kurallar:
+- Tasarım sahibinin kararıdır. Tasarım aşamasından önce birbirinden belirgin şekilde farklı 2-3 yön önerin (palet, yazı tipi, düzen; her biri için bu konuya neden uyduğunu anlatan bir cümle), sahibinin birini seçmesini bekleyin ve yalnızca onu uygulayın. Her site kendi konusundan çıkan kendi yönünü alır; başka bir sitenin görünümünü asla tekrar kullanmayın.
+- Asla bilgi, rakam, isim, alıntı, fiyat, müşteri ya da ödül uydurmayın. Eksik bilgi için [yer tutucu] bırakıp sorun ya da iddiayı silin.
+- Bir klişeyi eş anlamlısıyla değiştirmeyin (&quot;kusursuz&quot; → &quot;pürüzsüz&quot;). Yerine bir bilgi koyun ya da silin.
+- Bir AI varsayılan görünümünü başkasıyla değiştirmeyin: mor gradyan → krem + serif + kiremit ya da siyah + tek neon vurgu aynı hamledir.
+- Sahibinin korumak istediklerine dokunmayın. Her seferinde bir aşamayı değiştirin ve her aşamadan sonra yeniden tarayın.
+- Tarayıcı için değil okuyucu için yazın: amaç bir dedektörü atlatmak değil, daha faydalı ve özgül bir sayfa.
+
+1. Önce gerçek bilgileri toplayın
+   - Sor: Tek cümleyle: bu kimin için ve başka yerde bulamayacağı neyi alıyor?
+   - Sor: Müşteriler sizi tavsiye ederken gerçekte ne diyor? Pazarlama dili değil, onların kelimeleri.
+   - Sor: Arkasında durabileceğiniz rakamlı üç somut bilgi verin (kazanılan süre, fiyat, yıl, hacim, cevap süresi) ve her rakamın nereden geldiğini.
+   - Sor: Arkasında kim var? Gösterebileceğimiz isimler ve roller, ziyaretçinin bir insana nasıl ulaşabileceği.
+   - Sor: Olduğu gibi kalması gereken ne var (logo, renkler, ton, bölümler)?
+   - Sor: Gerçekten sana ait bir renk var mı (logo, kanal görseli, ürün)? Yeni palet ondan başlayacak.
+   - Sor: Koyu tema bilinçli bir tercih mi, yoksa sayfa açık açılıp ziyaretçinin ayarını mı izlesin?
+   - Sor: Görünümünü sevdiğin 2-3 site, marka ya da mekân hangisi; bu site hangi üç kelimeyle hissettirmeli?
+
+2. Özensiz detayları temizleyin
+   - JavaScript çalışana kadar boş: Herkese açık sayfaları önceden ya da sunucuda oluşturun (Vite SSG, Next.js static export, Astro) ya da en azından başlığı, açıklamayı ve ana metni HTML&#39;e koyun.
+       Bu sitede: &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+     · Sayfaya JavaScript kapalıyken (ya da &quot;Kaynağı görüntüle&quot; ile) bakın: boşsa arama motorları da boş görüyor.
+     · Herkese açık sayfaları önceden oluşturun (vite-plugin-ssg ya da react-snap, Next.js static export ya da Astro&#39;ya taşıyın).
+     · En azından index.html içine gerçek başlık, açıklama, ana başlık ve metni koyun.
+   - Klavye odağı görünmüyor: Marka renginde görünür bir odak halkası ekleyin (focus-visible:ring-2 ya da :focus-visible kuralı).
+       Bu sitede: outline-none ×2
+     · outline:none / focus:outline-none kullanımını kaldırın ya da görünür bir :focus-visible stiliyle değiştirin.
+
+3. Şablon görünümünü geride bırakın
+   - Mor-indigo gradyan: Paleti konunun kendisinden türetin (malzemesi, mekânı, dönemi) ve tek bir vurgu rengini az kullanın. Gradyanı yalnızca bir şeyi tasvir ediyorsa kullanın. Gradyanın sadece rengini değiştirmek çözüm değil.
+       Bu sitede: to-indigo-600
+     · Mor/çivit gradyanı logonuzdan, ürününüzden ya da mekânınızdan alınmış tek, düz bir marka rengiyle değiştirin.
+     · O rengi tek bir iş için kullanın (ana buton ya da linkler), arka planları sade bırakın.
+     · Tüm palet için yapay zekânıza tasarım rehberini verin: slop_guide → design.
+   - Sebepsiz yere varsayılan karanlık: prefers-color-scheme ayarını izleyin ya da koyu temayı yalnızca konu gerektiriyorsa seçin (gece, film, kod). Koyu kalacaksa 3-4 yüzey seviyesi ve 7:1 kontrastlı gövde metni kullanın.
+       Bu sitede: background: #000000
+     · Açık tema ekleyin ve ziyaretçinin sistem ayarını izleyin (prefers-color-scheme).
+     · Koyu temayı yalnızca konuya uyuyorsa koruyun (gece kulübü, kod aracı gibi).
+   - Parlama, bulanıklık ve cam efekti: Efektleri kaldırın. Derinliği düzen, ölçek farkı ve gerçek görsellerle kurun.
+       Bu sitede: blur-[120px] / shadow-blue-600/20 / shadow-blue-900/20
+     · Parlamaları, bulanık lekeleri ve buzlu cam panelleri kaldırın.
+     · Bölümleri boşluk, ince bir çizgi ya da sade bir arka plan değişimiyle ayırın.
+   - Tailwind&#39;in varsayılan renkleri: Konudan (bir fotoğraf, ürün, mekân) 4-6 renk türetin, onlara isim verin ve sadece onları kullanın.
+       Bu sitede: #1e293b / #e5e7eb / #9ca3af / #2563eb
+     · Konunuzdaki gerçek bir şeyden 4-6 renk seçin (ürün fotoğrafı, logonuz, mekân).
+     · Bunları bir kez isimli değişkenler olarak tanımlayın (--ink, --paper, --accent…) ve listelenen Tailwind renklerini değiştirin.
+   - Varsayılan &quot;güvenli&quot; yazı tipi: Konunun dünyasına ait yazı tipleri seçin ve nedenini yazın. Bir başlık fontunu bir metin fontuyla eşleştirin ya da tek bir değişken aileyi uç kalınlıklarda kullanın (200 ve 900). Inter uygulama içinde iyidir, açılış sayfasının sesi olarak değil.
+       Bu sitede: Plus Jakarta Sans
+     · Inter/Poppins/Roboto yerine konunuza uyan bir font eşleşmesi seçin (tasarım rehberinde öneriler var).
+     · Başlıklar için bir, metin için bir font kullanın; temada bir kez tanımlayın.
+   - Konunun kendi dünyasını tek satırda adlandırın: malzemeleri, mekânı, dönemi, aletleri, müşterilerin kullandığı kelimeler. Her görsel karar bu satırdan çıkmalı.
+   - Palet: vurguya doğru hafif renklendirilmiş 1 zemin nötrü, 1 mürekkep rengi, konudan alınmış 1 vurgu (bir malzeme, ürün ya da tabela rengi), yüzeyin %10&#39;undan azında. Kontrastı kontrol edin (metin için 4.5:1).
+   - Yazı: karakterli bir başlık fontuyla sakin bir metin fontunu eşleştirin; kimliği tek başına Inter/Space Grotesk/Poppins&#39;e bırakmayın. Tek bir yazı ölçeği belirleyip ona uyun.
+
+4. Sayfanın arkasında kim olduğunu gösterin
+   - Arkasındaki insanları ekleyin: isim, rol, fotoğraf, deneyimlerine dair kısa bir satır.
+   - Doğrudan iletişim ekleyin: gerçek bir e-posta ya da bir insana ulaşan iletişim sayfası.
+   - Adresi ya da faaliyet gösterdiğiniz şehri gösterin.
+
+5. AI aramada okunur hale getirin
+
+6. Yeniden ölçün</textarea>
+</section>
+
+</main>
+<footer><div class="wrap">24 Eki 2026 23:58 tarihinde AI Slop Meter 0.3.2 ile oluşturuldu</div></footer>
+
+<script>
+(() => {
+  const KEY = "aislopmeter:https://muratpuraligil.github.io/LinguaCard/";
+  const FIX = {"purple-gradient|":"Şu sitede/projede tek bir sorunu düzelt: https://muratpuraligil.github.io/LinguaCard/\n\nSorun: Mor-indigo gradyan\n1 mor/menekşe/indigo gradyan. AI ile üretilen arayüzlerin en bilinen varsayılanı.\n\nBu sitede değişecek yerler:\n- Bu sitede: to-indigo-600\n\nYapılacaklar:\n1. Mor/çivit gradyanı logonuzdan, ürününüzden ya da mekânınızdan alınmış tek, düz bir marka rengiyle değiştirin.\n2. O rengi tek bir iş için kullanın (ana buton ya da linkler), arka planları sade bırakın.\n3. Tüm palet için yapay zekânıza tasarım rehberini verin: slop_guide → design.\n\nBitti sayılır: Renklere bakan biri sektörünüzü tahmin edebiliyor.\n\nKurallar: bilgi uydurma (isim, rakam, yorum, adres); bilmediğin yere [yer tutucu] koy ve bana sor. Klişeyi eş anlamlısıyla değiştirme. Sadece bu sorunla ilgili yerleri değiştir. Bitince hangi dosyada neyi değiştirdiğini kısaca yaz.","client-shell|":"Şu sitede/projede tek bir sorunu düzelt: https://muratpuraligil.github.io/LinguaCard/\n\nSorun: JavaScript çalışana kadar boş\nSunucu boş bir \u003cdiv id=\"root\"> ve bir script paketi gönderiyor; her kelime JavaScript çalıştıktan sonra beliriyor. Arama motorları, link önizlemeleri ve yavaş telefonlar boş sayfa görüyor. Çoğu AI aracı da böyle yayınlıyor.\n\nBu sitede değişecek yerler:\n- Bu sitede: \u003cdiv id=\"root\">\u003c/div>\n\nYapılacaklar:\n1. Sayfaya JavaScript kapalıyken (ya da \"Kaynağı görüntüle\" ile) bakın: boşsa arama motorları da boş görüyor.\n2. Herkese açık sayfaları önceden oluşturun (vite-plugin-ssg ya da react-snap, Next.js static export ya da Astro'ya taşıyın).\n3. En azından index.html içine gerçek başlık, açıklama, ana başlık ve metni koyun.\n\nBitti sayılır: \"Kaynağı görüntüle\" sayfanın kelimelerini gösteriyor.\n\nKurallar: bilgi uydurma (isim, rakam, yorum, adres); bilmediğin yere [yer tutucu] koy ve bana sor. Klişeyi eş anlamlısıyla değiştirme. Sadece bu sorunla ilgili yerleri değiştir. Bitince hangi dosyada neyi değiştirdiğini kısaca yaz.","perma-dark|":"Şu sitede/projede tek bir sorunu düzelt: https://muratpuraligil.github.io/LinguaCard/\n\nSorun: Sebepsiz yere varsayılan karanlık\nSayfa ziyaretçinin ayarından bağımsız olarak siyaha yakın açılıyor. AI ile yapılmış sitelerin en yaygın görünümlerinden; tema düğmesi ilk izlenimi değiştirmiyor.\n\nBu sitede değişecek yerler:\n- Bu sitede: background: #000000\n\nYapılacaklar:\n1. Açık tema ekleyin ve ziyaretçinin sistem ayarını izleyin (prefers-color-scheme).\n2. Koyu temayı yalnızca konuya uyuyorsa koruyun (gece kulübü, kod aracı gibi).\n\nBitti sayılır: Sayfa gün ışığında rahat okunuyor.\n\nKurallar: bilgi uydurma (isim, rakam, yorum, adres); bilmediğin yere [yer tutucu] koy ve bana sor. Klişeyi eş anlamlısıyla değiştirme. Sadece bu sorunla ilgili yerleri değiştir. Bitince hangi dosyada neyi değiştirdiğini kısaca yaz.","glow-glass|":"Şu sitede/projede tek bir sorunu düzelt: https://muratpuraligil.github.io/LinguaCard/\n\nSorun: Parlama, bulanıklık ve cam efekti\nArka plan parlamaları, bulanık lekeler, yanıp sönen rozetler ve buzlu cam kartlar.\n\nBu sitede değişecek yerler:\n- Bu sitede: blur-[120px] / shadow-blue-600/20 / shadow-blue-900/20\n\nYapılacaklar:\n1. Parlamaları, bulanık lekeleri ve buzlu cam panelleri kaldırın.\n2. Bölümleri boşluk, ince bir çizgi ya da sade bir arka plan değişimiyle ayırın.\n\nBitti sayılır: Sayfada hiçbir şey parlamıyor.\n\nKurallar: bilgi uydurma (isim, rakam, yorum, adres); bilmediğin yere [yer tutucu] koy ve bana sor. Klişeyi eş anlamlısıyla değiştirme. Sadece bu sorunla ilgili yerleri değiştir. Bitince hangi dosyada neyi değiştirdiğini kısaca yaz.","default-palette|":"Şu sitede/projede tek bir sorunu düzelt: https://muratpuraligil.github.io/LinguaCard/\n\nSorun: Tailwind'in varsayılan renkleri\nTailwind'in varsayılan paletinden doğrudan alınmış 5 renk (slate, purple-500, blue-500…) ve 10 varsayılan renk sınıfı. Binlerce site tam olarak bu değerleri paylaşıyor.\n\nBu sitede değişecek yerler:\n- Bu sitede: #1e293b / #e5e7eb / #9ca3af / #2563eb\n\nYapılacaklar:\n1. Konunuzdaki gerçek bir şeyden 4-6 renk seçin (ürün fotoğrafı, logonuz, mekân).\n2. Bunları bir kez isimli değişkenler olarak tanımlayın (--ink, --paper, --accent…) ve listelenen Tailwind renklerini değiştirin.\n\nBitti sayılır: Sayfadaki hiçbir renk doğrudan Tailwind'in varsayılan paletinden gelmiyor.\n\nKurallar: bilgi uydurma (isim, rakam, yorum, adres); bilmediğin yere [yer tutucu] koy ve bana sor. Klişeyi eş anlamlısıyla değiştirme. Sadece bu sorunla ilgili yerleri değiştir. Bitince hangi dosyada neyi değiştirdiğini kısaca yaz.","default-font|":"Şu sitede/projede tek bir sorunu düzelt: https://muratpuraligil.github.io/LinguaCard/\n\nSorun: Varsayılan \"güvenli\" yazı tipi\nPlus Jakarta Sans: AI araçlarının hep aynı yere çıktığı yazı tiplerinden.\n\nBu sitede değişecek yerler:\n- Bu sitede: Plus Jakarta Sans\n\nYapılacaklar:\n1. Inter/Poppins/Roboto yerine konunuza uyan bir font eşleşmesi seçin (tasarım rehberinde öneriler var).\n2. Başlıklar için bir, metin için bir font kullanın; temada bir kez tanımlayın.\n\nBitti sayılır: Başlık fontu varsayılan değil, seçilmiş görünüyor.\n\nKurallar: bilgi uydurma (isim, rakam, yorum, adres); bilmediğin yere [yer tutucu] koy ve bana sor. Klişeyi eş anlamlısıyla değiştirme. Sadece bu sorunla ilgili yerleri değiştir. Bitince hangi dosyada neyi değiştirdiğini kısaca yaz.","focus-removed|":"Şu sitede/projede tek bir sorunu düzelt: https://muratpuraligil.github.io/LinguaCard/\n\nSorun: Klavye odağı görünmüyor\nKenar çizgileri kaldırılmış, yerine focus-visible stili konmamış.\n\nBu sitede değişecek yerler:\n- Bu sitede: outline-none ×2\n\nYapılacaklar:\n1. outline:none / focus:outline-none kullanımını kaldırın ya da görünür bir :focus-visible stiliyle değiştirin.\n\nBitti sayılır: Sayfada Tab ile gezerken nerede olduğunuz görünüyor.\n\nKurallar: bilgi uydurma (isim, rakam, yorum, adres); bilmediğin yere [yer tutucu] koy ve bana sor. Klişeyi eş anlamlısıyla değiştirme. Sadece bu sorunla ilgili yerleri değiştir. Bitince hangi dosyada neyi değiştirdiğini kısaca yaz."};
+  const store = { get(){ try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } },
+                  set(v){ try { localStorage.setItem(KEY, JSON.stringify(v)); } catch {} } };
+  const tabs = [...document.querySelectorAll('[role=tab]')];
+  function show(id){ tabs.forEach(t => { const on = t.getAttribute('aria-controls') === id; t.setAttribute('aria-selected', on); document.getElementById(t.getAttribute('aria-controls')).hidden = !on; });
+    if (history.replaceState) history.replaceState(null, '', '#' + id); }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.getAttribute('aria-controls'))));
+  if (location.hash === '#plan' || location.hash === '#pages') show(location.hash.slice(1));
+
+  const state = store.get();
+  const boxes = [...document.querySelectorAll('input[type=checkbox][data-id]')];
+  const prog = document.getElementById('progress');
+  function count(){ const ids = [...new Set(boxes.map(b => b.dataset.id))]; const n = ids.filter(id => boxes.find(b => b.dataset.id === id && b.checked)).length; prog.textContent = "İşaretlenen" + ': ' + n + ' / ' + ids.length; }
+  boxes.forEach(b => { b.checked = !!(state.done || {})[b.dataset.id];
+    b.addEventListener('change', () => { const s = store.get(); s.done = s.done || {}; s.done[b.dataset.id] = b.checked; store.set(s);
+      boxes.forEach(o => { if (o !== b && o.dataset.id === b.dataset.id) o.checked = b.checked; }); count(); }); });
+  count();
+  document.querySelectorAll('textarea[data-q]').forEach(t => { t.value = (state.answers || {})[t.id] || '';
+    t.addEventListener('input', () => { const s = store.get(); s.answers = s.answers || {}; s.answers[t.id] = t.value; store.set(s); }); });
+
+  async function copy(text, status){ try { await navigator.clipboard.writeText(text); status.textContent = "Kopyalandı"; }
+    catch { const ta = document.getElementById('prompt-text'); ta.hidden = false; ta.value = text; ta.select(); status.textContent = "Metni seçip kopyalayın"; } }
+  document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+    const status = btn.parentElement.querySelector('.status');
+    if (btn.dataset.copy === 'answers') {
+      const lines = [...document.querySelectorAll('textarea[data-q]')].filter(t => t.value.trim()).map(t => '- ' + t.dataset.q + '\n  ' + t.value.trim().replace(/\n/g, '\n  '));
+      copy(lines.join('\n'), status);
+    } else if (btn.dataset.copy === 'fix') copy(FIX[btn.dataset.fid] || FIX[btn.dataset.fid.split('|')[0] + '|'] || '', status);
+    else copy(document.getElementById('prompt-text').value, status);
+  }));
+})();
+</script>
+</body>
+</html>

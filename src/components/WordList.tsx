@@ -32,6 +32,7 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
   const [isAiFilling, setIsAiFilling] = useState(false);
   const [archiveId, setArchiveId] = useState<string | null>(null);
   const aiAbortControllerRef = useRef<AbortController | null>(null);
+  const flipTimerRef = useRef<NodeJS.Timeout | number | null>(null);
 
   // Çevirisi açık olan cümlenin ID'si
   const [flippedSentenceId, setFlippedSentenceId] = useState<string | null>(null);
@@ -59,17 +60,26 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
       window.removeEventListener('scroll', handleScroll);
       window.speechSynthesis.cancel();
       aiAbortControllerRef.current?.abort();
+      if (flipTimerRef.current) {
+        clearTimeout(flipTimerRef.current);
+      }
     };
   }, []);
 
   const handleSentenceClick = (id: string) => {
+    if (flipTimerRef.current) {
+      clearTimeout(flipTimerRef.current);
+      flipTimerRef.current = null;
+    }
+
     if (flippedSentenceId === id) {
       setFlippedSentenceId(null);
     } else {
       setFlippedSentenceId(id);
-      // 3 saniye sonra otomatik kapat
-      setTimeout(() => {
+      // 3.5 saniye sonra otomatik kapat
+      flipTimerRef.current = setTimeout(() => {
         setFlippedSentenceId(prev => prev === id ? null : prev);
+        flipTimerRef.current = null;
       }, 3500);
     }
   };
