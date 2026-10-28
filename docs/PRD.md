@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.28 (28 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.29 (28 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -18,6 +18,14 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Akıllı Bağlamsal Ekleme:** Cümleler, Kütüphane ve Özel Set çalışmalarında kelimelere çift tıklandığında AI'nın arka planda otomatik olarak kelime anlamını, örnek cümleyi ve çevirisini üretip kaydetmesi.
 
 ### 2.2. Öğrenme ve Pratik Modülleri
+
+- **Cihazlar Arası Kesintisiz Oturum ve İlerleme Senkronizasyonu (Cloud State Sync):**
+    - **Farklı Cihaz/Tarayıcı İzolasyonunun Aşılması:** Kullanıcının PC'den mobile geçtiğinde veya farklı tarayıcılarda LinguaCard'ı açtığında `localStorage` izolasyonu sebebiyle 1. setten başlaması sorunu çözülmüştür.
+    - **Hibrit Depolama Mimarisi (Local-First + Debounced Cloud Sync):** 
+      - İstemci tarafında `userStateService` ile tüm set numaraları (`currentSetNum`), kart/soru sıraları (`currentIndex`), aktif seviyeler (`A1..C2`) ve kapsamlar (`CORE_300` vs `ALL`) yerel `localStorage`'a anında (0ms) yazılarak sıfır arayüz gecikmesi korunur.
+      - 600ms'lik debounce süresiyle arka planda Supabase `public.user_study_state` tablosuna (`user_id, state JSONB, updated_at`) kesintisiz yedekleme yapılır. Seviye değişimi veya modül kapatma anlarında `saveStateBulk` ile anlık senkronizasyon garanti edilir.
+    - **Otomatik Karşılama ve Eşitleme (Auto-Resume on Mobile):** Kullanıcı mobil cihazda oturum açtığında veya sayfayı açtığında Supabase'deki en son ilerleme otomatik olarak çekilir (`syncRemoteToLocal`); PC'de kalınan set (örneğin 6. set) ve kart doğrudan mobil ekrana yüklenir.
+    - **Şema ve Çevrimdışı Dayanıklılığı (Schema & Offline Resilience):** Supabase tablosunun henüz oluşturulmadığı veya internet bağlantısının olmadığı senaryolarda sistem arayüzü kilitlemeden veya hata vermeden tamamen yerel `localStorage` modunda çalışmaya devam eder.
 
 - **Flaşkartlar (Flashcards - Moda Dayalı Çalışma & A1-C2 Kütüphane Entegrasyonu):** 
     - **3 Farklı Çalışma Modu (Mode Selector):**

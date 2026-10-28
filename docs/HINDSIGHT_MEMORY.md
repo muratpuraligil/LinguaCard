@@ -121,3 +121,14 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
 ## 💾 6. Çok Boyutlu İlerleme Durum Yönetimi (Multi-Dimensional Scope & Level Persistence)
 - **Problem:** Flaşkart modunda seviyeler (`A1..C2`) arasında bağımsız ilerleme varken, seviye içi kapsam filtreleri (`Temel 300` vs `Tümü`) eklendiğinde depolama anahtarlarında sadece `${mode}_${level}` bulunması filtre değişiminde ilerlemenin sıfırlanmasına (`currentIndex: 0`, `currentSetNum: 1`) sebep oluyordu.
 - **Çözüm:** Depolama anahtarları `${mode}_${level}_${scope}` biçiminde 3 boyutlu hale getirildi (`getStoredCurrentIndex`, `getStoredSetNum`, `getStoredActiveIds`). Kapsam değişimi anında (`handleScopeChange`) ayrılmakta olan kapsamın verisi diske yazılır ve hedef kapsamın verisi okunarak state'e yüklenir. Eski tek boyutlu anahtarlara geriye dönük fallback sağlandı. Kapsam ve seviye değişikliklerinde `prevConfigRef` senkronize tutularak sahte `setChanged` sıfırlamaları tamamen engellendi.
+
+---
+
+## ☁️ 7. Cihazlar Arası Kesintisiz Oturum ve Set İlerlemesi Senkronizasyonu (Cloud State Sync)
+- **Problem:** Kullanıcı PC'de 6. sete gelip ardından cep telefonundan (mobil web) giriş yaptığında, `localStorage` cihaz bazlı izole olduğundan mobil tarayıcıda çalışma 1. setten başlıyordu. Kelime öğrenme durumları (`user_progress`) Supabase'e kaydedilse de; kullanıcının o an hangi sette (`currentSetNum`), hangi kartta (`currentIndex`), hangi seviyede (`selectedLevel`) ve kapsamda (`CORE_300` vs `ALL`) olduğu yalnızca yerel hafızada kalıyordu.
+- **Çözüm:**
+  1. Supabase üzerinde `public.user_study_state` tablosu (`user_id PRIMARY KEY`, `state JSONB`, `updated_at TIMESTAMPTZ`, RLS & explicit GRANT) oluşturuldu (`database/migrations/add_user_study_state.sql`).
+  2. `src/services/userStateService.ts` servisi geliştirildi. Yerel `localStorage` optimistik UI olarak anında (0ms) güncellenir; oturum ve set ilerlemeleri 600ms'lik debounce ile Supabase'e yedeklenir. Seviye değişimi veya ekran kapatma anında `saveStateBulk` ile anında kaydedilir.
+  3. Kullanıcı mobilde veya başka bir tarayıcıda oturum açtığında (`App.tsx` `fetchSessionAndWords`), Supabase'deki son durum çekilip `applyRemoteStudyState` ile yerel hafıza senkronize edilir. Böylece PC'de 6. sete gelen kullanıcı mobilde de doğrudan 6. setten devam eder.
+  4. Şema henüz uygulanmamışsa veya çevrimdışı kalındığında sistem hata fırlatmadan tamamen yerel `localStorage` modunda çalışmaya devam eder (Schema & Offline Resilient).
+

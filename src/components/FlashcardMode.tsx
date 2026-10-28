@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Word, LanguageDirection, FlashcardStudyMode, LibraryLevel, LibraryScope, WordProgressStatus } from '../types';
 import { ArrowLeft, Volume2, Languages, Trophy, ChevronLeft, ChevronRight, Check, BookOpen, Puzzle, Sparkles, SlidersHorizontal, Tag, Home, Headphones, Play, Pause } from 'lucide-react';
 import { wordService } from '../services/supabaseClient';
+import { userStateService } from '../services/userStateService';
 import { audioStudyService, AudioPhase } from '../services/audioStudyService';
 import ListeningModeBar from './ListeningModeBar';
 import confetti from 'canvas-confetti';
@@ -222,6 +223,13 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             if (activeSessionRef.current.activeIds.length > 0) {
                 localStorage.setItem(getActiveIdsKey(outgoingMode, outgoingLevel, outgoingScope), JSON.stringify(activeSessionRef.current.activeIds));
             }
+            if (userId) {
+                userStateService.saveStateBulk(userId, {
+                    [getCurrentIndexKey(outgoingMode, outgoingLevel, outgoingScope)]: activeSessionRef.current.currentIndex.toString(),
+                    [getSetNumKey(outgoingMode, outgoingLevel, outgoingScope)]: activeSessionRef.current.currentSetNum.toString(),
+                    ...(activeSessionRef.current.activeIds.length > 0 ? { [getActiveIdsKey(outgoingMode, outgoingLevel, outgoingScope)]: JSON.stringify(activeSessionRef.current.activeIds) } : {})
+                });
+            }
 
             // 2. Yeni seçilen seviyenin kayıtlı savedIndex, savedSet ve savedActiveIds değerleri yüklenmeli.
             const targetIndex = getStoredCurrentIndex(studyMode, selectedLevel, libraryScope);
@@ -237,6 +245,9 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
             if (studyMode === 'LIBRARY') {
                 localStorage.setItem('lingua_flashcard_last_level', selectedLevel);
+                if (userId) {
+                    userStateService.saveStateKey(userId, 'lingua_flashcard_last_level', selectedLevel);
+                }
             }
 
             // 3. activeIds state'i yeni seviyenin kelimeleriyle senkronize edilmeli
@@ -349,8 +360,11 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             prevConfigRef.current.libraryScope === libraryScope
         ) {
             localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel, libraryScope), currentIndex.toString());
+            if (userId) {
+                userStateService.saveStateKey(userId, getCurrentIndexKey(studyMode, selectedLevel, libraryScope), currentIndex.toString());
+            }
         }
-    }, [currentIndex, studyMode, selectedLevel, libraryScope]);
+    }, [currentIndex, studyMode, selectedLevel, libraryScope, userId]);
 
     useEffect(() => {
         if (
@@ -359,8 +373,11 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             prevConfigRef.current.libraryScope === libraryScope
         ) {
             localStorage.setItem(getSetNumKey(studyMode, selectedLevel, libraryScope), currentSetNum.toString());
+            if (userId) {
+                userStateService.saveStateKey(userId, getSetNumKey(studyMode, selectedLevel, libraryScope), currentSetNum.toString());
+            }
         }
-    }, [currentSetNum, studyMode, selectedLevel, libraryScope]);
+    }, [currentSetNum, studyMode, selectedLevel, libraryScope, userId]);
 
     useEffect(() => {
         setIsFlipped(false);
@@ -368,7 +385,10 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
     useEffect(() => {
         localStorage.setItem(STORAGE_KEYS.DIRECTION, direction);
-    }, [direction]);
+        if (userId) {
+            userStateService.saveStateKey(userId, STORAGE_KEYS.DIRECTION, direction);
+        }
+    }, [direction, userId]);
 
     useEffect(() => {
         return () => {
@@ -381,8 +401,15 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             if (current.activeIds.length > 0) {
                 localStorage.setItem(getActiveIdsKey(current.studyMode, current.selectedLevel, current.libraryScope), JSON.stringify(current.activeIds));
             }
+            if (userId) {
+                userStateService.saveStateBulk(userId, {
+                    [getCurrentIndexKey(current.studyMode, current.selectedLevel, current.libraryScope)]: current.currentIndex.toString(),
+                    [getSetNumKey(current.studyMode, current.selectedLevel, current.libraryScope)]: current.currentSetNum.toString(),
+                    ...(current.activeIds.length > 0 ? { [getActiveIdsKey(current.studyMode, current.selectedLevel, current.libraryScope)]: JSON.stringify(current.activeIds) } : {})
+                });
+            }
         };
-    }, []);
+    }, [userId]);
 
     useEffect(() => {
         if (!currentWord || isListeningMode) return;
@@ -641,6 +668,13 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         if (activeIds.length > 0) {
             localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(activeIds));
         }
+        if (userId) {
+            userStateService.saveStateBulk(userId, {
+                [getCurrentIndexKey(studyMode, selectedLevel, libraryScope)]: currentIndex.toString(),
+                [getSetNumKey(studyMode, selectedLevel, libraryScope)]: currentSetNum.toString(),
+                ...(activeIds.length > 0 ? { [getActiveIdsKey(studyMode, selectedLevel, libraryScope)]: JSON.stringify(activeIds) } : {})
+            });
+        }
         onLevelChange(lvl);
     };
 
@@ -653,6 +687,14 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         localStorage.setItem(getSetNumKey(studyMode, selectedLevel, libraryScope), currentSetNum.toString());
         if (activeIds.length > 0) {
             localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(activeIds));
+        }
+        if (userId) {
+            userStateService.saveStateBulk(userId, {
+                [getCurrentIndexKey(studyMode, selectedLevel, libraryScope)]: currentIndex.toString(),
+                [getSetNumKey(studyMode, selectedLevel, libraryScope)]: currentSetNum.toString(),
+                'lingua_flashcard_library_scope': newScope,
+                ...(activeIds.length > 0 ? { [getActiveIdsKey(studyMode, selectedLevel, libraryScope)]: JSON.stringify(activeIds) } : {})
+            });
         }
 
         // 2. Yeni kapsam tercihini kaydet

@@ -3,6 +3,7 @@ import { Word, LanguageDirection, QuizStudyMode, LibraryLevel, QuizChallengeData
 import { CheckCircle, ArrowLeft, Languages, Zap, BookOpen, Sparkles, RefreshCw, X, Volume2, VolumeX, SlidersHorizontal, Share2, Trophy, Swords } from 'lucide-react';
 import QuizShareModal from './QuizShareModal';
 import QuizChallengeResultModal from './QuizChallengeResultModal';
+import { userStateService } from '../services/userStateService';
 
 const QUIZ_SET_SIZE = 20;
 const LEVELS: LibraryLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -62,6 +63,7 @@ interface QuizModeProps {
   onExit: () => void;
   onGoToFlashcards?: () => void;
   onGoToSentences?: () => void;
+  userId?: string;
 }
 
 const QuizMode: React.FC<QuizModeProps> = ({
@@ -75,7 +77,8 @@ const QuizMode: React.FC<QuizModeProps> = ({
   onOpenModeSelection,
   onExit,
   onGoToFlashcards,
-  onGoToSentences
+  onGoToSentences,
+  userId
 }) => {
   const currentMode: QuizStudyMode = isChallenge ? 'LIBRARY' : studyMode;
   const currentLevel: LibraryLevel = isChallenge && challengeData ? challengeData.level : selectedLevel;
@@ -175,6 +178,13 @@ const QuizMode: React.FC<QuizModeProps> = ({
       if (activeSessionRef.current.activeIds.length > 0) {
         localStorage.setItem(getQuizActiveIdsKey(prev.currentMode, prev.currentLevel), JSON.stringify(activeSessionRef.current.activeIds));
       }
+      if (userId) {
+        userStateService.saveStateBulk(userId, {
+          [getQuizCurrentIndexKey(prev.currentMode, prev.currentLevel)]: activeSessionRef.current.currentIndex.toString(),
+          [getQuizSetNumKey(prev.currentMode, prev.currentLevel)]: activeSessionRef.current.currentSetNum.toString(),
+          ...(activeSessionRef.current.activeIds.length > 0 ? { [getQuizActiveIdsKey(prev.currentMode, prev.currentLevel)]: JSON.stringify(activeSessionRef.current.activeIds) } : {})
+        });
+      }
 
       // 2. Load incoming state
       const targetIndex = getStoredQuizIndex(currentMode, currentLevel);
@@ -190,6 +200,10 @@ const QuizMode: React.FC<QuizModeProps> = ({
       setFinished(false);
       setScore(0);
       setIncorrectWords([]);
+
+      if (currentMode === 'LIBRARY' && userId) {
+        userStateService.saveStateKey(userId, 'lingua_quiz_last_level', currentLevel);
+      }
 
       // 3. Sync activeIds with words
       if (sortedWords.length === 0) {
@@ -218,23 +232,32 @@ const QuizMode: React.FC<QuizModeProps> = ({
     }
 
     prevConfigRef.current = { currentMode, currentLevel };
-  }, [currentMode, currentLevel, sortedWords, isChallenge]);
+  }, [currentMode, currentLevel, sortedWords, isChallenge, userId]);
 
   useEffect(() => {
     if (!isChallenge) {
       localStorage.setItem(getQuizSetNumKey(currentMode, currentLevel), currentSetNum.toString());
+      if (userId) {
+        userStateService.saveStateKey(userId, getQuizSetNumKey(currentMode, currentLevel), currentSetNum.toString());
+      }
     }
-  }, [currentSetNum, currentMode, currentLevel, isChallenge]);
+  }, [currentSetNum, currentMode, currentLevel, isChallenge, userId]);
 
   useEffect(() => {
     if (!isChallenge) {
       localStorage.setItem(getQuizCurrentIndexKey(currentMode, currentLevel), currentIndex.toString());
+      if (userId) {
+        userStateService.saveStateKey(userId, getQuizCurrentIndexKey(currentMode, currentLevel), currentIndex.toString());
+      }
     }
-  }, [currentIndex, currentMode, currentLevel, isChallenge]);
+  }, [currentIndex, currentMode, currentLevel, isChallenge, userId]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.DIRECTION, direction);
-  }, [direction]);
+    if (userId) {
+      userStateService.saveStateKey(userId, LOCAL_STORAGE_KEYS.DIRECTION, direction);
+    }
+  }, [direction, userId]);
 
   useEffect(() => {
     return () => {
@@ -242,8 +265,15 @@ const QuizMode: React.FC<QuizModeProps> = ({
       if (answerTimerRef.current) {
         clearTimeout(answerTimerRef.current);
       }
+      if (!isChallenge && userId) {
+        const current = activeSessionRef.current;
+        userStateService.saveStateBulk(userId, {
+          [getQuizCurrentIndexKey(current.currentMode, current.currentLevel)]: current.currentIndex.toString(),
+          [getQuizSetNumKey(current.currentMode, current.currentLevel)]: current.currentSetNum.toString()
+        });
+      }
     };
-  }, []);
+  }, [isChallenge, userId]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.TTS_ENABLED, isTtsEnabled.toString());

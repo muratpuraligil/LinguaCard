@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AppMode, Word, OcrStatus, FlashcardStudyMode, QuizStudyMode, LibraryLevel, QuizChallengeData } from './types';
 import { wordService, supabase } from './services/supabaseClient';
+import { userStateService } from './services/userStateService';
 import { analyzeImage, analyzeText } from './services/analyzeImage';
 import { getLocalDateString } from './utils/stringUtils';
 import { compressImage } from './utils/imageCompressor';
@@ -198,6 +199,12 @@ export default function App() {
         clearTimeout(safetyTimer);
 
         if (currentSession?.user) {
+          await userStateService.syncRemoteToLocal(currentSession.user.id);
+          const syncedLevel = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
+          if (syncedLevel && ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(syncedLevel) && syncedLevel !== selectedLibraryLevel) {
+            setSelectedLibraryLevel(syncedLevel);
+            loadLibraryWords(syncedLevel);
+          }
           await loadUserWords(currentSession.user.id);
         }
       } catch (e) {
@@ -222,8 +229,14 @@ export default function App() {
       }
       if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') {
         if (deferredTimer) clearTimeout(deferredTimer);
-        deferredTimer = setTimeout(() => {
+        deferredTimer = setTimeout(async () => {
           if (isMounted && currentSession?.user) {
+            await userStateService.syncRemoteToLocal(currentSession.user.id);
+            const syncedLevel = localStorage.getItem('lingua_flashcard_last_level') as LibraryLevel;
+            if (syncedLevel && ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(syncedLevel) && syncedLevel !== selectedLibraryLevel) {
+              setSelectedLibraryLevel(syncedLevel);
+              loadLibraryWords(syncedLevel);
+            }
             loadUserWords(currentSession.user.id);
           }
         }, 0);
@@ -541,6 +554,7 @@ export default function App() {
             }}
             onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
             onGoToSentences={() => { setShowSentenceSelection(true); setMode(AppMode.HOME); }}
+            userId={session?.user?.id}
           />
         )}
         {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
