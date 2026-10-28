@@ -7,6 +7,10 @@ export default defineConfig({
   // Göreli yol (relative path) kullanımı:
   // Repo isminiz 'LinguaCard_repo' veya sadece 'LinguaCard' olsa bile çalışmasını sağlar.
   base: './', 
+  server: {
+    host: true, // Sabit dinleme: hem localhost hem de yerel ağ (mobil telefon için)
+    port: 5173,
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
