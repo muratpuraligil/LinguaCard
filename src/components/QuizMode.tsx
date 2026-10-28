@@ -726,11 +726,11 @@ const QuizMode: React.FC<QuizModeProps> = ({
 
       {/* Set Progress Bar */}
       <div className="w-full max-w-[340px] sm:max-w-sm mx-auto px-4 sm:px-6 mb-1 sm:mb-2 mt-0.5 relative z-10 shrink-0">
-        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">
+        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">
           <span>İlerleyen: {currentIndex + 1} / {quizSet.length}</span>
           <span>SET {currentSetNum} / {totalSets} ({sortedWords.length})</span>
         </div>
-        <div className="w-full h-1.5 bg-zinc-950 rounded-full overflow-hidden border border-white/5">
+        <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden border border-zinc-700/80 shadow-inner">
           <div 
             className="h-full bg-emerald-500 transition-all duration-300 rounded-full shadow-[0_0_8px_#10b981]"
             style={{ width: `${progressPercent}%` }}

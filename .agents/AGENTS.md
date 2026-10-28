@@ -37,3 +37,8 @@ Bu dosya, LinguaCard projesinde geliştirme yaparken uyulması gereken yerel pro
 - Yeni özellik, bugfix veya refactoring geliştirirken RED-GREEN-REFACTOR döngüsü zorunludur.
 - **Demir Kural:** Önce başarısız olan test yazılmalı (`RED`), testin başarısız olduğu doğrulanmalı, ardından testi geçiren en minimal kod yazılmalı (`GREEN`), son olarak kod temizlenip yeniden düzenlenmelidir (`REFACTOR`).
 - Test yazmadan prodüksiyon kodu yazmak yasaktır. Yapılan mantık değişiklikleri mutlaka birim testlerle doğrulanmalıdır.
+
+### 9. Canlıya Dağıtım Yasağı (Strict Deployment Boundary)
+- **Kesin Kural:** Kullanıcı açık ve net bir şekilde "canlıya gönder", "deploy et" veya "/canliyagonder" komutunu vermediği sürece ASLA ve ASLA `npm run deploy` veya canlı sunucu/gh-pages dağıtımı çalıştırılmayacaktır!
+- Kullanıcı her fix ve geliştirmeyi önce yerelde (`localhost` üzerinde) inceler ve test eder. Onay verdikten sonra deploy talep eder.
+- Agent'ın görevi kodları yazmak, birim testleri geçirmek, `npm run build` ile doğrulamak, PRD ve versiyonu güncellemek ve gerekirse `git push origin main` yapmaktır. Canlıya deploy çalıştırmak KESİNLİKLE yasaktır.
