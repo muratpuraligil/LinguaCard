@@ -168,15 +168,19 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const totalSets = Math.max(1, Math.ceil(scopedWords.length / FLASHCARD_SET_SIZE));
 
     const currentSet = useMemo(() => {
+        const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
+        const setSlice = scopedWords.slice(setStart, setStart + FLASHCARD_SET_SIZE);
+        if (studyMode === 'LIBRARY') {
+            return setSlice;
+        }
         if (activeIds.length > 0) {
             const mapped = activeIds
                 .map(id => scopedWords.find(w => w.id === id))
                 .filter((w): w is Word => !!w);
             if (mapped.length > 0) return mapped;
         }
-        const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
-        return scopedWords.slice(setStart, setStart + FLASHCARD_SET_SIZE);
-    }, [activeIds, scopedWords, currentSetNum]);
+        return setSlice;
+    }, [activeIds, scopedWords, currentSetNum, studyMode]);
 
     const activeSessionRef = useRef({
         studyMode,
@@ -272,8 +276,29 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
             return;
         }
 
+        const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
+        const setEnd = Math.min(setStart + FLASHCARD_SET_SIZE, scopedWords.length);
+        const setWords = scopedWords.slice(setStart, setEnd);
+
+        if (setChanged) {
+            const newIds = setWords.map(w => w.id);
+            localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(newIds));
+            setActiveIds(newIds);
+            return;
+        }
+
         // If mode and level did not change and we already have activeIds, keep them (filtering out any removed IDs)
+        // In LIBRARY mode, also verify that activeIds belong to the current setWords
         if (activeIds.length > 0) {
+            if (studyMode === 'LIBRARY') {
+                const belongsToSet = activeIds.length === setWords.length && activeIds.every(id => setWords.some(w => w.id === id));
+                if (!belongsToSet) {
+                    const newIds = setWords.map(w => w.id);
+                    setActiveIds(newIds);
+                    localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(newIds));
+                    return;
+                }
+            }
             const currentValidIds = activeIds.filter(id => scopedWords.some(w => w.id === id));
             if (currentValidIds.length !== activeIds.length) {
                 setActiveIds(currentValidIds);
@@ -285,16 +310,21 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
         // If activeIds is empty: check localStorage first
         const savedIds = getStoredActiveIds(studyMode, selectedLevel, libraryScope);
         if (savedIds.length > 0) {
+            if (studyMode === 'LIBRARY') {
+                const belongsToSet = savedIds.length === setWords.length && savedIds.every(id => setWords.some(w => w.id === id));
+                if (!belongsToSet) {
+                    const newIds = setWords.map(w => w.id);
+                    setActiveIds(newIds);
+                    localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(newIds));
+                    return;
+                }
+            }
             const validIds = savedIds.filter((id: string) => scopedWords.some(w => w.id === id));
             if (validIds.length > 0) {
                 setActiveIds(validIds);
                 return;
             }
         }
-
-        const setStart = (currentSetNum - 1) * FLASHCARD_SET_SIZE;
-        const setEnd = Math.min(setStart + FLASHCARD_SET_SIZE, scopedWords.length);
-        const setWords = scopedWords.slice(setStart, setEnd);
 
         if (setWords.length > 0) {
             const newIds = setWords.map(w => w.id);
@@ -525,10 +555,17 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
     const handleNewSet = (resumeListening: boolean = false) => {
         setAutoAdvanceCountdown(null);
         const nextSetNum = currentSetNum < totalSets ? currentSetNum + 1 : 1;
-        localStorage.removeItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope));
+        const nextSetStart = (nextSetNum - 1) * FLASHCARD_SET_SIZE;
+        const nextWords = scopedWords.slice(nextSetStart, nextSetStart + FLASHCARD_SET_SIZE);
+        const nextIds = nextWords.map(w => w.id);
+
+        localStorage.removeItem(`${STORAGE_KEYS.ACTIVE_IDS}_${studyMode}_${selectedLevel}`);
+        localStorage.setItem(getActiveIdsKey(studyMode, selectedLevel, libraryScope), JSON.stringify(nextIds));
         localStorage.setItem(getCurrentIndexKey(studyMode, selectedLevel, libraryScope), '0');
         localStorage.setItem(getSetNumKey(studyMode, selectedLevel, libraryScope), nextSetNum.toString());
-        setActiveIds([]);
+
+        prevConfigRef.current = { studyMode, selectedLevel, libraryScope, currentSetNum: nextSetNum };
+        setActiveIds(nextIds);
         setCurrentIndex(0);
         setCurrentSetNum(nextSetNum);
         setIsFlipped(false);
@@ -537,8 +574,6 @@ const FlashcardMode: React.FC<FlashcardModeProps> = ({
 
         if (resumeListening) {
             setTimeout(() => {
-                const nextSetStart = (nextSetNum - 1) * FLASHCARD_SET_SIZE;
-                const nextWords = scopedWords.slice(nextSetStart, nextSetStart + FLASHCARD_SET_SIZE);
                 if (nextWords.length > 0) {
                     setIsListeningMode(true);
                     setIsAudioPaused(false);
