@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.29 (28 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.32 (28 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -177,7 +177,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 - **Bellek Sızıntısı Önleme (Memory Leak Prevention):** Tüm bileşenlerde (`FlashcardMode`, `SentenceMode`, `QuizMode`, `LibraryPracticeScreen`, `CustomSetStudyMode`, `WordList`, `UploadModal`) unmount anında `speechSynthesis.cancel()`, `clearTimeout`, `URL.revokeObjectURL` ve event listener cleanup güvencesi.
 - **Ürün ve Arayüz Tasarımı (Product & Frontend Design):** Apple seviyesinde karanlık neon estetiği, dokunsal mikro geri bildirimler (`active:scale-95`), WCAG AA kontrast ve yönlendirici boş durum tasarımları.
 - **Hindsight Memory:** Ajan deneyimleri ve mimari kararların `docs/HINDSIGHT_MEMORY.md` üzerinden kalıcı saklanması.
-- **Test Güdümlü Geliştirme (TDD) & E2E Testleri:** Yeni özellik ve hata düzeltmelerinde RED-GREEN-REFACTOR döngüsü; `e2e` runner ile modern agentic ve deterministik E2E testleri (`tests/login.e2e.ts`, `tests/example.e2e.ts`). Supabase kimlik doğrulama akışı ve anasayfa yüklenme kontrolleri otomatik test güvencesi altındadır.
+- **Test Güdümlü Geliştirme (TDD) & E2E Testleri:** Yeni özellik ve hata düzeltmelerinde RED-GREEN-REFACTOR döngüsü; `e2e` runner ile modern agentic ve deterministik E2E testleri (`tests/login.e2e.ts`, `tests/flashcards.e2e.ts`, `tests/quiz.e2e.ts`, `tests/sentencePractice.e2e.ts`, `tests/example.e2e.ts`). Supabase kimlik doğrulama akışı, Flaşkart modu, Quiz çözümü, Cümle kütüphanesi ve anasayfa navigasyon kontrolleri otomatik test güvencesi altındadır. Toplu regresyon testleri `npm run e2e-regresyon` veya `/e2e-regresyon` ile tek komutla koşturulabilir.
 - **Git Pushing:** Conventional Commits standardı ile izlenebilir sürüm kontrolü.
 
 ---
@@ -189,7 +189,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ---
 
 ## 6. Sürüm Takibi ve Release Yönetimi
-- **Aktif Lokal Sürüm:** `v1.2.19` (22 Ekim 2026)
+- **Aktif Lokal Sürüm:** `v1.2.32` (28 Ekim 2026)
 - **Hedef Sürüm Kilometre Taşı (Milestone):** `v1.2.0` (A1-C2 Tam Kütüphane, Hands-Free Dinleme Modu, Bağımsız Hafıza ve Mobil Responsive Paketi)
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY`
 - **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya fix yapıldığında versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra `1.2.0` şeklinde devam eder.

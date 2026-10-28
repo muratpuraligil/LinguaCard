@@ -485,7 +485,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
               <Languages size={14} /> <span className="hidden sm:inline">{direction.replace('_', ' → ')}</span>
             </button>
 
-            <button onClick={onGoHome} className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all shrink-0">
+            <button onClick={onGoHome} title="Ana Sayfa" aria-label="Ana Sayfa" className="p-3 bg-zinc-900 border border-white/5 rounded-2xl text-slate-400 hover:text-white transition-all shrink-0">
               <Home size={20} />
             </button>
           </div>
