@@ -132,3 +132,21 @@ Bu döküman, LinguaCard projesinde ajanların edindiği deneyimleri, mimari kal
   3. Kullanıcı mobilde veya başka bir tarayıcıda oturum açtığında (`App.tsx` `fetchSessionAndWords`), Supabase'deki son durum çekilip `applyRemoteStudyState` ile yerel hafıza senkronize edilir. Böylece PC'de 6. sete gelen kullanıcı mobilde de doğrudan 6. setten devam eder.
   4. Şema henüz uygulanmamışsa veya çevrimdışı kalındığında sistem hata fırlatmadan tamamen yerel `localStorage` modunda çalışmaya devam eder (Schema & Offline Resilient).
 
+---
+
+## 🚪 8. Kütüphane Cümle Pratiği Bitiş Pop-up Kilitlenmesi (Finish Modal Trap & Stale Storage)
+- **Problem:** "Karma Çalışma" (veya herhangi bir kütüphane seti) tamamlandığında ekrana gelen "Harika Bir Set!" modalından çıkılamıyor; "Yeni Set Üret", "Kartlar ile Çalış" veya "Dashboard'a Dön" tıklandığında kullanıcı sürekli bu popup'ta kilitli kalıyordu.
+- **Kök Nedenler:**
+  1. `handleRandomLibrarySet(true)` yeni rastgele set oluştururken `localStorage`'daki `library_completed_random-mix_*` anahtarlarını temizlemiyordu.
+  2. `LibraryPracticeScreen.tsx` içindeki `isAllCompleted` kontrolü cümle ID'lerine bakmak yerine `Object.keys(completed).length === set.sentences.length` yapıyordu; bu sebeple yeni cümleler gelse bile eski 34 anahtar yüzünden yeni set anında tamamlanmış sayılıyordu.
+  3. Modalda (X) kapatma butonu yoktu.
+  4. Kullanıcı Kütüphane ekranından "Rastgele Oluştur"a tekrar tıkladığında, `savedSet` %100 tamamlanmış olsa bile aynı seti yüklüyor ve anında modal açılıyordu.
+  5. `onGoHome` SPA geçişi yerine `window.location.reload()` çalıştırarak gereksiz sayfa yenilemesi yapıyordu.
+- **Çözüm:**
+  1. `handleRandomLibrarySet` yeni set üretirken `random-mix` için tüm tamamlanma anahtarlarını temizler; kütüphaneden tıklandığında kayıtlı set %100 bitmişse kullanıcıyı pop-up'a hapsetmek yerine otomatik olarak yepyeni bir set üretir.
+  2. `isAllCompleted` artık o anki setin cümlelerini tek tek doğrular (`set.sentences.every(s => !!completed[s.id])`).
+  3. Modala sağ üst kapatma (X) butonu eklendi.
+  4. Tüm butonlar modalı kapatacak ve `onRegenerate` yerel `completed` state'ini sıfırlayacak şekilde güçlendirildi.
+  5. `onGoHome` pürüzsüz SPA geçişine (`setMode(AppMode.HOME)`) dönüştürüldü.
+
+

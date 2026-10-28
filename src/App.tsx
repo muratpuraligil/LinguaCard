@@ -278,6 +278,15 @@ export default function App() {
         try {
           const parsed = JSON.parse(savedSet);
           if (parsed && parsed.version === LIBRARY_DATA_VERSION) {
+            // Kaydedilmiş rastgele set zaten %100 bitmişse kullanıcıyı bitiş popup'ına kilitlemek yerine taze set üret
+            const savedCompletedTr = localStorage.getItem('library_completed_random-mix_TR_EN');
+            const compTr = savedCompletedTr ? JSON.parse(savedCompletedTr) : {};
+            const isFinished = parsed.sentences.length > 0 && parsed.sentences.every((s: any) => !!compTr[s.id]);
+            if (isFinished) {
+              handleRandomLibrarySet(true);
+              return;
+            }
+
             // Re-sync with libraryData to ensure all sentence text/translation updates are active
             const syncedSentences = parsed.sentences.map((s: any) => {
               if (s.sourceSetId) {
@@ -334,6 +343,14 @@ export default function App() {
       sentences: selectedSentences,
       version: LIBRARY_DATA_VERSION
     };
+
+    // Yeni set üretildiğinde önceki tamamlanma kayıtlarını temizle
+    ['TR_EN', 'EN_TR'].forEach(dir => {
+      localStorage.removeItem(`library_inputs_random-mix_${dir}`);
+      localStorage.removeItem(`library_wrong_random-mix_${dir}`);
+      localStorage.removeItem(`library_completed_random-mix_${dir}`);
+      localStorage.removeItem(`library_progress_random-mix_${dir}`);
+    });
 
     localStorage.setItem('lingua_active_random_mix', JSON.stringify(randomSet));
     setActiveLibrarySet(randomSet);
@@ -575,10 +592,7 @@ export default function App() {
           <LibraryPracticeScreen 
             set={activeLibrarySet} 
             onExit={() => setMode(AppMode.LIBRARY)} 
-            onGoHome={() => { 
-              window.location.href = window.location.origin + window.location.pathname; 
-              window.location.reload(); 
-            }}
+            onGoHome={() => setMode(AppMode.HOME)}
             onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
             onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}
             onRegenerate={activeLibrarySet.id === 'random-mix' ? () => handleRandomLibrarySet(true) : undefined}
@@ -613,10 +627,7 @@ export default function App() {
         <CustomSetStudyMode
           words={activeCustomSet}
           onExit={() => setMode(AppMode.CUSTOM_SETS)}
-          onGoHome={() => { 
-            window.location.href = window.location.origin + window.location.pathname; 
-            window.location.reload(); 
-          }}
+          onGoHome={() => setMode(AppMode.HOME)}
           showToast={(msg, type) => setToast({ message: msg, type: type || 'success' })}
           onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
           onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}

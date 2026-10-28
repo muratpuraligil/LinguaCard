@@ -97,7 +97,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
       - **Kazandın / Kaybettin Sonuç Modalı & WhatsApp Yanıtı:** Davetli testi tamamladığında kendi puanı ile meydan okuyanın puanını karşılaştıran dinamik sonuç modalı açılır (`Kazandın! 🏆`, `Kaybettin! 😢`, `Berabere! 🤝`) ve "WhatsApp ile Sonucu Gönder" butonuyla hazır karşılaştırma metnini meydan okuyana geri gönderebilir.
     - **Boş Liste Koruması:** Kullanıcının henüz kendi kelimesi olmasa bile Dashboard'dan Test Çöz modülünü başlatıp doğrudan Kütüphaneden Çöz moduna geçebilmesi.
 
-- **Cümleler (Sentence Builder):** 
+- **Cümleler (Sentence Builder & Kütüphane Cümle Pratiği):** 
     - İnteraktif yazım pratiği ve mod seçim modalı.
     - **Hizalanmış Mod Seçim Sırası (Aligned Mode Selector):** Cümleler modülündeki çalışma modları sırası, Kartlar modülü ile tam olarak hizalanmıştır:
       1. **Kütüphaneden Çalış** (Ortak alan; yardımcı fiil ve modallar özelinde çalışma)
@@ -106,6 +106,12 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - **Esnek Kontrol:** Kısaltmaları (I'm / I am, She's / She is) kabul eden akıllı eşleşme algoritması.
     - **Sesli Geri Bildirim:** Doğru cevaplarda otomatik telaffuz.
     - **Kaldığın Yerden Devam:** Her set için son çalışılan satırın otomatik kaydedilmesi ve scroll focus.
+    - **Bitiş Ekranı Pop-up İyileştirmesi ve Kilitlenme Koruması (Finish Modal Resilience):**
+      - Set tamamlandığında açılan "Harika Bir Set!" modalına (X) kapatma butonu eklenmiştir.
+      - "Yeni Set Üret" tıklandığında eski tamamlanma kayıtları yerelden ve hafızadan temizlenerek yeni 34 cümlenin sorunsuz yüklenmesi sağlanmıştır.
+      - "Karma Çalışma" %100 bitmişse, kütüphaneden tekrar tıklandığında bitmiş ekranı yerine doğrudan yeni bir karma set üretilir.
+      - Cümle tamamlama kontrolü (`isAllCompleted`) sahte/bayat anahtarlara karşı yalnızca setteki geçerli cümle ID'lerini doğrulayacak şekilde güçlendirilmiştir.
+      - "Dashboard'a Dön" işlemi SPA standartlarında pürüzsüz rota geçişine (`setMode(AppMode.HOME)`) dönüştürülmüştür.
 
 ### 2.3. İçerik Yönetimi
 - **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri.

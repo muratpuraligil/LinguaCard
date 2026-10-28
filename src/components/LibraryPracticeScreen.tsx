@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { LibrarySet, LanguageDirection } from '../types';
 import { isMatch } from '../utils/stringUtils';
-import { ArrowLeft, ArrowUp, Home, Languages, CheckCircle2, Volume2, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle, Info, Plus, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowUp, Home, Languages, CheckCircle2, Volume2, Trophy, RefreshCw, BookOpen, Zap, Eye, XCircle, X, Info, Plus, Sparkles } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
 import { analyzeText } from '../services/analyzeImage';
 import confetti from 'canvas-confetti';
@@ -62,7 +62,15 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     let initialCompleted: { [key: string]: boolean } = {};
     
     if (savedCompletedStr) {
-      try { initialCompleted = JSON.parse(savedCompletedStr); } catch {}
+      try {
+        const parsed = JSON.parse(savedCompletedStr);
+        // Sadece bu set içindeki mevcut cümleleri completed olarak kabul et
+        set.sentences.forEach(s => {
+          if (parsed[s.id]) {
+            initialCompleted[s.id] = true;
+          }
+        });
+      } catch {}
       setCompleted(initialCompleted);
     } else {
       setCompleted({});
@@ -112,8 +120,10 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     };
   }, []);
 
-  const completedCount = Object.keys(completed).length;
-  const isAllCompleted = set.sentences.length > 0 && completedCount === set.sentences.length;
+  const completedCount = useMemo(() => {
+    return set.sentences.filter(s => !!completed[s.id]).length;
+  }, [set.sentences, completed]);
+  const isAllCompleted = set.sentences.length > 0 && set.sentences.every(s => !!completed[s.id]);
   const filteredSentences = set.sentences.filter(s => !showOnlyWrong || wrongInputs[s.id]);
 
   useEffect(() => {
@@ -332,6 +342,14 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black"></div>
 
             <div className="relative z-10 w-full max-w-sm bg-zinc-900 border border-purple-500/20 p-4 sm:p-5 rounded-3xl text-center shadow-2xl animate-float">
+                <button
+                    onClick={() => setShowFinishedModal(false)}
+                    className="absolute top-4 right-4 text-slate-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-all active:scale-90"
+                    title="Kapat"
+                >
+                    <X size={18} />
+                </button>
+
                 <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-2 shadow-[0_0_20px_rgba(168,85,247,0.2)]">
                     <Trophy size={24} className="text-purple-500" strokeWidth={2} />
                 </div>
@@ -377,8 +395,12 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                     {onRegenerate && (
                         <button
                             onClick={() => {
-                                onRegenerate();
+                                setCompleted({});
+                                setInputs({});
+                                setWrongInputs({});
+                                setEverWrongIds(new Set());
                                 setShowFinishedModal(false);
+                                onRegenerate();
                             }}
                             className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2.5 rounded-xl font-black text-xs hover:scale-105 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 border border-white/10"
                         >
@@ -388,7 +410,10 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
 
                     {onGoToFlashcards && (
                         <button
-                            onClick={onGoToFlashcards}
+                            onClick={() => {
+                                setShowFinishedModal(false);
+                                onGoToFlashcards();
+                            }}
                             className="w-full py-2.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-xl font-black text-xs hover:bg-yellow-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                         >
                             <BookOpen size={15} /> Kartlar ile Çalış
@@ -397,7 +422,10 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
 
                     {onGoToQuiz && (
                         <button
-                            onClick={onGoToQuiz}
+                            onClick={() => {
+                                setShowFinishedModal(false);
+                                onGoToQuiz();
+                            }}
                             className="w-full py-2.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl font-black text-xs hover:bg-emerald-500 hover:text-black transition-all active:scale-95 flex items-center justify-center gap-2"
                         >
                             <Zap size={15} /> Test Çöz Modülüne Geç
@@ -405,7 +433,10 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
                     )}
 
                     <button
-                        onClick={onGoHome}
+                        onClick={() => {
+                            setShowFinishedModal(false);
+                            onGoHome();
+                        }}
                         className="w-full py-2.5 bg-zinc-900 text-slate-400 rounded-xl font-black text-xs border border-white/5 active:scale-95 transition-all hover:text-white"
                     >
                         Dashboard'a Dön
