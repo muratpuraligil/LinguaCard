@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.24 (28 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.25 (28 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
