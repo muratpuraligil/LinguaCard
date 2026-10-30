@@ -251,20 +251,36 @@ export default function App() {
     };
   }, []);
 
-  // Sync state automatically when user switches back to tab or device unlocks
+  // Sync state automatically with Realtime WebSocket, tab visibility, and periodic fallback
   useEffect(() => {
+    if (!session?.user?.id) return;
+    const userId = session.user.id;
+
+    // 1. Realtime WebSocket subscription
+    const unsubscribe = userStateService.subscribeToStudyState(userId);
+
+    // 2. Tab visibility & window focus triggers
     const handleVisibilityOrFocus = () => {
-      if (document.visibilityState === 'visible' && session?.user?.id) {
-        userStateService.syncRemoteToLocal(session.user.id);
+      if (document.visibilityState === 'visible') {
+        userStateService.syncRemoteToLocal(userId);
       }
     };
 
     document.addEventListener('visibilitychange', handleVisibilityOrFocus);
     window.addEventListener('focus', handleVisibilityOrFocus);
 
+    // 3. Active fallback polling interval (every 8s when tab is visible)
+    const intervalTimer = setInterval(() => {
+      if (document.visibilityState === 'visible') {
+        userStateService.syncRemoteToLocal(userId);
+      }
+    }, 8000);
+
     return () => {
+      unsubscribe();
       document.removeEventListener('visibilitychange', handleVisibilityOrFocus);
       window.removeEventListener('focus', handleVisibilityOrFocus);
+      clearInterval(intervalTimer);
     };
   }, [session?.user?.id]);
 

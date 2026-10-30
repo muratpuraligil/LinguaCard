@@ -53,6 +53,11 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
     window.scrollTo(0, 0);
     loadProgressFromStorage();
 
+    const handleStateUpdated = () => {
+      loadProgressFromStorage();
+    };
+    window.addEventListener('lingua_study_state_updated', handleStateUpdated);
+
     let isMounted = true;
     if (userId) {
       userStateService.syncRemoteToLocal(userId).then(updated => {
@@ -64,6 +69,7 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
 
     return () => {
       isMounted = false;
+      window.removeEventListener('lingua_study_state_updated', handleStateUpdated);
     };
   }, [userId, loadProgressFromStorage]);
 

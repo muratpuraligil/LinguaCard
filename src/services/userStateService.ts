@@ -57,47 +57,9 @@ export const applyRemoteStudyState = (remoteState: Record<string, any>): void =>
   try {
     Object.entries(remoteState).forEach(([key, val]) => {
       if (isStudyStateKey(key) && val !== undefined && val !== null) {
-        const currentLocal = localStorage.getItem(key);
-
-        // 1. Object / Map based progress keys (library_completed_, library_inputs_, library_wrong_, lingua_custom_progress_)
-        // Must perform deep merge/union so progress on either device is never lost!
-        if (
-          key.startsWith('library_completed_') ||
-          key.startsWith('library_inputs_') ||
-          key.startsWith('library_wrong_') ||
-          key.startsWith('lingua_custom_progress_')
-        ) {
-          let localObj: any = null;
-          let remoteObj: any = null;
-          try { localObj = currentLocal ? JSON.parse(currentLocal) : null; } catch {}
-          try { remoteObj = typeof val === 'object' ? val : JSON.parse(String(val)); } catch {}
-
-          if (localObj && typeof localObj === 'object' && remoteObj && typeof remoteObj === 'object') {
-            const mergedObj = { ...remoteObj, ...localObj };
-            localStorage.setItem(key, JSON.stringify(mergedObj));
-            return;
-          } else if (remoteObj) {
-            localStorage.setItem(key, typeof val === 'string' ? val : JSON.stringify(remoteObj));
-            return;
-          }
-        }
-
-        // 2. Numeric progress keys (_set_num_, _index, _max_reached)
-        if (key.includes('_set_num_') || key.includes('_index') || key.includes('_max_reached')) {
-          if (!currentLocal) {
-            localStorage.setItem(key, String(val));
-          } else {
-            const localNum = parseInt(currentLocal, 10);
-            const remoteNum = parseInt(String(val), 10);
-            if (!isNaN(remoteNum) && (!isNaN(localNum) ? remoteNum >= localNum : true)) {
-              localStorage.setItem(key, String(val));
-            }
-          }
-          return;
-        }
-
-        // 3. For levels, scopes, settings: update to remote if local is empty or remote has value
-        localStorage.setItem(key, String(val));
+        // Remote is the authoritative state from the cloud
+        const strVal = typeof val === 'string' ? val : JSON.stringify(val);
+        localStorage.setItem(key, strVal);
       }
     });
   } catch (e) {
@@ -180,50 +142,23 @@ export const userStateService = {
       const localState = getLocalStudyState();
 
       if (remoteState && typeof remoteState === 'object' && Object.keys(remoteState).length > 0) {
-        // Apply remote state to local storage (with smart deep merge for object sets)
+        // Apply remote state to local storage (remote is the authoritative source of truth)
         applyRemoteStudyState(remoteState);
 
-        // Check if local has new keys OR higher/richer progress than remote, and push up to Supabase
-        const currentMergedLocal = getLocalStudyState();
-        const updatesToRemote: Record<string, string> = {};
-        let hasUpdates = false;
+        // If local has offline or pre-existing keys completely missing in remote, seed them
+        const currentLocal = getLocalStudyState();
+        const missingInRemote: Record<string, string> = {};
+        let hasMissing = false;
 
-        Object.entries(currentMergedLocal).forEach(([k, localVal]) => {
+        Object.entries(currentLocal).forEach(([k, localVal]) => {
           if (!(k in remoteState)) {
-            updatesToRemote[k] = localVal;
-            hasUpdates = true;
-          } else {
-            const remoteVal = remoteState[k];
-            // Compare objects (like library_completed_, library_inputs_, library_wrong_, lingua_custom_progress_)
-            if (
-              k.startsWith('library_completed_') ||
-              k.startsWith('library_inputs_') ||
-              k.startsWith('library_wrong_') ||
-              k.startsWith('lingua_custom_progress_')
-            ) {
-              try {
-                const localObj = JSON.parse(localVal);
-                const remoteObj = typeof remoteVal === 'object' ? remoteVal : JSON.parse(String(remoteVal));
-                const localKeys = Object.keys(localObj);
-                const remoteKeys = Object.keys(remoteObj);
-                if (localKeys.length > remoteKeys.length || localKeys.some(key => !(key in remoteObj))) {
-                  updatesToRemote[k] = localVal;
-                  hasUpdates = true;
-                }
-              } catch {}
-            } else if (k.includes('_set_num_') || k.includes('_index') || k.includes('_max_reached')) {
-              const localNum = parseInt(localVal, 10);
-              const remoteNum = parseInt(String(remoteVal), 10);
-              if (!isNaN(localNum) && (isNaN(remoteNum) || localNum > remoteNum)) {
-                updatesToRemote[k] = localVal;
-                hasUpdates = true;
-              }
-            }
+            missingInRemote[k] = localVal;
+            hasMissing = true;
           }
         });
 
-        if (hasUpdates) {
-          await this.saveStateBulk(userId, updatesToRemote);
+        if (hasMissing) {
+          await this.saveStateBulk(userId, missingInRemote);
         }
 
         return true;
@@ -238,6 +173,42 @@ export const userStateService = {
       console.warn("Exception in syncRemoteToLocal:", e);
       return false;
     }
+  },
+
+  subscribeToStudyState(userId: string, onUpdate?: () => void): () => void {
+    if (!userId) return () => {};
+    let channel: any = null;
+
+    try {
+      channel = supabase
+        .channel(`realtime_study_state_${userId}`)
+        .on(
+          'postgres_changes',
+          {
+            event: '*',
+            schema: 'public',
+            table: 'user_study_state',
+            filter: `user_id=eq.${userId}`
+          },
+          (payload: any) => {
+            const newState = payload?.new?.state;
+            if (newState && typeof newState === 'object') {
+              applyRemoteStudyState(newState);
+              window.dispatchEvent(new CustomEvent('lingua_study_state_updated'));
+              if (onUpdate) onUpdate();
+            }
+          }
+        )
+        .subscribe();
+    } catch (e) {
+      console.warn("Failed to subscribe to realtime study state:", e);
+    }
+
+    return () => {
+      if (channel) {
+        try { supabase.removeChannel(channel); } catch {}
+      }
+    };
   },
 
   async saveStateKey(userId?: string | null, key: string, value: any, immediate: boolean = false): Promise<void> {
@@ -265,7 +236,7 @@ export const userStateService = {
       debounceTimer = setTimeout(() => {
         debounceTimer = null;
         flushPendingUpdates();
-      }, 600);
+      }, 200);
     }
   },
 

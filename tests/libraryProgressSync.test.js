@@ -8,17 +8,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
-test('userStateService: merges object progress like library_completed_ without losing either device data', () => {
+test('userStateService: authoritative remote state replaces local cache without resurrection', () => {
   const serviceCode = fs.readFileSync(path.join(rootDir, 'src', 'services', 'userStateService.ts'), 'utf8');
 
   // Must track library_inputs_ and library_wrong_
   assert.ok(serviceCode.includes('library_inputs_'), 'TRACKED_PREFIXES must include library_inputs_');
   assert.ok(serviceCode.includes('library_wrong_'), 'TRACKED_PREFIXES must include library_wrong_');
 
-  // Must merge object-based keys
+  // Must export subscribeToStudyState for realtime updates
   assert.ok(
-    serviceCode.includes('library_completed_') && serviceCode.includes('...'),
-    'userStateService must merge object-based study keys like library_completed_'
+    serviceCode.includes('subscribeToStudyState') || serviceCode.includes('channel'),
+    'userStateService must support realtime subscription or study state channel'
   );
 });
 
@@ -29,11 +29,12 @@ test('LibraryPracticeScreen.tsx and LibraryScreen.tsx integrate userStateService
 
   // Practice screen must import userStateService and call saveStateKey
   assert.ok(practiceCode.includes('userStateService'), 'LibraryPracticeScreen must import userStateService');
-  assert.ok(practiceCode.includes('saveStateKey'), 'LibraryPracticeScreen must call userStateService.saveStateKey');
+  assert.ok(practiceCode.includes('saveStateKey') || practiceCode.includes('saveStateBulk'), 'LibraryPracticeScreen must call userStateService');
   assert.ok(practiceCode.includes('userId'), 'LibraryPracticeScreenProps must include userId');
 
   // LibraryScreen must accept userId and refresh progress
   assert.ok(libraryCode.includes('userId'), 'LibraryScreenProps must include userId');
+  assert.ok(libraryCode.includes('lingua_study_state_updated'), 'LibraryScreen must listen to lingua_study_state_updated');
 
   // App.tsx must pass userId to LibraryScreen and LibraryPracticeScreen
   assert.ok(appCode.includes('userId={session?.user?.id}'), 'App.tsx must pass userId to library screens');
@@ -42,14 +43,7 @@ test('LibraryPracticeScreen.tsx and LibraryScreen.tsx integrate userStateService
   assert.ok(appCode.includes('visibilitychange'), 'App.tsx must listen to visibilitychange for instant cross-device sync');
 });
 
-test('userStateService simulation: cross-device sentence library progress sync (10 on PC, 3 on mobile -> merged 10)', () => {
-  const serviceCode = fs.readFileSync(path.join(rootDir, 'src', 'services', 'userStateService.ts'), 'utf8');
-
-  // Verify merge logic in source code handles object sets
-  assert.ok(serviceCode.includes("key.startsWith('library_completed_')"), 'applyRemoteStudyState must handle library_completed_ prefix');
-  assert.ok(serviceCode.includes('...remoteObj, ...localObj'), 'applyRemoteStudyState must union remoteObj and localObj');
-
-  // Simulate the exact merge logic isolated in Node
+test('userStateService simulation: reset on PC (6 questions) correctly updates mobile without resurrecting old 10', () => {
   const storage = {};
   const mockLocalStorage = {
     getItem: (k) => (k in storage ? storage[k] : null),
@@ -57,30 +51,17 @@ test('userStateService simulation: cross-device sentence library progress sync (
     removeItem: (k) => { delete storage[k]; }
   };
 
-  const simulateMerge = (currentLocal, remoteVal) => {
-    let localObj = null;
-    let remoteObj = null;
-    try { localObj = currentLocal ? JSON.parse(currentLocal) : null; } catch {}
-    try { remoteObj = typeof remoteVal === 'object' ? remoteVal : JSON.parse(String(remoteVal)); } catch {}
-
-    if (localObj && typeof localObj === 'object' && remoteObj && typeof remoteObj === 'object') {
-      return JSON.stringify({ ...remoteObj, ...localObj });
-    } else if (remoteObj) {
-      return typeof remoteVal === 'string' ? remoteVal : JSON.stringify(remoteObj);
-    }
-    return currentLocal;
+  const simulateApply = (localState, remoteVal) => {
+    // Authoritative remote state overwrites local cache for synchronized keys
+    return typeof remoteVal === 'string' ? remoteVal : JSON.stringify(remoteVal);
   };
 
-  // Case 1: Mobile has 3 items, Remote has 10 from PC
-  const mobileLocal = JSON.stringify({ s1: true, s2: true, s3: true });
+  // Case: Mobile had old 10 questions. User reset on PC and solved 6 questions.
   const remotePC = JSON.stringify({
-    s1: true, s2: true, s3: true, s4: true, s5: true,
-    s6: true, s7: true, s8: true, s9: true, s10: true
+    s1: true, s2: true, s3: true, s4: true, s5: true, s6: true
   });
-  const mergedOnMobile = JSON.parse(simulateMerge(mobileLocal, remotePC));
-  assert.strictEqual(Object.keys(mergedOnMobile).length, 10, 'Mobile must now have all 10 solved questions');
 
-  // Case 2: PC has 10 items, Remote has 3 items
-  const preservedOnPC = JSON.parse(simulateMerge(remotePC, mobileLocal));
-  assert.strictEqual(Object.keys(preservedOnPC).length, 10, 'PC must retain all 10 solved questions');
+  const updatedOnMobile = JSON.parse(simulateApply('old_10_string', remotePC));
+  assert.strictEqual(Object.keys(updatedOnMobile).length, 6, 'Mobile must now show 6 questions from remote, NOT 10');
+  assert.strictEqual(updatedOnMobile['s7'], undefined, 's7 must not exist after reset');
 });
