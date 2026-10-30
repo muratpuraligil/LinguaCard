@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.36 (30 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.37 (30 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -118,7 +118,12 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
       - "Dashboard'a Dön" işlemi SPA standartlarında pürüzsüz rota geçişine (`setMode(AppMode.HOME)`) dönüştürülmüştür.
 
 ### 2.3. İçerik Yönetimi
-- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına (Yardımcı fiiller, Modal'lar vb.) göre kategorize edilmiş hazır çalışma setleri.
+- **LinguaCard Kütüphanesi:** A1-C2 seviye kelime setleri ve Gramer konularına ("Yardımcı Fiiller (Auxiliary Verbs)" ve "Modal Fiiller (Modal Verbs)") göre kategorize edilmiş hazır çalışma setleri.
+- **Gramer Kategori Başlıkları ve 100 Cümle Eşitliği:**
+  - Kütüphane ana başlıkları ve set seçici alanlar uluslararası terminolojiyle zenginleştirilerek `"Yardımcı Fiiller (Auxiliary Verbs)"` ve `"Modal Fiiller (Modal Verbs)"` olarak güncellenmiştir (`LibraryScreen.tsx` ve `libraryData.ts`).
+  - Arşivde 99 cümlede kalan CAN (`modal-1`), BE ABLE TO (`modal-4`) ve WOULD (`modal-6`) setleri nitelikli ve doğal örnek cümlelerle tamamlanarak 34 setin her birinde istisnasız **100 cümle** (toplam 3.400 cümle) eşitliği sağlanmıştır (`src/data/libraryData.ts` ve `src/data/json/all_sentences.json`).
+  - Cümle Antrenmanı modülünde yer alan bilgilendirme yönlendirme metni `"Kendi listende yer alan kelimelere ait cümleler içermektedir."` şeklinde güncellenmiştir (`SentenceMode.tsx`).
+  - Başlıklar, cümle sayıları ve metin formatları `tests/librarySentenceCountsAndHeaders.test.js` birim testleriyle TDD güvencesine alınmıştır.
 - **Kapsamlı Arşiv OCR ve Türkçe Karakter Temizliği (34 Set & 1.031 Cümle Düzeltmesi):**
   - Orijinal Perfectionist English taranmış PDF kaynakları (`docs/resources/PratikYap/`) alt ajanlar tarafından 4 ana grupta (Aux 1-9, Aux 10-18, Modal 1-8, Modal 9-16) sayfa sayfa incelenmiş; şüpheli ve bozuk cümleler PDF görüntü kırpmalarıyla doğrulanmıştır.
   - Toplam **1.031 cümle** düzeltilerek hem `src/data/libraryData.ts` hem de `src/data/json/all_sentences.json` dosyalarına atomik olarak işlenmiştir.
@@ -194,7 +199,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
 ---
 
 ## 6. Sürüm Takibi ve Release Yönetimi
-- **Aktif Lokal Sürüm:** `v1.2.32` (28 Ekim 2026)
+- **Aktif Lokal Sürüm:** `v1.2.37` (30 Ekim 2026)
 - **Hedef Sürüm Kilometre Taşı (Milestone):** `v1.2.0` (A1-C2 Tam Kütüphane, Hands-Free Dinleme Modu, Bağımsız Hafıza ve Mobil Responsive Paketi)
 - **Sürüm Formatı:** `vX.Y.Z - DDMMYY`
 - **Otomatik Artış:** Yerelde yeni bir özellik geliştirildiğinde veya fix yapıldığında versiyon numarası mutlaka artırılır ve tarih damgası güncellenir. Sürüm `1.0.99` değerine ulaştıktan sonra `1.2.0` şeklinde devam eder.

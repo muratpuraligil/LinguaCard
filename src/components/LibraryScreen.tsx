@@ -93,7 +93,7 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
             <ArrowLeft size={20} />
           </button>
           <div>
-            <h1 className="text-xl font-black">LinguaCard Yardımcı Fiiller ve Kip(Modal) Fiiller</h1>
+            <h1 className="text-xl font-black">LinguaCard Yardımcı Fiiller (Auxiliary Verbs) ve Modal Fiiller (Modal Verbs)</h1>
             <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5">Kütüphane Kaynakları</p>
           </div>
         </div>

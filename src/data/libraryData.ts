@@ -2,7 +2,7 @@ import { LibraryCategory } from '../types';
 
 export const libraryData: LibraryCategory[] = [
   {
-    title: "Yardımcı Fiiller",
+    title: "Yardımcı Fiiller (Auxiliary Verbs)",
     sets: [
       { 
         id: "aux-1", 
@@ -1855,9 +1855,10 @@ export const libraryData: LibraryCategory[] = [
     ]
   },
   {
-    title: "Kip (Modal) Fiiller",
+    title: "Modal Fiiller (Modal Verbs)",
     sets: [
       { id: "modal-1", title: "1. CAN", sentences: [
+          { id: "s1", turkish: "Piyano çalabilir ve şarkı söyleyebilirim.", english: "I can play the piano and sing." },
           { id: "s2", turkish: "Bu binada sigara içemezsin. Yasadışı.", english: "You can't smoke in this building. It is illegal." },
           { id: "s3", turkish: "Buradan bilgi isteyemezsin. Bu bilgi masası değil.", english: "You can't ask for information here. This is not information desk." },
           { id: "s4", turkish: "Tom çok iyi şiir yazabilir.", english: "Tom can write poetry very well." },
@@ -2261,6 +2262,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s96", turkish: "Alex, masası bu kadar dağınıkken, ödevini yapamayacak.", english: "Alex will not be able to do his homework when his desk is in such a mess." },
           { id: "s97", turkish: "Belki Smith'ler gelecek yıl yeni bir ev inşa edebilirler.", english: "Maybe the Smiths will be able to build a new house next year." },
           { id: "s98", turkish: "Hırsız, banyo penceresinden içeri girmeyi başardı.", english: "The burglar was able to get in through the bathroom window." },
+          { id: "s99", turkish: "Trafik sıkışıklığına rağmen havalimanına vaktinde ulaşabildik.", english: "Despite the heavy traffic, we were able to reach the airport on time." },
           { id: "s100", turkish: "Konuşmacı, hastalık nedeniyle, konferansa katılamadı.", english: "The speaker wasn't able to attend the conference due to illness." }
         ] },
       { id: "modal-5", title: "5. COULD", sentences: [
@@ -2366,6 +2368,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s100", turkish: "O günlerde tatil yapabiliyorduk.", english: "In those days, we could take holidays." }
         ] },
       { id: "modal-6", title: "6. WOULD", sentences: [
+          { id: "s1", turkish: "Yerinde olsaydım yeni bir iş arardım.", english: "If I were you, I would look for a new job." },
           { id: "s2", turkish: "Bazen bana çiçek getirir / getirirdi / getirecekti.", english: "Sometimes he would bring me some flowers." },
           { id: "s3", turkish: "Ben çocukken, her yaz İskoçya'ya giderdik / gidecektik.", english: "When I was a child, we would go to Scotland every summer." },
           { id: "s4", turkish: "Gösteriye gider ama çok fazla ödevi var.", english: "She would go to the show, but she has too much homework." },

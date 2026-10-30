@@ -9037,6 +9037,11 @@
   ],
   "modal-1": [
     {
+      "id": "s1",
+      "turkish": "Piyano çalabilir ve şarkı söyleyebilirim.",
+      "english": "I can play the piano and sing."
+    },
+    {
       "id": "s2",
       "turkish": "Bu binada sigara içemezsin. Yasadışı.",
       "english": "You can't smoke in this building. It is illegal."
@@ -11028,6 +11033,11 @@
       "english": "The burglar was able to get in through the bathroom window."
     },
     {
+      "id": "s99",
+      "turkish": "Trafik sıkışıklığına rağmen havalimanına vaktinde ulaşabildik.",
+      "english": "Despite the heavy traffic, we were able to reach the airport on time."
+    },
+    {
       "id": "s100",
       "turkish": "Konuşmacı, hastalık nedeniyle, konferansa katılamadı.",
       "english": "The speaker wasn't able to attend the conference due to illness."
@@ -11536,6 +11546,11 @@
     }
   ],
   "modal-6": [
+    {
+      "id": "s1",
+      "turkish": "Yerinde olsaydım yeni bir iş arardım.",
+      "english": "If I were you, I would look for a new job."
+    },
     {
       "id": "s2",
       "turkish": "Bazen bana çiçek getirir / getirirdi / getirecekti.",
