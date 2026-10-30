@@ -10,6 +10,7 @@ export default defineConfig({
   server: {
     host: true, // Sabit dinleme: hem localhost hem de yerel ağ (mobil telefon için)
     port: 5173,
+    strictPort: true, // Portun değişmesini önler, daima 5173'te sabit tutar
   },
   build: {
     outDir: 'dist',
