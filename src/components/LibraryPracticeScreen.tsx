@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUp, Home, Languages, CheckCircle2, Volume2, Trophy, Ref
 import { wordService, supabase } from '../services/supabaseClient';
 import { analyzeText } from '../services/analyzeImage';
 import confetti from 'canvas-confetti';
+import { userStateService } from '../services/userStateService';
 
 interface LibraryPracticeScreenProps {
   set: LibrarySet;
@@ -13,9 +14,10 @@ interface LibraryPracticeScreenProps {
   onGoToFlashcards?: () => void;
   onGoToQuiz?: () => void;
   onRegenerate?: () => void;
+  userId?: string;
 }
 
-const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onExit, onGoHome, onGoToFlashcards, onGoToQuiz, onRegenerate }) => {
+const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onExit, onGoHome, onGoToFlashcards, onGoToQuiz, onRegenerate, userId }) => {
   const [direction, setDirection] = useState<LanguageDirection>(LanguageDirection.TR_EN);
   
   const [completed, setCompleted] = useState<{ [key: string]: boolean }>({});
@@ -164,12 +166,14 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     const newInputs = { ...inputs, [sentenceId]: input };
     setInputs(newInputs);
     localStorage.setItem(`library_inputs_${set.id}_${direction}`, JSON.stringify(newInputs));
+    userStateService.saveStateKey(userId, `library_inputs_${set.id}_${direction}`, JSON.stringify(newInputs));
 
     if (wrongInputs[sentenceId]) {
       const newWrong = { ...wrongInputs };
       delete newWrong[sentenceId];
       setWrongInputs(newWrong);
       localStorage.setItem(`library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
+      userStateService.saveStateKey(userId, `library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
     }
 
     // Auto-resize the textarea
@@ -189,6 +193,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         const newCompleted = { ...completed, [sentenceId]: true };
         setCompleted(newCompleted);
         localStorage.setItem(`library_completed_${set.id}_${direction}`, JSON.stringify(newCompleted));
+        userStateService.saveStateKey(userId, `library_completed_${set.id}_${direction}`, JSON.stringify(newCompleted), true);
         
         // Speak the correct answer
         speak(targetText, direction === LanguageDirection.TR_EN ? 'en-US' : 'tr-TR');
@@ -221,6 +226,7 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         setWrongInputs(newWrong);
         setEverWrongIds(prev => new Set(prev).add(sentenceId));
         localStorage.setItem(`library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
+        userStateService.saveStateKey(userId, `library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
       }
     }
   };
@@ -244,11 +250,13 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
     const newInputs = { ...inputs, [sentenceId]: '' };
     setInputs(newInputs);
     localStorage.setItem(`library_inputs_${set.id}_${direction}`, JSON.stringify(newInputs));
+    userStateService.saveStateKey(userId, `library_inputs_${set.id}_${direction}`, JSON.stringify(newInputs));
 
     const newWrong = { ...wrongInputs };
     delete newWrong[sentenceId];
     setWrongInputs(newWrong);
     localStorage.setItem(`library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
+    userStateService.saveStateKey(userId, `library_wrong_${set.id}_${direction}`, JSON.stringify(newWrong));
 
     inputRefs.current[sentenceId]?.focus();
   };
@@ -318,6 +326,9 @@ const LibraryPracticeScreen: React.FC<LibraryPracticeScreenProps> = ({ set, onEx
         localStorage.removeItem(`library_wrong_${set.id}_${dir}`);
         localStorage.removeItem(`library_completed_${set.id}_${dir}`);
         localStorage.removeItem(`library_progress_${set.id}_${dir}`); // Eski format
+        userStateService.saveStateKey(userId, `library_inputs_${set.id}_${dir}`, '{}');
+        userStateService.saveStateKey(userId, `library_wrong_${set.id}_${dir}`, '{}');
+        userStateService.saveStateKey(userId, `library_completed_${set.id}_${dir}`, '{}');
     });
     
     setShowOnlyWrong(false);

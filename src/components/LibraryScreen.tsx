@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, BookOpen, ChevronRight } from 'lucide-react';
 import { libraryData } from '../data/libraryData';
 import { LibrarySet } from '../types';
+import { userStateService } from '../services/userStateService';
 
 interface LibraryScreenProps {
   onExit: () => void;
   onSelectSet: (set: LibrarySet) => void;
   onRandomCreate: () => void;
+  userId?: string;
 }
 
-const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRandomCreate }) => {
+const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRandomCreate, userId }) => {
   const [progressMap, setProgressMap] = useState<Record<string, number>>({});
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+  const loadProgressFromStorage = useCallback(() => {
     const newProgress: Record<string, number> = {};
     libraryData.forEach(cat => {
       cat.sets.forEach(set => {
@@ -47,6 +48,24 @@ const LibraryScreen: React.FC<LibraryScreenProps> = ({ onExit, onSelectSet, onRa
     });
     setProgressMap(newProgress);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    loadProgressFromStorage();
+
+    let isMounted = true;
+    if (userId) {
+      userStateService.syncRemoteToLocal(userId).then(updated => {
+        if (isMounted && updated) {
+          loadProgressFromStorage();
+        }
+      }).catch(() => {});
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [userId, loadProgressFromStorage]);
 
   const handleRandomCreate = () => {
     onRandomCreate();

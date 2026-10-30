@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.33 (30 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.34 (30 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -25,6 +25,11 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
       - İstemci tarafında `userStateService` ile tüm set numaraları (`currentSetNum`), kart/soru sıraları (`currentIndex`), aktif seviyeler (`A1..C2`) ve kapsamlar (`CORE_300` vs `ALL`) yerel `localStorage`'a anında (0ms) yazılarak sıfır arayüz gecikmesi korunur.
       - 600ms'lik debounce süresiyle arka planda Supabase `public.user_study_state` tablosuna (`user_id, state JSONB, updated_at`) kesintisiz yedekleme yapılır. Seviye değişimi veya modül kapatma anlarında `saveStateBulk` ile anlık senkronizasyon garanti edilir.
     - **Otomatik Karşılama ve Eşitleme (Auto-Resume on Mobile):** Kullanıcı mobil cihazda oturum açtığında veya sayfayı açtığında Supabase'deki en son ilerleme otomatik olarak çekilir (`syncRemoteToLocal`); PC'de kalınan set (örneğin 6. set) ve kart doğrudan mobil ekrana yüklenir.
+    - **Cümle Kütüphanesi ve Özel Setler Çapraz Cihaz Senkronizasyonu (Library & Sentence Practice Sync):**
+      - Cümle Kütüphanesi (`LibraryPracticeScreen` ve `LibraryScreen`), Özel Setler (`CustomSetStudyMode`) ve Cümle Antrenmanı (`SentenceMode`) ilerlemeleri (`library_completed_`, `library_inputs_`, `library_wrong_`, `lingua_set_progress_`, `lingua_sentence_index`) `userStateService` ile Supabase bulut senkronizasyonuna tam entegre edilmiştir.
+      - **Kayıpsız Derin Birleştirme (Deep Object Union / Merge):** Kullanıcı PC'de 10 cümle çözdüğünde ve mobilde önceden 3 cümle çözülmüş olduğunda, basit üzerine yazma (overwrite) yerine JSON nesne birleşimi (`{ ...remoteObj, ...localObj }`) uygulanır; hiçbir cihazdaki çözülmüş cümle silinmez ve en kapsamlı ilerleme (10/100) anında hem yerelde hem de bulutta korunur.
+      - **Arka Plandan Ön Plana Geçişte Anlık Eşitleme (Visibility & Tab Focus Sync):** Kullanıcı PC'de çalışıp telefonuna geçtiğinde veya tarayıcı sekmesini arka plandan ön plana aldığında (`visibilitychange` / `window.focus`), mobil cihaz Supabase'deki güncel ilerlemeyi arka planda otomatik çekerek ekranı yeniler.
+      - `LibraryScreen` bileşeni açıldığında kullanıcının en son çözdüğü cümle sayıları Supabase ile arka planda atomik olarak eşitlenir.
     - **Şema ve Çevrimdışı Dayanıklılığı (Schema & Offline Resilience):** Supabase tablosunun henüz oluşturulmadığı veya internet bağlantısının olmadığı senaryolarda sistem arayüzü kilitlemeden veya hata vermeden tamamen yerel `localStorage` modunda çalışmaya devam eder.
 
 - **Flaşkartlar (Flashcards - Moda Dayalı Çalışma & A1-C2 Kütüphane Entegrasyonu):** 

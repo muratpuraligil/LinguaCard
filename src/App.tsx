@@ -251,6 +251,23 @@ export default function App() {
     };
   }, []);
 
+  // Sync state automatically when user switches back to tab or device unlocks
+  useEffect(() => {
+    const handleVisibilityOrFocus = () => {
+      if (document.visibilityState === 'visible' && session?.user?.id) {
+        userStateService.syncRemoteToLocal(session.user.id);
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityOrFocus);
+    window.addEventListener('focus', handleVisibilityOrFocus);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityOrFocus);
+      window.removeEventListener('focus', handleVisibilityOrFocus);
+    };
+  }, [session?.user?.id]);
+
   // Track offset for sequential study (Flashcards/Quiz/Sentences)
   const [studyOffset, setStudyOffset] = useState(() => parseInt(localStorage.getItem('lingua_global_offset') || '0'));
 
@@ -574,7 +591,17 @@ export default function App() {
             userId={session?.user?.id}
           />
         )}
-        {mode === AppMode.SENTENCES && <SentenceMode words={getSequentialSet()} onExit={() => setMode(AppMode.HOME)} onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }} onRestartSentences={() => setShowSentenceSelection(true)} onRegenerate={handleNextSet} />}
+        {mode === AppMode.SENTENCES && (
+          <SentenceMode 
+            words={getSequentialSet()} 
+            onExit={() => setMode(AppMode.HOME)} 
+            onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }} 
+            onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }} 
+            onRestartSentences={() => setShowSentenceSelection(true)} 
+            onRegenerate={handleNextSet} 
+            userId={session?.user?.id}
+          />
+        )}
         {mode === AppMode.ARCHIVE && <ArchiveView words={words.filter(w => w.is_archived)} onExit={() => setMode(AppMode.HOME)} onRestore={handleRestoreWord} onClearArchive={handleClearArchive} />}
 
         {mode === AppMode.LIBRARY && (
@@ -585,6 +612,7 @@ export default function App() {
               setMode(AppMode.LIBRARY_PRACTICE);
             }} 
             onRandomCreate={handleRandomLibrarySet}
+            userId={session?.user?.id}
           />
         )}
 
@@ -596,43 +624,45 @@ export default function App() {
             onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
             onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}
             onRegenerate={activeLibrarySet.id === 'random-mix' ? () => handleRandomLibrarySet(true) : undefined}
+            userId={session?.user?.id}
           />
         )}
 
         {mode === AppMode.CUSTOM_SETS && (
-        <CustomSetManager
-          words={words}
-          onExit={() => setMode(AppMode.HOME)}
-          onPlaySet={(setWords) => {
-            setActiveCustomSet(setWords);
-            setMode(AppMode.CUSTOM_SET_STUDY);
-          }}
-          onUploadNewSet={(name) => {
-            setPendingSetName(name);
-            setShowUploadModal(true);
-          }}
-          onRefresh={async () => {
-            if (session?.user?.id) {
-              const w = await wordService.getAllWords(session.user.id);
-              setWords(w || []);
-            }
-          }}
-          onRenameCustomSetLocally={(oldName, newName) => {
-            setWords(prev => prev.map(w => w.set_name === oldName ? { ...w, set_name: newName } : w));
-          }}
-        />
-      )}
+          <CustomSetManager
+            words={words}
+            onExit={() => setMode(AppMode.HOME)}
+            onPlaySet={(setWords) => {
+              setActiveCustomSet(setWords);
+              setMode(AppMode.CUSTOM_SET_STUDY);
+            }}
+            onUploadNewSet={(name) => {
+              setPendingSetName(name);
+              setShowUploadModal(true);
+            }}
+            onRefresh={async () => {
+              if (session?.user?.id) {
+                const w = await wordService.getAllWords(session.user.id);
+                setWords(w || []);
+              }
+            }}
+            onRenameCustomSetLocally={(oldName, newName) => {
+              setWords(prev => prev.map(w => w.set_name === oldName ? { ...w, set_name: newName } : w));
+            }}
+          />
+        )}
 
-      {mode === AppMode.CUSTOM_SET_STUDY && (
-        <CustomSetStudyMode
-          words={activeCustomSet}
-          onExit={() => setMode(AppMode.CUSTOM_SETS)}
-          onGoHome={() => setMode(AppMode.HOME)}
-          showToast={(msg, type) => setToast({ message: msg, type: type || 'success' })}
-          onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
-          onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}
-        />
-      )}
+        {mode === AppMode.CUSTOM_SET_STUDY && activeCustomSet && (
+          <CustomSetStudyMode
+            words={activeCustomSet}
+            onExit={() => setMode(AppMode.CUSTOM_SETS)}
+            onGoHome={() => setMode(AppMode.HOME)}
+            showToast={(msg, type) => setToast({ message: msg, type: type || 'success' })}
+            onGoToFlashcards={() => { setShowFlashcardSelection(true); setMode(AppMode.HOME); }}
+            onGoToQuiz={() => { setShowQuizSelection(true); setMode(AppMode.HOME); }}
+            userId={session?.user?.id}
+          />
+        )}
 
       {mode === AppMode.HOME && (
         <Dashboard

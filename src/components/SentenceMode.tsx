@@ -5,6 +5,7 @@ import { isMatch } from '../utils/stringUtils';
 import { Check, X, RefreshCw, Type, Languages, ArrowLeft, Volume2, Sparkles, ChevronLeft, ChevronRight, Trophy, BookOpen, Zap, Info, Plus } from 'lucide-react';
 import { wordService, supabase } from '../services/supabaseClient';
 import { analyzeText } from '../services/analyzeImage';
+import { userStateService } from '../services/userStateService';
 
 interface SentenceModeProps {
     words: Word[];
@@ -13,9 +14,10 @@ interface SentenceModeProps {
     onGoToQuiz?: () => void;
     onRestartSentences?: () => void;
     onRegenerate?: () => void;
+    userId?: string;
 }
 
-const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashcards, onGoToQuiz, onRestartSentences, onRegenerate }) => {
+const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashcards, onGoToQuiz, onRestartSentences, onRegenerate, userId }) => {
     const [finished, setFinished] = useState(false);
     const [showResetConfirm, setShowResetConfirm] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(() => {
@@ -90,20 +92,23 @@ const SentenceMode: React.FC<SentenceModeProps> = ({ words, onExit, onGoToFlashc
 
     useEffect(() => {
         localStorage.setItem('lingua_sentence_direction', direction);
+        userStateService.saveStateKey(userId, 'lingua_sentence_direction', direction);
         setUserInput('');
         setStatus('IDLE');
-    }, [direction]);
+    }, [direction, userId]);
 
     const validWords = words.filter(w => w.example_sentence && w.example_sentence.length > 3);
     const currentWord = validWords[currentIndex];
 
     useEffect(() => {
         localStorage.setItem('lingua_sentence_index', currentIndex.toString());
-    }, [currentIndex]);
+        userStateService.saveStateKey(userId, 'lingua_sentence_index', currentIndex.toString());
+    }, [currentIndex, userId]);
 
     useEffect(() => {
         localStorage.setItem('lingua_sentence_max_reached', maxReachedIndex.toString());
-    }, [maxReachedIndex]);
+        userStateService.saveStateKey(userId, 'lingua_sentence_max_reached', maxReachedIndex.toString());
+    }, [maxReachedIndex, userId]);
 
     const checkAnswer = () => {
         if (!currentWord) return;

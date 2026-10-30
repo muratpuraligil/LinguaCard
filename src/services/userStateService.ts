@@ -9,6 +9,8 @@ const TRACKED_PREFIXES = [
   'lingua_quiz_active_ids_',
   'library_progress_',
   'library_completed_',
+  'library_inputs_',
+  'library_wrong_',
   'lingua_custom_progress_'
 ];
 
@@ -57,20 +59,45 @@ export const applyRemoteStudyState = (remoteState: Record<string, any>): void =>
       if (isStudyStateKey(key) && val !== undefined && val !== null) {
         const currentLocal = localStorage.getItem(key);
 
-        // If local is empty, or remote has value, apply remote
-        // For set numbers and indices, if local has default '1' or '0' and remote has a higher progress, prioritize remote
-        if (!currentLocal) {
-          localStorage.setItem(key, String(val));
-        } else if (key.includes('_set_num_') || key.includes('_index')) {
-          const localNum = parseInt(currentLocal, 10);
-          const remoteNum = parseInt(String(val), 10);
-          if (!isNaN(remoteNum) && (!isNaN(localNum) ? remoteNum >= localNum : true)) {
-            localStorage.setItem(key, String(val));
+        // 1. Object / Map based progress keys (library_completed_, library_inputs_, library_wrong_, lingua_custom_progress_)
+        // Must perform deep merge/union so progress on either device is never lost!
+        if (
+          key.startsWith('library_completed_') ||
+          key.startsWith('library_inputs_') ||
+          key.startsWith('library_wrong_') ||
+          key.startsWith('lingua_custom_progress_')
+        ) {
+          let localObj: any = null;
+          let remoteObj: any = null;
+          try { localObj = currentLocal ? JSON.parse(currentLocal) : null; } catch {}
+          try { remoteObj = typeof val === 'object' ? val : JSON.parse(String(val)); } catch {}
+
+          if (localObj && typeof localObj === 'object' && remoteObj && typeof remoteObj === 'object') {
+            const mergedObj = { ...remoteObj, ...localObj };
+            localStorage.setItem(key, JSON.stringify(mergedObj));
+            return;
+          } else if (remoteObj) {
+            localStorage.setItem(key, typeof val === 'string' ? val : JSON.stringify(remoteObj));
+            return;
           }
-        } else {
-          // For levels, scopes, settings: update to remote
-          localStorage.setItem(key, String(val));
         }
+
+        // 2. Numeric progress keys (_set_num_, _index, _max_reached)
+        if (key.includes('_set_num_') || key.includes('_index') || key.includes('_max_reached')) {
+          if (!currentLocal) {
+            localStorage.setItem(key, String(val));
+          } else {
+            const localNum = parseInt(currentLocal, 10);
+            const remoteNum = parseInt(String(val), 10);
+            if (!isNaN(remoteNum) && (!isNaN(localNum) ? remoteNum >= localNum : true)) {
+              localStorage.setItem(key, String(val));
+            }
+          }
+          return;
+        }
+
+        // 3. For levels, scopes, settings: update to remote if local is empty or remote has value
+        localStorage.setItem(key, String(val));
       }
     });
   } catch (e) {
@@ -153,21 +180,50 @@ export const userStateService = {
       const localState = getLocalStudyState();
 
       if (remoteState && typeof remoteState === 'object' && Object.keys(remoteState).length > 0) {
-        // Apply remote state to local storage
+        // Apply remote state to local storage (with smart deep merge for object sets)
         applyRemoteStudyState(remoteState);
 
-        // If local has additional keys not yet in remote, merge local back to remote
-        const missingInRemote: Record<string, string> = {};
-        let hasMissing = false;
-        Object.entries(localState).forEach(([k, v]) => {
+        // Check if local has new keys OR higher/richer progress than remote, and push up to Supabase
+        const currentMergedLocal = getLocalStudyState();
+        const updatesToRemote: Record<string, string> = {};
+        let hasUpdates = false;
+
+        Object.entries(currentMergedLocal).forEach(([k, localVal]) => {
           if (!(k in remoteState)) {
-            missingInRemote[k] = v;
-            hasMissing = true;
+            updatesToRemote[k] = localVal;
+            hasUpdates = true;
+          } else {
+            const remoteVal = remoteState[k];
+            // Compare objects (like library_completed_, library_inputs_, library_wrong_, lingua_custom_progress_)
+            if (
+              k.startsWith('library_completed_') ||
+              k.startsWith('library_inputs_') ||
+              k.startsWith('library_wrong_') ||
+              k.startsWith('lingua_custom_progress_')
+            ) {
+              try {
+                const localObj = JSON.parse(localVal);
+                const remoteObj = typeof remoteVal === 'object' ? remoteVal : JSON.parse(String(remoteVal));
+                const localKeys = Object.keys(localObj);
+                const remoteKeys = Object.keys(remoteObj);
+                if (localKeys.length > remoteKeys.length || localKeys.some(key => !(key in remoteObj))) {
+                  updatesToRemote[k] = localVal;
+                  hasUpdates = true;
+                }
+              } catch {}
+            } else if (k.includes('_set_num_') || k.includes('_index') || k.includes('_max_reached')) {
+              const localNum = parseInt(localVal, 10);
+              const remoteNum = parseInt(String(remoteVal), 10);
+              if (!isNaN(localNum) && (isNaN(remoteNum) || localNum > remoteNum)) {
+                updatesToRemote[k] = localVal;
+                hasUpdates = true;
+              }
+            }
           }
         });
 
-        if (hasMissing) {
-          await this.saveStateBulk(userId, missingInRemote);
+        if (hasUpdates) {
+          await this.saveStateBulk(userId, updatesToRemote);
         }
 
         return true;
@@ -184,17 +240,18 @@ export const userStateService = {
     }
   },
 
-  async saveStateKey(userId: string, key: string, value: any, immediate: boolean = false): Promise<void> {
+  async saveStateKey(userId?: string | null, key: string, value: any, immediate: boolean = false): Promise<void> {
     if (!key || value === undefined || value === null) return;
-    const strVal = String(value);
+    const strVal = typeof value === 'string' ? value : JSON.stringify(value);
 
     // 1. Always update local storage immediately for 0ms lag
     try {
       localStorage.setItem(key, strVal);
     } catch (e) {}
 
-    if (!userId) return;
-    activeUserId = userId;
+    const targetUserId = userId || activeUserId;
+    if (!targetUserId) return;
+    activeUserId = targetUserId;
     pendingStateBuffer[key] = strVal;
 
     if (immediate) {
@@ -212,9 +269,10 @@ export const userStateService = {
     }
   },
 
-  async saveStateBulk(userId: string, updates: Record<string, any>): Promise<void> {
-    if (!userId || !updates || Object.keys(updates).length === 0) return;
-    activeUserId = userId;
+  async saveStateBulk(userId?: string | null, updates: Record<string, any> = {}): Promise<void> {
+    const targetUserId = userId || activeUserId;
+    if (!targetUserId || !updates || Object.keys(updates).length === 0) return;
+    activeUserId = targetUserId;
 
     Object.entries(updates).forEach(([k, v]) => {
       if (v !== undefined && v !== null) {

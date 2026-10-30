@@ -6,6 +6,7 @@ import { wordService, supabase } from '../services/supabaseClient';
 import { analyzeText } from '../services/analyzeImage';
 import { isMatch as checkAnswerMatch } from '../utils/stringUtils';
 import confetti from 'canvas-confetti';
+import { userStateService } from '../services/userStateService';
 
 interface CustomSetStudyModeProps {
     words: Word[];
@@ -14,6 +15,7 @@ interface CustomSetStudyModeProps {
     showToast: (message: string, type?: "success" | "error" | "warning") => void;
     onGoToFlashcards?: () => void;
     onGoToQuiz?: () => void;
+    userId?: string;
 }
 
 interface ProgressState {
@@ -21,7 +23,7 @@ interface ProgressState {
     status: 'IDLE' | 'CORRECT' | 'WRONG';
 }
 
-const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, onGoHome, showToast, onGoToFlashcards, onGoToQuiz }) => {
+const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, onGoHome, showToast, onGoToFlashcards, onGoToQuiz, userId }) => {
     const setName = words[0]?.set_name || 'default_set';
     
     // DÜZELTME: Varsayılan yön TR_EN (Türkçe -> İngilizce) yapıldı.
@@ -67,7 +69,8 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
 
     useEffect(() => {
         localStorage.setItem(languagePrefKey, direction);
-    }, [direction, languagePrefKey]);
+        userStateService.saveStateKey(userId, languagePrefKey, direction);
+    }, [direction, languagePrefKey, userId]);
 
     const [showFinishedModal, setShowFinishedModal] = useState(false);
     const [activeInfoIndex, setActiveInfoIndex] = useState(0);
@@ -122,8 +125,9 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
     useEffect(() => {
         if (Object.keys(progress).length > 0) {
             localStorage.setItem(storageKey, JSON.stringify(progress));
+            userStateService.saveStateKey(userId, storageKey, JSON.stringify(progress));
         }
-    }, [progress, storageKey]);
+    }, [progress, storageKey, userId]);
 
     // Konfeti Tetikleyici
     const triggerSuccessConfetti = () => {
@@ -263,6 +267,7 @@ const CustomSetStudyMode: React.FC<CustomSetStudyModeProps> = ({ words, onExit, 
         });
         setProgress(resetState);
         localStorage.removeItem(storageKey);
+        userStateService.saveStateKey(userId, storageKey, '{}');
         setShowFinishedModal(false);
         setShowResetConfirm(false);
         window.scrollTo({ top: 0, behavior: 'smooth' });
