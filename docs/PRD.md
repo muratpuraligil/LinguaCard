@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.32 (28 Ekim 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.33 (30 Ekim 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -152,7 +152,8 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
   - **Pratik Banner'ı:** Aşırı yer kaplayan `rounded-[32px]` ve `p-8` gövde, `rounded-2xl` ve `p-5 md:p-6` formatına çekilmiş; "AI ile Yükle" ve "Manuel Ekle" butonları kompakt dokunma ergonomisiyle (`px-4 py-2.5 rounded-xl`) küçültülmüştür.
   - **Modül Kartları (Kartlar, Test Çöz, Cümleler):** İkon kutuları `w-10 h-10`, kart başlıkları `text-base` ve kart gövdeleri `rounded-2xl p-4 sm:p-5` olarak düzenlenmiş, ekran alanından tasarruf edilmiştir.
   - **Kelime Listem Alanı:** Başlık (`text-lg`), arama çubuğu (`py-2.5 rounded-xl text-sm`) ve "Hızlı Ekle" butonu (`py-2.5 px-4 rounded-xl`) kompaktlaştırılmıştır.
-  - **Kelime Kartları:** `p-4 rounded-2xl` gövde, `text-base` İngilizce başlık, `text-xs` Türkçe anlam, `min-h-[72px]` kompakt örnek cümle flip kutusu ve ergonomik işlem butonları ile tek bakışta daha fazla kelime görünür kılınmıştır.
+  - **Kelime Kartları & Örnek Cümle Çevirme İkonu (Affordance & Flip Card Micro-Interaction):** Kelime kartlarında yer alan örnek cümle kutusu (`min-h-[72px]`), kullanıcıların kartın çift taraflı dönen bir bileşen olduğunu fark edebilmeleri için dönüştür/döndür (`RefreshCw`) ikonu ve mikro etkileşimle donatılmıştır. Ön yüzde (İngilizce örnek cümle) ve arka yüzde (Türkçe çeviri) sağ alt köşeye zarif ve belirgin bir dönüştür rozeti eklenmiş; kutunun üzerine gelindiğinde (hover) ikon 180 derece akıcı bir şekilde dönerek ve kart sınırları belirginleşerek kullanıcının tıklama isteğini artıran güçlü bir görsel ipucu (affordance) sağlanmıştır.
+  - **Kelime Kartları Boyutları:** `p-4 rounded-2xl` gövde, `text-base` İngilizce başlık, `text-xs` Türkçe anlam, `min-h-[72px]` kompakt örnek cümle flip kutusu ve ergonomik işlem butonları ile tek bakışta daha fazla kelime görünür kılınmıştır.
 - **Kompakt ve Kaydırmasız Set Sonu Bildirim Popupları (Zero-Scroll Completion Views):**
   - **QuizMode:** Kullanıcıyı dikey scroll yapmaya zorlayan aşırı büyük `p-10 rounded-[56px]`, `w-20 h-20` ikon, `text-7xl` skor ve `py-4 rounded-3xl` buton yapıları; `p-4 sm:p-5 rounded-3xl`, `w-9 h-9` ikon, `text-4xl` skor ve `py-2.5 rounded-xl` kompakt buton yapısına kavuşturulmuştur. Tüm skor istatistikleri ve aksiyon butonları mobil ekran dahil tek ekranda, kaydırmasız olarak görüntülenir. Ayrıca "Mod Seç / Değiştir" butonu popup'tan kaldırılarak kafa karışıklığı önlenmiş; "Arkadaşlarını Challenge'a Davet Et" CTA butonu `Swords` ikonu ile 1. sıraya taşınmıştır.
   - **FlashcardMode & SentenceMode & Özel Setler:** "Harika Bir Set!" bitiş kartlarındaki `p-12 / p-10`, devasa kupa ikonları ve kalın butonlar kompakt `p-4 sm:p-5 rounded-3xl` ve `py-2.5 rounded-xl` buton ergonomisiyle hizalanmıştır.

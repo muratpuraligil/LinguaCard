@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Word } from '../types';
-import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, Languages, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive, Info, ArrowUp } from 'lucide-react';
+import { Search, Volume2, Trash2, Plus, Sparkles, Image, Calendar, AlertCircle, RefreshCw, X, Layers, MessageSquareQuote, Wand2, Eraser, Archive, Info, ArrowUp } from 'lucide-react';
 import { analyzeText } from '../services/analyzeImage';
 import { supabase } from '../services/supabaseClient';
 import { getLocalDateString } from '../utils/stringUtils';
@@ -299,26 +299,36 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
               <p className="text-slate-400 font-semibold text-xs mb-3">{displayTurkish}</p>
 
               <div
-                className="perspective-1000 w-full mb-3 cursor-pointer group/sentence"
+                className="perspective-1000 w-full mb-3 cursor-pointer group/sentence select-none"
                 onClick={() => handleSentenceClick(word.id)}
+                title="Çeviriyi görmek için tıkla"
               >
                 <div className={`relative w-full transition-transform duration-700 transform-style-3d min-h-[72px] ${isFlipped ? 'rotate-y-180' : ''}`}>
 
                   {/* ÖN YÜZ (EN Cümle) */}
-                  <div className="absolute inset-0 backface-hidden bg-black/40 border border-white/5 p-3 rounded-xl group-hover/sentence:bg-black/60 transition-colors flex items-center">
-                    <p className="text-[11px] font-medium leading-relaxed text-blue-100 italic relative z-10">
+                  <div className="absolute inset-0 backface-hidden bg-black/40 border border-white/5 p-3 rounded-xl group-hover/sentence:bg-black/60 group-hover/sentence:border-blue-500/30 transition-all flex items-center">
+                    <p className="text-[11px] font-medium leading-relaxed text-blue-100 italic relative z-10 pr-6">
                       "{displaySentence}"
                     </p>
-                    <div className="absolute bottom-2 right-2.5 opacity-30 group-hover/sentence:opacity-100 transition-opacity">
-                      <Languages size={11} className="text-slate-500" />
+                    <div 
+                      className="absolute bottom-2 right-2 p-1 rounded-md bg-white/5 border border-white/10 text-slate-400 group-hover/sentence:text-blue-400 group-hover/sentence:border-blue-500/40 group-hover/sentence:bg-blue-500/10 transition-all duration-300 flex items-center justify-center shadow-sm"
+                      title="Kartı çevir"
+                    >
+                      <RefreshCw size={11} className="transition-transform duration-500 group-hover/sentence:rotate-180" />
                     </div>
                   </div>
 
                   {/* ARKA YÜZ (TR Çeviri) */}
-                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-blue-600 border border-blue-500 p-3 rounded-xl flex items-center shadow-md shadow-blue-900/20">
-                    <p className="text-[10px] font-bold leading-relaxed text-white uppercase tracking-wider relative z-10">
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-blue-600 border border-blue-500 p-3 rounded-xl flex items-center shadow-md shadow-blue-900/20 group-hover/sentence:bg-blue-500 transition-colors">
+                    <p className="text-[10px] font-bold leading-relaxed text-white uppercase tracking-wider relative z-10 pr-6">
                       {displayTrSentence}
                     </p>
+                    <div 
+                      className="absolute bottom-2 right-2 p-1 rounded-md bg-black/20 border border-white/20 text-white/80 group-hover/sentence:text-white group-hover/sentence:bg-black/30 transition-all duration-300 flex items-center justify-center shadow-sm"
+                      title="İngilizceye dön"
+                    >
+                      <RefreshCw size={11} className="transition-transform duration-500 group-hover/sentence:-rotate-180" />
+                    </div>
                   </div>
 
                 </div>
