@@ -3166,7 +3166,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s82", turkish: "Dikkatimizi kilit sorulara yoğunlaştırmaya çalışacağız.", english: "We shall try to focus attention on key questions." },
           { id: "s83", turkish: "Okuyucunun hepsini hayal etmesine izin vermeli miyim?", english: "Shall I let the reader imagine them all?" },
           { id: "s84", turkish: "Her departman kıdem listesinin bir kopyasını alacağız.", english: "We shall receive a copy of every departmental seniority list." },
-          { id: "s85", turkish: "Esas olarak soruyla ilgileneceğiz.", english: "We shall concern ourselves mainly with the question." },
+          { id: "s85", turkish: "Önce esas konuyu mu ele alalım?", english: "Shall we deal with the main question first?" },
           { id: "s86", turkish: "Birkaç gün içinde sizi ziyaret edeceğim ve şampanyayı memnuniyetle getireceğim.", english: "In a few days I shall visit you, and I shall bring the champagne with pleasure." },
           { id: "s87", turkish: "Gidip bu adamı arayacağım ve sonra geri döneceğim.", english: "I'm going to go call this guy and then I shall return." },
           { id: "s88", turkish: "Saçımı arkadan ayırmalı mıyım?", english: "Shall I part my hair behind?" },
@@ -3180,7 +3180,7 @@ export const libraryData: LibraryCategory[] = [
           { id: "s96", turkish: "Ofise geleyim mi?", english: "Shall I come round to the office?" },
           { id: "s97", turkish: "Bence başka bir otel rezervasyonu yapmalıyız.", english: "In my opinion, we shall book another hotel." },
           { id: "s98", turkish: "Size kitabı göndereyim mi?", english: "Shall I send you the book?" },
-          { id: "s99", turkish: "Bu hafta sonu ne yapacağız?", english: "What shall we do this weekend?" },
+          { id: "s99", turkish: "Bu hafta sonu ne yapalım?", english: "What shall we do this weekend?" },
           { id: "s100", turkish: "Nasıl bilebilirim?", english: "How shall I know it?" }
         ] },
       { id: "modal-14", title: "14. WOULD RATHER / WOULD PREFER TO", sentences: [

@@ -1,4 +1,4 @@
-# LinguaCard PRD (Product Requirements Document) - v1.2.38 (06 Kasım 2026)
+# LinguaCard PRD (Product Requirements Document) - v1.2.40 (06 Kasım 2026)
 
 ## 1. Vizyon ve Hedef
 LinguaCard, kullanıcıların kendi çalışma materyallerini (kitaplar, makaleler, videolar, PDF'ler veya kopyalanmış metinler) dijital çalışma kartlarına dönüştürmelerini sağlayan, Yapay Zeka (AI) destekli kişisel bir dil geliştirme ekosistemidir.
@@ -134,6 +134,7 @@ Temel hedef; statik ve sıkıcı "hazır kelime listeleri" yerine, kullanıcın�
     - Anlamı bozan kritik OCR bozulmaları giderildi (`modal-12 s56`: `"Öldüğün gibi dışarı çıkabilirsin."` ➔ `"Olduğun gibi dışarı çıkabilirsin."`, `modal-15 s59`: `"Ölüm doktor olmak istiyor."` ➔ `"Oğlum doktor olmak istiyor."`).
     - Karakter, rakam ve ses kaymaları (`6gren` ➔ `öğren`, `sGyliiyor` ➔ `söylüyor`, `deiilller` ➔ `değiller`, `ıınıversite` ➔ `üniversite`, `ııniforma` ➔ `üniforma`, `calığşmak` ➔ `çalışmak`, `tırmanistan` ➔ `tırmanıştan`, `dain` ➔ `dağın`, `dlcumii` ➔ `ölçümü`).
   - Tüm düzeltmeler `tests/turkishCharacterAndOcrFixes.test.js` birim testleriyle TDD standardında güvenceye alınmıştır.
+- **Pedagojik Modal Fiil İyileştirmeleri (SHALL Ünitesi Güncellemesi):** `modal-13` (SHALL) setinde yer alan ve günümüz İngilizcesinde eski moda/arkaik kalan veya Türkçe çevirisi teklif yerine gelecek zaman algısı yaratan cümleler modernize edilmiştir: s99 (`"Bu hafta sonu ne yapacağız?"` ➔ `"Bu hafta sonu ne yapalım?"` - *What shall we do this weekend?*) ve s85 (`"Esas olarak soruyla ilgileneceğiz."` / *"We shall concern ourselves mainly with the question."* ➔ `"Önce esas konuyu mu ele alalım?"` / *"Shall we deal with the main question first?"*). Değişiklikler `tests/sentenceTranslations.test.js` ile TDD standardında test edilmiştir.
 - **Özel Cümle Setleri:** Kullanıcının kendi oluşturduğu isimlendirilmiş çalışma paketleri.
 - **Arşivleme:** Öğrenilen kelimelerin ana listeden temizlenip başarı kütüphanesine aktarılması.
 

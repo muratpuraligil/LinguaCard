@@ -204,4 +204,52 @@ test('Sentence aux-18 s72 grammatical correction "have been boil" -> "have been 
   );
 });
 
+test('Sentence modal-13 s85 and s99 modern natural English and Turkish suggestions update', () => {
+  const allSentences = JSON.parse(
+    fs.readFileSync(path.join(rootDir, 'src/data/json/all_sentences.json'), 'utf8')
+  );
+
+  // s85
+  const s85 = allSentences['modal-13']?.find((s) => s.id === 's85');
+  assert.ok(s85, 'modal-13 s85 must exist in all_sentences.json');
+  assert.equal(
+    s85.turkish,
+    'Önce esas konuyu mu ele alalım?',
+    'modal-13 s85 turkish should be updated to natural suggestion "Önce esas konuyu mu ele alalım?"'
+  );
+  assert.equal(
+    s85.english,
+    'Shall we deal with the main question first?',
+    'modal-13 s85 english should be modern natural English "Shall we deal with the main question first?"'
+  );
+
+  // s99
+  const s99 = allSentences['modal-13']?.find((s) => s.id === 's99');
+  assert.ok(s99, 'modal-13 s99 must exist in all_sentences.json');
+  assert.equal(
+    s99.turkish,
+    'Bu hafta sonu ne yapalım?',
+    'modal-13 s99 turkish should be suggestion "Bu hafta sonu ne yapalım?"'
+  );
+  assert.equal(
+    s99.english,
+    'What shall we do this weekend?',
+    'modal-13 s99 english should remain "What shall we do this weekend?"'
+  );
+
+  // libraryData.ts
+  const libraryContent = fs.readFileSync(path.join(rootDir, 'src/data/libraryData.ts'), 'utf8');
+  assert.match(
+    libraryContent,
+    /id:\s*"s85",\s*turkish:\s*"Önce esas konuyu mu ele alalım\?",\s*english:\s*"Shall we deal with the main question first\?"/,
+    'libraryData.ts modal-13 s85 must match new natural sentence'
+  );
+  assert.match(
+    libraryContent,
+    /id:\s*"s99",\s*turkish:\s*"Bu hafta sonu ne yapalım\?",\s*english:\s*"What shall we do this weekend\?"/,
+    'libraryData.ts modal-13 s99 must match new natural turkish'
+  );
+});
+
+
 
