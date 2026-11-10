@@ -16,6 +16,9 @@ interface WordListProps {
   onArchive: (id: string) => void;
 }
 
+const REQUIRED_FIELD_AI_HINT =
+  'Lütfen bu alanı doldurun yada AI ile Tamamla ile bilgileri doldurtarak kaydedebilirsiniz.';
+
 const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, onAdd, onOpenUpload, onArchive }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isAdding, setIsAdding] = useState(false);
@@ -33,6 +36,8 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
   const [archiveId, setArchiveId] = useState<string | null>(null);
   const aiAbortControllerRef = useRef<AbortController | null>(null);
   const flipTimerRef = useRef<NodeJS.Timeout | number | null>(null);
+  const trInputRef = useRef<HTMLInputElement | null>(null);
+  const engInputRef = useRef<HTMLInputElement | null>(null);
 
   // Çevirisi açık olan cümlenin ID'si
   const [flippedSentenceId, setFlippedSentenceId] = useState<string | null>(null);
@@ -84,6 +89,20 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     }
   };
 
+  useEffect(() => {
+    trInputRef.current?.setCustomValidity('');
+  }, [newTr]);
+
+  useEffect(() => {
+    engInputRef.current?.setCustomValidity('');
+  }, [newEng]);
+
+  const handleRequiredFieldInvalid = (e: React.FormEvent<HTMLInputElement>) => {
+    if (e.currentTarget.validity.valueMissing) {
+      e.currentTarget.setCustomValidity(REQUIRED_FIELD_AI_HINT);
+    }
+  };
+
   const handleForceOpen = () => {
     setIsAdding(true);
     setFormError(null);
@@ -97,6 +116,17 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     e.preventDefault();
     setFormError(null);
 
+    if (!newTr.trim()) {
+      trInputRef.current?.setCustomValidity(REQUIRED_FIELD_AI_HINT);
+      trInputRef.current?.reportValidity();
+      return;
+    }
+    if (!newEng.trim()) {
+      engInputRef.current?.setCustomValidity(REQUIRED_FIELD_AI_HINT);
+      engInputRef.current?.reportValidity();
+      return;
+    }
+
     // Mükerrer Kontrolü (Case-Insensitive)
     const exists = words.some(w => w.english.trim().toLowerCase() === newEng.trim().toLowerCase());
     if (exists) {
@@ -109,6 +139,8 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
     setIsSubmitting(false);
     if (success) {
       setNewEng(''); setNewTr(''); setNewEx(''); setNewTrEx('');
+      trInputRef.current?.setCustomValidity('');
+      engInputRef.current?.setCustomValidity('');
       setIsAdding(false);
     } else {
       setFormError('Bir hata oluştu, tekrar deneyin.');
@@ -146,6 +178,8 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
         setNewTr(item.turkish || newTr);
         setNewEx(item.example_sentence || '');
         setNewTrEx(item.turkish_sentence || '');
+        trInputRef.current?.setCustomValidity('');
+        engInputRef.current?.setCustomValidity('');
       } else {
         setFormError('Kelime analiz edilemedi, lütfen tekrar deneyin.');
       }
@@ -218,10 +252,40 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
               <div className="relative">
-                <input required value={newTr} onChange={e => setNewTr(e.target.value)} placeholder="Türkçe Kelime" className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+                <label htmlFor="quick-add-tr" className="sr-only">Türkçe Kelime</label>
+                <input
+                  id="quick-add-tr"
+                  name="turkish"
+                  ref={trInputRef}
+                  required
+                  value={newTr}
+                  onInvalid={handleRequiredFieldInvalid}
+                  onChange={e => {
+                    e.currentTarget.setCustomValidity('');
+                    setNewTr(e.target.value);
+                  }}
+                  placeholder="Türkçe Kelime"
+                  className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 [&:user-invalid]:border-red-500/70 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium"
+                  disabled={isAiFilling}
+                />
               </div>
               <div className="relative">
-                <input required value={newEng} onChange={e => setNewEng(e.target.value)} placeholder="İngilizce Kelime" className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium" disabled={isAiFilling} />
+                <label htmlFor="quick-add-eng" className="sr-only">İngilizce Kelime</label>
+                <input
+                  id="quick-add-eng"
+                  name="english"
+                  ref={engInputRef}
+                  required
+                  value={newEng}
+                  onInvalid={handleRequiredFieldInvalid}
+                  onChange={e => {
+                    e.currentTarget.setCustomValidity('');
+                    setNewEng(e.target.value);
+                  }}
+                  placeholder="İngilizce Kelime"
+                  className="w-full p-3 rounded-xl bg-black border border-white/5 focus:border-blue-500 [&:user-invalid]:border-red-500/70 transition-all outline-none text-white font-bold text-xs disabled:opacity-50 placeholder:text-slate-600 placeholder:font-medium"
+                  disabled={isAiFilling}
+                />
               </div>
             </div>
 
@@ -257,6 +321,8 @@ const WordList: React.FC<WordListProps> = ({ words, onDelete, onDeleteByDate, on
                 type="button"
                 onClick={() => {
                   setNewEng(''); setNewTr(''); setNewEx(''); setNewTrEx('');
+                  trInputRef.current?.setCustomValidity('');
+                  engInputRef.current?.setCustomValidity('');
                   setFormError(null);
                 }}
                 className="p-2.5 bg-zinc-800 hover:bg-zinc-700 text-slate-400 hover:text-white rounded-xl transition-all border border-white/5 disabled:opacity-50"
